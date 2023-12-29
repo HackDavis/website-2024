@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@globals/*": ["app/(pages)/_globals/*"],
+      "@components/*": ["app/(pages)/_components/*"],
+      "@data/*": ["app/(pages)/_data/*"],
+      "@hooks/*": ["app/(pages)/_hooks/*"],
+      "@utils/*": ["app/(api)/_utils/*"],
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "next-app-router-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "init": "run-script-os",
+    "init:nix": "node --env-file='.env' \"app/(api)/_utils/db/dbInit.js\"",
+    "init:windows": "node --env-file=\".\\.env\" \".\\app\\(api)\\_utils\\db\\dbInit.js\""
+  },
+  "dependencies": {
+    "mongodb": "^6.3.0",
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.11.0",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "eslint-plugin-lit-a11y": "^1.1.0-next.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "3.0.3",
+    "run-script-os": "^1.1.6"
+  }
+}
