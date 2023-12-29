@@ -46,6 +46,46 @@ ESLint is an extension that ensures that your code adheres to certain code style
 ## 3. Optional Extension
 - Auto Rename Tag — useful for JSX
 
+## 4. MongoDB
+### 4.1 Installation
+To get MongoDB set up locally, you'll need to install MongoDB on your machine along with mongosh (the command line tool for MongoDB). Then, you'll also need MongoDBCompass to view your database with a new interface. **The goal is to have mongosh working, once that works, other parts of the tutorial are optional.**
+- Install MongoDB on Mac: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
+- Install MongoDB on Windows: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/
+- https://www.mongodb.com/products/tools/compass
+- 
+### 4.2 Database and User setup
+Inside MongoDB Compass, connect to the client and create a new database using the plus sign near the Database part of the sidebar menu. For collections, just name it anything since it will be deleted later.
+
+You will also need to create a user that has a username, password, and dbOwnership role using the mongo shell (mongosh). To enter your mongo shell, type `mongosh` into your terminal.
+To switch to your newly created database:
+```bash
+use DBNAME
+```
+Replace `DBNAME` with the actual name of your database.
+
+Then, to create a user that has ownership of the database:
+```js
+db.createUser({
+   user: "USERNAME",
+   pwd: "PASSWORD",
+   roles: ['dbOwner']
+})
+```
+
+### 4.3 Connecting with the Codebase
+If that worked, then you should be ready to connect using the codebase! To do so, create a file called `.env` in the root of the repository (same level as package.json) and input the following:
+```
+MONGO_USERNAME=<USERNAME>
+MONGO_PASSWORD=<PASSWORD>
+MONGO_DB_HOST=127.0.0.1:27017/<DBNAME>
+```
+Replace `<USERNAME>, <PASSWORD>, <DBNAME>` with the actual username, password, and database names. (Don't include the angle brackets).
+
+### 4.4 Testing & Initialization
+Do this after the getting started portion (right after this section)
+
+Assuming you have already run `npm install` and `npm run dev` is producing a web page for you to view, you can continue with this part. You will be running the `npm run init` command which will **wipe your database** and initialize it with a `pokemon` and `trainers` collection. In the future, you can edit this initialization in the `_utils/db/dbInit.js` file. If this works, then your MongoDB Compass (after a refresh) should display that your database has these two collections. This means everything is working!
+
 ## Getting Started
 Set up:
 
