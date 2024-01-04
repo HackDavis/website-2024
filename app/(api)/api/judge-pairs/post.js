@@ -12,18 +12,19 @@ export async function POST(request) {
     if (isBodyEmpty(body)) {
       throw new NoContentError('Empty request body.');
     }
-    body.judge_pair_id = new ObjectId(body.judge_pair_id);
     const parsedBody = await parseAndReplace(body);
 
     const db = await getDatabase();
 
-    const creationStatus = await db.collection('judges').insertOne(parsedBody);
+    const creationStatus = await db
+      .collection('judge-pairs')
+      .insertOne(parsedBody);
 
-    const judge = await db.collection('judges').findOne({
+    const judge_pair = await db.collection('judge-pairs').findOne({
       _id: new ObjectId(creationStatus.insertedId),
     });
 
-    return NextResponse.json({ ok: true, body: judge }, { status: 201 });
+    return NextResponse.json({ ok: true, body: judge_pair }, { status: 201 });
   } catch (error) {
     return NextResponse.json(
       { ok: false, error: error.message },
