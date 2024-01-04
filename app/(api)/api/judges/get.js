@@ -8,14 +8,7 @@ export async function GET(request) {
     const queries = getQueries(request);
     const db = await getDatabase();
 
-    const judge = await db
-      .collection('judges')
-      .aggregate([
-        {
-          $match: queries,
-        },
-      ])
-      .toArray();
+    const judge = await db.collection('judges').find(queries).toArray();
 
     return NextResponse.json({ ok: true, body: judge }, { status: 200 });
   } catch (error) {
