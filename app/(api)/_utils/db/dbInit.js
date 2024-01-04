@@ -1,19 +1,33 @@
-const dbConnect = require('./mongoClient.js');
+const { getClient } = require('./mongoClient.js');
+const readline = require('readline');
+const collections = require('../../_data/collections.json');
 
-async function dbInit() {
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+async function dbInit(wipe) {
   try {
-    const client = await dbConnect();
-    console.log('connected to db');
+    const client = await getClient();
     const db = client.db();
 
-    // Drop existing collections
-    const collectionNames = await db.listCollections().toArray();
-    collectionNames.forEach((collection) => db.dropCollection(collection.name));
+    if (wipe === 'y') {
+      // Drop existing collections
+      const collectionNames = await db.listCollections().toArray();
+      collectionNames.forEach((collection) =>
+        db.dropCollection(collection.name)
+      );
+      console.log('Deleted existing collections');
+    }
+    console.log('\n');
 
     // Create collections if they don't already exist
-    await db.createCollection('trainers');
-    await db.createCollection('pokemon');
-    console.log('created collections');
+    for (const c of collections) {
+      await db.createCollection(c);
+      console.log(`Created collection: ${c}...`);
+    }
+    console.log('Created collections');
 
     await client.close();
   } catch (error) {
@@ -21,4 +35,13 @@ async function dbInit() {
   }
 }
 
-dbInit();
+// decide if we want to wipe the database
+let wipe = '';
+rl.question('Would you like to reset your database? (y/n): ', function (str) {
+  const lowerStr = str.toLowerCase();
+  if (lowerStr === 'y' || lowerStr === 'n') {
+    wipe = lowerStr;
+  }
+  dbInit(wipe);
+  rl.close();
+});
