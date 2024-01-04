@@ -1,4 +1,8 @@
 [
     "pokemon",
-    "trainers"
+    "trainers",
+    "judges",
+    "judge-pairs",
+    "teams",
+    "submissions"
 ]
