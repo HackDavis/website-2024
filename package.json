@@ -12,6 +12,8 @@
     "init:windows": "node --env-file=\".\\.env\" \".\\app\\(api)\\_utils\\db\\dbInit.js\""
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "next": "14.0.4",
     "react": "^18",
