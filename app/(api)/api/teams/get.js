@@ -1,37 +1,38 @@
 import { NextResponse } from 'next/server';
 
-import dbConnect from '@utils/db/mongoClient';
+import { getDatabase } from '@utils/db/mongoClient';
 import getQueries from '@utils/request/getQueries';
 
 export async function GET(request) {
   try {
     const queries = getQueries(request);
-    const client = await dbConnect();
-    const db = client.db();
+    const db = await getDatabase();
 
-    const trainer = await db
-      .collection('trainers')
+    const teams = await db
+      .collection('teams')
       .aggregate([
         {
           $match: queries,
         },
         {
           $lookup: {
-            from: 'pokemon',
+            from: 'submissions',
             localField: '_id',
-            foreignField: 'trainer_id',
-            as: 'pokemon',
+            foreignField: 'team_id',
+            as: 'submissions',
           },
         },
       ])
-      .project({ 'pokemon.trainer_id': 0 })
+      .project({
+        'submissions.team_id': 0,
+      })
       .toArray();
 
-    return NextResponse.json({ ok: true, body: trainer }, { status: 200 });
+    return NextResponse.json({ ok: true, body: teams }, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { ok: false, error: error.message },
-      { status: 400 }
+      { status: error.status || 400 }
     );
   }
 }
