@@ -17,6 +17,10 @@
                 "pattern": "^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,})$",
                 "description": "email must be a string and have a valid format"
             },
+            "password": {
+                "bsonType" : "string",
+                "description": "encrypted password must be a string"
+            },
             "specialty": {
                 "enum": ["tech", "nontech", "design"],
                 "description": "specialty must be either tech, nontech, or design."
