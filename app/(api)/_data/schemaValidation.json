@@ -1,0 +1,138 @@
+{
+    "judges":
+    {
+        "bsonType": "object",
+        "title": "Judge Object Validation",
+        "properties" : {
+            "_id" : {
+                "bsonType": "objectId",
+                "description": "_id must be an ObjectId"
+            },
+            "name": {
+                "bsonType": "string",
+                "description": "name must be a string"
+            },
+            "email": {
+                "bsonType": "string",
+                "pattern": "^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,})$",
+                "description": "email must be a string and have a valid format"
+            },
+            "password": {
+                "bsonType" : "string",
+                "description": "encrypted password must be a string"
+            },
+            "specialty": {
+                "enum": ["tech", "nontech", "design"],
+                "description": "specialty must be either tech, nontech, or design."
+            },
+            "judge_pair_id": {
+                "bsonType": ["objectId", "null"],
+                "description": "judge_pair_id must be an ObjectId"
+            }
+        },
+        "additionalProperties": false
+    },
+
+
+    "judge-pairs":
+    {
+        "bsonType": "object",
+        "title": "JudgePair Object Validation",
+        "properties" : {
+            "_id" : {
+                "bsonType": "objectId",
+                "description": "_id must be an ObjectId"
+            },
+            "type": {
+                "enum": ["TT", "TN", "D"],
+                "description": "type must be either TT (tech-tech), TN (tech-nontech), or D (design)."
+            }
+        },
+        "additionalProperties": false
+    },
+
+
+    "teams":
+    {
+        "bsonType": "object",
+        "title": "Team Object Validation",
+        "properties" : {
+            "_id" : {
+                "bsonType": "objectId",
+                "description": "_id must be an ObjectId"
+            },
+            "number": {
+                "bsonType": "int",
+                "description": "number must be an integer"
+            },
+            "tracks": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "string"
+                },
+                "description": "tracks must be an array of strings"
+            },
+            "name": {
+                "bsonType": "string",
+                "description": "name must be a string"
+            },
+            "tech_emphasis": {
+                "bsonType": "int",
+                "description": "tech_emphasis must be an integer"
+            },
+            "design_emphasis": {
+                "bsonType": "int",
+                "description": "design_emphasis must be an integer"
+            },
+            "judge_pairs" : {
+                "bsonType":  ["array", "null"],
+                "items": {
+                    "bsonType": "objectId"
+                },
+                "description": "judge_pairs must be an array of ObjectIds or null"
+            },
+            "judge_submissions": {
+                "bsonType": ["array", "null"],
+                "items": {
+                    "bsonType": "objectId"
+                },
+                "description": "judge_submissions must be an array of ObjectIds or null"
+            }
+        },
+        "additionalProperties": false
+    },
+
+
+    "submissions":
+    {
+        "bsonType": "object",
+        "title": "Submission Object Validation",
+        "properties" : {
+            "_id" : {
+                "bsonType": "objectId",
+                "description": "_id must be an ObjectId"
+            },
+            "judge_id": {
+                "bsonType": "objectId",
+                "description": "judge_id must be an ObjectId"
+            }, 
+            "team_id":{
+                "bsonType": "objectId",
+                "description": "team_id must be an ObjectId"
+            }, 
+            "scores": {
+                "bsonType": "object",
+                "description": "scores must be a JSON object"
+            }, 
+            "correlations": {
+                "bsonType": "object",
+                "description": "correlations must be a JSON object"
+            },
+            "comments":{
+                "bsonType": "string",
+                "description": "comments  must be a string"
+            }                   
+            },
+        "additionalProperties": false
+    }
+}
