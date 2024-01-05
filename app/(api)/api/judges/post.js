@@ -12,7 +12,9 @@ export async function POST(request) {
     if (isBodyEmpty(body)) {
       throw new NoContentError('Empty request body.');
     }
-    body.judge_pair_id = new ObjectId(body.judge_pair_id);
+    if (body.judge_pair_id) {
+      body.judge_pair_id = new ObjectId(body.judge_pair_id);
+    }
     const parsedBody = await parseAndReplace(body);
 
     const db = await getDatabase();
