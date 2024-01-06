@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { ObjectId } from 'mongodb';
 
-import { getDatabase } from '@utils/db/mongoClient';
+import { getDatabase } from '@utils/mongodb/mongoClient';
 import NotFoundError from '@utils/response/NotFoundError';
 import isBodyEmpty from '@utils/request/isBodyEmpty';
 import NoContentError from '@utils/response/NoContentError';

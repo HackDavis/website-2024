@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-import { getDatabase } from '@utils/db/mongoClient';
+import { getDatabase } from '@utils/mongodb/mongoClient';
 import getQueries from '@utils/request/getQueries';
 
 export async function GET(request) {

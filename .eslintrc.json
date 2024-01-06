@@ -42,7 +42,7 @@
       "react/react-in-jsx-scope": "off",
       "@typescript-eslint/explicit-function-return-type": "off",
       "react/require-default-props": "off",
-      "no-unused-vars": [
+      "@typescript-eslint/no-unused-vars": [
           "error",
           { "vars": "all", "varsIgnorePattern": "^_*$", "argsIgnorePattern": "^_*$" }
       ],

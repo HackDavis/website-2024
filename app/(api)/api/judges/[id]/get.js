@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { ObjectId } from 'mongodb';
 
-import { getDatabase } from '@utils/db/mongoClient';
+import { getDatabase } from '@utils/mongodb/mongoClient';
 import NotFoundError from '@utils/response/NotFoundError';
 
 export async function GET(_, { params }) {

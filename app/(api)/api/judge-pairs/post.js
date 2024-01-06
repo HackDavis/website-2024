@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
 import { ObjectId } from 'mongodb';
 
-import { getDatabase } from '@utils/db/mongoClient';
+import { getDatabase } from '@utils/mongodb/mongoClient';
 import isBodyEmpty from '@utils/request/isBodyEmpty';
 import parseAndReplace from '@utils/request/parseAndReplace';
+import NoContentError from '@utils/response/NoContentError;';
 
 export async function POST(request) {
   try {

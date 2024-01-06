@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 
 import getQueries from '@utils/request/getQueries';
+import { getDatabase } from '@utils/mongob/mongoClient';
 
 export async function GET(request) {
   try {
     const queries = getQueries(request);
-    const db = client.db();
+    const db = getDatabase.db();
 
     const submissions = await db
       .collection('submissions')
