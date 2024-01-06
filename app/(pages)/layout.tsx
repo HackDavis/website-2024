@@ -2,7 +2,7 @@ import '@globals/globals.scss';
 import fonts from '@globals/fonts';
 import metadata from '@globals/metadata.json';
 
-import { navLinks } from '@data/navLinks.js';
+import { navLinks } from '@data/navLinks';
 import Navbar from '@components/Navbar/Navbar';
 import Footer from './_components/Footer/Footer';
 
