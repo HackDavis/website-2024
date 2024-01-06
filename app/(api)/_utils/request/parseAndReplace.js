@@ -1,7 +1,6 @@
 import { ObjectId } from 'mongodb';
 
-import { getDatabase } from '@utils/db/mongoClient';
-
+import { getDatabase } from '@utils/mongodb/mongoClient.mjs';
 /**
  * Takes object resembling example below with an "*expandIds" field:
  * {

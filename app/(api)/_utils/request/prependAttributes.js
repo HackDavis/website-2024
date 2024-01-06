@@ -2,7 +2,7 @@
  * Takes in a json object and renames one attribute.
  */
 export function renameAttribute(jsonObj, oldFieldName, newFieldName) {
-  if (jsonObj.hasOwnProperty(oldFieldName)) {
+  if (jsonObj[oldFieldName]) {
     // Create a new object with the renamed attribute
     const renamedObject = {
       ...jsonObj,
