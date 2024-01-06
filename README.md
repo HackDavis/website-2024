@@ -84,7 +84,7 @@ Replace `<USERNAME>, <PASSWORD>, <DBNAME>` with the actual username, password, a
 ### 4.4 Testing & Initialization
 Do this after the getting started portion (right after this section)
 
-Assuming you have already run `npm install` and `npm run dev` is producing a web page for you to view, you can continue with this part. You will be running the `npm run init` command which will **wipe your database** and initialize it with a `pokemon` and `trainers` collection. In the future, you can edit this initialization in the `_utils/db/dbInit.js` file. If this works, then your MongoDB Compass (after a refresh) should display that your database has these two collections. This means everything is working!
+Assuming you have already run `npm install` and `npm run dev` is producing a web page for you to view, you can continue with this part. You will be running the `npm run init` command which will **wipe your database** and initialize it with a `pokemon` and `trainers` collection. In the future, you can edit this initialization in the `_data/collections.json` file. If this works, then your MongoDB Compass (after a refresh) should display that your database has these two collections. This means everything is working!
 
 ## Getting Started
 Set up:

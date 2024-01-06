@@ -2,31 +2,35 @@ import { NextResponse } from 'next/server';
 import { ObjectId } from 'mongodb';
 
 import { getDatabase } from '@utils/mongodb/mongoClient';
+import NotFoundError from '@utils/response/NotFoundError';
 import isBodyEmpty from '@utils/request/isBodyEmpty';
+import NoContentError from '@utils/response/NoContentError';
 import parseAndReplace from '@utils/request/parseAndReplace';
-import NoContentError from '@utils/response/NoContentError;';
 
-export async function POST(request) {
+export async function PUT(request, { params }) {
   try {
     const body = await request.json();
-
     if (isBodyEmpty(body)) {
-      throw new NoContentError('Empty request body.');
+      throw new NoContentError('Empty request body');
     }
-    if (body.judge_pair_id) {
-      body.judge_pair_id = new ObjectId(body.judge_pair_id);
-    }
+
     const parsedBody = await parseAndReplace(body);
 
+    const id = new ObjectId(params.id);
     const db = await getDatabase();
 
-    const creationStatus = await db.collection('judges').insertOne(parsedBody);
+    const judge = await db.collection('judges').updateOne(
+      {
+        _id: id,
+      },
+      parsedBody
+    );
 
-    const judge = await db.collection('judges').findOne({
-      _id: new ObjectId(creationStatus.insertedId),
-    });
+    if (judge === null) {
+      throw NotFoundError(`Judge with id: ${params.id} not found.`);
+    }
 
-    return NextResponse.json({ ok: true, body: judge }, { status: 201 });
+    return NextResponse.json({ ok: true, body: judge }, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { ok: false, error: error.message },
