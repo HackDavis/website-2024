@@ -1,9 +1,9 @@
 'use server';
-import FormToJSON from '../_utils/FormToJSON';
+import FormToJSON from '../../_utils/form/FormToJSON';
 
-export default async function updateJudge(id: string, formData: FormData) {
+export default async function updateSubmission(id: string, formData: FormData) {
   const dataJSON = FormToJSON(formData);
-  await fetch(`${process.env.BASE_URL}/api/judges/${id}`, {
+  await fetch(`${process.env.BASE_URL}/api/submissions/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

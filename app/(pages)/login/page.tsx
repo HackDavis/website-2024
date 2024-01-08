@@ -5,11 +5,11 @@ import Login from '@actions/auth/login';
 import { useFormState } from 'react-dom';
 
 const initialState = {
-  message: null,
+  message: '',
 };
 export default function Auth() {
   const [registerState, RegisterAction] = useFormState(Register, initialState);
-  const [loginState = State, LoginAction] = useFormState(Login, initialState);
+  const [loginState, LoginAction] = useFormState(Login, initialState);
 
   return (
     <div>

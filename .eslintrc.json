@@ -46,6 +46,7 @@
           "error",
           { "vars": "all", "varsIgnorePattern": "^_*$", "argsIgnorePattern": "^_*$" }
       ],
+      "@typescript-eslint/no-explicit-any": 0,
       "block-spacing": 1
   }
 }

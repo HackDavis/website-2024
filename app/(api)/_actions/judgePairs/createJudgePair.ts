@@ -1,9 +1,9 @@
 'use server';
-import FormToJSON from '../_utils/FormToJSON';
+import FormToJSON from '@utils/form/FormToJSON';
 
-export default async function createSubmission(formData: FormData) {
+export default async function createJudgePair(formData: FormData) {
   const dataJSON = FormToJSON(formData);
-  await fetch(`${process.env.BASE_URL}/api/submissions`, {
+  await fetch(`${process.env.BASE_URL}/api/judge-pairs`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
