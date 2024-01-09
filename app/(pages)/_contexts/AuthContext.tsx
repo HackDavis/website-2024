@@ -4,17 +4,27 @@ import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 
 interface AuthTokenBody {
-  judgeId: string;
-  username: string;
-  exp: number;
+  _id: string;
+  email: string;
+  password: string;
+  iat?: number;
+  exp?: number;
 }
 
-interface AuthContextBody {
-  auth: boolean;
-  user: AuthTokenBody | null;
+interface AuthUserBody {
+  _id: string;
+  email: string;
+  password: string;
 }
 
-function getAuthFromClient(): AuthContextBody {
+interface AuthProviderValue {
+  user: AuthUserBody;
+  loading: boolean;
+  login: (user: AuthTokenBody) => void;
+  logout: () => void;
+}
+
+function getAuthFromClient(): AuthUserBody | null {
   try {
     // Get the JWT token from cookies
     const authToken = Cookies.get('auth_token');
@@ -31,42 +41,39 @@ function getAuthFromClient(): AuthContextBody {
     if (decodedToken.exp && decodedToken.exp < currentTimestamp) {
       throw new Error('token has expired');
     }
-
-    return { auth: true, user: decodedToken };
+    delete decodedToken.exp;
+    delete decodedToken.iat;
+    return decodedToken;
   } catch (e) {
     const error = e as Error;
     console.error('Error decoding JWT token:', error.message);
-    return { auth: false, user: null };
+    return null;
   }
 }
+
+export type { AuthTokenBody, AuthUserBody, AuthProviderValue };
 
 export const AuthContext = createContext({});
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [auth, setAuth] = useState<AuthContextBody>({
-    auth: false,
-    user: null,
-  });
+  const [user, setUser] = useState<AuthUserBody | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setAuth(getAuthFromClient());
+    setUser(getAuthFromClient());
+    setLoading(false);
   }, []);
 
-  function login(user: AuthTokenBody) {
-    setAuth({
-      auth: true,
-      user,
-    });
+  function login(user: AuthUserBody) {
+    setUser(user);
   }
 
   function logout() {
-    setAuth({
-      auth: false,
-      user: null,
-    });
+    setUser(null);
   }
 
-  const contextValue = { auth, login, logout };
+  const contextValue = { user, loading, login, logout };
+
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );

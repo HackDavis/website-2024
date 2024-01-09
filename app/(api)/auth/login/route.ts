@@ -33,13 +33,9 @@ export async function POST(request: NextRequest) {
     }
 
     // set JWT token in cookies
-    const token = jwt.sign(
-      { judgeId: judge._id },
-      process.env.JWT_SECRET as Secret,
-      {
-        expiresIn: `${auth_expiration}h`,
-      }
-    );
+    const token = jwt.sign(judge, process.env.JWT_SECRET as Secret, {
+      expiresIn: `${auth_expiration}h`,
+    });
     cookies().set({
       name: 'auth_token',
       value: token,

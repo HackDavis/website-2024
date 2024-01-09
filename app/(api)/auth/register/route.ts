@@ -23,13 +23,9 @@ export async function POST(request: NextRequest) {
     const data = await res.json();
     const { body: newJudge } = data;
     // set JWT token in cookies
-    const token = jwt.sign(
-      { judgeId: newJudge._id },
-      process.env.JWT_SECRET as Secret,
-      {
-        expiresIn: `${auth_expiration}h`,
-      }
-    );
+    const token = jwt.sign(newJudge, process.env.JWT_SECRET as Secret, {
+      expiresIn: `${auth_expiration}h`,
+    });
 
     cookies().set({
       name: 'auth_token',
@@ -38,7 +34,7 @@ export async function POST(request: NextRequest) {
       secure: true,
     });
 
-    return NextResponse.json({ ok: true, newJudge }, { status: 201 });
+    return NextResponse.json({ ok: true, judge: newJudge }, { status: 201 });
   } catch (e) {
     const error = e as HttpError;
     return NextResponse.json(
