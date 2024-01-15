@@ -45,7 +45,7 @@ function getAuthFromClient(): AuthTokenBody | null {
 
 const deleteAuthTokenCookie = () => {
   // Delete the 'auth-token' cookie
-  Cookies.remove('auth-token', { path: '/' });
+  Cookies.remove('auth_token', { path: '/' });
 };
 
 export type { AuthTokenBody, AuthProviderValue };
