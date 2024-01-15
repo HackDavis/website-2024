@@ -43,6 +43,11 @@ function getAuthFromClient(): AuthTokenBody | null {
   }
 }
 
+const deleteAuthTokenCookie = () => {
+  // Delete the 'auth-token' cookie
+  Cookies.remove('auth-token', { path: '/' });
+};
+
 export type { AuthTokenBody, AuthProviderValue };
 
 export const AuthContext = createContext({});
@@ -61,6 +66,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const logout = useCallback(() => {
+    deleteAuthTokenCookie();
     setUser(null);
   }, []);
 
