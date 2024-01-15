@@ -1,5 +1,5 @@
 'use server';
-import FormToJSON from '../_utils/FormToJSON';
+import FormToJSON from '@utils/form/FormToJSON';
 
 export default async function createTeam(formData: FormData) {
   const dataJSON = FormToJSON(formData);

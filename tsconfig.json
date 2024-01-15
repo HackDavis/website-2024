@@ -25,7 +25,7 @@
       "@components/*": ["app/(pages)/_components/*"],
       "@data/*": ["app/(pages)/_data/*"],
       "@hooks/*": ["app/(pages)/_hooks/*"],
-      "@actions/*": ["app/(pages)/_actions/*"],
+      "@actions/*": ["app/(api)/_actions/*"],
       "@utils/*": ["app/(api)/_utils/*"],
       "@apidata/*": ["app/(api)/_data/*"]
     }
