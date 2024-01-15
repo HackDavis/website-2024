@@ -1,5 +1,5 @@
 'use client';
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect, useCallback } from 'react';
 import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 
@@ -11,20 +11,14 @@ interface AuthTokenBody {
   exp?: number;
 }
 
-interface AuthUserBody {
-  _id: string;
-  email: string;
-  password: string;
-}
-
 interface AuthProviderValue {
-  user: AuthUserBody;
+  user: AuthTokenBody;
   loading: boolean;
   login: (user: AuthTokenBody) => void;
   logout: () => void;
 }
 
-function getAuthFromClient(): AuthUserBody | null {
+function getAuthFromClient(): AuthTokenBody | null {
   try {
     // Get the JWT token from cookies
     const authToken = Cookies.get('auth_token');
@@ -41,8 +35,6 @@ function getAuthFromClient(): AuthUserBody | null {
     if (decodedToken.exp && decodedToken.exp < currentTimestamp) {
       throw new Error('token has expired');
     }
-    delete decodedToken.exp;
-    delete decodedToken.iat;
     return decodedToken;
   } catch (e) {
     const error = e as Error;
@@ -51,12 +43,12 @@ function getAuthFromClient(): AuthUserBody | null {
   }
 }
 
-export type { AuthTokenBody, AuthUserBody, AuthProviderValue };
+export type { AuthTokenBody, AuthProviderValue };
 
 export const AuthContext = createContext({});
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<AuthUserBody | null>(null);
+  const [user, setUser] = useState<AuthTokenBody | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -64,13 +56,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setLoading(false);
   }, []);
 
-  function login(user: AuthUserBody) {
+  const login = useCallback((user: AuthTokenBody) => {
     setUser(user);
-  }
+  }, []);
 
-  function logout() {
+  const logout = useCallback(() => {
     setUser(null);
-  }
+  }, []);
 
   const contextValue = { user, loading, login, logout };
 

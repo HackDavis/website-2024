@@ -11,9 +11,9 @@ export default function LoginForm() {
 
   useEffect(() => {
     if (loginState.ok === true) {
-      login(loginState.judge);
+      login(loginState.body);
     }
-  }, [loginState]);
+  }, [loginState, login]);
 
   return (
     <div>

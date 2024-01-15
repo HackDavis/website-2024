@@ -43,7 +43,8 @@ export async function POST(request: NextRequest) {
       secure: true,
     });
 
-    return NextResponse.json({ ok: true, judge }, { status: 200 });
+    const payload = jwt.decode(token);
+    return NextResponse.json({ ok: true, body: payload }, { status: 200 });
   } catch (e) {
     const error = e as HttpError;
     return NextResponse.json(

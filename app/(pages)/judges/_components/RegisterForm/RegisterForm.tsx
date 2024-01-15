@@ -11,9 +11,9 @@ export default function RegisterForm() {
 
   useEffect(() => {
     if (registerState.ok === true) {
-      login(registerState.judge);
+      login(registerState.body);
     }
-  }, [registerState]);
+  }, [registerState, login]);
   return (
     <div>
       <form action={RegisterAction}>
