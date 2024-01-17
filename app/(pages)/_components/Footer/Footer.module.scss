@@ -1,90 +1,41 @@
-@use 'app/(pages)/_globals/mixins';
+$footer-color: #122537;
+$brand-icon-color: white;
 
 .container {
     width: 100%;
-
+    min-height: 188px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
-    background-color: var(--secondary);
-    .credit {
-        width: 100%;
-        padding: var(--tiny-spacer);
-        text-align: center;
-        background-color: var(--primary);
-        color: var(--text-light);
-        @include mixins.phone {
-            background: none;
-            margin-bottom: var(--medium-spacer);
-            color: var(--text-dark);
-        }
-    }
-}
+    background: $footer-color;
+    align-items: center;
+    padding-top: 30px;
+    gap: 10px;
 
-.content_container {
-    /* box sizing */
-    width: 100%;
-    padding: var(--medium-spacer);
-
-    /* flexbox */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: var(--medium-spacer);
-    @include mixins.phone {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        text-align: center;
-    }
-
-    h2 {
-        color: var(--primary);
-        font-size: 1.5rem;
-        margin-bottom: var(--tiny-spacer);
-    }
-
-    .description>p {
-        @include mixins.phone {
-            display: none;
-        }
-    }
-}
-
-.navigation {
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    gap: var(--medium-spacer);
-
-    @include mixins.phone {
-        flex-direction: column;
-    }
-
-    .learn_more, .projects {
+    .brandIcons {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        max-width: 420px;
+        padding-top: 10px;
 
-        .learn_more_links {
-            display: flex;
-            flex-direction: column;
-            gap: var(--tiny-spacer);
+        .singleIcon { // used for most of the brand icons
+            max-width: 30px;
+            width: 7%;
+            color:$brand-icon-color;
+
         }
 
-        .project_link_columns {
-            display: flex;
-            flex-direction: row;
-            gap: var(--tiny-spacer);
-            @include mixins.phone {
-                flex-direction: column;
-            }
-
-            >div {
-                display: flex;
-                flex-direction: column;
-                gap: var(--tiny-spacer);
-            }
+        .fbIcon { // fb icon is larger than the rest so it needs smaller size
+            max-width: 17px;
+            width: 6%;
+            color:$brand-icon-color;
         }
+    }
+    
+    .copyright {
+        color:white;
+        font-size: 14px;
     }
 }
