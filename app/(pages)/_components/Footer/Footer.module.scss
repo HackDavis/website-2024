@@ -1,41 +1,134 @@
 $footer-color: #122537;
 $brand-icon-color: white;
-
+.svg-inline--fa {
+    display: var(--fa-display, inline-block);
+    height: 6em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
 .container {
     width: 100%;
     min-height: 188px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background: $footer-color;
     align-items: center;
+    justify-content: space-around;
     padding-top: 30px;
     gap: 10px;
 
-    .brandIcons {
+    .hackdavisLogo {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
         align-items: center;
-        width: 100%;
-        max-width: 420px;
-        padding-top: 10px;
+        gap: 23.48px;
+    }
 
-        .singleIcon { // used for most of the brand icons
-            max-width: 30px;
-            width: 7%;
-            color:$brand-icon-color;
-
+    .socialContent {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 27vw;
+        align-items: center;
+        
+        .brandIcons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 420px;
+            padding-top: 10px;
+    
+            .singleIcon { // used for most of the brand icons
+                max-width: 30px;
+                width: 59%;
+                color:$brand-icon-color;
+                
+            }
+    
+            .fbIcon { // fb icon is larger than the rest so it needs smaller size
+                max-width: 17px;
+                width: 7%;
+                color:$brand-icon-color;
+            }
         }
-
-        .fbIcon { // fb icon is larger than the rest so it needs smaller size
-            max-width: 17px;
-            width: 6%;
-            color:$brand-icon-color;
+        
+        .copyright {
+            color:white;
+            font-size: 14px;
         }
     }
-    
-    .copyright {
+    .arrowToTop {
+        display: flex;
+        flex-direction: row;
         color:white;
-        font-size: 14px;
+        gap: 8px;
+        align-items: center;
     }
 }
+
+
+
+@media (max-width: 750px) {
+    .container {
+        width: 100%;
+        min-height: 188px;
+        display: flex;
+        flex-direction: column;
+        background: $footer-color;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 30px;
+        gap: 10px;
+    
+        .hackdavisLogo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 23.48px;
+        }
+    
+        .socialContent {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 27vw;
+            align-items: center;
+            
+            .brandIcons {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                max-width: 420px;
+                padding-top: 10px;
+        
+                .singleIcon { // used for most of the brand icons
+                    max-width: 30px;
+                    width: 9%;
+                    color:$brand-icon-color;
+                    
+                }
+        
+                .fbIcon { // fb icon is larger than the rest so it needs smaller size
+                    max-width: 17px;
+                    width: 7%;
+                    color:$brand-icon-color;
+                }
+            }
+            
+            .copyright {
+                color:white;
+                font-size: 14px;
+            }
+        }
+        .arrowToTop {
+            display: flex;
+            flex-direction: row;
+            color:white;
+            gap: 8px;
+        }
+    }
+  }
