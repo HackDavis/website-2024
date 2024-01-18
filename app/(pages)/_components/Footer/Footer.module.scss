@@ -1,11 +1,7 @@
 $footer-color: #122537;
 $brand-icon-color: white;
-.svg-inline--fa {
-    display: var(--fa-display, inline-block);
-    height: 6em;
-    overflow: visible;
-    vertical-align: -0.125em;
-}
+
+// css styling for the desktop view
 .container {
     width: 100%;
     min-height: 188px;
@@ -65,70 +61,82 @@ $brand-icon-color: white;
         color:white;
         gap: 8px;
         align-items: center;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+        &:hover{
+            transform: scale(1.1);
+        }
     }
 }
 
-
-
 @media (max-width: 750px) {
-    .container {
-        width: 100%;
-        min-height: 188px;
+    // css styling for mobile view
+.container {
+    width: 100%;
+    min-height: 188px;
+    display: flex;
+    flex-direction: column;
+    background: $footer-color;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    gap: 19.54px;
+
+    .hackdavisLogo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 23.48px;
+    }
+
+    .socialContent {
         display: flex;
         flex-direction: column;
-        background: $footer-color;
-        align-items: center;
-        justify-content: space-around;
-        padding-top: 30px;
         gap: 10px;
-    
-        .hackdavisLogo {
+        width: 50vw;
+        align-items: center;
+        
+        .brandIcons {
             display: flex;
             flex-direction: row;
+            justify-content: space-evenly;
             align-items: center;
-            gap: 23.48px;
-        }
+            width: 100%;
+            max-width: 420px;
+            padding-top: 10px;
     
-        .socialContent {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 27vw;
-            align-items: center;
-            
-            .brandIcons {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                max-width: 420px;
-                padding-top: 10px;
-        
-                .singleIcon { // used for most of the brand icons
-                    max-width: 30px;
-                    width: 9%;
-                    color:$brand-icon-color;
-                    
-                }
-        
-                .fbIcon { // fb icon is larger than the rest so it needs smaller size
-                    max-width: 17px;
-                    width: 7%;
-                    color:$brand-icon-color;
-                }
+            .singleIcon { // used for most of the brand icons
+                max-width: 30px;
+                width: 8%;
+                color:$brand-icon-color;
+                
             }
-            
-            .copyright {
-                color:white;
-                font-size: 14px;
+    
+            .fbIcon { // fb icon is larger than the rest so it needs smaller size
+                max-width: 17px;
+                width: 7%;
+                color:$brand-icon-color;
             }
         }
-        .arrowToTop {
-            display: flex;
-            flex-direction: row;
+        
+        .copyright {
             color:white;
-            gap: 8px;
+            font-size: 7px;
         }
     }
-  }
+    .arrowToTop {
+        display: flex;
+        flex-direction: row;
+        color:white;
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+        margin-left: 46vw;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+}
