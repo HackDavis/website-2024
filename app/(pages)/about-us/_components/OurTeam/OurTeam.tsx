@@ -1,3 +1,4 @@
+import ProfileCard from './_components/ProfileCard';
 import styles from './OurTeam.module.scss';
 
 export default function OurTeam() {
@@ -5,9 +6,10 @@ export default function OurTeam() {
     <div className={styles.ourTeam}>
       <div className={styles.container}>
         <div className={styles.title}>
-          <h2>Get to know our team</h2>
+          <h1>Get to know our team</h1>
           <p>HackDavis is built by students, for students.</p>
         </div>
+        <ProfileCard name="Amanda" title="Co-Director" />
       </div>
     </div>
   );

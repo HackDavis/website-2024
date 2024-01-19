@@ -1,0 +1,26 @@
+.profile_card{
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+
+  h3{
+    color: #F4F4F4;
+
+    font-family: "Proxima Nova";
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.42px;
+  }
+
+  p{
+    color: #F4F4F4;
+    font-family: "Proxima Nova";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.32px;
+  }
+}
