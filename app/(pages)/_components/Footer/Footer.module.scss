@@ -4,13 +4,14 @@ $brand-icon-color: white;
 // css styling for the desktop view
 .container {
     width: 100%;
-    min-height: 188px;
+    min-height: 240px;
     display: flex;
     flex-direction: row;
     background: $footer-color;
     align-items: center;
     justify-content: space-around;
     padding-top: 30px;
+    padding-bottom: 20px;
     gap: 10px;
 
     .hackdavisLogo {
@@ -125,6 +126,7 @@ $brand-icon-color: white;
             font-size: 7px;
         }
     }
+    
     .arrowToTop {
         display: flex;
         flex-direction: row;
@@ -134,6 +136,7 @@ $brand-icon-color: white;
         cursor: pointer;
         transition: transform 0.2s ease-in-out;
         margin-left: 46vw;
+
         &:hover{
             transform: scale(1.1);
         }

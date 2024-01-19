@@ -19,10 +19,14 @@ const scrollToTop = () => {
 };
 
 export default function Footer() {
-  const [windowSize, setWindowSize] = useState(0);
-  useEffect(() => {
-    setWindowSize(window.innerWidth);
-  }, []);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  const handleResize = () => setWindowSize(window.innerWidth);
+
+  // useEffect(() => {
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
   if (windowSize < 750) {
     return <FooterMobile />;
