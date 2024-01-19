@@ -1,7 +1,8 @@
 .profile_card{
-  width: 100px;
-  height: 100px;
-  background-color: aliceblue;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
   h3{
     color: #F4F4F4;

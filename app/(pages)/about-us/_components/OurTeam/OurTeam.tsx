@@ -8,12 +8,12 @@ export default async function OurTeam() {
 
   return (
     <div className={styles.ourTeam}>
-      <div className={styles.container}>
-        <div className={styles.title}>
+      <div className={styles.ourTeam_container}>
+        <div className={styles.ourTeam_container_title}>
           <h1>Get to know our team</h1>
           <p>HackDavis is built by students, for students.</p>
         </div>
-        <div className={styles.team}>
+        <div className={styles.ourTeam_container_team}>
           {team_members.map((member) => {
             return (
               <ProfileCard
@@ -21,12 +21,11 @@ export default async function OurTeam() {
                 name={member.name}
                 title={member.position}
                 imageUrl={member.profileImageUrl}
-              ></ProfileCard>
+              />
             );
           })}
           ;
         </div>
-        {/* <ProfileCard name="Amanda" title="Co-Director" /> */}
       </div>
     </div>
   );
