@@ -10,7 +10,7 @@
     .duckWithBunny {
         position: absolute;
         top: 283px; /* Adjust the top distance */
-        left: 175px; /* Adjust the left distance */
+        left: 12vw; /* Adjust the left distance */
 
         .bunny {
             position: absolute;
@@ -29,7 +29,7 @@
     .frog {
         position: absolute;
         top: 110px;
-        right: 120px;
+        right: 8vw;
         animation: moveUpDown 12s infinite alternate ease-out;
     }
     
@@ -48,6 +48,7 @@
         justify-content: center;
         align-items: center;
         gap: 48px;
+        width: 766px;
 
         .text {
             color: #F4F4F4;
