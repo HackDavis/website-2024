@@ -75,14 +75,14 @@ export default function OurTeam() {
           </div>
           <div
             className={`${styles.ourTeam_container_filterButtons_button} ${
-              activeTeam === 'Sponsorship' ? styles.active : ''
+              activeTeam === 'Sponsorship/Finance' ? styles.active : ''
             }`}
             onClick={async () => {
-              setActiveTeam('Sponsorship');
-              setTeamMembers(await filterTeam('Sponsorship', 2024));
+              setActiveTeam('Sponsorship/Finance');
+              setTeamMembers(await filterTeam('Sponsorship/Finance', 2024));
             }}
           >
-            <p>Sponsorship</p>
+            <p>Sponsorship/Finance</p>
           </div>
           <div
             className={`${styles.ourTeam_container_filterButtons_button} ${
