@@ -14,7 +14,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ name, title, imageUrl }) => {
         alt={name}
         height={235}
         width={235}
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: 'cover', borderRadius: 11 }}
       />
       <h3>{name}</h3>
       <p>{title}</p>
