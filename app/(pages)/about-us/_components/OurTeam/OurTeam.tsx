@@ -13,7 +13,7 @@ type TeamMember = {
 
 export default function OurTeam() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
-  const [activeTeam, setActiveTeam] = useState<string | null>(null);
+  const [activeTeam, setActiveTeam] = useState<string | null>('Design');
 
   useEffect(() => {
     async function loadInitialTeam() {

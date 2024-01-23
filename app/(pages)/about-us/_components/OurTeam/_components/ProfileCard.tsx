@@ -11,7 +11,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ name, title, imageUrl }) => {
     <div className={styles.profile_card}>
       <Image
         src={imageUrl ?? '/index/city.jpg'}
-        alt="tempPhoto"
+        alt={name}
         height={235}
         width={235}
         style={{ objectFit: 'cover' }}
