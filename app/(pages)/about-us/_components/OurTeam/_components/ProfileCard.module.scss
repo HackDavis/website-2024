@@ -1,3 +1,5 @@
+$imgSize: 235px;
+
 .profile_card{
   background-color: transparent;
   display: flex;
@@ -5,7 +7,7 @@
   gap: 8px;
   // border-radius: 11px;
   // border: 1px solid black;
-  justify-content: center;
+  // justify-content: center;
 
   h3{
     color: #F4F4F4;
@@ -26,5 +28,15 @@
     font-weight: 500;
     line-height: normal;
     letter-spacing: 0.32px;
+  }
+  &_linkedIn{
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: opacity 300ms ease-in-out;
+    z-index: 100;
+    width: $imgSize;
+    height: $imgSize;
+    justify-content: center;
   }
 }
