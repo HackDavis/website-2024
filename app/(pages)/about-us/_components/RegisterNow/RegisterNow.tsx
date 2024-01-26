@@ -29,10 +29,10 @@ export default function RegisterNow() {
       </div>
 
       <Image
-        src="/registerNow/frog.svg"
+        src="/registerNow/Froggy.png"
         alt="hackdavis Logo"
-        width={152}
-        height={152}
+        width={232.115}
+        height={378.818}
         className={styles.frog}
       />
     </div>
