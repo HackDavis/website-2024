@@ -70,9 +70,10 @@ $brand-icon-color: white;
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
     // css styling for mobile view
 .container {
+    position: relative;
     width: 100%;
     min-height: 188px;
     display: flex;
@@ -89,6 +90,7 @@ $brand-icon-color: white;
         flex-direction: row;
         align-items: center;
         gap: 23.48px;
+        margin-top: 30px;
     }
 
     .socialContent {
@@ -128,6 +130,9 @@ $brand-icon-color: white;
     }
     
     .arrowToTop {
+        position: absolute;
+        top: 28px;
+        right: 31px;
         display: flex;
         flex-direction: row;
         color:white;
@@ -135,7 +140,7 @@ $brand-icon-color: white;
         align-items: center;
         cursor: pointer;
         transition: transform 0.2s ease-in-out;
-        margin-left: 46vw;
+        font-size: 1px;
 
         &:hover{
             transform: scale(1.1);
