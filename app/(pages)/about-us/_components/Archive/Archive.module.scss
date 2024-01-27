@@ -5,23 +5,57 @@
     white-space: nowrap;
     overflow-x: hidden;
     width: 100%;
-    //justify-content: center;
+    justify-content: center;
     align-items: center;
+    height: 556px;
+    gap: 60px;
 
+    .topLine {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 75vw;
+
+        .text {
+            color: #123041;
+            font-family: "Proxima Nova";
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.96px;
+            width: 598px;
+        }
+        .arrowContainer {
+            display: flex;
+            flex-direction: row;
+            width: 120px;
+            height: 48px;
+            flex-shrink: 0;
+            justify-content: space-between;
+        }
+    }
+    .carousel {
+        display: flex;
+        width: 75vw;
+    }
     .folder {
         transition: transform 0.5s ease;
         margin-right: 32px;
+        user-select: none; // prevents the folders from getting highlighted on double click
     }
 
     .bar {
-        width: 1080px;
+        width: 75vw;
+        //max-width: 1080px;
         height: 6px;
         background:  #B3B3B3;
         border-radius: 10px;
     }
 
     .progress {
-        width: 187px;
+        width: 13vw;
         height: 6px;
         background:  #005271;
         border-radius: 10px;
