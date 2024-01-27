@@ -78,9 +78,13 @@ $bg-color: #123041;
 
         &_filterButtons{
             display: flex;
+            flex-wrap: wrap;
             flex-direction: row;
+            justify-content: start;
+            align-items: center;
             gap: 16px;
             margin-bottom: 48px;
+            // border: 1px solid black;
 
             &_button{
                 display: flex;
