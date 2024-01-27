@@ -93,7 +93,7 @@ export default function Footer() {
         </p>
       </div>
       <div className={styles.arrowToTop} onClick={scrollToTop}>
-        <p>BACK TO TOP</p>
+        <p className={styles.backToTopText}>BACK TO TOP</p>
         <Image
           src="/Footer/arrowUp.svg"
           alt="hackdavis name and motto"

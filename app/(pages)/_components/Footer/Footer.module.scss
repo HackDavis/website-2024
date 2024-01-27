@@ -64,8 +64,13 @@ $brand-icon-color: white;
         align-items: center;
         cursor: pointer;
         transition: transform 0.2s ease-in-out;
+
         &:hover{
             transform: scale(1.1);
+        }
+
+        .backToTopText {
+            font-size: 16px;
         }
     }
 }
@@ -144,6 +149,10 @@ $brand-icon-color: white;
 
         &:hover{
             transform: scale(1.1);
+        }
+
+        .backToTopText {
+            font-size: 12px;
         }
     }
 }
