@@ -2,7 +2,7 @@
 import ProfileCard from './_components/ProfileCard';
 import styles from './OurTeam.module.scss';
 import { useState, useEffect } from 'react';
-import { filterTeam, getTeamMembers } from './_components/filterTeam';
+import { filterTeam } from './_components/filterTeam';
 
 type TeamMember = {
   id: number;
@@ -115,6 +115,7 @@ export default function OurTeam() {
                 name={member.name}
                 title={member.position}
                 imageUrl={member.profileImageUrl}
+                linkedInUrl="https://www.linkedin.com/in/teeranade-cheng"
               />
             );
           })}

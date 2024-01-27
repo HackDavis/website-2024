@@ -8,7 +8,7 @@ export async function filterTeam(team: string, year: number) {
       year: year,
     },
   });
-  console.log(team_members);
+  // console.log(team_members);
   return team_members;
 }
 

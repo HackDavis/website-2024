@@ -18,25 +18,33 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
-      className={styles.profile_card}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Image
-        src={imageUrl ?? '/index/city.jpg'}
-        alt={name}
-        height={235}
-        width={235}
-        style={{ objectFit: 'cover', borderRadius: 11 }}
-      />
-      {isHovered && ( // show LinkedIn icon on hover
-        <div className={styles.profile_card_linkedIn}>
+    <div className={styles.profile_card}>
+      <div
+        className={styles.profile_card_image}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <Image
+          src={imageUrl}
+          alt={name}
+          layout="fill"
+          className={styles.profile_card_image_image}
+          style={{ objectFit: 'cover', borderRadius: 11 }}
+        />
+        <div
+          className={`${styles.profile_card_image_hover} ${
+            isHovered ? styles.visible : ''
+          }`}
+        >
           <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={60} />
+            <FaLinkedin
+              size={60}
+              className={styles.profile_card_image_linkedIn_icon}
+              color="white"
+            />
           </a>
         </div>
-      )}
+      </div>
       <h3>{name}</h3>
       <p>{title}</p>
     </div>
