@@ -30,6 +30,8 @@ export default function Archive() {
   const [leftArrowColor, setLeftArrowColor] = useState(allArrowColors.gray);
   const [rightArrowColor, setRightArrowColor] = useState(allArrowColors.blue);
 
+  const [scrollIndexFolders, setScrollIndexFolders] = useState(0);
+
   let viewportWidth = 0;
 
   if (typeof window !== 'undefined') {
@@ -40,7 +42,8 @@ export default function Archive() {
   // was orginally 127.5 as a fixed pixel value
   // 75% of the vw is how long the progress bar is
   // 127.5 was 12% of the progress bar, so find 12% of it
-  let pixelValue = (75 * viewportWidth) / 100;
+
+  let pixelValue = Math.min(1080, (75 * viewportWidth) / 100);
   pixelValue = (12 * pixelValue) / 100;
 
   // each element will move by this amount each time an arrow is hit
@@ -79,6 +82,9 @@ export default function Archive() {
     setScrollPosition(
       Math.max(mostLeftScrollPosition, scrollPosition - scrollDistance)
     );
+
+    setScrollIndexFolders(Math.max(-7, scrollIndexFolders - 1));
+    console.log(scrollIndexFolders);
   };
 
   // used to make the folders move right when the user hits LEFT arrow
@@ -86,6 +92,9 @@ export default function Archive() {
     setScrollPosition(
       Math.min(mostRightScrollPosition, scrollPosition + scrollDistance)
     );
+
+    setScrollIndexFolders(Math.min(0, scrollIndexFolders + 1));
+    console.log(scrollIndexFolders);
   };
 
   /*
@@ -121,7 +130,7 @@ export default function Archive() {
             width={247}
             height={206}
             style={{
-              transform: `translateX(${scrollPosition + startScroll}px)`,
+              transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
             }}
           />
         </div>
@@ -131,7 +140,9 @@ export default function Archive() {
           alt="thing"
           width={247}
           height={206}
-          style={{ transform: `translateX(${scrollPosition + startScroll}px)` }}
+          style={{
+            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+          }}
         />
         <Image
           className={styles.folder}
@@ -139,7 +150,9 @@ export default function Archive() {
           alt="thing"
           width={247}
           height={206}
-          style={{ transform: `translateX(${scrollPosition + startScroll}px)` }}
+          style={{
+            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+          }}
         />
         <Image
           className={styles.folder}
@@ -147,7 +160,9 @@ export default function Archive() {
           alt="thing"
           width={247}
           height={206}
-          style={{ transform: `translateX(${scrollPosition + startScroll}px)` }}
+          style={{
+            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+          }}
         />
         <Image
           className={styles.folder}
@@ -155,7 +170,9 @@ export default function Archive() {
           alt="thing"
           width={247}
           height={206}
-          style={{ transform: `translateX(${scrollPosition + startScroll}px)` }}
+          style={{
+            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+          }}
         />
         <Image
           className={styles.folder}
@@ -163,7 +180,9 @@ export default function Archive() {
           alt="thing"
           width={247}
           height={206}
-          style={{ transform: `translateX(${scrollPosition + startScroll}px)` }}
+          style={{
+            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+          }}
         />
         <Image
           className={styles.folder}
@@ -171,7 +190,9 @@ export default function Archive() {
           alt="thing"
           width={247}
           height={206}
-          style={{ transform: `translateX(${scrollPosition + startScroll}px)` }}
+          style={{
+            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+          }}
         />
       </div>
 
