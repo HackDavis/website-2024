@@ -2,12 +2,12 @@
 import ProfileCard from './_components/ProfileCard';
 import styles from './OurTeam.module.scss';
 import { useState, useEffect } from 'react';
-import { filterTeam } from './_components/filterTeam';
+import { filterTeamMongo } from '@/app/(api)/_actions/teamMembers/filterTeamMongo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 type TeamMember = {
-  id: number;
+  id: string;
   name: string;
   position: string;
   profileImageUrl: string;
@@ -20,11 +20,8 @@ export default function OurTeam() {
 
   useEffect(() => {
     async function loadInitialTeam() {
-      // Make sure to handle any potential errors with try/catch
-      const initialTeam = await filterTeam('Design', 2024);
+      const initialTeam = await filterTeamMongo('Design', 2024);
       if (initialTeam) {
-        // Ensure the response is an array before setting the state
-        // console.log(initialTeam);
         setTeamMembers(initialTeam);
       }
     }
@@ -57,7 +54,7 @@ export default function OurTeam() {
             }`}
             onClick={async () => {
               setActiveTeam('Design');
-              setTeamMembers(await filterTeam('Design', 2024));
+              setTeamMembers(await filterTeamMongo('Design', 2024));
             }}
           >
             <p>Design</p>
@@ -68,7 +65,7 @@ export default function OurTeam() {
             }`}
             onClick={async () => {
               setActiveTeam('Technical');
-              setTeamMembers(await filterTeam('Technical', 2024));
+              setTeamMembers(await filterTeamMongo('Technical', 2024));
             }}
           >
             <p>Technical</p>
@@ -79,7 +76,7 @@ export default function OurTeam() {
             }`}
             onClick={async () => {
               setActiveTeam('Marketing');
-              setTeamMembers(await filterTeam('Marketing', 2024));
+              setTeamMembers(await filterTeamMongo('Marketing', 2024));
             }}
           >
             <p>Marketing</p>
@@ -90,7 +87,9 @@ export default function OurTeam() {
             }`}
             onClick={async () => {
               setActiveTeam('Sponsorship/Finance');
-              setTeamMembers(await filterTeam('Sponsorship/Finance', 2024));
+              setTeamMembers(
+                await filterTeamMongo('Sponsorship/Finance', 2024)
+              );
             }}
           >
             <p>Sponsorship/Finance</p>
@@ -101,7 +100,7 @@ export default function OurTeam() {
             }`}
             onClick={async () => {
               setActiveTeam('External');
-              setTeamMembers(await filterTeam('External', 2024));
+              setTeamMembers(await filterTeamMongo('External', 2024));
             }}
           >
             <p>External</p>
@@ -112,7 +111,7 @@ export default function OurTeam() {
             }`}
             onClick={async () => {
               setActiveTeam('Operations');
-              setTeamMembers(await filterTeam('Operations', 2024));
+              setTeamMembers(await filterTeamMongo('Operations', 2024));
             }}
           >
             <p>Operations</p>
