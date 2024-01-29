@@ -3,6 +3,8 @@ import ProfileCard from './_components/ProfileCard';
 import styles from './OurTeam.module.scss';
 import { useState, useEffect } from 'react';
 import { filterTeam } from './_components/filterTeam';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 type TeamMember = {
   id: number;
@@ -13,20 +15,17 @@ type TeamMember = {
 
 export default function OurTeam() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [activeYear, setActiveYear] = useState<number>(2024); // [2022, 2023, 2024
   const [activeTeam, setActiveTeam] = useState<string | null>('Design');
 
   useEffect(() => {
     async function loadInitialTeam() {
       // Make sure to handle any potential errors with try/catch
-      try {
-        const initialTeam = await filterTeam('Design', 2024);
-        if (initialTeam) {
-          // Ensure the response is an array before setting the state
-          console.log(initialTeam);
-          setTeamMembers(initialTeam);
-        }
-      } catch (error) {
-        console.error('Failed to load initial team:', error);
+      const initialTeam = await filterTeam('Design', 2024);
+      if (initialTeam) {
+        // Ensure the response is an array before setting the state
+        // console.log(initialTeam);
+        setTeamMembers(initialTeam);
       }
     }
     loadInitialTeam();
@@ -40,6 +39,18 @@ export default function OurTeam() {
           <p>HackDavis is built by students, for students.</p>
         </div>
         <div className={styles.ourTeam_container_filterButtons}>
+          <div
+            className={`${styles.ourTeam_container_filterButtons_button} ${
+              activeYear === 2024 ? styles.active : ''
+            }`}
+            onClick={async () => {
+              // setActiveTeam('Design');
+              // setTeamMembers(await filterTeam('Design', 2024));
+            }}
+          >
+            <p>2024</p>
+            <FontAwesomeIcon icon={faAngleDown} size="1x" />
+          </div>
           <div
             className={`${styles.ourTeam_container_filterButtons_button} ${
               activeTeam === 'Design' ? styles.active : ''
