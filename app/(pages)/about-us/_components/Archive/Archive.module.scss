@@ -56,10 +56,60 @@
 
     .progress {
         width: 13vw;
+        max-width: 187px;
         height: 6px;
         background:  #005271;
         border-radius: 10px;
         position: absolute;
         transition: transform 0.5s ease;
     }
+    .mobileProgressBar {
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        gap: 22px;
+
+        .bar {
+            width: 53vw;
+        }
+    }
 }
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        height: 650px;
+
+        .topLine {
+            .arrowContainer {
+                display: none;
+            }
+            .text {
+                width: 311px;
+                height: 96px;
+                text-wrap: wrap;
+
+                color: #123041;
+                font-family: "Proxima Nova";
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 0.96px;
+            }
+        }
+        .bar {
+            display: none;
+        }
+
+        .mobileProgressBar {
+            display: flex;
+            .bar {
+                display: flex;
+            }
+            .progress {
+                width: 7vw;
+            }
+        }
+    }
+  }

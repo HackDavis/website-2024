@@ -43,22 +43,37 @@ export default function Archive() {
   // 75% of the vw is how long the progress bar is
   // 127.5 was 12% of the progress bar, so find 12% of it
 
-  let pixelValue = Math.min(1080, (75 * viewportWidth) / 100);
-  pixelValue = (12 * pixelValue) / 100;
+  let pixelValue = 0;
+  let scrollDistance = 0;
+  let pixelValue2 = 0;
 
-  // each element will move by this amount each time an arrow is hit
-  const scrollDistance = pixelValue; // was 127.57
+  if (viewportWidth > 768) {
+    pixelValue = Math.min(1080, (75 * viewportWidth) / 100);
+    pixelValue = (12 * pixelValue) / 100;
 
-  // adjustment thats added to get the folders at the right horizontal alignment at the start
-  const startScroll = 0;
+    // each element will move by this amount each time an arrow is hit
+    scrollDistance = pixelValue; // was 127.57
+  } else {
+    pixelValue = (53 * viewportWidth) / 100;
+    pixelValue = (12.5 * pixelValue) / 100;
 
-  // this is the furthest left we can move the folders
-  // based off the math it was 62% of vw
-  const pixelValue2 = (62 * viewportWidth) / 100;
+    // each element will move by this amount each time an arrow is hit
+    scrollDistance = pixelValue; // was 127.57
+  }
+
+  if (viewportWidth > 768) {
+    // this is the furthest left we can move the folders
+    // based off the math it was 62% of vw
+    pixelValue2 = (62 * viewportWidth) / 100;
+  } else {
+    pixelValue2 = (46 * viewportWidth) / 100;
+  }
+
   const mostLeftScrollPosition = -pixelValue2;
-
   // this is the furthest right we can move the folders (starts like this)
-  const mostRightScrollPosition = 0;
+  const mostRightScrollPosition = 0; // confirmed to always work
+
+  const folderScrollDistance = 247;
 
   // this useEffect checks to see if we need to change the colors of the buttons
   useEffect(() => {
@@ -84,7 +99,7 @@ export default function Archive() {
     );
 
     setScrollIndexFolders(Math.max(-7, scrollIndexFolders - 1));
-    console.log(scrollIndexFolders);
+    console.log(scrollPosition);
   };
 
   // used to make the folders move right when the user hits LEFT arrow
@@ -94,7 +109,7 @@ export default function Archive() {
     );
 
     setScrollIndexFolders(Math.min(0, scrollIndexFolders + 1));
-    console.log(scrollIndexFolders);
+    console.log(scrollPosition);
   };
 
   /*
@@ -111,11 +126,11 @@ export default function Archive() {
       <div className={styles.topLine}>
         <p className={styles.text}>From the archive</p>
         <div className={styles.arrowContainer}>
-          <div onClick={moveItemsRight}>
+          <div className={styles.leftArrow} onClick={moveItemsRight}>
             <LeftArrow arrowColors={leftArrowColor} />
           </div>
 
-          <div onClick={moveItemsLeft}>
+          <div className={styles.rightArrow} onClick={moveItemsLeft}>
             <RightArrow arrowColors={rightArrowColor} />
           </div>
         </div>
@@ -130,7 +145,9 @@ export default function Archive() {
             width={247}
             height={206}
             style={{
-              transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+              transform: `translateX(${
+                0 + scrollIndexFolders * folderScrollDistance
+              }px)`,
             }}
           />
         </div>
@@ -141,7 +158,9 @@ export default function Archive() {
           width={247}
           height={206}
           style={{
-            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+            transform: `translateX(${
+              0 + scrollIndexFolders * folderScrollDistance
+            }px)`,
           }}
         />
         <Image
@@ -151,7 +170,9 @@ export default function Archive() {
           width={247}
           height={206}
           style={{
-            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+            transform: `translateX(${
+              0 + scrollIndexFolders * folderScrollDistance
+            }px)`,
           }}
         />
         <Image
@@ -161,7 +182,9 @@ export default function Archive() {
           width={247}
           height={206}
           style={{
-            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+            transform: `translateX(${
+              0 + scrollIndexFolders * folderScrollDistance
+            }px)`,
           }}
         />
         <Image
@@ -171,7 +194,9 @@ export default function Archive() {
           width={247}
           height={206}
           style={{
-            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+            transform: `translateX(${
+              0 + scrollIndexFolders * folderScrollDistance
+            }px)`,
           }}
         />
         <Image
@@ -181,7 +206,9 @@ export default function Archive() {
           width={247}
           height={206}
           style={{
-            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+            transform: `translateX(${
+              0 + scrollIndexFolders * folderScrollDistance
+            }px)`,
           }}
         />
         <Image
@@ -191,7 +218,9 @@ export default function Archive() {
           width={247}
           height={206}
           style={{
-            transform: `translateX(${0 + scrollIndexFolders * 247}px)`,
+            transform: `translateX(${
+              0 + scrollIndexFolders * folderScrollDistance
+            }px)`,
           }}
         />
       </div>
@@ -201,6 +230,24 @@ export default function Archive() {
           className={styles.progress}
           style={{ transform: `translateX(${scrollPosition * -1}px)` }}
         ></div>
+      </div>
+
+      {/*used for mobile progress bar */}
+      <div className={styles.mobileProgressBar}>
+        <div className={styles.leftArrow} onClick={moveItemsRight}>
+          <LeftArrowMobile arrowColors={leftArrowColor} />
+        </div>
+
+        <div className={styles.bar}>
+          <div
+            className={styles.progress}
+            style={{ transform: `translateX(${scrollPosition * -1}px)` }}
+          ></div>
+        </div>
+
+        <div className={styles.rightArrow} onClick={moveItemsLeft}>
+          <RightArrowMobile arrowColors={rightArrowColor} />
+        </div>
       </div>
     </div>
   );
@@ -242,6 +289,65 @@ function RightArrow(props: { arrowColors: arrowColors }) {
         xmlns="http://www.w3.org/2000/svg"
         width="48"
         height="48"
+        viewBox="0 0 34 35"
+        fill="none"
+      >
+        <circle
+          cx="17"
+          cy="17"
+          r="16.5"
+          transform="matrix(-1 0 0 1 34 0.0136719)"
+          fill={props.arrowColors.circleFill}
+          stroke={props.arrowColors.circleStroke}
+        />
+        <path
+          d="M15 12.0137L20 16.2994L15 21.0137"
+          stroke={props.arrowColors.pathStroke}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
+function LeftArrowMobile(props: { arrowColors: arrowColors }) {
+  return (
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="34"
+        height="34"
+        viewBox="0 0 34 34"
+        fill="none"
+      >
+        <circle
+          cx="17"
+          cy="17"
+          r="16.5"
+          fill={props.arrowColors.circleFill}
+          stroke={props.arrowColors.circleStroke}
+        />
+        <path
+          d="M19 12L14 16.2857L19 21"
+          stroke={props.arrowColors.pathStroke}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
+function RightArrowMobile(props: { arrowColors: arrowColors }) {
+  return (
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="34"
+        height="34"
         viewBox="0 0 34 35"
         fill="none"
       >
