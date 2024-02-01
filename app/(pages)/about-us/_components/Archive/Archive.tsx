@@ -100,7 +100,6 @@ export default function Archive() {
     );
 
     setScrollIndexFolders(Math.max(-7, scrollIndexFolders - 1));
-    console.log(scrollPosition);
   };
 
   // used to make the folders move right when the user hits LEFT arrow
@@ -110,7 +109,6 @@ export default function Archive() {
     );
 
     setScrollIndexFolders(Math.min(0, scrollIndexFolders + 1));
-    console.log(scrollPosition);
   };
 
   /*
@@ -121,7 +119,6 @@ export default function Archive() {
   ****IMPORTANT****
   */
 
-  // alert(scrollPosition);
   return (
     <div className={styles.container}>
       <div className={styles.topLine}>
@@ -143,12 +140,12 @@ export default function Archive() {
             className={styles.folder}
             src="/archive/2023.png"
             alt="thing"
-            loading="lazy"
+            priority={true}
             width={247}
             height={206}
             style={{
               transform: `translateX(${
-                0 + scrollIndexFolders * folderScrollDistance
+                scrollIndexFolders * folderScrollDistance
               }px)`,
             }}
           />
@@ -164,7 +161,7 @@ export default function Archive() {
             height={206}
             style={{
               transform: `translateX(${
-                0 + scrollIndexFolders * folderScrollDistance
+                scrollIndexFolders * folderScrollDistance
               }px)`,
             }}
           />
@@ -180,7 +177,7 @@ export default function Archive() {
             height={206}
             style={{
               transform: `translateX(${
-                0 + scrollIndexFolders * folderScrollDistance
+                scrollIndexFolders * folderScrollDistance
               }px)`,
             }}
           />
@@ -196,7 +193,7 @@ export default function Archive() {
             height={206}
             style={{
               transform: `translateX(${
-                0 + scrollIndexFolders * folderScrollDistance
+                scrollIndexFolders * folderScrollDistance
               }px)`,
             }}
           />
@@ -212,7 +209,7 @@ export default function Archive() {
             height={206}
             style={{
               transform: `translateX(${
-                0 + scrollIndexFolders * folderScrollDistance
+                scrollIndexFolders * folderScrollDistance
               }px)`,
             }}
           />
@@ -228,7 +225,7 @@ export default function Archive() {
             height={206}
             style={{
               transform: `translateX(${
-                0 + scrollIndexFolders * folderScrollDistance
+                scrollIndexFolders * folderScrollDistance
               }px)`,
             }}
           />
@@ -244,7 +241,7 @@ export default function Archive() {
             height={206}
             style={{
               transform: `translateX(${
-                0 + scrollIndexFolders * folderScrollDistance
+                scrollIndexFolders * folderScrollDistance
               }px)`,
             }}
           />
