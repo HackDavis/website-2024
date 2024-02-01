@@ -1,6 +1,7 @@
 'use client';
 import styles from './Archive.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 type arrowColors = {
@@ -137,11 +138,12 @@ export default function Archive() {
       </div>
 
       <div className={styles.carousel}>
-        <div>
+        <Link href="https://2023.hackdavis.io/">
           <Image
             className={styles.folder}
             src="/archive/2023.png"
             alt="thing"
+            loading="lazy"
             width={247}
             height={206}
             style={{
@@ -150,79 +152,103 @@ export default function Archive() {
               }px)`,
             }}
           />
-        </div>
-        <Image
-          className={styles.folder}
-          src="/archive/2022.png"
-          alt="thing"
-          width={247}
-          height={206}
-          style={{
-            transform: `translateX(${
-              0 + scrollIndexFolders * folderScrollDistance
-            }px)`,
-          }}
-        />
-        <Image
-          className={styles.folder}
-          src="/archive/2021.png"
-          alt="thing"
-          width={247}
-          height={206}
-          style={{
-            transform: `translateX(${
-              0 + scrollIndexFolders * folderScrollDistance
-            }px)`,
-          }}
-        />
-        <Image
-          className={styles.folder}
-          src="/archive/2020.png"
-          alt="thing"
-          width={247}
-          height={206}
-          style={{
-            transform: `translateX(${
-              0 + scrollIndexFolders * folderScrollDistance
-            }px)`,
-          }}
-        />
-        <Image
-          className={styles.folder}
-          src="/archive/2019.png"
-          alt="thing"
-          width={247}
-          height={206}
-          style={{
-            transform: `translateX(${
-              0 + scrollIndexFolders * folderScrollDistance
-            }px)`,
-          }}
-        />
-        <Image
-          className={styles.folder}
-          src="/archive/2018.png"
-          alt="thing"
-          width={247}
-          height={206}
-          style={{
-            transform: `translateX(${
-              0 + scrollIndexFolders * folderScrollDistance
-            }px)`,
-          }}
-        />
-        <Image
-          className={styles.folder}
-          src="/archive/2017.png"
-          alt="thing"
-          width={247}
-          height={206}
-          style={{
-            transform: `translateX(${
-              0 + scrollIndexFolders * folderScrollDistance
-            }px)`,
-          }}
-        />
+        </Link>
+
+        <Link href="https://2022.hackdavis.io/">
+          <Image
+            className={styles.folder}
+            src="/archive/2022.png"
+            alt="thing"
+            loading="lazy"
+            width={247}
+            height={206}
+            style={{
+              transform: `translateX(${
+                0 + scrollIndexFolders * folderScrollDistance
+              }px)`,
+            }}
+          />
+        </Link>
+
+        <Link href="https://2021.hackdavis.io/">
+          <Image
+            className={styles.folder}
+            src="/archive/2021.png"
+            alt="thing"
+            loading="lazy"
+            width={247}
+            height={206}
+            style={{
+              transform: `translateX(${
+                0 + scrollIndexFolders * folderScrollDistance
+              }px)`,
+            }}
+          />
+        </Link>
+
+        <Link href="https://2020.hackdavis.io/">
+          <Image
+            className={styles.folder}
+            src="/archive/2020.png"
+            alt="thing"
+            loading="lazy"
+            width={247}
+            height={206}
+            style={{
+              transform: `translateX(${
+                0 + scrollIndexFolders * folderScrollDistance
+              }px)`,
+            }}
+          />
+        </Link>
+
+        <Link href="https://2019.hackdavis.io/">
+          <Image
+            className={styles.folder}
+            src="/archive/2019.png"
+            alt="thing"
+            loading="lazy"
+            width={247}
+            height={206}
+            style={{
+              transform: `translateX(${
+                0 + scrollIndexFolders * folderScrollDistance
+              }px)`,
+            }}
+          />
+        </Link>
+
+        <Link href="https://2018.hackdavis.io/">
+          <Image
+            className={styles.folder}
+            src="/archive/2018.png"
+            alt="thing"
+            loading="lazy"
+            width={247}
+            height={206}
+            style={{
+              transform: `translateX(${
+                0 + scrollIndexFolders * folderScrollDistance
+              }px)`,
+            }}
+          />
+        </Link>
+
+        <Link href="https://2017.hackdavis.io/">
+          <Image
+            className={styles.folder}
+            src="/archive/2017.png"
+            alt="thing"
+            loading="lazy"
+            width={247}
+            height={206}
+            style={{
+              transform: `translateX(${
+                0 + scrollIndexFolders * folderScrollDistance
+              }px)`,
+            }}
+          />
+        </Link>
       </div>
 
       <div className={styles.bar}>
