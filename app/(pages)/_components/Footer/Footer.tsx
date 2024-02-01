@@ -34,7 +34,7 @@ export default function Footer() {
           alt="hackdavis name and motto"
           width={226}
           height={71.55}
-          className={styles.hdLogoWhite}
+          className={styles.hdMottoWhite}
         />
       </div>
       <div className={styles.socialContent}>
@@ -96,7 +96,7 @@ export default function Footer() {
         <p className={styles.backToTopText}>BACK TO TOP</p>
         <Image
           src="/Footer/arrowUp.svg"
-          alt="hackdavis name and motto"
+          alt="arrow up"
           width={24}
           height={24}
         />
