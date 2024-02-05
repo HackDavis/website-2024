@@ -1,52 +1,106 @@
-import Link from 'next/link';
+'use client';
 import styles from './Footer.module.scss';
-import type { NavLink } from '@data/navLinks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMedium,
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+  faDiscord,
+} from '@fortawesome/free-brands-svg-icons';
+import Image from 'next/image';
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
 
-export default function Footer({ navLinks }: { navLinks: NavLink[] }) {
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+export default function Footer() {
   return (
-    <div className={styles.container}>
-      <div className={styles.content_container}>
-        <div className={styles.description}>
-          <h2>Platform Team Demo</h2>
-          <p>
-            This footer was designed so that you can practice writing efficient
-            HTML/CSS while getting familiar with our codebase.
-          </p>
-        </div>
-        <div className={styles.navigation}>
-          <div className={styles.learn_more}>
-            <h2>Learn more</h2>
-            <div className={styles.learn_more_links}>
-              {navLinks.map((link) => {
-                return (
-                  <Link key={link.slug} href={link.slug}>
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-          <div className={styles.projects}>
-            <h2>Projects</h2>
-            <div className={styles.project_link_columns}>
-              <div>
-                {/* Should be done with a loop */}
-                <Link href="/project/1">Project 1</Link>
-                <Link href="/project/2">Project 2</Link>
-                <Link href="/project/3">Project 3</Link>
-              </div>
-              <div>
-                <Link href="/project/4">Project 4</Link>
-                <Link href="/project/5">Project 5</Link>
-                <Link href="/project/6">Project 6</Link>
-              </div>
-            </div>
-          </div>
-        </div>
+    <footer className={styles.container}>
+      <div className={styles.hackdavisLogo}>
+        <Image
+          src="/Footer/hdLogoWhite.svg"
+          alt="hackdavis Logo"
+          width={92.5}
+          height={92.7}
+          className={styles.hdLogoWhite}
+        />
+
+        <Image
+          src="/Footer/hdLogoMotto.svg"
+          alt="hackdavis name and motto"
+          width={226}
+          height={71.55}
+          className={styles.hdMottoWhite}
+        />
       </div>
-      <p className={styles.credit}>
-        Designed & develped with 🤍 by #include at Davis @2023
-      </p>
-    </div>
+      <div className={styles.socialContent}>
+        <div className={styles.brandIcons}>
+          <a className={styles.singleIcon} href="mailto:team@hackdavis.io">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
+          <a
+            className={styles.singleIcon}
+            href="https://medium.com/@HackDavis"
+            target="#"
+            rel="noopener noreferrer"
+            aria-label="@HackDavis on Medium"
+          >
+            <FontAwesomeIcon icon={faMedium} />
+          </a>
+          <a
+            className={styles.fbIcon}
+            href="https://www.facebook.com/HackDavis"
+            target="#"
+            rel="noopener noreferrer"
+            aria-label="HackDavis on Facebook"
+          >
+            <FontAwesomeIcon icon={faFacebookF} />
+          </a>
+          <a
+            className={styles.singleIcon}
+            href="https://twitter.com/hack_davis"
+            target="#"
+            rel="noopener noreferrer"
+            aria-label="@hack_davis on Twitter"
+          >
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a
+            className={styles.singleIcon}
+            href="https://www.instagram.com/hackdavis"
+            target="#"
+            rel="noopener noreferrer"
+            aria-label="@hackdavis on Instagram"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a
+            className={styles.singleIcon}
+            href="https://discord.gg/wc6QQEc"
+            target="#"
+            rel="noopener noreferrer"
+            aria-label="HackDavis Discord server"
+          >
+            <FontAwesomeIcon icon={faDiscord} />
+          </a>
+        </div>
+        <p className={styles.copyright}>
+          &copy; 2024 HackDavis • Made with ☕️ & 💛 in Davis
+        </p>
+      </div>
+      <div className={styles.arrowToTop} onClick={scrollToTop}>
+        <p className={styles.backToTopText}>BACK TO TOP</p>
+        <Image
+          src="/Footer/arrowUp.svg"
+          alt="arrow up"
+          width={24}
+          height={24}
+        />
+      </div>
+    </footer>
   );
 }
