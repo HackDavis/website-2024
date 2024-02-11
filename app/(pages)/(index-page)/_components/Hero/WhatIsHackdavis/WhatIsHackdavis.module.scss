@@ -1,0 +1,45 @@
+
+.container {
+    .logSection {
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow-x: hidden; 
+        width: 100vw;
+        height: 800px; // set height for container to make the log parts visible
+        margin-top: 100px;
+        
+        .logRight {
+            width: 140%; 
+            height: auto;
+            position: absolute;
+            top: 14%; 
+            z-index: 0;
+            padding-right: 300px;
+        }
+
+        .logLeft {
+            width: 51%; 
+            height: auto;
+            position: absolute;
+            top: 0%; 
+            left: 0%;
+            z-index: 1;
+
+        }
+    }
+    .frog {
+        position: absolute;
+        width: 500px; // Set desired width
+        height: 300px; // Set desired height
+        right: 61%;
+        top: 10%;
+    }
+    .rabbit {
+        position: absolute;
+        width: 500px; // Set desired width
+        height: 300px; // Set desired height
+        right: 50%;
+        top: 50%;
+    }
+}
