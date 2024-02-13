@@ -7,6 +7,17 @@ export default function WhatIsHackdavis() {
       <div className={styles.logSection}>
         <div>
           <Image
+            src="/index/whatIsHackdavis/log_layer0.png"
+            alt="serene forest scene in the night"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className={styles.logLayer0} // optional
+          />
+        </div>
+
+        {/* <div>
+          <Image
             src="/index/whatIsHackdavis/log_left-rock.png"
             alt="serene forest scene in the night"
             width={0}
@@ -25,7 +36,7 @@ export default function WhatIsHackdavis() {
             sizes="100vw"
             className={styles.logRight} // optional
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
