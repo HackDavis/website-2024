@@ -1,7 +1,112 @@
 .container {
-    
-    .middlePolaroid {
-        width: 10px;
-        height: auto;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(180deg, #347163 0%, #122537 92.85%);
+    height: max-content;
+    align-items: center;
+    justify-content: space-around;
+
+    .questionsText {
+        width: 667px;
+    }
+    .allPolaroids {
+        justify-content: flex-end;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 90px;
+        margin-bottom: 10px;
+
+        .backPolaroid {
+            width: 21vw; 
+            max-width: 570px;
+            height: auto; 
+            z-index: 0;
+            transform: rotate(7.1deg);
+            border: 2px solid black; /* 2px solid black border */
+        }
+        .middlePolaroid {
+            width: 21vw;
+            max-width: 570px; 
+            height: auto; 
+            z-index: 1;
+            transform: rotate(-5.16deg);
+            margin-right: 7vw;
+            border: 2px solid black; /* 2px solid black border */
+        }
+        .frontPolaroid {
+            width: 21vw;
+            max-width: 570px; 
+            height: auto; 
+            z-index: 2;
+            margin-top: -1vw;
+            border: 2px solid black; /* 2px solid black border */
+        }
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .allPolaroids {
+            .backPolaroid {
+                width: 21vw;
+                height: auto; 
+                z-index: 0;
+                transform: rotate(7.1deg);
+                margin-right: -18vw;
+                margin-bottom: -14vw;
+            }
+            .middlePolaroid {
+                width: 21vw; 
+                height: auto; 
+                z-index: 1;
+                transform: rotate(-5.16deg);
+                margin-right: 29vw;
+                margin-bottom: -16vw;
+            }
+            .frontPolaroid {
+                width: 21vw; 
+                height: auto; 
+                z-index: 2;
+                margin-top: -1vw;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .allPolaroids {
+            .backPolaroid {
+                width: 21vw; 
+                height: auto; 
+                z-index: 0;
+                transform: rotate(7.1deg);
+                margin-right: -4vw;
+                margin-bottom: -14vw;
+            }
+            .middlePolaroid {
+                width: 21vw; 
+                height: auto; 
+                z-index: 1;
+                transform: rotate(-5.16deg);
+                margin-right: 6vw;
+                margin-bottom: -9vw;
+            }
+            .frontPolaroid {
+                width: 21vw; 
+                height: auto; 
+                z-index: 2;
+                margin-top: -1vw;
+            }
+        }
     }
 }
