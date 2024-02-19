@@ -42,7 +42,7 @@ export default function Hero() {
           fill
           className={styles.grass_image}
           z-index={2}
-          style={{ border: '2px solid red', marginTop: '-23%' }}
+          style={{ marginTop: '-23%' }}
         />
         <Image
           src="/index/Hero/hero_mid-grass.png"
@@ -54,6 +54,16 @@ export default function Hero() {
         />
       </div>
       <div className={styles.characters}>
+        <div className={styles.characters_duck}>
+          <Image
+            src="/index/Hero/hero_duck.png"
+            alt="serene forest scene in the night"
+            fill
+            className={styles.characters_duck_image}
+            z-index={5}
+            style={{ border: '2px solid black' }}
+          />
+        </div>
         <div className={styles.characters_rabbit}>
           <Image
             src="/index/Hero/hero_rabbit.png"
@@ -64,16 +74,6 @@ export default function Hero() {
             style={{
               border: '2px solid black',
             }}
-          />
-        </div>
-        <div className={styles.characters_duck}>
-          <Image
-            src="/index/Hero/hero_duck.png"
-            alt="serene forest scene in the night"
-            fill
-            className={styles.characters_duck_image}
-            z-index={4}
-            style={{ border: '2px solid black' }}
           />
         </div>
       </div>

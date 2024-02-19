@@ -53,10 +53,17 @@ $bg-color: #7ACCDA;
 }
 
 .characters{
+    display: flex;
+    border: 2px solid red;
+    width: fit-content;
+    height: fit-content;
+    z-index: 5;
+
     &_rabbit{
         display: flex;
-        position: absolute;
+        position: relative;
         width: 150px;
+        margin-left: -22%;
         // height: 70%;
     
         > div{
@@ -73,7 +80,7 @@ $bg-color: #7ACCDA;
     }
     &_duck{
         display: flex;
-        position: absolute;
+        position: relative;
         width: 300px;
     
         > div{
