@@ -1,0 +1,43 @@
+.characters{
+  display: flex;
+  border: 2px solid red;
+  width: fit-content;
+  height: fit-content;
+  z-index: 5;
+
+  &_rabbit{
+      display: flex;
+      position: relative;
+      width: 150px;
+      margin-left: -22%;
+      // height: 70%;
+  
+      > div{
+          position: unset !important;
+      }
+  
+      &_image{
+          object-fit: contain;
+          width: 100%;
+          position: relative;
+          height: unset !important;
+      }   
+  
+  }
+  &_duck{
+      display: flex;
+      position: relative;
+      width: 300px;
+  
+      > div{
+          position: unset !important;
+      }
+  
+      &_image{
+          object-fit: contain;
+          width: 100%;
+          position: relative;
+          height: unset !important;
+      }   
+  }
+}
