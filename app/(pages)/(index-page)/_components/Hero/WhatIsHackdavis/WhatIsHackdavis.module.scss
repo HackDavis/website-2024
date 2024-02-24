@@ -4,36 +4,106 @@
         position: relative;
         display: flex;
         align-items: center;
-        overflow-x: hidden; 
-        width: 100vw;
         height: 1000px; // set height for container to make the log parts visible
-        margin-top: 100px;
+        margin-top: 400px;
 
         .logLayer0 {
-            width: 100%; 
+            width: 52vw; 
             height: auto;
             position: absolute;
             z-index: 0;
-            top: 0%; 
+            top: -8%; 
+            left: 25%;
         }
 
-        .logRight {
-            width: 140%; 
+        .logLayer1Left {
+            width: 31vw; 
             height: auto;
             position: absolute;
-            top: 0%; 
             z-index: 1;
-            padding-right: 300px;
+            top: 0%; 
+            left: 19%;
+        }
+
+        .logLayer1Right {
+            width: 45vw; 
+            height: auto;
+            position: absolute;
+            z-index: 1;
+            top: 0%; 
+            right: 3%;
+        }
+
+        .logLayer2Left {
+            width: 31vw; 
+            height: auto;
+            position: absolute;
+            z-index: 2;
+            top: 8.5%; 
+            left: 17.5%;
+        }
+
+        .logLayer2Right {
+            width: 33vw; 
+            height: auto;
+            position: absolute;
+            z-index: 2;
+            top: -14%; 
+            right: 16.5%;
+        }
+
+        .logGingko {
+            width: 29vw; 
+            height: auto;
+            position: absolute;
+            z-index: 2;
+            top: -25%; 
+            right: 14%;
         }
 
         .logLeft {
-            width: 51%; 
+            width: 40vw; 
             height: auto;
             position: absolute;
             top: 0%; 
             left: 0%;
-            z-index: 2;
+            z-index: 3;
+        }
 
+        .logRight {
+            width: 87vw; 
+            height: auto;
+            position: absolute;
+            top: 0%; 
+            z-index: 2;
+            margin-left: 13vw;
+            margin-top: 70px;
+        }
+
+        .logWaterSheen {
+            width: 100vw; 
+            height: auto;
+            position: absolute;
+            bottom: 35%; 
+            z-index: 0;
+        }
+
+        .logRabbit {
+            width: 124.2px; 
+            height: auto;
+            position: absolute;
+            top: 4.6%; 
+            left: 51.5%;
+            z-index: 3;
+        }
+
+        .logFrog {
+            width: 111px; 
+            height: auto;
+            position: absolute;
+            top: 1%; 
+            left: 43%;
+            z-index: 3;
         }
     }
     .frog {
