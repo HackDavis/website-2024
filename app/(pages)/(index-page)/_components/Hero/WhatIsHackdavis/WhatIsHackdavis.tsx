@@ -12,18 +12,74 @@ export default function WhatIsHackdavis() {
             width={0}
             height={0}
             sizes="100vw"
-            className={styles.logLayer0} // optional
+            priority
+            className={styles.logLayer0}
           />
         </div>
 
-        {/* <div>
+        <div>
+          <Image
+            src="/index/whatIsHackdavis/log_layer1-left.png"
+            alt="serene forest scene in the night"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className={styles.logLayer1Left}
+          />
+        </div>
+
+        <div>
+          <Image
+            src="/index/whatIsHackdavis/log_layer1-right.png"
+            alt="serene forest scene in the night"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className={styles.logLayer1Right}
+          />
+        </div>
+
+        <div>
+          <Image
+            src="/index/whatIsHackdavis/log_layer2-left.png"
+            alt="serene forest scene in the night"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className={styles.logLayer2Left}
+          />
+        </div>
+
+        <div>
+          <Image
+            src="/index/whatIsHackdavis/log_layer2-right.png"
+            alt="serene forest scene in the night"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className={styles.logLayer2Right}
+          />
+        </div>
+
+        <div>
+          <Image
+            src="/index/whatIsHackdavis/log_gingko.png"
+            alt="serene forest scene in the night"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className={styles.logGingko}
+          />
+        </div>
+
+        <div>
           <Image
             src="/index/whatIsHackdavis/log_left-rock.png"
             alt="serene forest scene in the night"
             width={0}
             height={0}
             sizes="100vw"
-            className={styles.logLeft} // optional
+            className={styles.logLeft}
           />
         </div>
 
@@ -34,9 +90,42 @@ export default function WhatIsHackdavis() {
             width={0}
             height={0}
             sizes="100vw"
-            className={styles.logRight} // optional
+            className={styles.logRight}
           />
-        </div> */}
+        </div>
+
+        <div>
+          <Image
+            src="/index/whatIsHackdavis/log_water-sheen.png"
+            alt="serene forest scene in the night"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className={styles.logWaterSheen}
+          />
+        </div>
+
+        <div>
+          <Image
+            src="/index/whatIsHackdavis/log_rabbit.png"
+            alt="serene forest scene in the night"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className={styles.logRabbit}
+          />
+        </div>
+
+        <div>
+          <Image
+            src="/index/whatIsHackdavis/log_frog.png"
+            alt="serene forest scene in the night"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className={styles.logFrog}
+          />
+        </div>
       </div>
     </div>
   );
