@@ -5,12 +5,14 @@ import { useState, useEffect } from 'react';
 import { filterTeamMongo } from '@/app/(api)/_actions/teamMembers/filterTeamMongo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { Suspense } from 'react';
 
 type TeamMember = {
   id: string;
   name: string;
   position: string;
   profileImageUrl: string;
+  // linkedinURL: string;
 };
 
 export default function OurTeam() {
@@ -125,6 +127,7 @@ export default function OurTeam() {
                 name={member.name}
                 title={member.position}
                 imageUrl={member.profileImageUrl}
+                // linkedinURL={member.linkedinURL}
                 linkedInUrl="https://www.linkedin.com/in/teeranade-cheng"
               />
             );
