@@ -4,7 +4,7 @@ import Landing from './_components/Landing/Landing';
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ backgroundColor: 'white' }}>
       <Landing />
     <main>
       <Landing />
