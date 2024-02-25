@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { filterTeamMongo } from '@/app/(api)/_actions/teamMembers/filterTeamMongo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { Suspense } from 'react';
 
 type TeamMember = {
   id: string;
@@ -17,7 +16,7 @@ type TeamMember = {
 
 export default function OurTeam() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
-  const [activeYear, setActiveYear] = useState<number>(2024); // [2022, 2023, 2024
+  const [activeYear, _] = useState<number>(2024); // [2022, 2023, 2024
   const [activeTeam, setActiveTeam] = useState<string | null>('Design');
 
   useEffect(() => {
