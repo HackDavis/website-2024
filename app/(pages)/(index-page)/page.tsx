@@ -1,4 +1,4 @@
-import Clouds from './_components/Hero/Clouds';
+import Clouds from './_components/Clouds/Clouds';
 import Form from './_components/Form/Form';
 import Grass from './_components/Grass/Grass';
 import styles from './index.module.scss';

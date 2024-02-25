@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './Grass.module.scss';
+import Polaroids from '../Polaroids/Polaroids';
 import Foreground from '../Foreground/Foreground';
 
 export default function Grass() {
@@ -29,6 +30,9 @@ export default function Grass() {
       </div>
       <div className={styles.foreground}>
         <Foreground />
+      </div>
+      <div className={styles.polaroids}>
+        <Polaroids />
       </div>
     </div>
   );
