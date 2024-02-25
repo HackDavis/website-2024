@@ -14,6 +14,9 @@ export default function Foreground() {
                 width={4000}
                 height={100}
                 className={styles.foreground_characters_behind_duck_image}
+                priority={true}
+                placeholder="blur"
+                blurDataURL="/index/Hero/hero_duck.png"
               />
             </div>
             <div className={styles.foreground_characters_behind_rabbit}>
@@ -23,6 +26,9 @@ export default function Foreground() {
                 width={4000}
                 height={100}
                 className={styles.foreground_characters_behind_rabbit_image}
+                priority={true}
+                placeholder="blur"
+                blurDataURL="/index/Hero/hero_rabbit.png"
               />
             </div>
           </div>
@@ -34,6 +40,9 @@ export default function Foreground() {
                 width={4000}
                 height={100}
                 className={styles.foreground_characters_front_cowHead_image}
+                priority={true}
+                placeholder="blur"
+                blurDataURL="/index/Hero/hero_cow-head.png"
               />
             </div>
             <div className={styles.foreground_characters_front_cowBody}>
@@ -45,6 +54,9 @@ export default function Foreground() {
                   alt="serene forest scene in the night"
                   width={4000}
                   height={100}
+                  priority={true}
+                  placeholder="blur"
+                  blurDataURL="/index/Hero/hero_cow-cam.png"
                   className={
                     styles.foreground_characters_front_cowBody_cowCam_image
                   }
@@ -58,6 +70,9 @@ export default function Foreground() {
                   alt="serene forest scene in the night"
                   width={4000}
                   height={100}
+                  priority={true}
+                  placeholder="blur"
+                  blurDataURL="/index/Hero/hero_cow-torso.png"
                   className={
                     styles.foreground_characters_front_cowBody_cowTorso_image
                   }
@@ -74,6 +89,9 @@ export default function Foreground() {
           width={4000}
           height={100}
           className={styles.foreground_grass_image}
+          priority={true}
+          placeholder="blur"
+          blurDataURL="/index/Hero/hero_front-grass.png"
         />
       </div>
     </div>

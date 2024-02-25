@@ -1,104 +1,93 @@
 @use 'app/(pages)/_globals/mixins';
+$bg-color: #7ACCDA;
+.nav{
+    display: flex;
+    padding-top: 2rem;
+    gap: 1.5rem;
+    display: flex;
+    background-color: $bg-color;
+}
+.nav ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+  }
 
-$scale: 1.04;
-
-.relative_wrapper {
-    position: relative;
-    height: var(--navbar-height);
-    width: 100%;
+.nav li {
+    display: inline-block;
+  }
+.words{
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.025rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: text-decoration 0.2s; 
+}
+.words:hover {
+    text-decoration: underline; 
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-.container {
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    height: var(--navbar-height);
-    padding: 0 var(--medium-spacer);
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    background-color: var(--primary);
-
-    >h2 {
-        color: var(--text-light);
-    }
+.logo{
+    width: 3.125rem;
+    height: 3.13269rem;
 }
-
-.nav_container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.mlh_badge{
+    width: 4.31613rem;
+    height: 8.12475rem;
     flex-shrink: 0;
-    gap: var(--spacer);
-
-    .links {
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacer);
-        color: var(--text-light);
-
-        >* {
-            padding: var(--tiny-spacer);
-            @include mixins.tablet {
-                text-align: center;
-                padding: var(--small-spacer);
-            }
-        }
-
-        >*:hover {
-            transform: scale($scale);
-            @include mixins.tablet {
-                transform: none;
-                border-bottom: solid 2px var(--primary);
-            }
-        }
-
-        @include mixins.tablet {
-            position: absolute;
-            z-index: -1;
-            top: 100%;
-            left: 0;
-            right: 0;
-            height: 0;
-            overflow: hidden;
-            
-            flex-direction: column;
-            gap: 0;
-            background-color: var(--light-background);
-            color: var(--text-dark);
-
-            transition: all 0.25s ease-in;
-
-        }
+    margin-right: 4rem;
+    top:0;
+    right: 0;
+    position: absolute;
+    z-index: 10;
+}
+.h1{
+    place-content: center;
+    color: var(--teal-1, #005271);
+    text-align: center;
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.09rem;
+    margin: 0 0 3rem;
+    margin-top: 8.13rem;
+}
+.P{
+    flex-shrink: 0;
+    color: var(--teal-1, #005271);
+    text-align: center;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; 
+    letter-spacing: 0.05rem;
+    padding: 0 2%;
+}
+@media (min-width: 768px) { /* Adjust the breakpoint as needed */
+    .P {
+        padding: 0 15%; /* Increase padding for larger screens */
     }
-
-    @include mixins.tablet {
-        .links.active {
-            height: calc(100vh - var(--navbar-height));
-        }
+}
+@media (min-width: 1024px) { /* Adjust the breakpoint as needed */
+    .P {
+        padding: 0 20%; /* Increase padding for even larger screens */
     }
+}
 
-    .menu {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-
-        * {
-            color: var(--text-light);
-        }
-        @include mixins.tablet {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-
-    .menu:hover {
-        transform: scale($scale);
-    }
+.banner-image{
+    display: flex;
+    width: 51.5rem;
+    padding-right: 0.01475rem;
+    padding-top: 6.19rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; /* Add relative positioning to the <p> element */
 }
