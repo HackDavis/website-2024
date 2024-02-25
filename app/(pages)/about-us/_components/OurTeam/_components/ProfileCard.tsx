@@ -29,6 +29,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           alt={name}
           layout="fill"
           className={styles.profile_card_image_image}
+          placeholder="blur"
+          blurDataURL={imageUrl}
           style={{ objectFit: 'cover', borderRadius: 11 }}
         />
         <div

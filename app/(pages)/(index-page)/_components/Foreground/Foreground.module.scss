@@ -1,0 +1,122 @@
+.foreground{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: transparent;    
+    // border: 10px solid blue;
+
+    &_grass{
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 15;
+        
+        &_image{
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    }
+
+    &_container{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // border: 10px solid red;         
+
+    }
+
+    &_characters{
+        display: flex; 
+        flex-direction: column;
+        position: absolute;
+        z-index: 10;
+        margin-left: 40%; 
+        margin-top: 45%;
+
+        &_behind{
+            display: flex;
+            width: 50%;
+            // border: 1px solid blue;
+            margin-left: -25%;
+            &_duck{
+                // border: 1px solid red; 
+                z-index: 1;
+                &_image{
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                }
+            } 
+            &_rabbit{
+                // border: 1px solid black;
+                margin-left: -25%;
+                margin-top: -8%;
+                z-index: 0;
+                &_image{
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                }
+            }
+        }    
+        &_front{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            // border: 1px solid red; 
+            margin-top: -10%;
+            margin-left: 10%;
+
+           &_cowHead{
+                // border: 1px solid black; 
+                &_image{
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                }
+           } 
+
+           &_cowBody{
+                display: flex; 
+                justify-content: center;
+                align-items: center;
+                // flex-direction: row;
+                &_cowTorso{
+                    // border: 1px solid black;
+                    margin-left: 40%;
+                    margin-top: -8%;
+                    &_image{
+                        object-fit: contain;
+                        width: 60%;
+                        height: 100%;
+                        position: relative;
+                    }
+                } 
+                &_cowCam{
+                    z-index: 3;
+                    position: absolute;
+                    margin-top: -10%;
+                    margin-left: 8%;
+                    &_image{
+                        object-fit: contain;
+                        width: 60%;
+                        height: 100%;
+                        position: relative;
+                    }
+                } 
+           }
+        }
+    
+    }
+}

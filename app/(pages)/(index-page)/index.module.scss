@@ -1,0 +1,17 @@
+.clouds{
+  position: relative;
+  z-index: 1;
+}
+
+.grass{
+  position: relative;
+  z-index: 2;
+  margin-top: -13%;
+}
+
+.form{
+  position: absolute;
+  z-index: 13;
+  top: 30%;
+  left: 10%;
+}

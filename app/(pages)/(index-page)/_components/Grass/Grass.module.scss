@@ -1,0 +1,58 @@
+@use 'app/(pages)/_globals/mixins';
+$bg-color: #7ACCDA;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  background-color: transparent;
+  width: 100%;
+}
+.grass{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  &_far{
+    // border: 5px solid red; 
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    // margin-top: -10%;
+  }
+  
+  &_medium{
+    // border: 5px solid black;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 7%;
+  }
+
+}
+
+.grasses{
+  &_image{
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      position: relative;
+  }
+}
+
+.foreground{
+  margin-top: -20%;
+  // border: 10px solid red;
+}
+
+.polaroids{
+  z-index: 20;
+  margin-top: -25%; 
+}
