@@ -15,6 +15,7 @@ export default function Clouds() {
             // fill
             className={styles.clouds_image}
             z-index={0}
+            priority={true}
           />
         </div>
         <div className={styles.cloud_back_right}>
@@ -25,6 +26,7 @@ export default function Clouds() {
             height={100}
             className={styles.clouds_image}
             z-index={0}
+            priority={true}
           />
         </div>
       </div>
@@ -37,6 +39,7 @@ export default function Clouds() {
             alt="Left Cloud"
             className={styles.clouds_image}
             z-index={1}
+            priority={true}
           />
         </div>
         <div className={styles.cloud_front_right}>
@@ -47,6 +50,7 @@ export default function Clouds() {
             height={100}
             className={styles.clouds_image}
             z-index={1}
+            priority={true}
           />
         </div>
       </div>
