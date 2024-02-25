@@ -1,7 +1,6 @@
 import Clouds from './_components/Hero/Clouds';
 import Form from './_components/Form/Form';
 import Grass from './_components/Grass/Grass';
-import Characters from './_components/Characters/Characters';
 import styles from './index.module.scss';
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <div className={styles.form}>
         <Form />
       </div>
-      {/* <Characters /> */}
     </div>
   );
 }

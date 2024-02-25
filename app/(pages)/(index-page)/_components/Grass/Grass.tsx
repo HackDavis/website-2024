@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './Grass.module.scss';
+import Foreground from '../Foreground/Foreground';
 
 export default function Grass() {
   return (
@@ -25,6 +26,9 @@ export default function Grass() {
             z-index={3}
           />
         </div>
+      </div>
+      <div className={styles.foreground}>
+        <Foreground />
       </div>
     </div>
   );
