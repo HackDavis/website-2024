@@ -15,6 +15,9 @@ export default function Grass() {
             height={100}
             className={styles.grasses_image}
             z-index={2}
+            priority={true}
+            placeholder="blur"
+            blurDataURL="/index/Hero/hero_far-grass.png"
           />
         </div>
         <div className={styles.grass_medium}>
@@ -25,6 +28,9 @@ export default function Grass() {
             height={100}
             className={styles.grasses_image}
             z-index={3}
+            priority={true}
+            placeholder="blur"
+            blurDataURL="/index/Hero/hero_mid-grass.png"
           />
         </div>
       </div>
