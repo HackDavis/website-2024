@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-import styles from './Polaroids.module.scss';
+import styles from './BottomPolaroids.module.scss';
 
-export default function Polaroids() {
+export default function BottomPolaroids() {
   return (
     <div className={styles.container}>
       <div className={styles.questionsText}>
