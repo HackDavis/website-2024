@@ -23,6 +23,7 @@
             z-index: 0;
             transform: rotate(7.1deg);
             border: 2px solid black; /* 2px solid black border */
+            margin-right: -11%;
         }
         .middlePolaroid {
             width: 21vw;
@@ -30,7 +31,8 @@
             height: auto; 
             z-index: 1;
             transform: rotate(-5.16deg);
-            margin-right: 7vw;
+            margin-right: 50%;
+            margin-top: -40%;
             border: 2px solid black; /* 2px solid black border */
         }
         .frontPolaroid {
@@ -38,7 +40,7 @@
             max-width: 570px; 
             height: auto; 
             z-index: 2;
-            margin-top: -1vw;
+            margin-top: -25%;
             border: 2px solid black; /* 2px solid black border */
         }
     }
@@ -53,26 +55,16 @@
 
         .allPolaroids {
             .backPolaroid {
-                width: 21vw;
-                height: auto; 
-                z-index: 0;
-                transform: rotate(7.1deg);
-                margin-right: -18vw;
-                margin-bottom: -14vw;
+                margin-bottom: -25%;
+                margin-right: -80%;
+
             }
             .middlePolaroid {
-                width: 21vw; 
-                height: auto; 
-                z-index: 1;
-                transform: rotate(-5.16deg);
-                margin-right: 29vw;
-                margin-bottom: -16vw;
+                margin-left: -95%;
+
             }
             .frontPolaroid {
-                width: 21vw; 
-                height: auto; 
-                z-index: 2;
-                margin-top: -1vw;
+                margin-top: -80%;
             }
         }
     }
