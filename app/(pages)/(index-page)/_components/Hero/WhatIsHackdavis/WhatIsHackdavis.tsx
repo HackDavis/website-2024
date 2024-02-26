@@ -95,15 +95,15 @@ export default function WhatIsHackdavis() {
             height={100}
             className={styles.logGingko}
           />
-
-          <Image
-            src="/index/whatIsHackdavis/log_water-sheen.png"
-            alt="serene forest scene in the night"
-            width={4000}
-            height={100}
-            className={styles.logWaterSheen}
-          />
         </div>
+
+        <Image
+          src="/index/whatIsHackdavis/log_water-sheen.png"
+          alt="serene forest scene in the night"
+          width={4000}
+          height={100}
+          className={styles.logWaterSheen}
+        />
       </div>
     </div>
   );

@@ -1,7 +1,5 @@
 
 .container {
-    margin-top: 50px;
-    margin-bottom: 100px;
     background-color: white;
 
     .text {
@@ -33,6 +31,7 @@
     .logStuff {
         margin-top: 100px;
         display: flex;
+        flex-direction: column;
         width: 100%;
         
         .logLeftSection {
@@ -66,7 +65,7 @@
                 height: auto;
                 position: absolute;
                 z-index: 5;
-                top: -14%; 
+                bottom: 33%; 
                 left: 6%;
             }
     
@@ -90,8 +89,8 @@
                 height: auto;
                 position: absolute;
                 z-index: 5;
-                top: -18%; 
-                right: 2%;
+                bottom: 29%; 
+                right: 0.5%;
             }
             .logLayer2Right {
                 width: 38.5%; 
@@ -129,15 +128,13 @@
                 bottom: 58%; 
                 right: 16%;
             }
-    
-            .logWaterSheen {
-                width: 100vw; 
-                height: auto;
-                position: absolute;
-                right:0;
-                bottom: -28%;
-                z-index: 0;
-            }
+        }
+        .logWaterSheen {
+            position: relative;
+            width: 100%; 
+            height: auto;
+            z-index: 0;
+            margin-top: -16%;
         }
     }
 
