@@ -46,3 +46,25 @@
         letter-spacing: 0.342px;
     }
   }
+
+  @media screen and (min-width: 1920px) {
+    .container {
+        width: 61%;
+        .FAQText {
+            font-size: 8rem;
+        }
+    
+        .hackathon {
+            font-size: 1.5rem;
+        }
+    
+        .hackathonText {
+            font-size: 1.5rem;
+        }
+    
+        .questions {
+            font-size: 1.5rem;
+            line-height: 72px;
+        }
+    }
+}
