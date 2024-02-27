@@ -2,10 +2,57 @@
 import React from 'react';
 import { useState } from 'react';
 import styles from './FAQ.module.scss';
-// import Link from 'next/link';
+import Link from 'next/link';
+
+const answerWithLink = (
+  <>
+    A hackathon is where you transform your crazy ideas into real projects.
+    Hundreds of students from across California form teams around an idea and
+    collaboratively create technical solutions to problems we face in our local
+    communities. These ideas turn into websites, mobile apps, hardware, and
+    more! <br />
+    Join HackDavis to make some of the most imaginative projects alongside
+    fellow creators! You take care of building and we'll take care of you.
+    <br /> <br /> We will be following the{' '}
+    <Link
+      style={{
+        textDecoration: 'underline',
+        fontWeight: 'normal',
+        fontFamily: 'Proxima Nova',
+      }}
+      href="https://drive.google.com/file/d/1KnWwN5sFYTe49Z5312OKnS5FA8OtL4iD/view"
+      target="_blank"
+    >
+      HackDavis Rules & Policies,
+    </Link>{' '}
+    <span
+      style={{
+        fontFamily: 'Proxima Nova',
+      }}
+    >
+      {' '}
+      and{' '}
+    </span>
+    <Link
+      style={{
+        textDecoration: 'underline',
+        fontWeight: 'normal',
+        fontFamily: 'Proxima Nova',
+      }}
+      href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+      target="_blank"
+    >
+      MLH's Code Of Conduct.
+    </Link>
+  </>
+);
 
 const FAQ = () => {
   const faqs = [
+    {
+      question: 'What is a Hackathon?',
+      answer: answerWithLink,
+    },
     {
       question: 'Who can attend?',
       answer: 'THINGIJKUGVBHJKBEHJBF',
@@ -55,20 +102,6 @@ const FAQ = () => {
       <div>
         <h1 className={styles.FAQText}>FAQ</h1>
       </div>
-
-      <p className={styles.hackathon}>What is a Hackathon?</p>
-      <p className={styles.hackathonText}>
-        A hackathon is where you transform your crazy ideas into real projects.
-        Hundreds of students from across California form teams around an idea
-        and collaboratively create technical solutions to problems we face in
-        our local communities. These ideas turn into websites, mobile apps,
-        hardware, and more! <br /> <br /> Join HackDavis to make some of the
-        most imaginative projects alongside fellow creators! You take care of
-        building and we'll take care of you. <br /> <br /> We will be following
-        the HackDavis Rules & Policies, and MLH's Code Of Conduct.
-      </p>
-
-      <hr />
       {faqs.map((faq, index) => (
         <React.Fragment key={index}>
           <h2
@@ -78,7 +111,7 @@ const FAQ = () => {
             {faq.question}
           </h2>
           {expandedIndices.includes(index) && (
-            <div className="answer">{faq.answer}</div>
+            <div className={styles.answer}>{faq.answer}</div>
           )}
           {index < faqs.length - 1 && <hr />}
         </React.Fragment>

@@ -1,4 +1,4 @@
-  .container {
+.container {
     display: flex;
     flex-direction: column;
     width: 36%;
@@ -15,27 +15,6 @@
         padding-bottom: 55px;
     }
 
-    .hackathon {
-        color: #FFF;
-        font-family: "Proxima Nova";
-        font-size: 17.075px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: 0.342px;
-    }
-
-    .hackathonText {
-        color: #FFF;
-        font-family: "Proxima Nova";
-        font-size: 17.075px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%; /* 25.613px */
-        letter-spacing: 0.342px;
-        padding-bottom: 30px;
-    }
-
     .questions {
         color: #FFF;
         font-family: "Proxima Nova";
@@ -44,6 +23,17 @@
         font-weight: 700;
         line-height: 50px;
         letter-spacing: 0.342px;
+    }
+
+    .answer {
+        color: #FFF;
+        font-family: "Proxima Nova";
+        font-size: 17.075px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 25.613px */
+        letter-spacing: 0.342px;
+        padding-bottom: 30px;
     }
   }
 
