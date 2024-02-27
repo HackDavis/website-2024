@@ -6,7 +6,9 @@ export default function BottomSection() {
     <div>
       <div className={style.container}>
         <FAQ />
-        <BottomPolaroids />
+        <div className={style.polaroids}>
+          <BottomPolaroids />
+        </div>
       </div>
     </div>
   );
