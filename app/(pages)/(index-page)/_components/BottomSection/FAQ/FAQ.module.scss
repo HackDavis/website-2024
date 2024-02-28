@@ -14,6 +14,18 @@
         line-height: normal;
         letter-spacing: 1.821px;
         padding-bottom: 55px;
+        display: none;
+    }
+    .FAQTextMobile {
+        color: #FFF;
+        font-family: "Proxima Nova";
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.821px;
+        padding-bottom: 46px;
+        display: block;
     }
 
     .questions {
@@ -43,6 +55,10 @@
 
         .FAQText {
             font-size: 3.75rem;
+            display: block;
+        }
+        .FAQTextMobile {
+            display:none;
         }
 
         .questions {

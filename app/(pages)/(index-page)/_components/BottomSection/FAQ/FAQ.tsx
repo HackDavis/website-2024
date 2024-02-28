@@ -123,6 +123,7 @@ const FAQ = () => {
     <div className={styles.container}>
       <div>
         <h1 className={styles.FAQText}>FAQ</h1>
+        <h1 className={styles.FAQTextMobile}>Frequently Asked Questions</h1>
       </div>
       {faqs.map((faq, index) => (
         <React.Fragment key={index}>
