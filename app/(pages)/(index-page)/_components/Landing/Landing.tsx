@@ -5,7 +5,7 @@ import styles from './Landing.module.scss';
 
 export default function Landing() {
   return (
-    <main>
+    <main className={styles.landing}>
       <div className={styles.landing_container}>
         <div className={styles.form}>
           <Form />
