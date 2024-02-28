@@ -1,4 +1,5 @@
 import styles from './Form.module.scss';
+import { CiCalendar } from 'react-icons/ci';
 
 export default function Form() {
   return (
@@ -16,9 +17,15 @@ export default function Form() {
                 HackDavis 2024
               </span>
             </span>
-            <span className={styles.calendar_inner_lower}>
-              January 1, 2024 @ UCenter
-            </span>
+            <div className={styles.container_inner_lower}>
+              <CiCalendar
+                size={25}
+                className={styles.calendar_inner_lower_icon}
+              />
+              <span className={styles.calendar_inner_lower_text}>
+                January 1, 2024 @ UCenter
+              </span>
+            </div>
           </div>
         </div>
         <div className={styles.buttons}>
