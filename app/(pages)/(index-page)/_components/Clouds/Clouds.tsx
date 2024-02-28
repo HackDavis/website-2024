@@ -12,7 +12,6 @@ export default function Clouds() {
             alt="Left Back Cloud"
             width={4000}
             height={100}
-            // fill
             className={styles.clouds_image}
             z-index={0}
             priority={true}
