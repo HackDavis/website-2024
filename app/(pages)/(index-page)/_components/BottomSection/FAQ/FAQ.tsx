@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styles from './FAQ.module.scss';
 import Link from 'next/link';
 
-const answerWithLink = (
+const whatIsHackathonAnswer = (
   <>
     A hackathon is where you transform your crazy ideas into real projects.
     Hundreds of students from across California form teams around an idea and
@@ -47,11 +47,31 @@ const answerWithLink = (
   </>
 );
 
+const whatToHelpAnswer = (
+  <>
+    HackDavis is largely built upon the efforts of our mentors and volunteers,
+    who ensure that our hackers have a great experience at our event! Our mentor
+    and volunteer applications will open in late April, so keep an eye out! If
+    you're interested in making a tax-deductible contribution to HackDavis,
+    please get in touch at{' '}
+    <a
+      style={{
+        textDecoration: 'underline',
+        fontWeight: 'normal',
+        fontFamily: 'Proxima Nova',
+      }}
+      href="mailto:team@hackdavis.io"
+    >
+      team@hackdavis.io
+    </a>
+  </>
+);
+
 const FAQ = () => {
   const faqs = [
     {
       question: 'What is a Hackathon?',
-      answer: answerWithLink,
+      answer: whatIsHackathonAnswer,
     },
     {
       question: 'Who can attend?',
@@ -67,7 +87,7 @@ const FAQ = () => {
     },
     {
       question: 'How can I help?',
-      answer: `HackDavis is largely built upon the efforts of our mentors and volunteers, who ensure that our hackers have a great experience at our event! Our mentor and volunteer applications will open in late April, so keep an eye out! If you're interested in making a tax-deductible contribution to HackDavis, please get in touch at team@hackdavis.io`,
+      answer: whatToHelpAnswer,
     },
     {
       question: 'Why social good?',
@@ -95,7 +115,6 @@ const FAQ = () => {
     if (expandedIndices.includes(index)) {
       setExpandedIndices(expandedIndices.filter((i) => i !== index));
     } else {
-      // setExpandedIndices([]);
       setExpandedIndices([index]);
     }
   }
