@@ -62,15 +62,7 @@ export default function Archive() {
     scrollDistance = pixelValue; // was 127.57
   }
 
-  if (viewportWidth > 768) {
-    // this is the furthest left we can move the folders
-    // based off the math it was 62% of vw
-    pixelValue2 = (62 * viewportWidth) / 100;
-  } else {
-    pixelValue2 = (46 * viewportWidth) / 100;
-  }
-
-  const mostLeftScrollPosition = -pixelValue2;
+  const mostLeftScrollPosition = -scrollDistance * 7;
   // this is the furthest right we can move the folders (starts like this)
   const mostRightScrollPosition = 0; // confirmed to always work
 
@@ -86,7 +78,7 @@ export default function Archive() {
     }
 
     // if we're at the end, the right arrow should be grayed out
-    if (scrollPosition == mostLeftScrollPosition) {
+    if (Math.round(scrollPosition) == Math.round(mostLeftScrollPosition)) {
       setRightArrowColor(allArrowColors.gray);
     } else {
       setRightArrowColor(allArrowColors.blue);
@@ -98,6 +90,9 @@ export default function Archive() {
     setScrollPosition(
       Math.max(mostLeftScrollPosition, scrollPosition - scrollDistance)
     );
+    console.log('scroll position', scrollPosition);
+    console.log('most left', mostLeftScrollPosition);
+    console.log('scroll distance', scrollDistance);
 
     setScrollIndexFolders(Math.max(-7, scrollIndexFolders - 1));
   };
@@ -107,6 +102,10 @@ export default function Archive() {
     setScrollPosition(
       Math.min(mostRightScrollPosition, scrollPosition + scrollDistance)
     );
+
+    console.log('hit left', scrollPosition);
+    console.log('most right', mostRightScrollPosition);
+
 
     setScrollIndexFolders(Math.min(0, scrollIndexFolders + 1));
   };
