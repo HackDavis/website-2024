@@ -16,6 +16,7 @@
             font-weight: 700;
             line-height: normal;
             letter-spacing: 1.92px;
+            padding-bottom: 2%;
         }
         .paragraph {
             width: 40%;
@@ -154,16 +155,22 @@
 
 
 @media (max-width: 1024px) {
-.container {
-    .text {
-        .heading{
-            font-size: 3rem;
-        }
-        .paragraph {
-            font-size: 1rem;
+    .container {
+        .text {
+            display: flex;
+            flex-direction: column;
+            padding-left: 10%;
+
+            .heading{
+                font-size: 3rem;
+            }
+            .paragraph {
+                font-size: 1rem;
+            }
         }
     }
 }
+
 @media (max-width: 960px) {
     .container {
         .text {
@@ -175,5 +182,23 @@
             }
         }
     }
-  }
 }
+
+@media (max-width: 375px) {
+    .container {
+        .text {
+            display: flex;
+            .heading{
+                font-size: 2rem;
+                width: 295px;
+                letter-spacing: 0.64px;
+            }
+            .paragraph {
+                font-size: 1rem;
+                width: 311px;
+                letter-spacing: 0.32px;
+            }
+        }
+    }
+}
+
