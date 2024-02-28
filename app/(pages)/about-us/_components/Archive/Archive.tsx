@@ -46,7 +46,6 @@ export default function Archive() {
 
   let pixelValue = 0;
   let scrollDistance = 0;
-  let pixelValue2 = 0;
 
   if (viewportWidth > 768) {
     pixelValue = Math.min(1080, (75 * viewportWidth) / 100);
