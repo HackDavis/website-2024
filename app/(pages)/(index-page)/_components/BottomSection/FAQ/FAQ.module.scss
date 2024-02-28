@@ -27,7 +27,6 @@
         padding-bottom: 46px;
         display: block;
     }
-
     .questions {
         color: #FFF;
         font-family: "Proxima Nova";
@@ -36,6 +35,7 @@
         font-weight: 700;
         line-height: 64px;
         letter-spacing: 0.342px;
+        background-image: none;
     }
 
     .answer {
@@ -48,6 +48,21 @@
         letter-spacing: 0.342px;
         padding-bottom: 3%;
     }
+      
+    // used for customizable Accordion item
+      .itemBtn {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+      }
+
+      .itemBtnExpanded {
+        background-color: transparent;
+      }
+      
+      .itemContent {
+        transition: height 0.3s ease-in-out;
+      }   
   }
   @media screen and (min-width: 960px) {
     .container {
