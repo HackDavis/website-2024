@@ -23,18 +23,26 @@ $bg-color: #7ACCDA;
 
 }
 
-@media (max-width: 640px) {
+@media (max-width: 648px) {
+
   .landing_container{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // background-color: $bg-color;
   }
   .form{
     top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+  }
 
+  .clouds{
+    height: 560px;
   }
   
 }
