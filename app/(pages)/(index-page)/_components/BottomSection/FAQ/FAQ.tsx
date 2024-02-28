@@ -95,7 +95,8 @@ const FAQ = () => {
     if (expandedIndices.includes(index)) {
       setExpandedIndices(expandedIndices.filter((i) => i !== index));
     } else {
-      setExpandedIndices([...expandedIndices, index]);
+      // setExpandedIndices([]);
+      setExpandedIndices([index]);
     }
   }
 
