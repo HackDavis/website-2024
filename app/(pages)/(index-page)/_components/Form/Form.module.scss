@@ -94,7 +94,7 @@
 .buttons{
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
   gap: 16px;
 
   &_register{
@@ -151,8 +151,8 @@
   }
   &_userType{
     display: flex;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 5rem;
+    padding-right: 5rem;
     justify-content: space-between;
 
     span{

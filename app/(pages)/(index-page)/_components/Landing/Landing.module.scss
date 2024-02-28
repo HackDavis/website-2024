@@ -1,4 +1,7 @@
-$bg-color: #7ACCDA;
+@use 'app/(pages)/_globals/mixins';
+$bg-color: var(--landing-bg);
+$mobile-breakpoint: 648px;
+
 .clouds{
   position: relative;
   z-index: 1;
@@ -23,7 +26,7 @@ $bg-color: #7ACCDA;
 
 }
 
-@media (max-width: 648px) {
+@media (max-width: $mobile-breakpoint) {
 
   .landing_container{
     width: 100%;
@@ -34,7 +37,7 @@ $bg-color: #7ACCDA;
     // background-color: $bg-color;
   }
   .form{
-    top: 250px;
+    top: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +45,7 @@ $bg-color: #7ACCDA;
   }
 
   .clouds{
-    height: 800px;
+    height: 650px;
   }
   
 }

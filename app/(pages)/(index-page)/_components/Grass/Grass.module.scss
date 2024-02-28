@@ -1,5 +1,5 @@
 @use 'app/(pages)/_globals/mixins';
-$bg-color: #7ACCDA;
+$bg-color: var(--landing-bg);
 
 .container {
   display: flex;
