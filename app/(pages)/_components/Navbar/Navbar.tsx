@@ -11,9 +11,14 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <ul className={styles.words}>
+        <div
+          className={`${styles.menuIcon} ${active ? styles.active : ''}`}
+          onClick={toggleActive}
+        >
+          {active ? <RxCross2 /> : <RxHamburgerMenu size={40} />}
+        </div>
+        <ul className={`${styles.words} ${active ? styles.active : ''}`}>
           <li>
-            <svg className={styles.logo} />
             <Image
               src="/navbar/logo.svg"
               alt="logo"
@@ -22,25 +27,20 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
               className={styles.logo}
             />
           </li>
-          <li className="words-item">
-            <div>Impact</div>
-          </li>
-          <li className="words-item">
-            <div>FAQ</div>
-          </li>
-          <li className="words-item">
-            <div>Sponsors</div>
-          </li>
-          <li className="words-item">
-            <div>About</div>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.name} className={styles.wordsItem}>
+              <Link href={link.slug} onClick={setInactive}>
+                <span className={styles.navLink}>{link.name}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
         <Image
           src="/navbar/MLH_Badge.svg"
-          alt="logo"
+          alt="MLH badge"
           width={100}
           height={100}
-          className={styles.mlh_badge}
+          className={styles.mlhBadge}
         />
       </nav>
     </div>
