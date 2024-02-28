@@ -89,9 +89,6 @@ export default function Archive() {
     setScrollPosition(
       Math.max(mostLeftScrollPosition, scrollPosition - scrollDistance)
     );
-    console.log('scroll position', scrollPosition);
-    console.log('most left', mostLeftScrollPosition);
-    console.log('scroll distance', scrollDistance);
 
     setScrollIndexFolders(Math.max(-7, scrollIndexFolders - 1));
   };
@@ -101,10 +98,6 @@ export default function Archive() {
     setScrollPosition(
       Math.min(mostRightScrollPosition, scrollPosition + scrollDistance)
     );
-
-    console.log('hit left', scrollPosition);
-    console.log('most right', mostRightScrollPosition);
-
 
     setScrollIndexFolders(Math.min(0, scrollIndexFolders + 1));
   };
