@@ -1,6 +1,7 @@
-@use 'app/(pages)/_globals/mixins';
+@use 'app/(pages)/_globals/mixins'; 
 
-$bg-color: #7ACCDA;
+$bg-color: var(--landing-bg);
+$mobile-breakpoint: 648px;
 
 .container {
     display: flex;
@@ -67,7 +68,7 @@ $bg-color: #7ACCDA;
 }
 
 
-@media (max-width: 648px) {
+@media (max-width: $mobile-breakpoint) {
     .container{
         //  margin-top: 60%;
          display: flex;
@@ -80,7 +81,7 @@ $bg-color: #7ACCDA;
     .cloud_back{
         //   display: flex;
           position: relative;
-          height: 1000px;
+          height: 800px;
           overflow: hidden;
         //   border: 2px solid black;
 

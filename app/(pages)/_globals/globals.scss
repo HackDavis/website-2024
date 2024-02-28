@@ -34,7 +34,12 @@
 
 :root {
     /* variables */
-    --include-purple: #3c257e;
+
+    --landing-bg: #7ACCDA;
+    --mobile-breakpoint: 648px;
+
+
+
 
     --primary: var(--include-purple);
     --secondary: #e7c6f9;

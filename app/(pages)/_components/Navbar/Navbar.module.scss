@@ -1,6 +1,6 @@
 @use 'app/(pages)/_globals/mixins';
-$bg-color: #7ACCDA;
-$mobile-breakpoint: 640px; // Define a breakpoint for mobile devices
+$bg-color: var(--landing-bg);
+$mobile-breakpoint: 648px;
 
 .nav {
     display: flex;
@@ -76,8 +76,8 @@ $mobile-breakpoint: 640px; // Define a breakpoint for mobile devices
     .menuIcon {
         display: block; // Show the menu icon on smaller screens
         position: absolute;
-        right: 1rem;
-        top: 1rem;
+        right: 2rem;
+        top: 2rem;
         cursor: pointer;
     }
 
