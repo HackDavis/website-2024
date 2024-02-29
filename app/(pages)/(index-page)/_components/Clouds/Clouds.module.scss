@@ -48,6 +48,7 @@ $mobile-breakpoint: 648px;
         width: 100%;
         height: 100%;
         position: absolute;   
+        animation: moveInFromLeft 2s ease-in forwards;
     }
 
     &_right{
@@ -55,6 +56,7 @@ $mobile-breakpoint: 648px;
         width: 100%;
         height: 100%;
         position: relative;
+        animation: moveInFromRight 2s ease-in forwards;
     }
 }
 
@@ -64,6 +66,7 @@ $mobile-breakpoint: 648px;
         width: 100%;
         height: 100%;
         // position: relative;
+        // animation: moveIn 2s ease-in forwards;
     }
 }
 
@@ -98,4 +101,41 @@ $mobile-breakpoint: 648px;
         margin-top: 60%;
     }
      
+ }
+
+ .cloud_front{
+    animation: floatSideToSide 15s ease-in-out infinite;
+ }
+ .cloud_back{
+    animation: floatSideToSide 10s ease-in-out infinite;
+ 
+ }
+
+ @keyframes moveInFromLeft {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+ }
+ @keyframes moveInFromRight{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+ }
+
+ @keyframes floatSideToSide{
+    0%{
+        transform: translateX(-10px);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
  }
