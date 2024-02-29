@@ -96,6 +96,11 @@
   flex-direction: column;
   width: 100%;
   gap: 16px;
+ 
+
+  &:hover{
+    cursor: pointer;
+  }
 
   &_register{
     display: flex;
@@ -109,6 +114,7 @@
     
     border-radius: 100px;
     background: var(--teal-2, #173A52);
+    transition: background-color 0.2s ease;
     
     p{
       color: var(--white, #FFF);
@@ -120,6 +126,9 @@
       line-height: normal;
       letter-spacing: 0.48px;
       text-transform: capitalize;
+    }
+    &:hover{
+      background: var(--teal-1, #005271);
     }
 
   }
@@ -137,6 +146,11 @@
     border: 0px solid #497F5D;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(2px);
+    transition: background-color 0.2s ease;
+
+    &:hover{
+      background: rgba(234, 224, 224, 0.75);
+    }
 
     p{
       color: var(--teal-2, #173A52);
@@ -167,6 +181,8 @@
       letter-spacing: 0.48px;
       text-decoration-line: underline;
     }
+
+ 
   }
 }
 
