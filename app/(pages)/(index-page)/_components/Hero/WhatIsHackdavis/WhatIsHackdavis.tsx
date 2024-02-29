@@ -1,25 +1,33 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './WhatIsHackdavis.module.scss';
 import Image from 'next/image';
 
 export default function WhatIsHackdavis() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const container = containerRef.current;
+
     const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
+      if (container) {
+        const rect = container.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        setMousePosition({ x, y });
+      }
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
+    container?.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      container?.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div ref={containerRef} className={styles.container}>
       <div className={styles.text}>
         <h1 className={styles.heading}>What is Hackdavis?</h1>
         <p className={styles.paragraph}>
