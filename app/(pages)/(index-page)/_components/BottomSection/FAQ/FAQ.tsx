@@ -1,8 +1,7 @@
-'use client';
 import React from 'react';
-import { useState } from 'react';
 import styles from './FAQ.module.scss';
 import Link from 'next/link';
+import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
 
 const whatIsHackathonAnswer = (
   <>
@@ -109,15 +108,33 @@ const FAQ = () => {
     },
   ];
 
-  const [expandedIndices, setExpandedIndices] = useState<number[]>([]);
-
-  function toggleFAQExpand(index: number) {
-    if (expandedIndices.includes(index)) {
-      setExpandedIndices(expandedIndices.filter((i) => i !== index));
-    } else {
-      setExpandedIndices([index]);
-    }
+  {
+    /*
+      This interface and AccordionItem is used to define the structure of the accordion item, allowing us to apply our styling to it
+    */
   }
+
+  interface AccordionItemProps {
+    header: React.ReactNode;
+    [key: string]: any;
+  }
+
+  const AccordionItem: React.FC<AccordionItemProps> = ({
+    header,
+    ...rest
+  }: AccordionItemProps) => {
+    return (
+      <Item
+        {...rest}
+        header={<>{header}</>}
+        buttonProps={{
+          className: ({ isEnter }: { isEnter: boolean }) =>
+            `${styles.itemBtn} ${isEnter ? styles.itemBtnExpanded : ''}`,
+        }}
+        contentProps={{ className: styles.itemContent }}
+      />
+    );
+  };
 
   return (
     <div className={styles.container}>
@@ -125,20 +142,19 @@ const FAQ = () => {
         <h1 className={styles.FAQText}>FAQ</h1>
         <h1 className={styles.FAQTextMobile}>Frequently Asked Questions</h1>
       </div>
-      {faqs.map((faq, index) => (
-        <React.Fragment key={index}>
-          <h2
-            className={styles.questions}
-            onClick={() => toggleFAQExpand(index)}
-          >
-            {faq.question}
-          </h2>
-          {expandedIndices.includes(index) && (
-            <div className={styles.answer}>{faq.answer}</div>
-          )}
-          {index < faqs.length - 1 && <hr />}
-        </React.Fragment>
-      ))}
+      <Accordion transition transitionTimeout={250}>
+        {faqs.map(({ question, answer }, i) => (
+          <React.Fragment key={i}>
+            <AccordionItem
+              header={<p className={styles.questions}>{question}</p>}
+              key={i}
+            >
+              <p className={styles.answer}>{answer}</p>
+            </AccordionItem>
+            {i < faqs.length - 1 && <hr />}
+          </React.Fragment>
+        ))}
+      </Accordion>
     </div>
   );
 };

@@ -1,7 +1,23 @@
+'use client';
+import { useEffect, useState } from 'react';
 import styles from './WhatIsHackdavis.module.scss';
 import Image from 'next/image';
 
 export default function WhatIsHackdavis() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.text}>
@@ -20,6 +36,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={100}
             className={styles.logLeft}
+            style={{
+              transform: `translateX(${mousePosition.x / 30}px) translateY(${
+                mousePosition.y / 30
+              }px)`,
+            }}
           />
         </div>
 
@@ -30,6 +51,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={1000}
             className={styles.logLayer0}
+            style={{
+              transform: `translateX(${mousePosition.x / 90}px) translateY(${
+                mousePosition.y / 90
+              }px)`,
+            }}
           />
 
           <Image
@@ -38,6 +64,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={1000}
             className={styles.logLayer1Left}
+            style={{
+              transform: `translateX(${mousePosition.x / 70}px) translateY(${
+                mousePosition.y / 70
+              }px)`,
+            }}
           />
 
           <Image
@@ -46,6 +77,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={100}
             className={styles.logLayer2Left}
+            style={{
+              transform: `translateX(${mousePosition.x / 40}px) translateY(${
+                mousePosition.y / 40
+              }px)`,
+            }}
           />
 
           <Image
@@ -54,6 +90,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={100}
             className={styles.logRight}
+            style={{
+              transform: `translateX(${mousePosition.x / 30}px) translateY(${
+                mousePosition.y / 30
+              }px)`,
+            }}
           />
 
           <Image
@@ -62,6 +103,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={100}
             className={styles.logLayer1Right}
+            style={{
+              transform: `translateX(${mousePosition.x / 70}px) translateY(${
+                mousePosition.y / 70
+              }px)`,
+            }}
           />
 
           <Image
@@ -70,6 +116,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={100}
             className={styles.logLayer2Right}
+            style={{
+              transform: `translateX(${mousePosition.x / 40}px) translateY(${
+                mousePosition.y / 40
+              }px)`,
+            }}
           />
 
           <Image
@@ -78,6 +129,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={100}
             className={styles.logRabbit}
+            style={{
+              transform: `translateX(${mousePosition.x / 30}px) translateY(${
+                mousePosition.y / 30
+              }px)`,
+            }}
           />
 
           <Image
@@ -86,6 +142,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={100}
             className={styles.logFrog}
+            style={{
+              transform: `translateX(${mousePosition.x / 30}px) translateY(${
+                mousePosition.y / 30
+              }px)`,
+            }}
           />
 
           <Image
@@ -94,6 +155,11 @@ export default function WhatIsHackdavis() {
             width={4000}
             height={100}
             className={styles.logGingko}
+            style={{
+              transform: `translateX(${mousePosition.x / 30}px) translateY(${
+                mousePosition.y / 30
+              }px)`,
+            }}
           />
         </div>
 
