@@ -1,0 +1,130 @@
+.background-container{
+    background: #015270;
+    display: flex;
+    width: 100%; /* Use full width of the viewport */
+    max-width: 100%; /* Set a max-width if necessary */
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 50vh; /* Height can be auto to adjust to content */
+    position: relative;
+    overflow: hidden;
+    //min-height: 380vh;
+    justify-content: space-around;
+    
+}
+.button {
+    display: flex;
+    width: 80%; /* Use a percentage of the parent container for responsiveness */
+    max-width: 21.375rem; /* Max width to maintain design */
+    height: 3rem;
+    padding: 0.75rem; /* Adjust padding as needed */
+    justify-content: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    border-radius: 6.25rem;
+    background: #FFC53D;
+    position: absolute;
+    left: 50%; /* Center the button */
+    top: 70%;
+    transform: translateX(-50%); /* Adjust horizontal positioning */
+    align-items: center;
+}
+  
+.button-words {
+    color: #123041;
+    font-family: "Proxima Nova";
+    font-size: 1.125rem; /* This could be in 'em' units for scalability */
+    font-weight: 700;
+    letter-spacing: 0.0225rem;
+    background: transparent; /* Assuming you don't want the text background */
+}
+  
+@media (max-width: 768px) {
+    .button {
+      width: 95%; /* Increase width for smaller screens */
+      padding: 0.5rem; /* Adjust padding for smaller screens */
+      top: auto; /* Adjust position for smaller screens */
+      bottom: 10%; /* Place it at the bottom of the section/view */
+      transform: translateX(-50%) translateY(0); /* Adjust for vertical positioning */
+    }
+  
+    .button-words {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+}
+.number-word-pair {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem; /* Consistent space at the bottom */
+    /* Removed fixed margin-right to avoid overflow on smaller screens */
+    gap: 1rem; /* Use gap to space out flex items instead of margin-right */
+}
+  
+@media (max-width: 768px) {
+    .number-word-pair {
+      flex-direction: column; /* Stack the items vertically on smaller screens */
+      align-items: flex-start; /* Align items to the start if needed */
+    }
+}
+  
+@media (max-width: 480px) { /* Adjust for mobile phones */
+    .number-word-pair {
+      flex-direction: column; /* Continue stacking items vertically */
+      gap: 0.5rem;
+      margin-bottom: 0.5rem; /* Adjust spacing to better fit smaller screens */
+    }
+}
+  
+.stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.background-container {
+    display: flex;
+    flex-direction: column; /* Adjust if necessary for your layout */
+    align-items: center; /* Center the content */
+    justify-content: space-around;
+}
+
+.numbers-words-container {
+    display: flex;
+    flex-direction: row; /* This will line up the number-word pairs horizontally */
+    justify-content: center; /* Center the pairs in the container */
+    gap: 125px; /* Adjust the gap as needed */
+    padding-bottom: 100px;
+}
+
+.number-word-pair {
+    display: flex;
+    flex-direction: column; /* Stack the number on top of the word */
+    align-items: center; /* Center-align the content */
+}
+
+.word{
+    color: #F4F4F4;
+    font-family: "Proxima Nova";
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.035rem;
+    text-transform: lowercase;
+} 
+
+.number {
+    text-align: center; /* Ensure text is centered */
+    color: #F4F4F4;
+    font-family: "Proxima Nova";
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.08rem;
+    text-transform: lowercase;
+    margin-bottom: 10px; /* Space between the number and the word */
+}
+
+/* You can adjust your media queries as needed based on this structure */

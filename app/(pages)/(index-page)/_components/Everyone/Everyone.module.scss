@@ -1,0 +1,193 @@
+/*$parallax-speed-leaves: 0.3;
+$parallax-speed-shadow: 0.2;
+$parallax-speed-reflection: 0.1;*/
+
+.background-container{
+  background: #015270;
+  display: flex;
+  width: 100%; /* Use full width of the viewport */
+  max-width: 100%; /* Set a max-width if necessary */
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  min-height: 320vh;
+  justify-content: space-around;
+  
+}
+
+/*.parallax-container {
+  position: relative;
+  height: 100vh; // set to the desired height
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  will-change: transform;
+
+  &.leaves {
+    background-image: url('/index/Everyone/river_rightside-leaves.png');
+    z-index: 3;
+  }
+
+  &.shadow {
+    background-image: url('/index/Everyone/river_rightside-shadow.png');
+    z-index: 2;
+  }
+
+  &.reflection {
+    background-image: url('/index/Everyone/river_rightside-reflxn.png');
+    z-index: 1;
+  }
+}*/
+
+
+.title {
+  min-width: 680px; /* Set a maximum width for large screens */
+  width: 100%; 
+  color: #FFF;
+  font-family: "Proxima Nova";
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.92px;
+  margin: 0 auto; 
+  padding-top: 40%; 
+  padding-left: 10%;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 72px; /* Smaller font size for tablets */
+    padding-top: 20%; 
+    padding-left: 5%; 
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  .title {
+    font-size: 48px; 
+    padding-top: 10%; 
+    padding-left: 20px; 
+  }
+}
+
+
+
+.subtitle1 {
+  min-width: 20vw;
+  height: 5vw;
+  color: #FFF;
+  font-family: "Proxima Nova";
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; 
+  letter-spacing: 0.48px;
+  margin-left: -450px; 
+  padding-top: 55%;
+  position: relative; 
+  left: -34%; 
+}
+
+
+
+
+
+.subtitle2 {
+  min-width: 504px;
+  max-width: 504px; 
+  color: #FFF;
+  font-family: "Proxima Nova";
+  font-size: 1.5rem; 
+  font-weight: 500;
+  line-height: 1.5; 
+  letter-spacing: 0.48px;
+  padding-top: 115%; 
+  position: relative; 
+  left: -20%; 
+}
+
+.cowsit {
+  max-width: 834px; 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+
+
+
+.top-leaf {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30%; /* Adjusted to use top and transform for vertical centering */
+  transform: translate(0, -50%);
+  /* Adjust right positioning using a responsive unit or remove if it causes issues */
+  right: 5vw; /* Example adjustment for responsiveness */
+  //padding-top: 60%; /* Remove padding-top that pushes element down */
+  width: 30vw; /* Starting width, but we'll adjust this with media queries */
+  height: 30vw; /* Keep height equal to width to maintain aspect ratio */
+  max-width: 200px; /* Maximum size to prevent it from getting too large */
+  max-height: 200px; /* Match max-width to maintain aspect ratio */
+}
+
+/* Adjust sizes more aggressively for smaller screens */
+@media (max-width: 1024px) {
+  .top-leaf {
+    width: 18vw;
+    height: 18vw;
+    right: 8%; /* Adjust for screen size */
+  }
+}
+
+@media (max-width: 768px) {
+  .top-leaf {
+    width: 15vw;
+    height: 15vw;
+    right: 6%; /* Further adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .top-leaf {
+    width: 12vw; /* Significantly smaller on very small screens */
+    height: 12vw;
+    right: 4%; /* Fine-tune positioning for small devices */
+  }
+}
+
+
+
+
+.bottom-leaf {
+  display: flex;
+  flex-shrink: 0;
+  position: absolute;
+  width: 100%;
+  background-image: url("/index/Everyone/river_leftside.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom 75%;
+  bottom: -50vh; 
+  left: 0; 
+  height: 210vh; 
+}
+
+

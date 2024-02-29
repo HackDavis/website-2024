@@ -1,4 +1,6 @@
 'use client';
+import Everyone from './_components/Everyone/Everyone';
+import Stats from './_components/Stats/Stats';
 import WhatIsHackdavis from './_components/Hero/WhatIsHackdavis/WhatIsHackdavis';
 import Landing from './_components/Landing/Landing';
 import BottomSection from './_components/BottomSection/BottomSection';
@@ -9,6 +11,8 @@ export default function Home() {
       <Landing />
       <WhatIsHackdavis />
       <BottomSection />
+      <Everyone />
+      <Stats />
     </main>
   );
 }
