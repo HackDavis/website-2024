@@ -1,90 +1,194 @@
-@use 'app/(pages)/_globals/mixins';
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova/ProximaNova-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+$footer-color: #122537;
+$brand-icon-color: white;
+
+// css styling for the desktop view
 .container {
     width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    background-color: var(--secondary);
-    .credit {
-        width: 100%;
-        padding: var(--tiny-spacer);
-        text-align: center;
-        background-color: var(--primary);
-        color: var(--text-light);
-        @include mixins.phone {
-            background: none;
-            margin-bottom: var(--medium-spacer);
-            color: var(--text-dark);
-        }
-    }
-}
-
-.content_container {
-    /* box sizing */
-    width: 100%;
-    padding: var(--medium-spacer);
-
-    /* flexbox */
+    min-height: 240px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: var(--medium-spacer);
-    @include mixins.phone {
-        flex-direction: column;
+    background: $footer-color;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    gap: 10px;
+
+    .hackdavisLogo {
+        display: flex;
+        flex-direction: row;
         align-items: center;
-        justify-content: flex-start;
-        text-align: center;
+        gap: 23.48px;
     }
 
-    h2 {
-        color: var(--primary);
-        font-size: 1.5rem;
-        margin-bottom: var(--tiny-spacer);
-    }
-
-    .description>p {
-        @include mixins.phone {
-            display: none;
-        }
-    }
-}
-
-.navigation {
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    gap: var(--medium-spacer);
-
-    @include mixins.phone {
-        flex-direction: column;
-    }
-
-    .learn_more, .projects {
+    .socialContent {
         display: flex;
         flex-direction: column;
-
-        .learn_more_links {
-            display: flex;
-            flex-direction: column;
-            gap: var(--tiny-spacer);
-        }
-
-        .project_link_columns {
+        gap: 10px;
+        width: 27vw;
+        align-items: center;
+        
+        .brandIcons {
             display: flex;
             flex-direction: row;
-            gap: var(--tiny-spacer);
-            @include mixins.phone {
-                flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 420px;
+            padding-top: 10px;
+    
+            .singleIcon { // used for most of the brand icons
+                max-width: 30px;
+                width: 59%;
+                color:$brand-icon-color;
+                
             }
-
-            >div {
-                display: flex;
-                flex-direction: column;
-                gap: var(--tiny-spacer);
+    
+            .fbIcon { // fb icon is larger than the rest so it needs smaller size
+                max-width: 17px;
+                width: 7%;
+                color:$brand-icon-color;
             }
         }
+        
+        .copyright {
+            color:white;
+            font-size: 14px;
+        }
     }
+    .arrowToTop {
+        display: flex;
+        flex-direction: row;
+        color:white;
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+
+        .backToTopText {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    // css styling for mobile view
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 188px;
+    display: flex;
+    flex-direction: column;
+    background: $footer-color;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    gap: 19.54px;
+
+    .hackdavisLogo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 23.48px;
+        margin-top: 30px;
+
+        .hdLogoWhite {
+            height: 72px;
+            width: 72px;
+        }
+        .hdMottoWhite {
+            height: 55px;
+            width: 176px;
+        }
+    }
+
+    .socialContent {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 50vw;
+        align-items: center;
+        
+        .brandIcons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            max-width: 420px;
+            padding-top: 10px;
+    
+            .singleIcon { // used for most of the brand icons
+                max-width: 30px;
+                width: 8%;
+                color:$brand-icon-color;
+                
+            }
+    
+            .fbIcon { // fb icon is larger than the rest so it needs smaller size
+                max-width: 17px;
+                width: 7%;
+                color:$brand-icon-color;
+            }
+        }
+        
+        .copyright {
+            color:white;
+            font-size: 7px;
+        }
+    }
+    
+    .arrowToTop {
+        position: absolute;
+        top: 28px;
+        right: 31px;
+        display: flex;
+        flex-direction: row;
+        color:white;
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+        font-size: 1px;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+
+        .backToTopText {
+            font-size: 12px;
+        }
+    }
+}
 }

@@ -1,0 +1,149 @@
+// values are for the screen width 960 and less
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 83%;
+    padding-top: 5%;
+
+    .FAQText {
+        color: #FFF;
+        font-family: "Proxima Nova";
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.821px;
+        padding-bottom: 55px;
+        display: none;
+    }
+    .FAQTextMobile {
+        color: #FFF;
+        font-family: "Proxima Nova";
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.821px;
+        padding-bottom: 46px;
+        display: block;
+    }
+    .questions {
+        color: #FFF;
+        font-family: "Proxima Nova";
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px;
+        letter-spacing: 0.342px;
+        background-image: none;
+    }
+
+    .answer {
+        color: #FFF;
+        font-family: "Proxima Nova";
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 25.613px */
+        letter-spacing: 0.342px;
+        padding-bottom: 3%;
+    }
+      
+    // used for customizable Accordion item
+      .itemBtn {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        text-align: left;
+      }
+
+      .itemBtnExpanded {
+        background-color: transparent;
+      }
+      
+      .itemContent {
+        transition: height 0.3s ease-in-out;
+      }   
+  }
+  @media screen and (min-width: 960px) {
+    .container {
+        width: 39%;
+
+        .FAQText {
+            font-size: 3.75rem;
+            display: block;
+        }
+        .FAQTextMobile {
+            display:none;
+        }
+
+        .questions {
+            font-size: 0.9375rem;
+            line-height: 39px;
+
+        }
+
+        .answer {
+            font-size: 0.9375rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 39%;
+
+        .FAQText {
+            font-size: 4rem;
+        }
+
+        .questions {
+            font-size: 1rem;
+            line-height: 41.6px;
+        }
+
+        .answer {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .container {
+        width: 36%;
+
+        .FAQText {
+            font-size: 5.7rem;
+        }
+
+        .questions {
+            font-size: 1.07rem;
+            line-height: 51.16px;
+        }
+
+        .answer {
+            font-size: 1.07rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .container {
+        width: 61%;
+        
+        .FAQText {
+            font-size: 8rem;
+        }
+
+        .questions {
+            font-size: 1.5rem;
+            line-height: 72px;
+        }
+
+        .answer {
+            font-size: 1.5rem;
+        }
+    }
+}
+
