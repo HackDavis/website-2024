@@ -15,8 +15,11 @@
       margin-left: 10%;
       // border: 1px solid black;
       z-index: 10;
+      animation: shake 4s cubic-bezier(.36,.9,.19,.97) both;
+      transform-origin: center;
+
       &:hover{
-        animation: shake 3s cubic-bezier(.36,.9,.19,.97) both;
+        animation: shake 3s cubic-bezier(.36,.9,.19,.97) both infinite;
         transform-origin: center;
       }
       &_image{
@@ -36,8 +39,10 @@
       align-items: start;
         &_img2{
           // border: 1px solid black;
+          animation: shake 5s cubic-bezier(.36,.9,.19,.97) both;
+          transform-origin: center;
           &:hover{
-            animation: shake 3s cubic-bezier(.36,.9,.19,.97) both;
+            animation: shake 3s cubic-bezier(.36,.9,.19,.97) both infinite;
             transform-origin: center;
           }
           &_image{
@@ -49,6 +54,8 @@
         }
         &_img3{
           // border: 1px solid black;
+          animation: shake 6s cubic-bezier(.36,.9,.19,.97) both;
+          transform-origin: center;
           &:hover{
             animation: shake 3s cubic-bezier(.36,.9,.19,.97) both infinite;
             // animation: shake 1s ease-out;
