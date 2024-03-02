@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import styles from './Grass.module.scss';
