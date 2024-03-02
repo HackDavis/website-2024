@@ -10,7 +10,7 @@ export default function Grass() {
         <div className={styles.grass_far}>
           <Image
             src="/index/Hero/hero_far-grass.png"
-            alt="serene forest scene in the night"
+            alt="far_grass"
             width={4000}
             height={100}
             className={styles.grasses_image}
@@ -23,7 +23,7 @@ export default function Grass() {
         <div className={styles.grass_medium}>
           <Image
             src="/index/Hero/hero_mid-grass.png"
-            alt="serene forest scene in the night"
+            alt="mid_grass"
             width={4000}
             height={100}
             className={styles.grasses_image}

@@ -10,7 +10,7 @@ export default function Foreground() {
             <div className={styles.foreground_characters_behind_duck}>
               <Image
                 src="/index/Hero/hero_duck.png"
-                alt="serene forest scene in the night"
+                alt="hero_duck"
                 width={4000}
                 height={100}
                 className={styles.foreground_characters_behind_duck_image}
@@ -22,7 +22,7 @@ export default function Foreground() {
             <div className={styles.foreground_characters_behind_rabbit}>
               <Image
                 src="/index/Hero/hero_rabbit.png"
-                alt="serene forest scene in the night"
+                alt="hero_rabbit"
                 width={4000}
                 height={100}
                 className={styles.foreground_characters_behind_rabbit_image}
@@ -36,7 +36,7 @@ export default function Foreground() {
             <div className={styles.foreground_characters_front_cowHead}>
               <Image
                 src="/index/Hero/hero_cow-head.png"
-                alt="serene forest scene in the night"
+                alt="hero_cow-head"
                 width={4000}
                 height={100}
                 className={styles.foreground_characters_front_cowHead_image}
@@ -51,7 +51,7 @@ export default function Foreground() {
               >
                 <Image
                   src="/index/Hero/hero_cow-cam.png"
-                  alt="serene forest scene in the night"
+                  alt="hero_cow-cam"
                   width={4000}
                   height={100}
                   priority={true}
@@ -67,7 +67,7 @@ export default function Foreground() {
               >
                 <Image
                   src="/index/Hero/hero_cow-torso.png"
-                  alt="serene forest scene in the night"
+                  alt="hero_cow-torso"
                   width={4000}
                   height={100}
                   priority={true}
@@ -85,7 +85,7 @@ export default function Foreground() {
       <div className={styles.foreground_grass}>
         <Image
           src="/index/Hero/hero_front-grass.png"
-          alt="serene forest scene in the night"
+          alt="hero_cow-front"
           width={4000}
           height={100}
           className={styles.foreground_grass_image}

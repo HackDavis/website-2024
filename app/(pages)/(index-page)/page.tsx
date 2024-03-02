@@ -10,9 +10,9 @@ export default function Home() {
     <main style={{ backgroundColor: 'white' }}>
       <Landing />
       <WhatIsHackdavis />
-      <BottomSection />
-      <Everyone />
       <Stats />
+      <Everyone />
+      <BottomSection />
     </main>
   );
 }

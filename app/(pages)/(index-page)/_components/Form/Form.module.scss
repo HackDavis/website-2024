@@ -10,24 +10,26 @@
 
     justify-content: center;
     width: 500px;
-    gap: 60px;
+    width: 25vw;
+    gap: 1.2vw;
+    // border: 1px solid red;
 }
 
 .title{
+  // border: 1px solid red;
 
   &_ready{
-    font-size: 48px;
     font-weight: 800;
     letter-spacing: 0.96px;
     color: var(--teal-2, #173A52);
     font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 48px;
+    font-size: 2vw;
     font-style: normal;
     line-height: 103%; /* 49.44px */
   }
   &_social{
     font-weight: 800;
-    font-size: 70px;
+    font-size: 3.5vw;
     letter-spacing: 1.4px;
     color: var(--teal-2, #173A52);
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -49,7 +51,7 @@
     &_upper{
       color: var(--teal-2, #173A52);
       font-family: "Proxima Nova";
-      font-size: 2rem;
+      font-size: 1.5vw;
       font-style: normal;
       font-weight: 500;
       line-height: 150%; /* 48px */
@@ -58,7 +60,7 @@
       &_hackdavis{
         color: var(--teal-2, #173A52);
         font-family: "Proxima Nova";
-        font-size: 2rem;
+        font-size: 1.5vw;
         font-style: normal;
         font-weight: 700;
         line-height: 150%;
@@ -71,13 +73,10 @@
       align-items: center;
       justify-content: center;
 
-      &_icon{
-      }
-      
       &_text{
         color: var(--teal-2, #173A52);
         font-family: "Proxima Nova";
-        font-size: 1.5rem;
+        font-size: 1.5vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%; /* 36px */
@@ -104,9 +103,9 @@
 
   &_register{
     display: flex;
-    width: 100%;
-    height: 60px;
-    padding: 12px 24px;
+    width: 70%;
+    height: 3.25vw;
+    padding: 0.75vw 1.3vw;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -120,7 +119,7 @@
       color: var(--white, #FFF);
       text-align: center;
       font-family: "Proxima Nova";
-      font-size: 24px;
+      font-size: 1vw;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
@@ -134,9 +133,9 @@
   }
   &_sponsor{
     display: flex;
-    width: 100%;
-    height: 60px;
-    padding: 12px 24px;
+    width: 70%;
+    height: 3.25vw;
+    padding: 0.75vw 1.3vw;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -156,7 +155,7 @@
       color: var(--teal-2, #173A52);
       text-align: center;
       font-family: "Proxima Nova";
-      font-size: 24px;
+      font-size: 1vw;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
@@ -165,15 +164,16 @@
   }
   &_userType{
     display: flex;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    justify-content: space-between;
+    justify-content: center;
+    // border: 1px solid black;
+    width: 70%;
+    gap: 1.5vw;
 
     span{
       color: var(--teal-1, #005271);
       text-align: center;
       font-family: "Proxima Nova";
-      font-size: 24px;
+      font-size: 1vw;
       font-style: normal;
       font-weight: 700;
       line-height: normal;

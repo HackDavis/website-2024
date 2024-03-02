@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 100vw;
     background-color: transparent;    
-    // border: 10px solid blue;
 
     &_grass{
         display: flex;
@@ -40,6 +39,9 @@
         z-index: 10;
         margin-left: 40%; 
         margin-top: 45%;
+        // border: 1px solid black;
+        width: 30vw;
+
 
         &_behind{
             display: flex;

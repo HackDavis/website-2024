@@ -9,6 +9,7 @@ $mobile-breakpoint: 648px;
     align-items: center;
     background-color: $bg-color;
     width: 100%;
+    overflow: hidden; 
 
 
 }
@@ -73,20 +74,17 @@ $mobile-breakpoint: 648px;
 
 @media (max-width: $mobile-breakpoint) {
     .container{
-        //  margin-top: 60%;
          display: flex;
          flex-direction: column;
          justify-content: center;
          align-items: center;
+         overflow: hidden;
 
-        //  background-color: $bg-color;
     } 
     .cloud_back{
-        //   display: flex;
           position: relative;
           height: 800px;
           overflow: hidden;
-        //   border: 2px solid black;
 
           &_right{
             margin-top: 30%;
