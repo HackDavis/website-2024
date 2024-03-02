@@ -20,7 +20,6 @@ export default function WhatIsHackdavis() {
     };
 
     container?.addEventListener('mousemove', handleMouseMove);
-    console.log('mousePosition', mousePosition);
 
     return () => {
       container?.removeEventListener('mousemove', handleMouseMove);
