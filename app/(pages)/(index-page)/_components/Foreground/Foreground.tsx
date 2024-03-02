@@ -1,7 +1,26 @@
+'use client';
+import { useEffect, useState } from 'react';
+
 import styles from './Foreground.module.scss';
 import Image from 'next/image';
 
 export default function Foreground() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      const x = event.clientX;
+      const y = event.clientY;
+      setMousePosition({ x, y });
+    };
+
+    window?.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window?.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <div className={styles.foreground}>
       <div className={styles.foreground_container}>
@@ -17,6 +36,11 @@ export default function Foreground() {
                 priority={true}
                 placeholder="blur"
                 blurDataURL="/index/Hero/hero_duck.png"
+                style={{
+                  transform: `translateX(${
+                    mousePosition.x / 80
+                  }px) translateY(${mousePosition.y / 80}px)`,
+                }}
               />
             </div>
             <div className={styles.foreground_characters_behind_rabbit}>
@@ -29,6 +53,11 @@ export default function Foreground() {
                 priority={true}
                 placeholder="blur"
                 blurDataURL="/index/Hero/hero_rabbit.png"
+                style={{
+                  transform: `translateX(${
+                    mousePosition.x / 80
+                  }px) translateY(${mousePosition.y / 80}px)`,
+                }}
               />
             </div>
           </div>
@@ -43,6 +72,11 @@ export default function Foreground() {
                 priority={true}
                 placeholder="blur"
                 blurDataURL="/index/Hero/hero_cow-head.png"
+                style={{
+                  transform: `translateX(${
+                    mousePosition.x / 50
+                  }px) translateY(${mousePosition.y / 50}px)`,
+                }}
               />
             </div>
             <div className={styles.foreground_characters_front_cowBody}>
@@ -60,6 +94,11 @@ export default function Foreground() {
                   className={
                     styles.foreground_characters_front_cowBody_cowCam_image
                   }
+                  style={{
+                    transform: `translateX(${
+                      mousePosition.x / 50
+                    }px) translateY(${mousePosition.y / 50}px)`,
+                  }}
                 />
               </div>
               <div
@@ -76,6 +115,11 @@ export default function Foreground() {
                   className={
                     styles.foreground_characters_front_cowBody_cowTorso_image
                   }
+                  style={{
+                    transform: `translateX(${
+                      mousePosition.x / 50
+                    }px) translateY(${mousePosition.y / 50}px)`,
+                  }}
                 />
               </div>
             </div>
@@ -92,6 +136,11 @@ export default function Foreground() {
           priority={true}
           placeholder="blur"
           blurDataURL="/index/Hero/hero_front-grass.png"
+          style={{
+            transform: `translateX(${mousePosition.x / 50}px) translateY(${
+              mousePosition.y / 50
+            }px)`,
+          }}
         />
       </div>
     </div>

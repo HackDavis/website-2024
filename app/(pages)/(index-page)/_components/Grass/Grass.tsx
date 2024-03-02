@@ -1,9 +1,28 @@
+'use client';
+import { useEffect, useState, useRef } from 'react';
+
 import Image from 'next/image';
 import styles from './Grass.module.scss';
 import Polaroids from '../Polaroids/Polaroids';
 import Foreground from '../Foreground/Foreground';
 
 export default function Grass() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      const x = event.clientX;
+      const y = event.clientY;
+      setMousePosition({ x, y });
+    };
+
+    window?.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window?.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.grass}>
@@ -18,6 +37,11 @@ export default function Grass() {
             priority={true}
             placeholder="blur"
             blurDataURL="/index/Hero/hero_far-grass.png"
+            style={{
+              transform: `translateX(${mousePosition.x / 150}px) translateY(${
+                mousePosition.y / 150
+              }px)`,
+            }}
           />
         </div>
         <div className={styles.grass_medium}>
@@ -31,6 +55,11 @@ export default function Grass() {
             priority={true}
             placeholder="blur"
             blurDataURL="/index/Hero/hero_mid-grass.png"
+            style={{
+              transform: `translateX(${mousePosition.x / 120}px) translateY(${
+                mousePosition.y / 120
+              }px)`,
+            }}
           />
         </div>
       </div>
