@@ -1,6 +1,6 @@
 @use 'app/(pages)/_globals/mixins';
 $mobile-breakpoint: 648px;
-$table-breakpoint: 1007px;
+$tablet-breakpoint: 1007px;
 $bg-color: var(--landing-bg);
 
 .container {
@@ -20,7 +20,6 @@ $bg-color: var(--landing-bg);
   overflow: hidden;
 
   &_far{
-    // border: 5px solid red; 
     display: flex;
     position: absolute;
     width: 100%;
@@ -30,7 +29,6 @@ $bg-color: var(--landing-bg);
   }
   
   &_medium{
-    // border: 5px solid black;
     display: flex;
     position: relative;
     width: 100%;
@@ -60,15 +58,15 @@ $bg-color: var(--landing-bg);
   margin-top: -25%; 
 }
 
-@media (max-width: $table-breakpoint){
+@media (max-width: $tablet-breakpoint){
   .grass{
-    min-width: $table-breakpoint;
+    min-width: $tablet-breakpoint;
     &_far{
-      min-width: $table-breakpoint;
+      min-width: $tablet-breakpoint;
     }
 
     &_medium{
-      min-width: $table-breakpoint;
+      min-width: $tablet-breakpoint;
     }
   }
 }

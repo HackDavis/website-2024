@@ -2,7 +2,7 @@
 
 $bg-color: var(--landing-bg);
 $mobile-breakpoint: 648px;
-$table-breakpoint: 1007px;
+$tablet-breakpoint: 1007px;
 
 .container {
     display: flex;
@@ -11,8 +11,6 @@ $table-breakpoint: 1007px;
     background-color: $bg-color;
     width: 100%;
     overflow: hidden; 
-
-
 }
 
 
@@ -67,59 +65,8 @@ $table-breakpoint: 1007px;
         object-fit: contain;
         width: 100%;
         height: 100%;
-        // position: relative;
-        // animation: moveIn 2s ease-in forwards;
     }
 }
-
-@media (max-width: $table-breakpoint){
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        min-width: $table-breakpoint;
-
-    } 
-    .cloud_back{
-        display: flex;
-        position: relative;
-        overflow: hidden;
-        min-width: $table-breakpoint;
-    }
-    .cloud_front{
-        display: flex;
-        overflow: hidden;
-        min-width: $table-breakpoint;
-    }
-}
-
-
-@media (max-width: $mobile-breakpoint) {
-    .container{
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-         overflow: hidden;
-
-    } 
-    .cloud_back{
-        display: flex;
-        // min-width: 1007px;
-        position: relative;
-        overflow: hidden;
-    }
- }
-
- .cloud_front{
-    animation: floatSideToSide 15s ease-in-out infinite;
- }
- .cloud_back{
-    animation: floatSideToSide 10s ease-in-out infinite;
- 
- }
 
  @keyframes moveInFromLeft {
     0%{
@@ -149,3 +96,51 @@ $table-breakpoint: 1007px;
         transform: translateX(-10px);
     }
  }
+
+@media (max-width: $tablet-breakpoint){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        min-width: $tablet-breakpoint;
+
+    } 
+    .cloud_back{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        min-width: $tablet-breakpoint;
+    }
+    .cloud_front{
+        display: flex;
+        overflow: hidden;
+        min-width: $tablet-breakpoint;
+    }
+}
+
+.cloud_front{
+   animation: floatSideToSide 15s ease-in-out infinite;
+}
+.cloud_back{
+   animation: floatSideToSide 10s ease-in-out infinite;
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+    .container{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         overflow: hidden;
+
+    } 
+    .cloud_back{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+    }
+ }
+

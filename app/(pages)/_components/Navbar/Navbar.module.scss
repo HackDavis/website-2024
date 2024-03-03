@@ -72,6 +72,9 @@ $mobile-breakpoint: 648px;
     .nav{
         padding-top: 0;
     }
+    .navLink{
+        display: none; // Hide the links by default on mobile
+    }
     .menuIcon {
         display: block; // Show the menu icon on smaller screens
         position: absolute;
