@@ -1,3 +1,8 @@
+@use 'app/(pages)/_globals/mixins';
+$bg-color: var(--landing-bg);
+$mobile-breakpoint: 648px;
+$table-breakpoint: 1007px;
+
 .foreground{
     display: flex;
     flex-direction: column;
@@ -120,5 +125,18 @@
            }
         }
     
+    }
+}
+
+@media (max-width: $table-breakpoint) {
+    .foreground{
+        min-width: $table-breakpoint;
+        &_container{
+            min-width: $table-breakpoint;
+        }
+        &_characters{
+            min-width: 300px;
+        } 
+
     }
 }

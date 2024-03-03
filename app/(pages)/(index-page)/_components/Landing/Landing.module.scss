@@ -1,6 +1,7 @@
 @use 'app/(pages)/_globals/mixins';
 $bg-color: var(--landing-bg);
 $mobile-breakpoint: 648px;
+$tablet-breakpoint: 1007px;
 
 .clouds{
   position: relative;
@@ -10,13 +11,14 @@ $mobile-breakpoint: 648px;
 .grass{
   position: relative;
   z-index: 2;
-  margin-top: -13%;
+  // margin-top: -13%;
+  margin-top: -280px;
 }
 
 .form{
   position: absolute;
   z-index: 13;
-  top: 20%;
+  top: 105px;
   left: 10%;
 }
 
@@ -25,6 +27,9 @@ $mobile-breakpoint: 648px;
   position: relative;
   overflow: hidden;
 
+}
+@media (max-width: $tablet-breakpoint) {
+  
 }
 
 @media (max-width: $mobile-breakpoint) {
@@ -43,10 +48,6 @@ $mobile-breakpoint: 648px;
     justify-content: center;
     align-items: center;
 
-  }
-
-  .clouds{
-    height: 650px;
   }
   
 }

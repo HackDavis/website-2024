@@ -2,6 +2,7 @@
 
 $bg-color: var(--landing-bg);
 $mobile-breakpoint: 648px;
+$table-breakpoint: 1007px;
 
 .container {
     display: flex;
@@ -71,6 +72,29 @@ $mobile-breakpoint: 648px;
     }
 }
 
+@media (max-width: $table-breakpoint){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        min-width: $table-breakpoint;
+
+    } 
+    .cloud_back{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        min-width: $table-breakpoint;
+    }
+    .cloud_front{
+        display: flex;
+        overflow: hidden;
+        min-width: $table-breakpoint;
+    }
+}
+
 
 @media (max-width: $mobile-breakpoint) {
     .container{
@@ -82,23 +106,11 @@ $mobile-breakpoint: 648px;
 
     } 
     .cloud_back{
-          position: relative;
-          height: 800px;
-          overflow: hidden;
-
-          &_right{
-            margin-top: 30%;
-          }
-          
-          &_left{
-            margin-top: 30%;
-          }
+        display: flex;
+        // min-width: 1007px;
+        position: relative;
+        overflow: hidden;
     }
-
-    .cloud_front{
-        margin-top: 60%;
-    }
-     
  }
 
  .cloud_front{

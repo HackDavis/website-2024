@@ -1,3 +1,8 @@
+@use 'app/(pages)/_globals/mixins';
+$bg-color: var(--landing-bg);
+$mobile-breakpoint: 648px;
+$tablet-breakpoint: 1007px;
+
 .background{
     display: flex;
     background-color: transparent;
@@ -16,8 +21,6 @@
 }
 
 .title{
-  // border: 1px solid red;
-
   &_ready{
     font-weight: 800;
     letter-spacing: 0.96px;
@@ -185,8 +188,74 @@
  
   }
 }
+@media(max-width: $tablet-breakpoint){
+  .container{
+    min-width: 500px;
+  }
+  .title{
+    &_ready{
+      font-size: 35.25px;
+    }
+    &_social{
+      font-size: 50.35px;
+    }
 
-@media (max-width: 640px) {
+  }
+  .calendar{
+    &_inner{
+      &_upper{
+        font-size: 20px;
+        &_hackdavis{
+          font-size: 20px;
+        }
+      }
+      &_lower{
+        &_text{
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .buttons{
+    gap: 16px;
+
+    &_register{
+      height: 5vw;
+      padding: 0.75vw 1.3vw;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      p{
+        font-size: 2vw;
+      }
+
+    }
+    &_sponsor{
+      height: 5vw;
+      padding: 1.5vw 2.6vw;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+
+      p{
+        font-size: 2vw;
+        letter-spacing: 0.48px;
+      }
+    }
+    &_userType{
+      gap: 3vw;
+
+      span{
+        font-size: 2vw;
+      }
+    }
+  }
+} 
+
+@media (max-width: $mobile-breakpoint) {
   .container{
     position: relative;
     display: flex;
@@ -194,5 +263,4 @@
     align-items: center;
     text-align: center;
   }
-  
 }
