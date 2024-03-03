@@ -1,10 +1,13 @@
 @use 'app/(pages)/_globals/mixins';
+$mobile-breakpoint: 648px;
+$tablet-breakpoint: 1007px;
 $bg-color: var(--landing-bg);
 
 .container {
   display: flex;
   flex-direction: column;
-  // align-items: center;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   width: 100%;
 }
@@ -17,7 +20,6 @@ $bg-color: var(--landing-bg);
   overflow: hidden;
 
   &_far{
-    // border: 5px solid red; 
     display: flex;
     position: absolute;
     width: 100%;
@@ -27,7 +29,6 @@ $bg-color: var(--landing-bg);
   }
   
   &_medium{
-    // border: 5px solid black;
     display: flex;
     position: relative;
     width: 100%;
@@ -55,4 +56,17 @@ $bg-color: var(--landing-bg);
 .polaroids{
   z-index: 20;
   margin-top: -25%; 
+}
+
+@media (max-width: $tablet-breakpoint){
+  .grass{
+    min-width: $tablet-breakpoint;
+    &_far{
+      min-width: $tablet-breakpoint;
+    }
+
+    &_medium{
+      min-width: $tablet-breakpoint;
+    }
+  }
 }

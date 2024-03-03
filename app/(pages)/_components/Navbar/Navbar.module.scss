@@ -9,7 +9,6 @@ $mobile-breakpoint: 648px;
     gap: 1.5rem;
     background-color: $bg-color;
     position: relative; // Added for positioning the menu icon
-    // border: 1px solid red; 
 }
 
 .nav ul {
@@ -72,6 +71,9 @@ $mobile-breakpoint: 648px;
 @media (max-width: $mobile-breakpoint) {
     .nav{
         padding-top: 0;
+    }
+    .navLink{
+        display: none; // Hide the links by default on mobile
     }
     .menuIcon {
         display: block; // Show the menu icon on smaller screens

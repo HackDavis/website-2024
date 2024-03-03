@@ -1,6 +1,7 @@
 @use 'app/(pages)/_globals/mixins';
 $bg-color: var(--landing-bg);
 $mobile-breakpoint: 648px;
+$tablet-breakpoint: 1007px;
 
 .clouds{
   position: relative;
@@ -10,13 +11,14 @@ $mobile-breakpoint: 648px;
 .grass{
   position: relative;
   z-index: 2;
-  margin-top: -13%;
+  // margin-top: -280px;
+  margin-top: -12vw;
 }
 
 .form{
   position: absolute;
   z-index: 13;
-  top: 20%;
+  top: 105px;
   left: 10%;
 }
 
@@ -25,6 +27,11 @@ $mobile-breakpoint: 648px;
   position: relative;
   overflow: hidden;
 
+}
+@media (max-width: $tablet-breakpoint) {
+  .grass{
+    margin-top: calc(-280px + 10vw);
+  }
 }
 
 @media (max-width: $mobile-breakpoint) {
@@ -35,18 +42,16 @@ $mobile-breakpoint: 648px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // background-color: $bg-color;
   }
   .form{
-    top: 200px;
+    // border: 1px solid red;
+    left: 50%;
+    top: 10%;
+
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
-
-  }
-
-  .clouds{
-    height: 650px;
   }
   
 }

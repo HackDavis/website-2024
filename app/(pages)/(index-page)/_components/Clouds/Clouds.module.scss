@@ -2,6 +2,7 @@
 
 $bg-color: var(--landing-bg);
 $mobile-breakpoint: 648px;
+$tablet-breakpoint: 1007px;
 
 .container {
     display: flex;
@@ -10,8 +11,6 @@ $mobile-breakpoint: 648px;
     background-color: $bg-color;
     width: 100%;
     overflow: hidden; 
-
-
 }
 
 
@@ -66,48 +65,8 @@ $mobile-breakpoint: 648px;
         object-fit: contain;
         width: 100%;
         height: 100%;
-        // position: relative;
-        // animation: moveIn 2s ease-in forwards;
     }
 }
-
-
-@media (max-width: $mobile-breakpoint) {
-    .container{
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-         overflow: hidden;
-
-    } 
-    .cloud_back{
-          position: relative;
-          height: 800px;
-          overflow: hidden;
-
-          &_right{
-            margin-top: 30%;
-          }
-          
-          &_left{
-            margin-top: 30%;
-          }
-    }
-
-    .cloud_front{
-        margin-top: 60%;
-    }
-     
- }
-
- .cloud_front{
-    animation: floatSideToSide 15s ease-in-out infinite;
- }
- .cloud_back{
-    animation: floatSideToSide 10s ease-in-out infinite;
- 
- }
 
  @keyframes moveInFromLeft {
     0%{
@@ -137,3 +96,51 @@ $mobile-breakpoint: 648px;
         transform: translateX(-10px);
     }
  }
+
+@media (max-width: $tablet-breakpoint){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        min-width: $tablet-breakpoint;
+
+    } 
+    .cloud_back{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        min-width: $tablet-breakpoint;
+    }
+    .cloud_front{
+        display: flex;
+        overflow: hidden;
+        min-width: $tablet-breakpoint;
+    }
+}
+
+.cloud_front{
+   animation: floatSideToSide 15s ease-in-out infinite;
+}
+.cloud_back{
+   animation: floatSideToSide 10s ease-in-out infinite;
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+    .container{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         overflow: hidden;
+
+    } 
+    .cloud_back{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+    }
+ }
+
