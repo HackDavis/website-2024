@@ -111,7 +111,7 @@ $brand-icon-color: white;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 870px) {
     // css styling for mobile view
 .container {
     position: relative;
@@ -165,10 +165,21 @@ $brand-icon-color: white;
                 color:$brand-icon-color;
                 
             }
+
+            .mediumIcon { // used for most of the brand icons
+                max-width: 40px;
+                width: 11%;
+                color:$brand-icon-color;
+            }
+            .discordIcon { // used for most of the brand icons
+                max-width: 40px;
+                width: 11%;
+                color:$brand-icon-color;
+            }
     
             .fbIcon { // fb icon is larger than the rest so it needs smaller size
                 max-width: 17px;
-                width: 7%;
+                width: 5%;
                 color:$brand-icon-color;
             }
         }
