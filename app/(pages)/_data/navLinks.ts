@@ -1,7 +1,7 @@
 const navLinks = [
-  { name: 'Impact', slug: '/impact' },
-  { name: 'FAQ', slug: '/faq' },
-  { name: 'Sponsors', slug: '/sponsors' },
+  { name: 'Impact', slug: '/#whatishackdavis' },
+  { name: 'FAQ', slug: '/#faq' },
+  { name: 'Sponsors', slug: '/#sponsors' },
   { name: 'About', slug: '/about-us' },
   // { name: 'Medium', slug: 'https://medium.com/@HackDavis' },
   // { name: 'Facebook', slug: 'https://www.facebook.com/HackDavis' },
