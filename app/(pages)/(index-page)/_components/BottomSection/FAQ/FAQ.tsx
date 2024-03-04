@@ -71,7 +71,7 @@ const whatToHelpAnswer = (
 const FAQ = () => {
   const faqs = [
     {
-      question: 'What is a Hackathon?',
+      question: 'What is a hackathon?',
       answer: whatIsHackathonAnswer,
     },
     {
@@ -155,7 +155,6 @@ const FAQ = () => {
     <div className={styles.container}>
       <div>
         <h1 className={styles.FAQText}>FAQ</h1>
-        <h1 className={styles.FAQTextMobile}>Frequently Asked Questions</h1>
       </div>
       <Accordion transition transitionTimeout={250}>
         {faqs.map(({ question, answer }, i) => (
