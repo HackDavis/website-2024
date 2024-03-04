@@ -11,7 +11,7 @@ const whatIsHackathonAnswer = (
     Hundreds of students from across California form teams around an idea and
     collaboratively create technical solutions to problems we face in our local
     communities. These ideas turn into websites, mobile apps, hardware, and
-    more! <br />
+    more! <br /> <br />
     Join HackDavis to make some of the most imaginative projects alongside
     fellow creators! You take care of building and we'll take care of you.
     <br /> <br /> We will be following the{' '}
@@ -63,7 +63,7 @@ const whatToHelpAnswer = (
       }}
       href="mailto:team@hackdavis.io"
     >
-      team@hackdavis.io
+      team@hackdavis.io.
     </a>
   </>
 );
