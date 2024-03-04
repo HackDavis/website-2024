@@ -2,13 +2,24 @@
 $bg-color: var(--landing-bg);
 $mobile-breakpoint: 648px;
 
+.container{
+    position: absolute;
+    width: 100%; 
+    display: flex;
+    z-index: 100;
+    // border: 1px solid black;  
+    
+}
 .nav {
     display: flex;
     padding: 2rem;
     padding-top: 2rem;
     gap: 1.5rem;
-    background-color: $bg-color;
+    // background-color: $bg-color;
+    background-color: transparent;
     position: relative; // Added for positioning the menu icon
+    // border: 1px solid blue; 
+    width: 100%;
 }
 
 .nav ul {
