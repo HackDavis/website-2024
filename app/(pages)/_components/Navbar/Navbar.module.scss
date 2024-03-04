@@ -47,13 +47,14 @@ $mobile-breakpoint: 648px;
     align-items: center;
     font-size: 1.25rem;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: normal;
     letter-spacing: 0.025rem;
     display: inline-flex;
     align-items: center;
     gap: 1.5rem;
     transition: text-decoration 0.2s; 
+    font-family: 'Proxima Nova', sans-serif;
 }
 
 .words:hover {
