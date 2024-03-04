@@ -60,11 +60,48 @@
 
       .itemBtnExpanded {
         background-color: transparent;
+
+        .questionRow{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            .plusSign {
+                position: relative;
+                .verticalLine {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transform: translateX(0) translateY(0) rotate(0deg);
+                }
+              }
+          }
       }
       
       .itemContent {
         transition: height 0.3s ease-in-out;
       }   
+
+      .questionRow{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .plusSign {
+            position: relative;
+
+            .verticalLine {
+                position: absolute;
+                right: 0;
+                top: 0;
+                transform: translateX(15%) translateY(17%) rotate(90deg);
+                transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
+            }
+          }
+      }
+      
   }
   @media screen and (min-width: 960px) {
     .container {

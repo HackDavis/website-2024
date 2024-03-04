@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './FAQ.module.scss';
 import Link from 'next/link';
 import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
+import { PlusHorizontal } from './Assets/plusHorizontal';
+import { PlusVertical } from './Assets/plusVertical';
 
 const whatIsHackathonAnswer = (
   <>
@@ -126,7 +128,20 @@ const FAQ = () => {
     return (
       <Item
         {...rest}
-        header={<>{header}</>}
+        header={
+          <>
+            <div className={styles.questionRow}>
+              {header}
+              <div className={styles.plusSign}>
+                <PlusHorizontal />
+
+                <div className={styles.verticalLine}>
+                  <PlusVertical />
+                </div>
+              </div>
+            </div>
+          </>
+        }
         buttonProps={{
           className: ({ isEnter }: { isEnter: boolean }) =>
             `${styles.itemBtn} ${isEnter ? styles.itemBtnExpanded : ''}`,

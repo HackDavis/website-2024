@@ -29,10 +29,10 @@ export default function WhatIsHackdavis() {
   return (
     <div ref={containerRef} className={styles.container}>
       <div className={styles.text}>
-        <h1 className={styles.heading}>What is Hackdavis?</h1>
+        <h1 className={styles.heading}>What is HackDavis?</h1>
         <p className={styles.paragraph}>
           HackDavis is the largest collegiate hackathon in California where over
-          750 students, creators, and leaders come together for 36 hours to
+          750 students, creators, and leaders come together for 24 hours to
           create for social good.
         </p>
       </div>
