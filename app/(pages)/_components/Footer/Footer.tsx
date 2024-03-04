@@ -43,7 +43,7 @@ export default function Footer() {
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
           <a
-            className={styles.singleIcon}
+            className={styles.mediumIcon}
             href="https://medium.com/@HackDavis"
             target="#"
             rel="noopener noreferrer"
@@ -79,7 +79,7 @@ export default function Footer() {
             <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a
-            className={styles.singleIcon}
+            className={styles.discordIcon}
             href="https://discord.gg/wc6QQEc"
             target="#"
             rel="noopener noreferrer"

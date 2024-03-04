@@ -67,7 +67,16 @@ $brand-icon-color: white;
                 max-width: 30px;
                 width: 59%;
                 color:$brand-icon-color;
-                
+            }
+            .mediumIcon { // used for most of the brand icons
+                max-width: 40px;
+                width: 59%;
+                color:$brand-icon-color;
+            }
+            .discordIcon { // used for most of the brand icons
+                max-width: 40px;
+                width: 59%;
+                color:$brand-icon-color;
             }
     
             .fbIcon { // fb icon is larger than the rest so it needs smaller size
@@ -97,6 +106,7 @@ $brand-icon-color: white;
 
         .backToTopText {
             font-size: 16px;
+            font-family: 'Proxima Nova';
         }
     }
 }
