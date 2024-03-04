@@ -24,13 +24,13 @@ $tablet-breakpoint: 1007px;
 
   &_ready{
     font-weight: 800;
-    letter-spacing: 0.96px;
     color: var(--teal-2, #173A52);
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 2vw;
     font-style: normal;
     line-height: 103%; /* 49.44px */
     text-align: start;
+    letter-spacing: 0.96px;
   }
   &_social{
     font-weight: 800;
@@ -40,6 +40,7 @@ $tablet-breakpoint: 1007px;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-style: normal;
     line-height: 103%; /* 49.44px */
+    letter-spacing: 0.96px;
   }
 
 
@@ -81,12 +82,11 @@ flex-direction: column;
       &_text{
         color: var(--teal-2, #173A52);
         font-family: "Proxima Nova";
-        font-size: 1.5vw;
+        font-size: 1.25vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%; /* 36px */
         letter-spacing: 0.48px;
-        
       }
     }
   }
@@ -108,7 +108,8 @@ gap: 16px;
   &_register{
     display: flex;
     width: 70%;
-    height: 3.25vw;
+    // height: 3.25vw;
+    height: 48px;
     padding: 0.75vw 1.3vw;
     justify-content: center;
     align-items: center;
@@ -138,7 +139,8 @@ gap: 16px;
   &_sponsor{
     display: flex;
     width: 70%;
-    height: 3.25vw;
+    // height: 3.25vw;
+    height: 48px;
     padding: 0.75vw 1.3vw;
     justify-content: center;
     align-items: center;
@@ -150,9 +152,11 @@ gap: 16px;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(2px);
     transition: background-color 0.2s ease;
+    opacity: 0.75;
 
     &:hover{
-      background: rgba(234, 224, 224, 0.75);
+      // background: rgba(234, 224, 224, 0.75);
+      opacity: 1;
     }
 
     p{
@@ -219,14 +223,14 @@ gap: 16px;
   }
   .buttons{
     &_register{
-      height: 32.5px; 
+      height: 48px; 
       padding: 7.75px 13.0px;
       p{
         font-size: 10.2px;
       }
     }
     &_sponsor{
-      height: 32.5px;
+      height: 48px;
       padding: 7.75px 13.0px;
       p{
         font-size: 10.2px;
