@@ -45,14 +45,16 @@ $tablet-breakpoint: 1007px;
     align-items: center;
   }
   .form{
-    // border: 1px solid red;
     left: 50%;
-    top: 10%;
+    top: 15%;
 
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .clouds{
+    margin: 500px;
   }
   
 }

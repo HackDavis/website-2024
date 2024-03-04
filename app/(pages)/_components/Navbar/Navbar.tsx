@@ -24,8 +24,8 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
               alt="logo"
               width={100}
               height={100}
-              className={styles.logo}
-            />
+              className={`${styles.logo} ${active ? styles.active : ''}`}
+            ></Image>
           </li>
           {navLinks.map((link) => (
             <li key={link.name} className={styles.wordsItem}>

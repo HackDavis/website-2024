@@ -25,7 +25,7 @@ $tablet-breakpoint: 1007px;
   &_ready{
     font-weight: 800;
     color: var(--teal-2, #173A52);
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Proxima Nova", sans-serif;
     font-size: 2vw;
     font-style: normal;
     line-height: 103%; /* 49.44px */
@@ -37,7 +37,7 @@ $tablet-breakpoint: 1007px;
     font-size: 3.5vw;
     letter-spacing: 1.4px;
     color: var(--teal-2, #173A52);
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Proxima Nova", sans-serif;
     font-style: normal;
     line-height: 103%; /* 49.44px */
     letter-spacing: 0.96px;
@@ -56,7 +56,7 @@ flex-direction: column;
 
     &_upper{
       color: var(--teal-2, #173A52);
-      font-family: "Proxima Nova";
+      font-family: "Proxima Nova", sans-serif;
       font-size: 1.5vw;
       font-style: normal;
       font-weight: 500;
@@ -65,7 +65,7 @@ flex-direction: column;
 
       &_hackdavis{
         color: var(--teal-2, #173A52);
-        font-family: "Proxima Nova";
+        font-family: "Proxima Nova", sans-serif;
         font-size: 1.5vw;
         font-style: normal;
         font-weight: 700;
@@ -77,16 +77,21 @@ flex-direction: column;
     &_lower{
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 0.25vw;
 
       &_text{
         color: var(--teal-2, #173A52);
-        font-family: "Proxima Nova";
+        font-family: "Proxima Nova", sans-serif;
         font-size: 1.25vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%; /* 36px */
         letter-spacing: 0.48px;
+      }
+      &_icon{
+        width: 1.25vw;
+        height: 1.25vw;
+        margin-bottom: 1px;
       }
     }
   }
@@ -123,7 +128,7 @@ gap: 16px;
     p{
       color: var(--white, #FFF);
       text-align: center;
-      font-family: "Proxima Nova";
+      font-family: "Proxima Nova", sans-serif;
       font-size: 1vw;
       font-style: normal;
       font-weight: 700;
@@ -162,7 +167,7 @@ gap: 16px;
     p{
       color: var(--teal-2, #173A52);
       text-align: center;
-      font-family: "Proxima Nova";
+      font-family: "Proxima Nova", sans-serif;
       font-size: 1vw;
       font-style: normal;
       font-weight: 700;
@@ -180,7 +185,7 @@ gap: 16px;
     span{
       color: var(--teal-1, #005271);
       text-align: center;
-      font-family: "Proxima Nova";
+      font-family: "Proxima Nova", sans-serif;
       font-size: 1vw;
       font-style: normal;
       font-weight: 700;
@@ -215,8 +220,14 @@ gap: 16px;
         }
       }
       &_lower{
+        display: flex;
+
         &_text{
           font-size: 15.1px;
+        }
+        &_icon{
+          width: 15.1px;
+          height: 15.1px;
         }
       }
     }
@@ -248,8 +259,8 @@ gap: 16px;
 
 @media (max-width: $mobile-breakpoint) {
   .background{
-    width: 70vw;
-    // border: 1px solid black;
+    width: 100vw;
+    border: 1px solid black;
   }
   .container{
     position: relative;
@@ -258,11 +269,68 @@ gap: 16px;
     align-items: center;
     text-align: center;
     width: 100%;
-    // border: 1px solid red; 
   }
   .buttons{
     justify-content: center;
     align-items: center;
+  }
+  .title{
+    &_ready{
+      color: var(--teal-2, #173A52);
+      text-align: center;
+      font-family: "Proxima Nova";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 115%; /* 36.8px */
+      letter-spacing: 0.64px;
+    }
+    &_social{
+      color: var(--teal-2, #173A52);
+      font-family: "Proxima Nova";
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 115%;
+      letter-spacing: 0.96px;
+    }
+  }
+  .calendar{
+    &_inner{
+      &_upper{
+        font-size: 24px;
+        &_hackdavis{
+          font-size: 24px;
+        }
+      }
+      &_lower{
+        &_text{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .buttons{
+    &_register{
+      height: 48px; 
+      padding: 7.75px 13.0px;
+      p{
+        font-size: 10.2px;
+      }
+    }
+    &_sponsor{
+      height: 48px;
+      padding: 7.75px 13.0px;
+      p{
+        font-size: 10.2px;
+      }
+    }
+    &_userType{
+      gap: 12.08px;
+      span{
+        font-size: 10.2px;
+      }
+    }
   }
 
 }
