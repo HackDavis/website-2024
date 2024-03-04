@@ -8,13 +8,25 @@ import Sponsors from './_components/Sponsors/Sponsors';
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: 'white' }}>
-      <Landing />
-      <WhatIsHackdavis />
-      <Stats />
-      <Everyone />
-      <BottomSection />
-      <Sponsors />
+    <main style={{ backgroundColor: 'white', scrollBehavior: 'smooth' }}>
+      <div id="landing">
+        <Landing />
+      </div>
+      <div id="whatishackdavis">
+        <WhatIsHackdavis />
+      </div>
+      <div id="stats">
+        <Stats />
+      </div>
+      <div id="everyone">
+        <Everyone />
+      </div>
+      <div id="faq">
+        <BottomSection />
+      </div>
+      <div id="sponsors">
+        <Sponsors />
+      </div>
     </main>
   );
 }
