@@ -37,6 +37,18 @@ export async function filterTeamMongo(
     console.error('Failed to fetch team members:', error);
     return [];
   }
+  team_members.sort((a, b) => {
+    // Check if 'position' contains 'Lead'
+    const aIsLead = a.position.includes('Lead');
+    const bIsLead = b.position.includes('Lead');
+
+    // Prioritize leads
+    if (aIsLead && !bIsLead) return -1;
+    if (!aIsLead && bIsLead) return 1;
+
+    // If both are leads or neither, sort by another attribute, e.g., 'name'
+    return a.name.localeCompare(b.name);
+  });
 
   return team_members;
 }
