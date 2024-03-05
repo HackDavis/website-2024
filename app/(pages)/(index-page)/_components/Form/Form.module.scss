@@ -260,7 +260,7 @@ gap: 16px;
 @media (max-width: $mobile-breakpoint) {
   .background{
     width: 100vw;
-    border: 1px solid black;
+    // border: 1px solid black;
   }
   .container{
     position: relative;
@@ -304,8 +304,15 @@ gap: 16px;
         }
       }
       &_lower{
+        display: flex;
+        justify-content: center;
         &_text{
           font-size: 18px;
+        }
+        &_icon{
+          width: 18px;
+          height: 18px;
+          margin-bottom: 2px;
         }
       }
     }
@@ -315,20 +322,20 @@ gap: 16px;
       height: 48px; 
       padding: 7.75px 13.0px;
       p{
-        font-size: 10.2px;
+        font-size: 18px;
       }
     }
     &_sponsor{
       height: 48px;
       padding: 7.75px 13.0px;
       p{
-        font-size: 10.2px;
+        font-size: 18px;
       }
     }
     &_userType{
       gap: 12.08px;
       span{
-        font-size: 10.2px;
+        font-size: 18px;
       }
     }
   }
