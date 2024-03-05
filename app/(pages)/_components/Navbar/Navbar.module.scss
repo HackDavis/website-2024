@@ -112,6 +112,13 @@ $mobile-breakpoint: 648px;
         width: 70px;
         height: 130px;
     }
+    .logo{
+        display: none;   
+    }
+
+    .logo.active{
+        display: flex; // Display the logo when active
+    }
 }
 
 .words-item {

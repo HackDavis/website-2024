@@ -56,6 +56,7 @@ $bg-color: var(--landing-bg);
 .polaroids{
   z-index: 20;
   margin-top: -25%; 
+  min-width: 0;
 }
 
 @media (max-width: $tablet-breakpoint){
@@ -69,4 +70,8 @@ $bg-color: var(--landing-bg);
       min-width: $tablet-breakpoint;
     }
   }
+  .polaroids{
+    width: 100vw;
+  }
+  
 }
