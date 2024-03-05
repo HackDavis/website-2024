@@ -6,14 +6,14 @@ interface ProfileCardProps {
   name: string;
   title: string;
   imageUrl: string;
-  linkedInUrl: string;
+  linkedinURL: string;
 }
 
 const ProfileCard: React.FC<ProfileCardProps> = ({
   name,
   title,
   imageUrl,
-  linkedInUrl,
+  linkedinURL,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -38,7 +38,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             isHovered ? styles.visible : ''
           }`}
         >
-          <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+          <a href={linkedinURL} target="_blank" rel="noopener noreferrer">
             <FaLinkedin
               size={60}
               className={styles.profile_card_image_linkedIn_icon}

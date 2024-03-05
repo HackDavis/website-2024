@@ -9,6 +9,7 @@ type TeamMember = {
   profileImageUrl: string;
   teamCategory: string;
   year: number;
+  linkedinURL: string;
 };
 
 export async function filterTeamMongo(
@@ -30,6 +31,7 @@ export async function filterTeamMongo(
       profileImageUrl: doc.profile_image_url,
       teamCategory: doc.team_category,
       year: doc.year,
+      linkedinURL: doc.linkedinURL,
     }));
   } catch (error) {
     console.error('Failed to fetch team members:', error);

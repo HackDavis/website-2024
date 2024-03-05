@@ -11,7 +11,7 @@ type TeamMember = {
   name: string;
   position: string;
   profileImageUrl: string;
-  // linkedinURL: string;
+  linkedinURL: string;
 };
 
 export default function OurTeam() {
@@ -126,8 +126,8 @@ export default function OurTeam() {
                 name={member.name}
                 title={member.position}
                 imageUrl={member.profileImageUrl}
-                // linkedinURL={member.linkedinURL}
-                linkedInUrl="https://www.linkedin.com/in/teeranade-cheng"
+                linkedinURL={member.linkedinURL}
+                // linkedInUrl="https://www.linkedin.com/in/teeranade-cheng"
               />
             );
           })}
