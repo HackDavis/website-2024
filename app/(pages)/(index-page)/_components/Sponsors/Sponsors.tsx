@@ -10,17 +10,17 @@ export default function Sponsors() {
       <Marquee iterations={2} duration={50}>
         <Logo
           imgSrc={Intel}
-          url="https://aggiereuse.ucdavis.edu/"
+          url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
         <Logo
           imgSrc={Intel}
-          url="https://aggiereuse.ucdavis.edu/"
+          url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
         <Logo
           imgSrc={Intel}
-          url="https://aggiereuse.ucdavis.edu/"
+          url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
       </Marquee>
@@ -28,17 +28,17 @@ export default function Sponsors() {
       <Marquee iterations={2} reverse duration={50}>
         <Logo
           imgSrc={Intel}
-          url="https://aggiereuse.ucdavis.edu/"
+          url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
         <Logo
           imgSrc={Intel}
-          url="https://aggiereuse.ucdavis.edu/"
+          url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
         <Logo
           imgSrc={Intel}
-          url="https://aggiereuse.ucdavis.edu/"
+          url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
       </Marquee>

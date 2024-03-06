@@ -133,7 +133,7 @@
         }
         .logWaterSheen {
             position: relative;
-            width: 100%; 
+            width: 100%;
             height: auto;
             z-index: 0;
             margin-top: -16%;
@@ -172,7 +172,7 @@
     }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 768px) {
     .container {
         .text {
             .heading{
@@ -182,22 +182,53 @@
                 font-size: 0.94rem;
             }
         }
+        .logStuff {
+            margin-top: 60px;
+        }
     }
 }
 
 @media (max-width: 425px) {
     .container {
+
         .text {
             display: flex;
-            .heading{
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            .heading {
                 font-size: 2rem;
-                width: 295px;
+                width: 311px;
                 letter-spacing: 0.64px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                padding-bottom: 32px;
             }
             .paragraph {
                 font-size: 1rem;
                 width: 311px;
                 letter-spacing: 0.32px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+            }
+        }
+
+        .logStuff {
+            margin-top: 100px;
+            
+            .logLeftSection {
+                width: 41%;
+
+                .logLeft {
+                    margin-left: 0%;
+                }
+            }
+            .logRightSection {
+            width: 110%;
+             margin-right: -15%;
             }
         }
     }

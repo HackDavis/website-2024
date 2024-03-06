@@ -43,7 +43,7 @@
         background-color: transparent;
         border: none;
         width: 100%;
-        text-align: left;
+        text-align: start;
       }
 
       .itemBtnExpanded {
@@ -79,12 +79,16 @@
 
         .plusSign {
             position: relative;
+            width: 19px;
+            height: 19px;
 
             .verticalLine {
                 position: absolute;
+                width: 19px;
+                height: 19px;
                 right: 0;
                 top: 0;
-                transform: translateX(15%) translateY(17%) rotate(90deg);
+                transform: translateX(9%) translateY(9%) rotate(90deg);
                 transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
             }
           }
