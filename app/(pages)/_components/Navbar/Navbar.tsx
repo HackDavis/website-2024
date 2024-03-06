@@ -15,7 +15,9 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY < lastScrollY) {
+      if (currentScrollY === 0) {
+        setDirection('down');
+      } else if (currentScrollY < lastScrollY) {
         setDirection('up');
       } else {
         setDirection('down');
@@ -60,7 +62,13 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
           {navLinks.map((link) => (
             <li key={link.name} className={styles.wordsItem}>
               <Link href={link.slug} onClick={setInactive}>
-                <span className={styles.navLink}>{link.name}</span>
+                <span
+                  className={`${styles.navLink} ${
+                    active ? styles.navLink_active : ''
+                  }`}
+                >
+                  {link.name}
+                </span>
               </Link>
             </li>
           ))}
