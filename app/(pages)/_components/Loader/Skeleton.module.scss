@@ -1,7 +1,12 @@
+@use 'app/(pages)/_globals/mixins';
+
 $nav-height: 114px;
 
 .container {
     width: 100%;
+    height: 100%;
+    min-height: 700px;
+    position: relative;
 
     .navbar {
         width: 100%;
@@ -16,6 +21,10 @@ $nav-height: 114px;
             flex-direction: row;
             gap: 24px;
             align-items: center;
+
+            @include mixins.phone {
+                display: none;
+            }
             
             .logo {
                 height: 44%;
@@ -48,6 +57,9 @@ $nav-height: 114px;
 
                 :nth-child(4) {
                     aspect-ratio: 2.8;
+                    @include mixins.tablet {
+                        display: none;
+                    }
                 }
             }
         }
@@ -56,6 +68,104 @@ $nav-height: 114px;
             .mlh_image {
                 height: 130px;
                 width: auto;
+            }
+        }
+
+        .mobile_menu {
+            display: none;
+            @include mixins.phone {
+                display: block;
+                height: 35%;
+                align-self: center;
+            }
+        }
+    }
+
+    .form_container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 180px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        max-width: 400px;
+        gap: 56px;
+
+        @include mixins.phone {
+            top: 40%;
+        }
+
+        @include mixins.phone {
+            left: 0;
+            right: 0;
+            padding: 48px;
+            max-width: none;
+            align-items: center;
+        }
+
+
+        >div {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            @include mixins.phone {
+                align-items: center;
+            }
+        }
+
+        >div>div {
+            background-color: var(--loader-gray);
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .main_text {
+            :nth-child(1) {
+                height: 2rem;
+                aspect-ratio: 1;
+                width: 90%;
+
+            }
+            :nth-child(2) {
+                height: 3rem;
+                @include mixins.phone {
+                    width: 100%;
+                }
+            }
+        }
+
+        .secondary_text {
+            :nth-child(1) {
+                height: 1.75rem;
+                aspect-ratio: 1;
+                @include mixins.phone {
+                    width: 90%;
+                }
+            }
+            :nth-child(2) {
+                height: 1.75rem;
+                width: 90%;
+                @include mixins.phone {
+                    width: 100%;
+                }
+            }
+        }
+
+        .buttons {
+            width: 70%;
+            @include mixins.phone {
+                width: 100%;
+            }
+            :nth-child(1) {
+                height: 3rem;
+                border-radius: 100px;
+            }
+            :nth-child(2) {
+                height: 3rem;
+                border-radius: 100px;
             }
         }
     }
