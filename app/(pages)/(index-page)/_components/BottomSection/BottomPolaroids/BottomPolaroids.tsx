@@ -1,8 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './BottomPolaroids.module.scss';
 import { useState, useEffect } from 'react';
+import { useLoadCount } from '@hooks/useLoadCount';
 
 export default function BottomPolaroids() {
+  const { incLoaded } = useLoadCount();
   const [polaroidUrls, setPolaroidUrls] = useState([
     '/index/Polaroids/final_Footer-img3.png',
     '/index/Polaroids/final_Footer-img2.png',
@@ -65,6 +69,7 @@ export default function BottomPolaroids() {
             className={
               isHover ? polaroidClasses[index] : polaroidClassesStacked[index]
             }
+            onLoad={incLoaded}
           />
         ))}
       </div>
