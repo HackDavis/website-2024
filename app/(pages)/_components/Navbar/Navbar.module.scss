@@ -1,6 +1,6 @@
 @use 'app/(pages)/_globals/mixins';
 $bg-color: var(--landing-bg);
-$mobile-breakpoint: 648px;
+$mobile-breakpoint: 425px;
 
 .container{
     position: absolute;
@@ -34,6 +34,7 @@ $mobile-breakpoint: 648px;
 
     &_sticky{
         padding: 1rem;
+        padding-left: 2rem; 
     }
 }
 
@@ -97,14 +98,35 @@ $mobile-breakpoint: 648px;
 
 @media (max-width: $mobile-breakpoint) {
     .nav{
+        display: flex;
+        flex-direction: column;
         padding-top: 0;
+
+        &_sticky{
+            padding-top: 0;
+        }
     }
     .navLink{
         display: none; // Hide the links by default on mobile
+        &_active{
+            display: flex; // Show the links when active
+            flex-direction: column;
+            width: 100%;
+            height: 300px;
+        }
     }
+
+    .logo{
+        display: none; // Hide the logo by default on mobile
+        &_active{
+            display: flex; // Show the logo when active
+        }
+    }
+
     .menuIcon {
         display: block; // Show the menu icon on smaller screens
-        position: fixed;
+        // position: fixed;
+        position: absolute;
         right: 2rem;
         top: 2rem;
         cursor: pointer;
@@ -113,16 +135,30 @@ $mobile-breakpoint: 648px;
 
     .words {
         display: none; // Hide the words by default on mobile
-        flex-direction: column; // Stack the links vertically on mobile
         position: absolute;
         top: 100%; // Position the menu below the navbar
         right: 0;
-        background-color: $bg-color; // Ensure the background matches
-        width: 100%; // Full width to cover the screen
-    }
+        // width: 100%; // Full width to cover the screen
+        &_active{
+            display: flex ;
+            flex-direction: column !important; 
 
-    .words.active {
-        display: flex; // Display the menu when active
+            justify-content: center; 
+            align-items: center; 
+            width: 100%; 
+            position: fixed; 
+            top: 0; 
+            left: 0;
+            right: 0;
+            z-index: 1000; 
+            background-color: $bg-color; 
+            height: 100vh; 
+            animation: expand 0.3s ease-in-out forwards;
+        }
+    }
+    .wordsItem{
+        // border: 1px solid red; 
+        height: 80px;
     }
 
     .mlhBadge{
@@ -132,27 +168,19 @@ $mobile-breakpoint: 648px;
     }
     .logo{
         display: none;   
-    }
-
-    .logo.active{
-        display: flex; // Display the logo when active
-    }
-
-    .overlay{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        // background: rgba(0, 0, 0, 0.5);
-        background-color: $bg-color;
-        z-index: 1000;
+        &_active{
+            display: flex;
+        }
     }
 }
 
-.words-item {
-    display: flex; // Adjust display for individual items if necessary
-}
-
-
-// Include other styles as necessary
+@keyframes expand {
+    from {
+        // width: 0;
+        height: 0;
+    }
+    to {
+    //   width: 100%;
+      height: 100%;
+    }
+  }
