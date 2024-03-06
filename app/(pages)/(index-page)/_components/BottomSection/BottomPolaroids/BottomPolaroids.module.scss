@@ -10,7 +10,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 90px;
+        padding-top: 70%;
         margin-bottom: 10px;
 
         .backPolaroid {
@@ -18,27 +18,67 @@
             max-width: 570px;
             height: auto; 
             z-index: 0;
-            transform: rotate(7.1deg);
+            // transform: rotate(7.1deg);
+            transform: translateX(40%) rotate(7.16deg);
             // border: 2px solid black; /* 2px solid black border */
-            margin-right: -11%;
+            // margin-right: -11%;
+            transition: transform 0.5s ease;
         }
         .middlePolaroid {
             width: 21vw;
             max-width: 570px; 
             height: auto; 
             z-index: 1;
-            transform: rotate(-5.16deg);
-            margin-right: 50%;
-            margin-top: -40%;
+            transform: translateX(-40%) rotate(-5.16deg);
+            // margin-right: 50%;
+            margin-top: -80%;
             // border: 2px solid black; /* 2px solid black border */
+            transition: transform 0.5s ease;
         }
         .frontPolaroid {
             width: 21vw;
             max-width: 570px; 
             height: auto; 
             z-index: 2;
-            margin-top: -25%;
+            margin-top: -80%;
             // border: 2px solid black; /* 2px solid black border */
+            transition: transform 0.5s ease;
+            transform: translateY(40%);
+        }
+
+        .backPolaroidStacked {
+            width: 21vw; 
+            max-width: 570px;
+            height: auto; 
+            z-index: 0;
+            // transform: rotate(7.1deg);
+            // border: 2px solid black; /* 2px solid black border */
+            // margin-right: -11%;
+            transition: transform 0.5s ease;
+            margin-bottom: -80%;
+
+        }
+        .middlePolaroidStacked  {
+            width: 21vw;
+            max-width: 570px; 
+            height: auto; 
+            z-index: 1;
+            // transform: rotate(-5.16deg);
+            // margin-right: 50%;
+            margin-bottom: -80%;
+            // border: 2px solid black; /* 2px solid black border */
+            transition: transform 0.5s ease;
+        }
+        .frontPolaroidStacked  {
+            width: 21vw;
+            max-width: 570px; 
+            height: auto; 
+            z-index: 2;
+            //margin-top: 10%;
+            // border: 2px solid black; /* 2px solid black border */
+            transition: transform 0.5s ease;
+            //margin-top: 10%;
+
         }
     }
 
@@ -49,24 +89,73 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-left: 30%;
+        //padding-left: 30%;
         padding-bottom: 10%;
 
         .allPolaroids {
+            padding-top: 30%;
             .backPolaroid {
-                width: 27.5vw;
-                margin-bottom: -25%;
-                margin-right: -80%;
-
+                width: 27.5vw; 
+                max-width: 570px;
+                height: auto; 
+                z-index: 0;
+                // transform: rotate(7.1deg);
+                transform: translateX(40%) rotate(7.16deg);
+                // border: 2px solid black; /* 2px solid black border */
+                // margin-right: -11%;
+                transition: transform 0.5s ease;
             }
             .middlePolaroid {
                 width: 27.5vw;
-                margin-left: -95%;
-
+                max-width: 570px; 
+                height: auto; 
+                z-index: 1;
+                transform: translateX(-40%) rotate(-5.16deg);
+                // margin-right: 50%;
+                margin-top: -80%;
+                // border: 2px solid black; /* 2px solid black border */
+                transition: transform 0.5s ease;
             }
             .frontPolaroid {
                 width: 27.5vw;
+                max-width: 570px; 
+                height: auto; 
+                z-index: 2;
                 margin-top: -80%;
+                // border: 2px solid black; /* 2px solid black border */
+                transition: transform 0.5s ease;
+                transform: translateY(40%);
+            }
+    
+            .backPolaroidStacked {
+                width: 27.5vw; 
+                max-width: 570px;
+                height: auto; 
+                z-index: 0;
+                // transform: rotate(7.1deg);
+                // border: 2px solid black; /* 2px solid black border */
+                // margin-right: -11%;
+                transition: transform 0.5s ease;
+            }
+            .middlePolaroidStacked  {
+                width: 27.5vw;
+                max-width: 570px; 
+                height: auto; 
+                z-index: 1;
+                // transform: rotate(-5.16deg);
+                // margin-right: 50%;
+                margin-top: -5%;
+                // border: 2px solid black; /* 2px solid black border */
+                transition: transform 0.5s ease;
+            }
+            .frontPolaroidStacked  {
+                width: 27.5vw;
+                max-width: 570px; 
+                height: auto; 
+                z-index: 2;
+                margin-top: -5%;
+                // border: 2px solid black; /* 2px solid black border */
+                transition: transform 0.5s ease;
             }
         }
     }
@@ -79,27 +168,71 @@
         align-items: center;
 
         .allPolaroids {
+
             .backPolaroid {
-                width: 64vw; 
+                width: 50vw; 
+                max-width: 570px;
                 height: auto; 
                 z-index: 0;
-                transform: rotate(7.1deg);
-                margin-right: -10vw;
-                margin-bottom: -6vw;
+                // transform: rotate(7.1deg);
+                transform: translateX(40%) rotate(7.16deg);
+                // border: 2px solid black; /* 2px solid black border */
+                // margin-right: -11%;
+                transition: transform 0.5s ease;
             }
             .middlePolaroid {
-                width: 64vw; 
+                width: 50vw;
+                max-width: 570px; 
                 height: auto; 
                 z-index: 1;
-                transform: rotate(-5.16deg);
-                margin-right: 15vw;
-                margin-bottom: -9vw;
+                transform: translateX(-40%) rotate(-5.16deg);
+                // margin-right: 50%;
+                margin-top: -80%;
+                // border: 2px solid black; /* 2px solid black border */
+                transition: transform 0.5s ease;
             }
             .frontPolaroid {
-                width: 63vw; 
+                width: 50vw;
+                max-width: 570px; 
                 height: auto; 
                 z-index: 2;
-                margin-top: -23vw;
+                margin-top: -80%;
+                // border: 2px solid black; /* 2px solid black border */
+                transition: transform 0.5s ease;
+                transform: translateY(40%);
+                margin-bottom: 40%;
+            }
+    
+            .backPolaroidStacked {
+                width: 50vw; 
+                max-width: 570px;
+                height: auto; 
+                z-index: 0;
+                // transform: rotate(7.1deg);
+                // border: 2px solid black; /* 2px solid black border */
+                margin-top: -40%;
+                transition: transform 0.5s ease;
+            }
+            .middlePolaroidStacked  {
+                width: 50vw;
+                max-width: 570px; 
+                height: auto; 
+                z-index: 1;
+                // transform: rotate(-5.16deg);
+                // margin-right: 50%;
+                margin-top: -3%;
+                // border: 2px solid black; /* 2px solid black border */
+                transition: transform 0.5s ease;
+            }
+            .frontPolaroidStacked  {
+                width: 50vw;
+                max-width: 570px; 
+                height: auto; 
+                z-index: 2;
+                margin-top: -3%;
+                // border: 2px solid black; /* 2px solid black border */
+                transition: transform 0.5s ease;
+
             }
         }
     }
