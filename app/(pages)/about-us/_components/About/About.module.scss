@@ -6,9 +6,12 @@
     width: 100%;
     max-width: 100%;
     margin: 0; 
-    min-height: 100vh;
+    min-height: 70vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center; /* This will center the child vertically */
+    justify-content: center; /* This will center the child horizontally */
 }
 
 
@@ -20,19 +23,19 @@
     line-height: normal;
     letter-spacing: 0.06rem;
     margin-bottom: 2rem;
-    margin-top: 6rem;
-    margin-left: 9.94rem; 
-    margin-right: 9.94rem;
+    margin-top: -30%;
+    margin-left: 15%; 
 }
 
 
 .tiles {
+    width: 21.375rem;
+    height: 21.375rem;
     display: flex;
     align-items: center;
     gap: 2rem;
     justify-content: center; 
-    margin-left: 10.94rem; 
-    margin-right: 10.94rem; 
+    margin-right: 40%; 
 }
 
 
@@ -176,4 +179,61 @@
     overflow: hidden;
     position: absolute;
     bottom: 0;
+}
+@media screen and (max-width: 768px) {
+    .hello-container{
+        min-height: 150vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .h1 {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.06rem;
+        margin-right: -19%;
+        margin-left: 30%;
+        margin-top: -190%;
+    }
+
+    .tiles {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 1rem; 
+    }
+
+    .inclusivity, .Handson, .Impactful {
+        width: 19.4375rem;
+        height: 19.4375rem;
+        border-radius: 0.625rem;
+        margin-bottom: 3rem;
+    }
+
+    .inclusivity_title, .Handson_title, .Impactful_title {
+        font-size: 1.25rem; 
+        margin-left: 1rem; 
+        margin-right: -20rem; 
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.03rem;
+
+    }
+
+    .inclusivity_text, .Handson_text, .Impactful_text {
+        font-size: 0.875rem; 
+        margin: 1rem; 
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.02rem;
+    }
+
 }

@@ -1,53 +1,57 @@
 import React from 'react';
 import styles from './Sponsor.module.scss';
-import Card from './Card';
+
+const cards = [
+  {
+    imageUrl: '/about-us-icon/pol1.svg',
+    frameImageUrl: '/about-us-icon/pol1a.svg',
+  },
+  {
+    imageUrl: '/about-us-icon/pol2.svg',
+    frameImageUrl: '/about-us-icon/pol2a.svg',
+  },
+  {
+    imageUrl: '/about-us-icon/pol3.svg',
+    frameImageUrl: '/about-us-icon/pol3a.svg',
+  },
+  {
+    imageUrl: '/about-us-icon/pol4.svg',
+    frameImageUrl: '/about-us-icon/pol4a.svg',
+  },
+  {
+    imageUrl: '/about-us-icon/pol5.svg',
+    frameImageUrl: '/about-us-icon/pol5a.svg',
+  },
+];
+
+const Carousel: React.FC = () => {
+  return (
+    <div className="carousel">
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="polaroid"
+          style={{ zIndex: cards.length - index }}
+        >
+          <img
+            src={card.imageUrl}
+            alt={`Polaroid ${index + 1}`}
+            className="photo"
+          />
+          <img
+            src={card.frameImageUrl}
+            alt={`Frame ${index + 1}`}
+            className="frame"
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const Sponsor = () => {
-  const cards = [
-    {
-      imageUrl: '/about-us-icon/pol1.svg',
-      frameImageUrl: '/about-us-icon/pol1a.svg',
-      title: 'Pol 1',
-      description: 'Description 1',
-    },
-    {
-      imageUrl: '/about-us-icon/pol2.svg',
-      frameImageUrl: '/about-us-icon/pol2a.svg',
-      title: 'Title 2',
-      description: 'Description 2',
-    },
-    {
-      imageUrl: '/about-us-icon/pol3.svg',
-      frameImageUrl: '/about-us-icon/pol3a.svg',
-      title: 'Title 2',
-      description: 'Description 2',
-    },
-    {
-      imageUrl: '/about-us-icon/pol4.svg',
-      frameImageUrl: '/about-us-icon/pol4a.svg',
-      title: 'Title 2',
-      description: 'Description 2',
-    },
-    {
-      imageUrl: '/about-us-icon/pol5.svg',
-      frameImageUrl: '/about-us-icon/pol5a.svg',
-      title: 'Title 2',
-      description: 'Description 2',
-    },
-  ];
   return (
     <div className={styles['sponsor-container']}>
-      <div className={styles.carouselContainer}>
-        {cards.map((card, index) => (
-          <Card
-            key={index}
-            imageUrl={card.imageUrl}
-            frameImageUrl={card.frameImageUrl}
-            title={card.title}
-            description={card.description}
-          />
-        ))}
-      </div>
       <div className={styles['numbers-words-container']}>
         <div className={styles['number-word-pair']}>
           <span className={styles.number}>140+</span>
@@ -86,3 +90,4 @@ const Sponsor = () => {
 };
 
 export default Sponsor;
+export { Carousel };
