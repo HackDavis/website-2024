@@ -8,16 +8,33 @@ $mobile-breakpoint: 648px;
     display: flex;
     z-index: 100;
     // border: 1px solid black;  
+
+    &_sticky{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backdrop-filter: blur(10px);
+        background-color: transparent;
+        // background-color: $bg-color;
+        // background: rgba(0, 0, 0, 0.5);
+        background-color: rgba(255,255,255, 0.5);
+        // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        z-index: 100;
+    }
     
 }
 .nav {
     display: flex;
     padding: 2rem;
-    padding-top: 2rem;
     gap: 1.5rem;
     background-color: transparent;
     position: relative; // Added for positioning the menu icon
     width: 100%;
+
+    &_sticky{
+        padding: 1rem;
+    }
 }
 
 .nav ul {
@@ -87,10 +104,11 @@ $mobile-breakpoint: 648px;
     }
     .menuIcon {
         display: block; // Show the menu icon on smaller screens
-        position: absolute;
+        position: fixed;
         right: 2rem;
         top: 2rem;
         cursor: pointer;
+        z-index: 9999;
     }
 
     .words {
@@ -119,10 +137,22 @@ $mobile-breakpoint: 648px;
     .logo.active{
         display: flex; // Display the logo when active
     }
+
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // background: rgba(0, 0, 0, 0.5);
+        background-color: $bg-color;
+        z-index: 1000;
+    }
 }
 
 .words-item {
     display: flex; // Adjust display for individual items if necessary
 }
+
 
 // Include other styles as necessary
