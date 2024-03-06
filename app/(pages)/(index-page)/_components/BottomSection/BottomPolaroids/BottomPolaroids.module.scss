@@ -19,7 +19,7 @@
             height: auto; 
             z-index: 0;
             // transform: rotate(7.1deg);
-            transform: translateX(40%) rotate(7.16deg);
+            transform: translateX(40%) translateY(-30%) rotate(7.16deg);
             // border: 2px solid black; /* 2px solid black border */
             // margin-right: -11%;
             transition: transform 0.5s ease;
@@ -29,7 +29,7 @@
             max-width: 570px; 
             height: auto; 
             z-index: 1;
-            transform: translateX(-40%) rotate(-5.16deg);
+            transform: translateX(-40%) translateY(-30%) rotate(-5.16deg);
             // margin-right: 50%;
             margin-top: -80%;
             // border: 2px solid black; /* 2px solid black border */
@@ -43,7 +43,7 @@
             margin-top: -80%;
             // border: 2px solid black; /* 2px solid black border */
             transition: transform 0.5s ease;
-            transform: translateY(40%);
+            transform: translateY(30%);
         }
 
         .backPolaroidStacked {
@@ -100,7 +100,7 @@
                 height: auto; 
                 z-index: 0;
                 // transform: rotate(7.1deg);
-                transform: translateX(40%) rotate(7.16deg);
+                transform: translateX(40%) translateY(-30%) rotate(7.16deg);
                 // border: 2px solid black; /* 2px solid black border */
                 // margin-right: -11%;
                 transition: transform 0.5s ease;
@@ -110,7 +110,7 @@
                 max-width: 570px; 
                 height: auto; 
                 z-index: 1;
-                transform: translateX(-40%) rotate(-5.16deg);
+                transform: translateX(-40%) translateY(-30%) rotate(-5.16deg);
                 // margin-right: 50%;
                 margin-top: -80%;
                 // border: 2px solid black; /* 2px solid black border */
@@ -124,7 +124,7 @@
                 margin-top: -80%;
                 // border: 2px solid black; /* 2px solid black border */
                 transition: transform 0.5s ease;
-                transform: translateY(40%);
+                transform: translateY(30%);
             }
     
             .backPolaroidStacked {
@@ -175,7 +175,7 @@
                 height: auto; 
                 z-index: 0;
                 // transform: rotate(7.1deg);
-                transform: translateX(40%) rotate(7.16deg);
+                transform: translateX(40%) translateY(-30%) rotate(7.16deg);
                 // border: 2px solid black; /* 2px solid black border */
                 // margin-right: -11%;
                 transition: transform 0.5s ease;
@@ -185,7 +185,7 @@
                 max-width: 570px; 
                 height: auto; 
                 z-index: 1;
-                transform: translateX(-40%) rotate(-5.16deg);
+                transform: translateX(-40%) translateY(-30%) rotate(-5.16deg);
                 // margin-right: 50%;
                 margin-top: -80%;
                 // border: 2px solid black; /* 2px solid black border */
@@ -199,7 +199,7 @@
                 margin-top: -80%;
                 // border: 2px solid black; /* 2px solid black border */
                 transition: transform 0.5s ease;
-                transform: translateY(40%);
+                transform: translateY(30%);
                 margin-bottom: 40%;
             }
     
