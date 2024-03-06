@@ -44,19 +44,21 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
         }`}
       >
         <div
-          className={`${styles.menuIcon} ${active ? styles.active : ''}`}
+          className={`${styles.menuIcon} ${
+            active ? styles.menuIcon_active : ''
+          }`}
           onClick={toggleActive}
         >
           {active ? <RxCross2 size={40} /> : <RxHamburgerMenu size={40} />}
         </div>
-        <ul className={`${styles.words} ${active ? styles.active : ''}`}>
+        <ul className={`${styles.words} ${active ? styles.words_active : ''}`}>
           <li>
             <Image
               src="/navbar/logo.svg"
               alt="logo"
               width={100}
               height={100}
-              className={`${styles.logo} ${active ? styles.active : ''}`}
+              className={`${styles.logo} ${active ? styles.logo_active : ''}`}
             ></Image>
           </li>
           {navLinks.map((link) => (
@@ -80,7 +82,6 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
           height={100}
           className={styles.mlhBadge}
         />
-        {active && <div className={styles.overlay} onClick={setInactive}></div>}
       </nav>
     </div>
   );
