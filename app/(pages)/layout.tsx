@@ -5,8 +5,6 @@ import metadata from '@globals/metadata.json';
 import { navLinks } from '@data/navLinks';
 import Navbar from '@components/Navbar/Navbar';
 import Footer from './_components/Footer/Footer';
-import { LoadingProvider } from './_contexts/LoadingContext';
-import Loader from './_components/Loader/Loader';
 
 export { metadata };
 
@@ -18,13 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fonts}>
-        <LoadingProvider>
-          <Loader>
-            <Navbar navLinks={navLinks} />
-            {children}
-            <Footer />
-          </Loader>
-        </LoadingProvider>
+        <Navbar navLinks={navLinks} />
+        {children}
+        <Footer />
       </body>
     </html>
   );
