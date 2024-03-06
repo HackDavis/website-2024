@@ -22,25 +22,28 @@ $bg-color: var(--landing-bg);
   &_far{
     display: flex;
     position: absolute;
-    width: 100%;
+    width: 101%;
     height: auto;
     overflow: hidden;
+    margin-left: -1%;
     // margin-top: -10%;
   }
   
   &_medium{
     display: flex;
     position: relative;
-    width: 100%;
+    width: 101%;
     height: auto;
     overflow: hidden;
     margin-top: 7%;
+    margin-left: -1%;
   }
 
 }
 
 .grasses{
   &_image{
+      // border: 1px solid red; 
       object-fit: contain;
       width: 100%;
       height: 100%;
