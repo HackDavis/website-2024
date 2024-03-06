@@ -34,8 +34,6 @@ export default function BottomPolaroids() {
     if (!isHover) {
       intervalId = setInterval(() => {
         rotateArray(polaroidUrls); // Cycle through indices
-        console.log('rotaed array');
-        console.log(polaroidUrls);
       }, 3000); // Change interval to 5 seconds (5000 milliseconds)
     }
 

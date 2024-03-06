@@ -14,7 +14,7 @@ export default function WhatIsHackdavis() {
     const container = containerRef.current;
 
     const handleMouseMove = (event: MouseEvent) => {
-      if (container) {
+      if (container && window.innerWidth > 425) {
         const rect = container.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
@@ -188,7 +188,7 @@ export default function WhatIsHackdavis() {
           src="/index/whatIsHackdavis/log_water-sheen.png"
           alt="serene forest scene in the night"
           width={4000}
-          height={100}
+          height={4000}
           className={styles.logWaterSheen}
           onLoad={incLoaded}
         />
