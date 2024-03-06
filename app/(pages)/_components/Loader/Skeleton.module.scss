@@ -1,0 +1,62 @@
+$nav-height: 114px;
+
+.container {
+    width: 100%;
+
+    .navbar {
+        width: 100%;
+        height: $nav-height;
+        padding: 0 64px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .links {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            align-items: center;
+            
+            .logo {
+                height: 44%;
+                width: auto;
+            }
+
+            .rectangles {
+                display: flex;
+                flex-direction: row;
+                gap: 24px;
+                height: 35%;
+
+                >div {
+                    height: 100%;
+                    border-radius: 4px;
+                    background-color: var(--loader-gray);
+                }
+
+                :nth-child(1) {
+                    aspect-ratio: 3;
+                }
+
+                :nth-child(2) {
+                    aspect-ratio: 2.8;
+                }
+
+                :nth-child(3) {
+                    aspect-ratio: 1.8;
+                }
+
+                :nth-child(4) {
+                    aspect-ratio: 2.8;
+                }
+            }
+        }
+
+        .mlh {
+            .mlh_image {
+                height: 130px;
+                width: auto;
+            }
+        }
+    }
+}

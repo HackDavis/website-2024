@@ -2,7 +2,7 @@
 import { createContext, useState, useCallback, useEffect } from 'react';
 
 interface LoadingProviderValue {
-  loadCount: number;
+  numLoaded: number;
   loading: boolean;
   incLoaded: () => void;
 }

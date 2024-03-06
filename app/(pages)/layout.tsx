@@ -19,10 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={fonts}>
         <LoadingProvider>
-          <Loader />
-          <Navbar navLinks={navLinks} />
-          {children}
-          <Footer />
+          <Loader>
+            <Navbar navLinks={navLinks} />
+            {children}
+            <Footer />
+          </Loader>
         </LoadingProvider>
       </body>
     </html>
