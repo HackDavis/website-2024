@@ -127,7 +127,6 @@ export default function OurTeam() {
                 title={member.position}
                 imageUrl={member.profileImageUrl}
                 linkedinURL={member.linkedinURL}
-                // linkedInUrl="https://www.linkedin.com/in/teeranade-cheng"
               />
             );
           })}
