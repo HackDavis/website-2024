@@ -1,4 +1,4 @@
-$mobile-breakpoint: 648px;
+$mobile-breakpoint: 425px;
 $tablet-breakpoint: 1007px;
 
 .background{
@@ -29,7 +29,7 @@ $tablet-breakpoint: 1007px;
     font-size: 2vw;
     font-style: normal;
     line-height: 103%; /* 49.44px */
-    text-align: start;
+    text-align: left;
     letter-spacing: 0.96px;
   }
   &_social{

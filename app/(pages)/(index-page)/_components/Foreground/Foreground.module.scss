@@ -1,6 +1,6 @@
 @use 'app/(pages)/_globals/mixins';
 $bg-color: var(--landing-bg);
-$mobile-breakpoint: 648px;
+$mobile-breakpoint: 425px;
 $tablet-breakpoint: 1007px;
 
 .foreground{
@@ -12,10 +12,13 @@ $tablet-breakpoint: 1007px;
     &_grass{
         display: flex;
         position: relative;
-        width: 100%;
+        width: 110%;
+        margin-left: -5%;
+        margin-top: -4%;
         height: 100%;
         overflow: hidden;
         z-index: 15;
+        
         
         &_image{
             object-fit: contain;
@@ -43,7 +46,7 @@ $tablet-breakpoint: 1007px;
         position: absolute;
         z-index: 10;
         margin-left: 40%; 
-        margin-top: 45%;
+        margin-top: 40%;
         // border: 1px solid black;
         width: 30vw;
 
@@ -139,4 +142,22 @@ $tablet-breakpoint: 1007px;
         } 
         
     }
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .foreground{
+        &_characters{
+            &_behind{
+                position: absolute;
+                top: -10%;
+                left: -50%;
+                // border: 1px solid red;
+            }
+            &_front{
+                // border: 1px solid red;
+                margin-right: 10%;
+            }
+        } 
+        
+    } 
 }

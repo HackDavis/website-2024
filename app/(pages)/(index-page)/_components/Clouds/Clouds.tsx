@@ -1,7 +1,10 @@
+'use client';
 import Image from 'next/image';
 import styles from './Clouds.module.scss';
+import { useLoadCount } from '@/app/(pages)/_hooks/useLoadCount';
 
 export default function Clouds() {
+  const { incLoaded } = useLoadCount();
   return (
     <div className={styles.container}>
       <div className={styles.cloud_back}>
@@ -14,6 +17,7 @@ export default function Clouds() {
             className={styles.clouds_image}
             z-index={0}
             priority={true}
+            onLoad={incLoaded}
           />
         </div>
         <div className={styles.cloud_back_right}>
@@ -25,6 +29,7 @@ export default function Clouds() {
             className={styles.clouds_image}
             z-index={0}
             priority={true}
+            onLoad={incLoaded}
           />
         </div>
       </div>
@@ -38,6 +43,7 @@ export default function Clouds() {
             className={styles.clouds_image}
             z-index={1}
             priority={true}
+            onLoad={incLoaded}
           />
         </div>
         <div className={styles.cloud_front_right}>
@@ -49,6 +55,7 @@ export default function Clouds() {
             className={styles.clouds_image}
             z-index={1}
             priority={true}
+            onLoad={incLoaded}
           />
         </div>
       </div>

@@ -2,8 +2,11 @@
 import { useEffect, useState, useRef } from 'react';
 import styles from './WhatIsHackdavis.module.scss';
 import Image from 'next/image';
+import { useLoadCount } from '@hooks/useLoadCount';
 
 export default function WhatIsHackdavis() {
+  const { incLoaded } = useLoadCount();
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -11,7 +14,7 @@ export default function WhatIsHackdavis() {
     const container = containerRef.current;
 
     const handleMouseMove = (event: MouseEvent) => {
-      if (container) {
+      if (container && window.innerWidth > 425) {
         const rect = container.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
@@ -49,6 +52,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
+            onLoad={incLoaded}
           />
         </div>
 
@@ -64,6 +68,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 90
               }px)`,
             }}
+            onLoad={incLoaded}
           />
 
           <Image
@@ -77,6 +82,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 70
               }px)`,
             }}
+            onLoad={incLoaded}
           />
 
           <Image
@@ -90,6 +96,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 40
               }px)`,
             }}
+            onLoad={incLoaded}
           />
 
           <Image
@@ -103,6 +110,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
+            onLoad={incLoaded}
           />
 
           <Image
@@ -116,6 +124,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 70
               }px)`,
             }}
+            onLoad={incLoaded}
           />
 
           <Image
@@ -129,6 +138,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 40
               }px)`,
             }}
+            onLoad={incLoaded}
           />
 
           <Image
@@ -142,6 +152,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
+            onLoad={incLoaded}
           />
 
           <Image
@@ -155,6 +166,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
+            onLoad={incLoaded}
           />
 
           <Image
@@ -168,6 +180,7 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
+            onLoad={incLoaded}
           />
         </div>
 
@@ -175,8 +188,9 @@ export default function WhatIsHackdavis() {
           src="/index/whatIsHackdavis/log_water-sheen.png"
           alt="serene forest scene in the night"
           width={4000}
-          height={100}
+          height={4000}
           className={styles.logWaterSheen}
+          onLoad={incLoaded}
         />
       </div>
     </div>

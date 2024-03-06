@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react';
 
 import styles from './Foreground.module.scss';
 import Image from 'next/image';
+import { useLoadCount } from '@hooks/useLoadCount';
 
 export default function Foreground() {
+  const { incLoaded } = useLoadCount();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -41,6 +43,7 @@ export default function Foreground() {
                     mousePosition.x / 80
                   }px) translateY(${mousePosition.y / 80}px)`,
                 }}
+                onLoad={incLoaded}
               />
             </div>
             <div className={styles.foreground_characters_behind_rabbit}>
@@ -58,6 +61,7 @@ export default function Foreground() {
                     mousePosition.x / 80
                   }px) translateY(${mousePosition.y / 80}px)`,
                 }}
+                onLoad={incLoaded}
               />
             </div>
           </div>
@@ -77,6 +81,7 @@ export default function Foreground() {
                     mousePosition.x / 50
                   }px) translateY(${mousePosition.y / 50}px)`,
                 }}
+                onLoad={incLoaded}
               />
             </div>
             <div className={styles.foreground_characters_front_cowBody}>
@@ -99,6 +104,7 @@ export default function Foreground() {
                       mousePosition.x / 50
                     }px) translateY(${mousePosition.y / 50}px)`,
                   }}
+                  onLoad={incLoaded}
                 />
               </div>
               <div
@@ -120,6 +126,7 @@ export default function Foreground() {
                       mousePosition.x / 50
                     }px) translateY(${mousePosition.y / 50}px)`,
                   }}
+                  onLoad={incLoaded}
                 />
               </div>
             </div>
@@ -141,6 +148,7 @@ export default function Foreground() {
               mousePosition.y / 50
             }px)`,
           }}
+          onLoad={incLoaded}
         />
       </div>
     </div>
