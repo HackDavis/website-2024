@@ -172,7 +172,7 @@
     }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 768px) {
     .container {
         .text {
             .heading{
@@ -181,6 +181,9 @@
             .paragraph {
                 font-size: 0.94rem;
             }
+        }
+        .logStuff {
+            margin-top: 60px;
         }
     }
 }
@@ -194,7 +197,7 @@
             justify-content: center;
             align-items: center;
             text-align: left;
-            .heading{
+            .heading {
                 font-size: 2rem;
                 width: 311px;
                 letter-spacing: 0.64px;
@@ -209,12 +212,12 @@
                 letter-spacing: 0.32px;
                 font-style: normal;
                 font-weight: 400;
-                line-height: 150%; /* 24px */
-
+                line-height: 150%;
             }
         }
 
         .logStuff {
+            margin-top: 100px;
             
             .logLeftSection {
                 width: 41%;
