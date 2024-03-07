@@ -3,29 +3,36 @@ $bg-color: var(--landing-bg);
 $mobile-breakpoint: 425px;
 
 .container{
-    position: absolute;
+    position: fixed;
     width: 100%; 
     display: flex;
     z-index: 100;
+    transition: top 0.5s; // Smooth transition for moving up and down
+    top: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255, 0.5);
+    transition: background-color 0.5s ease-in-out, top 0.5s;
+    
 
     &_sticky{
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        backdrop-filter: blur(10px);
-        background-color: transparent;
-        // background-color: $bg-color;
-        // background: rgba(0, 0, 0, 0.5);
-        background-color: rgba(255,255,255, 0.5);
-        // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         z-index: 100;
-        animation: dropDown 0.3s ease-in-out forwards;
+        animation: dropDown 0.5s ease-in-out forwards;
     }
 
 
     &_return_up{
-        animation: returnUp 0.3s ease-in-out forwards;
+        animation: returnUp 0.5s ease-in-out forwards;
+    }
+
+    &_at_top{
+        top: 0;
+        background-color: transparent;
+        backdrop-filter: none;
+        // border: 3px solid red;
     }
     
 }
@@ -37,13 +44,6 @@ $mobile-breakpoint: 425px;
     position: relative; // Added for positioning the menu icon
     width: 100%;
 
-    &_sticky{
-        padding: 2rem;
-        padding-left: 2rem; 
-    }
-    &_return_up{
-        animation: returnUp 0.3s ease-in-out forwards;
-    }
 }
 
 .nav ul {
@@ -196,19 +196,19 @@ $mobile-breakpoint: 425px;
 
 @keyframes dropDown{
     from{
-        height: 0;
+        top: -100%;
     }
     to{
-        height: 10%;
+        top: 0;
     }
 }
 
 @keyframes returnUp{
     from{
-        height: 10%;
+        top: 0;
     }
     to{
-        height: 0;
+        top: -100%;
     }
 }
 
