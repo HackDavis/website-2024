@@ -63,7 +63,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
       ${active ? styles.container_active : ''}
     `}
     >
-      <nav className={`${styles.nav}`}>
+      <nav className={`${styles.nav} ${active ? styles.nav_active : ''}`}>
         <div
           className={`${styles.menuIcon} ${
             active ? styles.menuIcon_active : ''

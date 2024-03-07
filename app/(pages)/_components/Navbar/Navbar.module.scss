@@ -105,17 +105,16 @@ $mobile-breakpoint: 425px;
 }
 
 @media (max-width: $mobile-breakpoint) {
-    .container{
-        &_active{
-            background-color: $bg-color;
-            // height: 50vh;
-        }
-    }
     .nav{
         display: flex;
         flex-direction: column;
         padding-top: 0;
 
+        &_active{
+            // height: 60vh;
+            background-color: var(--teal-2, #173A52);
+            animation: expand 0.3s ease-in-out forwards;
+        }
     }
     .navLink{
         display: none; // Hide the links by default on mobile
@@ -123,6 +122,7 @@ $mobile-breakpoint: 425px;
             display: flex; // Show the links when active
             flex-direction: column;
             width: 100%;
+            color: whitesmoke;
             // height: 300px;
         }
     }
@@ -159,8 +159,9 @@ $mobile-breakpoint: 425px;
             top:0; 
             left: 0;
             z-index: 1000; 
-            background-color: $bg-color; 
+            background-color: var(--teal-2, #173A52); 
             animation: expand 0.3s ease-in-out forwards;
+            height: 60vh;
         }
     }
     .logo_active{
