@@ -38,8 +38,9 @@ $tablet-breakpoint: 1007px;
 .cloud_front{
     display: flex;
     position: absolute;
-    width: 100%;
+    width: 110%;
     overflow: hidden;
+    // border: 2px solid black; 
 
     &_left{
         object-fit: contain;
@@ -81,7 +82,7 @@ $tablet-breakpoint: 1007px;
         min-width: $tablet-breakpoint;
     }
     .cloud_front{
-        min-width: $tablet-breakpoint;
+        min-width: calc($tablet-breakpoint * 1.1);
     }
 }
 
@@ -117,13 +118,13 @@ $tablet-breakpoint: 1007px;
 
  @keyframes floatSideToSide{
     0%{
-        transform: translateX(-10px);
+        transform: translateX(-20px);
     }
     50%{
-        transform: translateX(10px);
+        transform: translateX(20px);
     }
     100%{
-        transform: translateX(-10px);
+        transform: translateX(-20px);
     }
  }
  

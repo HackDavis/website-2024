@@ -93,7 +93,7 @@ export default function OurTeam() {
               );
             }}
           >
-            <p>Sponsorship/Finance</p>
+            <p>Sponsorship + Finance</p>
           </div>
           <div
             className={`${styles.ourTeam_container_filterButtons_button} ${

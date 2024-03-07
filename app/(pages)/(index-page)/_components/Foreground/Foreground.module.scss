@@ -19,7 +19,6 @@ $tablet-breakpoint: 1007px;
         overflow: hidden;
         z-index: 15;
         
-        
         &_image{
             object-fit: contain;
             width: 100%;
@@ -68,8 +67,8 @@ $tablet-breakpoint: 1007px;
             } 
             &_rabbit{
                 // border: 1px solid black;
-                margin-left: -25%;
-                margin-top: -8%;
+                margin-left: -28%;
+                margin-top: -16%;
                 z-index: 0;
                 &_image{
                     object-fit: contain;
@@ -147,15 +146,13 @@ $tablet-breakpoint: 1007px;
 @media (max-width: $mobile-breakpoint) {
     .foreground{
         &_characters{
+            // border: 1px solid red;
+            left: 13%;
             &_behind{
                 position: absolute;
                 top: -10%;
                 left: -50%;
                 // border: 1px solid red;
-            }
-            &_front{
-                // border: 1px solid red;
-                margin-right: 10%;
             }
         } 
         
