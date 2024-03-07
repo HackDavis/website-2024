@@ -70,7 +70,14 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
           }`}
           onClick={toggleActive}
         >
-          {active ? <RxCross2 size={40} /> : <RxHamburgerMenu size={40} />}
+          {/* {active ? <RxCross2 size={40} /> : <RxHamburgerMenu size={40} />} */}
+          <div
+            className={`${active ? styles.hamburger_active : styles.hamburger}`}
+          >
+            <span className={styles.hamburger_line}></span>
+            <span className={styles.hamburger_line}></span>
+            <span className={styles.hamburger_line}></span>
+          </div>
         </div>
         <ul className={`${styles.words} ${active ? styles.words_active : ''}`}>
           <li>
