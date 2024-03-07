@@ -36,7 +36,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
     <div
       className={`${styles.container} ${
         direction === 'up' ? styles.container_sticky : ''
-      }`}
+      } ${direction === 'down' ? styles.container_return_up : ''}`}
     >
       <nav
         className={`${styles.nav} ${
