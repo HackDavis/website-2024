@@ -16,7 +16,6 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      console.log(currentScrollY, lastScrollY.current, direction, atTop);
       if (currentScrollY < 100) {
         setAtTop(true);
         setDirection('down');
@@ -37,6 +36,21 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
     };
   }, [direction, atTop]);
 
+  useEffect(() => {
+    const disableScroll = (e: Event) => {
+      if (active) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener('wheel', disableScroll, { passive: false });
+    window.addEventListener('touchmove', disableScroll, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', disableScroll);
+    };
+  }, [active]);
+
   return (
     <div
       className={`${styles.container} ${
@@ -46,6 +60,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
           ? styles.container_sticky
           : ''
       } ${!atTop && direction === 'down' ? styles.container_return_up : ''}
+      ${active ? styles.container_active : ''}
     `}
     >
       <nav className={`${styles.nav}`}>
@@ -59,13 +74,15 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
         </div>
         <ul className={`${styles.words} ${active ? styles.words_active : ''}`}>
           <li>
-            <Image
-              src="/navbar/logo.svg"
-              alt="logo"
-              width={100}
-              height={100}
-              className={`${styles.logo} ${active ? styles.logo_active : ''}`}
-            ></Image>
+            <Link href="/#landing" onClick={setInactive}>
+              <Image
+                src="/navbar/logo.svg"
+                alt="logo"
+                width={100}
+                height={100}
+                className={`${styles.logo} ${active ? styles.logo_active : ''}`}
+              ></Image>
+            </Link>
           </li>
           {navLinks.map((link) => (
             <li key={link.name} className={styles.wordsItem}>
