@@ -5,24 +5,29 @@ import Image from 'next/image';
 import styles from './Navbar.module.scss';
 import useToggle from '@hooks/useToggle';
 import type { NavLink } from '@data/navLinks';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
   const [active, toggleActive, _, setInactive] = useToggle(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [atTop, setAtTop] = useState(true);
   const [direction, setDirection] = useState('down');
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY === 0) {
+      console.log(currentScrollY, lastScrollY.current, direction, atTop);
+      if (currentScrollY < 100) {
+        setAtTop(true);
         setDirection('down');
-      } else if (currentScrollY < lastScrollY) {
+      } else if (currentScrollY < lastScrollY.current) {
+        setAtTop(false);
         setDirection('up');
-      } else {
+      } else if (currentScrollY > 100) {
+        setAtTop(false);
         setDirection('down');
       }
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -30,19 +35,20 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
+  }, [direction, atTop]);
 
   return (
     <div
       className={`${styles.container} ${
-        direction === 'up' ? styles.container_sticky : ''
-      } ${direction === 'down' ? styles.container_return_up : ''}`}
+        atTop
+          ? styles.container_at_top
+          : direction === 'up'
+          ? styles.container_sticky
+          : ''
+      } ${!atTop && direction === 'down' ? styles.container_return_up : ''}
+    `}
     >
-      <nav
-        className={`${styles.nav} ${
-          direction === 'up' ? styles.nav_sticky : ''
-        }`}
-      >
+      <nav className={`${styles.nav}`}>
         <div
           className={`${styles.menuIcon} ${
             active ? styles.menuIcon_active : ''
