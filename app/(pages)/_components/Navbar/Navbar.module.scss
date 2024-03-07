@@ -7,7 +7,6 @@ $mobile-breakpoint: 425px;
     width: 100%; 
     display: flex;
     z-index: 100;
-    // border: 1px solid black;  
 
     &_sticky{
         position: fixed;
@@ -21,6 +20,12 @@ $mobile-breakpoint: 425px;
         background-color: rgba(255,255,255, 0.5);
         // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         z-index: 100;
+        animation: dropDown 0.3s ease-in-out forwards;
+    }
+
+
+    &_return_up{
+        animation: returnUp 0.3s ease-in-out forwards;
     }
     
 }
@@ -33,8 +38,11 @@ $mobile-breakpoint: 425px;
     width: 100%;
 
     &_sticky{
-        padding: 1rem;
+        padding: 2rem;
         padding-left: 2rem; 
+    }
+    &_return_up{
+        animation: returnUp 0.3s ease-in-out forwards;
     }
 }
 
@@ -184,3 +192,24 @@ $mobile-breakpoint: 425px;
       height: 100%;
     }
   }
+
+
+@keyframes dropDown{
+    from{
+        height: 0;
+    }
+    to{
+        height: 10%;
+    }
+}
+
+@keyframes returnUp{
+    from{
+        height: 10%;
+    }
+    to{
+        height: 0;
+    }
+}
+
+
