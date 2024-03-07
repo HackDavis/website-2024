@@ -62,6 +62,10 @@ $mobile-breakpoint: 425px;
 .logo{
     width: 3.125rem;
     height: 3.13269rem;
+
+    &_white{
+        display:none;
+    }
 }
 
 
@@ -105,16 +109,24 @@ $mobile-breakpoint: 425px;
 }
 
 @media (max-width: $mobile-breakpoint) {
+    .container{
+        &_active{
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: var(--teal-2, #173A52);
+            backdrop-filter: none;
+            width: 100%;
+            height: 100vh;
+            z-index: 999;
+            animation: expand 0.3s ease-in-out forwards;
+        }
+    }
     .nav{
         display: flex;
         flex-direction: column;
         padding-top: 0;
 
-        &_active{
-            // height: 60vh;
-            background-color: var(--teal-2, #173A52);
-            animation: expand 0.3s ease-in-out forwards;
-        }
     }
     .navLink{
         display: none; // Hide the links by default on mobile
@@ -124,13 +136,6 @@ $mobile-breakpoint: 425px;
             width: 100%;
             color: whitesmoke;
             // height: 300px;
-        }
-    }
-
-    .logo{
-        display: none; // Hide the logo by default on mobile
-        &_active{
-            display: flex; // Show the logo when active
         }
     }
 
@@ -151,22 +156,15 @@ $mobile-breakpoint: 425px;
         right: 0;
         // width: 100%; // Full width to cover the screen
         &_active{
-            display: flex ;
             flex-direction: column !important; 
             align-items: center; 
             width: 100%; 
             position: fixed; 
-            top:0; 
+            top:25%; 
             left: 0;
             z-index: 1000; 
-            background-color: var(--teal-2, #173A52); 
             animation: expand 0.3s ease-in-out forwards;
-            height: 60vh;
         }
-    }
-    .logo_active{
-        margin-top: 30px; //Adjust margin to the top
-        margin-bottom: 30px; //Adjust margin from the words
     }
 
     .wordsItem{
@@ -180,8 +178,15 @@ $mobile-breakpoint: 425px;
     }
     .logo{
         display: none;   
+
         &_active{
+            display: none;
+        }
+
+        &_white{
             display: flex;
+            width: 3.125rem;
+            height: 3.13269rem;
         }
     }
 }
@@ -193,7 +198,7 @@ $mobile-breakpoint: 425px;
     }
     to {
     //   width: 100%;
-      height: 40%;
+      height: 100%;
     }
   }
 

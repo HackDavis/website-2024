@@ -63,7 +63,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
       ${active ? styles.container_active : ''}
     `}
     >
-      <nav className={`${styles.nav} ${active ? styles.nav_active : ''}`}>
+      <nav className={`${styles.nav}`}>
         <div
           className={`${styles.menuIcon} ${
             active ? styles.menuIcon_active : ''
@@ -76,12 +76,12 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
           <li>
             <Link href="/#landing" onClick={setInactive}>
               <Image
-                src="/navbar/logo.svg"
+                src={active ? '/Footer/hdLogoWhite.svg' : '/navbar/logo.svg'}
                 alt="logo"
                 width={100}
                 height={100}
-                className={`${styles.logo} ${active ? styles.logo_active : ''}`}
-              ></Image>
+                className={`${styles.logo} ${active ? styles.logo_white : ''}`}
+              />
             </Link>
           </li>
           {navLinks.map((link) => (
