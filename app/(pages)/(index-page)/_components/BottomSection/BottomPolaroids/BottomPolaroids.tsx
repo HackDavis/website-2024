@@ -6,9 +6,9 @@ import { useState, useEffect } from 'react';
 
 export default function BottomPolaroids() {
   const [polaroidUrls, setPolaroidUrls] = useState([
-    '/index/Polaroids/final_Footer-img3.png',
-    '/index/Polaroids/final_Footer-img2.png',
-    '/index/Polaroids/final_Footer-img1.png',
+    '/index/Polaroids/final_Footer-img3.jpg',
+    '/index/Polaroids/final_Footer-img2.jpg',
+    '/index/Polaroids/final_Footer-img.jpg',
   ]);
 
   const [isHover, setIsHover] = useState(false);
