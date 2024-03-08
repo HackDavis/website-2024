@@ -56,6 +56,7 @@
             // margin-right: -11%;
             transition: transform 0.5s ease;
             margin-bottom: -80%;
+            transform: rotate(5.1deg);
 
         }
         .middlePolaroidStacked  {
@@ -68,6 +69,8 @@
             margin-bottom: -80%;
             // border: 2px solid black; /* 2px solid black border */
             transition: transform 0.5s ease;
+            transform: rotate(-8.1deg);
+
         }
         .frontPolaroidStacked  {
             width: 21vw;
@@ -78,6 +81,7 @@
             // border: 2px solid black; /* 2px solid black border */
             transition: transform 0.5s ease;
             //margin-top: 10%;
+            transform: rotate(2deg);
 
         }
     }
