@@ -1,7 +1,7 @@
 @use 'app/(pages)/_globals/mixins'; 
 
 $bg-color: var(--landing-bg);
-$mobile-breakpoint: 648px;
+$mobile-breakpoint: 425px;
 $tablet-breakpoint: 1007px;
 
 .container {
@@ -12,7 +12,6 @@ $tablet-breakpoint: 1007px;
     width: 100%;
     overflow: hidden; 
 }
-
 
 .cloud_back{
     display: flex;
@@ -39,9 +38,9 @@ $tablet-breakpoint: 1007px;
 .cloud_front{
     display: flex;
     position: absolute;
-    width: 100%;
-    height: auto;
+    width: 110%;
     overflow: hidden;
+    // border: 2px solid black; 
 
     &_left{
         object-fit: contain;
@@ -68,6 +67,38 @@ $tablet-breakpoint: 1007px;
     }
 }
 
+
+@media (max-width: $tablet-breakpoint){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        min-width: $tablet-breakpoint;
+
+    } 
+    .cloud_back{
+        min-width: $tablet-breakpoint;
+    }
+    .cloud_front{
+        min-width: calc($tablet-breakpoint * 1.1);
+    }
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .container{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         overflow: hidden;
+         height: 700px;
+         padding-top: 200px;
+    } 
+ }
+
+
  @keyframes moveInFromLeft {
     0%{
         transform: translateX(-100%);
@@ -87,60 +118,19 @@ $tablet-breakpoint: 1007px;
 
  @keyframes floatSideToSide{
     0%{
-        transform: translateX(-10px);
+        transform: translateX(-20px);
     }
     50%{
-        transform: translateX(10px);
+        transform: translateX(20px);
     }
     100%{
-        transform: translateX(-10px);
+        transform: translateX(-20px);
     }
  }
-
-@media (max-width: $tablet-breakpoint){
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        min-width: $tablet-breakpoint;
-
-    } 
-    .cloud_back{
-        display: flex;
-        position: relative;
-        overflow: hidden;
-        min-width: $tablet-breakpoint;
-    }
-    .cloud_front{
-        display: flex;
-        overflow: hidden;
-        min-width: $tablet-breakpoint;
-    }
-}
-
+ 
 .cloud_front{
    animation: floatSideToSide 15s ease-in-out infinite;
 }
 .cloud_back{
    animation: floatSideToSide 10s ease-in-out infinite;
 }
-
-
-@media (max-width: $mobile-breakpoint) {
-    .container{
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-         overflow: hidden;
-
-    } 
-    .cloud_back{
-        display: flex;
-        position: relative;
-        overflow: hidden;
-    }
- }
-

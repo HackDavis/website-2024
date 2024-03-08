@@ -1,25 +1,49 @@
 @use 'app/(pages)/_globals/mixins';
 $bg-color: var(--landing-bg);
-$mobile-breakpoint: 648px;
+$mobile-breakpoint: 425px;
 
 .container{
-    position: absolute;
+    position: fixed;
     width: 100%; 
     display: flex;
     z-index: 100;
-    // border: 1px solid black;  
+    transition: top 0.5s; // Smooth transition for moving up and down
+    top: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255, 0.5);
+    transition: background-color 0.5s ease-in-out, top 0.5s;
+    
+
+    &_sticky{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        animation: dropDown 0.5s ease-in-out forwards;
+    }
+
+
+    &_return_up{
+        animation: returnUp 0.5s ease-in-out forwards;
+    }
+
+    &_at_top{
+        top: 0;
+        background-color: transparent;
+        backdrop-filter: none;
+        // border: 3px solid red;
+    }
     
 }
 .nav {
     display: flex;
     padding: 2rem;
-    padding-top: 2rem;
     gap: 1.5rem;
-    // background-color: $bg-color;
     background-color: transparent;
     position: relative; // Added for positioning the menu icon
-    // border: 1px solid blue; 
     width: 100%;
+
 }
 
 .nav ul {
@@ -38,6 +62,10 @@ $mobile-breakpoint: 648px;
 .logo{
     width: 3.125rem;
     height: 3.13269rem;
+
+    &_white{
+        display:none;
+    }
 }
 
 
@@ -45,7 +73,7 @@ $mobile-breakpoint: 648px;
     display: flex; // Default display on larger screens
     gap: 1.5rem;
     align-items: center;
-    font-size: 1.25rem;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -80,33 +108,109 @@ $mobile-breakpoint: 648px;
     z-index: 10;
 }
 
+.hamburger{
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    &_line{
+        width: 30px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--teal-2, #173A52);
+        display: block;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+
+    &_active{
+        animation: smallbig 0.6s forwards;
+
+        .hamburger_line {
+            background-color: #ecf0f1;
+            transition-delay: 0.2s;
+
+            &:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+}
+
 @media (max-width: $mobile-breakpoint) {
+    .container{
+        &_active{
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: var(--teal-2, #173A52);
+            backdrop-filter: none;
+            width: 100%;
+            height: 60vh;
+
+            z-index: 999;
+            animation: expand 0.3s ease-in-out forwards;
+        }
+    }
     .nav{
+        display: flex;
+        flex-direction: column;
         padding-top: 0;
+
     }
     .navLink{
         display: none; // Hide the links by default on mobile
+        &_active{
+            display: flex; // Show the links when active
+            flex-direction: column;
+            width: 100%;
+            color: whitesmoke;
+            // height: 300px;
+        }
     }
+
     .menuIcon {
         display: block; // Show the menu icon on smaller screens
+        // position: fixed;
         position: absolute;
         right: 2rem;
         top: 2rem;
         cursor: pointer;
+        z-index: 9999;
     }
 
     .words {
         display: none; // Hide the words by default on mobile
-        flex-direction: column; // Stack the links vertically on mobile
         position: absolute;
         top: 100%; // Position the menu below the navbar
         right: 0;
-        background-color: $bg-color; // Ensure the background matches
-        width: 100%; // Full width to cover the screen
+        // width: 100%; // Full width to cover the screen
+        &_active{
+            flex-direction: column !important; 
+            align-items: center; 
+            width: 100%; 
+            position: fixed; 
+            top:25%; 
+            left: 0;
+            z-index: 1000; 
+            animation: expand 0.3s ease-in-out forwards;
+        }
     }
 
-    .words.active {
-        display: flex; // Display the menu when active
+    .wordsItem{
+        height: 40px; //adjust gap between words
     }
 
     .mlhBadge{
@@ -114,10 +218,65 @@ $mobile-breakpoint: 648px;
         width: 70px;
         height: 130px;
     }
+    .logo{
+        display: none;   
+
+        &_active{
+            display: none;
+        }
+
+        &_white{
+            display: flex;
+            width: 3.125rem;
+            height: 3.13269rem;
+            margin-bottom: 30px;
+        }
+    }
 }
 
-.words-item {
-    display: flex; // Adjust display for individual items if necessary
+@keyframes expand {
+    from {
+        // width: 0;
+        height: 0;
+    }
+    to {
+    //   width: 100%;
+      height: 100%;
+    }
+  }
+
+
+@keyframes dropDown{
+    from{
+        top: -100%;
+    }
+    to{
+        top: 0;
+    }
 }
 
-// Include other styles as necessary
+@keyframes returnUp{
+    from{
+        top: 0;
+    }
+    to{
+        top: -100%;
+    }
+}
+  
+  
+@keyframes smallbig{
+    0%, 100%{
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    50%{
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+    }
+}

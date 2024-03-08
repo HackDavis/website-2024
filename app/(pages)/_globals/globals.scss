@@ -39,7 +39,7 @@
     --mobile-breakpoint: 648px;
 
 
-
+    --loader-gray: #F1F1F1;
 
     --primary: var(--include-purple);
     --secondary: #e7c6f9;
@@ -70,6 +70,7 @@
   margin: 0;
   font-family: var(--font-inter);
   color: var(--text-dark);
+  scroll-behavior: smooth;
 }
 
 a {
@@ -92,3 +93,4 @@ h4 {
 p {
     font-size: 1rem;
 }
+

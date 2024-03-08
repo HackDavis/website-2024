@@ -14,18 +14,6 @@
         line-height: normal;
         letter-spacing: 1.821px;
         padding-bottom: 55px;
-        display: none;
-    }
-    .FAQTextMobile {
-        color: #FFF;
-        font-family: "Proxima Nova";
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: 1.821px;
-        padding-bottom: 46px;
-        display: block;
     }
     .questions {
         color: #FFF;
@@ -55,27 +43,64 @@
         background-color: transparent;
         border: none;
         width: 100%;
-        text-align: left;
+        text-align: start;
       }
 
       .itemBtnExpanded {
         background-color: transparent;
+
+        .questionRow{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            .plusSign {
+                position: relative;
+                .verticalLine {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transform: translateX(0) translateY(0) rotate(0deg);
+                }
+              }
+          }
       }
       
       .itemContent {
         transition: height 0.3s ease-in-out;
       }   
+
+      .questionRow{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .plusSign {
+            position: relative;
+            width: 19px;
+            height: 19px;
+
+            .verticalLine {
+                position: absolute;
+                width: 19px;
+                height: 19px;
+                right: 0;
+                top: 0;
+                transform: translateX(9%) translateY(9%) rotate(90deg);
+                transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
+            }
+          }
+      }
+      
   }
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 961px) {
     .container {
         width: 39%;
 
         .FAQText {
             font-size: 3.75rem;
-            display: block;
-        }
-        .FAQTextMobile {
-            display:none;
         }
 
         .questions {

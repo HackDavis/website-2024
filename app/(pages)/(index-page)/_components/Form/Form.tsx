@@ -17,11 +17,8 @@ export default function Form() {
                 HackDavis 2024
               </span>
             </span>
-            <div className={styles.container_inner_lower}>
-              <CiCalendar
-                size={25}
-                className={styles.calendar_inner_lower_icon}
-              />
+            <div className={styles.calendar_inner_lower}>
+              <CiCalendar className={styles.calendar_inner_lower_icon} />
               <span className={styles.calendar_inner_lower_text}>
                 January 1, 2024 @ UCenter
               </span>

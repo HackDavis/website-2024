@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './FAQ.module.scss';
 import Link from 'next/link';
 import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
+import { PlusHorizontal } from './Assets/plusHorizontal';
+import { PlusVertical } from './Assets/plusVertical';
 
 const whatIsHackathonAnswer = (
   <>
@@ -9,7 +11,7 @@ const whatIsHackathonAnswer = (
     Hundreds of students from across California form teams around an idea and
     collaboratively create technical solutions to problems we face in our local
     communities. These ideas turn into websites, mobile apps, hardware, and
-    more! <br />
+    more! <br /> <br />
     Join HackDavis to make some of the most imaginative projects alongside
     fellow creators! You take care of building and we'll take care of you.
     <br /> <br /> We will be following the{' '}
@@ -61,7 +63,7 @@ const whatToHelpAnswer = (
       }}
       href="mailto:team@hackdavis.io"
     >
-      team@hackdavis.io
+      team@hackdavis.io.
     </a>
   </>
 );
@@ -69,7 +71,7 @@ const whatToHelpAnswer = (
 const FAQ = () => {
   const faqs = [
     {
-      question: 'What is a Hackathon?',
+      question: 'What is a hackathon?',
       answer: whatIsHackathonAnswer,
     },
     {
@@ -126,7 +128,20 @@ const FAQ = () => {
     return (
       <Item
         {...rest}
-        header={<>{header}</>}
+        header={
+          <>
+            <div className={styles.questionRow}>
+              {header}
+              <div className={styles.plusSign}>
+                <PlusHorizontal />
+
+                <div className={styles.verticalLine}>
+                  <PlusVertical />
+                </div>
+              </div>
+            </div>
+          </>
+        }
         buttonProps={{
           className: ({ isEnter }: { isEnter: boolean }) =>
             `${styles.itemBtn} ${isEnter ? styles.itemBtnExpanded : ''}`,
@@ -140,7 +155,6 @@ const FAQ = () => {
     <div className={styles.container}>
       <div>
         <h1 className={styles.FAQText}>FAQ</h1>
-        <h1 className={styles.FAQTextMobile}>Frequently Asked Questions</h1>
       </div>
       <Accordion transition transitionTimeout={250}>
         {faqs.map(({ question, answer }, i) => (

@@ -49,35 +49,36 @@ export default function Archive() {
 
   if (viewportWidth > 768) {
     pixelValue = Math.min(1080, (75 * viewportWidth) / 100);
-    pixelValue = (12 * pixelValue) / 100;
+    pixelValue = (20.7 * pixelValue) / 100;
 
     // each element will move by this amount each time an arrow is hit
-    scrollDistance = pixelValue; // was 127.57
+    scrollDistance = Math.round(pixelValue); // was 127.57
   } else {
     pixelValue = (53 * viewportWidth) / 100;
-    pixelValue = (12.5 * pixelValue) / 100;
+    pixelValue = (21.7 * pixelValue) / 100;
 
     // each element will move by this amount each time an arrow is hit
-    scrollDistance = pixelValue; // was 127.57
+    scrollDistance = Math.round(pixelValue); // was 127.57
   }
 
-  const mostLeftScrollPosition = -scrollDistance * 7;
+  const mostLeftScrollPosition = -scrollDistance * 4;
   // this is the furthest right we can move the folders (starts like this)
   const mostRightScrollPosition = 0; // confirmed to always work
 
+  // previous folderScrollDidtance was 247
   const folderScrollDistance = 247;
 
   // this useEffect checks to see if we need to change the colors of the buttons
   useEffect(() => {
     // if we're at the start, the left arrow should be grayed out
-    if (scrollPosition == 0) {
+    if (Math.round(scrollPosition) === 0) {
       setLeftArrowColor(allArrowColors.gray);
     } else {
       setLeftArrowColor(allArrowColors.blue);
     }
 
     // if we're at the end, the right arrow should be grayed out
-    if (Math.round(scrollPosition) == Math.round(mostLeftScrollPosition)) {
+    if (Math.round(scrollPosition) === Math.round(mostLeftScrollPosition)) {
       setRightArrowColor(allArrowColors.gray);
     } else {
       setRightArrowColor(allArrowColors.blue);
@@ -90,7 +91,7 @@ export default function Archive() {
       Math.max(mostLeftScrollPosition, scrollPosition - scrollDistance)
     );
 
-    setScrollIndexFolders(Math.max(-7, scrollIndexFolders - 1));
+    setScrollIndexFolders(Math.max(-4, scrollIndexFolders - 1));
   };
 
   // used to make the folders move right when the user hits LEFT arrow

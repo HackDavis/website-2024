@@ -1,6 +1,6 @@
 @use 'app/(pages)/_globals/mixins';
 $bg-color: var(--landing-bg);
-$mobile-breakpoint: 648px;
+$mobile-breakpoint: 425px;
 $tablet-breakpoint: 1007px;
 
 .clouds{
@@ -45,9 +45,8 @@ $tablet-breakpoint: 1007px;
     align-items: center;
   }
   .form{
-    // border: 1px solid red;
     left: 50%;
-    top: 10%;
+    top: 25%;
 
     transform: translate(-50%, -50%);
     display: flex;
