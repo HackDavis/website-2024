@@ -1,12 +1,15 @@
 import styles from './Form.module.scss';
 import { CiCalendar } from 'react-icons/ci';
+import WordCycle from './_components/WordCycle';
 
 export default function Form() {
   return (
     <div className={styles.background}>
       <div className={styles.container}>
         <div className={styles.title}>
-          <span className={styles.title_ready}>Ready to create for </span>
+          <span className={styles.title_ready}>
+            <WordCycle /> for{' '}
+          </span>
           <span className={styles.title_social}>social good?</span>
         </div>
         <div className={styles.calendar}>

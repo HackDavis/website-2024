@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import styles from './Grass.module.scss';
-import Polaroids from '../Polaroids/Polaroids';
-import Foreground from '../Foreground/Foreground';
+import Polaroids from './_components/Polaroids/Polaroids';
+import Foreground from './_components/Foreground/Foreground';
 import { useLoadCount } from '@hooks/useLoadCount';
 
 export default function Grass() {
