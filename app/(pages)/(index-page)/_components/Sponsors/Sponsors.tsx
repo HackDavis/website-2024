@@ -3,6 +3,7 @@ import Marquee from '../Marquee/Marquee';
 import styles from './Sponsor.module.scss';
 
 import Intel from 'public/index/Sponsors/intel.png';
+import Intel_new from 'public/index/Sponsors/intel_logo.png';
 
 export default function Sponsors() {
   return (
@@ -27,17 +28,17 @@ export default function Sponsors() {
 
       <Marquee iterations={2} reverse duration={50}>
         <Logo
-          imgSrc={Intel}
+          imgSrc={Intel_new}
           url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
         <Logo
-          imgSrc={Intel}
+          imgSrc={Intel_new}
           url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
         <Logo
-          imgSrc={Intel}
+          imgSrc={Intel_new}
           url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
