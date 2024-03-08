@@ -35,8 +35,8 @@ export default function WhatIsHackdavis() {
         <h1 className={styles.heading}>What is HackDavis?</h1>
         <p className={styles.paragraph}>
           HackDavis is the largest collegiate hackathon in California where over
-          750 students, creators, and leaders come together for 24 hours to
-          create for social good.
+          750 students, creators, and leaders come together to create for social
+          good.
         </p>
       </div>
       <div className={styles.logStuff}>
