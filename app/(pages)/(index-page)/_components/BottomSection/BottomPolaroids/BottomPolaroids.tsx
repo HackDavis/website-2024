@@ -31,7 +31,7 @@ export default function BottomPolaroids() {
     }
     let intervalId: any;
 
-    if (!isHover && window.innerWidth > 960) {
+    if (!isHover && window && window.innerWidth > 960) {
       intervalId = setInterval(() => {
         rotateArray(polaroidUrls); // Cycle through indices
       }, 3000); // Change interval to 5 seconds (5000 milliseconds)
@@ -63,7 +63,7 @@ export default function BottomPolaroids() {
             width={4000}
             height={4000}
             className={
-              isHover || window.innerWidth <= 960
+              isHover || (window && window.innerWidth) <= 960
                 ? polaroidClasses[index]
                 : polaroidClassesStacked[index]
             }
