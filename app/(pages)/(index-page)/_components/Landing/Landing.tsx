@@ -1,6 +1,6 @@
-import Clouds from '../Clouds/Clouds';
-import Form from '../Form/Form';
-import Grass from '../Grass/Grass';
+import Clouds from './_components/Clouds/Clouds';
+import Form from './_components/Form/Form';
+import Grass from './_components/Grass/Grass';
 import styles from './Landing.module.scss';
 
 export default function Landing() {
