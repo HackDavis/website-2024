@@ -1,24 +1,24 @@
 @font-face {
-    font-family: 'Proxima Nova';
+    font-family: 'Metropolis';
     src: url('/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
+    font-family: 'Metropolis';
     src: url('/fonts/ProximaNova/ProximaNova-Medium.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Proxima Nova';
+    font-family: 'Metropolis';
     src: url('/fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Proxima Nova';
+    font-family: 'Metropolis';
     src: url('/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
@@ -77,7 +77,7 @@
 
         .text {
             color: #F4F4F4;
-            font-family: "Proxima Nova";
+            font-family: "Metropolis";
             font-size: 48px;
             font-style: normal;
             font-weight: 700;
@@ -90,7 +90,7 @@
             text-align: center;
             -webkit-text-stroke-width: 0.5;
             -webkit-text-stroke-color: #000;
-            font-family: "Proxima Nova";
+            font-family: "Metropolis";
             font-size: 48px;
             font-style: normal;
             font-weight: 700;
@@ -122,7 +122,7 @@
         // button text styling
         color: #123041;
         text-align: center;
-        font-family: "Proxima Nova";
+        font-family: "Metropolis";
         font-size: 18px;
         font-style: normal;
         font-weight: 700;

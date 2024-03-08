@@ -1,36 +1,42 @@
 @use "./mixins";
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Medium.ttf') format('truetype');
-    font-weight: 600;
+    font-family: 'Metropolis';
+    src: url('/fonts/Metropolis/TrueType/Metropolis-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
+    font-family: 'Metropolis';
+    src: url('/fonts/Metropolis/TrueType/Metropolis-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Metropolis';
+    src: url('/fonts/Metropolis/TrueType/Metropolis-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
+    font-family: 'Metropolis';
+    src: url('/fonts/Metropolis/TrueType/Metropolis-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Metropolis';
+    src: url('/fonts/Metropolis/TrueType/Metropolis-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Metropolis';
+    src: url('/fonts/Metropolis/TrueType/Metropolis-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('/fonts/PlusJakartaSans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype-variations');
-    font-weight: 100 900; // Assuming the font weight range is 100 to 900
-    font-style: normal;
-  }
+
 
 :root {
     /* variables */

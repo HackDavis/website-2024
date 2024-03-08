@@ -82,7 +82,7 @@ $mobile-breakpoint: 425px;
     align-items: center;
     gap: 1.5rem;
     transition: text-decoration 0.2s; 
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Metropolis', sans-serif;
 }
 
 .words:hover {
@@ -158,7 +158,8 @@ $mobile-breakpoint: 425px;
             background-color: var(--teal-2, #173A52);
             backdrop-filter: none;
             width: 100%;
-            height: 100vh;
+            height: 60vh;
+
             z-index: 999;
             animation: expand 0.3s ease-in-out forwards;
         }
@@ -262,10 +263,6 @@ $mobile-breakpoint: 425px;
         top: -100%;
     }
 }
-
-
-
-  
   
   
 @keyframes smallbig{

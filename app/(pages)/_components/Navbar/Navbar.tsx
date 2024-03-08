@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
 import Image from 'next/image';
 import styles from './Navbar.module.scss';
 import useToggle from '@hooks/useToggle';
