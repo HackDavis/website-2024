@@ -4,6 +4,7 @@ import Hello from './_components/Hello/Hello';
 import OurTeam from './_components/OurTeam/OurTeam';
 import RegisterNow from './_components/RegisterNow/RegisterNow';
 import Sponsor from './_components/Sponsor/Sponsor';
+import Sponsors from '../(index-page)/_components/Sponsors/Sponsors';
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
       <OurTeam />
       <Archive />
       <RegisterNow />
+      <div id="sponsors">
+        <Sponsors />
+      </div>
     </main>
   );
 }
