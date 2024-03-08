@@ -1,5 +1,12 @@
+$small-mobile-breakpoint: 375px;
 $mobile-breakpoint: 425px;
-$tablet-breakpoint: 1007px;
+$tablet-breakpoint: 1024px;
+$ready-title-font-size: 42px;
+$social-title-font-size: 64px;
+$calendar-upper-font-size: 24px;
+$button-font-size: 16px;
+
+$tablet-scale: 0.75;
 
 .background{
   display: flex;
@@ -12,65 +19,67 @@ $tablet-breakpoint: 1007px;
   flex-direction: column;
 
   justify-content: center;
-  width: 25vw;
-  gap: 1.2vw;
-  // border: 1px solid red;
+  gap: 30px;
+
+  // width: 25vw;
+  width: 500px;
+  max-width: 500px;
+  // border: 1px solid blue; 
 }
 
 .title{
-// border: 1px solid red;
   display: flex;
   flex-direction: column;
 
   &_ready{
-    font-weight: 800;
-    color: var(--teal-2, #173A52);
-    font-family: "Proxima Nova", sans-serif;
-    font-size: 2vw;
-    font-style: normal;
-    line-height: 103%; /* 49.44px */
     text-align: left;
+    font-family: "Proxima Nova", sans-serif;
+    color: var(--teal-2, #173A52);
+    font-size: $ready-title-font-size;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 103%; /* 49.44px */
     letter-spacing: 0.96px;
   }
   &_social{
-    font-weight: 800;
-    font-size: 3.5vw;
-    letter-spacing: 1.4px;
-    color: var(--teal-2, #173A52);
     font-family: "Proxima Nova", sans-serif;
+    color: var(--teal-2, #173A52);
+    font-size: $social-title-font-size;
     font-style: normal;
-    line-height: 103%; /* 49.44px */
-    letter-spacing: 0.96px;
+    font-weight: 800;
+    line-height: 103%;
+    letter-spacing: 1.4px;
   }
 
 
 }
 
 .calendar{
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
   &_inner{
     display: flex;
     flex-direction: column;
 
     &_upper{
-      color: var(--teal-2, #173A52);
       font-family: "Proxima Nova", sans-serif;
-      font-size: 1.5vw;
+      color: var(--teal-2, #173A52);
+      font-size: $calendar-upper-font-size;
       font-style: normal;
       font-weight: 500;
       line-height: 150%; /* 48px */
       letter-spacing: 0.64px;
 
       &_hackdavis{
-        color: var(--teal-2, #173A52);
         font-family: "Proxima Nova", sans-serif;
-        font-size: 1.5vw;
+        color: var(--teal-2, #173A52);
+        font-size: $calendar-upper-font-size;
         font-style: normal;
         font-weight: 600;
-        line-height: 150%;
+        line-height: 150%; /* 48px */
         letter-spacing: 0.64px;
+        font-weight: 600;
       }
     }
 
@@ -82,16 +91,16 @@ flex-direction: column;
       &_text{
         color: var(--teal-2, #173A52);
         font-family: "Proxima Nova", sans-serif;
-        font-size: 1.25vw;
+        font-size: $button-font-size;
         font-style: normal;
         font-weight: 500;
         line-height: 150%; /* 36px */
         letter-spacing: 0.48px;
       }
       &_icon{
-        width: 1.25vw;
-        height: 1.25vw;
-        margin-bottom: 1px;
+        width: $button-font-size;
+        height: $button-font-size;
+        margin-top: -2px;
       }
     }
   }
@@ -99,12 +108,11 @@ flex-direction: column;
 }
 
 .buttons{
-display: flex;
-flex-direction: column;
-width: 100%;
-gap: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 16px;
 // border: 1px solid blue;
-
 
   &:hover{
     cursor: pointer;
@@ -112,8 +120,6 @@ gap: 16px;
 
   &_register{
     display: flex;
-    width: 70%;
-    // height: 3.25vw;
     height: 48px;
     padding: 0.75vw 1.3vw;
     justify-content: center;
@@ -129,7 +135,7 @@ gap: 16px;
       color: var(--white, #FFF);
       text-align: center;
       font-family: "Proxima Nova", sans-serif;
-      font-size: 1vw;
+      font-size: $button-font-size;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
@@ -143,8 +149,6 @@ gap: 16px;
   }
   &_sponsor{
     display: flex;
-    width: 70%;
-    // height: 3.25vw;
     height: 48px;
     padding: 0.75vw 1.3vw;
     justify-content: center;
@@ -168,7 +172,7 @@ gap: 16px;
       color: var(--teal-2, #173A52);
       text-align: center;
       font-family: "Proxima Nova", sans-serif;
-      font-size: 1vw;
+      font-size: $button-font-size;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
@@ -179,14 +183,14 @@ gap: 16px;
     display: flex;
     justify-content: center;
     // border: 1px solid black;
-    width: 70%;
+    // width: 70%;
     gap: 1.5vw;
 
     span{
       color: var(--teal-2, #173A52);
       text-align: center;
       font-family: "Proxima Nova", sans-serif;
-      font-size: 1vw;
+      font-size: $button-font-size;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
@@ -200,34 +204,35 @@ gap: 16px;
 }
 @media (max-width: $tablet-breakpoint) {
   .container{
-    width: 251.75px;
-    gap: 12.08px;
+    width: calc(500px * 0.75);
+    gap: 20px;
   }
   .title{
     &_ready{
-      font-size: 20.14px;
+      font-size: calc($ready-title-font-size * 0.75);
     }
     &_social{
-      font-size: 35.7px;
+      font-size: calc($social-title-font-size * 0.75);
     }
+    margin-bottom: 11px;
   }
   .calendar{
     &_inner{
       &_upper{
-        font-size: 15.1px;
+        font-size: calc($calendar-upper-font-size * 0.75);
         &_hackdavis{
-          font-size: 15.1px;
+          font-size: calc($calendar-upper-font-size * 0.75);
         }
       }
       &_lower{
         display: flex;
 
         &_text{
-          font-size: 15.1px;
+          font-size: calc($button-font-size * 0.75);
         }
         &_icon{
-          width: 15.1px;
-          height: 15.1px;
+          width: calc($button-font-size * 0.75);
+          height: calc($button-font-size * 0.75);
         }
       }
     }
@@ -235,32 +240,29 @@ gap: 16px;
   .buttons{
     &_register{
       height: 48px; 
-      padding: 7.75px 13.0px;
+
       p{
-        font-size: 10.2px;
+        font-size: calc($button-font-size * 0.75);
       }
     }
     &_sponsor{
       height: 48px;
-      padding: 7.75px 13.0px;
+
       p{
-        font-size: 10.2px;
+        font-size: calc($button-font-size * 0.75);
       }
     }
     &_userType{
-      gap: 12.08px;
       span{
-        font-size: 10.2px;
+        font-size: calc($button-font-size * 0.75);
       }
     }
   }
 }
 
-
 @media (max-width: $mobile-breakpoint) {
   .background{
     width: 100vw;
-    // border: 1px solid black;
   }
   .container{
     position: relative;
@@ -269,11 +271,87 @@ gap: 16px;
     align-items: center;
     text-align: center;
     width: 100%;
+    margin-top: 10%;
   }
   .buttons{
     justify-content: center;
     align-items: center;
   }
+  .title{
+    &_ready{
+      color: var(--teal-2, #173A52);
+      text-align: center;
+      font-family: "Proxima Nova";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 115%; /* 36.8px */
+      letter-spacing: 0.64px;
+    }
+    &_social{
+      color: var(--teal-2, #173A52);
+      font-family: "Proxima Nova";
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 115%;
+      letter-spacing: 0.96px;
+      margin-top: 10px;
+    }
+  }
+  .calendar{
+    &_inner{
+      &_upper{
+        font-size: 24px;
+        &_hackdavis{
+          font-size: 24px;
+        }
+      }
+      &_lower{
+        display: flex;
+        justify-content: center;
+        gap: 5px; 
+
+        &_text{
+          font-size: 18px;
+        }
+        &_icon{
+          width: 18px;
+          height: 18px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+  .buttons{
+    width: 100%;
+    &_register{
+      width: 85%;
+      height: 48px; 
+      padding: 7.75px 13.0px;
+      p{
+        font-size: 18px;
+      }
+    }
+    &_sponsor{
+      width: 85%;
+      height: 48px;
+      padding: 7.75px 13.0px;
+      p{
+        font-size: 18px;
+      }
+    }
+    &_userType{
+      gap: 25px;
+      span{
+        font-size: 18px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: $small-mobile-breakpoint){
   .title{
     &_ready{
       color: var(--teal-2, #173A52);
@@ -304,40 +382,29 @@ gap: 16px;
         }
       }
       &_lower{
-        display: flex;
-        justify-content: center;
         &_text{
-          font-size: 18px;
+          font-size: 20px;
         }
         &_icon{
-          width: 18px;
-          height: 18px;
-          margin-bottom: 2px;
+          width: 20px;
+          height: 20px;
+          margin-top: -2px;
         }
       }
     }
   }
   .buttons{
     &_register{
-      height: 48px; 
-      padding: 7.75px 13.0px;
       p{
-        font-size: 18px;
+        font-size: 20px;
       }
     }
     &_sponsor{
-      height: 48px;
-      padding: 7.75px 13.0px;
       p{
-        font-size: 18px;
+        font-size: 20px;
       }
     }
-    &_userType{
-      gap: 12.08px;
-      span{
-        font-size: 18px;
-      }
-    }
+
   }
 
 }
