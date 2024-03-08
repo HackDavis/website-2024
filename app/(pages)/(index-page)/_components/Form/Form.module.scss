@@ -33,7 +33,7 @@ $tablet-scale: 0.75;
 
   &_ready{
     text-align: left;
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "Metropolis", sans-serif;
     color: var(--teal-2, #173A52);
     font-size: $ready-title-font-size;
     font-style: normal;
@@ -42,7 +42,7 @@ $tablet-scale: 0.75;
     letter-spacing: 0.96px;
   }
   &_social{
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "Metropolis", sans-serif;
     color: var(--teal-2, #173A52);
     font-size: $social-title-font-size;
     font-style: normal;
@@ -63,7 +63,7 @@ $tablet-scale: 0.75;
     flex-direction: column;
 
     &_upper{
-      font-family: "Proxima Nova", sans-serif;
+      font-family: "Metropolis", sans-serif;
       color: var(--teal-2, #173A52);
       font-size: $calendar-upper-font-size;
       font-style: normal;
@@ -72,7 +72,7 @@ $tablet-scale: 0.75;
       letter-spacing: 0.64px;
 
       &_hackdavis{
-        font-family: "Proxima Nova", sans-serif;
+        font-family: "Metropolis", sans-serif;
         color: var(--teal-2, #173A52);
         font-size: $calendar-upper-font-size;
         font-style: normal;
@@ -90,7 +90,7 @@ $tablet-scale: 0.75;
 
       &_text{
         color: var(--teal-2, #173A52);
-        font-family: "Proxima Nova", sans-serif;
+        font-family: "Metropolis", sans-serif;
         font-size: $button-font-size;
         font-style: normal;
         font-weight: 500;
@@ -134,7 +134,7 @@ $tablet-scale: 0.75;
     p{
       color: var(--white, #FFF);
       text-align: center;
-      font-family: "Proxima Nova", sans-serif;
+      font-family: "Metropolis", sans-serif;
       font-size: $button-font-size;
       font-style: normal;
       font-weight: 700;
@@ -171,7 +171,7 @@ $tablet-scale: 0.75;
     p{
       color: var(--teal-2, #173A52);
       text-align: center;
-      font-family: "Proxima Nova", sans-serif;
+      font-family: "Metropolis", sans-serif;
       font-size: $button-font-size;
       font-style: normal;
       font-weight: 700;
@@ -189,7 +189,7 @@ $tablet-scale: 0.75;
     span{
       color: var(--teal-2, #173A52);
       text-align: center;
-      font-family: "Proxima Nova", sans-serif;
+      font-family: "Metropolis", sans-serif;
       font-size: $button-font-size;
       font-style: normal;
       font-weight: 700;
@@ -281,7 +281,7 @@ $tablet-scale: 0.75;
     &_ready{
       color: var(--teal-2, #173A52);
       text-align: center;
-      font-family: "Proxima Nova";
+      font-family: "Metropolis";
       font-size: 32px;
       font-style: normal;
       font-weight: 700;
@@ -290,7 +290,7 @@ $tablet-scale: 0.75;
     }
     &_social{
       color: var(--teal-2, #173A52);
-      font-family: "Proxima Nova";
+      font-family: "Metropolis";
       font-size: 48px;
       font-style: normal;
       font-weight: 700;
@@ -356,7 +356,7 @@ $tablet-scale: 0.75;
     &_ready{
       color: var(--teal-2, #173A52);
       text-align: center;
-      font-family: "Proxima Nova";
+      font-family: "Metropolis";
       font-size: 32px;
       font-style: normal;
       font-weight: 700;
@@ -365,7 +365,7 @@ $tablet-scale: 0.75;
     }
     &_social{
       color: var(--teal-2, #173A52);
-      font-family: "Proxima Nova";
+      font-family: "Metropolis";
       font-size: 48px;
       font-style: normal;
       font-weight: 700;
