@@ -58,6 +58,14 @@
             margin-bottom: -80%;
             transform: rotate(15.1deg);
 
+
+            animation: shuffle3 4s ease-in-out 2s 1 normal;
+            z-index: 2;
+
+            transition: z-index 0s ease-in-out 2.5s;
+      animation-iteration-count: infinite;
+
+
         }
         .middlePolaroidStacked  {
             width: 21vw;
@@ -71,6 +79,13 @@
             transition: transform 0.5s ease;
             transform: rotate(-11.1deg);
 
+            animation: shuffle2 4s ease-in-out 1s normal; 
+      z-index: 1;
+
+      transition: z-index 0s ease-in-out 1.5s;
+      animation-iteration-count: infinite;
+
+
         }
         .frontPolaroidStacked  {
             width: 21vw;
@@ -83,10 +98,20 @@
             //margin-top: 10%;
             transform: rotate(1deg);
 
+            animation: shuffle 4s ease-in-out 0s 3 normal;
+            z-index: 0;
+
+            transition: z-index 0s ease-in-out 0.5s;
+      animation-iteration-count: infinite;
+
+
         }
     }
 
 }
+
+//animation1 1s -> animation2 1s -> animation3 1s
+
 
 @media screen and (min-width: 1920px) {
     .container {
@@ -241,3 +266,72 @@
         }
     }
 }
+
+@keyframes shuffle {
+    0% {
+        transform: rotate(0) translateX(0) scale(1);
+      }
+      10% {
+        transform: rotate(5deg) translateX(105%) scale(0.96);
+      }
+      25% {
+        transform: rotate(5deg) translateX(105%) scale(0.96);
+        }
+  
+      50% {
+        transform: rotate(0) translateX(0) scale(1);
+      }
+  
+      75% {
+        transform: rotate(0) translateX(0) scale(1);
+      }
+      100% {
+        transform: rotate(0) translateX(0);
+      }
+  }
+
+  @keyframes shuffle2 {
+    0% {
+      transform: rotate(0) translateX(0) scale(1);
+    }
+    10% {
+        transform: rotate(0) translateX(0) scale(1);
+    }
+    25% {
+        transform: rotate(0) translateX(0) scale(1);
+      }
+
+    50% {
+        transform: rotate(5deg) translateX(105%) scale(0.96);
+    }
+
+    75% {
+        transform: rotate(0) translateX(0);
+    }
+    100% {
+      transform: rotate(0) translateX(0);
+    }
+  }
+
+  @keyframes shuffle3 {
+    0% {
+        transform: rotate(0) translateX(0) scale(1);
+      }
+      10% {
+          transform: rotate(0) translateX(0) scale(1);
+      }
+      25% {
+          transform: rotate(0) translateX(0) scale(1);
+        }
+  
+      50% {
+        transform: rotate(0) translateX(0) scale(1);
+      }
+  
+      75% {
+        transform: rotate(5deg) translateX(105%) scale(0.96);
+      }
+      100% {
+        transform: rotate(0) translateX(0);
+      }
+  }

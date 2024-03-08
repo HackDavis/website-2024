@@ -34,7 +34,7 @@ export default function BottomPolaroids() {
     if (!isHover && window && window.innerWidth > 960) {
       intervalId = setInterval(() => {
         rotateArray(polaroidUrls); // Cycle through indices
-      }, 3000); // Change interval to 5 seconds (5000 milliseconds)
+      }, 3000);
     }
 
     return () => clearInterval(intervalId);
