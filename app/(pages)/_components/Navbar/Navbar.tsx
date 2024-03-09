@@ -15,13 +15,13 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY < 100) {
+      if (currentScrollY < 60) {
         setAtTop(true);
         setDirection('down');
       } else if (currentScrollY < lastScrollY.current) {
         setAtTop(false);
         setDirection('up');
-      } else if (currentScrollY > 100) {
+      } else if (currentScrollY > 60) {
         setAtTop(false);
         setDirection('down');
       }
