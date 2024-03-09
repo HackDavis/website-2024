@@ -16,7 +16,7 @@ export default function Polaroids() {
             width={4000}
             height={100}
             className={styles.polaroids_container_img1_image}
-            loading="lazy"
+            priority={true}
             placeholder="blur"
             blurDataURL="/index/Hero/hd_pol1.png"
             onLoad={incLoaded}
@@ -30,7 +30,7 @@ export default function Polaroids() {
               width={4000}
               height={100}
               className={styles.polaroids_container_lower_img3_image}
-              loading="lazy"
+              priority={true}
               placeholder="blur"
               blurDataURL="/index/Hero/hd_pol3.png"
               onLoad={incLoaded}
@@ -43,7 +43,7 @@ export default function Polaroids() {
               width={4000}
               height={100}
               className={styles.polaroids_container_lower_img2_image}
-              loading="lazy"
+              priority={true}
               placeholder="blur"
               blurDataURL="/index/Hero/hd_pol2.png"
               onLoad={incLoaded}
