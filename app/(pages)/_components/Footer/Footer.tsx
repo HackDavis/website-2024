@@ -28,14 +28,10 @@ export default function Footer() {
           height={92.7}
           className={styles.hdLogoWhite}
         />
-
-        <Image
-          src="/Footer/hdLogoMotto.svg"
-          alt="hackdavis name and motto"
-          width={226}
-          height={71.55}
-          className={styles.hdMottoWhite}
-        />
+        <div className={styles.logoTextContent}>
+          <p className={styles.hdMotto1White}>HackDavis</p>
+          <p className={styles.hdMotto2White}>//create for social good_</p>
+        </div>
       </div>
       <div className={styles.socialContent}>
         <div className={styles.brandIcons}>
