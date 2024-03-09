@@ -2,8 +2,6 @@ import styles from './Form.module.scss';
 import { CiCalendar } from 'react-icons/ci';
 import WordCycle from './_components/WordCycle';
 
-
-
 export default function Form() {
   return (
     <div className={styles.background}>
@@ -15,8 +13,6 @@ export default function Form() {
               <WordCycle />
             </span>
           </span>
-
-
 
           <span className={styles.title_social}>social good?</span>
         </div>
