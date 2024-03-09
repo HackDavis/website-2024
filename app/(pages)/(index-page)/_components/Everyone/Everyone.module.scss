@@ -12,8 +12,8 @@
 }
 .title {
   color: #FFF;
-  font-family: "Proxima Nova";
-  font-size: 6rem;
+  font-family: "Metropolis";
+  font-size: 96px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -27,7 +27,7 @@
   min-width: 20vw;
   height: 5vw;
   color: #FFF;
-  font-family: "Proxima Nova";
+  font-family: "Metropolis";
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 500;
@@ -43,7 +43,7 @@
   min-width: 500px;
   max-width: 500px; 
   color: #FFF;
-  font-family: "Proxima Nova";
+  font-family: "Metropolis";
   font-size: 1.5rem; 
   font-weight: 500;
   line-height: 1.5; 
@@ -110,22 +110,14 @@
   right: -10%;
 }
 
-
-
-@keyframes ripple {
-  0% { opacity: 0.2; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.1); }
-  100% { opacity: 0; transform: scale(1.2); }
-}
-
-/* Optional styles for individual ripples (adjust timings as needed) */
-#ripple1 {
-  animation-delay: 1s;
-}
-#ripple2 {
-  animation-delay: 2s;
-}
-
-#ripple3 {
-  animation-delay: 3s;
+.ripple-container{
+  max-width: 834px; 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+  position: absolute;  
+  left: 60%; 
+  transform: translate(-50%, -50%);
+  padding-top: 120%;
 }

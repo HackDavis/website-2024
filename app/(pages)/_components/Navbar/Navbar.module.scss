@@ -3,24 +3,37 @@ $bg-color: var(--landing-bg);
 $mobile-breakpoint: 425px;
 
 .container{
-    position: absolute;
+    position: fixed;
     width: 100%; 
     display: flex;
     z-index: 100;
-    // border: 1px solid black;  
+    transition: top 0.5s; // Smooth transition for moving up and down
+    top: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255, 0.5);
+    transition: background-color 0.5s ease-in-out, top 0.5s;
+    // height: 10%;
+    
 
     &_sticky{
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        backdrop-filter: blur(10px);
-        background-color: transparent;
-        // background-color: $bg-color;
-        // background: rgba(0, 0, 0, 0.5);
-        background-color: rgba(255,255,255, 0.5);
-        // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         z-index: 100;
+        animation: dropDown 0.5s ease-in-out forwards;
+    }
+
+
+    &_return_up{
+        animation: returnUp 0.5s ease-in-out forwards;
+    }
+
+    &_at_top{
+        top: 0;
+        background-color: transparent;
+        backdrop-filter: none;
+        // border: 3px solid red;
     }
     
 }
@@ -32,10 +45,6 @@ $mobile-breakpoint: 425px;
     position: relative; // Added for positioning the menu icon
     width: 100%;
 
-    &_sticky{
-        padding: 1rem;
-        padding-left: 2rem; 
-    }
 }
 
 .nav ul {
@@ -54,6 +63,10 @@ $mobile-breakpoint: 425px;
 .logo{
     width: 3.125rem;
     height: 3.13269rem;
+
+    &_white{
+        display:none;
+    }
 }
 
 
@@ -70,7 +83,7 @@ $mobile-breakpoint: 425px;
     align-items: center;
     gap: 1.5rem;
     transition: text-decoration 0.2s; 
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Metropolis', sans-serif;
 }
 
 .words:hover {
@@ -96,15 +109,72 @@ $mobile-breakpoint: 425px;
     z-index: 10;
 }
 
+.hamburger{
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    &_line{
+        width: 30px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--teal-2, #173A52);
+        display: block;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+
+    &_active{
+        animation: smallbig 0.6s forwards;
+
+        .hamburger_line {
+            background-color: #ecf0f1;
+            transition-delay: 0.2s;
+
+            &:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+}
+
 @media (max-width: $mobile-breakpoint) {
+    .container{
+        // background-color: transparent;
+        // backdrop-filter: none;
+        height: 10%;
+
+        &_active{
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: var(--teal-2, #173A52);
+            backdrop-filter: none;
+            width: 100%;
+            height: 60vh;
+
+            z-index: 999;
+            animation: expand 0.3s ease-in-out forwards;
+        }
+    }
     .nav{
-        display: flex;
         flex-direction: column;
+        // padding: 1rem;
         padding-top: 0;
 
-        &_sticky{
-            padding-top: 0;
-        }
+
     }
     .navLink{
         display: none; // Hide the links by default on mobile
@@ -112,14 +182,8 @@ $mobile-breakpoint: 425px;
             display: flex; // Show the links when active
             flex-direction: column;
             width: 100%;
-            height: 300px;
-        }
-    }
-
-    .logo{
-        display: none; // Hide the logo by default on mobile
-        &_active{
-            display: flex; // Show the logo when active
+            color: whitesmoke;
+            // height: 300px;
         }
     }
 
@@ -140,25 +204,19 @@ $mobile-breakpoint: 425px;
         right: 0;
         // width: 100%; // Full width to cover the screen
         &_active{
-            display: flex ;
             flex-direction: column !important; 
-
-            justify-content: center; 
             align-items: center; 
             width: 100%; 
             position: fixed; 
-            top: 0; 
+            top:25%; 
             left: 0;
-            right: 0;
             z-index: 1000; 
-            background-color: $bg-color; 
-            height: 100vh; 
             animation: expand 0.3s ease-in-out forwards;
         }
     }
+
     .wordsItem{
-        // border: 1px solid red; 
-        height: 80px;
+        height: 40px; //adjust gap between words
     }
 
     .mlhBadge{
@@ -168,8 +226,16 @@ $mobile-breakpoint: 425px;
     }
     .logo{
         display: none;   
+
         &_active{
+            display: none;
+        }
+
+        &_white{
             display: flex;
+            width: 3.125rem;
+            height: 3.13269rem;
+            margin-bottom: 30px;
         }
     }
 }
@@ -184,3 +250,39 @@ $mobile-breakpoint: 425px;
       height: 100%;
     }
   }
+
+
+@keyframes dropDown{
+    from{
+        top: -100%;
+    }
+    to{
+        top: 0;
+    }
+}
+
+@keyframes returnUp{
+    from{
+        top: 0;
+    }
+    to{
+        top: -100%;
+    }
+}
+  
+  
+@keyframes smallbig{
+    0%, 100%{
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    50%{
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+    }
+}

@@ -1,9 +1,15 @@
 .hello-container{
     background: var(--gradient, linear-gradient(284deg, #FCFCD1 9.72%, #B2E7DD 44.61%, #76D6E6 79.5%));
     color: #005271;
+<<<<<<< HEAD
     font-family: "Proxima Nova";
     width: 100%; 
     max-width: 100%; 
+=======
+    font-family: "Metropolis";
+    width: 100%; /* Use full width of the viewport */
+    max-width: 100%; /* Set a max-width if necessary */
+>>>>>>> 12a111294ca6040282aa2acac6b964dda64fbfa4
     margin-left: auto;
     margin-right: auto;
     min-height: 100vh; 
