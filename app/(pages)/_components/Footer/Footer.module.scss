@@ -19,6 +19,33 @@ $brand-icon-color: white;
         flex-direction: row;
         align-items: center;
         gap: 23.48px;
+        .logoTextContent {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            .hdLogoWhite {
+                height: 72px;
+                width: 72px;
+            }
+            .hdMotto1White {
+                color: #FFF;
+font-family: Metropolis;
+font-size: 2rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+            }
+            .hdMotto2White {
+                color: #FFF;
+
+font-family: "DM Mono";
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1.6px;
+            }
+        }
     }
 
     .socialContent {
@@ -61,6 +88,7 @@ $brand-icon-color: white;
         }
         
         .copyright {
+            font-family: 'Metropolis';
             color:white;
             font-size: 14px;
         }
@@ -107,13 +135,16 @@ $brand-icon-color: white;
         gap: 23.48px;
         margin-top: 30px;
 
-        .hdLogoWhite {
-            height: 72px;
-            width: 72px;
-        }
-        .hdMottoWhite {
-            height: 55px;
-            width: 176px;
+        .logoTextContent {
+            margin-top: 15px;
+            .hdLogoWhite {
+                height: 72px;
+                width: 72px;
+            }
+            .hdMotto1White {
+            }
+            .hdMotto2White {
+            }
         }
     }
 
@@ -159,6 +190,7 @@ $brand-icon-color: white;
         }
         
         .copyright {
+            font-family: 'Metropolis';
             color:white;
             font-size: 9px;
         }

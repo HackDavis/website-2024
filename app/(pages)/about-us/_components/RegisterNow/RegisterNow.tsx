@@ -1,5 +1,6 @@
 import styles from './RegisterNow.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 export default function RegisterNow() {
   return (
     <div className={styles.container}>
@@ -25,7 +26,13 @@ export default function RegisterNow() {
           Ready to create for{' '}
           <span className={styles.socialGood}>social good?</span>
         </h1>
-        <button className={styles.registerNow}>Register Now</button>
+        <Link
+          target="_blank"
+          href={'https://form.typeform.com/to/RvoDiujh?utm_source=xxxxx'}
+        >
+          {' '}
+          <button className={styles.registerNow}>Register Now</button>
+        </Link>
       </div>
 
       <Image

@@ -18,7 +18,6 @@ import ucdLS from 'public/index/Sponsors/ls.png';
 export default function Sponsors() {
   return (
     <div className={styles.container}>
-      <p className={styles.supportText}>support for social good.</p>
       <Marquee iterations={2} duration={50}>
         <Logo
           imgSrc={Intel}
@@ -36,7 +35,6 @@ export default function Sponsors() {
           alt="ASUCD Logo"
         />
       </Marquee>
-
       <Marquee iterations={2} reverse duration={50}>
         <Logo imgSrc={pepsi} url="https://www.pepsi.com/" alt="Pepsi Logo" />
         <Logo
