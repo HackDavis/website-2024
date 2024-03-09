@@ -8,7 +8,7 @@ import Sponsors from '../(index-page)/_components/Sponsors/Sponsors';
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ overflow: 'hidden' }}>
       <Hello />
       <Sponsor />
       <About />

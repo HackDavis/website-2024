@@ -30,8 +30,6 @@ $tablet-scale: 0.75;
 .title{
   display: flex;
   flex-direction: column;
-  // align-items: flex-end;
-
   &_ready{
     text-align: left;
     font-family: "Metropolis", sans-serif;
@@ -56,6 +54,7 @@ $tablet-scale: 0.75;
       // border: 1px solid black;
 
     }
+
   }
   &_social{
     font-family: "Metropolis", sans-serif;
@@ -249,6 +248,9 @@ $tablet-scale: 0.75;
         &_icon{
           width: $button-font-size ;
           height: $button-font-size;
+
+
+
         }
       }
     }
@@ -299,6 +301,9 @@ $tablet-scale: 0.75;
       text-align: center;
       font-family: "Metropolis";
       font-size: 36px;
+
+
+
       font-style: normal;
       font-weight: 700;
       line-height: 115%; /* 36.8px */
@@ -308,6 +313,9 @@ $tablet-scale: 0.75;
       color: var(--teal-2, #173A52);
       font-family: "Metropolis";
       font-size: 56px;
+
+
+
       font-style: normal;
       font-weight: 700;
       line-height: 115%;

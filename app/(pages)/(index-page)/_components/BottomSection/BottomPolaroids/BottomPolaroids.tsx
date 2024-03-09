@@ -5,6 +5,22 @@ import styles from './BottomPolaroids.module.scss';
 import { useState, useEffect } from 'react';
 
 export default function BottomPolaroids() {
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const updateWindowSize = () => {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    updateWindowSize(); // Update window size initially
+
+    // Add event listener to update window size on resize
+    window.addEventListener('resize', updateWindowSize);
+
+    // Cleanup function to remove event listener on component unmount
+    return () => window.removeEventListener('resize', updateWindowSize);
+  }, []);
+
   const [polaroidUrls, setPolaroidUrls] = useState([
     '/index/Polaroids/final_Footer-img3.jpg',
     '/index/Polaroids/final_Footer-img2.jpg',
@@ -31,14 +47,14 @@ export default function BottomPolaroids() {
     }
     let intervalId: any;
 
-    if (!isHover && window && window.innerWidth > 960) {
+    if (!isHover && windowSize.width > 960) {
       intervalId = setInterval(() => {
         rotateArray(polaroidUrls); // Cycle through indices
       }, 3000); // Change interval to 5 seconds (5000 milliseconds)
     }
 
     return () => clearInterval(intervalId);
-  }, [polaroidUrls, isHover]);
+  }, [polaroidUrls, isHover, windowSize.width]);
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -63,7 +79,7 @@ export default function BottomPolaroids() {
             width={4000}
             height={4000}
             className={
-              isHover || (window && window.innerWidth) <= 960
+              isHover || windowSize.width <= 960
                 ? polaroidClasses[index]
                 : polaroidClassesStacked[index]
             }
