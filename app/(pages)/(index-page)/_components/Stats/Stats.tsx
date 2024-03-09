@@ -71,25 +71,25 @@ const Stats = () => {
         <div className={styles['numbers-words-container']}>
           <div className={styles['number-word-pair']}>
             <span className={styles.number}>
-              <CountUp end={140} duration={2000} suffix="+" />
+              <CountUp end={140} duration={1500} suffix="+" />
             </span>
             <span className={styles.word}>projects</span>
           </div>
           <div className={styles['number-word-pair']}>
             <span className={styles.number}>
-              <CountUp end={15} duration={2000} prefix="$" suffix="k+" />
+              <CountUp end={15} duration={1500} prefix="$" suffix="k+" />
             </span>
             <span className={styles.word}>prizes</span>
           </div>
           <div className={styles['number-word-pair']}>
             <span className={styles.number}>
-              <CountUp end={750} duration={2000} suffix="+" />
+              <CountUp end={750} duration={1500} suffix="+" />
             </span>
             <span className={styles.word}>hackers</span>
           </div>
           <div className={styles['number-word-pair']}>
             <span className={styles.number}>
-              <CountUp end={36} duration={2000} />
+              <CountUp end={36} duration={1500} />
             </span>
             <span className={styles.word}>hours</span>
           </div>

@@ -1,30 +1,49 @@
 import React from 'react';
 import styles from './Sponsor.module.scss';
 
-const cards = [
+/*const cards = [
   {
-    imageUrl: '/about-us-icon/pol1.svg',
+    src: '/about-us-icon/pol1.svg',
+    alt: 'Image 1',
     frameImageUrl: '/about-us-icon/pol1a.svg',
   },
   {
-    imageUrl: '/about-us-icon/pol2.svg',
+    src: '/about-us-icon/pol2.svg',
+    alt: 'Image 2',
     frameImageUrl: '/about-us-icon/pol2a.svg',
   },
   {
-    imageUrl: '/about-us-icon/pol3.svg',
+    src: '/about-us-icon/pol3.svg',
+    alt: 'Image 2',
     frameImageUrl: '/about-us-icon/pol3a.svg',
   },
   {
-    imageUrl: '/about-us-icon/pol4.svg',
+    src: '/about-us-icon/pol4.svg',
+    alt: 'Image 3',
     frameImageUrl: '/about-us-icon/pol4a.svg',
   },
   {
-    imageUrl: '/about-us-icon/pol5.svg',
+    src: '/about-us-icon/pol5.svg',
+    alt: 'Image 4',
     frameImageUrl: '/about-us-icon/pol5a.svg',
   },
 ];
 
-const Carousel: React.FC = () => {
+const PolaroidGallery = () => (
+  <div className="gallery">
+    {cards.map((card, index) => (
+      <div
+        className="polaroid"
+        key={index}
+        style={{ backgroundImage: `url(${card.frameImageUrl})` }}
+      >
+        <img src={card.src} alt={card.alt} className="polaroid-image" />
+      </div>
+    ))}
+  </div>
+);*/
+
+/*const Carousel: React.FC = () => {
   return (
     <div className="carousel">
       {cards.map((card, index) => (
@@ -47,11 +66,65 @@ const Carousel: React.FC = () => {
       ))}
     </div>
   );
-};
+};*/
 
 const Sponsor = () => {
   return (
     <div className={styles['sponsor-container']}>
+      <div className={styles['polaroid']}>
+        <div className={styles['frame-image']}>
+          <img
+            src="/about-us-icon/pol1a.svg"
+            alt="Background"
+            className="background-image"
+          />
+        </div>
+        <img
+          src="/about-us-icon/pol1.svg"
+          alt="Foreground"
+          className="foreground-image"
+        />
+        <img
+          src="/about-us-icon/pol2a.svg"
+          alt="Background"
+          className="background-image"
+        />
+        <img
+          src="/about-us-icon/pol2.svg"
+          alt="Foreground"
+          className="foreground-image"
+        />
+        <img
+          src="/about-us-icon/pol3a.svg"
+          alt="Background"
+          className="background-image"
+        />
+        <img
+          src="/about-us-icon/pol3.svg"
+          alt="Foreground"
+          className="foreground-image"
+        />
+        <img
+          src="/about-us-icon/pol4a.svg"
+          alt="Background"
+          className="background-image"
+        />
+        <img
+          src="/about-us-icon/pol4.svg"
+          alt="Foreground"
+          className="foreground-image"
+        />
+        <img
+          src="/about-us-icon/pol5a.svg"
+          alt="Background"
+          className="background-image"
+        />
+        <img
+          src="/about-us-icon/pol5.svg"
+          alt="Foreground"
+          className="foreground-image"
+        />
+      </div>
       <div className={styles['numbers-words-container']}>
         <div className={styles['number-word-pair']}>
           <span className={styles.number}>140+</span>
@@ -90,4 +163,5 @@ const Sponsor = () => {
 };
 
 export default Sponsor;
-export { Carousel };
+//export { Carousel };
+//export { PolaroidGallery };
