@@ -3,17 +3,15 @@ import styles from './WordCycle.module.scss';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 const words = [
-  'Create',
-  'Code',
-  'Design',
-  'Innovate',
-  'Collaborate',
-  'Ideate',
-  'Engineer',
-  'Advocate',
-  'Hack',
-  'Strive',
-  'Build',
+  'create for',
+  'code for',
+  'design for',
+  'collab for',
+  'ideate for',
+  'craft for',
+  'hack for',
+  'strive for',
+  'build for',
 ];
 
 const WordCycle = () => {
