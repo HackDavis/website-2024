@@ -30,7 +30,7 @@ export default function Footer() {
         />
         <div className={styles.logoTextContent}>
           <p className={styles.hdMotto1White}>HackDavis</p>
-          <p className={styles.hdMotto2White}>//create for social good_</p>
+          <p>{'//create for social good_'}</p>
         </div>
       </div>
       <div className={styles.socialContent}>
