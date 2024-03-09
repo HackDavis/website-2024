@@ -1,29 +1,3 @@
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Medium.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
 $footer-color: #122537;
 $brand-icon-color: white;
 
@@ -106,7 +80,7 @@ $brand-icon-color: white;
 
         .backToTopText {
             font-size: 16px;
-            font-family: 'Proxima Nova';
+            font-family: 'Metropolis';
         }
     }
 }

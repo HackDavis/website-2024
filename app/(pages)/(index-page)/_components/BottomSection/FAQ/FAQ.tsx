@@ -19,7 +19,7 @@ const whatIsHackathonAnswer = (
       style={{
         textDecoration: 'underline',
         fontWeight: 'normal',
-        fontFamily: 'Proxima Nova',
+        fontFamily: 'Metropolis',
       }}
       href="https://drive.google.com/file/d/1KnWwN5sFYTe49Z5312OKnS5FA8OtL4iD/view"
       target="_blank"
@@ -28,7 +28,7 @@ const whatIsHackathonAnswer = (
     </Link>{' '}
     <span
       style={{
-        fontFamily: 'Proxima Nova',
+        fontFamily: 'Metropolis',
       }}
     >
       {' '}
@@ -38,7 +38,7 @@ const whatIsHackathonAnswer = (
       style={{
         textDecoration: 'underline',
         fontWeight: 'normal',
-        fontFamily: 'Proxima Nova',
+        fontFamily: 'Metropolis',
       }}
       href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
       target="_blank"
@@ -59,7 +59,7 @@ const whatToHelpAnswer = (
       style={{
         textDecoration: 'underline',
         fontWeight: 'normal',
-        fontFamily: 'Proxima Nova',
+        fontFamily: 'Metropolis',
       }}
       href="mailto:team@hackdavis.io"
     >

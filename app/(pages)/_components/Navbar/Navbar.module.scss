@@ -12,6 +12,7 @@ $mobile-breakpoint: 425px;
     backdrop-filter: blur(10px);
     background-color: rgba(255,255,255, 0.5);
     transition: background-color 0.5s ease-in-out, top 0.5s;
+    // height: 10%;
     
 
     &_sticky{
@@ -82,7 +83,7 @@ $mobile-breakpoint: 425px;
     align-items: center;
     gap: 1.5rem;
     transition: text-decoration 0.2s; 
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Metropolis', sans-serif;
 }
 
 .words:hover {
@@ -151,6 +152,10 @@ $mobile-breakpoint: 425px;
 
 @media (max-width: $mobile-breakpoint) {
     .container{
+        // background-color: transparent;
+        // backdrop-filter: none;
+        height: 10%;
+
         &_active{
             position: fixed;
             left: 0;
@@ -165,9 +170,10 @@ $mobile-breakpoint: 425px;
         }
     }
     .nav{
-        display: flex;
         flex-direction: column;
+        // padding: 1rem;
         padding-top: 0;
+        // border: 1px solid red;
 
     }
     .navLink{
@@ -203,6 +209,7 @@ $mobile-breakpoint: 425px;
             width: 100%; 
             position: fixed; 
             top:25%; 
+            // top: 2.5%;
             left: 0;
             z-index: 1000; 
             animation: expand 0.3s ease-in-out forwards;
@@ -242,6 +249,7 @@ $mobile-breakpoint: 425px;
     to {
     //   width: 100%;
       height: 100%;
+        // height: 45%;
     }
   }
 

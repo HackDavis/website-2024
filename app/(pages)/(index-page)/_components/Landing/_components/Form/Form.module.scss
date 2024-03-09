@@ -1,0 +1,439 @@
+$small-mobile-breakpoint: 375px;
+$mobile-breakpoint: 425px;
+$tablet-breakpoint: 1024px;
+$ready-title-font-size: 42px;
+$social-title-font-size: 64px;
+$calendar-upper-font-size: 24px;
+$button-font-size: 16px;
+
+$tablet-scale: 0.75;
+
+.background{
+  display: flex;
+  background-color: transparent;
+}
+
+.container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  gap: 30px;
+
+  // width: 25vw;
+  width: 500px;
+  max-width: 500px;
+  // border: 1px solid blue; 
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+  &_ready{
+    text-align: left;
+    font-family: "Metropolis", sans-serif;
+    color: var(--teal-2, #173A52);
+    font-size: $ready-title-font-size;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 103%; /* 49.44px */
+    letter-spacing: 0.96px;
+    
+    // border: 1px solid red; 
+
+    display: flex;
+    align-items: baseline;
+
+    &_wordCycle{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // width: 300px;
+      padding-left: 10px;
+      // border: 1px solid black;
+
+    }
+
+  }
+  &_social{
+    font-family: "Metropolis", sans-serif;
+    color: var(--teal-2, #173A52);
+    font-size: $social-title-font-size;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 103%;
+    letter-spacing: 1.4px;
+  }
+
+
+}
+
+.calendar{
+  display: flex;
+  flex-direction: column;
+
+  &_inner{
+    display: flex;
+    flex-direction: column;
+
+    &_upper{
+      font-family: "Metropolis", sans-serif;
+      color: var(--teal-2, #173A52);
+      font-size: $calendar-upper-font-size;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 48px */
+      letter-spacing: 0.64px;
+
+      &_hackdavis{
+        font-family: "Metropolis", sans-serif;
+        color: var(--teal-2, #173A52);
+        font-size: $calendar-upper-font-size;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%; /* 48px */
+        letter-spacing: 0.64px;
+        font-weight: 600;
+      }
+    }
+
+    &_lower{
+      display: flex;
+      align-items: center;
+      gap: 0.25vw;
+
+      &_text{
+        color: var(--teal-2, #173A52);
+        font-family: "Metropolis", sans-serif;
+        font-size: $button-font-size;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 36px */
+        letter-spacing: 0.48px;
+      }
+      &_icon{
+        width: $button-font-size;
+        height: $button-font-size;
+        margin-top: -2px;
+      }
+    }
+  }
+
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 16px;
+// border: 1px solid blue;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &_register{
+    display: flex;
+    height: 48px;
+    padding: 0.75vw 1.3vw;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    
+    border-radius: 100px;
+    background: var(--teal-2, #173A52);
+    transition: background-color 0.2s ease;
+    
+    p{
+      color: var(--white, #FFF);
+      text-align: center;
+      font-family: "Metropolis", sans-serif;
+      font-size: $button-font-size;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.48px;
+      text-transform: capitalize;
+    }
+    &:hover{
+      background: var(--teal-1, #005271);
+    }
+
+  }
+  &_sponsor{
+    display: flex;
+    height: 48px;
+    padding: 0.75vw 1.3vw;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+    border-radius: 100px;
+    border: 0px solid #497F5D;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    transition: background-color 0.2s ease;
+    opacity: 0.85;
+
+    &:hover{
+      // background: rgba(234, 224, 224, 0.75);
+      opacity: 1;
+    }
+
+    p{
+      color: var(--teal-2, #173A52);
+      text-align: center;
+      font-family: "Metropolis", sans-serif;
+      font-size: $button-font-size;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.48px;
+    }
+  }
+  &_userType{
+    display: flex;
+    justify-content: center;
+    // border: 1px solid black;
+    // width: 70%;
+    gap: 1.5vw;
+
+    span{
+      color: var(--teal-2, #173A52);
+      text-align: center;
+      font-family: "Metropolis", sans-serif;
+      font-size: $button-font-size;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      font-variant: all-small-caps;
+      letter-spacing: 0.48px;
+      text-decoration-line: underline;
+    }
+
+
+  }
+}
+@media (max-width: $tablet-breakpoint) {
+  .container{
+    width: calc(500px * 0.75);
+    gap: 20px;
+  }
+  .title{
+    &_ready{
+      font-size: calc($ready-title-font-size * 0.75);
+    }
+    &_social{
+      font-size: calc($social-title-font-size * 0.75);
+    }
+    margin-bottom: 11px;
+  }
+  .calendar{
+    &_inner{
+      &_upper{
+        font-size: calc($calendar-upper-font-size * 0.75);
+        &_hackdavis{
+          font-size: calc($calendar-upper-font-size * 0.75);
+        }
+      }
+      &_lower{
+        display: flex;
+
+        &_text{
+          font-size: $button-font-size;
+        }
+        &_icon{
+          width: $button-font-size ;
+          height: $button-font-size;
+
+
+
+        }
+      }
+    }
+  }
+  .buttons{
+    &_register{
+      height: 48px; 
+
+      p{
+        font-size: calc($button-font-size * 0.75);
+      }
+    }
+    &_sponsor{
+      height: 48px;
+
+      p{
+        font-size: calc($button-font-size * 0.75);
+      }
+    }
+    &_userType{
+      span{
+        font-size: calc($button-font-size * 0.75);
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .background{
+    width: 100vw;
+  }
+  .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 10%;
+  }
+  .buttons{
+    justify-content: center;
+    align-items: center;
+  }
+  .title{
+    &_ready{
+      color: var(--teal-2, #173A52);
+      text-align: center;
+      font-family: "Metropolis";
+      font-size: 36px;
+
+
+
+      font-style: normal;
+      font-weight: 700;
+      line-height: 115%; /* 36.8px */
+      letter-spacing: 0.64px;
+    }
+    &_social{
+      color: var(--teal-2, #173A52);
+      font-family: "Metropolis";
+      font-size: 56px;
+
+
+
+      font-style: normal;
+      font-weight: 700;
+      line-height: 115%;
+      letter-spacing: 0.96px;
+      margin-top: 10px;
+    }
+  }
+  .calendar{
+    &_inner{
+      &_upper{
+        font-size: 24px;
+        &_hackdavis{
+          font-size: 24px;
+        }
+      }
+      &_lower{
+        display: flex;
+        justify-content: center;
+        gap: 5px; 
+
+        &_text{
+          font-size: 18px;
+        }
+        &_icon{
+          width: 18px;
+          height: 18px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+  .buttons{
+    width: 100%;
+    &_register{
+      width: 85%;
+      height: 48px; 
+      padding: 7.75px 13.0px;
+      p{
+        font-size: 18px;
+      }
+    }
+    &_sponsor{
+      width: 85%;
+      height: 48px;
+      padding: 7.75px 13.0px;
+      p{
+        font-size: 18px;
+      }
+    }
+    &_userType{
+      gap: 25px;
+      span{
+        font-size: 18px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: $small-mobile-breakpoint){
+  .title{
+    &_ready{
+      color: var(--teal-2, #173A52);
+      text-align: center;
+      font-family: "Metropolis";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 115%; /* 36.8px */
+      letter-spacing: 0.64px;
+    }
+    &_social{
+      color: var(--teal-2, #173A52);
+      font-family: "Metropolis";
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 115%;
+      letter-spacing: 0.96px;
+    }
+  }
+  .calendar{
+    &_inner{
+      &_upper{
+        font-size: 24px;
+        &_hackdavis{
+          font-size: 24px;
+        }
+      }
+      &_lower{
+        &_text{
+          font-size: 20px;
+        }
+        &_icon{
+          width: 20px;
+          height: 20px;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+  .buttons{
+    &_register{
+      p{
+        font-size: 20px;
+      }
+    }
+    &_sponsor{
+      p{
+        font-size: 20px;
+      }
+    }
+    &_usertype{
+      span{
+        font-size: 20px;
+      }
+    }
+
+  }
+
+}
