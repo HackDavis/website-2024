@@ -17,6 +17,24 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const updateWindowSize = () => {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    updateWindowSize(); // Update window size initially
+
+    // Add event listener to update window size on resize
+    window.addEventListener('resize', updateWindowSize);
+
+    // Cleanup function to remove event listener on component unmount
+    return () => window.removeEventListener('resize', updateWindowSize);
+  }, []);
+
+  const moveProgressAmount = windowSize.width > 768 ? 63 : 54;
+
   const {
     prevBtnDisabled,
     nextBtnDisabled,
@@ -74,11 +92,21 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="embla__progress" onClick={handleProgressBarClick}>
-        <div
-          className="embla__progress__bar"
-          style={{ transform: `translateX(${scrollProgress * 63}vw` }}
-        />
+      <div className="embla__progress_bottom_mobile">
+        <div className="prev_button_mobile">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+        </div>
+        <div className="embla__progress" onClick={handleProgressBarClick}>
+          <div
+            className="embla__progress__bar"
+            style={{
+              transform: `translateX(${scrollProgress * moveProgressAmount}vw`,
+            }}
+          />
+        </div>
+        <div className="next_button_mobile">
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        </div>
       </div>
     </div>
   );

@@ -36,6 +36,7 @@
   .embla__text_section {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding-left: 12%;
     color: #123041;
     font-family: "Proxima Nova";
@@ -44,7 +45,7 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.96px;
-    width: 598px;
+    width: 90vw;
 
   }
   .embla__viewport {
@@ -78,7 +79,7 @@
     grid-template-columns: auto 1fr;
     justify-content: space-between;
     gap: 1.2rem;
-    margin-left: 31vw;
+
   }
   .embla__buttons {
     display: flex;
@@ -125,7 +126,6 @@
     justify-self: flex-end;
     align-self: center;
     width: 75vw;
-    max-width: 1080px;
     overflow: hidden;
 
   }
@@ -133,11 +133,24 @@
     background-color: #005271;;
     position: absolute;
     width: 17%;
+    border-radius: 10px;
     top: 0;
     bottom: 0;
     left: 0%;
   }
-  
+
+  .embla__progress_bottom_mobile {
+    display: flex;
+    justify-content: center;
+  }
+
+  .prev_button_mobile {
+    display: none;
+
+  }
+  .next_button_mobile {
+    display: none;
+  }
 
   @media only screen and (max-width: 768px) {
     .embla {
@@ -150,9 +163,7 @@
         flex-direction:column;
       }
       .embla__text_section {
-        display: flex;
-        align-items: center;
-        padding-left: 11%;
+        
       }
       .embla__text {
         color: #123041;
@@ -199,12 +210,20 @@
         justify-content: space-between;
         gap: 1.2rem;
         position: absolute;
-        margin-top: 192%;
-        margin-right: -60%;
+        margin-left: 0%;
+        margin-top: 40vw;
+        display: none;
+      }
+      .embla__controls_mobile {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        justify-content: space-between;
+        gap: 1.2rem;
+        position: relative;
       }
       .embla__buttons {
         display: flex;
-        gap: 130px;
+        gap: 0px;
       }
       .embla__button {
         -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
@@ -246,7 +265,7 @@
         height: 0.6rem;
         justify-self: flex-end;
         align-self: center;
-        width: 75vw;
+        width: 60vw;
         max-width: 1080px;
         overflow: hidden;
     
@@ -254,9 +273,22 @@
       .embla__progress__bar {
         background-color: #005271;;
         position: absolute;
-        width: 17%;
+        width: 10%;
         top: 0;
         bottom: 0;
         left: 0%;
+      }
+      .embla__progress_bottom_mobile {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .prev_button_mobile {
+        display: block ;
+    
+      }
+      .next_button_mobile {
+        display: block;
       }
   }
