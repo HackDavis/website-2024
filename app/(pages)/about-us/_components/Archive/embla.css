@@ -1,0 +1,294 @@
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova/ProximaNova-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.embla {
+    max-width: 100%;
+    margin: auto;
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 0%;
+    display: flex;
+    flex-direction:column;
+  }
+  .embla__text_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12%;
+    color: #123041;
+    font-family: "Proxima Nova";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    width: 90vw;
+
+  }
+  .embla__viewport {
+    padding-left: 12%;
+    padding-top: 10%;
+    padding-bottom: 60px;
+    width: 90%;
+  }
+  .embla__container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+  }
+  .embla__slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 10;
+    padding-left: 0;
+  }
+  .embla__slide__number {
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    border-radius: 1.8rem;
+    font-size: 4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--slide-height);
+  }
+  .embla__controls {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: space-between;
+    gap: 1.2rem;
+
+  }
+  .embla__buttons {
+    display: flex;
+    gap: 30px;
+  }
+  .embla__button {
+    -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    touch-action: manipulation;
+    display: inline-flex;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    width: 3.6rem;
+    height: 3.6rem;
+    z-index: 1;
+    border-radius: 50%;
+    color: var(--text-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #88D8DD;
+
+  }
+  .embla__button:disabled {
+    background-color: #DBDBDB;
+    color:grey;
+  }
+  .embla__button__svg {
+    width: 35%;
+    height: 35%;
+  }
+  .embla__progress {
+    border-radius: 1.8rem;
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    background-color: #B3B3B3;;
+    position: relative;
+    height: 0.6rem;
+    justify-self: flex-end;
+    align-self: center;
+    width: 75vw;
+    overflow: hidden;
+
+  }
+  .embla__progress__bar {
+    background-color: #005271;;
+    position: absolute;
+    width: 17%;
+    border-radius: 10px;
+    top: 0;
+    bottom: 0;
+    left: 0%;
+  }
+
+  .embla__progress_bottom_mobile {
+    display: flex;
+    justify-content: center;
+  }
+
+  .prev_button_mobile {
+    display: none;
+
+  }
+  .next_button_mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .embla {
+        max-width: 100%;
+        margin: auto;
+        --slide-height: 19rem;
+        --slide-spacing: 1rem;
+        --slide-size: 0%;
+        display: flex;
+        flex-direction:column;
+      }
+      .embla__text_section {
+        
+      }
+      .embla__text {
+        color: #123041;
+
+        font-family: "Proxima Nova";
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.96px;
+        width: 311px;
+        height: 96px;
+        text-wrap: wrap;
+      }
+      .embla__viewport {
+        padding-left: 12%;
+        padding-top: 10%;
+        padding-bottom: 60px;
+        width: 90%;
+      }
+      .embla__container {
+        backface-visibility: hidden;
+        display: flex;
+        touch-action: pan-y;
+      }
+      .embla__slide {
+        flex: 0 0 var(--slide-size);
+        min-width: 10;
+        padding-left: 0;
+      }
+      .embla__slide__number {
+        box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+        border-radius: 1.8rem;
+        font-size: 4rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--slide-height);
+      }
+      .embla__controls {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        justify-content: space-between;
+        gap: 1.2rem;
+        position: absolute;
+        margin-left: 0%;
+        margin-top: 40vw;
+        display: none;
+      }
+      .embla__controls_mobile {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        justify-content: space-between;
+        gap: 1.2rem;
+        position: relative;
+      }
+      .embla__buttons {
+        display: flex;
+        gap: 0px;
+      }
+      .embla__button {
+        -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        touch-action: manipulation;
+        display: inline-flex;
+        text-decoration: none;
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+        width: 34px;
+        height: 34px;
+        z-index: 1;
+        border-radius: 50%;
+        color: var(--text-body);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #88D8DD;
+    
+      }
+      .embla__button:disabled {
+        background-color: #DBDBDB;
+        color:grey;
+      }
+      .embla__button__svg {
+        width: 35%;
+        height: 35%;
+      }
+      .embla__progress {
+        border-radius: 1.8rem;
+        box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+        background-color: #B3B3B3;;
+        position: relative;
+        height: 0.6rem;
+        justify-self: flex-end;
+        align-self: center;
+        width: 60vw;
+        max-width: 1080px;
+        overflow: hidden;
+    
+      }
+      .embla__progress__bar {
+        background-color: #005271;;
+        position: absolute;
+        width: 10%;
+        top: 0;
+        bottom: 0;
+        left: 0%;
+      }
+      .embla__progress_bottom_mobile {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .prev_button_mobile {
+        display: block ;
+    
+      }
+      .next_button_mobile {
+        display: block;
+      }
+  }

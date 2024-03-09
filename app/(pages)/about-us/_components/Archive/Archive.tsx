@@ -1,8 +1,15 @@
 'use client';
 import styles from './Archive.module.scss';
+import EmblaCarousel from './EmblaCarousel';
+import { EmblaOptionsType } from 'embla-carousel';
+import '../Archive/embla.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+
+const OPTIONS: EmblaOptionsType = { dragFree: false, skipSnaps: false };
+const SLIDE_COUNT = 5;
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 type arrowColors = {
   circleStroke: string;
@@ -111,159 +118,81 @@ export default function Archive() {
   ****IMPORTANT****
   */
 
+  const elements = [
+    <Link key="unique-key-1" target="_blank" href="https://2023.hackdavis.io/">
+      <Image
+        className={styles.folder}
+        src="/archive/2023.png"
+        alt="thing"
+        priority={true}
+        width={247}
+        height={206}
+      />
+    </Link>,
+    <Link key="unique-key-1" target="_blank" href="https://2022.hackdavis.io/">
+      <Image
+        className={styles.folder}
+        src="/archive/2022.png"
+        alt="thing"
+        priority={true}
+        width={247}
+        height={206}
+      />
+    </Link>,
+    <Link key="unique-key-1" target="_blank" href="https://2021.hackdavis.io/">
+      <Image
+        className={styles.folder}
+        src="/archive/2021.png"
+        alt="thing"
+        priority={true}
+        width={247}
+        height={206}
+      />
+    </Link>,
+    <Link key="unique-key-1" target="_blank" href="https://2020.hackdavis.io/">
+      <Image
+        className={styles.folder}
+        src="/archive/2020.png"
+        alt="thing"
+        priority={true}
+        width={247}
+        height={206}
+      />
+    </Link>,
+    <Link key="unique-key-1" target="_blank" href="https://2019.hackdavis.io/">
+      <Image
+        className={styles.folder}
+        src="/archive/2019.png"
+        alt="thing"
+        priority={true}
+        width={247}
+        height={206}
+      />
+    </Link>,
+    <Link key="unique-key-1" target="_blank" href="https://2018.hackdavis.io/">
+      <Image
+        className={styles.folder}
+        src="/archive/2018.png"
+        alt="thing"
+        priority={true}
+        width={247}
+        height={206}
+      />
+    </Link>,
+    <Link key="unique-key-1" target="_blank" href="https://2017.hackdavis.io/">
+      <Image
+        className={styles.folder}
+        src="/archive/2017.png"
+        alt="thing"
+        priority={true}
+        width={247}
+        height={206}
+      />
+    </Link>,
+  ];
   return (
     <div className={styles.container}>
-      <div className={styles.topLine}>
-        <p className={styles.text}>From the archive</p>
-        <div className={styles.arrowContainer}>
-          <div className={styles.leftArrow} onClick={moveItemsRight}>
-            <LeftArrow arrowColors={leftArrowColor} />
-          </div>
-
-          <div className={styles.rightArrow} onClick={moveItemsLeft}>
-            <RightArrow arrowColors={rightArrowColor} />
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.carousel}>
-        <Link href="https://2023.hackdavis.io/">
-          <Image
-            className={styles.folder}
-            src="/archive/2023.png"
-            alt="thing"
-            priority={true}
-            width={247}
-            height={206}
-            style={{
-              transform: `translateX(${
-                scrollIndexFolders * folderScrollDistance
-              }px)`,
-            }}
-          />
-        </Link>
-
-        <Link href="https://2022.hackdavis.io/">
-          <Image
-            className={styles.folder}
-            src="/archive/2022.png"
-            alt="thing"
-            loading="lazy"
-            width={247}
-            height={206}
-            style={{
-              transform: `translateX(${
-                scrollIndexFolders * folderScrollDistance
-              }px)`,
-            }}
-          />
-        </Link>
-
-        <Link href="https://2021.hackdavis.io/">
-          <Image
-            className={styles.folder}
-            src="/archive/2021.png"
-            alt="thing"
-            loading="lazy"
-            width={247}
-            height={206}
-            style={{
-              transform: `translateX(${
-                scrollIndexFolders * folderScrollDistance
-              }px)`,
-            }}
-          />
-        </Link>
-
-        <Link href="https://2020.hackdavis.io/">
-          <Image
-            className={styles.folder}
-            src="/archive/2020.png"
-            alt="thing"
-            loading="lazy"
-            width={247}
-            height={206}
-            style={{
-              transform: `translateX(${
-                scrollIndexFolders * folderScrollDistance
-              }px)`,
-            }}
-          />
-        </Link>
-
-        <Link href="https://2019.hackdavis.io/">
-          <Image
-            className={styles.folder}
-            src="/archive/2019.png"
-            alt="thing"
-            loading="lazy"
-            width={247}
-            height={206}
-            style={{
-              transform: `translateX(${
-                scrollIndexFolders * folderScrollDistance
-              }px)`,
-            }}
-          />
-        </Link>
-
-        <Link href="https://2018.hackdavis.io/">
-          <Image
-            className={styles.folder}
-            src="/archive/2018.png"
-            alt="thing"
-            loading="lazy"
-            width={247}
-            height={206}
-            style={{
-              transform: `translateX(${
-                scrollIndexFolders * folderScrollDistance
-              }px)`,
-            }}
-          />
-        </Link>
-
-        <Link href="https://2017.hackdavis.io/">
-          <Image
-            className={styles.folder}
-            src="/archive/2017.png"
-            alt="thing"
-            loading="lazy"
-            width={247}
-            height={206}
-            style={{
-              transform: `translateX(${
-                scrollIndexFolders * folderScrollDistance
-              }px)`,
-            }}
-          />
-        </Link>
-      </div>
-
-      <div className={styles.bar}>
-        <div
-          className={styles.progress}
-          style={{ transform: `translateX(${scrollPosition * -1}px)` }}
-        ></div>
-      </div>
-
-      {/*used for mobile progress bar */}
-      <div className={styles.mobileProgressBar}>
-        <div className={styles.leftArrow} onClick={moveItemsRight}>
-          <LeftArrowMobile arrowColors={leftArrowColor} />
-        </div>
-
-        <div className={styles.bar}>
-          <div
-            className={styles.progress}
-            style={{ transform: `translateX(${scrollPosition * -1}px)` }}
-          ></div>
-        </div>
-
-        <div className={styles.rightArrow} onClick={moveItemsLeft}>
-          <RightArrowMobile arrowColors={rightArrowColor} />
-        </div>
-      </div>
+      <EmblaCarousel slides={elements} options={OPTIONS} />
     </div>
   );
 }
