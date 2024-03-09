@@ -44,7 +44,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   const onScroll = useCallback((emblaApi: EmblaCarouselType) => {
     const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
-    console.log(progress);
     setScrollProgress(progress);
   }, []);
 
@@ -52,7 +51,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     const progressBarWidth = event.target.offsetWidth;
     const clickedProgressPixels = event.nativeEvent.offsetX; // Assuming progress bar width is known
     const clickedProgressPercent = clickedProgressPixels / progressBarWidth;
-    console.log(clickedProgressPercent);
     setScrollProgress(clickedProgressPercent);
   };
 
