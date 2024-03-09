@@ -1,5 +1,18 @@
+
 .container{
     display: flex;
     flex-direction: column;
     background-color: #122537;
+
+    .supportText {
+        color: #FFF;
+        text-align: center;
+        font-family: "Metropolis";
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 60px; /* 120% */
+        letter-spacing: 1px;
+        margin-top: 2%;
+    }
 }

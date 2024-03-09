@@ -18,6 +18,7 @@ import ucdLS from 'public/index/Sponsors/ls.png';
 export default function Sponsors() {
   return (
     <div className={styles.container}>
+      <p className={styles.supportText}>support for social good.</p>
       <Marquee iterations={2} duration={50}>
         <Logo
           imgSrc={Intel}
