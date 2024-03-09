@@ -1,5 +1,6 @@
 const navLinks = [
   { name: 'Impact', slug: '/#whatishackdavis' },
+  { name: 'Inclusion', slug: '/#everyone' },
   { name: 'FAQ', slug: '/#faq' },
   { name: 'Sponsors', slug: '/#sponsors' },
   { name: 'About', slug: '/about-us' },
