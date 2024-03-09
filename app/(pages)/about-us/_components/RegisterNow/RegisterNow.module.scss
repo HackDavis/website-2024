@@ -73,7 +73,7 @@
         justify-content: center;
         align-items: center;
         gap: 48px;
-        width: 766px;
+        width: 800px;
 
         .text {
             color: #F4F4F4;
@@ -129,6 +129,10 @@
         line-height: normal;
         letter-spacing: 0.36px;
     }
+    .registerNow:hover {
+        cursor: pointer;
+        filter: brightness(1.1);
+      }
 }
 @media only screen and (max-width: 768px) {
     .container {
