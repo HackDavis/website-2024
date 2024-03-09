@@ -3,8 +3,8 @@ import ProfileCard from './_components/ProfileCard';
 import styles from './OurTeam.module.scss';
 import { useState, useEffect } from 'react';
 import { filterTeamMongo } from '@/app/(api)/_actions/teamMembers/filterTeamMongo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 type TeamMember = {
   id: string;
@@ -16,7 +16,7 @@ type TeamMember = {
 
 export default function OurTeam() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
-  const [activeYear, _] = useState<number>(2024); // [2022, 2023, 2024
+  // const [activeYear, _] = useState<number>(2024); // [2022, 2023, 2024
   const [activeTeam, setActiveTeam] = useState<string | null>('Design');
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function OurTeam() {
           <p>HackDavis is built by students, for students.</p>
         </div>
         <div className={styles.ourTeam_container_filterButtons}>
-          <div
+          {/* <div
             className={`${styles.ourTeam_container_filterButtons_button} ${
               activeYear === 2024 ? styles.active : ''
             }`}
@@ -48,7 +48,7 @@ export default function OurTeam() {
           >
             <p>2024</p>
             <FontAwesomeIcon icon={faAngleDown} size="1x" />
-          </div>
+          </div> */}
           <div
             className={`${styles.ourTeam_container_filterButtons_button} ${
               activeTeam === 'Design' ? styles.active : ''
