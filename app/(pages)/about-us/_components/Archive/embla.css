@@ -1,28 +1,3 @@
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Medium.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
 
 .embla {
     max-width: 100%;
@@ -39,14 +14,23 @@
     justify-content: space-between;
     padding-left: 12%;
     color: #123041;
-    font-family: "Proxima Nova";
+    font-family: "Metropolis";
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.96px;
     width: 90vw;
-
+  }
+  .embla__text {
+    color: #123041;
+    font-family: "Metropolis";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    text-wrap: wrap;
   }
   .embla__viewport {
     padding-left: 12%;
@@ -165,7 +149,7 @@
       .embla__text {
         color: #123041;
 
-        font-family: "Proxima Nova";
+        font-family: "Metropolis";
         font-size: 48px;
         font-style: normal;
         font-weight: 700;
