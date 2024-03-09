@@ -33,7 +33,6 @@ $tablet-scale: 0.75;
   // align-items: flex-end;
 
   &_ready{
-    // align-self: flex-end;
     text-align: left;
     font-family: "Metropolis", sans-serif;
     color: var(--teal-2, #173A52);
@@ -42,7 +41,6 @@ $tablet-scale: 0.75;
     font-weight: 800;
     line-height: 103%; /* 49.44px */
     letter-spacing: 0.96px;
-    // opacity: 0.5;
     
     // border: 1px solid red; 
 

@@ -8,7 +8,7 @@ export default function Form() {
       <div className={styles.container}>
         <div className={styles.title}>
           <span className={styles.title_ready}>
-            <span style={{ opacity: 0.5 }}>Ready to</span>
+            <span style={{ opacity: 0.75 }}>Ready to</span>
             <span className={styles.title_ready_wordCycle}>
               <WordCycle />
             </span>
