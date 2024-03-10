@@ -104,7 +104,11 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
             </li>
           ))}
         </ul>
-        <Link href="https://mlh.io/" target="_blank">
+        <Link
+          href="https://mlh.io/"
+          target="_blank"
+          className={styles.mlhBadge}
+        >
           <Image
             src="/navbar/MLH_Badge.svg"
             alt="MLH badge"
