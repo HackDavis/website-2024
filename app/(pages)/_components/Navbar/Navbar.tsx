@@ -37,18 +37,16 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
 
   useEffect(() => {
     const disableScroll = (e: Event) => {
-      e.preventDefault();
+      if (active) {
+        e.preventDefault();
+      }
     };
 
-    // Only add the event listeners if 'active' is true
-    if (active) {
-      window.addEventListener('wheel', disableScroll, { passive: false });
-      window.addEventListener('touchmove', disableScroll, { passive: false });
-    }
+    window.addEventListener('wheel', disableScroll, { passive: false });
+    window.addEventListener('touchmove', disableScroll, { passive: false });
 
     return () => {
       window.removeEventListener('wheel', disableScroll);
-      window.removeEventListener('touchmove', disableScroll);
     };
   }, [active]);
 
@@ -106,13 +104,19 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
             </li>
           ))}
         </ul>
-        <Image
-          src="/navbar/MLH_Badge.svg"
-          alt="MLH badge"
-          width={100}
-          height={100}
+        <Link
+          href="https://mlh.io/"
+          target="_blank"
           className={styles.mlhBadge}
-        />
+        >
+          <Image
+            src="/navbar/MLH_Badge.svg"
+            alt="MLH badge"
+            width={100}
+            height={100}
+            className={styles.mlhBadge}
+          />
+        </Link>
       </nav>
     </div>
   );
