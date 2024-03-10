@@ -27,7 +27,7 @@ export default function Form() {
             <div className={styles.calendar_inner_lower}>
               <CiCalendar className={styles.calendar_inner_lower_icon} />
               <span className={styles.calendar_inner_lower_text}>
-                January 1, 2024 @ UCenter
+                April 27-28 @ UCenter
               </span>
             </div>
           </div>
