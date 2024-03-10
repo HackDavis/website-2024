@@ -21,6 +21,7 @@
     "@types/react-transition-group": "^4.4.10",
     "bcryptjs": "^2.4.3",
     "embla-carousel-react": "^8.0.0",
+    "embla-carousel-wheel-gestures": "^8.0.0-rc05",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",

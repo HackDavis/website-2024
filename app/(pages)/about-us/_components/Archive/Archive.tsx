@@ -6,7 +6,11 @@ import '../Archive/embla.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const OPTIONS: EmblaOptionsType = { dragFree: false, skipSnaps: false };
+const OPTIONS: EmblaOptionsType = {
+  dragFree: false,
+  skipSnaps: false,
+  watchDrag: true,
+};
 
 export default function Archive() {
   const elements = [

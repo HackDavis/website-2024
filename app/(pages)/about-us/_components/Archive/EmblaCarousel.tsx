@@ -1,5 +1,6 @@
 import React, { ReactNode, useCallback, useEffect, useState } from 'react';
 import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
+import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import useEmblaCarousel from 'embla-carousel-react';
 import {
   NextButton,
@@ -14,7 +15,9 @@ type PropType = {
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    WheelGesturesPlugin({}),
+  ]);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -49,9 +52,22 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   const handleProgressBarClick = (event: any) => {
     const progressBarWidth = event.target.offsetWidth;
-    const clickedProgressPixels = event.nativeEvent.offsetX; // Assuming progress bar width is known
+    const clickedProgressPixels = event.nativeEvent.offsetX;
     const clickedProgressPercent = clickedProgressPixels / progressBarWidth;
-    setScrollProgress(clickedProgressPercent);
+
+    console.log('width:', progressBarWidth, 'pixels:', clickedProgressPixels);
+    //setScrollProgress(clickedProgressPercent);
+    if (!emblaApi) return;
+    const snapList = emblaApi.scrollSnapList();
+    const indexToMoveTo = Math.floor(snapList.length * clickedProgressPercent);
+    emblaApi.scrollTo(indexToMoveTo);
+    console.log(
+      'moving to',
+      indexToMoveTo,
+      'the place we clicked:',
+      clickedProgressPercent
+    );
+    console.log('snap list', emblaApi.scrollSnapList());
   };
 
   useEffect(() => {
@@ -97,6 +113,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__progress" onClick={handleProgressBarClick}>
           <div
             className="embla__progress__bar"
+            onClick={(event) => event.stopPropagation()}
             style={{
               transform: `translateX(${scrollProgress * moveProgressAmount}vw`,
             }}
