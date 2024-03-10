@@ -40,6 +40,8 @@ $mobile-breakpoint: 425px;
 .nav {
     display: flex;
     padding: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
     gap: 1.5rem;
     background-color: transparent;
     position: relative; // Added for positioning the menu icon

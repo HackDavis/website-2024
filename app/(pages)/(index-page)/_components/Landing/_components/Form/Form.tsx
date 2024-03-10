@@ -8,7 +8,9 @@ export default function Form() {
       <div className={styles.container}>
         <div className={styles.title}>
           <span className={styles.title_ready}>
-            <span style={{ opacity: 0.75 }}>Ready to</span>
+            <span style={{ opacity: 0.75, fontFamily: 'Metropolis' }}>
+              Ready to
+            </span>
             <span className={styles.title_ready_wordCycle}>
               <WordCycle />
             </span>
@@ -27,7 +29,7 @@ export default function Form() {
             <div className={styles.calendar_inner_lower}>
               <CiCalendar className={styles.calendar_inner_lower_icon} />
               <span className={styles.calendar_inner_lower_text}>
-                January 1, 2024 @ UCenter
+                April 27, 2024 @ UCenter
               </span>
             </div>
           </div>
@@ -39,10 +41,10 @@ export default function Form() {
           <div className={styles.buttons_sponsor}>
             <p>Sponsor</p>
           </div>
-          <div className={styles.buttons_userType}>
+          {/* <div className={styles.buttons_userType}>
             <span>VOLUNTEER</span>
             <span>MENTOR</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
