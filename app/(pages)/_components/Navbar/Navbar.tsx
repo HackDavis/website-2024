@@ -37,16 +37,18 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
 
   useEffect(() => {
     const disableScroll = (e: Event) => {
-      if (active) {
-        e.preventDefault();
-      }
+      e.preventDefault();
     };
 
-    window.addEventListener('wheel', disableScroll, { passive: false });
-    window.addEventListener('touchmove', disableScroll, { passive: false });
+    // Only add the event listeners if 'active' is true
+    if (active) {
+      window.addEventListener('wheel', disableScroll, { passive: false });
+      window.addEventListener('touchmove', disableScroll, { passive: false });
+    }
 
     return () => {
       window.removeEventListener('wheel', disableScroll);
+      window.removeEventListener('touchmove', disableScroll);
     };
   }, [active]);
 
