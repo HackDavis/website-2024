@@ -7,7 +7,7 @@ concurrency:
 on:
   workflow_dispatch:
   push:
-    branches: [dev-deploy]
+    branches: [main]
 
 jobs:
   lint_build_deploy:
