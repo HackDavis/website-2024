@@ -1,17 +1,22 @@
 import { MongoClient } from 'mongodb';
 
-const uri = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI;
 let cachedClient = null;
 
 export async function getClient() {
   if (cachedClient) {
     return cachedClient;
   }
-
-  const client = new MongoClient(uri);
-  await client.connect();
-  cachedClient = client;
-  return cachedClient;
+  try {
+    const client = new MongoClient(MONGODB_URI);
+    await client.connect();
+    cachedClient = client;
+    console.log('connected to mongoDB');
+    return cachedClient;
+  } catch (error) {
+    console.error('Failed to connect to MongoDB:', error);
+    throw error;
+  }
 }
 
 export async function getDatabase() {
