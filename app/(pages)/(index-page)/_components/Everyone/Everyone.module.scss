@@ -121,3 +121,147 @@
   transform: translate(-50%, -50%);
   padding-top: 120%;
 }
+
+/* For screens with a maximum width of 1366px */
+@media (max-width: 1366px) {
+  .title {
+    font-size: 72px;
+    padding-top: 18%;
+    padding-left: 8%;
+  }
+
+  .subtitle1, .subtitle2 {
+    font-size: 1.4rem;
+    padding-top: 30%;
+  }
+
+  .subtitle2 {
+    left: -60%;
+  }
+
+  .cowsit, .ripple-container {
+    padding-top: 110%;
+  }
+
+  .top-leaf, .bottom-leaf {
+    width: 25vw;
+    height: 25vw;
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .bottom-leaf {
+    bottom: -50vh;
+  }
+}
+
+/* For screens with a maximum width of 1024px */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 60px;
+    padding-top: 16%;
+    padding-left: 6%;
+  }
+
+  .subtitle1, .subtitle2 {
+    font-size: 1.2rem;
+    padding-top: 28%;
+  }
+
+  .subtitle2 {
+    left: -58%;
+  }
+
+  .cowsit, .ripple-container {
+    padding-top: 100%;
+  }
+
+  .top-leaf, .bottom-leaf {
+    width: 20vw;
+    height: 20vw;
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .bottom-leaf {
+    bottom: -45vh;
+  }
+}
+
+/* For screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  .title {
+    font-size: 48px;
+    padding-top: 14%;
+    padding-left: 5%;
+  }
+
+  .subtitle1, .subtitle2 {
+    font-size: 1rem;
+    padding-top: 26%;
+  }
+
+  .subtitle2 {
+    left: -55%;
+  }
+
+  .cowsit, .ripple-container {
+    padding-top: 90%;
+  }
+
+  .top-leaf, .bottom-leaf {
+    width: 15vw;
+    height: 15vw;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .bottom-leaf {
+    bottom: -40vh;
+  }
+}
+
+/* For screens with a maximum width of 640px */
+@media (max-width: 640px) {
+  .background-container{
+    min-height: 200vh;
+  }
+  .title {
+    font-size: 36px;
+    padding-top: 12%;
+    padding-left: 4%;
+  }
+
+  .subtitle1, .subtitle2 {
+    font-size: 0.9rem;
+    padding-top: 24%;
+  }
+
+  .subtitle2 {
+    left: -50%;
+  }
+
+  .cowsit {
+    padding-top: 180%;
+    width: 20%;
+    height: 20%;
+    padding-right: 120%;
+  }
+
+  .top-leaf{
+    overflow: visible;
+    width: 20%; 
+    height: 20%; 
+  }
+  
+  .bottom-leaf {
+    width: 10vw;
+    height: 10vw;
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .bottom-leaf {
+    bottom: -35vh;
+  }
+}

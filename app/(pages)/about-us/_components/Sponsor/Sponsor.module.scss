@@ -13,8 +13,8 @@
     display: flex;
     flex-direction: column; 
     align-items: flex-start;
-    margin-top: 5%;
-    margin-left: 12rem;
+    margin-top: 6%;
+    margin-left: 8%;
     margin-bottom: 10rem;
 
 }
@@ -29,13 +29,8 @@
 
 .number {
     color: #F4F4F4;
-<<<<<<< HEAD
-    font-family: "Proxima Nova";
-    font-size: 6rem;
-=======
     font-family: "Metropolis";
-    font-size: 4rem;
->>>>>>> 12a111294ca6040282aa2acac6b964dda64fbfa4
+    font-size: 5.5rem;
     font-weight: 700;
     line-height: 150%; 
     letter-spacing: 0.08rem;
@@ -45,13 +40,8 @@
 
 .word {
     color: #F4F4F4;
-<<<<<<< HEAD
-    font-family: "Proxima Nova";
-    font-size: 2rem;
-=======
     font-family: "Metropolis";
-    font-size: 1.75rem;
->>>>>>> 12a111294ca6040282aa2acac6b964dda64fbfa4
+    font-size: 3.5rem;
     font-weight: 500;
     line-height: 1; 
     letter-spacing: 0.035rem;
@@ -89,19 +79,19 @@
     background: #FFC53D; 
 }
 
-/*.cow_duck {
+.cow_duck {
     position: absolute;
     bottom: 0;
     left: 17%;
     transform: translateX(-50%); 
-    width: 2.0625rem;
-    height: 11.28394rem;
+    width: 385px;
+    height: 180.543px;
     justify-content: center;
     align-items: center;
-}*/
+}
 .polaroid{
     position: relative;
-    width: 500px; /* Adjust as needed */
+    width: 500px; 
     height: 300px;
 }
 .card-image{
@@ -119,19 +109,19 @@
     top: 0; 
     left: 0; 
     width: 200px; 
-    height: 150px; /* Adjust as needed */
+    height: 150px; 
     object-fit: contain; 
 }
   
 
-/*@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .sponsor-container {
-        min-height: 150vh; 
+        min-height: 130vh; 
     }
 
     .numbers-words-container {
-        margin-left: 35%; 
-        margin-top: 65%;
+        margin-left: 22%; 
+        margin-top: 100%;
     }
 
     .number-word-pair {
@@ -140,20 +130,20 @@
     }
 
     .number {
-        font-size: 2.5rem; 
+        font-size: 4.5rem; 
         margin-right: 0.25rem; 
     }
 
     .word {
-        font-size: 1.5rem; 
+        font-size: 3.5rem; 
     }
 
     .button {
-        width: 15rem;
+        width: 23rem;
         height: 3rem;
         padding: 0.75rem 4.125rem;  
         left: 50%; 
-        top: 85%; 
+        top: 80%; 
         transform: translateX(-50%); 
         border-radius: 6.25rem;
     }
@@ -169,31 +159,10 @@
 
     .cow_duck {
         bottom: 0; 
-        left: 75%; 
+        left: 45%; 
         height: auto; 
     }
 
-    .carouselContainer {
-        position: absolute;
-        perspective: 1000px;
-        top: 8%;
-    }
-  
-    .card {
-        top: 15%; 
-        left: 20%; 
-        width: 11.9375rem;
-        height: 12.375rem;
-        border: 0.5px solid #FFF;
-        flex-shrink: 0;
-    }
-
-    .frame {
-        top: calc(15% - 20px); 
-        left: calc(20% - 20px); 
-        width: calc(11.9375rem + 40px); 
-        height: calc(12.375rem + 40px); 
-    }
     
-}*/
+}
   

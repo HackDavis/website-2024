@@ -22,9 +22,10 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.06rem;
-    margin-bottom: 2rem;
     margin-top: -30%;
-    margin-left: 15%; 
+    margin-left: 400px; 
+    margin-right:-7%;
+    white-space: nowrap;
 }
 
 
@@ -35,7 +36,7 @@
     align-items: center;
     gap: 2rem;
     justify-content: center; 
-    margin-right: 40%; 
+    margin-right: 50%; 
 }
 
 
@@ -61,8 +62,8 @@
 }
 
 .inclusivity_text {
-    width: 17.375rem;
-    color: #123041;
+    //width: 17.375rem;
+    color: #000;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -182,54 +183,66 @@
 }
 @media screen and (max-width: 768px) {
     .hello-container{
-        min-height: 150vh;
+        min-height: 190vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        width:100%;
+        padding-top: 15%;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .h1 {
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        font-size: 3rem;
+        color: #123041;
+        font-size: 48px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        letter-spacing: 0.06rem;
-        margin-right: -19%;
-        margin-left: 30%;
-        margin-top: -190%;
+        letter-spacing: 0.96px;
+        margin-top: -1850px;
+        margin-left: -48%;
+        width: 300px;
+        padding-left: 1%;
+        text-align: left; 
+
     }
 
     .tiles {
         display: flex;
         flex-direction: column; 
-        align-items: center; 
-        gap: 1rem; 
+        gap: 1rem;
+        padding-left: 30%;
+        position: absolute;
+        transform: translateX(7%);
+        width: 70%;
+
     }
 
     .inclusivity, .Handson, .Impactful {
-        width: 19.4375rem;
-        height: 19.4375rem;
+        width: 180% !important;
+        height: 490px;
         border-radius: 0.625rem;
         margin-bottom: 3rem;
     }
 
     .inclusivity_title, .Handson_title, .Impactful_title {
-        font-size: 1.25rem; 
+        font-size: 2rem; 
         margin-left: 1rem; 
-        margin-right: -20rem; 
+        margin-right: 0; 
         font-style: normal;
         font-weight: 700;
         line-height: normal;
         letter-spacing: 0.03rem;
+        white-space: nowrap;
 
     }
 
     .inclusivity_text, .Handson_text, .Impactful_text {
         font-size: 0.875rem; 
         margin: 1rem; 
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
