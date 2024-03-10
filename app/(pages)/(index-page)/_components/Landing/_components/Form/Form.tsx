@@ -1,6 +1,7 @@
 import styles from './Form.module.scss';
 import { CiCalendar } from 'react-icons/ci';
 import WordCycle from './_components/WordCycle';
+import Link from 'next/link';
 
 export default function Form() {
   return (
@@ -35,12 +36,19 @@ export default function Form() {
           </div>
         </div>
         <div className={styles.buttons}>
-          <div className={styles.buttons_register}>
-            <p>Register Now</p>
-          </div>
-          <div className={styles.buttons_sponsor}>
-            <p>Sponsor</p>
-          </div>
+          <Link
+            target="_blank"
+            href={'https://form.typeform.com/to/RvoDiujh?utm_source=WEBSITE'}
+          >
+            <div className={styles.buttons_register}>
+              <p>Register Now</p>
+            </div>
+          </Link>
+          <Link target="_blank" href={'mailto:team@hackdavis.io'}>
+            <div className={styles.buttons_sponsor}>
+              <p>Sponsor</p>
+            </div>
+          </Link>
           {/* <div className={styles.buttons_userType}>
             <span>VOLUNTEER</span>
             <span>MENTOR</span>

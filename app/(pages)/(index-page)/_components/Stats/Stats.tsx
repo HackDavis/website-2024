@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './Stats.module.scss';
 import React from 'react';
 
@@ -24,9 +25,11 @@ const Stats = () => {
             <span className={styles.word}>hours</span>
           </div>
         </div>
-        <button className={styles.button}>
-          <span className={styles['button-words']}>Sponsor 2024</span>
-        </button>
+        <Link target="_blank" href={'mailto:team@hackdavis.io'}>
+          <div className={styles.button}>
+            <div className={styles['button-words']}>Sponsor 2024</div>
+          </div>
+        </Link>
       </div>
     </div>
   );

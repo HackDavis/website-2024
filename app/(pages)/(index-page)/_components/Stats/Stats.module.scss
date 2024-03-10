@@ -28,6 +28,10 @@
     top: 70%;
     transform: translateX(-50%); /* Adjust horizontal positioning */
     align-items: center;
+
+    &:hover{
+        cursor: pointer;
+      }
 }
   
 .button-words {
