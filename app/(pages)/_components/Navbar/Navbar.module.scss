@@ -40,6 +40,8 @@ $mobile-breakpoint: 425px;
 .nav {
     display: flex;
     padding: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
     gap: 1.5rem;
     background-color: transparent;
     position: relative; // Added for positioning the menu icon
@@ -94,9 +96,37 @@ $mobile-breakpoint: 425px;
     display: none; // By default, the menu icon is not displayed
 }
 
-.navLink:hover, .navLink:focus{
-    text-decoration: underline; // Add underline on hover/focus
+.navLink{
+    text-decoration: none;
+    color: var(--teal-2, #173A52);
+    font-family: 'Metropolis', sans-serif;
+    position: relative; 
+    display: inline-block; 
+
+    padding-bottom: 5px; // Adjust as needed
+
+    &::after {
+        content: "";
+        display: block;
+        margin: auto;
+        height: 3px; // Thickness of the underline
+        width: 0; // Start with no underline
+        position: absolute;
+        bottom: 0; // Position at the bottom of the element
+        left: 0; // Align to the left
+        background: var(--teal-2, #173A52); // The color of the underline
+        transition: width 0.5s ease; // Smooth transition for the width
+    }
+
+    // Hover and focus effects
+    &:hover::after, &:focus::after {
+        width: 100%; // Extend the underline across the full width on hover/focus
+    }
+
+
 }
+
+
 
 .mlhBadge{
     width: 4.31613rem;

@@ -101,7 +101,7 @@ $tablet-scale: 0.75;
     &_lower{
       display: flex;
       align-items: center;
-      gap: 0.25vw;
+      gap: 0.5vw;
 
       &_text{
         color: var(--teal-2, #173A52);
@@ -113,9 +113,10 @@ $tablet-scale: 0.75;
         letter-spacing: 0.48px;
       }
       &_icon{
-        width: $button-font-size;
-        height: $button-font-size;
+        width: 1.5rem;
+        height: 1.5rem;
         margin-top: -2px;
+        color: var(--teal-2, #173A52);
       }
     }
   }
@@ -301,9 +302,6 @@ $tablet-scale: 0.75;
       text-align: center;
       font-family: "Metropolis";
       font-size: 36px;
-
-
-
       font-style: normal;
       font-weight: 700;
       line-height: 115%; /* 36.8px */
@@ -313,14 +311,10 @@ $tablet-scale: 0.75;
       color: var(--teal-2, #173A52);
       font-family: "Metropolis";
       font-size: 56px;
-
-
-
       font-style: normal;
       font-weight: 700;
       line-height: 115%;
       letter-spacing: 0.96px;
-      margin-top: 10px;
     }
   }
   .calendar{
@@ -334,15 +328,15 @@ $tablet-scale: 0.75;
       &_lower{
         display: flex;
         justify-content: center;
-        gap: 5px; 
+        // gap: 0.5vw; 
 
         &_text{
           font-size: 18px;
         }
         &_icon{
-          width: 18px;
-          height: 18px;
-          margin-bottom: 2px;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-bottom: 5px;
         }
       }
     }
@@ -410,9 +404,9 @@ $tablet-scale: 0.75;
           font-size: 20px;
         }
         &_icon{
-          width: 20px;
-          height: 20px;
-          margin-top: -2px;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-bottom: 2px;
         }
       }
     }
