@@ -2,72 +2,33 @@
     background: var(--gradient, linear-gradient(284deg, #FCFCD1 9.72%, #B2E7DD 44.61%, #76D6E6 79.5%));
     color: #005271;
     font-family: "Metropolis";
-    width: 100%; /* Use full width of the viewport */
-    max-width: 100%; /* Set a max-width if necessary */
+    width: 100%; /* Use full width of the viewport /
+    max-width: 100%; / Set a max-width if necessary */
     margin-left: auto;
     margin-right: auto;
-    min-height: 100vh; /* Height can be auto to adjust to content */
+    min-height: 100vh; 
     position: relative;
     overflow: hidden;
-}
-.nav{
     display: flex;
-    padding-top: 2rem;
-    gap: 1.5rem;
-    display: flex
-
-}
-.nav ul {
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
-  }
-
-.nav li {
-    display: inline-block;
-  }
-.words{
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.025rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 1.5rem;
-    transition: text-decoration 0.2s; 
-}
-.words:hover {
-    text-decoration: underline; 
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-.logo{
-    width: 3.125rem;
-    height: 3.13269rem;
-}
-.mlh-badge{
-    width: 4.31613rem;
-    height: 8.12475rem;
-    flex-shrink: 0;
-    margin-right: 4rem;
-    top:0;
-    right: 0;
-    position: absolute;
+    align-items: center; 
+    justify-content: center; 
 }
 .h1{
     place-content: center;
     color: var(--teal-1, #005271);
     text-align: center;
-    font-size: 4.5rem;
+    font-size: 5rem;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
     letter-spacing: 0.09rem;
     margin: 0 0 3rem;
-    margin-top: 8.13rem;
+    margin-top: -30%;
 }
 .P{
+    display: flex;
+    justify-content: center;
+    width: 58rem;
     flex-shrink: 0;
     color: var(--teal-1, #005271);
     text-align: center;
@@ -76,27 +37,37 @@
     font-weight: 700;
     line-height: 150%; 
     letter-spacing: 0.05rem;
-    padding: 0 2%;
 }
-@media (min-width: 768px) { /* Adjust the breakpoint as needed */
-    .P {
-        padding: 0 15%; /* Increase padding for larger screens */
-    }
-}
-@media (min-width: 1024px) { /* Adjust the breakpoint as needed */
-    .P {
-        padding: 0 20%; /* Increase padding for even larger screens */
-    }
-}
-
-.banner-image{
+.banner-image img{
     display: flex;
-    width: 51.5rem;
-    padding-right: 0.01475rem;
-    padding-top: 6.19rem;
+    width: 60rem;
+    height: auto;
+    padding-top: 10%;
     justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    position: relative; /* Add relative positioning to the <p> element */
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+}
+
+@media (max-width: 768px) {
+    .hello-container {
+        min-height: 80vh;
+    }
+
+    .h1 {
+        width: 600px;
+        font-size: 4.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; 
+        letter-spacing: 0.96px;
+        padding-left: 7%;
+        text-align: left; 
+        margin-left: 0;
+        padding-top: 20%;
+    }
 }

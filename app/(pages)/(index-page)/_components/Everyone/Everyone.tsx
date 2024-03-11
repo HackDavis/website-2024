@@ -1,5 +1,6 @@
 import styles from './Everyone.module.scss';
 import React from 'react';
+import AutoImage from '@components/AutoImage/AutoImage';
 
 const Everyone = () => {
   return (
@@ -14,10 +15,13 @@ const Everyone = () => {
         previous experience required.
       </p>
       <div className={styles['cowsit']}>
-        <img src="/index/Everyone/cowsit.png" alt="cowsit" />
+        <AutoImage src="/index/Everyone/cowsit.png" alt="cowsit" />
       </div>
       <div className={styles['top-leaf']}>
-        <img src="/index/Everyone/river_rightside-combined.png" alt="topleaf" />
+        <AutoImage
+          src="/index/Everyone/river_rightside-combined.png"
+          alt="topleaf"
+        />
       </div>
       <div className={styles['bottom-leaf']}></div>
     </div>
