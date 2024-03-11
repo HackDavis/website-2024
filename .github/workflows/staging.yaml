@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Set Environment Variables
-        run: netlify env:set --secret MONGODB_URI ${{ secrets.MONGODB_URI }}
+        run: netlify env:set --secret MONGODB_URI ${{ secrets.MONGODB_URI }} --context production
         env:           
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
