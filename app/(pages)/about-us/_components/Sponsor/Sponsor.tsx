@@ -1,76 +1,86 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import styles from './Sponsor.module.scss';
 
-/*const cards = [
-  {
-    src: '/about-us-icon/pol1.svg',
-    alt: 'Image 1',
-    frameImageUrl: '/about-us-icon/pol1a.svg',
-  },
-  {
-    src: '/about-us-icon/pol2.svg',
-    alt: 'Image 2',
-    frameImageUrl: '/about-us-icon/pol2a.svg',
-  },
-  {
-    src: '/about-us-icon/pol3.svg',
-    alt: 'Image 2',
-    frameImageUrl: '/about-us-icon/pol3a.svg',
-  },
-  {
-    src: '/about-us-icon/pol4.svg',
-    alt: 'Image 3',
-    frameImageUrl: '/about-us-icon/pol4a.svg',
-  },
-  {
-    src: '/about-us-icon/pol5.svg',
-    alt: 'Image 4',
-    frameImageUrl: '/about-us-icon/pol5a.svg',
-  },
+const images = [
+  '/about-us-icon/Polaroid1.png',
+  '/about-us-icon/Polaroid2.png',
+  '/about-us-icon/Polaroid3.png',
+  '/about-us-icon/Polaroid4.png',
+  '/about-us-icon/Polaroid5.png',
 ];
 
-const PolaroidGallery = () => (
-  <div className="gallery">
-    {cards.map((card, index) => (
-      <div
-        className="polaroid"
-        key={index}
-        style={{ backgroundImage: `url(${card.frameImageUrl})` }}
-      >
-        <img src={card.src} alt={card.alt} className="polaroid-image" />
-      </div>
-    ))}
-  </div>
-);*/
+interface PolaroidStackProps {
+  images: string[];
+  index: number;
+}
 
-/*const Carousel: React.FC = () => {
+const PolaroidStack = ({ images }: PolaroidStackProps) => {
+  const [stack, setStack] = useState<string[]>(images);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    // This interval will highlight and then move the top image to the back every 5 seconds
+    const interval = setInterval(() => {
+      if (stack.length > 1) {
+        // Ensure there are at least 2 images to cycle through
+        setActiveIndex(0); // Highlight the top image
+
+        // Wait for a short delay before moving the image to simulate highlight effect
+        setTimeout(() => {
+          const newStack = [...stack];
+          const removed = newStack.splice(0, 1); // Remove the first element
+          newStack.push(removed[0]); // Add it to the end
+          setStack(newStack); // Update the stack
+          setActiveIndex(null); // Reset active index
+        }, 2000); // Adjust this delay based on your highlight duration
+      }
+    }, 1500); // Increase interval to account for highlight delay
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(interval);
+  }, [stack]); // Depend on 'stack' so the interval uses the latest state
+
+  useEffect(() => {
+    // Reset stack on scroll away
+    const handleScroll = () => {
+      setStack(images);
+      setActiveIndex(null);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [images]); // Depend on 'images' to reset stack to initial images
+
+  // handleImageClick remains the same, used for onClick events if needed
+
   return (
-    <div className="carousel">
-      {cards.map((card, index) => (
-        <div
+    <div className={styles.stack}>
+      {stack.map((image, index) => (
+        <img
           key={index}
-          className="polaroid"
-          style={{ zIndex: cards.length - index }}
-        >
-          <img
-            src={card.imageUrl}
-            alt={`Polaroid ${index + 1}`}
-            className="photo"
-          />
-          <img
-            src={card.frameImageUrl}
-            alt={`Frame ${index + 1}`}
-            className="frame"
-          />
-        </div>
+          src={image}
+          alt={`Polaroid ${index}`}
+          className={styles.polaroid}
+          style={{
+            zIndex: activeIndex === index ? 999 : stack.length - index,
+            transform:
+              activeIndex === index ? 'translateY(-20px) scale(1.1)' : '',
+            transition: 'transform 0.9s ease, z-index 0s',
+          }}
+          onClick={() => handleImageClick(index)}
+        />
       ))}
     </div>
   );
-};*/
+};
 
 const Sponsor = () => {
   return (
     <div className={styles['sponsor-container']}>
+      <PolaroidStack images={images} index={0} />
       <div className={styles['numbers-words-container']}>
         <div className={styles['number-word-pair']}>
           <span className={styles.number}>140+</span>
@@ -109,5 +119,3 @@ const Sponsor = () => {
 };
 
 export default Sponsor;
-//export { Carousel };
-//export { PolaroidGallery };

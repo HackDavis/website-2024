@@ -37,21 +37,23 @@ const ParallaxContainer = () => {
 
   return (
     <div className="parallax-container">
-      <ParallaxLayer
-        zIndex={3}
-        speed={calculateSpeed(-120, offset)}
-        image="/index/Everyone/river_rightside-leaves.png"
-      />
-      <ParallaxLayer
-        zIndex={2}
-        speed={calculateSpeed(-100, offset)}
-        image="/index/Everyone/river_rightside-shadow.png"
-      />
-      <ParallaxLayer
-        zIndex={1}
-        speed={calculateSpeed(-90, offset)}
-        image="/index/Everyone/river_rightside-reflxn.png"
-      />
+      <div className={styles['top-leaf']}>
+        <ParallaxLayer
+          zIndex={3}
+          speed={calculateSpeed(-120, offset)}
+          image="/index/Everyone/river_rightside-leaves.png"
+        />
+        <ParallaxLayer
+          zIndex={2}
+          speed={calculateSpeed(-100, offset)}
+          image="/index/Everyone/river_rightside-shadow.png"
+        />
+        <ParallaxLayer
+          zIndex={1}
+          speed={calculateSpeed(-90, offset)}
+          image="/index/Everyone/river_rightside-reflxn.png"
+        />
+      </div>
     </div>
   );
 };
@@ -105,7 +107,7 @@ const Everyone = () => {
         previous experience required.
       </p>
       <div className={styles['cowsit']}>
-        <img src="/index/Everyone/river_cow-on-rock.png" alt="cowsit" />
+        <img src="/index/Everyone/cowsit.png" alt="cowsit" />
       </div>
       <div className={styles['bottom-leaf']}>
         <ParallaxComponent />

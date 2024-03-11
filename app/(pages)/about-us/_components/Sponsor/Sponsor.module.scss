@@ -13,9 +13,9 @@
     display: flex;
     flex-direction: column; 
     align-items: flex-start;
-    margin-top: 6%;
-    margin-left: 8%;
-    margin-bottom: 10rem;
+    margin-top: -180px;
+    margin-left: 140px;
+    //margin-bottom: 10rem;
 
 }
 
@@ -32,7 +32,7 @@
     font-family: "Metropolis";
     font-size: 5.5rem;
     font-weight: 700;
-    line-height: 150%; 
+    line-height: 130%; 
     letter-spacing: 0.08rem;
     text-transform: lowercase;
     margin-right: 0.5rem; 
@@ -62,8 +62,8 @@
     position: absolute;
     left: 11rem;
     bottom: 20px;
-    left: 17%;
-    top: 70%;
+    left: 300px;
+    top: 700px;
     transform: translateX(-50%); 
 }
 
@@ -81,47 +81,89 @@
 
 .cow_duck {
     position: absolute;
-    bottom: 0;
-    left: 17%;
+    bottom: -520px;
+    left: 450px;
     transform: translateX(-50%); 
-    width: 385px;
-    height: 180.543px;
+    width: 700px;
+    height: 700px;
     justify-content: center;
     align-items: center;
 }
-.polaroid{
-    position: relative;
-    width: 500px; 
-    height: 300px;
-}
-.card-image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-}
 
-.frame-image{
+.stack {
+    position: relative;
+    height: 250px; // Set the height to the height of the Polaroids or a bit more
+    margin-top: 50px; // Center the stack if needed
+    margin-left: 600px;
+  }
+  
+  .polaroid {
+    width: 1000px;
+    height: 800px;
     position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 200px; 
-    height: 150px; 
-    object-fit: contain; 
-}
+    transition: transform 0.9s ease, z-index 0.9s ease;
+    object-fit: cover;
+    // This will make the nth image be offset a bit more than the (n-1)th
+    &:nth-child(1) { 
+      top: 0; 
+      left: 0;
+      transform: rotate(-3deg);
+      z-index: 5; // Ensure this image is on top of the stack
+    }
+    &:nth-child(2) { 
+      top: 5px; 
+      left: 5px;
+      transform: rotate(10deg);
+      z-index: 4; 
+    }
+    &:nth-child(3) { 
+      top: 10px; 
+      left: 10px;
+      transform: rotate(15deg);
+      z-index: 3; 
+    }
+    &:nth-child(4) { 
+      top: 15px; 
+      left: 15px;
+      transform: rotate(13deg);
+      z-index: 2; 
+    }
+    &:nth-child(5) { 
+      top: 20px; 
+      left: 20px;
+      transform: rotate(-10deg);
+      z-index: 1; // Ensure this image is at the bottom of the stack
+    }
+  
+    &:hover {
+      transform: rotate(0deg) scale(1.0);
+      z-index: 999; // Bring to the front on hover
+    }
+  }
+  .image-transition {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .image-to-back {
+    /* Example transformation, adjust as needed */
+    transform: scale(0.8) translateY(10px) opacity(0.7);
+  }
+  
+  
   
 
-@media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .sponsor-container {
-        min-height: 130vh; 
+        min-height: 160vh; 
     }
 
     .numbers-words-container {
-        margin-left: 22%; 
-        margin-top: 100%;
+        margin-top: 600px;
+        padding: 4.75rem -1rem; 
+        left: 50%; 
+        top: 87%; 
+        transform: translateX(10%); 
+        width: 23rem;
     }
 
     .number-word-pair {
@@ -143,9 +185,9 @@
         height: 3rem;
         padding: 0.75rem 4.125rem;  
         left: 50%; 
-        top: 80%; 
+        top: 1350px; 
         transform: translateX(-50%); 
-        border-radius: 6.25rem;
+    
     }
 
     .button-words {
@@ -158,9 +200,18 @@
 
 
     .cow_duck {
-        bottom: 0; 
-        left: 45%; 
-        height: auto; 
+        position: absolute;
+        left: 460px; /* Move the left edge of the element to the center of its parent */
+        right: 50%;
+        transform: translateX(-50%); /* Center the element with respect to its own width */
+        bottom: -16px; /* Keeps the element 16px above the bottom edge of its parent */
+        height: 200px; /* Height is retained as per your specification */
+        padding: 0.75rem 4.125rem; /* Padding is retained */  
+    }
+
+    .stack{
+        left: -730px;
+        padding: 0.75rem 4.125rem;  
     }
 
     

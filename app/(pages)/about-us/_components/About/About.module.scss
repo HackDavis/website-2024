@@ -181,7 +181,7 @@
     position: absolute;
     bottom: 0;
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .hello-container{
         min-height: 190vh;
         display: flex;

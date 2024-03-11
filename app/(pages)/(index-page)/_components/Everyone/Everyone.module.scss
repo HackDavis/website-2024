@@ -11,46 +11,49 @@
   min-height: 235vh;
 }
 .title {
+  min-width: 40vw;
   color: #FFF;
   font-family: "Metropolis";
-  font-size: 96px;
+  font-size: 5.5rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.12rem;
   margin: 0 auto; 
-  padding-top: 20%; 
-  padding-left: 10%;
+  padding-top: 200px; 
+  padding-left: 200px;
 }
 
 .subtitle1 {
-  min-width: 20vw;
+  min-width: 30vw;
   height: 5vw;
   color: #FFF;
   font-family: "Metropolis";
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; 
   letter-spacing: 0.48px;
-  margin-left: -40px; 
-  padding-top: 33%;
-  position: relative; 
-  left: -34%; 
+  position: relative;
+  padding-left: 70px; 
+  padding-top: 480px;
+  left: -33%;  
+
 }
 
 .subtitle2 {
-  min-width: 500px;
-  max-width: 500px; 
+  min-width: 35vw;
+  //max-width: 500px; 
   color: #FFF;
   font-family: "Metropolis";
   font-size: 1.5rem; 
   font-weight: 500;
   line-height: 1.5; 
   letter-spacing: 0.48px;
-  padding-top: 37%; 
+  padding-top: 620px; 
   position: relative; 
-  left: -63%; 
+  left: -69%; 
+  padding-left: 180px;
 }
 
 .cowsit {
@@ -60,9 +63,10 @@
   display: block; 
   margin: 0 auto; 
   position: absolute;  
-  left: 60%; 
+  left: 1100px; 
   transform: translate(-50%, -50%);
-  padding-top: 120%;
+  padding-top: 2200px;
+  overflow: visible !important;
 }
 
 .top-leaf {
@@ -72,12 +76,11 @@
   align-items: center;
   position: absolute;
   transform: translate(0, -50%);
-  right: 5vw; 
-  padding-top: 65%; 
-  width: 30vw; 
-  height: 30vw; 
-  max-width: 200px; 
-  max-height: 200px; 
+  right: 0vw; 
+  top: 1400px; 
+  width: 2000px; 
+  height: 2800px; 
+  overflow: visible !important;
 }
 
 .bottom-leaf {
@@ -125,22 +128,37 @@
 /* For screens with a maximum width of 1366px */
 @media (max-width: 1366px) {
   .title {
+    min-width: 50vw;
     font-size: 72px;
     padding-top: 18%;
     padding-left: 8%;
+    z-index: 300;
+
   }
 
   .subtitle1, .subtitle2 {
     font-size: 1.4rem;
-    padding-top: 30%;
+    //padding-top: 30%;
+  }
+  .subtitle1{
+    padding-top: 500px;
+    padding-left: -50px;
+    left: -46%;
+    min-width: 40vw;
   }
 
   .subtitle2 {
-    left: -60%;
+    padding-top: 660px;
+    padding-left: -50px;
+    left: -94%;
+    min-width: 45vw;
   }
 
   .cowsit, .ripple-container {
-    padding-top: 110%;
+    padding-top: 2200px;
+    padding-left: -50%;
+    width: 20%;
+    height: 20%;
   }
 
   .bottom-leaf{
@@ -150,14 +168,23 @@
     width: 100%;
 
   }
+  .top-leaf{
+    top: 1100px; 
+    width: 130%; 
+    height: 90%; 
+    overflow: visible !important;
+    max-width: 150%;
+
+  }
 
 }
 
 /* For screens with a maximum width of 1024px */
 @media (max-width: 1024px) {
   .title {
-    font-size: 60px;
-    padding-top: 16%;
+    min-width: 55vw;
+    font-size: 80px;
+    padding-top: 300px;
     padding-left: 6%;
   }
 
@@ -165,15 +192,30 @@
     font-size: 1.2rem;
     padding-top: 28%;
   }
-
+  .subtitle1 {
+    padding-top: 500px;
+    padding-left: 90px;
+    left: -62%;
+  }
   .subtitle2 {
-    left: -58%;
+    padding-top: 650px;
+    padding-left: 90px;
+    left: -102%;
   }
 
   .cowsit, .ripple-container {
-    padding-top: 100%;
+    padding-top: 2300px;
+    padding-left: -3000px;
   }
+  .top-leaf{ 
+    top: 1200px;
+    width: 120%; 
+    height: 65%; 
+    overflow: visible !important;
+    max-width: 120%;
+    
 
+  }
   .bottom-leaf{
     bottom: -40vh; 
     left: 0; 
@@ -186,6 +228,9 @@
 
 /* For screens with a maximum width of 768px */
 @media (max-width: 768px) {
+  .background-container{
+    min-height: 200vh;
+  }
   .title {
     font-size: 48px;
     padding-top: 14%;
@@ -194,15 +239,30 @@
 
   .subtitle1, .subtitle2 {
     font-size: 1rem;
-    padding-top: 26%;
+    padding-top: 220px;
+    min-width: 56vw;
+    max-width: 56vw;
   }
 
   .subtitle2 {
-    left: -55%;
+    padding-top: 300px;
+    padding-left: -20%;
+    left: 1000px;
   }
 
   .cowsit, .ripple-container {
-    padding-top: 90%;
+    padding-top: 1700px;
+
+  }
+
+  .top-leaf{
+    top: 600px;
+    width: 120%; 
+    height: 60%; 
+    overflow: visible !important;
+    max-width: 120%;
+    
+
   }
 
   .bottom-leaf{
@@ -218,17 +278,22 @@
 /* For screens with a maximum width of 640px */
 @media (max-width: 640px) {
   .background-container{
-    min-height: 200vh;
+    min-height: 180vh;
   }
   .title {
     font-size: 36px;
-    padding-top: 12%;
-    padding-left: 4%;
+    padding-top: 500px;
+    padding-left: 10%;
   }
 
   .subtitle1, .subtitle2 {
     font-size: 0.9rem;
     padding-top: 24%;
+  }
+
+  .subtitle1 {
+    top: 480px;
+    left: -500px;
   }
 
   .subtitle2 {
@@ -239,13 +304,17 @@
     padding-top: 50%; 
     width: 10%; 
     height: 10%; 
-    padding-right: 50%; 
+    padding-right: 1000px; 
   }
 
   .top-leaf{
-    overflow: visible;
-    width: 10%; 
-    height: 10%; 
+    width: 1000px; 
+    height: 1300px; 
+    max-width: 1000px;
+    max-height: 1700px;
+    padding-top: 0; 
+    right: 5%; 
+    transform: translate(0, -50%);
   }
   .bottom-leaf{
     bottom: -28vh; 
@@ -253,8 +322,7 @@
     height: 100vh;
     width: 100%;
     transform: scaleX(-1);
+    overflow: visible;
 
   }
-
-
 }

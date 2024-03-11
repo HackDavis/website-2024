@@ -18,14 +18,22 @@ const CountUp: React.FC<CountUpProps> = ({
   const [start, setStart] = useState(false);
   const countUpRef = useRef<HTMLDivElement>(null);
 
-  const isVisible = (ref: React.RefObject<HTMLDivElement>) => {
+  const isCentered = (ref: React.RefObject<HTMLDivElement>) => {
     const rect = ref.current?.getBoundingClientRect();
-    return rect && rect.top < window.innerHeight && rect.bottom >= 0;
+    if (rect) {
+      const windowHeight = window.innerHeight;
+      const rectMidpoint = (rect.top + rect.bottom) / 2;
+      // Consider "centered" if the midpoint is between 25% and 75% of the viewport height
+      return (
+        rectMidpoint > windowHeight * 0.25 && rectMidpoint < windowHeight * 0.75
+      );
+    }
+    return false;
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (countUpRef.current && isVisible(countUpRef) && !start) {
+      if (countUpRef.current && isCentered(countUpRef) && !start) {
         setStart(true);
       }
     };
