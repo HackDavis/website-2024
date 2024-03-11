@@ -1,11 +1,11 @@
-name: Production Pipeline
+name: Production Deployment
 
 on:
   release:
     types: [published]
 
 jobs:
-  deploy_production:
+  deploy_staging:
     name: Deploy Production
     runs-on: ubuntu-latest
     environment:
@@ -24,12 +24,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Lint and build code, then publish to Netlify
-        run: netlify deploy --build --prod --dir .next
-        env:
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      - name: Lint and build code, then publish to Vercel
+        run: >
+          vercel
+          --token ${{ secrets.VERCEL_TOKEN }}
+          -n ${{ vars.VERCEL_PROJECT }}
+          --yes
+          --prod
+          --env MONGODB_URI=${{ secrets.MONGODB_URI }}
+          --build-env MONGODB_URI=${{ secrets.MONGODB_URI }}
 
       - name: Success
-        run: echo "🛠️ Deploy successful 🛠️"
+        run: echo "🚀  Deploy successful - BLAST OFF WOO! (woot woot) !!! 🐕 🐕 🐕 🚀 "
