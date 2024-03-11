@@ -1,0 +1,36 @@
+name: Production Pipeline
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  deploy_production:
+    name: Deploy Production
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ vars.ENV_URL }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.1.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint and build code, then publish to Netlify
+        run: netlify deploy --build --prod --dir .next
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+
+      - name: Success
+        run: echo "🛠️ Deploy successful 🛠️"
