@@ -9,8 +9,8 @@ interface LoadingProviderValue {
 
 export type { LoadingProviderValue };
 
-// const NUM_NEEDED = 26;
-const NUM_NEEDED = 0;
+const NUM_NEEDED = 26;
+const SLACK = 10;
 
 export const LoadingContext = createContext({});
 
@@ -23,7 +23,7 @@ export function LoadingProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (numLoaded >= NUM_NEEDED) {
+    if (numLoaded >= NUM_NEEDED - SLACK) {
       setLoading(false);
     }
   }, [numLoaded]);
