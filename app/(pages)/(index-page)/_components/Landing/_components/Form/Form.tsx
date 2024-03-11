@@ -1,7 +1,7 @@
 import styles from './Form.module.scss';
 import { CiCalendar } from 'react-icons/ci';
 import WordCycle from './_components/WordCycle';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 export default function Form() {
   return (
