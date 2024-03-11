@@ -25,18 +25,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set Environment Variables
-        run: netlify env:set --secret MONGODB_URI ${{ secrets.MONGODB_URI }} --context production
-        env:           
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
-      - name: Set TEST ENV
-        run: netlify env:set NEXT_PUBLIC_TEST test
-        env:           
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
       - name: Lint and build code, then publish to Netlify
         run: netlify deploy --build --prod --dir .next
         env:
