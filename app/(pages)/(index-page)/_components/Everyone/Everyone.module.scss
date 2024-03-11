@@ -1,86 +1,27 @@
-/*$parallax-speed-leaves: 0.3;
-$parallax-speed-shadow: 0.2;
-$parallax-speed-reflection: 0.1;*/
-
+//Default 1920 values
 .background-container{
   background: #015270;
   display: flex;
-  width: 100%; /* Use full width of the viewport */
-  max-width: 100%; /* Set a max-width if necessary */
+  width: 100%; 
+  max-width: 100%; 
   margin-left: auto;
   margin-right: auto;
   position: relative;
   overflow: hidden;
-  min-height: 320vh;
-  justify-content: space-around;
-  
+  min-height: 235vh;
 }
-
-/*.parallax-container {
-  position: relative;
-  height: 100vh; // set to the desired height
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.parallax-item {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  will-change: transform;
-
-  &.leaves {
-    background-image: url('/index/Everyone/river_rightside-leaves.png');
-    z-index: 3;
-  }
-
-  &.shadow {
-    background-image: url('/index/Everyone/river_rightside-shadow.png');
-    z-index: 2;
-  }
-
-  &.reflection {
-    background-image: url('/index/Everyone/river_rightside-reflxn.png');
-    z-index: 1;
-  }
-}*/
-
-
 .title {
-  min-width: 680px; /* Set a maximum width for large screens */
-  width: 100%; 
   color: #FFF;
   font-family: "Metropolis";
   font-size: 96px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: 1.92px;
+  letter-spacing: 0.12rem;
   margin: 0 auto; 
-  padding-top: 40%; 
+  padding-top: 20%; 
   padding-left: 10%;
 }
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 72px; /* Smaller font size for tablets */
-    padding-top: 20%; 
-    padding-left: 5%; 
-  }
-}
-
-/* Media query for mobile devices */
-@media (max-width: 480px) {
-  .title {
-    font-size: 48px; 
-    padding-top: 10%; 
-    padding-left: 20px; 
-  }
-}
-
-
 
 .subtitle1 {
   min-width: 20vw;
@@ -92,28 +33,24 @@ $parallax-speed-reflection: 0.1;*/
   font-weight: 500;
   line-height: 150%; 
   letter-spacing: 0.48px;
-  margin-left: -450px; 
-  padding-top: 55%;
+  margin-left: -40px; 
+  padding-top: 33%;
   position: relative; 
   left: -34%; 
 }
 
-
-
-
-
 .subtitle2 {
-  min-width: 504px;
-  max-width: 504px; 
+  min-width: 500px;
+  max-width: 500px; 
   color: #FFF;
   font-family: "Metropolis";
   font-size: 1.5rem; 
   font-weight: 500;
   line-height: 1.5; 
   letter-spacing: 0.48px;
-  padding-top: 115%; 
+  padding-top: 37%; 
   position: relative; 
-  left: -20%; 
+  left: -63%; 
 }
 
 .cowsit {
@@ -122,14 +59,11 @@ $parallax-speed-reflection: 0.1;*/
   height: auto; 
   display: block; 
   margin: 0 auto; 
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
+  position: absolute;  
+  left: 60%; 
+  transform: translate(-50%, -50%);
+  padding-top: 120%;
 }
-
-
-
 
 .top-leaf {
   display: flex;
@@ -137,44 +71,12 @@ $parallax-speed-reflection: 0.1;*/
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 30%; /* Adjusted to use top and transform for vertical centering */
   transform: translate(0, -50%);
-  /* Adjust right positioning using a responsive unit or remove if it causes issues */
-  right: 5vw; /* Example adjustment for responsiveness */
-  //padding-top: 60%; /* Remove padding-top that pushes element down */
-  width: 30vw; /* Starting width, but we'll adjust this with media queries */
-  height: 30vw; /* Keep height equal to width to maintain aspect ratio */
-  max-width: 200px; /* Maximum size to prevent it from getting too large */
-  max-height: 200px; /* Match max-width to maintain aspect ratio */
+  right: 0vw; 
+  top: 65%; 
+  width: 120%; 
+  height: 120%; 
 }
-
-/* Adjust sizes more aggressively for smaller screens */
-@media (max-width: 1024px) {
-  .top-leaf {
-    width: 18vw;
-    height: 18vw;
-    right: 8%; /* Adjust for screen size */
-  }
-}
-
-@media (max-width: 768px) {
-  .top-leaf {
-    width: 15vw;
-    height: 15vw;
-    right: 6%; /* Further adjust for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .top-leaf {
-    width: 12vw; /* Significantly smaller on very small screens */
-    height: 12vw;
-    right: 4%; /* Fine-tune positioning for small devices */
-  }
-}
-
-
-
 
 .bottom-leaf {
   display: flex;
@@ -185,9 +87,74 @@ $parallax-speed-reflection: 0.1;*/
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom 75%;
-  bottom: -50vh; 
+  bottom: -60vh; 
   left: 0; 
-  height: 210vh; 
+  height: 210vh;
 }
 
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
 
+.parallax-layer {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 15%;
+  right: -10%;
+}
+
+.ripple-container{
+  max-width: 834px; 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+  position: absolute;  
+  left: 60%; 
+  transform: translate(-50%, -50%);
+  padding-top: 120%;
+}
+
+/* For screens with a maximum width of 1366px */
+@media (max-width: 1366px) {
+  .title {
+    font-size: 72px;
+    padding-top: 18%;
+    padding-left: 8%;
+  }
+
+  .subtitle1, .subtitle2 {
+    font-size: 1.4rem;
+    padding-top: 30%;
+  }
+
+  .subtitle2 {
+    left: -60%;
+  }
+
+  .cowsit, .ripple-container {
+    padding-top: 110%;
+  }
+
+  .bottom-leaf{
+    bottom: -50vh; 
+    left: 0; 
+    height: 180vh;
+    width: 100%;
+
+  }
+  .top-leaf{
+    top: 35%; 
+    width: 70%; 
+    height: 70%; 
+    overflow: visible !important;
+    max-width: 100%;
+
+  }
+
+}
