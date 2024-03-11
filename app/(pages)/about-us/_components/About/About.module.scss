@@ -1,179 +1,100 @@
+@use 'app/(pages)/_globals/mixins';
 
 .hello-container {
+    display: flex;
+    justify-content: center;
     background: #FFF;
     color: #123041;
     font-family: "Metropolis";
-    width: 100%;
-    max-width: 100%;
-    margin: 0; 
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
 }
 
+.content {
+    width: fit-content;
+    margin: 96px 0px 96px 0px;
 
-.h1 {
-    display: flex;
-    font-size: 3rem;
+    @include mixins.sm-desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min-content;
+        margin: 96px 32px 96px 32px;
+    }
+}
+
+.header {
+    color: #123041;
+    font-size: 48px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    letter-spacing: 0.06rem;
-    margin-bottom: 2rem;
-    margin-top: 6rem;
-    margin-left: 9.94rem; 
-    margin-right: 9.94rem;
+    letter-spacing: 0.96px;
+    margin-bottom: 32px;
+    text-wrap: wrap;
 }
-
 
 .tiles {
     display: flex;
-    align-items: center;
-    gap: 2rem;
-    justify-content: center; 
-    margin-left: 10.94rem; 
-    margin-right: 10.94rem; 
+    width: fit-content;
+    gap: 32px;
+
+    .tile:nth-child(1) {
+        background: #9EE7E5;
+    }
+
+    .tile:nth-child(2) {
+        background: #C2E567;
+    }
+
+    .tile:nth-child(3) {
+        background: #FFC5AB;
+    }
+
+    @include mixins.sm-desktop {
+        width: max-content;
+        flex-direction: column;
+        gap: 48px;
+    }
 }
 
-
-.inclusivity {
-    width: 21.375rem;
-    height: 21.375rem;
-    flex-shrink: 0;
-    border-radius: 0.625rem;
-    background: #9EE7E5;
-    position: relative;
-}
-
-.inclusivity_title {
-    margin-top: 1rem;
-    margin-left: 1rem;
-    width: 11.9375rem;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.03rem;
-    margin-bottom: 1rem;
-}
-
-.inclusivity_text {
-    width: 17.375rem;
-    color: #123041;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0.02rem;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 2rem;
-}
-
-.inclusivity_cow {
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
+.tile {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-}
-
-
-.Handson {
-    width: 21.375rem;
-    height: 21.375rem;
+    justify-content: space-between;
+    height: 342px;
+    width: 342px;
+    padding: 32px 32px 0px 32px;
     flex-shrink: 0;
-    border-radius: 0.625rem;
-    background: #C2E567;
-    position: relative;
-}
+    border-radius: 10px;
 
-.Handson_title {
-    margin-top: 1rem;
-    margin-left: 1rem;
-    width: 15.6875rem;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.03rem;
-    margin-bottom: 1rem;
-}
+    >div>h1 {
+        color: #123041;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.48px;
+        margin-bottom: 16px;
+    }
 
-.Handson_text {
-    color: #000;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0.02rem;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 2rem;
-}
+    >div>p {
+        color: #000;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.32px;
+    }
 
-.Handson_froggy {
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-}
+    .image {
+        display: flex;
+        align-self: center;
+        width: 70%;
+    }
 
-
-.Impactful {
-    width: 21.375rem;
-    height: 21.375rem;
-    flex-shrink: 0;
-    border-radius: 0.625rem;
-    background: #FFC5AB;
-    position: relative;
-}
-
-.Impactful_title {
-    color: #123041;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    width: 15.6875rem;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.03rem;
-    margin-bottom: 1rem;
-}
-
-.Impactful_text {
-    color: #000;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0.02rem;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 2rem;
-}
-
-.Impactful_bunny {
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
+    @include mixins.sm-desktop {
+        width: 100%;
+        max-width: 342px;
+        height: 342px;
+        min-width: fit-content;
+    }
 }

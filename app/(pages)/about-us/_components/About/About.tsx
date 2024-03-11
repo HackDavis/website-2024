@@ -1,56 +1,53 @@
 import React from 'react';
-import styles from './About.module.scss'; // The name of your CSS module file
+import Image from 'next/image';
+import styles from './About.module.scss';
 
-const About = () => {
+const aboutData = [
+  {
+    title: 'Inclusivity',
+    text: 'We invite individuals of all backgrounds to learn new skills and grow in an inclusive environment.',
+    imagePath: '/about-us-icon/cow.png',
+    imageName: 'Cow',
+  },
+  {
+    title: 'Hands-on learning',
+    text: 'No matter which prompt you choose, each project provides hands-on experience and an opportunity to explore a new discipline.',
+    imagePath: '/about-us-icon/froggy.png',
+    imageName: 'Froggy',
+  },
+  {
+    title: 'Impactful projects',
+    text: 'Create meaningful, impactful, and innovative solutions that benefit local and global communities.',
+    imagePath: '/about-us-icon/bunny.png',
+    imageName: 'Bunny',
+  },
+];
+
+export default function About() {
   return (
     <div className={styles['hello-container']}>
-      <h1 className={styles.h1}>What we're all about</h1>
-      <div className={styles.tiles}>
-        <div className={styles.inclusivity}>
-          <div className={styles.inclusivity_title}>Inclusivity</div>
-          <div className={styles.inclusivity_text}>
-            We invite individuals of all backgrounds to learn new skills and
-            grow in an inclusive environment.
-          </div>
-          <div className={styles.inclusivity_cow}>
-            <img
-              src="/about-us-icon/cow.svg"
-              alt="Cow"
-              style={{
-                maxWidth:
-                  '100%' /* Ensure the image doesn't exceed the container's width */,
-                maxHeight:
-                  '100%' /* Ensure the image doesn't exceed the container's height */,
-                objectFit:
-                  'contain' /* Maintain aspect ratio and fit within the container */,
-                marginTop: 'auto' /* Align to the bottom of the tile */,
-              }}
-            />
-          </div>
-        </div>
-        <div className={styles.Handson}>
-          <div className={styles.Handson_title}>Hands-on learning</div>
-          <div className={styles.Handson_text}>
-            No matter which prompt you choose, each project provides hands-on
-            experience and an opportunity to explore a new discipline.
-          </div>
-          <div className={styles.Handson_froggy}>
-            <img src="/about-us-icon/froggy.svg" alt="Froggy" />
-          </div>
-        </div>
-        <div className={styles.Impactful}>
-          <div className={styles.Impactful_title}>Impactful projects</div>
-          <div className={styles.Impactful_text}>
-            Create meaningful, impactful, and innovative solutions that benefit
-            local and global communities.
-          </div>
-          <div className={styles.Impactful_bunny}>
-            <img src="/about-us-icon/bunny.svg" alt="Bunny" />
-          </div>
+      <div className={styles.content}>
+        <h1 className={styles.header}>What we're all about</h1>
+        <div className={styles.tiles}>
+          {aboutData.map((item) => (
+            <div key={item.title} className={styles.tile}>
+              <div>
+                <h1>{item.title}</h1>
+                <p>{item.text}</p>
+              </div>
+              <div className={styles.image}>
+                <Image
+                  src={item.imagePath}
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  alt={item.imageName}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
-};
-
-export default About;
+}
