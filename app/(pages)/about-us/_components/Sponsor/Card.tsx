@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Sponsor.module.scss';
-import Image from 'next/image';
 
 type CardProps = {
   imageUrl: string;
@@ -18,12 +17,12 @@ const Card: React.FC<CardProps> = ({
   return (
     <div className={styles.card}>
       <div className={styles.frame}>
-        <Image
+        <img
           src={frameImageUrl}
           alt="Polaroid frame"
           style={{ position: 'absolute', width: '100%', height: '100%' }}
         />
-        <Image
+        <img
           src={imageUrl}
           alt={title}
           style={{ width: '100%', height: 'auto', position: 'relative' }}

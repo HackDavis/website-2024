@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './Everyone.module.scss';
 import React from 'react';
 
@@ -15,13 +14,10 @@ const Everyone = () => {
         previous experience required.
       </p>
       <div className={styles['cowsit']}>
-        <Image src="/index/Everyone/cowsit.png" alt="cowsit" />
+        <img src="/index/Everyone/cowsit.png" alt="cowsit" />
       </div>
       <div className={styles['top-leaf']}>
-        <Image
-          src="/index/Everyone/river_rightside-combined.png"
-          alt="topleaf"
-        />
+        <img src="/index/Everyone/river_rightside-combined.png" alt="topleaf" />
       </div>
       <div className={styles['bottom-leaf']}></div>
     </div>

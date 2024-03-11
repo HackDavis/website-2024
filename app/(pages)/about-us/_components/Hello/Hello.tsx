@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './Hello.module.scss';
 import React from 'react';
 
@@ -13,7 +12,7 @@ const Hello = () => {
         </p>
       </header>
       <div className={styles['banner-image']}>
-        <Image src="/about-us-icon/Banner image.svg" alt="Banner image" />
+        <img src="/about-us-icon/Banner image.svg" alt="Banner image" />
       </div>
     </div>
   );

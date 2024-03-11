@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './About.module.scss'; // The name of your CSS module file
-import Image from 'next/image';
 
 const About = () => {
   return (
@@ -14,7 +13,7 @@ const About = () => {
             grow in an inclusive environment.
           </div>
           <div className={styles.inclusivity_cow}>
-            <Image
+            <img
               src="/about-us-icon/cow.svg"
               alt="Cow"
               style={{
@@ -36,7 +35,7 @@ const About = () => {
             experience and an opportunity to explore a new discipline.
           </div>
           <div className={styles.Handson_froggy}>
-            <Image src="/about-us-icon/froggy.svg" alt="Froggy" />
+            <img src="/about-us-icon/froggy.svg" alt="Froggy" />
           </div>
         </div>
         <div className={styles.Impactful}>
@@ -46,7 +45,7 @@ const About = () => {
             local and global communities.
           </div>
           <div className={styles.Impactful_bunny}>
-            <Image src="/about-us-icon/bunny.svg" alt="Bunny" />
+            <img src="/about-us-icon/bunny.svg" alt="Bunny" />
           </div>
         </div>
       </div>
