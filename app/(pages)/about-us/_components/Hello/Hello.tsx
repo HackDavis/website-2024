@@ -1,5 +1,6 @@
 import styles from './Hello.module.scss';
 import React from 'react';
+import AutoImage from '@components/AutoImage/AutoImage';
 
 const Hello = () => {
   return (
@@ -12,7 +13,7 @@ const Hello = () => {
         </p>
       </header>
       <div className={styles['banner-image']}>
-        <img src="/about-us-icon/Banner image.svg" alt="Banner image" />
+        <AutoImage src="/about-us-icon/Banner image.svg" alt="Banner image" />
       </div>
     </div>
   );

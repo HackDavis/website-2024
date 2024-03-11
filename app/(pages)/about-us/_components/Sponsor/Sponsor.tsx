@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Sponsor.module.scss';
 import Card from './Card';
+import AutoImage from '@components/AutoImage/AutoImage';
 
 const Sponsor = () => {
   const cards = [
@@ -70,7 +71,7 @@ const Sponsor = () => {
         <span className={styles['button-words']}>Sponsor 2024</span>
       </button>
       <div className={styles.cow_duck}>
-        <img
+        <AutoImage
           src="/about-us-icon/cow and duck.svg"
           alt="Cow and duck"
           style={{
