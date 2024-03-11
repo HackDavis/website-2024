@@ -1,76 +1,83 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import styles from './Sponsor.module.scss';
 
-/*const cards = [
-  {
-    src: '/about-us-icon/pol1.svg',
-    alt: 'Image 1',
-    frameImageUrl: '/about-us-icon/pol1a.svg',
-  },
-  {
-    src: '/about-us-icon/pol2.svg',
-    alt: 'Image 2',
-    frameImageUrl: '/about-us-icon/pol2a.svg',
-  },
-  {
-    src: '/about-us-icon/pol3.svg',
-    alt: 'Image 2',
-    frameImageUrl: '/about-us-icon/pol3a.svg',
-  },
-  {
-    src: '/about-us-icon/pol4.svg',
-    alt: 'Image 3',
-    frameImageUrl: '/about-us-icon/pol4a.svg',
-  },
-  {
-    src: '/about-us-icon/pol5.svg',
-    alt: 'Image 4',
-    frameImageUrl: '/about-us-icon/pol5a.svg',
-  },
+const images = [
+  '/about-us-icon/Polaroid1.png',
+  '/about-us-icon/Polaroid2.png',
+  '/about-us-icon/Polaroid3.png',
+  '/about-us-icon/Polaroid4.png',
+  '/about-us-icon/Polaroid5.png',
 ];
 
-const PolaroidGallery = () => (
-  <div className="gallery">
-    {cards.map((card, index) => (
-      <div
-        className="polaroid"
-        key={index}
-        style={{ backgroundImage: `url(${card.frameImageUrl})` }}
-      >
-        <img src={card.src} alt={card.alt} className="polaroid-image" />
-      </div>
-    ))}
-  </div>
-);*/
+interface PolaroidStackProps {
+  images: string[];
+  index: number;
+}
 
-/*const Carousel: React.FC = () => {
+const PolaroidStack = ({ images }: PolaroidStackProps) => {
+  const [stack, setStack] = useState<string[]>(images);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleImageClick = (index: number) => {
+    // Set the active image to pop up
+    setActiveIndex(index);
+    document
+      .querySelectorAll('.your-image-class')
+      [index].classList.add('image-to-back');
+
+    // Schedule the image to move to the back after a delay
+    setTimeout(() => {
+      document
+        .querySelectorAll('.your-image-class')
+        [index].classList.remove('image-to-back');
+      // Only move to back if the image is still active
+      setActiveIndex(null); // Optionally reset the active index, or handle it as per your logic
+      const newStack = [...stack];
+      const removed = newStack.splice(index, 1);
+      newStack.push(removed[0]); // Move to the back of the stack
+      setStack(newStack);
+    }, 2000); // Delay of 1 second
+  };
+
+  // Reset stack on scroll away
+  useEffect(() => {
+    const handleScroll = () => {
+      setStack(images);
+      setActiveIndex(null); // Also reset the active index
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [images]);
+
   return (
-    <div className="carousel">
-      {cards.map((card, index) => (
-        <div
+    <div className={styles.stack}>
+      {stack.map((image, index) => (
+        <img
           key={index}
-          className="polaroid"
-          style={{ zIndex: cards.length - index }}
-        >
-          <img
-            src={card.imageUrl}
-            alt={`Polaroid ${index + 1}`}
-            className="photo"
-          />
-          <img
-            src={card.frameImageUrl}
-            alt={`Frame ${index + 1}`}
-            className="frame"
-          />
-        </div>
+          src={image}
+          alt={`Polaroid ${index}`}
+          className={styles.polaroid}
+          style={{
+            zIndex: activeIndex === index ? 999 : stack.length - index,
+            transform:
+              activeIndex === index ? 'translateY(-20px) scale(1.1)' : '',
+            transition: 'transform 0.9s ease, z-index 0s',
+          }}
+          onClick={() => handleImageClick(index)}
+        />
       ))}
     </div>
   );
-};*/
+};
 
 const Sponsor = () => {
   return (
     <div className={styles['sponsor-container']}>
+      <PolaroidStack images={images} index={0} />
       <div className={styles['numbers-words-container']}>
         <div className={styles['number-word-pair']}>
           <span className={styles.number}>140+</span>
@@ -109,5 +116,3 @@ const Sponsor = () => {
 };
 
 export default Sponsor;
-//export { Carousel };
-//export { PolaroidGallery };
