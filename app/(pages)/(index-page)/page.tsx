@@ -11,28 +11,27 @@ import Loader from '@components/Loader/Loader';
 export default function Home() {
   return (
     <LoadingProvider>
-      <Loader>
-        <main style={{ backgroundColor: 'white', scrollBehavior: 'smooth' }}>
-          <div id="landing">
-            <Landing />
-          </div>
-          <div id="whatishackdavis">
-            <WhatIsHackdavis />
-          </div>
-          <div id="stats">
-            <Stats />
-          </div>
-          <div id="everyone">
-            <Everyone />
-          </div>
-          <div id="faq">
-            <BottomSection />
-          </div>
-          <div id="sponsors">
-            <Sponsors />
-          </div>
-        </main>
-      </Loader>
+      <Loader />
+      <main style={{ backgroundColor: 'white', scrollBehavior: 'smooth' }}>
+        <div id="landing">
+          <Landing />
+        </div>
+        <div id="whatishackdavis">
+          <WhatIsHackdavis />
+        </div>
+        <div id="stats">
+          <Stats />
+        </div>
+        <div id="everyone">
+          <Everyone />
+        </div>
+        <div id="faq">
+          <BottomSection />
+        </div>
+        <div id="sponsors">
+          <Sponsors />
+        </div>
+      </main>
     </LoadingProvider>
   );
 }
