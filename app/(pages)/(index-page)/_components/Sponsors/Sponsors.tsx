@@ -4,16 +4,16 @@ import styles from './Sponsor.module.scss';
 
 // tier 1 sponsors
 // import Intel from 'public/index/Sponsors/intel_logo.png';
-import csDepartment from 'public/index/Sponsors/cs.png';
-import asucd from 'public/index/Sponsors/asucd.png';
+import csDepartment from 'public/index/Sponsors/whiteLogos/cs_white.png';
+import asucd from 'public/index/Sponsors/whiteLogos/asucd_white.png';
 
 // tier 2 sponsors
-import pepsi from 'public/index/Sponsors/pepsi.png';
-import chevron from 'public/index/Sponsors/chevron.png';
-import cfc from 'public/index/Sponsors/cfc.jpg';
-import glico from 'public/index/Sponsors/Glico.png';
-import guayaki from 'public/index/Sponsors/gym.png';
-import ucdLS from 'public/index/Sponsors/ls.png';
+import pepsi from 'public/index/Sponsors/whiteLogos/pepsi_white-new.png';
+import chevron from 'public/index/Sponsors/whiteLogos/chevron_white.png';
+import cfc from 'public/index/Sponsors/whiteLogos/cfc_white.png';
+import glico from 'public/index/Sponsors/whiteLogos/Glico (White).png';
+import guayaki from 'public/index/Sponsors/whiteLogos/gym_white.png';
+import ucdLS from 'public/index/Sponsors/whiteLogos/ls_white.png';
 
 export default function Sponsors() {
   return (

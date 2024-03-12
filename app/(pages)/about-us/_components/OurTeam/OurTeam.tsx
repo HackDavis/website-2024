@@ -130,7 +130,6 @@ export default function OurTeam() {
               />
             );
           })}
-          ;
         </div>
       </div>
     </div>
