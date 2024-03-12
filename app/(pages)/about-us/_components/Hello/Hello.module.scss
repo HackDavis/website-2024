@@ -1,73 +1,98 @@
-.hello-container{
+@use 'app/(pages)/_globals/mixins';
+$mobile-breakpoint: 425px;
+$tablet-breakpoint: 768px;
+
+.hello_container{
     background: var(--gradient, linear-gradient(284deg, #FCFCD1 9.72%, #B2E7DD 44.61%, #76D6E6 79.5%));
-    color: #005271;
-    font-family: "Metropolis";
-    width: 100%; /* Use full width of the viewport /
-    max-width: 100%; / Set a max-width if necessary */
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 100vh; 
-    position: relative;
+    width: 100%; 
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center; 
     justify-content: center; 
-}
-.h1{
-    place-content: center;
-    color: var(--teal-1, #005271);
-    text-align: center;
-    font-size: 5rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    letter-spacing: 0.09rem;
-    margin: 0 0 3rem;
-    margin-top: -30%;
-}
-.P{
-    display: flex;
-    justify-content: center;
-    width: 58rem;
-    flex-shrink: 0;
-    color: var(--teal-1, #005271);
-    text-align: center;
-    font-size: 2.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%; 
-    letter-spacing: 0.05rem;
-}
-.banner-image img{
-    display: flex;
-    width: 60rem;
-    height: auto;
-    padding-top: 10%;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    bottom: 0; 
-    left: 0; 
-    right: 0; 
+    padding-top: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0;
 }
 
-@media (max-width: 768px) {
-    .hello-container {
-        min-height: 80vh;
+.title{
+    // border: 1px solid black; 
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $tablet-breakpoint) {
+        margin-top: 10%;
     }
+    
+    h1{
+        font-family: 'Metropolis', sans-serif;
+        color: var(--teal-1, #005271);
+        text-align: left;
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: 1.44px;
 
-    .h1 {
-        width: 600px;
-        font-size: 4.5rem;
+        @media (max-width: $tablet-breakpoint) {
+            font-size: 48px;
+        }
+    }
+    p{
+        margin-top: 48px;
+        color: var(--teal-1, #005271);
+        text-align: left;
+        font-family: "Metropolis", sans-serif;
+        font-size: 40px;
         font-style: normal;
         font-weight: 600;
-        line-height: 120%; 
-        letter-spacing: 0.96px;
-        padding-left: 7%;
-        text-align: left; 
-        margin-left: 0;
-        padding-top: 20%;
+        line-height: 150%; /* 60px */
+        letter-spacing: 0.8px;
+
+        @media (max-width: $tablet-breakpoint) {
+            font-size: 32px;
+        }
     }
+}
+
+.banner{
+    &_image{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin-bottom: -1%;
+    }
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+    .hello_container{
+        padding-top: 30%;
+        padding-left: 32px;
+        padding-right: 32px; 
+        padding-bottom: 0;
+    }
+    .title{
+        h1{
+            font-size: 48px;
+            line-height: 58px;
+            letter-spacing: 0.96px;
+            text-align: left;
+            color: var(--teal-1, #005271);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%; /* 57.6px */
+            letter-spacing: 0.96px;
+        }
+        p{
+            font-size: 24px;
+            line-height: 36px;
+            letter-spacing: 0.48px;
+            text-align: left;
+            font-weight: 500;
+        }
+    }
+    
 }
