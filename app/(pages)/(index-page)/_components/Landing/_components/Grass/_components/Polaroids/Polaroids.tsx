@@ -1,11 +1,7 @@
-'use client';
-
 import Image from 'next/image';
 import styles from './Polaroids.module.scss';
-import { useLoadCount } from '@hooks/useLoadCount';
 
 export default function Polaroids() {
-  const { incLoaded } = useLoadCount();
   return (
     <div className={styles.polaroids}>
       <div className={styles.polaroids_container}>
@@ -19,7 +15,6 @@ export default function Polaroids() {
             priority={true}
             placeholder="blur"
             blurDataURL="/index/Hero/hd_pol1.png"
-            onLoad={incLoaded}
           />
         </div>
         <div className={styles.polaroids_container_lower}>
@@ -33,7 +28,6 @@ export default function Polaroids() {
               priority={true}
               placeholder="blur"
               blurDataURL="/index/Hero/hd_pol3.png"
-              onLoad={incLoaded}
             />
           </div>
           <div className={styles.polaroids_container_lower_img2}>
@@ -46,7 +40,6 @@ export default function Polaroids() {
               priority={true}
               placeholder="blur"
               blurDataURL="/index/Hero/hd_pol2.png"
-              onLoad={incLoaded}
             />
           </div>
         </div>
