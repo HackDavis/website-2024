@@ -1,119 +1,67 @@
-/*$parallax-speed-leaves: 0.3;
-$parallax-speed-shadow: 0.2;
-$parallax-speed-reflection: 0.1;*/
-
+//Default 1920 values
 .background-container{
   background: #015270;
   display: flex;
-  width: 100%; /* Use full width of the viewport */
-  max-width: 100%; /* Set a max-width if necessary */
+  width: 100%; 
+  max-width: 100%; 
   margin-left: auto;
   margin-right: auto;
   position: relative;
   overflow: hidden;
-  min-height: 320vh;
-  justify-content: space-around;
-  
+  min-height: 235vh;
 }
-
-/*.parallax-container {
-  position: relative;
-  height: 100vh; // set to the desired height
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.parallax-item {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  will-change: transform;
-
-  &.leaves {
-    background-image: url('/index/Everyone/river_rightside-leaves.png');
-    z-index: 3;
-  }
-
-  &.shadow {
-    background-image: url('/index/Everyone/river_rightside-shadow.png');
-    z-index: 2;
-  }
-
-  &.reflection {
-    background-image: url('/index/Everyone/river_rightside-reflxn.png');
-    z-index: 1;
-  }
-}*/
-
 
 .title {
-  min-width: 680px; /* Set a maximum width for large screens */
-  width: 100%; 
+  min-width: 40vw;
   color: #FFF;
   font-family: "Metropolis";
-  font-size: 96px;
+  font-size: 5.5rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: 1.92px;
+  letter-spacing: 0.12rem;
   margin: 0 auto; 
-  padding-top: 40%; 
-  padding-left: 10%;
+  padding-top: 200px; 
+  padding-left: 200px;
 }
 
-@media (max-width: 768px) {
-  .title {
-    font-size: 72px; /* Smaller font size for tablets */
-    padding-top: 20%; 
-    padding-left: 5%; 
-  }
-}
-
-/* Media query for mobile devices */
-@media (max-width: 480px) {
-  .title {
-    font-size: 48px; 
-    padding-top: 10%; 
-    padding-left: 20px; 
-  }
-}
-
-
+// .subtitle1, .subtitle2 {
+//   font-size: 2rem;
+// }
 
 .subtitle1 {
-  min-width: 20vw;
+  min-width: 30vw;
   height: 5vw;
   color: #FFF;
   font-family: "Metropolis";
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; 
   letter-spacing: 0.48px;
-  margin-left: -450px; 
-  padding-top: 55%;
-  position: relative; 
-  left: -34%; 
+  position: relative;
+  padding-left: 70px; 
+  padding-top: 480px;
+  // z-index: 10;
+  left: -31%;  
+
 }
 
-
-
-
-
 .subtitle2 {
-  min-width: 504px;
-  max-width: 504px; 
+  min-width: 35vw;
+  //max-width: 500px; 
   color: #FFF;
   font-family: "Metropolis";
   font-size: 1.5rem; 
   font-weight: 500;
   line-height: 1.5; 
   letter-spacing: 0.48px;
-  padding-top: 115%; 
+  padding-top: 70%; 
   position: relative; 
-  left: -20%; 
+  // left: -69%; 
+  right: 10%;
+  // top: 30%;
+  padding-left: 70px;
 }
 
 .cowsit {
@@ -122,14 +70,12 @@ $parallax-speed-reflection: 0.1;*/
   height: auto; 
   display: block; 
   margin: 0 auto; 
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
+  position: absolute;  
+  left: 60%; 
+  transform: translate(-50%, -50%);
+  padding-top: 2200px;
+  overflow: visible !important;
 }
-
-
-
 
 .top-leaf {
   display: flex;
@@ -137,44 +83,13 @@ $parallax-speed-reflection: 0.1;*/
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 30%; /* Adjusted to use top and transform for vertical centering */
   transform: translate(0, -50%);
-  /* Adjust right positioning using a responsive unit or remove if it causes issues */
-  right: 5vw; /* Example adjustment for responsiveness */
-  //padding-top: 60%; /* Remove padding-top that pushes element down */
-  width: 30vw; /* Starting width, but we'll adjust this with media queries */
-  height: 30vw; /* Keep height equal to width to maintain aspect ratio */
-  max-width: 200px; /* Maximum size to prevent it from getting too large */
-  max-height: 200px; /* Match max-width to maintain aspect ratio */
+  right: 0vw; 
+  top: 1400px; 
+  width: 2000px; 
+  height: 2800px; 
+  overflow: visible !important;
 }
-
-/* Adjust sizes more aggressively for smaller screens */
-@media (max-width: 1024px) {
-  .top-leaf {
-    width: 18vw;
-    height: 18vw;
-    right: 8%; /* Adjust for screen size */
-  }
-}
-
-@media (max-width: 768px) {
-  .top-leaf {
-    width: 15vw;
-    height: 15vw;
-    right: 6%; /* Further adjust for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .top-leaf {
-    width: 12vw; /* Significantly smaller on very small screens */
-    height: 12vw;
-    right: 4%; /* Fine-tune positioning for small devices */
-  }
-}
-
-
-
 
 .bottom-leaf {
   display: flex;
@@ -185,9 +100,278 @@ $parallax-speed-reflection: 0.1;*/
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom 75%;
-  bottom: -50vh; 
+  bottom: -60vh; 
   left: 0; 
-  height: 210vh; 
+  height: 210vh;
 }
 
+.bottom-leaf-div {
+  position: relative;
+  margin-top: 10%;
+}
 
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 15%;
+  right: -10%;
+}
+
+.ripple-container{
+  max-width: 834px; 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+  position: absolute;  
+  left: 60%; 
+  transform: translate(-50%, -50%);
+  padding-top: 120%;
+}
+
+/* For screens with a maximum width of 1366px */
+@media (max-width: 1366px) {
+  .title {
+    min-width: 50vw;
+    font-size: 72px;
+    padding-top: 18%;
+    padding-left: 8%;
+    z-index: 300;
+
+  }
+
+  .subtitle1, .subtitle2 {
+    font-size: 1.4rem;
+    //padding-top: 30%;
+  }
+  .subtitle1{
+    // padding-top: 500px;
+    // padding-left: -50px;
+    left: -46%;
+    min-width: 40vw;
+  }
+
+  .subtitle2 {
+    // padding-top: 660px;
+    // padding-left: -50px;
+    // left: -94%;
+    // min-width: 45vw;
+    padding-top: 70rem;
+    right: 30%;
+  }
+
+  .cowsit, .ripple-container {
+    padding-top: 2000px;
+    // padding-left: -50%;
+    // right: 40%;
+    // width: 20%;
+    // height: 20%;
+  }
+
+
+  .bottom-leaf{
+    bottom: -50vh; 
+    left: 0; 
+    height: 180vh;
+    width: 100%;
+
+  }
+
+  .topLeafContainer {
+    max-width: 50vw;
+  }
+  .top-leaf{
+    // top: 1100px; 
+    // width: 10%; 
+    // height: 100%; 
+    // // right: 10px;
+    // // overflow: visible !important;
+    // max-width: 10%;
+    position: absolute;
+    width: 130%;
+    height: 100%;
+    right: -20px;
+
+  }
+
+}
+
+/* For screens with a maximum width of 1024px */
+@media (max-width: 1024px) {
+  .title {
+    min-width: 55vw;
+    font-size: 80px;
+    padding-top: 300px;
+    padding-left: 6%;
+  }
+
+  .subtitle1, .subtitle2 {
+    font-size: 1.2rem;
+    // padding-top: 28%;
+  }
+  .subtitle1 {
+    padding-top: 600px;
+    // padding-left: 90px;
+    left: -55%;
+    // text-align: left;
+    min-width: 40vw;
+  }
+  .subtitle2 {
+    // padding-top: 650px;
+    // padding-left: 90px;
+    // left: -102%;
+    padding-top: 70rem;
+    // top: 80%;
+    right: 40%;
+  }
+
+  .cowsit, .ripple-container {
+    // padding-top: 2300px;
+    padding-left: 40px;
+    // left: 25%;
+  }
+  .top-leaf{ 
+    top: 1200px;
+    width: 120%; 
+    height: 65%; 
+    overflow: visible !important;
+    max-width: 120%;
+    
+
+  }
+  .bottom-leaf{
+    bottom: -40vh; 
+    left: 0; 
+    height: 150vh;
+    width: 100%;
+    
+
+  }
+}
+
+/* For screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  .background-container{
+    min-height: 200vh;
+  }
+  .title {
+    font-size: 48px;
+    padding-top: 14%;
+    padding-left: 5%;
+  }
+
+  .subtitle1, .subtitle2 {
+    font-size: 1rem;
+    // padding-top: 40%;
+    // min-width: 56vw;
+    // max-width: 56vw;
+  }
+
+  .subtitle1 {
+    padding-top: 40%;
+  }
+
+  .subtitle2 {
+    padding-top: 800px;
+    padding-left: 5px;
+    // left: 1000px;
+    width: 40vw;
+  }
+
+  .cowsit, .ripple-container {
+    padding-top: 1200px;
+
+
+  }
+
+  .top-leaf{
+    top: 600px;
+    width: 120%; 
+    height: 60%; 
+    overflow: visible !important;
+    max-width: 120%;
+    
+
+  }
+
+  .bottom-leaf{
+    bottom: -20vh; 
+    left: 0; 
+    height: 120vh;
+    width: 100%;
+
+  }
+
+}
+
+/* For screens with a maximum width of 640px */
+@media (max-width: 640px) {
+  .background-container{
+    min-height: 180vh;
+  }
+  .title {
+    font-size: 36px;
+    padding-top: 800px;
+    padding-left: 10%;
+  }
+
+  .subtitle1, .subtitle2 {
+    font-size: 0.9rem;
+    padding-top: 24%;
+  }
+
+  .subtitle1 {
+    // top: 480px;
+    // left: -500px;
+    padding-top: 950px;
+    padding-left: 10%;
+    width: 90vw;
+    // width: 100%;
+  }
+
+  .subtitle2 {
+    // left: -50%;
+    padding-top: 1200px;
+    // left: -40;
+    right: 30%;
+  }
+
+  .cowsit {
+    // padding-top: 50%; 
+    // width: 5%; 
+    // height: 5%; 
+    // top: 10%;
+    // padding-right: 1000px; 
+    // right: 60%;
+    left: 25%;
+    // bottom: 10%;
+  }
+
+  .top-leaf{
+    width: 1000px; 
+    height: 1300px; 
+    max-width: 1000px;
+    max-height: 1700px;
+    padding-top: 0; 
+    right: 5%; 
+    transform: translate(0, -50%);
+  }
+  .bottom-leaf{
+    bottom: -38vh; 
+    left: 0; 
+    height: 100vh;
+    width: 100%;
+    transform: scaleX(-1);
+    overflow: visible;
+
+  }
+}

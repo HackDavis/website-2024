@@ -4,9 +4,17 @@ $mobile-breakpoint: 425px;
 
 .container{
     position: fixed;
+    position: fixed;
     width: 100%; 
     display: flex;
     z-index: 100;
+    transition: top 0.5s; // Smooth transition for moving up and down
+    top: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255, 0.5);
+    transition: background-color 0.5s ease-in-out, top 0.5s;
+    // height: 10%;
+    
     transition: top 0.5s; // Smooth transition for moving up and down
     top: 0;
     backdrop-filter: blur(10px);
@@ -31,7 +39,20 @@ $mobile-breakpoint: 425px;
 
     &_at_top{
         top: 0;
+        z-index: 100;
+        animation: dropDown 0.5s ease-in-out forwards;
+    }
+
+
+    &_return_up{
+        animation: returnUp 0.5s ease-in-out forwards;
+    }
+
+    &_at_top{
+        top: 0;
         background-color: transparent;
+        backdrop-filter: none;
+        // border: 3px solid red;
         backdrop-filter: none;
         // border: 3px solid red;
     }
@@ -69,6 +90,10 @@ $mobile-breakpoint: 425px;
     &_white{
         display:none;
     }
+
+    &_white{
+        display:none;
+    }
 }
 
 
@@ -85,6 +110,7 @@ $mobile-breakpoint: 425px;
     align-items: center;
     gap: 1.5rem;
     transition: text-decoration 0.2s; 
+    font-family: 'Metropolis', sans-serif;
     font-family: 'Metropolis', sans-serif;
 }
 
@@ -180,6 +206,47 @@ $mobile-breakpoint: 425px;
     }
 }
 
+.hamburger{
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    &_line{
+        width: 30px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--teal-2, #173A52);
+        display: block;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+
+    &_active{
+        animation: smallbig 0.6s forwards;
+
+        .hamburger_line {
+            background-color: #ecf0f1;
+            transition-delay: 0.2s;
+
+            &:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+}
+
 @media (max-width: 610px) {
     .container{
         // background-color: transparent;
@@ -202,6 +269,7 @@ $mobile-breakpoint: 425px;
     .nav{
         flex-direction: column;
         // padding: 1rem;
+        // padding: 1rem;
         padding-top: 0;
         // border: 1px solid red;
 
@@ -212,6 +280,8 @@ $mobile-breakpoint: 425px;
             display: flex; // Show the links when active
             flex-direction: column;
             width: 100%;
+            color: whitesmoke;
+            // height: 300px;
             color: whitesmoke;
             // height: 300px;
         }
@@ -246,7 +316,9 @@ $mobile-breakpoint: 425px;
         }
     }
 
+
     .wordsItem{
+        height: 40px; //adjust gap between words
         height: 40px; //adjust gap between words
     }
 
@@ -259,7 +331,12 @@ $mobile-breakpoint: 425px;
     .logo{
         display: none;   
 
+
         &_active{
+            display: none;
+        }
+
+        &_white{
             display: none;
         }
 
@@ -293,6 +370,41 @@ $mobile-breakpoint: 425px;
     }
   }
 
+
+@keyframes dropDown{
+    from{
+        top: -100%;
+    }
+    to{
+        top: 0;
+    }
+}
+
+@keyframes returnUp{
+    from{
+        top: 0;
+    }
+    to{
+        top: -100%;
+    }
+}
+  
+  
+@keyframes smallbig{
+    0%, 100%{
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    50%{
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+    }
+}
 
 @keyframes dropDown{
     from{
