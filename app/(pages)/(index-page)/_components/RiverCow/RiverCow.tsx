@@ -2,8 +2,8 @@ import styles from './RiverCow.module.scss';
 import Image from 'next/image';
 
 import baseTree from 'public/index/RiverCow/base-tree.png';
-import riverCow from 'public/index/RiverCow/river-cow.png';
 import RightTree from './RightTree';
+import RiverCowAnimation from './RiverCowAnimation';
 
 export default function RiverCow() {
   return (
@@ -21,15 +21,7 @@ export default function RiverCow() {
         </div>
         <RightTree />
       </div>
-      <div className={styles.river_cow_container}>
-        <Image
-          src={riverCow}
-          alt="Cow sitting on rock reminiscing on past adventures by looking at polaroids."
-          placeholder="blur"
-          className={styles.river_cow}
-          sizes="(min-width: 780px) 600px, 300px"
-        />
-      </div>
+      <RiverCowAnimation />
       <div className={styles.bottom_text}>
         <h3>
           HackDavis is <br />

@@ -1,0 +1,17 @@
+@use 'app/(pages)/_globals/mixins';
+
+.river_cow_container {
+    width: 600px;
+    margin-top: 5%;
+    margin-right: -5%;
+
+    @include mixins.phone {
+        width: 300px;
+        align-self: flex-start;
+    }
+}
+
+.river_cow {
+    width: 100%;
+    height: auto;
+}
