@@ -8,7 +8,7 @@
   margin-right: auto;
   position: relative;
   overflow: hidden;
-  min-height: 235vh;
+  min-height: 300vh;
 }
 
 .title {
@@ -56,22 +56,28 @@
   font-weight: 500;
   line-height: 1.5; 
   letter-spacing: 0.48px;
-  padding-top: 70%; 
+  padding-top: 95rem; 
   position: relative; 
   // left: -69%; 
   right: 10%;
   // top: 30%;
-  padding-left: 70px;
+  // padding-left: 70px;
+  z-index: 10;
+}
+
+.cowImg {
+  width: 100%;
+  height: auto;
 }
 
 .cowsit {
   max-width: 834px; 
-  width: 100%; 
-  height: auto; 
+  // width: 100%; 
+  // height: auto; 
   display: block; 
   margin: 0 auto; 
   position: absolute;  
-  left: 60%; 
+  left: 50%; 
   transform: translate(-50%, -50%);
   padding-top: 2200px;
   overflow: visible !important;
@@ -84,8 +90,8 @@
   align-items: center;
   position: absolute;
   transform: translate(0, -50%);
-  right: 0vw; 
-  top: 1400px; 
+  right: -5%; 
+  top: 70%; 
   width: 2000px; 
   height: 2800px; 
   overflow: visible !important;
@@ -103,7 +109,10 @@
   bottom: -60vh; 
   left: 0; 
   height: 210vh;
+  object-fit: contain;
+
 }
+
 
 .bottom-leaf-div {
   position: relative;
@@ -170,7 +179,7 @@
   }
 
   .cowsit, .ripple-container {
-    padding-top: 2000px;
+    padding-top: 1800px;
     // padding-left: -50%;
     // right: 40%;
     // width: 20%;
@@ -200,6 +209,7 @@
     width: 130%;
     height: 100%;
     right: -20px;
+    top: 55%;
 
   }
 
@@ -232,25 +242,28 @@
     padding-top: 70rem;
     // top: 80%;
     right: 40%;
+    z-index: 10;
   }
 
   .cowsit, .ripple-container {
     // padding-top: 2300px;
     padding-left: 40px;
+    top: -20px;
+    
     // left: 25%;
   }
   .top-leaf{ 
-    top: 1200px;
+    top: 45%;
     width: 120%; 
-    height: 65%; 
+    height: 100%; 
     overflow: visible !important;
     max-width: 120%;
     
 
   }
   .bottom-leaf{
-    bottom: -40vh; 
-    left: 0; 
+    bottom: -35vh; 
+    left: 0px; 
     height: 150vh;
     width: 100%;
     
@@ -281,7 +294,7 @@
   }
 
   .subtitle2 {
-    padding-top: 800px;
+    padding-top: 750px;
     padding-left: 5px;
     // left: 1000px;
     width: 40vw;
@@ -296,7 +309,7 @@
   .top-leaf{
     top: 600px;
     width: 120%; 
-    height: 60%; 
+    height: 100%; 
     overflow: visible !important;
     max-width: 120%;
     
@@ -304,7 +317,7 @@
   }
 
   .bottom-leaf{
-    bottom: -20vh; 
+    bottom: -25vh; 
     left: 0; 
     height: 120vh;
     width: 100%;
@@ -316,12 +329,12 @@
 /* For screens with a maximum width of 640px */
 @media (max-width: 640px) {
   .background-container{
-    min-height: 180vh;
+    min-height: 250vh;
   }
   .title {
     font-size: 36px;
     padding-top: 800px;
-    padding-left: 10%;
+    padding-left: 40px;
   }
 
   .subtitle1, .subtitle2 {
@@ -332,17 +345,26 @@
   .subtitle1 {
     // top: 480px;
     // left: -500px;
+    position: absolute;
+    left: 40px;
     padding-top: 950px;
-    padding-left: 10%;
-    width: 90vw;
+    padding-left: 0;
+    // margin-left: 40px;
+    width: 70vw;
     // width: 100%;
   }
 
   .subtitle2 {
     // left: -50%;
-    padding-top: 1200px;
+    position: absolute;
+    left: 40px;
+    padding-top: 1100px;
+    padding-left: 0;
+    // margin-left: -350px;
+    width: 70vw;
+    z-index: 10;
     // left: -40;
-    right: 30%;
+    // right: 30%;
   }
 
   .cowsit {
@@ -362,16 +384,15 @@
     max-width: 1000px;
     max-height: 1700px;
     padding-top: 0; 
-    right: 5%; 
+    right: 10%; 
     transform: translate(0, -50%);
   }
   .bottom-leaf{
-    bottom: -38vh; 
+    bottom: -30vh; 
     left: 0; 
     height: 100vh;
     width: 100%;
     transform: scaleX(-1);
     overflow: visible;
-
   }
 }

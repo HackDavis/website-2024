@@ -110,9 +110,10 @@ const Everyone = () => {
         <Image
           src={cowSit}
           alt="cowsit"
-          width={500}
-          height={500}
-          // className={styles.cowImg}
+          // width={500}
+          // height={500}
+          className={styles.cowImg}
+          // fill={true}
         />
       </div>
       <div className={styles.subtitle2}>
