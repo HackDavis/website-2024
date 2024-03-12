@@ -93,6 +93,13 @@ $mobile-breakpoint: 505px;
   border: 0px solid #497F5D;
   background: var(--ducky, #FFC53D);
   backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transition: background-color 0.2s ease, filter 0.2s ease;
+
+  &:hover{
+    cursor: pointer;
+    filter: brightness(0.9);
+  }
 
   @media (max-width: $tablet-breakpoint) {
     height: 48px;

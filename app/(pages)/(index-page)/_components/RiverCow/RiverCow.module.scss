@@ -25,7 +25,7 @@
 .top_text, .bottom_text {
     display: flex;
     flex-direction: column;
-    font-family: "Proxima Nova";
+    font-family: "Metropolis", sans-serif;
     color: var(--text-white);
     gap: 48px;
     padding-left: 10%;
@@ -42,6 +42,7 @@
         font-weight: 700;
         letter-spacing: 1.92px;
         width: max-content;
+        font-family: "Metropolis", sans-serif;
 
         @include mixins.tablet {
             font-size: 2.5rem;
@@ -53,6 +54,7 @@
         font-weight: 300;
         line-height: 150%; /* 36px */
         letter-spacing: 0.48px;
+        font-family: "Metropolis", sans-serif;
         @include mixins.tablet {
             font-size: 0.875rem;
         }
