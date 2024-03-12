@@ -90,7 +90,6 @@ export default function Foreground() {
               >
                 <Image
                   src={Hero_CowCam}
-                  sizes="(min-width: 2580px) 107px, (min-width: 1520px) 118px, 76px"
                   alt="hero_cow-cam"
                   priority={true}
                   placeholder="blur"
@@ -111,7 +110,6 @@ export default function Foreground() {
               >
                 <Image
                   src={Hero_CowTorso}
-                  sizes="(min-width: 2580px) 108px, (min-width: 2340px) 120px, (min-width: 1060px) calc(5vw + 4px), 53px"
                   alt="hero_cow-torso"
                   priority={true}
                   placeholder="blur"
