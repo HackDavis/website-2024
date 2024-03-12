@@ -10,6 +10,7 @@
   overflow: hidden;
   min-height: 235vh;
 }
+
 .title {
   min-width: 40vw;
   color: #FFF;
@@ -24,6 +25,10 @@
   padding-left: 200px;
 }
 
+// .subtitle1, .subtitle2 {
+//   font-size: 2rem;
+// }
+
 .subtitle1 {
   min-width: 30vw;
   height: 5vw;
@@ -37,7 +42,8 @@
   position: relative;
   padding-left: 70px; 
   padding-top: 480px;
-  left: -33%;  
+  // z-index: 10;
+  left: -31%;  
 
 }
 
@@ -50,10 +56,12 @@
   font-weight: 500;
   line-height: 1.5; 
   letter-spacing: 0.48px;
-  padding-top: 620px; 
+  padding-top: 70%; 
   position: relative; 
-  left: -69%; 
-  padding-left: 180px;
+  // left: -69%; 
+  right: 10%;
+  // top: 30%;
+  padding-left: 70px;
 }
 
 .cowsit {
@@ -63,7 +71,7 @@
   display: block; 
   margin: 0 auto; 
   position: absolute;  
-  left: 1100px; 
+  left: 60%; 
   transform: translate(-50%, -50%);
   padding-top: 2200px;
   overflow: visible !important;
@@ -95,6 +103,11 @@
   bottom: -60vh; 
   left: 0; 
   height: 210vh;
+}
+
+.bottom-leaf-div {
+  position: relative;
+  margin-top: 10%;
 }
 
 .parallax-container {
@@ -141,25 +154,29 @@
     //padding-top: 30%;
   }
   .subtitle1{
-    padding-top: 500px;
-    padding-left: -50px;
+    // padding-top: 500px;
+    // padding-left: -50px;
     left: -46%;
     min-width: 40vw;
   }
 
   .subtitle2 {
-    padding-top: 660px;
-    padding-left: -50px;
-    left: -94%;
-    min-width: 45vw;
+    // padding-top: 660px;
+    // padding-left: -50px;
+    // left: -94%;
+    // min-width: 45vw;
+    padding-top: 70rem;
+    right: 30%;
   }
 
   .cowsit, .ripple-container {
-    padding-top: 2200px;
-    padding-left: -50%;
-    width: 20%;
-    height: 20%;
+    padding-top: 2000px;
+    // padding-left: -50%;
+    // right: 40%;
+    // width: 20%;
+    // height: 20%;
   }
+
 
   .bottom-leaf{
     bottom: -50vh; 
@@ -168,12 +185,21 @@
     width: 100%;
 
   }
+
+  .topLeafContainer {
+    max-width: 50vw;
+  }
   .top-leaf{
-    top: 1100px; 
-    width: 130%; 
-    height: 90%; 
-    overflow: visible !important;
-    max-width: 150%;
+    // top: 1100px; 
+    // width: 10%; 
+    // height: 100%; 
+    // // right: 10px;
+    // // overflow: visible !important;
+    // max-width: 10%;
+    position: absolute;
+    width: 130%;
+    height: 100%;
+    right: -20px;
 
   }
 
@@ -190,22 +216,28 @@
 
   .subtitle1, .subtitle2 {
     font-size: 1.2rem;
-    padding-top: 28%;
+    // padding-top: 28%;
   }
   .subtitle1 {
-    padding-top: 500px;
-    padding-left: 90px;
-    left: -62%;
+    padding-top: 600px;
+    // padding-left: 90px;
+    left: -55%;
+    // text-align: left;
+    min-width: 40vw;
   }
   .subtitle2 {
-    padding-top: 650px;
-    padding-left: 90px;
-    left: -102%;
+    // padding-top: 650px;
+    // padding-left: 90px;
+    // left: -102%;
+    padding-top: 70rem;
+    // top: 80%;
+    right: 40%;
   }
 
   .cowsit, .ripple-container {
-    padding-top: 2300px;
-    padding-left: -3000px;
+    // padding-top: 2300px;
+    padding-left: 40px;
+    // left: 25%;
   }
   .top-leaf{ 
     top: 1200px;
@@ -239,19 +271,25 @@
 
   .subtitle1, .subtitle2 {
     font-size: 1rem;
-    padding-top: 220px;
-    min-width: 56vw;
-    max-width: 56vw;
+    // padding-top: 40%;
+    // min-width: 56vw;
+    // max-width: 56vw;
+  }
+
+  .subtitle1 {
+    padding-top: 40%;
   }
 
   .subtitle2 {
-    padding-top: 300px;
-    padding-left: -20%;
-    left: 1000px;
+    padding-top: 800px;
+    padding-left: 5px;
+    // left: 1000px;
+    width: 40vw;
   }
 
   .cowsit, .ripple-container {
-    padding-top: 1700px;
+    padding-top: 1200px;
+
 
   }
 
@@ -282,7 +320,7 @@
   }
   .title {
     font-size: 36px;
-    padding-top: 500px;
+    padding-top: 800px;
     padding-left: 10%;
   }
 
@@ -292,19 +330,30 @@
   }
 
   .subtitle1 {
-    top: 480px;
-    left: -500px;
+    // top: 480px;
+    // left: -500px;
+    padding-top: 950px;
+    padding-left: 10%;
+    width: 90vw;
+    // width: 100%;
   }
 
   .subtitle2 {
-    left: -50%;
+    // left: -50%;
+    padding-top: 1200px;
+    // left: -40;
+    right: 30%;
   }
 
   .cowsit {
-    padding-top: 50%; 
-    width: 10%; 
-    height: 10%; 
-    padding-right: 1000px; 
+    // padding-top: 50%; 
+    // width: 5%; 
+    // height: 5%; 
+    // top: 10%;
+    // padding-right: 1000px; 
+    // right: 60%;
+    left: 25%;
+    // bottom: 10%;
   }
 
   .top-leaf{
@@ -317,7 +366,7 @@
     transform: translate(0, -50%);
   }
   .bottom-leaf{
-    bottom: -28vh; 
+    bottom: -38vh; 
     left: 0; 
     height: 100vh;
     width: 100%;

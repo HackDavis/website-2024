@@ -1,6 +1,8 @@
 'use client';
+import Image from 'next/image';
 import styles from './Everyone.module.scss';
 import React, { useEffect, useState, useRef } from 'react';
+import cowSit from '/public/index/Everyone/cowsit.png';
 
 interface ParallaxLayerProps {
   speed: number;
@@ -95,19 +97,27 @@ const WaterRipple = () => {
 const Everyone = () => {
   return (
     <div className={styles['background-container']}>
-      <ParallaxContainer />
+      <div className={styles.topLeafContainer}>
+        <ParallaxContainer />
+      </div>
       <WaterRipple />
       <h1 className={styles.title}>HackDavis is for everyone.</h1>
-      <p className={styles.subtitle1}>
+      <div className={styles.subtitle1}>
         Whether you are a seasoned hacker or exploring whether tech is a good
         fit for you, we invite you to join us!
-      </p>
-      <p className={styles.subtitle2}>
+      </div>
+      <div className={styles.cowsit}>
+        <Image
+          src={cowSit}
+          alt="cowsit"
+          width={500}
+          height={500}
+          // className={styles.cowImg}
+        />
+      </div>
+      <div className={styles.subtitle2}>
         Creators from all backgrounds are welcome at HackDavis— no coding or
         previous experience required.
-      </p>
-      <div className={styles['cowsit']}>
-        <img src="/index/Everyone/cowsit.png" alt="cowsit" />
       </div>
       <div className={styles['bottom-leaf']}>
         <ParallaxComponent />
