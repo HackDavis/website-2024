@@ -1,0 +1,219 @@
+
+.sponsor-container {
+    background: #123041;
+    font-family: "Metropolis";
+    width: 100%;
+    max-width: 100%;
+    margin: 0rem; 
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.numbers-words-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    margin-top: -180px;
+    margin-left: 140px;
+    //margin-bottom: 10rem;
+
+}
+
+.number-word-pair {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    margin-bottom: 1rem; 
+    margin-right: 11rem;
+}
+
+.number {
+    color: #F4F4F4;
+    font-family: "Metropolis";
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 130%; 
+    letter-spacing: 0.08rem;
+    text-transform: lowercase;
+    margin-right: 0.5rem; 
+}
+
+.word {
+    color: #F4F4F4;
+    font-family: "Metropolis";
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1; 
+    letter-spacing: 0.035rem;
+    text-transform: lowercase;
+}
+
+.button {
+    display: flex;
+    width: 21.375rem;
+    height: 3rem;
+    padding: 0.75rem 4.125rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    border-radius: 6.25rem;
+    background: #FFC53D;
+    position: absolute;
+    left: 11rem;
+    bottom: 20px;
+    left: 300px;
+    top: 700px;
+    transform: translateX(-50%); 
+}
+
+.button-words{
+    color: #123041;
+    text-align: center;
+    font-family: "Metropolis";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.0225rem;
+    background: #FFC53D; 
+}
+
+.cow_duck {
+    position: absolute;
+    bottom: -520px;
+    left: 450px;
+    transform: translateX(-50%); 
+    width: 700px;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack {
+    position: relative;
+    height: 250px; // Set the height to the height of the Polaroids or a bit more
+    margin-top: 50px; // Center the stack if needed
+    margin-left: 600px;
+  }
+  
+  .polaroid {
+    width: 1000px;
+    height: 800px;
+    position: absolute;
+    transition: transform 0.9s ease, z-index 0.9s ease;
+    object-fit: cover;
+    // This will make the nth image be offset a bit more than the (n-1)th
+    &:nth-child(1) { 
+      top: 0; 
+      left: 0;
+      transform: rotate(-3deg);
+      z-index: 5; // Ensure this image is on top of the stack
+    }
+    &:nth-child(2) { 
+      top: 5px; 
+      left: 5px;
+      transform: rotate(10deg);
+      z-index: 4; 
+    }
+    &:nth-child(3) { 
+      top: 10px; 
+      left: 10px;
+      transform: rotate(15deg);
+      z-index: 3; 
+    }
+    &:nth-child(4) { 
+      top: 15px; 
+      left: 15px;
+      transform: rotate(13deg);
+      z-index: 2; 
+    }
+    &:nth-child(5) { 
+      top: 20px; 
+      left: 20px;
+      transform: rotate(-10deg);
+      z-index: 1; // Ensure this image is at the bottom of the stack
+    }
+  
+    &:hover {
+      transform: rotate(0deg) scale(1.0);
+      z-index: 999; // Bring to the front on hover
+    }
+  }
+  .image-transition {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .image-to-back {
+    /* Example transformation, adjust as needed */
+    transform: scale(0.8) translateY(10px) opacity(0.7);
+  }
+  
+  
+  
+
+  @media only screen and (max-width: 768px) {
+    .sponsor-container {
+        min-height: 160vh; 
+    }
+
+    .numbers-words-container {
+        margin-top: 600px;
+        padding: 4.75rem -1rem; 
+        left: 50%; 
+        top: 87%; 
+        transform: translateX(10%); 
+        width: 23rem;
+    }
+
+    .number-word-pair {
+        margin-bottom: 0.75rem; 
+        margin-right: 2rem; 
+    }
+
+    .number {
+        font-size: 4.5rem; 
+        margin-right: 0.25rem; 
+    }
+
+    .word {
+        font-size: 3.5rem; 
+    }
+
+    .button {
+        width: 23rem;
+        height: 3rem;
+        padding: 0.75rem 4.125rem;  
+        left: 50%; 
+        top: 1350px; 
+        transform: translateX(-50%); 
+    
+    }
+
+    .button-words {
+        font-size: 1 rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.0225rem;
+    }
+
+
+    .cow_duck {
+        position: absolute;
+        left: 460px; /* Move the left edge of the element to the center of its parent */
+        right: 50%;
+        transform: translateX(-50%); /* Center the element with respect to its own width */
+        bottom: -16px; /* Keeps the element 16px above the bottom edge of its parent */
+        height: 200px; /* Height is retained as per your specification */
+        padding: 0.75rem 4.125rem; /* Padding is retained */  
+    }
+
+    .stack{
+        left: -730px;
+        padding: 0.75rem 4.125rem;  
+    }
+
+    
+}
+  

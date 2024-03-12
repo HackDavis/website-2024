@@ -1,32 +1,32 @@
 .background-container{
     background: #015270;
     display: flex;
-    width: 100%; /* Use full width of the viewport */
-    max-width: 100%; /* Set a max-width if necessary */
+    width: 100%; 
+    max-width: 100%; 
     margin-left: auto;
     margin-right: auto;
-    min-height: 50vh; /* Height can be auto to adjust to content */
+    min-height: 20vh; 
     position: relative;
     overflow: hidden;
-    //min-height: 380vh;
     justify-content: space-around;
     
 }
 .button {
     display: flex;
-    width: 80%; /* Use a percentage of the parent container for responsiveness */
-    max-width: 21.375rem; /* Max width to maintain design */
+    width: 70%; 
+    max-width: 15rem; 
     height: 3rem;
-    padding: 0.75rem; /* Adjust padding as needed */
+    padding: 0.75rem; 
     justify-content: center;
     gap: 0.625rem;
     flex-shrink: 0;
     border-radius: 6.25rem;
+    border-color:#FFC53D;
     background: #FFC53D;
     position: absolute;
-    left: 50%; /* Center the button */
+    left: 50%; 
     top: 70%;
-    transform: translateX(-50%); /* Adjust horizontal positioning */
+    transform: translateX(-50%); 
     align-items: center;
 
     &:hover{
@@ -40,44 +40,78 @@
     font-size: 1.125rem; /* This could be in 'em' units for scalability */
     font-weight: 700;
     letter-spacing: 0.0225rem;
-    background: transparent; /* Assuming you don't want the text background */
+    background: transparent; 
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   
-@media (max-width: 768px) {
+  .countUpAnimation {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  
+
+@media screen and (max-width: 1366px) {
     .button {
-      width: 95%; /* Increase width for smaller screens */
-      padding: 0.5rem; /* Adjust padding for smaller screens */
-      top: auto; /* Adjust position for smaller screens */
-      bottom: 10%; /* Place it at the bottom of the section/view */
-      transform: translateX(-50%) translateY(0); /* Adjust for vertical positioning */
+        width: 85%; 
+        padding: 0.6rem; 
+        top: 70%; 
     }
-  
+
     .button-words {
-      font-size: 1rem; /* Adjust font size for smaller screens */
+        font-size: 1rem; 
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .button {
+        width: 90%; 
+        padding: 0.5rem; 
+        top: 65%; 
+    }
+
+    .button-words {
+        font-size: 0.9rem; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .button {
+        width: 95%; 
+        padding: 0.4rem; 
+        top: 60%; 
+    }
+
+    .button-words {
+        font-size: 0.8rem; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .button {
+        width: 100%; 
+        padding: 0.3rem; 
+        top: 55%; 
+    }
+
+    .button-words {
+        font-size: 0.7rem; 
+    }
+}
+  
 .number-word-pair {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 1rem; /* Consistent space at the bottom */
-    /* Removed fixed margin-right to avoid overflow on smaller screens */
-    gap: 1rem; /* Use gap to space out flex items instead of margin-right */
-}
-  
-@media (max-width: 768px) {
-    .number-word-pair {
-      flex-direction: column; /* Stack the items vertically on smaller screens */
-      align-items: flex-start; /* Align items to the start if needed */
-    }
-}
-  
-@media (max-width: 480px) { /* Adjust for mobile phones */
-    .number-word-pair {
-      flex-direction: column; /* Continue stacking items vertically */
-      gap: 0.5rem;
-      margin-bottom: 0.5rem; /* Adjust spacing to better fit smaller screens */
-    }
+    margin-bottom: 1rem; 
+    gap: 1rem; 
 }
   
 .stats {
@@ -90,23 +124,23 @@
 
 .background-container {
     display: flex;
-    flex-direction: column; /* Adjust if necessary for your layout */
-    align-items: center; /* Center the content */
+    flex-direction: column; 
+    align-items: center; 
     justify-content: space-around;
 }
 
 .numbers-words-container {
     display: flex;
-    flex-direction: row; /* This will line up the number-word pairs horizontally */
-    justify-content: center; /* Center the pairs in the container */
-    gap: 125px; /* Adjust the gap as needed */
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 125px; 
     padding-bottom: 100px;
 }
 
 .number-word-pair {
     display: flex;
-    flex-direction: column; /* Stack the number on top of the word */
-    align-items: center; /* Center-align the content */
+    flex-direction: column; 
+    align-items: center; 
 }
 
 .word{
@@ -120,7 +154,7 @@
 } 
 
 .number {
-    text-align: center; /* Ensure text is centered */
+    text-align: center; 
     color: #F4F4F4;
     font-family: "Metropolis";
     font-size: 4rem;
@@ -128,7 +162,92 @@
     line-height: 150%;
     letter-spacing: 0.08rem;
     text-transform: lowercase;
-    margin-bottom: 10px; /* Space between the number and the word */
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 1366px) {
+    .numbers-words-container {
+        gap: 80px; 
+        padding-bottom: 80px;
+    }
+
+    .word {
+        font-size: 1.5rem; 
+    }
+
+    .number {
+        font-size: 3.5rem;
+    }
 }
 
-/* You can adjust your media queries as needed based on this structure */
+@media screen and (max-width: 1024px) {
+    .numbers-words-container {
+        gap: 60px;
+        padding-bottom: 60px; 
+    }
+
+    .word {
+        font-size: 1.25rem; 
+    }
+
+    .number {
+        font-size: 3rem; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .numbers-words-container {
+        gap: 50px; 
+        padding-bottom: 100px;
+    }
+
+    .word {
+        font-size: 1rem; 
+    }
+
+    .number {
+        font-size: 2.5rem; 
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .numbers-words-container {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 1px; 
+        position: relative;
+        overflow: visible;
+        top: 0; 
+    }
+    .number-word-pair {
+        text-align: center; 
+        white-space: normal;
+        flex-direction: row;
+    }
+
+    .word {
+        font-size: 1.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; 
+        letter-spacing: 0.0375rem;
+        text-transform: lowercase;
+    }
+
+    .number {
+        display: flex; 
+        justify-content: center; 
+        width: 100%;
+        font-size: 3rem; 
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: 0.06rem;
+        text-transform: lowercase;
+    }
+    .button {
+        display: flex; 
+        width: 100%; 
+        top: 87%;
+    }
+}
