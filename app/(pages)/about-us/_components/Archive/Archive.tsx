@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const OPTIONS: EmblaOptionsType = {
   dragFree: false,
-  skipSnaps: false,
+  skipSnaps: true,
   watchDrag: true,
 };
 
