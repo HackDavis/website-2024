@@ -2,11 +2,11 @@
 .marquee {
   --gap: 20px;
   --scroll-start: 0;
-  --scroll-end: calc(-100% - var(--gap));
+  --scroll-end: calc(-100%);
   display: flex;
   overflow: hidden;
   user-select: none;
-  padding: 30px 0px 0px 0px;
+  padding: 20px 0px 10px 0px;
   width: 100%;
   margin: auto;
   mask-image: linear-gradient(

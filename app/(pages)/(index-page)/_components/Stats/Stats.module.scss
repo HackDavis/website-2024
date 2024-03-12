@@ -1,253 +1,126 @@
-.background-container{
-    background: #015270;
-    display: flex;
-    width: 100%; 
-    max-width: 100%; 
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 20vh; 
-    position: relative;
-    overflow: hidden;
-    justify-content: space-around;
-    
-}
-.button {
-    display: flex;
-    width: 70%; 
-    max-width: 15rem; 
-    height: 3rem;
-    padding: 0.75rem; 
-    justify-content: center;
-    gap: 0.625rem;
-    flex-shrink: 0;
-    border-radius: 6.25rem;
-    border-color:#FFC53D;
-    background: #FFC53D;
-    position: absolute;
-    left: 50%; 
-    top: 70%;
-    transform: translateX(-50%); 
-    align-items: center;
+@use 'app/(pages)/_globals/mixins';
+$bg-color: #015270;
+$tablet-breakpoint: 1024px;
+$mobile-breakpoint: 505px;
 
-    &:hover{
-        cursor: pointer;
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $bg-color;
+  padding-left: 10%;
+  padding-right: 10%;
+  overflow: hidden; 
+
+}
+
+.stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10%;
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+  }
+
+  &_inside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: $mobile-breakpoint) {
+      flex-direction: row;
+      width: 100%;
+      gap: 18px; 
+    }
+
+    h1{
+      color: #FFF;
+      font-family: "Metropolis", sans-serif;
+      font-size: 64px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 120px */
+      letter-spacing: 1.6px;
+      text-transform: lowercase;
+
+      @media (max-width: $tablet-breakpoint) {
+        font-size: 40px;
       }
-}
-  
-.button-words {
-    color: #123041;
-    font-family: "Metropolis";
-    font-size: 1.125rem; /* This could be in 'em' units for scalability */
-    font-weight: 700;
-    letter-spacing: 0.0225rem;
-    background: transparent; 
-}
-
-@keyframes fadeIn {
-    from {
-      opacity: 0;
+      @media (max-width: $mobile-breakpoint) {
+        font-size: 48px;
+      }
     }
-    to {
-      opacity: 1;
+    p{
+      color: #FFF;
+      font-family: "Metropolis", sans-serif;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 42px */
+      letter-spacing: 0.56px;
+      text-transform: lowercase;
+      text-align: center;
+
+      @media (max-width: $tablet-breakpoint) {
+        font-size: 14px;
+      }
+      @media (max-width: $mobile-breakpoint) {
+        font-size: 30px;
+      }
     }
   }
-  
-  .countUpAnimation {
-    animation: fadeIn 0.5s ease-out;
+
+}
+.button_container{
+  padding: 10% 10% 0 10%; 
+}
+.button{
+  display: flex;
+  width: 311px;
+  height: 60px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  border: 0px solid #497F5D;
+  background: var(--ducky, #FFC53D);
+  backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transition: background-color 0.2s ease, filter 0.2s ease;
+
+  &:hover{
+    cursor: pointer;
+    filter: brightness(0.9);
   }
-  
-  
 
-@media screen and (max-width: 1366px) {
-    .button {
-        width: 85%; 
-        padding: 0.6rem; 
-        top: 70%; 
-    }
+  @media (max-width: $tablet-breakpoint) {
+    height: 48px;
+  }
 
-    .button-words {
-        font-size: 1rem; 
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .button {
-        width: 90%; 
-        padding: 0.5rem; 
-        top: 65%; 
-    }
-
-    .button-words {
-        font-size: 0.9rem; 
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .button {
-        width: 95%; 
-        padding: 0.4rem; 
-        top: 60%; 
-    }
-
-    .button-words {
-        font-size: 0.8rem; 
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .button {
-        width: 100%; 
-        padding: 0.3rem; 
-        top: 55%; 
-    }
-
-    .button-words {
-        font-size: 0.7rem; 
-    }
-}
-  
-.number-word-pair {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 1rem; 
-    gap: 1rem; 
-}
-  
-.stats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    
-}
-
-.background-container {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: space-around;
-}
-
-.numbers-words-container {
-    display: flex;
-    flex-direction: row; 
-    justify-content: center; 
-    gap: 125px; 
-    padding-bottom: 100px;
-}
-
-.number-word-pair {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-}
-
-.word{
-    color: #F4F4F4;
-    font-family: "Metropolis";
-    font-size: 1.75rem;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: 0.035rem;
-    text-transform: lowercase;
-} 
-
-.number {
-    text-align: center; 
-    color: #F4F4F4;
-    font-family: "Metropolis";
-    font-size: 4rem;
+  span{
+    color: var(--teal-2, #173A52);
+    text-align: center;
+    font-family: "Metropolis", sans-serif;
+    font-size: 20px;
+    font-style: normal;
     font-weight: 700;
-    line-height: 150%;
-    letter-spacing: 0.08rem;
-    text-transform: lowercase;
-    margin-bottom: 10px;
-}
-@media screen and (max-width: 1366px) {
-    .numbers-words-container {
-        gap: 80px; 
-        padding-bottom: 80px;
-    }
+    line-height: normal;
+    letter-spacing: 0.48px;
 
-    .word {
-        font-size: 1.5rem; 
+    @media (max-width: $tablet-breakpoint) {
+      font-size: 14px;
     }
+    @media (max-width: $mobile-breakpoint) {
+      font-size: 18px;
+    }
+  }
 
-    .number {
-        font-size: 3.5rem;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .numbers-words-container {
-        gap: 60px;
-        padding-bottom: 60px; 
-    }
-
-    .word {
-        font-size: 1.25rem; 
-    }
-
-    .number {
-        font-size: 3rem; 
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .numbers-words-container {
-        gap: 50px; 
-        padding-bottom: 100px;
-    }
-
-    .word {
-        font-size: 1rem; 
-    }
-
-    .number {
-        font-size: 2.5rem; 
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .numbers-words-container {
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        gap: 1px; 
-        position: relative;
-        overflow: visible;
-        top: 0; 
-    }
-    .number-word-pair {
-        text-align: center; 
-        white-space: normal;
-        flex-direction: row;
-    }
-
-    .word {
-        font-size: 1.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 150%; 
-        letter-spacing: 0.0375rem;
-        text-transform: lowercase;
-    }
-
-    .number {
-        display: flex; 
-        justify-content: center; 
-        width: 100%;
-        font-size: 3rem; 
-        font-style: normal;
-        font-weight: 700;
-        line-height: 150%;
-        letter-spacing: 0.06rem;
-        text-transform: lowercase;
-    }
-    .button {
-        display: flex; 
-        width: 100%; 
-        top: 87%;
-    }
 }

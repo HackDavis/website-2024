@@ -1,5 +1,5 @@
 'use client';
-import Everyone from './_components/Everyone/Everyone';
+// import Everyone from './_components/Everyone/Everyone';
 import Stats from './_components/Stats/Stats';
 import WhatIsHackdavis from './_components/WhatIsHackdavis/WhatIsHackdavis';
 import Landing from './_components/Landing/Landing';
@@ -7,6 +7,7 @@ import BottomSection from './_components/BottomSection/BottomSection';
 import Sponsors from './_components/Sponsors/Sponsors';
 import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
+import RiverCow from './_components/RiverCow/RiverCow';
 
 export default function Home() {
   return (
@@ -23,7 +24,8 @@ export default function Home() {
           <Stats />
         </div>
         <div id="everyone">
-          <Everyone />
+          {/* <Everyone /> */}
+          <RiverCow />
         </div>
         <div id="faq">
           <BottomSection />
