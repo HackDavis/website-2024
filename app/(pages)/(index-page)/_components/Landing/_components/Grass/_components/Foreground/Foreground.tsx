@@ -54,7 +54,6 @@ export default function Foreground() {
               <Image
                 src={Hero_Rabbit}
                 alt="hero_rabbit"
-                sizes="(min-width: 2580px) 121px, (min-width: 2340px) 133px, (min-width: 1560px) calc(5vw + 17px), (min-width: 1080px) 5.87vw, 60px"
                 className={styles.foreground_characters_behind_rabbit_image}
                 priority={true}
                 placeholder="blur"
@@ -92,6 +91,8 @@ export default function Foreground() {
                   src={Hero_CowCam}
                   alt="hero_cow-cam"
                   priority={true}
+                  width={4000}
+                  height={100}
                   placeholder="blur"
                   blurDataURL="/index/Hero/hero_cow-cam.png"
                   className={
