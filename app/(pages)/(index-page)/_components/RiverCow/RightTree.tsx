@@ -13,18 +13,21 @@ export default function RightTree() {
         alt="Tree hanging over river."
         placeholder="blur"
         className={styles.right_tree}
+        sizes="(min-width: 600px) 40vw, 215px"
       />
       <Image
         src={rightTreeShadow}
         alt="Tree hanging over river."
         placeholder="blur"
         className={styles.right_tree_shadow}
+        sizes="(min-width: 600px) 40vw, 215px"
       />
       <Image
         src={rightTreeReflection}
         alt="Tree hanging over river."
         placeholder="blur"
         className={styles.right_tree_reflection}
+        sizes="(min-width: 600px) 40vw, 215px"
       />
     </div>
   );
