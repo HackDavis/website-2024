@@ -53,6 +53,7 @@
 
     @include mixins.sm-desktop {
         width: max-content;
+        height: fit-content;
         flex-direction: column;
         gap: 48px;
     }
