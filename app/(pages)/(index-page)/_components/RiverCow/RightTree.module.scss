@@ -1,13 +1,10 @@
 @use 'app/(pages)/_globals/mixins';
 
 .container {
-    width: 50%;
-    margin-top: -5%;
+    width: 40%;
+    min-width: 224px;
+    height: min-content;
     margin-bottom: -30%;
-    margin-right: -8%;
-    @include mixins.phone {
-        margin-bottom: -56%;
-    }
     position: relative;
 }
 
@@ -22,22 +19,16 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    right: -2%;
-    bottom: 9.5%;
+    bottom: -10%;
+    right: 0;
     z-index: 2;
-    @include mixins.tablet {
-        bottom: 1%;
-    }
 }
 
 .right_tree_reflection {
     position: absolute;
     height: 100%;
     width: 100%;
-    right: -2%;
-    bottom: 11%;
+    bottom: -20%;
+    right: 0;
     z-index: 1;
-    @include mixins.tablet {
-        bottom: 8%;
-    }
 }

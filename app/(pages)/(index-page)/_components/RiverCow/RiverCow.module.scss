@@ -6,7 +6,10 @@
     background-color: var(--color-water);
     align-items: center;
     overflow: hidden;
-    margin-top: -80px;
+
+    @include mixins.phone {
+        padding-top: 48px;
+    }
 }
 
 .top_leaf_layer {
