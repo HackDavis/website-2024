@@ -1,5 +1,6 @@
 @use 'app/(pages)/_globals/mixins';
 $mobile-breakpoint: 425px;
+$tablet-breakpoint: 768px;
 
 .hello_container{
     background: var(--gradient, linear-gradient(284deg, #FCFCD1 9.72%, #B2E7DD 44.61%, #76D6E6 79.5%));
@@ -19,27 +20,39 @@ $mobile-breakpoint: 425px;
     // border: 1px solid black; 
     display: flex;
     flex-direction: column;
+
+    @media (max-width: $tablet-breakpoint) {
+        margin-top: 10%;
+    }
     
     h1{
         font-family: 'Metropolis', sans-serif;
         color: var(--teal-1, #005271);
-        text-align: center;
+        text-align: left;
         font-size: 72px;
         font-style: normal;
         font-weight: 800;
         line-height: normal;
         letter-spacing: 1.44px;
+
+        @media (max-width: $tablet-breakpoint) {
+            font-size: 48px;
+        }
     }
     p{
         margin-top: 48px;
         color: var(--teal-1, #005271);
-        text-align: center;
+        text-align: left;
         font-family: "Metropolis", sans-serif;
         font-size: 40px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 150%; /* 60px */
         letter-spacing: 0.8px;
+
+        @media (max-width: $tablet-breakpoint) {
+            font-size: 32px;
+        }
     }
 }
 
@@ -53,9 +66,10 @@ $mobile-breakpoint: 425px;
     }
 }
 
+
 @media (max-width: $mobile-breakpoint) {
     .hello_container{
-        padding-top: 40%;
+        padding-top: 30%;
         padding-left: 32px;
         padding-right: 32px; 
         padding-bottom: 0;
@@ -77,6 +91,7 @@ $mobile-breakpoint: 425px;
             line-height: 36px;
             letter-spacing: 0.48px;
             text-align: left;
+            font-weight: 500;
         }
     }
     
