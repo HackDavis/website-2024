@@ -27,9 +27,11 @@ export default function Stats() {
         ))}
       </div>
       <div className={styles.button_container}>
-        <div className={styles.button}>
-          <span>Sponsor 2024</span>
-        </div>
+        <a href="mailto:team@hackdavis.io">
+          <div className={styles.button}>
+            <span>Sponsor 2024</span>
+          </div>
+        </a>
       </div>
     </div>
   );
