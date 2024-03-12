@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './FAQ.module.scss';
 import Link from 'next/link';
 import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
-import { PlusHorizontal } from './Assets/plusHorizontal';
-import { PlusVertical } from './Assets/plusVertical';
+import { DropDownArrow } from './Assets/dropDown';
 
 const whatIsHackathonAnswer = (
   <>
@@ -132,12 +131,9 @@ const FAQ = () => {
           <>
             <div className={styles.questionRow}>
               {header}
-              <div className={styles.plusSign}>
-                <PlusHorizontal />
 
-                <div className={styles.verticalLine}>
-                  <PlusVertical />
-                </div>
+              <div className={styles.dropDownArrow}>
+                <DropDownArrow />
               </div>
             </div>
           </>
