@@ -1,8 +1,13 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import styles from './BottomPolaroids.module.scss';
 import { useState, useEffect } from 'react';
+
+// statically import polaroids
+import img3 from 'public/index/Polaroids/final_footer-img3.jpg';
+import img2 from 'public/index/Polaroids/final_footer-img2.jpg';
+import img1 from 'public/index/Polaroids/final_footer-img.jpg';
 
 export default function BottomPolaroids() {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -21,11 +26,7 @@ export default function BottomPolaroids() {
     return () => window.removeEventListener('resize', updateWindowSize);
   }, []);
 
-  const [polaroidUrls, setPolaroidUrls] = useState([
-    '/index/Polaroids/final_Footer-img3.jpg',
-    '/index/Polaroids/final_Footer-img2.jpg',
-    '/index/Polaroids/final_Footer-img.jpg',
-  ]);
+  const [polaroidUrls, setPolaroidUrls] = useState([img3, img2, img1]);
 
   const [isHover, setIsHover] = useState(false);
 
@@ -42,7 +43,7 @@ export default function BottomPolaroids() {
   ];
 
   useEffect(() => {
-    function rotateArray(arr: string[]) {
+    function rotateArray(arr: StaticImageData[]) {
       setPolaroidUrls([arr[2], arr[0], arr[1]]); // Update the state with the new array
     }
     let intervalId: any;
@@ -75,9 +76,9 @@ export default function BottomPolaroids() {
           <Image
             key={index}
             src={polaroidUrl}
-            alt="serene forest scene in the night"
-            width={4000}
-            height={4000}
+            alt="Polaroid"
+            placeholder="blur"
+            sizes="(min-width: 2420px) 570px, (min-width: 1920px) calc(8.75vw + 360px), (min-width: 980px) 20.98vw, 50vw"
             className={
               isHover || windowSize.width <= 960
                 ? polaroidClasses[index]
