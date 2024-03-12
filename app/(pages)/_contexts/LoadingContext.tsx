@@ -9,8 +9,8 @@ interface LoadingProviderValue {
 
 export type { LoadingProviderValue };
 
-const NUM_NEEDED = 0;
-const SLACK = 10;
+const NUM_NEEDED = 12;
+const SLACK = 0;
 
 export const LoadingContext = createContext({});
 

@@ -2,7 +2,6 @@
 import { useEffect, useState, useRef } from 'react';
 import styles from './WhatIsHackdavis.module.scss';
 import Image from 'next/image';
-import { useLoadCount } from '@hooks/useLoadCount';
 
 // statically import images
 import logLeftRock from 'public/index/whatIsHackdavis/log_left-rock.png';
@@ -18,8 +17,6 @@ import logGingko from 'public/index/whatIsHackdavis/log_gingko.png';
 import logWaterSheen from 'public/index/whatIsHackdavis/log_water-sheen.png';
 
 export default function WhatIsHackdavis() {
-  const { incLoaded } = useLoadCount();
-
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -63,7 +60,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="41vw"
           />
@@ -79,7 +75,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 90
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="(min-width: 440px) 56.56vw, 70.83vw"
           />
@@ -93,7 +88,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 70
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="(min-width: 440px) 30.9vw, 39.17vw"
           />
@@ -109,7 +103,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 40
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="(min-width: 440px) 29.14vw, 36.67vw"
           />
@@ -125,7 +118,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="(min-width: 440px) 86.99vw, 110vw"
           />
@@ -139,7 +131,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 70
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="(min-width: 440px) 49.61vw, 62.5vw"
           />
@@ -153,7 +144,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 40
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="(min-width: 440px) 33.52vw, 42.5vw"
           />
@@ -167,7 +157,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="(min-width: 440px) 9.57vw, 12.5vw"
           />
@@ -183,7 +172,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="(min-width: 440px) 8.28vw, 10.83vw"
           />
@@ -197,7 +185,6 @@ export default function WhatIsHackdavis() {
                 mousePosition.y / 30
               }px)`,
             }}
-            onLoad={incLoaded}
             placeholder="blur"
             sizes="(min-width: 440px) 29.57vw, 37.5vw"
           />
@@ -207,7 +194,6 @@ export default function WhatIsHackdavis() {
           src={logWaterSheen}
           alt="log water sheen"
           className={styles.logWaterSheen}
-          onLoad={incLoaded}
           placeholder="blur"
           sizes="100vw"
         />
