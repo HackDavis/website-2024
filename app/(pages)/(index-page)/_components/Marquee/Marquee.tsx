@@ -36,6 +36,15 @@ const Marquee = ({
           <Fragment key={idx}>{children}</Fragment>
         ))}
       </ul>
+      <ul
+        style={duration ? { animationDuration: `${duration}s` } : undefined}
+        className={`${styles.marqueeGroup} ${reverse ? styles.reverse : ''}`}
+        aria-hidden="true"
+      >
+        {keys.map((idx) => (
+          <Fragment key={idx}>{children}</Fragment>
+        ))}
+      </ul>
     </div>
   );
 };
