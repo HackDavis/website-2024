@@ -38,7 +38,7 @@ export default function Foreground() {
               <Image
                 src={Hero_Duck}
                 alt="hero_duck"
-                sizes="(min-width: 2580px) 261px, (min-width: 2340px) 289px, (min-width: 1520px) calc(11.13vw + 31px), (min-width: 1060px) calc(10.91vw + 23px), 129px"
+                // sizes="(min-width: 2580px) 261px, (min-width: 2340px) 289px, (min-width: 1520px) calc(11.13vw + 31px), (min-width: 1060px) calc(10.91vw + 23px), 129px"
                 className={styles.foreground_characters_behind_duck_image}
                 priority={true}
                 placeholder="blur"
@@ -55,6 +55,7 @@ export default function Foreground() {
                 src={Hero_Rabbit}
                 alt="hero_rabbit"
                 className={styles.foreground_characters_behind_rabbit_image}
+                // sizes="(min-width: 2960px) 123px, (min-width: 1900px) 124px, (min-width: 1200px) 77px, 66px"
                 priority={true}
                 placeholder="blur"
                 style={{
