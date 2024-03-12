@@ -36,6 +36,7 @@ export default function RightTree() {
         placeholder="blur"
         className={styles.right_tree}
         style={{ transform: `translateY(${scrollDistance * 0.2}px)` }}
+        sizes="(min-width: 600px) 40vw, 215px"
       />
       <Image
         src={rightTreeShadow}
@@ -43,6 +44,7 @@ export default function RightTree() {
         placeholder="blur"
         className={styles.right_tree_shadow}
         style={{ transform: `translateY(${scrollDistance * 0.15}px)` }}
+        sizes="(min-width: 600px) 40vw, 215px"
       />
       <Image
         src={rightTreeReflection}
@@ -50,6 +52,7 @@ export default function RightTree() {
         placeholder="blur"
         className={styles.right_tree_reflection}
         style={{ transform: `translateY(${scrollDistance * 0.12}px)` }}
+        sizes="(min-width: 600px) 40vw, 215px"
       />
     </div>
   );

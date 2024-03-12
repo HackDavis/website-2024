@@ -27,6 +27,7 @@ export default function RiverCow() {
           alt="Cow sitting on rock reminiscing on past adventures by looking at polaroids."
           placeholder="blur"
           className={styles.river_cow}
+          sizes="(min-width: 780px) 600px, 300px"
         />
       </div>
       <div className={styles.bottom_text}>
@@ -50,7 +51,7 @@ export default function RiverCow() {
           src={baseTree}
           alt="Forest of trees sitting at base of river, forming a wall."
           placeholder="blur"
-          sizes="(min-width: 1080px) 100vw, 996px"
+          sizes="100vw"
           className={styles.base_tree}
         />
       </div>
