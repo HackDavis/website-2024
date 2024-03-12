@@ -5,7 +5,7 @@ const statsData = [
   { stat: 140, text: 'projects', duration: 2000 },
   { stat: 15, text: 'prizes', prefix: '$', suffix: '+', duration: 2500 },
   { stat: 750, text: 'hackers', suffix: '+', duration: 2200 },
-  { stat: 36, text: 'hours', duration: 1800 },
+  { stat: 24, text: 'hours', duration: 1800 },
 ];
 
 export default function Stats() {

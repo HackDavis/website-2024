@@ -36,15 +36,14 @@ export default function Form() {
           </div>
         </div>
         <div className={styles.buttons}>
-          <Link href="https://form.typeform.com/to/RvoDiujh?utm_source=WEBSITE">
-            <div className={styles.buttons_register}>
-              <p>Register Now</p>
-            </div>
+          <Link
+            href="https://form.typeform.com/to/RvoDiujh?utm_source=WEBSITE"
+            className={styles.buttons_register}
+          >
+            <p>Register Now</p>
           </Link>
-          <a href="mailto:team@hackdavis.io">
-            <div className={styles.buttons_sponsor}>
-              <p>Sponsor</p>
-            </div>
+          <a href="mailto:team@hackdavis.io" className={styles.buttons_sponsor}>
+            <p>Sponsor</p>
           </a>
           {/* <div className={styles.buttons_userType}>
             <span>VOLUNTEER</span>
