@@ -33,7 +33,7 @@ export default function RiverCow() {
         </p>
         <p>
           Creators from all backgrounds are
-          <br /> welcome at HackDavis— no coding
+          <br /> welcome at HackDavis—no coding
           <br />
           or previous experience required.
         </p>
