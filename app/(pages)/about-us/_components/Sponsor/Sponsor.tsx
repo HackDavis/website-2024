@@ -1,23 +1,23 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import styles from './Sponsor.module.scss';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+import Cow_and_duck from '/public/about-us-icon/Cow_and_duck.svg';
+import Polaroid1 from '/public/about-us-icon/Polaroid1.png';
+import Polaroid2 from '/public/about-us-icon/Polaroid2.png';
+import Polaroid3 from '/public/about-us-icon/Polaroid3.png';
+import Polaroid4 from '/public/about-us-icon/Polaroid4.png';
+import Polaroid5 from '/public/about-us-icon/Polaroid5.png';
 
-const images = [
-  '/about-us-icon/Polaroid1.png',
-  '/about-us-icon/Polaroid2.png',
-  '/about-us-icon/Polaroid3.png',
-  '/about-us-icon/Polaroid4.png',
-  '/about-us-icon/Polaroid5.png',
-];
+const images = [Polaroid1, Polaroid2, Polaroid3, Polaroid4, Polaroid5];
 
 interface PolaroidStackProps {
-  images: string[];
+  images: StaticImageData[];
   index: number;
 }
 
 const PolaroidStack = ({ images }: PolaroidStackProps) => {
-  const [stack, setStack] = useState<string[]>(images);
+  const [stack, setStack] = useState<StaticImageData[]>(images);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -78,6 +78,7 @@ const PolaroidStack = ({ images }: PolaroidStackProps) => {
 };
 
 const Sponsor = () => {
+  console.log('photo carousel?');
   return (
     <div className={styles['sponsor-container']}>
       <PolaroidStack images={images} index={0} />
@@ -104,7 +105,7 @@ const Sponsor = () => {
       </button>
       <div className={styles.cow_duck}>
         <Image
-          src="/about-us-icon/cow and duck.svg"
+          src={Cow_and_duck}
           alt="Cow and duck"
           style={{
             maxWidth: '100%',
