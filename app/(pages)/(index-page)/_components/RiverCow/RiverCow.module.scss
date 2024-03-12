@@ -1,0 +1,117 @@
+@use 'app/(pages)/_globals/mixins';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-water);
+    align-items: center;
+    overflow: hidden;
+}
+
+.top_leaf_layer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include mixins.phone {
+        justify-content: flex-end;
+    }
+}
+
+.top_text, .bottom_text {
+    display: flex;
+    flex-direction: column;
+    font-family: "Proxima Nova";
+    color: var(--text-white);
+    gap: 48px;
+    padding-left: 10%;
+    width: min-content;
+    justify-content: center;
+
+    @include mixins.tablet {
+        gap: 32px;
+    }
+
+    >h3 {
+        margin-top: 200px;
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: 1.92px;
+        width: max-content;
+
+        @include mixins.tablet {
+            font-size: 2.5rem;
+            margin-top: 100px;
+        }
+    }
+    >p {
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 150%; /* 36px */
+        letter-spacing: 0.48px;
+        @include mixins.tablet {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+.top_text {
+    @include mixins.phone {
+        display: none;
+    }
+}
+
+.bottom_text {
+    align-self: flex-end;
+    padding-right: 10%;
+
+    @include mixins.phone {
+        align-self: flex-start;
+    }
+    >h3, >p {
+        display: none;
+        @include mixins.phone {
+            display: block;
+            margin-top: 0;
+        }
+    }
+    :last-child {
+        width: max-content;
+        display: block;
+    }
+}
+
+.river_cow_container {
+    width: 600px;
+    margin-top: 5%;
+    margin-right: -5%;
+
+    @include mixins.phone {
+        width: 300px;
+        align-self: flex-start;
+    }
+}
+
+.river_cow {
+    width: 100%;
+    height: auto;
+}
+
+.base_tree_container {
+    width: 100%;
+    margin-top: -25%;
+    margin-bottom: -4px;
+    display: flex;
+    flex-direction: column-reverse;
+    @include mixins.phone {
+        margin-top: -15%;
+    }
+}
+
+.base_tree {
+    width: 100%;
+    height: auto;
+    @include mixins.phone {
+        transform: scaleX(-1);    
+    }
+}
