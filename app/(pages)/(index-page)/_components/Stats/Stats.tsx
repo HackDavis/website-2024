@@ -1,116 +1,36 @@
-import Link from 'next/link';
 import styles from './Stats.module.scss';
-import React, { useEffect, useState, useRef } from 'react';
-interface CountUpProps {
-  end: number;
-  duration: number;
-  prefix?: string;
-  suffix?: string;
-}
+import CountUp from './_components/CountUp';
 
-const CountUp: React.FC<CountUpProps> = ({
-  end,
-  duration,
-  prefix = '',
-  suffix = '',
-}) => {
-  const [count, setCount] = useState(0);
-  const [start, setStart] = useState(false);
-  const countUpRef = useRef<HTMLDivElement>(null);
+const statsData = [
+  { stat: 140, text: 'projects', duration: 2000 },
+  { stat: 15, text: 'prizes', prefix: '$', suffix: '+', duration: 2500 },
+  { stat: 750, text: 'hackers', suffix: '+', duration: 2200 },
+  { stat: 36, text: 'hours', duration: 1800 },
+];
 
-  const isCentered = (ref: React.RefObject<HTMLDivElement>) => {
-    const rect = ref.current?.getBoundingClientRect();
-    if (rect) {
-      const windowHeight = window.innerHeight;
-      const rectMidpoint = (rect.top + rect.bottom) / 2;
-      // Consider "centered" if the midpoint is between 25% and 75% of the viewport height
-      return (
-        rectMidpoint > windowHeight * 0.25 && rectMidpoint < windowHeight * 0.75
-      );
-    }
-    return false;
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (countUpRef.current && isCentered(countUpRef) && !start) {
-        setStart(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [start]);
-
-  useEffect(() => {
-    if (start) {
-      let startTimestamp: number | null = null;
-      const step = (timestamp: number) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = timestamp - startTimestamp;
-        const currentCount = Math.min(end, (progress / duration) * end);
-        setCount(currentCount);
-        if (progress < duration) {
-          window.requestAnimationFrame(step);
-        }
-      };
-
-      window.requestAnimationFrame(step);
-    }
-  }, [start, end, duration]);
-
+export default function Stats() {
   return (
-    <div ref={countUpRef}>
-      {start && (
-        <>
-          {prefix}
-          {Math.floor(count)}
-          {suffix}
-        </>
-      )}
-    </div>
-  );
-};
-
-const Stats = () => {
-  return (
-    <div className={styles.stats}>
-      <div className={styles['background-container']}>
-        <div className={styles['numbers-words-container']}>
-          <div className={styles['number-word-pair']}>
-            <span className={styles.number}>
-              <CountUp end={140} duration={1500} suffix="+" />
-            </span>
-            <span className={styles.word}>projects</span>
+    <div className={styles.container}>
+      <div className={styles.stats}>
+        {statsData.map((item) => (
+          <div key={item.stat} className={styles.stats_inside}>
+            <h1>
+              <CountUp
+                end={item.stat}
+                duration={item.duration}
+                prefix={item.prefix}
+                suffix={item.suffix}
+              />
+            </h1>
+            <p>{item.text}</p>
           </div>
-          <div className={styles['number-word-pair']}>
-            <span className={styles.number}>
-              <CountUp end={15} duration={1500} prefix="$" suffix="k+" />
-            </span>
-            <span className={styles.word}>prizes</span>
-          </div>
-          <div className={styles['number-word-pair']}>
-            <span className={styles.number}>
-              <CountUp end={750} duration={1500} suffix="+" />
-            </span>
-            <span className={styles.word}>hackers</span>
-          </div>
-          <div className={styles['number-word-pair']}>
-            <span className={styles.number}>
-              <CountUp end={36} duration={1500} />
-            </span>
-            <span className={styles.word}>hours</span>
-          </div>
+        ))}
+      </div>
+      <div className={styles.button_container}>
+        <div className={styles.button}>
+          <span>Sponsor 2024</span>
         </div>
-        <Link target="_blank" href={'mailto:team@hackdavis.io'}>
-          <div className={styles.button}>
-            <div className={styles['button-words']}>Sponsor 2024</div>
-          </div>
-        </Link>
       </div>
     </div>
   );
-};
-
-export default Stats;
-export { CountUp };
+}
