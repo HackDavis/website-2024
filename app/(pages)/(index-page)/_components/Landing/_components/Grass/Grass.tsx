@@ -6,6 +6,8 @@ import styles from './Grass.module.scss';
 import Polaroids from './_components/Polaroids/Polaroids';
 import Foreground from './_components/Foreground/Foreground';
 import { useLoadCount } from '@hooks/useLoadCount';
+import Far_Grass from '/public/index/Hero/hero_far-grass.png';
+import Mid_Grass from '/public/index/Hero/hero_mid-grass.png';
 
 export default function Grass() {
   const { incLoaded } = useLoadCount();
@@ -30,15 +32,14 @@ export default function Grass() {
       <div className={styles.grass}>
         <div className={styles.grass_far}>
           <Image
-            src="/index/Hero/hero_far-grass.png"
+            // src="/index/Hero/hero_far-grass.png"
+            src={Far_Grass}
             alt="far_grass"
-            width={4000}
-            height={100}
+            sizes="(min-width: 1080px) 100.99vw, 996px"
             className={styles.grasses_image}
             z-index={2}
             priority={true}
             placeholder="blur"
-            blurDataURL="/index/Hero/hero_far-grass.png"
             style={{
               transform: `translateX(${mousePosition.x / 150}px) translateY(${
                 mousePosition.y / 150
@@ -49,15 +50,12 @@ export default function Grass() {
         </div>
         <div className={styles.grass_medium}>
           <Image
-            src="/index/Hero/hero_mid-grass.png"
+            src={Mid_Grass}
             alt="mid_grass"
-            width={4000}
-            height={100}
             className={styles.grasses_image}
             z-index={3}
             priority={true}
             placeholder="blur"
-            blurDataURL="/index/Hero/hero_mid-grass.png"
             style={{
               transform: `translateX(${mousePosition.x / 120}px) translateY(${
                 mousePosition.y / 120

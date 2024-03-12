@@ -4,6 +4,12 @@ import { useEffect, useState } from 'react';
 import styles from './Foreground.module.scss';
 import Image from 'next/image';
 import { useLoadCount } from '@hooks/useLoadCount';
+import Hero_Duck from '/public/index/Hero/hero_duck.png';
+import Hero_Rabbit from '/public/index/Hero/hero_rabbit.png';
+import Hero_CowHead from '/public/index/Hero/hero_cow-head.png';
+import Hero_CowCam from '/public/index/Hero/hero_cow-cam.png';
+import Hero_CowTorso from '/public/index/Hero/hero_cow-torso.png';
+import Hero_FrontGrass from '/public/index/Hero/hero_front-grass.png';
 
 export default function Foreground() {
   const { incLoaded } = useLoadCount();
@@ -30,14 +36,12 @@ export default function Foreground() {
           <div className={styles.foreground_characters_behind}>
             <div className={styles.foreground_characters_behind_duck}>
               <Image
-                src="/index/Hero/hero_duck.png"
+                src={Hero_Duck}
                 alt="hero_duck"
-                width={4000}
-                height={100}
+                sizes="(min-width: 2580px) 261px, (min-width: 2340px) 289px, (min-width: 1520px) calc(11.13vw + 31px), (min-width: 1060px) calc(10.91vw + 23px), 129px"
                 className={styles.foreground_characters_behind_duck_image}
                 priority={true}
                 placeholder="blur"
-                blurDataURL="/index/Hero/hero_duck.png"
                 style={{
                   transform: `translateX(${
                     mousePosition.x / 80
@@ -48,14 +52,12 @@ export default function Foreground() {
             </div>
             <div className={styles.foreground_characters_behind_rabbit}>
               <Image
-                src="/index/Hero/hero_rabbit.png"
+                src={Hero_Rabbit}
                 alt="hero_rabbit"
-                width={4000}
-                height={100}
+                sizes="(min-width: 2580px) 121px, (min-width: 2340px) 133px, (min-width: 1560px) calc(5vw + 17px), (min-width: 1080px) 5.87vw, 60px"
                 className={styles.foreground_characters_behind_rabbit_image}
                 priority={true}
                 placeholder="blur"
-                blurDataURL="/index/Hero/hero_rabbit.png"
                 style={{
                   transform: `translateX(${
                     mousePosition.x / 80
@@ -68,14 +70,12 @@ export default function Foreground() {
           <div className={styles.foreground_characters_front}>
             <div className={styles.foreground_characters_front_cowHead}>
               <Image
-                src="/index/Hero/hero_cow-head.png"
+                src={Hero_CowHead}
+                sizes="(min-width: 1060px) 15vw, 148px"
                 alt="hero_cow-head"
-                width={4000}
-                height={100}
                 className={styles.foreground_characters_front_cowHead_image}
                 priority={true}
                 placeholder="blur"
-                blurDataURL="/index/Hero/hero_cow-head.png"
                 style={{
                   transform: `translateX(${
                     mousePosition.x / 50
@@ -89,10 +89,8 @@ export default function Foreground() {
                 className={styles.foreground_characters_front_cowBody_cowCam}
               >
                 <Image
-                  src="/index/Hero/hero_cow-cam.png"
+                  src={Hero_CowCam}
                   alt="hero_cow-cam"
-                  width={4000}
-                  height={100}
                   priority={true}
                   placeholder="blur"
                   blurDataURL="/index/Hero/hero_cow-cam.png"
@@ -111,13 +109,10 @@ export default function Foreground() {
                 className={styles.foreground_characters_front_cowBody_cowTorso}
               >
                 <Image
-                  src="/index/Hero/hero_cow-torso.png"
+                  src={Hero_CowTorso}
                   alt="hero_cow-torso"
-                  width={4000}
-                  height={100}
                   priority={true}
                   placeholder="blur"
-                  blurDataURL="/index/Hero/hero_cow-torso.png"
                   className={
                     styles.foreground_characters_front_cowBody_cowTorso_image
                   }
@@ -135,14 +130,12 @@ export default function Foreground() {
       </div>
       <div className={styles.foreground_grass}>
         <Image
-          src="/index/Hero/hero_front-grass.png"
-          alt="hero_cow-front"
-          width={4000}
-          height={100}
+          src={Hero_FrontGrass}
+          alt="hero_front-grass"
+          sizes="(min-width: 1080px) 110vw, 1085px"
           className={styles.foreground_grass_image}
           priority={true}
           placeholder="blur"
-          blurDataURL="/index/Hero/hero_front-grass.png"
           style={{
             transform: `translateX(${mousePosition.x / 50}px) translateY(${
               mousePosition.y / 50
