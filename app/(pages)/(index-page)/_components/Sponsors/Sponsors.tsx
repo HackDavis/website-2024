@@ -7,7 +7,7 @@ import styles from './Sponsor.module.scss';
 import csDepartment from 'public/index/Sponsors/cs.png';
 import asucd from 'public/index/Sponsors/asucd.png';
 import ucDavis from 'public/index/Sponsors/ucDavis.png';
-import whyNotBoba from 'public/index/Sponsors/whyNotBoba.png';
+import whyNotBoba from 'public/index/Sponsors/whyNotBoba.webp';
 
 // tier 2 sponsors
 import pepsi from 'public/index/Sponsors/pepsi.png';
