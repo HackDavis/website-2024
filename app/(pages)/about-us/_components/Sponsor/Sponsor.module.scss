@@ -50,7 +50,8 @@
 
 .numbers-words-container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  height: fit-content;
 }
 
 .number-word-pair {
@@ -58,6 +59,7 @@
   flex-direction: row; 
   align-items: center;
   width: fit-content;
+  height: fit-content;
 }
 
 .number {
@@ -78,6 +80,8 @@
 }
 
 .word {
+  display: flex;
+  align-items: center;
   color: #F4F4F4;
   font-family: "Metropolis";
   font-size: 1.75rem;
@@ -86,6 +90,7 @@
   line-height: 150%;
   letter-spacing: 0.56px;
   text-transform: lowercase;
+  height: 5rem;
 
   @include mixins.phone {
     font-size: 1.5rem;

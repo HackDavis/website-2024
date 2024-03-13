@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Sponsor.module.scss';
 import Image, { StaticImageData } from 'next/image';
 import Cow_and_duck from '/public/about-us-icon/cow_and_duck.png';
+import CountUp from '@components/CountUp/CountUp';
 import Polaroid1 from '/public/about-us-icon/Polaroid1.png';
 import Polaroid2 from '/public/about-us-icon/Polaroid2.png';
 import Polaroid3 from '/public/about-us-icon/Polaroid3.png';
@@ -10,25 +11,12 @@ import Polaroid4 from '/public/about-us-icon/Polaroid4.png';
 import Polaroid5 from '/public/about-us-icon/Polaroid5.png';
 
 const images = [Polaroid1, Polaroid2, Polaroid3, Polaroid4, Polaroid5];
-// const images = [Polaroid1, Polaroid2];
 
 const hdStats = [
-  {
-    number: '140+',
-    word: 'projects',
-  },
-  {
-    number: '750+',
-    word: 'hackers',
-  },
-  {
-    number: '$15k+',
-    word: 'prizes',
-  },
-  {
-    number: '36',
-    word: 'hours',
-  },
+  { stat: 140, text: 'projects', duration: 2000 },
+  { stat: 750, text: 'hackers', suffix: '+', duration: 2000 },
+  { stat: 10, text: 'prizes', prefix: '$', suffix: 'k+', duration: 2000 },
+  { stat: 24, text: 'hours', duration: 2000 },
 ];
 
 interface PolaroidStackProps {
@@ -91,9 +79,16 @@ export default function Sponsor() {
           <div className={styles['text-container']}>
             <div className={styles['numbers-words-container']}>
               {hdStats.map((item) => (
-                <div key={item.word} className={styles['number-word-pair']}>
-                  <span className={styles.number}>{item.number}</span>
-                  <span className={styles.word}>{item.word}</span>
+                <div key={item.text} className={styles['number-word-pair']}>
+                  <span className={styles.number}>
+                    <CountUp
+                      end={item.stat}
+                      duration={item.duration}
+                      prefix={item.prefix}
+                      suffix={item.suffix}
+                    />
+                  </span>
+                  <span className={styles.word}>{item.text}</span>
                 </div>
               ))}
             </div>
