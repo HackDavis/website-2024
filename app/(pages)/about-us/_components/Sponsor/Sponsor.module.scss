@@ -1,3 +1,5 @@
+@use 'app/(pages)/_globals/mixins';
+
 .sponsor-container {
   display: flex;
   justify-content: center;
@@ -7,22 +9,43 @@
   height: fit-content;
   position: relative;
   overflow: hidden;
+  gap: 88px;
 }
 
 .content {
   display: flex;
+  justify-content: center;
   flex-direction: row;
-  margin: 88px 88px 0 88px;
-  height: fit-content;
+  margin: 88px 176px 0 176px;
+  height: 100%;
   width: fit-content;
+
+  @include mixins.sm-desktop {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 .info-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: fit-content;
+  width: 50%;
+  height: 100%;
+  gap: 176px;
+
+  @include mixins.sm-desktop {
+    align-items: center;
+    width: fit-content;
+    gap: 64px;
+  }
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
   gap: 32px;
+  max-height: fit-content;
 }
 
 .numbers-words-container {
@@ -47,6 +70,11 @@
   letter-spacing: 1.28px;
   text-transform: lowercase;
   margin-right: 24px;
+
+  @include mixins.phone {
+    font-size: 2.5rem;
+    letter-spacing: 0.8px;
+  }
 }
 
 .word {
@@ -58,6 +86,11 @@
   line-height: 150%;
   letter-spacing: 0.56px;
   text-transform: lowercase;
+
+  @include mixins.phone {
+    font-size: 1.5rem;
+    letter-spacing: 0.48px;
+  }
 }
 
 .button {
@@ -86,125 +119,28 @@
 
 .cow_duck {
   display: flex;
-  justify-content: flex-end;
+  justify-self: flex-end;
+  width: 100%;
 }
 
 .stack {
-  position: relative;
-  height: 250px; // Set the height to the height of the Polaroids or a bit more
+  display: grid; // stack the polaroids on top of each other
+  height: fit-content;
+  width: 100%;
 }
   
 .polaroid {
-  width: 1000px;
-  height: 800px;
-  transition: transform 0.9s ease, z-index 0.9s ease;
-  object-fit: cover;
-  // This will make the nth image be offset a bit more than the (n-1)th
-  &:nth-child(1) { 
-    top: 0; 
-    left: 0;
-    transform: rotate(-3deg);
-    z-index: 5; // Ensure this image is on top of the stack
-  }
-  &:nth-child(2) { 
-    top: 5px; 
-    left: 5px;
-    transform: rotate(10deg);
-    z-index: 4; 
-  }
-  &:nth-child(3) { 
-    top: 10px; 
-    left: 10px;
-    transform: rotate(15deg);
-    z-index: 3; 
-  }
-  &:nth-child(4) { 
-    top: 15px; 
-    left: 15px;
-    transform: rotate(13deg);
-    z-index: 2; 
-  }
-  &:nth-child(5) { 
-    top: 20px; 
-    left: 20px;
-    transform: rotate(-10deg);
-    z-index: 1; // Ensure this image is at the bottom of the stack
-  }
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  height: auto;
+  transition: 2s ease-in-out;
 
-  &:hover {
-    transform: rotate(0deg) scale(1.0);
-    z-index: 999; // Bring to the front on hover
+  @include mixins.sm-desktop {
+    width: 100vw;
   }
 }
 
-.image-transition {
-  transition: transform 0.5s ease-in-out;
+.swipe {
+  transform: translateX(50%) rotate(20deg);
 }
-
-.image-to-back {
-  /* Example transformation, adjust as needed */
-  transform: scale(0.8) translateY(10px) opacity(0.7);
-}
-
-@media only screen and (max-width: 768px) {
-  .sponsor-container {
-    min-height: 160vh; 
-  }
-
-  .numbers-words-container {
-    margin-top: 600px;
-    padding: 4.75rem -1rem; 
-    left: 50%; 
-    top: 87%; 
-    transform: translateX(10%); 
-    width: 23rem;
-  }
-
-  .number-word-pair {
-    margin-bottom: 0.75rem; 
-    margin-right: 2rem; 
-  }
-
-  .number {
-    font-size: 4.5rem; 
-    margin-right: 0.25rem; 
-  }
-
-  .word {
-    font-size: 3.5rem; 
-  }
-
-  .button {
-    width: 23rem;
-    height: 3rem;
-    padding: 0.75rem 4.125rem;  
-    left: 50%; 
-    top: 1350px; 
-    transform: translateX(-50%); 
-  
-  }
-
-  .button-words {
-    font-size: 1 rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.0225rem;
-  }
-
-  .cow_duck {
-    position: absolute;
-    left: 460px; /* Move the left edge of the element to the center of its parent */
-    right: 50%;
-    transform: translateX(-50%); /* Center the element with respect to its own width */
-    bottom: -16px; /* Keeps the element 16px above the bottom edge of its parent */
-    height: 200px; /* Height is retained as per your specification */
-    padding: 0.75rem 4.125rem; /* Padding is retained */  
-  }
-
-  .stack{
-    left: -730px;
-    padding: 0.75rem 4.125rem;  
-  }
-}
-  

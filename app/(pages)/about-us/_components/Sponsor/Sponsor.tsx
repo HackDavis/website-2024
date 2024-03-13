@@ -10,6 +10,7 @@ import Polaroid4 from '/public/about-us-icon/Polaroid4.png';
 import Polaroid5 from '/public/about-us-icon/Polaroid5.png';
 
 const images = [Polaroid1, Polaroid2, Polaroid3, Polaroid4, Polaroid5];
+// const images = [Polaroid1, Polaroid2];
 
 const hdStats = [
   {
@@ -36,59 +37,45 @@ interface PolaroidStackProps {
 }
 
 const PolaroidStack = ({ images }: PolaroidStackProps) => {
-  const [stack, setStack] = useState<StaticImageData[]>(images);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [zIndices, setZIndices] = useState<number[]>([5, 4, 3, 2, 1]);
+  const [swipe, setSwipe] = useState<boolean>(false);
+
+  const swipeCard = (swipe: boolean, index: number) => {
+    if (swipe && index == 5) {
+      return `${styles.swipe} ${styles.polaroid}`;
+    } else {
+      return `${styles.polaroid}`;
+    }
+  };
 
   useEffect(() => {
-    // This interval will highlight and then move the top image to the back every 5 seconds
     const interval = setInterval(() => {
-      if (stack.length > 1) {
-        // Ensure there are at least 2 images to cycle through
-        setActiveIndex(0); // Highlight the top image
+      const newZIndices = [...zIndices];
+      const removed = newZIndices.splice(4, 1);
+      newZIndices.unshift(removed[0]);
 
-        // Wait for a short delay before moving the image to simulate highlight effect
-        setTimeout(() => {
-          const newStack = [...stack];
-          const removed = newStack.splice(0, 1); // Remove the first element
-          newStack.push(removed[0]); // Add it to the end
-          setStack(newStack); // Update the stack
-          setActiveIndex(null); // Reset active index
-        }, 2000); // Adjust this delay based on your highlight duration
-      }
-    }, 1500); // Increase interval to account for highlight delay
+      setTimeout(() => {
+        setSwipe(true);
+      }, 1000);
+      setTimeout(() => {
+        setZIndices(newZIndices);
+        setSwipe(false);
+      }, 3000);
+    }, 3000);
 
-    // Cleanup the interval on component unmount
     return () => clearInterval(interval);
-  }, [stack]); // Depend on 'stack' so the interval uses the latest state
-
-  useEffect(() => {
-    // Reset stack on scroll away
-    const handleScroll = () => {
-      setStack(images);
-      setActiveIndex(null);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [images]); // Depend on 'images' to reset stack to initial images
-
-  // handleImageClick remains the same, used for onClick events if needed
+  }, [zIndices, swipe]);
 
   return (
     <div className={styles.stack}>
-      {stack.map((image, index) => (
+      {images.map((image, index) => (
         <Image
           key={index}
           src={image}
           alt={`Polaroid ${index}`}
-          className={styles.polaroid}
+          className={swipeCard(swipe, zIndices[index])}
           style={{
-            zIndex: activeIndex === index ? 999 : stack.length - index,
-            transform:
-              activeIndex === index ? 'translateY(-20px) scale(1.1)' : '',
-            transition: 'transform 0.9s ease, z-index 0s',
+            zIndex: zIndices[index],
           }}
         />
       ))}
@@ -101,17 +88,19 @@ export default function Sponsor() {
     <div className={styles['sponsor-container']}>
       <div className={styles.content}>
         <div className={styles['info-container']}>
-          <div className={styles['numbers-words-container']}>
-            {hdStats.map((item) => (
-              <div key={item.word} className={styles['number-word-pair']}>
-                <span className={styles.number}>{item.number}</span>
-                <span className={styles.word}>{item.word}</span>
-              </div>
-            ))}
+          <div className={styles['text-container']}>
+            <div className={styles['numbers-words-container']}>
+              {hdStats.map((item) => (
+                <div key={item.word} className={styles['number-word-pair']}>
+                  <span className={styles.number}>{item.number}</span>
+                  <span className={styles.word}>{item.word}</span>
+                </div>
+              ))}
+            </div>
+            <button className={styles.button}>
+              <span className={styles['button-words']}>Sponsor 2024</span>
+            </button>
           </div>
-          <button className={styles.button}>
-            <span className={styles['button-words']}>Sponsor 2024</span>
-          </button>
           <div className={styles.cow_duck}>
             <Image src={Cow_and_duck} alt="Cow and duck" layout="responsive" />
           </div>
