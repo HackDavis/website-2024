@@ -139,7 +139,7 @@
   grid-column: 1;
   width: 100%;
   height: auto;
-  transition: transform 1.9s ease-in-out 0.1s;
+  transition: transform 1.9s cubic-bezier(0.79, 0.02, 0.21, 0.99) .1s;
 
   @include mixins.sm-desktop {
     width: 100vw;
