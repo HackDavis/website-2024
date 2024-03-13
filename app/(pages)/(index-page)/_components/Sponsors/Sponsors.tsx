@@ -17,6 +17,11 @@ import glico from 'public/index/Sponsors/Glico.png';
 import guayaki from 'public/index/Sponsors/gym.png';
 import ucdLS from 'public/index/Sponsors/ls.png';
 
+// IPO Sponsors
+import aggieHouse from 'public/index/Sponsors/aggieHouseCow.png';
+import lifeOfKai from 'public/index/Sponsors/lifeOfKai.png';
+import dcmh from 'public/index/Sponsors/dcmh.png';
+
 export default function Sponsors() {
   return (
     <div className={styles.container}>
@@ -47,6 +52,7 @@ export default function Sponsors() {
           alt="Why Not Boba Logo"
         />
       </Marquee>
+
       <Marquee iterations={2} reverse duration={50}>
         <Logo imgSrc={pepsi} url="https://www.pepsi.com/" alt="Pepsi Logo" />
         <Logo
@@ -69,6 +75,24 @@ export default function Sponsors() {
           imgSrc={ucdLS}
           url="https://lettersandscience.ucdavis.edu/"
           alt="UC Davis College of Letters & Science Logo"
+        />
+      </Marquee>
+
+      <Marquee iterations={2} duration={50}>
+        <Logo
+          imgSrc={aggieHouse}
+          url="https://www.aggiehousedavis.org/"
+          alt="Aggie House Logo"
+        />
+        <Logo
+          imgSrc={lifeOfKai}
+          url="https://www.thelifeofkai.org/"
+          alt="Life Of Kai Logo"
+        />
+        <Logo
+          imgSrc={dcmh}
+          url="https://daviscommunitymeals.org/"
+          alt="Davis Community Meals & Housing Logo"
         />
       </Marquee>
     </div>
