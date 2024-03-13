@@ -83,7 +83,7 @@ const FAQ = () => {
     },
     {
       question: 'How do teams work?',
-      answer: `Teams can have up to four members, and submit a single project together! Want to go solo? Fine by us, but we'd highly recommend joining a team to make new friends, bounce ideas off one another,and bring your ideas to life!`,
+      answer: `Teams can have up to four members, and submit a single project together! Want to go solo? Fine by us, but we'd highly recommend joining a team to make new friends, bounce ideas off one another, and bring your ideas to life!`,
     },
     {
       question: 'How can I help?',
