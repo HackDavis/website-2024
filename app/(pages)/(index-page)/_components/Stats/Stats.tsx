@@ -1,5 +1,5 @@
 import styles from './Stats.module.scss';
-import CountUp from './_components/CountUp';
+import CountUp from '@components/CountUp/CountUp';
 
 const statsData = [
   { stat: 140, text: 'projects', duration: 2000 },
