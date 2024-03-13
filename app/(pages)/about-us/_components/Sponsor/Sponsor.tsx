@@ -92,9 +92,9 @@ export default function Sponsor() {
                 </div>
               ))}
             </div>
-            <button className={styles.button}>
+            <a href="mailto:team@hackdavis.io" className={styles.button}>
               <span className={styles['button-words']}>Sponsor 2024</span>
-            </button>
+            </a>
           </div>
           <div className={styles.cow_duck}>
             <Image src={Cow_and_duck} alt="Cow and duck" layout="responsive" />
