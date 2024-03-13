@@ -375,7 +375,6 @@ $tablet-scale: 0.75;
       font-weight: 700;
       line-height: 115%;
       letter-spacing: 0.96px;
-      margin-top: 10px;
     }
   }
   .calendar{
@@ -389,6 +388,7 @@ $tablet-scale: 0.75;
       &_lower{
         display: flex;
         justify-content: center;
+        padding-top: 10px;
         // gap: 0.5vw; 
 
         &_text{

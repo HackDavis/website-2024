@@ -18,6 +18,12 @@ export default function RiverCow() {
             Whether you are a seasoned hacker or exploring whether tech is a
             good fit for you, we invite you to join us!
           </p>
+          <p>
+            Creators from all backgrounds are
+            <br /> welcome at HackDavis—no coding
+            <br />
+            or previous experience required.
+          </p>
         </div>
         <RightTree />
       </div>
