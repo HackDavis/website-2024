@@ -11,8 +11,14 @@ $tablet-breakpoint: 1007px;
 .grass{
   position: relative;
   z-index: 2;
-  // margin-top: -280px;
   margin-top: -13vw;
+  @media(max-width: $tablet-breakpoint){
+    margin-top: -130px;
+  }
+
+  @media(max-width: $mobile-breakpoint){
+    margin-top: -250px;
+  }
 }
 
 .form{
@@ -21,6 +27,16 @@ $tablet-breakpoint: 1007px;
   // top: 105px;
   top: 10%;
   left: 10%;
+
+  @media (max-width: $mobile-breakpoint) {
+    left: 50%;
+    top: 25%;
+
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .landing_container{
@@ -28,30 +44,14 @@ $tablet-breakpoint: 1007px;
   position: relative;
   overflow: hidden;
 
-}
-@media (max-width: $tablet-breakpoint) {
-  .grass{
-    margin-top: calc(-280px + 10vw);
+  @media (max-width: $mobile-breakpoint) {
+    .landing_container{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
-}
 
-@media (max-width: $mobile-breakpoint) {
-
-  .landing_container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .form{
-    left: 50%;
-    top: 27%;
-
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
 }

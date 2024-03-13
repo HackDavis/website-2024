@@ -18,6 +18,11 @@ $tablet-breakpoint: 1007px;
         height: 100%;
         overflow: hidden;
         z-index: 15;
+
+
+        @media (max-width: $mobile-breakpoint) {
+            margin-top: -15%;
+        }
         
         &_image{
             object-fit: contain;
@@ -49,12 +54,22 @@ $tablet-breakpoint: 1007px;
         // border: 1px solid black;
         width: 30vw;
 
+        @media (max-width: $mobile-breakpoint) {
+            left: 13%;
+            
+        }
+
 
         &_behind{
             display: flex;
             width: 50%;
-            // border: 1px solid blue;
             margin-left: -25%;
+
+            @media (max-width: $mobile-breakpoint) {
+                position: absolute;
+                top: -10%;
+                left: -50%;
+            }
             &_duck{
                 // border: 1px solid red; 
                 z-index: 1;
@@ -141,20 +156,4 @@ $tablet-breakpoint: 1007px;
         } 
         
     }
-}
-
-@media (max-width: $mobile-breakpoint) {
-    .foreground{
-        &_characters{
-            // border: 1px solid red;
-            left: 13%;
-            &_behind{
-                position: absolute;
-                top: -10%;
-                left: -50%;
-                // border: 1px solid red;
-            }
-        } 
-        
-    } 
 }

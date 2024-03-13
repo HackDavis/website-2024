@@ -18,7 +18,7 @@ export default function RiverCowAnimation() {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNextFrame();
-    }, 2000);
+    }, 500);
 
     return () => clearInterval(interval);
   }, []);

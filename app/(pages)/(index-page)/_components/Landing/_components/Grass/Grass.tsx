@@ -6,7 +6,8 @@ import styles from './Grass.module.scss';
 import Polaroids from './_components/Polaroids/Polaroids';
 import Foreground from './_components/Foreground/Foreground';
 import { useLoadCount } from '@hooks/useLoadCount';
-import Far_Grass from '/public/index/Hero/hero_far-grass.png';
+// import Far_Grass from '/public/index/Hero/hero_far-grass.png';
+import Edit_Far_Grass from '/public/index/Hero/hero_far-grass-edit.png';
 import Mid_Grass from '/public/index/Hero/hero_mid-grass.png';
 
 export default function Grass() {
@@ -32,8 +33,7 @@ export default function Grass() {
       <div className={styles.grass}>
         <div className={styles.grass_far}>
           <Image
-            // src="/index/Hero/hero_far-grass.png"
-            src={Far_Grass}
+            src={Edit_Far_Grass}
             alt="far_grass"
             sizes="(min-width: 1080px) 100.99vw, 996px"
             className={styles.grasses_image}
