@@ -134,7 +134,7 @@
   grid-column: 1;
   width: 100%;
   height: auto;
-  transition: 2s ease-in-out;
+  transition: transform 1.9s ease-in-out 0.1s;
 
   @include mixins.sm-desktop {
     width: 100vw;
@@ -142,5 +142,5 @@
 }
 
 .swipe {
-  transform: translateX(50%) rotate(20deg);
+  transform: translateX(75%) rotate(20deg);
 }
