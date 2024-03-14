@@ -2,14 +2,15 @@ import Logo from '../Marquee/Logo';
 import Marquee from '../Marquee/Marquee';
 import styles from './Sponsor.module.scss';
 
-// tier 1 sponsors
-// import Intel from 'public/index/Sponsors/intel_logo.png';
+// Row 1: tier 1 sponsors
+//import Intel from 'public/index/Sponsors/intel.jpg';
+//import IntelBlack from 'public/index/Sponsors/intelBlack.jpg';
 import csDepartment from 'public/index/Sponsors/cs.png';
 import asucd from 'public/index/Sponsors/asucd.png';
 import ucDavis from 'public/index/Sponsors/ucDavis.png';
 import whyNotBoba from 'public/index/Sponsors/whyNotBoba.webp';
 
-// tier 2 sponsors
+// Row 3: tier 2 sponsors
 import pepsi from 'public/index/Sponsors/pepsi.png';
 import chevron from 'public/index/Sponsors/chevron.png';
 import cfc from 'public/index/Sponsors/cfc.jpg';
@@ -17,10 +18,10 @@ import glico from 'public/index/Sponsors/Glico.png';
 import guayaki from 'public/index/Sponsors/gym.png';
 import ucdLS from 'public/index/Sponsors/ls.png';
 
-// IPO Sponsors
-import aggieHouse from 'public/index/Sponsors/aggieHouseCow.png';
-import lifeOfKai from 'public/index/Sponsors/lifeOfKai.png';
-import dcmh from 'public/index/Sponsors/dcmh.png';
+// Row 3: IPO Sponsors
+import aggieHouse from 'public/index/Sponsors/IPOs/aggieHouseCow.png';
+import lifeOfKai from 'public/index/Sponsors/IPOs/lifeOfKai.png';
+import dcmh from 'public/index/Sponsors/IPOs/dcmh.png';
 
 export default function Sponsors() {
   return (
@@ -28,6 +29,11 @@ export default function Sponsors() {
       <Marquee iterations={2} duration={50}>
         {/* <Logo
           imgSrc={Intel}
+          url="https://www.intel.com/content/www/us/en/homepage.html"
+          alt="Intel Logo"
+        />
+        <Logo
+          imgSrc={IntelBlack}
           url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         /> */}

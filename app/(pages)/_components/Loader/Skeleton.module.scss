@@ -14,7 +14,7 @@ $nav-height: 114px;
     .navbar {
         width: 100%;
         height: $nav-height;
-        padding: 0 64px;
+        padding: 0rem 2rem 1rem 2rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -31,8 +31,8 @@ $nav-height: 114px;
             }
             
             .logo {
-                height: 44%;
-                width: auto;
+                width: 3.125rem;
+                height: 3.13269rem;
             }
 
             .rectangles {
