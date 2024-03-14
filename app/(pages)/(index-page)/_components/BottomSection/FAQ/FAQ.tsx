@@ -105,7 +105,7 @@ const FAQ = () => {
     },
     {
       question: 'How much does it cost?',
-      answer: `Zero. Zip. Zilch. Nada. HackDavis is free for all admitted participants, so don't sweat it! We will provide your WiFi, meals, caffeine, swag, and workspace for the entire weekend.`,
+      answer: `Zero. Zip. Zilch. Nada. HackDavis is free for all admitted participants, so don't sweat it! We will provide you with WiFi, meals, caffeine, swag, and workspace for the entire weekend.`,
     },
   ];
 
