@@ -92,8 +92,6 @@ export default function Foreground() {
                   src={Hero_CowCam}
                   alt="hero_cow-cam"
                   priority={true}
-                  width={4000}
-                  height={100}
                   placeholder="blur"
                   blurDataURL="/index/Hero/hero_cow-cam.png"
                   className={

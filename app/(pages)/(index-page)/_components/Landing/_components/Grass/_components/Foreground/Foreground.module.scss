@@ -102,7 +102,7 @@ $tablet-breakpoint: 1007px;
             margin-left: 10%;
 
            &_cowHead{
-                // border: 1px solid black; 
+                border: 0px solid black; 
                 &_image{
                     object-fit: contain;
                     width: 100%;
@@ -118,6 +118,7 @@ $tablet-breakpoint: 1007px;
                 // flex-direction: row;
                 &_cowTorso{
                     // border: 1px solid black;
+                    width: 60%;
                     margin-left: 40%;
                     margin-top: -8%;
                     &_image{
@@ -128,6 +129,7 @@ $tablet-breakpoint: 1007px;
                     }
                 } 
                 &_cowCam{
+                    width: 45%;
                     z-index: 3;
                     position: absolute;
                     margin-top: -10%;
