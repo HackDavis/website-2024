@@ -1,43 +1,60 @@
 @use 'app/(pages)/_globals/mixins';
+$tablet-breakpoint: 1024px;
+$mobile-breakpoint: 425px;
 
 .hello-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+
     background: #FFF;
-    color: #123041;
-    font-family: "Metropolis";
+    font-family: "Metropolis", sans-serif;
+    padding: 5%;
+    padding-bottom: 10%;
+
+    @media (max-width: $tablet-breakpoint) {
+        padding: 10%;
+    }
 }
 
 .content {
     width: fit-content;
-    margin: 96px 0px 96px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 2fr;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid red;
 
-    @include mixins.sm-desktop {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: min-content;
-        margin: 96px 32px 96px 32px;
+    @media (max-width: $tablet-breakpoint) {
+        grid-template-columns: 1fr 1fr; // Switch to two columns
+        grid-template-rows: 1fr 1fr;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        grid-template-columns: 1fr; // Back to one column for mobile
+        grid-template-rows: 1fr 2fr 2fr 2fr;
+        width: min-content; // Adjust width for mobile
+        margin: 0;
     }
 }
 
 .header {
-    color: #123041;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.96px;
-    margin-bottom: 32px;
-    text-wrap: wrap;
+    grid-column: 1/-1; 
+    font-family: "Metropolis", sans-serif;
+
+    @media (max-width: $tablet-breakpoint) {
+        grid-row: 1;
+        grid-column: 1;
+        text-align: center;
+        width: 342px;
+        // border: 1px solid black; 
+    } 
 }
 
 .tiles {
-    width: 21.375rem;
-    height: 21.375rem;
-    display: flex;
-    width: fit-content;
-    gap: 32px;
+    display: contents; 
 
     .tile:nth-child(1) {
         background: #9EE7E5;
@@ -51,12 +68,6 @@
         background: #FFC5AB;
     }
 
-    @include mixins.sm-desktop {
-        width: max-content;
-        height: fit-content;
-        flex-direction: column;
-        gap: 48px;
-    }
 }
 
 .tile {
@@ -94,10 +105,4 @@
         width: 70%;
     }
 
-    @include mixins.sm-desktop {
-        width: 100%;
-        max-width: 342px;
-        height: 342px;
-        min-width: fit-content;
-    }
 }

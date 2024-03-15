@@ -24,7 +24,6 @@ export default function Home() {
           <Stats />
         </div>
         <div id="everyone">
-          {/* <Everyone /> */}
           <RiverCow />
         </div>
         <div id="faq">
