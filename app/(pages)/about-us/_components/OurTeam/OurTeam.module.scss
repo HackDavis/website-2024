@@ -48,40 +48,19 @@ $bg-color: #123041;
             }
         }
 
-        &_filterButtons{
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 48px;
-            // border: 1px solid black;
-
-            &_button{
+        &_embla {
+            width: 100%;
+            
+            &_filterButtons{
                 display: flex;
                 flex-direction: row;
-                height: 48px;
-                padding: 12px 24px;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
-                gap: 10px;
-                border-radius: 100px;
-                background: rgba(158, 231, 229, 0.25);
-                cursor: pointer;
-
-                p{
-                    color: #9EE7E5;
-                    text-align: center;
-                    font-family: "Metropolis";
-                    font-size: 18px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;
-                    letter-spacing: 0.36px;
-                }
-
-                &.active{
+                gap: 16px;
+                margin-bottom: 48px;
+                // border: 1px solid black;
+    
+                &_button{
                     display: flex;
                     flex-direction: row;
                     height: 48px;
@@ -90,10 +69,11 @@ $bg-color: #123041;
                     align-items: center;
                     gap: 10px;
                     border-radius: 100px;
-                    background: #9EE7E5;
-
+                    background: rgba(158, 231, 229, 0.25);
+                    cursor: pointer;
+    
                     p{
-                        color: #173A52;
+                        color: #9EE7E5;
                         text-align: center;
                         font-family: "Metropolis";
                         font-size: 18px;
@@ -102,12 +82,36 @@ $bg-color: #123041;
                         line-height: normal;
                         letter-spacing: 0.36px;
                     }
+    
+                    &.active{
+                        display: flex;
+                        flex-direction: row;
+                        height: 48px;
+                        padding: 12px 24px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                        border-radius: 100px;
+                        background: #9EE7E5;
+    
+                        p{
+                            color: #173A52;
+                            text-align: center;
+                            font-family: "Metropolis";
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                            letter-spacing: 0.36px;
+                        }
+                    }
                 }
+    
+          
+                
             }
-
-      
-            
         }
+
 
         &_team{
             display: grid;
