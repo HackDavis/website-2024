@@ -21,7 +21,7 @@ export default function OurTeam() {
   // const [activeYear, _] = useState<number>(2024); // [2022, 2023, 2024
   const [activeTeam, setActiveTeam] = useState<string | null>('Design');
 
-  const [emblaRef] = useEmblaCarousel(
+  const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: false,
       align: 'start',
@@ -79,6 +79,7 @@ export default function OurTeam() {
                     styles.ourTeam_container_embla_filterButtons_button
                   } ${activeTeam === teamName ? styles.active : ''}`}
                   onClick={async () => {
+                    if (emblaApi) emblaApi.scrollTo(index, false);
                     setActiveTeam(teamName);
                     setTeamMembers(await filterTeamMongo(teamName, 2024));
                   }}
