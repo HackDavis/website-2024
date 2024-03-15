@@ -3,8 +3,7 @@ import Marquee from '../Marquee/Marquee';
 import styles from './Sponsor.module.scss';
 
 // Row 1: tier 1 sponsors
-//import Intel from 'public/index/Sponsors/intel.jpg';
-//import IntelBlack from 'public/index/Sponsors/intelBlack.jpg';
+import Intel from 'public/index/Sponsors/intel.png';
 import csDepartment from 'public/index/Sponsors/cs.png';
 import asucd from 'public/index/Sponsors/asucd.png';
 import ucDavis from 'public/index/Sponsors/ucDavis.png';
@@ -27,16 +26,11 @@ export default function Sponsors() {
   return (
     <div className={styles.container}>
       <Marquee iterations={2} duration={50}>
-        {/* <Logo
+        <Logo
           imgSrc={Intel}
           url="https://www.intel.com/content/www/us/en/homepage.html"
           alt="Intel Logo"
         />
-        <Logo
-          imgSrc={IntelBlack}
-          url="https://www.intel.com/content/www/us/en/homepage.html"
-          alt="Intel Logo"
-        /> */}
         <Logo
           imgSrc={ucDavis}
           url="https://www.ucdavis.edu"
