@@ -32,11 +32,10 @@
   justify-content: space-between;
   width: 50%;
   height: 100%;
-  gap: 176px;
+  gap: 50px;
 
   @include mixins.sm-desktop {
     align-items: center;
-    width: fit-content;
     gap: 64px;
   }
 }
@@ -126,6 +125,10 @@
   display: flex;
   justify-self: flex-end;
   width: 100%;
+
+  @include mixins.phone {
+    width: 150%;
+  }
 }
 
 .stack {
