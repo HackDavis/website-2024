@@ -43,9 +43,19 @@ export default function OurTeam() {
   }, []);
 
   function filterTeam(teamName: string, members: TeamMember[]) {
-    const filteredMembers = members.filter(
-      (member) => member.teamCategory === teamName
-    );
+    const filteredMembers = members
+      .filter((member) => member.teamCategory === teamName)
+      .sort((a, b) => {
+        // Check if 'position' contains 'Lead'
+        const aIsLead = a.position.includes('Lead');
+        const bIsLead = b.position.includes('Lead');
+
+        // Prioritize leads
+        if (aIsLead && !bIsLead) return -1;
+        if (!aIsLead && bIsLead) return 1;
+
+        return a.name.localeCompare(b.name);
+      });
     setTeamMembers(filteredMembers);
     setActiveTeam(teamName);
   }
