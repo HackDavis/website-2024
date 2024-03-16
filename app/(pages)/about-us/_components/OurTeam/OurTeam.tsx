@@ -2,23 +2,22 @@
 import ProfileCard from './_components/ProfileCard';
 import styles from './OurTeam.module.scss';
 import { useState, useEffect } from 'react';
-import { filterTeamMongo } from '@/app/(api)/_actions/teamMembers/filterTeamMongo';
+import { getAllTeamMembers } from '@/app/(api)/_actions/teamMembers/filterTeamMongo';
 import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 type TeamMember = {
   id: string;
   name: string;
   position: string;
+  teamCategory: string;
   profileImageUrl: string;
   linkedinURL: string;
 };
 
 export default function OurTeam() {
+  const [allTeamMembers, setAllTeamMembers] = useState<TeamMember[]>([]);
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
-  // const [activeYear, _] = useState<number>(2024); // [2022, 2023, 2024
   const [activeTeam, setActiveTeam] = useState<string | null>('Design');
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -33,14 +32,23 @@ export default function OurTeam() {
   );
 
   useEffect(() => {
-    async function loadInitialTeam() {
-      const initialTeam = await filterTeamMongo('Design', 2024);
-      if (initialTeam) {
-        setTeamMembers(initialTeam);
+    async function loadAllTeamMembers() {
+      const members = await getAllTeamMembers();
+      if (members) {
+        setAllTeamMembers(members);
+        filterTeam('Design', members);
       }
     }
-    loadInitialTeam();
+    loadAllTeamMembers();
   }, []);
+
+  function filterTeam(teamName: string, members: TeamMember[]) {
+    const filteredMembers = members.filter(
+      (member) => member.teamCategory === teamName
+    );
+    setTeamMembers(filteredMembers);
+    setActiveTeam(teamName);
+  }
 
   const teamNames = [
     'Design',
@@ -60,18 +68,6 @@ export default function OurTeam() {
         </div>
         <div className={styles.ourTeam_container_embla} ref={emblaRef}>
           <div className={styles.ourTeam_container_embla_filterButtons}>
-            {/* <div
-            className={`${styles.ourTeam_container_filterButtons_button} ${
-              activeYear === 2024 ? styles.active : ''
-            }`}
-            onClick={async () => {
-              // setActiveTeam('Design');
-              // setTeamMembers(await filterTeam('Design', 2024));
-            }}
-          >
-            <p>2024</p>
-            <FontAwesomeIcon icon={faAngleDown} size="1x" />
-          </div> */}
             {teamNames.map((teamName, index) => (
               <div key={index}>
                 <div
@@ -80,8 +76,7 @@ export default function OurTeam() {
                   } ${activeTeam === teamName ? styles.active : ''}`}
                   onClick={async () => {
                     if (emblaApi) emblaApi.scrollTo(index, false);
-                    setActiveTeam(teamName);
-                    setTeamMembers(await filterTeamMongo(teamName, 2024));
+                    filterTeam(teamName, allTeamMembers);
                   }}
                 >
                   <p>{teamName}</p>

@@ -12,6 +12,29 @@ type TeamMember = {
   linkedinURL: string;
 };
 
+export async function getAllTeamMembers(): Promise<TeamMember[]> {
+  const db: Db = await getDatabase();
+  let team_members: TeamMember[] = [];
+  try {
+    team_members = (await db.collection('teamMembers').find({}).toArray()).map(
+      (doc) => ({
+        id: doc._id.toString(),
+        name: doc.name,
+        position: doc.position,
+        profileImageUrl: doc.profile_image_url,
+        teamCategory: doc.team_category,
+        year: doc.year,
+        linkedinURL: doc.linkedinURL,
+      })
+    );
+  } catch (error) {
+    console.error('Failed to fetch team members:', error);
+    return [];
+  }
+
+  return team_members;
+}
+
 export async function filterTeamMongo(
   team: string,
   year: number
