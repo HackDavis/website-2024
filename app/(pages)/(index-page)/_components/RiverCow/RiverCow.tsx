@@ -19,10 +19,8 @@ export default function RiverCow() {
             good fit for you, we invite you to join us!
           </p>
           <p>
-            Creators from all backgrounds are
-            <br /> welcome at HackDavis—no coding
-            <br />
-            or previous experience required.
+            Creators from all backgrounds are welcome at HackDavis—no coding or
+            previous experience required.
           </p>
         </div>
         <RightTree />
