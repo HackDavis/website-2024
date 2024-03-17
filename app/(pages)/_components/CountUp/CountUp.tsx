@@ -23,10 +23,9 @@ const CountUp: React.FC<CountUpProps> = ({
       const rect = ref.current?.getBoundingClientRect();
       if (rect) {
         const windowHeight = window.innerHeight;
-        const rectMidpoint = rect.top + rect.bottom / 4;
         return (
-          rectMidpoint > windowHeight * 0.25 &&
-          rectMidpoint < windowHeight * 0.75
+          rect.top >= 0 &&
+          rect.bottom <= (windowHeight || document.documentElement.clientHeight)
         );
       }
       return false;
