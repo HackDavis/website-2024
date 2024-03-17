@@ -44,7 +44,7 @@ export default function WhatIsHackdavis() {
       <div className={styles.text}>
         <h1 className={styles.heading}>What is HackDavis?</h1>
         <p className={styles.paragraph}>
-          HackDavis, one of the top 50 hackathons in the world, where over 750
+          HackDavis is one of the top 50 hackathons in the world, where over 750
           creators, and leaders come together to create for social good.
         </p>
       </div>
