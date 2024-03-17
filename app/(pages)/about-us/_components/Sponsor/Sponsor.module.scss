@@ -45,6 +45,14 @@
   flex-direction: column;
   gap: 32px;
   max-height: fit-content;
+  width: 90%;
+
+  @include mixins.tablet {
+    width: 60%;
+  }
+  @include mixins.phone {
+    width: 100%;
+  }
 }
 
 .numbers-words-container {
