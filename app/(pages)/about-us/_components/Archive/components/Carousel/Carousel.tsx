@@ -22,12 +22,15 @@ type CarouselProps = {
 const Carousel = (props: CarouselProps) => {
   const { slides, options } = props;
 
-  // everything below until the props is pasted from an online template
+  // used to gain access to API for the library, also enables scroll movement
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     WheelGesturesPlugin({}),
   ]);
+
+  // used to move the progress bar as the user moves through the carousel
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  // used to acheive different behaviors based on screen width
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -44,8 +47,10 @@ const Carousel = (props: CarouselProps) => {
     return () => window.removeEventListener('resize', updateWindowSize);
   }, []);
 
+  // determines how much the progress bar moves per button click
   const moveProgressAmount = windowSize.width > 768 ? 63 : 54;
 
+  // *** everything below until the props is pasted from an online template ***
   const {
     prevBtnDisabled,
     nextBtnDisabled,
