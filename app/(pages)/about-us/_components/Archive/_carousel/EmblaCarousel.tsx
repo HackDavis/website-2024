@@ -7,6 +7,7 @@ import {
   PrevButton,
   usePrevNextButtons,
 } from './EmblaCarouselArrowButtons';
+import styles from './embla.module.scss';
 
 type PropType = {
   slides: ReactNode[];
@@ -79,11 +80,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   }, [emblaApi, onScroll]);
 
   return (
-    <div className="embla">
-      <div className="embla__text_section">
-        <h1 className="embla__text">From the archive</h1>
-        <div className="embla__controls">
-          <div className="embla__buttons">
+    <div className={styles.embla}>
+      <div className={styles.embla__text_section}>
+        <h1 className={styles.embla__text}>From the archive</h1>
+        <div className={styles.embla__controls}>
+          <div className={styles.embla__buttons}>
             <PrevButton
               onClick={onPrevButtonClick}
               disabled={prevBtnDisabled}
@@ -96,30 +97,33 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
+      <div className={styles.embla__viewport} ref={emblaRef}>
+        <div className={styles.embla__container}>
           {slides.map((image, index) => (
-            <div className="embla__slide" key={index}>
+            <div className={styles.embla__slide} key={index}>
               {image}
             </div>
           ))}
         </div>
       </div>
 
-      <div className="embla__progress_bottom_mobile">
-        <div className="prev_button_mobile">
+      <div className={styles.embla__progress_bottom_mobile}>
+        <div className={styles.prev_button_mobile}>
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
         </div>
-        <div className="embla__progress" onClick={handleProgressBarClick}>
+        <div
+          className={styles.embla__progress}
+          onClick={handleProgressBarClick}
+        >
           <div
-            className="embla__progress__bar"
+            className={styles.embla__progress__bar}
             onClick={(event) => event.stopPropagation()}
             style={{
               transform: `translateX(${scrollProgress * moveProgressAmount}vw`,
             }}
           />
         </div>
-        <div className="next_button_mobile">
+        <div className={styles.next_button_mobile}>
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
