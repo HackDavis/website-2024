@@ -17,7 +17,7 @@ export const CarouselText = ({ props }: { props: CarouselTextProps }) => {
   } = props;
 
   return (
-    <div className={styles.text_section}>
+    <div className={styles.carousel__text_section}>
       <h1 className={styles.text_content}>From the archive</h1>
       <div className={styles.controls}>
         <div className={styles.buttons}>
