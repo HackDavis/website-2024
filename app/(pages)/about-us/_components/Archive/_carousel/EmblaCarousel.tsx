@@ -7,14 +7,15 @@ import {
   PrevButton,
   usePrevNextButtons,
 } from './EmblaCarouselArrowButtons';
+import { CarouselProgressSection } from './CarouselProgressSection';
 import styles from './embla.module.scss';
 
-type PropType = {
+type CarouselProps = {
   slides: ReactNode[];
   options?: EmblaOptionsType;
 };
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
+const EmblaCarousel: React.FC<CarouselProps> = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     WheelGesturesPlugin({}),
@@ -56,19 +57,10 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     const clickedProgressPixels = event.nativeEvent.offsetX;
     const clickedProgressPercent = clickedProgressPixels / progressBarWidth;
 
-    console.log('width:', progressBarWidth, 'pixels:', clickedProgressPixels);
-    //setScrollProgress(clickedProgressPercent);
     if (!emblaApi) return;
     const snapList = emblaApi.scrollSnapList();
     const indexToMoveTo = Math.floor(snapList.length * clickedProgressPercent);
     emblaApi.scrollTo(indexToMoveTo);
-    console.log(
-      'moving to',
-      indexToMoveTo,
-      'the place we clicked:',
-      clickedProgressPercent
-    );
-    console.log('snap list', emblaApi.scrollSnapList());
   };
 
   useEffect(() => {
@@ -78,6 +70,16 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     emblaApi.on('reInit', onScroll);
     emblaApi.on('scroll', onScroll);
   }, [emblaApi, onScroll]);
+
+  const myProps = {
+    scrollProgress: scrollProgress,
+    moveProgressAmount: moveProgressAmount,
+    handleProgressBarClick: handleProgressBarClick,
+    prevBtnDisabled: prevBtnDisabled,
+    nextBtnDisabled: nextBtnDisabled,
+    onPrevButtonClick: onPrevButtonClick,
+    onNextButtonClick: onNextButtonClick,
+  };
 
   return (
     <div className={styles.embla}>
@@ -107,26 +109,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className={styles.embla__progress_bottom_mobile}>
-        <div className={styles.prev_button_mobile}>
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-        </div>
-        <div
-          className={styles.embla__progress}
-          onClick={handleProgressBarClick}
-        >
-          <div
-            className={styles.embla__progress__bar}
-            onClick={(event) => event.stopPropagation()}
-            style={{
-              transform: `translateX(${scrollProgress * moveProgressAmount}vw`,
-            }}
-          />
-        </div>
-        <div className={styles.next_button_mobile}>
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
-      </div>
+      <CarouselProgressSection props={myProps} />
     </div>
   );
 };
