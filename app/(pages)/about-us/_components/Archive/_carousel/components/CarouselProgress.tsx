@@ -1,4 +1,4 @@
-import styles from '../carousel.module.scss';
+import styles from '../Carousel.module.scss';
 import { PrevButton, NextButton } from './CarouselArrowButtons';
 
 export type CarouselProgressProps = {

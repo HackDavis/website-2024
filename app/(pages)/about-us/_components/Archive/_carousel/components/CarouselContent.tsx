@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styles from '../carousel.module.scss';
+import styles from '../Carousel.module.scss';
 
 export type CarouselContentProps = {
   slides: ReactNode[];

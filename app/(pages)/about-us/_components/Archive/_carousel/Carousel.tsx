@@ -3,7 +3,7 @@ import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import useEmblaCarousel from 'embla-carousel-react';
 
-import styles from './carousel.module.scss';
+import styles from './Carousel.module.scss';
 
 // imports defined in other files to modularize code
 import { usePrevNextButtons } from './components/CarouselArrowButtons';
