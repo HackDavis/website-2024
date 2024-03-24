@@ -1,7 +1,7 @@
-import styles from './embla.module.scss';
-import { PrevButton, NextButton } from './EmblaCarouselArrowButtons';
+import styles from '../carousel.module.scss';
+import { PrevButton, NextButton } from './CarouselArrowButtons';
 
-interface CarouselProgressProps {
+export type CarouselProgressProps = {
   scrollProgress: number;
   moveProgressAmount: number;
   handleProgressBarClick: (event: any) => void;
@@ -9,9 +9,9 @@ interface CarouselProgressProps {
   nextBtnDisabled: boolean;
   onPrevButtonClick: () => void;
   onNextButtonClick: () => void;
-}
+};
 
-export const CarouselProgressSection = ({
+export const CarouselProgress = ({
   props,
 }: {
   props: CarouselProgressProps;

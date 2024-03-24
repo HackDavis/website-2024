@@ -2,20 +2,24 @@ import React, { ReactNode, useCallback, useEffect, useState } from 'react';
 import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import useEmblaCarousel from 'embla-carousel-react';
-import {
-  NextButton,
-  PrevButton,
-  usePrevNextButtons,
-} from './EmblaCarouselArrowButtons';
-import { CarouselProgressSection } from './CarouselProgressSection';
-import styles from './embla.module.scss';
+
+import styles from './carousel.module.scss';
+
+// imports defined in other files to modularize code
+import { usePrevNextButtons } from './components/CarouselArrowButtons';
+import { CarouselProgress } from './components/CarouselProgress';
+import { CarouselText } from './components/CarouselText';
+import { CarouselContent } from './components/CarouselContent';
+import type { CarouselProgressProps } from './components/CarouselProgress';
+import type { CarouselTextProps } from './components/CarouselText';
+import type { CarouselContentProps } from './components/CarouselContent';
 
 type CarouselProps = {
   slides: ReactNode[];
   options?: EmblaOptionsType;
 };
 
-const EmblaCarousel: React.FC<CarouselProps> = (props) => {
+const Carousel = (props: CarouselProps) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     WheelGesturesPlugin({}),
@@ -71,7 +75,7 @@ const EmblaCarousel: React.FC<CarouselProps> = (props) => {
     emblaApi.on('scroll', onScroll);
   }, [emblaApi, onScroll]);
 
-  const myProps = {
+  const carouselProgressProps: CarouselProgressProps = {
     scrollProgress: scrollProgress,
     moveProgressAmount: moveProgressAmount,
     handleProgressBarClick: handleProgressBarClick,
@@ -81,37 +85,27 @@ const EmblaCarousel: React.FC<CarouselProps> = (props) => {
     onNextButtonClick: onNextButtonClick,
   };
 
+  const carouselTextProps: CarouselTextProps = {
+    prevBtnDisabled: prevBtnDisabled,
+    nextBtnDisabled: nextBtnDisabled,
+    onPrevButtonClick: onPrevButtonClick,
+    onNextButtonClick: onNextButtonClick,
+  };
+
+  const carouselContentProps: CarouselContentProps = {
+    slides: slides,
+    emblaRef: emblaRef,
+  };
+
   return (
     <div className={styles.embla}>
-      <div className={styles.embla__text_section}>
-        <h1 className={styles.embla__text}>From the archive</h1>
-        <div className={styles.embla__controls}>
-          <div className={styles.embla__buttons}>
-            <PrevButton
-              onClick={onPrevButtonClick}
-              disabled={prevBtnDisabled}
-            />
-            <NextButton
-              onClick={onNextButtonClick}
-              disabled={nextBtnDisabled}
-            />
-          </div>
-        </div>
-      </div>
+      <CarouselText props={carouselTextProps} />
 
-      <div className={styles.embla__viewport} ref={emblaRef}>
-        <div className={styles.embla__container}>
-          {slides.map((image, index) => (
-            <div className={styles.embla__slide} key={index}>
-              {image}
-            </div>
-          ))}
-        </div>
-      </div>
+      <CarouselContent props={carouselContentProps} />
 
-      <CarouselProgressSection props={myProps} />
+      <CarouselProgress props={carouselProgressProps} />
     </div>
   );
 };
 
-export default EmblaCarousel;
+export default Carousel;

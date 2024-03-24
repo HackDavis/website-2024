@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import { EmblaCarouselType } from 'embla-carousel';
 
-import styles from './embla.module.scss';
+import styles from '../carousel.module.scss';
 
 type UsePrevNextButtonsType = {
   prevBtnDisabled: boolean;
