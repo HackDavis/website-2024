@@ -27,16 +27,19 @@ export const CarouselProgress = ({
   } = props;
 
   return (
-    <div className={styles.embla__progress_section}>
+    <div className={styles.carousel__progress_section}>
       {/* displays a previous button next to the bar on mobile */}
       <div className={styles.prev_button_mobile}>
         <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
       </div>
 
       {/* progress bar that is always displayed */}
-      <div className={styles.embla__progress} onClick={handleProgressBarClick}>
+      <div
+        className={styles.carousel__progress}
+        onClick={handleProgressBarClick}
+      >
         <div
-          className={styles.embla__progress__bar}
+          className={styles.carousel__progress__bar}
           onClick={(event) => event.stopPropagation()}
           style={{
             transform: `translateX(${scrollProgress * moveProgressAmount}vw`,

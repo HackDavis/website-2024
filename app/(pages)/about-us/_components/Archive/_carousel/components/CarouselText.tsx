@@ -17,10 +17,10 @@ export const CarouselText = ({ props }: { props: CarouselTextProps }) => {
   } = props;
 
   return (
-    <div className={styles.embla__text_section}>
-      <h1 className={styles.embla__text}>From the archive</h1>
-      <div className={styles.embla__controls}>
-        <div className={styles.embla__buttons}>
+    <div className={styles.text_section}>
+      <h1 className={styles.text_content}>From the archive</h1>
+      <div className={styles.controls}>
+        <div className={styles.buttons}>
           {/*contains next and prev buttons that are only visible on desktop view */}
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />

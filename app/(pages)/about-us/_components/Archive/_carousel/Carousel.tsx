@@ -5,7 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 import styles from './Carousel.module.scss';
 
-// imports defined in other files to modularize code
+// imports defined from other files to modularize code
 import { usePrevNextButtons } from './components/CarouselArrowButtons';
 import { CarouselProgress } from './components/CarouselProgress';
 import { CarouselText } from './components/CarouselText';
@@ -21,6 +21,8 @@ type CarouselProps = {
 
 const Carousel = (props: CarouselProps) => {
   const { slides, options } = props;
+
+  // everything below until the props is pasted from an online template
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     WheelGesturesPlugin({}),
   ]);
@@ -98,11 +100,13 @@ const Carousel = (props: CarouselProps) => {
   };
 
   return (
-    <div className={styles.embla}>
+    <div className={styles.carousel}>
+      {/* contains text + arrow buttons*/}
       <CarouselText props={carouselTextProps} />
 
       <CarouselContent props={carouselContentProps} />
 
+      {/* contains progres bar + arrow buttons*/}
       <CarouselProgress props={carouselProgressProps} />
     </div>
   );
