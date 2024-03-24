@@ -1,5 +1,8 @@
-import styles from '../Carousel.module.scss';
-import { PrevButton, NextButton } from './CarouselArrowButtons';
+import styles from './CarouselProgress.module.scss';
+import {
+  PrevButton,
+  NextButton,
+} from '../CarouselArrowButtons/CarouselArrowButtons';
 
 export type CarouselProgressProps = {
   scrollProgress: number;

@@ -1,5 +1,8 @@
-import styles from '../Carousel.module.scss';
-import { PrevButton, NextButton } from './CarouselArrowButtons';
+import styles from './CarouselText.module.scss';
+import {
+  PrevButton,
+  NextButton,
+} from '../CarouselArrowButtons/CarouselArrowButtons';
 
 export type CarouselTextProps = {
   prevBtnDisabled: boolean;

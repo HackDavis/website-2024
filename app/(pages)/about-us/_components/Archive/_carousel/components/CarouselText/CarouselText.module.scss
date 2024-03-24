@@ -1,0 +1,54 @@
+.carousel__text_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12%;
+    color: #123041;
+    font-family: "Metropolis";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    width: 90vw;
+
+    .text_content {
+        color: #123041;
+        font-family: "Metropolis";
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.96px;
+        text-wrap: wrap;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+            width: 311px;
+            height: 56px;
+        }
+    }
+
+    .controls {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        justify-content: space-between;
+        gap: 1.2rem;
+
+        @media (max-width: 768px) {
+            position: absolute;
+            margin-left: 0%;
+            margin-top: 40vw;
+            display: none;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 30px;
+
+            @media (max-width: 768px) {
+                gap: 0px;
+            }
+        }
+    }
+}
