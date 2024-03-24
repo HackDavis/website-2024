@@ -6,13 +6,13 @@ import useEmblaCarousel from 'embla-carousel-react';
 import styles from './Carousel.module.scss';
 
 // imports defined from other files to modularize code
-import { usePrevNextButtons } from './components/CarouselArrowButtons/CarouselArrowButtons';
-import { CarouselProgress } from './components/CarouselProgress/CarouselProgress';
-import { CarouselText } from './components/CarouselText/CarouselText';
-import { CarouselContent } from './components/CarouselContent/CarouselContent';
-import type { CarouselProgressProps } from './components/CarouselProgress/CarouselProgress';
-import type { CarouselTextProps } from './components/CarouselText/CarouselText';
-import type { CarouselContentProps } from './components/CarouselContent/CarouselContent';
+import { usePrevNextButtons } from './carouselSubComponents/CarouselArrowButtons/CarouselArrowButtons';
+import { CarouselProgress } from './carouselSubComponents/CarouselProgress/CarouselProgress';
+import { CarouselText } from './carouselSubComponents/CarouselText/CarouselText';
+import { CarouselContent } from './carouselSubComponents/CarouselContent/CarouselContent';
+import type { CarouselProgressProps } from './carouselSubComponents/CarouselProgress/CarouselProgress';
+import type { CarouselTextProps } from './carouselSubComponents/CarouselText/CarouselText';
+import type { CarouselContentProps } from './carouselSubComponents/CarouselContent/CarouselContent';
 
 type CarouselProps = {
   slides: ReactNode[];

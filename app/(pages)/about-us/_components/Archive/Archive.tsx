@@ -1,6 +1,6 @@
 'use client';
 import styles from './Archive.module.scss';
-import Carousel from './_carousel/Carousel';
+import Carousel from './components/Carousel/Carousel';
 import { EmblaOptionsType } from 'embla-carousel';
 import Image from 'next/image';
 import Link from 'next/link';
