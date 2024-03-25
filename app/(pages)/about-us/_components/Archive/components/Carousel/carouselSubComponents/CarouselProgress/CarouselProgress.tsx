@@ -1,14 +1,14 @@
+'use client';
+import { useState, useEffect } from 'react';
 import styles from './CarouselProgress.module.scss';
 import {
   PrevButton,
   NextButton,
   usePrevNextButtons,
 } from '../CarouselArrowButtons/CarouselArrowButtons';
+import { useProgress } from './useProgress';
 
 export type CarouselProgressProps = {
-  scrollProgress: number;
-  moveProgressAmount: number;
-  handleProgressBarClick: (event: any) => void;
   emblaApi: any;
 };
 
@@ -17,12 +17,7 @@ export const CarouselProgress = ({
 }: {
   props: CarouselProgressProps;
 }) => {
-  const {
-    scrollProgress,
-    moveProgressAmount,
-    handleProgressBarClick,
-    emblaApi,
-  } = props;
+  const { emblaApi } = props;
 
   const {
     prevBtnDisabled,
@@ -30,6 +25,28 @@ export const CarouselProgress = ({
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
+
+  const { scrollProgress, handleProgressBarClick } = useProgress(emblaApi);
+
+  // used to acheive different behaviors based on screen width
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const updateWindowSize = () => {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    updateWindowSize(); // Update window size initially
+
+    // Add event listener to update window size on resize
+    window.addEventListener('resize', updateWindowSize);
+
+    // Cleanup function to remove event listener on component unmount
+    return () => window.removeEventListener('resize', updateWindowSize);
+  }, []);
+
+  // determines how much the progress bar moves per button click
+  const moveProgressAmount = windowSize.width > 768 ? 63 : 54;
 
   return (
     <div className={styles.carousel__progress_section}>
