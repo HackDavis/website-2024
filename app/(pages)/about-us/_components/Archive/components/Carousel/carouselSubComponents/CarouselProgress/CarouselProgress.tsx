@@ -2,16 +2,14 @@ import styles from './CarouselProgress.module.scss';
 import {
   PrevButton,
   NextButton,
+  usePrevNextButtons,
 } from '../CarouselArrowButtons/CarouselArrowButtons';
 
 export type CarouselProgressProps = {
   scrollProgress: number;
   moveProgressAmount: number;
   handleProgressBarClick: (event: any) => void;
-  prevBtnDisabled: boolean;
-  nextBtnDisabled: boolean;
-  onPrevButtonClick: () => void;
-  onNextButtonClick: () => void;
+  emblaApi: any;
 };
 
 export const CarouselProgress = ({
@@ -23,11 +21,15 @@ export const CarouselProgress = ({
     scrollProgress,
     moveProgressAmount,
     handleProgressBarClick,
+    emblaApi,
+  } = props;
+
+  const {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
     onNextButtonClick,
-  } = props;
+  } = usePrevNextButtons(emblaApi);
 
   return (
     <div className={styles.carousel__progress_section}>

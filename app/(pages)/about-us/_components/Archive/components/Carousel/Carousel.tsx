@@ -6,7 +6,6 @@ import useEmblaCarousel from 'embla-carousel-react';
 import styles from './Carousel.module.scss';
 
 // imports defined from other files to modularize code
-import { usePrevNextButtons } from './carouselSubComponents/CarouselArrowButtons/CarouselArrowButtons';
 import { CarouselProgress } from './carouselSubComponents/CarouselProgress/CarouselProgress';
 import { CarouselText } from './carouselSubComponents/CarouselText/CarouselText';
 import { CarouselContent } from './carouselSubComponents/CarouselContent/CarouselContent';
@@ -30,6 +29,22 @@ const Carousel = (props: CarouselProps) => {
   // used to move the progress bar as the user moves through the carousel
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  const onScroll = useCallback((emblaApi: EmblaCarouselType) => {
+    const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
+    setScrollProgress(progress);
+  }, []);
+
+  const handleProgressBarClick = (event: any) => {
+    const progressBarWidth = event.target.offsetWidth;
+    const clickedProgressPixels = event.nativeEvent.offsetX;
+    const clickedProgressPercent = clickedProgressPixels / progressBarWidth;
+
+    if (!emblaApi) return;
+    const snapList = emblaApi.scrollSnapList();
+    const indexToMoveTo = Math.floor(snapList.length * clickedProgressPercent);
+    emblaApi.scrollTo(indexToMoveTo);
+  };
+
   // used to acheive different behaviors based on screen width
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
@@ -51,29 +66,6 @@ const Carousel = (props: CarouselProps) => {
   const moveProgressAmount = windowSize.width > 768 ? 63 : 54;
 
   // *** everything below until the props is pasted from an online template ***
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
-
-  const onScroll = useCallback((emblaApi: EmblaCarouselType) => {
-    const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
-    setScrollProgress(progress);
-  }, []);
-
-  const handleProgressBarClick = (event: any) => {
-    const progressBarWidth = event.target.offsetWidth;
-    const clickedProgressPixels = event.nativeEvent.offsetX;
-    const clickedProgressPercent = clickedProgressPixels / progressBarWidth;
-
-    if (!emblaApi) return;
-    const snapList = emblaApi.scrollSnapList();
-    const indexToMoveTo = Math.floor(snapList.length * clickedProgressPercent);
-    emblaApi.scrollTo(indexToMoveTo);
-  };
-
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -86,17 +78,11 @@ const Carousel = (props: CarouselProps) => {
     scrollProgress: scrollProgress,
     moveProgressAmount: moveProgressAmount,
     handleProgressBarClick: handleProgressBarClick,
-    prevBtnDisabled: prevBtnDisabled,
-    nextBtnDisabled: nextBtnDisabled,
-    onPrevButtonClick: onPrevButtonClick,
-    onNextButtonClick: onNextButtonClick,
+    emblaApi: emblaApi,
   };
 
   const carouselTextProps: CarouselTextProps = {
-    prevBtnDisabled: prevBtnDisabled,
-    nextBtnDisabled: nextBtnDisabled,
-    onPrevButtonClick: onPrevButtonClick,
-    onNextButtonClick: onNextButtonClick,
+    emblaApi: emblaApi,
   };
 
   const carouselContentProps: CarouselContentProps = {

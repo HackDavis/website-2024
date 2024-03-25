@@ -2,22 +2,22 @@ import styles from './CarouselText.module.scss';
 import {
   PrevButton,
   NextButton,
+  usePrevNextButtons,
 } from '../CarouselArrowButtons/CarouselArrowButtons';
 
 export type CarouselTextProps = {
-  prevBtnDisabled: boolean;
-  nextBtnDisabled: boolean;
-  onPrevButtonClick: () => void;
-  onNextButtonClick: () => void;
+  emblaApi: any;
 };
 
 export const CarouselText = ({ props }: { props: CarouselTextProps }) => {
+  const { emblaApi } = props;
+
   const {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
     onNextButtonClick,
-  } = props;
+  } = usePrevNextButtons(emblaApi);
 
   return (
     <div className={styles.carousel__text_section}>
