@@ -1,8 +1,7 @@
 'use client';
 import styles from './Archive.module.scss';
-import EmblaCarousel from './EmblaCarousel';
+import Carousel from './components/Carousel/Carousel';
 import { EmblaOptionsType } from 'embla-carousel';
-import '../Archive/embla.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -87,7 +86,7 @@ export default function Archive() {
   ];
   return (
     <div className={styles.container}>
-      <EmblaCarousel slides={elements} options={OPTIONS} />
+      <Carousel slides={elements} options={OPTIONS} />
     </div>
   );
 }
