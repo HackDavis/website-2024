@@ -23,6 +23,7 @@
   @include mixins.sm-desktop {
     flex-direction: column-reverse;
     align-items: center;
+    margin: 88px 88px 0 88px;
   }
 }
 
@@ -30,13 +31,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+  width: 40%;
   height: 100%;
   gap: 50px;
 
   @include mixins.sm-desktop {
     align-items: center;
     gap: 64px;
+    width: 75%;
   }
 }
 
@@ -45,11 +47,8 @@
   flex-direction: column;
   gap: 32px;
   max-height: fit-content;
-  width: 90%;
+  width: 100%;
 
-  @include mixins.tablet {
-    width: 60%;
-  }
   @include mixins.phone {
     width: 100%;
   }
@@ -133,27 +132,31 @@
   display: flex;
   justify-self: flex-end;
   width: 100%;
+  max-width: 592px;
 
   @include mixins.phone {
     width: 150%;
+
   }
 }
 
 .stack {
   display: grid; // stack the polaroids on top of each other
   height: fit-content;
-  width: 100%;
+  width: fit-content;
 }
   
 .polaroid {
   grid-row: 1;
   grid-column: 1;
-  width: 100%;
-  height: auto;
+  height: 592px;
+  width: auto;
   transition: transform 1.9s cubic-bezier(0.79, 0.02, 0.21, 0.99) .1s;
 
-  @include mixins.sm-desktop {
-    width: 100vw;
+  @include mixins.phone {
+    justify-self: center;
+    width: 150%;
+    height: auto;
   }
 }
 
