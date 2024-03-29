@@ -13,10 +13,10 @@ import Polaroid5 from '/public/about-us-icon/Polaroid5.png';
 const images = [Polaroid1, Polaroid2, Polaroid3, Polaroid4, Polaroid5];
 
 const hdStats = [
-  { stat: 140, text: 'projects', duration: 2000 },
-  { stat: 750, text: 'hackers', suffix: '+', duration: 2000 },
-  { stat: 10, text: 'prizes', prefix: '$', suffix: 'k+', duration: 2000 },
-  { stat: 24, text: 'hours', duration: 2000 },
+  { stat: 140, text: 'projects', duration: 1500 },
+  { stat: 750, text: 'hackers', suffix: '+', duration: 1500 },
+  { stat: 10, text: 'prizes', prefix: '$', suffix: 'k+', duration: 1500 },
+  { stat: 24, text: 'hours', duration: 1500 },
 ];
 
 interface PolaroidStackProps {
