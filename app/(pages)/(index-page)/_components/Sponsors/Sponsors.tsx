@@ -9,13 +9,14 @@ import asucd from 'public/index/Sponsors/asucd.png';
 import ucDavis from 'public/index/Sponsors/ucDavis.png';
 import whyNotBoba from 'public/index/Sponsors/whyNotBoba.webp';
 
-// Row 3: tier 2 sponsors
+// Row 2: tier 2 sponsors
 import pepsi from 'public/index/Sponsors/pepsi.png';
 import chevron from 'public/index/Sponsors/chevron.png';
 import cfc from 'public/index/Sponsors/cfc.jpg';
 import glico from 'public/index/Sponsors/Glico.png';
 import guayaki from 'public/index/Sponsors/gym.png';
 import ucdLS from 'public/index/Sponsors/ls.png';
+import rhombus from 'public/index/Sponsors/rhombus.png';
 
 // Row 3: IPO Sponsors
 import aggieHouse from 'public/index/Sponsors/IPOs/aggieHouseCow.png';
@@ -75,6 +76,11 @@ export default function Sponsors() {
           imgSrc={ucdLS}
           url="https://lettersandscience.ucdavis.edu/"
           alt="UC Davis College of Letters & Science Logo"
+        />
+        <Logo
+          imgSrc={rhombus}
+          url="https://www.rhombus.com/"
+          alt="Rhombus logo"
         />
       </Marquee>
 
