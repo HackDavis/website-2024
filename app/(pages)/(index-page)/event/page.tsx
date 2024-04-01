@@ -1,13 +1,12 @@
 'use client';
-// import Everyone from './_components/Everyone/Everyone';
-import Stats from '../_components/Stats/Stats';
-import WhatIsHackdavis from '../_components/WhatIsHackdavis/WhatIsHackdavis';
-import Landing from '../_components/Landing/Landing';
-import BottomSection from '../_components/BottomSection/BottomSection';
-import Sponsors from '../_components/Sponsors/Sponsors';
 import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
+import Landing from '../_components/Landing/Landing';
+import WhatIsHackdavis from '../_components/WhatIsHackdavis/WhatIsHackdavis';
+import ScheduleBlock from './_components/Schedule/ScheduleBlock';
 import RiverCow from '../_components/RiverCow/RiverCow';
+import BottomSection from '../_components/BottomSection/BottomSection';
+import Sponsors from '../_components/Sponsors/Sponsors';
 
 export default function Home() {
   return (
@@ -17,11 +16,11 @@ export default function Home() {
         <div id="landing">
           <Landing />
         </div>
+        <div id="schedule">
+          <ScheduleBlock />
+        </div>
         <div id="whatishackdavis">
           <WhatIsHackdavis />
-        </div>
-        <div id="stats">
-          <Stats />
         </div>
         <div id="everyone">
           <RiverCow />
