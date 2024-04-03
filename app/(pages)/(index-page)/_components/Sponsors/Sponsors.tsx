@@ -17,6 +17,7 @@ import glico from 'public/index/Sponsors/Glico.png';
 import guayaki from 'public/index/Sponsors/gym.png';
 import ucdLS from 'public/index/Sponsors/ls.png';
 import rhombus from 'public/index/Sponsors/rhombus.png';
+import codeCrafters from 'public/index/Sponsors/codecrafters.png';
 
 // Row 3: IPO Sponsors
 import aggieHouse from 'public/index/Sponsors/IPOs/aggieHouseCow.png';
@@ -81,6 +82,11 @@ export default function Sponsors() {
           imgSrc={rhombus}
           url="https://www.rhombus.com/"
           alt="Rhombus logo"
+        />
+        <Logo
+          imgSrc={codeCrafters}
+          url="https://codecrafters.io/"
+          alt="CodeCrafters logo"
         />
       </Marquee>
 
