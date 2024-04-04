@@ -71,10 +71,12 @@ export default function Form() {
           <a href={FormLinks.Sponsor.url} className={styles.buttons_sponsor}>
             <p>{FormLinks.Sponsor.title}</p>
           </a>
-          <div className={styles.buttons_userType}>
+          <div className={styles.buttons_calendar}>
+            Apply to be a
             <Link href={FormLinks.Volunteer.url}>
               <span>{FormLinks.Volunteer.title}</span>
             </Link>
+            or
             <Link href={FormLinks.Mentor.url}>
               <span>{FormLinks.Mentor.title}</span>
             </Link>
