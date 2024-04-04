@@ -25,7 +25,7 @@ export default function Schedule() {
 
   return (
     <main className="tw-flex tw-flex-col tw-border tw-border-black tw-px-32">
-      <div className="tw-flex tw-items-center tw-justify-between">
+      <div className="tw-flex tw-items-center tw-justify-between tw-py-10">
         <h1 className="tw-font-semibold">Schedule</h1>
         <div className="tw-flex">
           <span>{currentDay.dayString}</span>
@@ -37,7 +37,7 @@ export default function Schedule() {
         {Filters.map((filter) => (
           <button
             key={filter}
-            className="flex tw-rounded tw-bg-gray-200 tw-p-2"
+            className="tw-flex tw-gap-1 tw-rounded-3xl tw-bg-cyan-600 tw-p-3 tw-font-semibold tw-text-white"
           >
             <Check />
             {filter}
