@@ -7,8 +7,6 @@ type ScheduleDay = {
   day: Date;
 };
 
-const Filters: string[] = ['Activity', 'Workshop', 'Menu'];
-
 const eventDays: ScheduleDay[] = [
   {
     dayString: 'Saturday, April 27',
@@ -19,6 +17,17 @@ const eventDays: ScheduleDay[] = [
     day: new Date('2023-04-28'),
   },
 ];
+
+export type ScheduleBlock = {
+  dateTime: Date;
+  dateTimeString: string;
+  title: string;
+  description: string;
+  type: string;
+  location: string;
+};
+
+const Filters: string[] = ['Activity', 'Workshop', 'Menu'];
 
 export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
