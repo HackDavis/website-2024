@@ -27,6 +27,10 @@ const FormLinks: { [key: string]: FormLink } = {
     title: 'Starter Pack',
     url: 'https://hackdavis.notion.site/HackDavis-2024-Starter-Pack-bea21741698046e99e46f13c9b311039?pvs=4',
   },
+  Location: {
+    title: 'UCenter',
+    url: 'https://www.google.com/maps/place/University+Credit+Union+Center/@38.5418238,-121.7596385,17z/data=!3m1!4b1!4m6!3m5!1s0x808529d4ce160f1d:0x813925c4c65f6bb1!8m2!3d38.5418238!4d-121.7596385!16zL20vMDluZmh0?hl=en-US&entry=ttu',
+  },
 };
 
 export default function Form() {
@@ -56,7 +60,10 @@ export default function Form() {
             <div className={styles.calendar_inner_lower}>
               <CiCalendar className={styles.calendar_inner_lower_icon} />
               <span className={styles.calendar_inner_lower_text}>
-                April 27 - 28 @ UCenter
+                April 27 - 28 @
+                <Link href={FormLinks.Location.url}>
+                  <span>{FormLinks.Location.title}</span>
+                </Link>
               </span>
             </div>
           </div>
@@ -71,23 +78,25 @@ export default function Form() {
           <a href={FormLinks.Sponsor.url} className={styles.buttons_sponsor}>
             <p>{FormLinks.Sponsor.title}</p>
           </a>
-          <div className={styles.buttons_calendar}>
+        </div>
+        <div className={styles.links}>
+          <div className={styles.links_calendar}>
             Apply to be a
             <Link href={FormLinks.Volunteer.url}>
-              <span>{FormLinks.Volunteer.title}</span>
+              <span className={styles.link}>{FormLinks.Volunteer.title}</span>
             </Link>
             or
             <Link href={FormLinks.Mentor.url}>
               <span>{FormLinks.Mentor.title}</span>
             </Link>
           </div>
-          <div className={styles.buttons_calendar}>
+          <div className={styles.links_calendar}>
             New to hackathons?
             <Link href={FormLinks.StarterPack.url}>
               <span>{FormLinks.StarterPack.title}</span>
             </Link>
           </div>
-          <div className={styles.buttons_calendar}>
+          <div className={styles.links_calendar}>
             Grab your
             <Link href={FormLinks.Calendar.url}>
               <span>{FormLinks.Calendar.title}</span>
