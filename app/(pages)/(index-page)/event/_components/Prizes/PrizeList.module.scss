@@ -1,0 +1,98 @@
+@use 'app/(pages)/_globals/mixins';
+
+.container {
+  background: linear-gradient(180deg, #015270 0%, #123041 4%, #123041 100%);
+  padding: 88px 176px 0 176px;
+  overflow: hidden;
+
+  @include mixins.sm-desktop {
+    padding: 64px 88px 0 88px;
+  }
+
+  @include mixins.tablet {
+    padding: 40px 0 0 0;
+  }
+}
+
+.header {
+  color: #FFF;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.96px;
+
+  @include mixins.tablet {
+    margin-left: 32px;
+    font-size: 36px;
+    letter-spacing: 0.72px;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  margin: 32px 0 48px 0;
+  padding-right: -32px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  @include mixins.tablet {
+    margin: 24px 0 24px 32px;
+  }
+}
+
+.filters::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.filter {
+  display: flex;
+  height: 48px;
+  padding: 12px 24px;
+  margin-right: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: rgba(158, 231, 229, 0.25);
+  color: var(--cow, #9EE7E5);
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.36px;
+}
+
+.filterActive {
+  display: flex;
+  height: 48px;
+  padding: 12px 24px;
+  margin-right: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: var(--cow, #9EE7E5);
+  color: #123041;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.36px;
+}
+
+.prizes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+
+  @include mixins.tablet {
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px 0 32px;
+    gap: 24px;
+  }
+}
