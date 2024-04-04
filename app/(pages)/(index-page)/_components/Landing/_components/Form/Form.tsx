@@ -17,9 +17,16 @@ const FormLinks: { [key: string]: FormLink } = {
     title: 'Volunteer',
     url: 'https://form.typeform.com/to/MY8EI47D',
   },
-
   Mentor: { title: 'Mentor', url: 'https://form.typeform.com/to/cvy9LlyR' },
   Sponsor: { title: 'Sponsor', url: 'mailto:team@hackdavis.io' },
+  Calendar: {
+    title: 'HackDavis 2024 Calendar',
+    url: 'https://drive.google.com/file/d/1AGBLnS55qNEuGNXh9VLSdx2PaHsGVgE7/view?usp=drive_link',
+  },
+  StarterPack: {
+    title: 'Starter Pack',
+    url: 'https://hackdavis.notion.site/HackDavis-2024-Starter-Pack-bea21741698046e99e46f13c9b311039?pvs=4',
+  },
 };
 
 export default function Form() {
@@ -71,6 +78,19 @@ export default function Form() {
             <Link href={FormLinks.Mentor.url}>
               <span>{FormLinks.Mentor.title}</span>
             </Link>
+          </div>
+          <div className={styles.buttons_calendar}>
+            New to hackathons?
+            <Link href={FormLinks.StarterPack.url}>
+              <span>{FormLinks.StarterPack.title}</span>
+            </Link>
+          </div>
+          <div className={styles.buttons_calendar}>
+            Grab your
+            <Link href={FormLinks.Calendar.url}>
+              <span>{FormLinks.Calendar.title}</span>
+            </Link>
+            today!
           </div>
         </div>
       </div>
