@@ -27,7 +27,23 @@ export type ScheduleBlock = {
   location: string;
 };
 
+export type TimeTable = {
+  maxTimeSlots: number;
+  scheduleBlocks: ScheduleBlock[];
+  colors: Record<string, string>;
+};
+
 const Filters: string[] = ['Activity', 'Workshop', 'Menu'];
+
+const timeTable: TimeTable = {
+  maxTimeSlots: 24,
+  scheduleBlocks: [],
+  colors: {
+    Activity: 'tw-bg-cyan-600',
+    Workshop: 'tw-bg-yellow-400',
+    Menu: 'tw-bg-green-400',
+  },
+};
 
 export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
