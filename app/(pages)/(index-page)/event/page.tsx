@@ -3,7 +3,7 @@ import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
 import Landing from '../_components/Landing/Landing';
 import WhatIsHackdavis from '../_components/WhatIsHackdavis/WhatIsHackdavis';
-import ScheduleBlock from './_components/Schedule/ScheduleBlock';
+import Schedule from './_components/Schedule/Schedule';
 import PrizeList from './_components/Prizes/PrizeList';
 import RiverCow from '../_components/RiverCow/RiverCow';
 import BottomSection from '../_components/BottomSection/BottomSection';
@@ -17,8 +17,11 @@ export default function Home() {
         <div id="landing">
           <Landing />
         </div>
-        <div id="schedule">
-          <ScheduleBlock />
+        <div
+          id="schedule"
+          className="tw-h-half-screen tw-border tw-border-purple-400"
+        >
+          <Schedule />
         </div>
         <div id="whatishackdavis">
           <WhatIsHackdavis />

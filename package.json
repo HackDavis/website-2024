@@ -24,6 +24,7 @@
     "embla-carousel-wheel-gestures": "^8.0.0-rc05",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.364.0",
     "mongodb": "^6.3.0",
     "next": "^14.1.0",
     "react": "^18",
@@ -31,7 +32,8 @@
     "react-icons": "^4.12.0",
     "react-transition-group": "^4.4.5",
     "sass": "^1.69.5",
-    "sharp": "^0.33.2"
+    "sharp": "^0.33.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.4",
@@ -53,9 +55,10 @@
     "eslint-plugin-unicorn": "^50.0.1",
     "postcss": "^8",
     "prettier": "3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.13",
     "prisma": "^5.8.1",
     "run-script-os": "^1.1.6",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5"
   }
 }
