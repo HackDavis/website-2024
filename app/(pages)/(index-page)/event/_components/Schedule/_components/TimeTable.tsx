@@ -18,8 +18,16 @@ export default function TimeTable(timeTable: TimeTableType) {
             {blocksAtThisTime.map((block) => (
               <div
                 key={block.title}
-                className="tw-border-purple tw-mb-3 tw-flex tw-h-20 tw-w-full tw-items-center tw-justify-between tw-gap-3 tw-border tw-bg-gray-100 tw-p-3"
-              ></div>
+                className="tw-border-purple tw-mb-3 tw-flex tw-h-20 tw-w-full tw-flex-col tw-items-center tw-justify-between tw-gap-3 tw-border tw-bg-gray-100 tw-p-3"
+              >
+                <div>
+                  <span>{block.title}</span>
+                  <span>{block.description}</span>
+                </div>
+                <div>
+                  <span>{block.location}</span>
+                </div>
+              </div>
             ))}
           </div>
         );

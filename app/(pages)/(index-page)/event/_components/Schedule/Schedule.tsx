@@ -58,8 +58,20 @@ const mockScheduleBlocks: ScheduleBlock[] = [
   },
   {
     dateTime: new Date('2023-04-27T13:00:00'),
-    title: 'Check In',
-    type: 'Activity',
+    title: 'Dance Class',
+    type: 'Workshop',
+    location: 'ARC Pavilion',
+  },
+  {
+    dateTime: new Date('2023-04-27T13:00:00'),
+    title: 'Music Class',
+    type: 'Workshop',
+    location: 'ARC Pavilion',
+  },
+  {
+    dateTime: new Date('2023-04-27T13:00:00'),
+    title: 'Lunch Time',
+    type: 'Menu',
     location: 'Lobby',
   },
 ];
