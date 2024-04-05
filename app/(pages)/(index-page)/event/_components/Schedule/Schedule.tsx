@@ -1,4 +1,5 @@
 import ScheduleBlock from './_components/ScheduleBlock';
+import TimeTable from './_components/TimeTable';
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import { useState } from 'react';
 
@@ -20,14 +21,13 @@ const eventDays: ScheduleDay[] = [
 
 export type ScheduleBlock = {
   dateTime: Date;
-  dateTimeString: string;
   title: string;
-  description: string;
+  description?: string;
   type: string;
   location: string;
 };
 
-export type TimeTable = {
+export type TimeTableType = {
   maxTimeSlots: number;
   scheduleBlocks: ScheduleBlock[];
   colors: Record<string, string>;
@@ -35,9 +35,37 @@ export type TimeTable = {
 
 const Filters: string[] = ['Activity', 'Workshop', 'Menu'];
 
-const timeTable: TimeTable = {
+const mockScheduleBlocks: ScheduleBlock[] = [
+  {
+    dateTime: new Date('2023-04-27T09:00:00'),
+    title: 'Opening Ceremony',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Activity',
+    location: 'Main Stage',
+  },
+  {
+    dateTime: new Date('2023-04-27T09:00:00'),
+    title: 'Opening Ceremony #2',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Activity',
+    location: 'Main Stage',
+  },
+  {
+    dateTime: new Date('2023-04-27T10:00:00'),
+    title: 'Check In',
+    type: 'Activity',
+    location: 'Lobby',
+  },
+  {
+    dateTime: new Date('2023-04-27T13:00:00'),
+    title: 'Check In',
+    type: 'Activity',
+    location: 'Lobby',
+  },
+];
+const mockTimeTable: TimeTableType = {
   maxTimeSlots: 24,
-  scheduleBlocks: [],
+  scheduleBlocks: mockScheduleBlocks,
   colors: {
     Activity: 'tw-bg-cyan-600',
     Workshop: 'tw-bg-yellow-400',
@@ -58,7 +86,7 @@ export default function Schedule() {
           <ChevronRight onClick={() => setCurrentDay(eventDays[1])} />
         </div>
       </div>
-      <div className="tw-flex tw-gap-3">
+      <div className="tw-flex tw-gap-3 tw-py-5">
         {Filters.map((filter) => (
           <button
             key={filter}
@@ -68,6 +96,9 @@ export default function Schedule() {
             {filter}
           </button>
         ))}
+      </div>
+      <div className="">
+        <TimeTable {...mockTimeTable} />
       </div>
     </main>
   );

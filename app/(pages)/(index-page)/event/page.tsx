@@ -17,10 +17,7 @@ export default function Home() {
         <div id="landing">
           <Landing />
         </div>
-        <div
-          id="schedule"
-          className="tw-h-half-screen tw-border tw-border-purple-400"
-        >
+        <div id="schedule" className="tw-border tw-border-purple-400">
           <Schedule />
         </div>
         <div id="whatishackdavis">
