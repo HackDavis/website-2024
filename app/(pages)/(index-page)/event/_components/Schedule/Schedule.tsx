@@ -1,4 +1,5 @@
 import TimeTable from './_components/TimeTable';
+import ScheduleBlock from './_components/_components/ScheduleBlock';
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import { useState } from 'react';
 import type {
@@ -117,6 +118,15 @@ export default function Schedule() {
         timeTable={mockTimeTable}
         startDate={new Date('2023-04-27T09:00:00')}
       />
+      <div className="tw-grid-cols-auto tw-relative tw-z-10 tw-grid">
+        <div
+          className="tw-col-span-full tw-flex tw-overflow-hidden tw-rounded-xl
+              tw-bg-gray-600 tw-pl-5 tw-text-white"
+        >
+          <ScheduleBlock block={mockScheduleBlocks[0]} />
+          <ScheduleBlock block={mockScheduleBlocks[0]} />
+        </div>
+      </div>
     </main>
   );
 }

@@ -1,12 +1,6 @@
 import type { ScheduleBlockProp } from '../Schedule.types';
 
-export default function ScheduleBlock({
-  block,
-  colors,
-}: {
-  block: ScheduleBlockProp;
-  colors: Record<string, string>;
-}) {
+export default function ScheduleBlock({ block }: { block: ScheduleBlockProp }) {
   return (
     <main>
       <div
