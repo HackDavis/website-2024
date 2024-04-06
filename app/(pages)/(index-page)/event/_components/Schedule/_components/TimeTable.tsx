@@ -26,17 +26,26 @@ function calcDuration(scheduleBlock: ScheduleBlockProp): number {
   return hoursDiff * 60 + minutesDiff;
 }
 
-function calcGridRow(
-  scheduleBlock: ScheduleBlockProp,
-  startTime: number
-): string {
+function TimeSlot(scheduleBlock: ScheduleBlockProp): JSX.Element {
+  const blockStartTimeHour = scheduleBlock.startTime.getHours();
+  const blockEndTimeHour = scheduleBlock.endTime.getHours();
+
   const blockStartTimeMinute = scheduleBlock.startTime.getMinutes();
   const blockEndTimeMinute = scheduleBlock.endTime.getMinutes();
 
-  const durationMinute = blockEndTimeMinute - blockStartTimeMinute;
-  const roundedDuration = Math.floor(durationMinute / 15);
+  const durationMinute = calcDuration(scheduleBlock);
+  const durationIn15MinIntervals = Math.ceil(durationMinute / 15);
 
-  return `tw-${blockStartTimeMinute} tw-row-span-${roundedDuration}`;
+  return (
+    <main className="tw-grid tw-w-full tw-auto-cols-auto tw-grid-rows-4">
+      <div
+        className={`tw-${blockStartTimeMinute} tw-row-span-${durationIn15MinIntervals} tw-bg-red-200`}
+      >
+        {scheduleBlock.title}
+        {scheduleBlock.description}
+      </div>
+    </main>
+  );
 }
 
 export default function TimeTable({
@@ -48,51 +57,21 @@ export default function TimeTable({
     <main className="tw-w-full tw-border tw-border-red-400">
       {Array.from({ length: timeTable.maxTimeSlots }).map((_, time_slot) => {
         const hourTime = (startTime + time_slot) % 24;
-        const currentTimeSlot = timeTable.scheduleBlocks.filter((block) => {
-          const blockStartTime = block.startTime.getHours();
-          const blockEndTime = block.endTime.getHours();
-          return hourTime >= blockStartTime && hourTime < blockEndTime;
-        });
-
-        return (
-          <div key={time_slot} className="tw-flex">
-            <div className="tw-flex tw-min-w-12 tw-max-w-12 tw-items-center tw-justify-center tw-border tw-border-red-400">
-              <span className="">{hourTime}:00</span>
-            </div>
-            <div className="tw-flex tw-w-full tw-border tw-border-pink-300">
-              {currentTimeSlot.map((block, blockIndex) => {
-                const scheduleBlockDuration = calcDuration(block);
-                return (
-                  <div
-                    key={blockIndex}
-                    className="tw-flex tw-w-full tw-border tw-border-pink-300"
-                  >
-                    <div className="tw-flex tw-flex-col">
-                      <span className="">{block.title}</span>
-                      <span className="">{scheduleBlockDuration} Minutes</span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
-      {/* {Array.from({ length: timeTable.maxTimeSlots }).map((_, time_slot) => {
-        const hourTime = (startTime + time_slot) % 24;
         return (
           <div key={time_slot} className="tw-flex tw-h-12">
             <div className="tw-flex tw-min-w-12 tw-max-w-12 tw-items-center tw-justify-center tw-border tw-border-red-400">
               <span className="">{hourTime}:00</span>
             </div>
-            <div className="tw-grid tw-w-full tw-auto-cols-auto tw-grid-rows-4">
-              <div className="tw-row-span-2 tw-border tw-border-b-black tw-bg-gray-300"></div>
-              <div className="tw-row-span-1 tw-bg-pink-200"></div>
-              <div className="tw-row-span-1 tw-border tw-border-gray-700 tw-bg-pink-200"></div>
+            <div className="tw-grid tw-w-full">
+              {timeTable.scheduleBlocks[time_slot] ? (
+                <TimeSlot {...timeTable.scheduleBlocks[time_slot]} />
+              ) : (
+                <div className="tw-row-span-full tw-border tw-border-black tw-bg-gray-400"></div>
+              )}
             </div>
           </div>
         );
-      })} */}
+      }, [])}
     </main>
   );
 }
