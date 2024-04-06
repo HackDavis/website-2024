@@ -1,7 +1,10 @@
-import ScheduleBlock from './_components/ScheduleBlock';
 import TimeTable from './_components/TimeTable';
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import { useState } from 'react';
+import type {
+  ScheduleBlockProp,
+  TimeTableProps,
+} from './_components/Schedule.types';
 
 type ScheduleDay = {
   dayString: string;
@@ -19,63 +22,64 @@ const eventDays: ScheduleDay[] = [
   },
 ];
 
-export type ScheduleBlock = {
-  dateTime: Date;
-  title: string;
-  description?: string;
-  type: string;
-  location: string;
-};
-
-export type TimeTableType = {
-  maxTimeSlots: number;
-  scheduleBlocks: ScheduleBlock[];
-  colors: Record<string, string>;
-};
-
 const Filters: string[] = ['Activity', 'Workshop', 'Menu'];
 
-const mockScheduleBlocks: ScheduleBlock[] = [
+const mockScheduleBlocks: ScheduleBlockProp[] = [
   {
-    dateTime: new Date('2023-04-27T09:00:00'),
+    startTime: new Date('2023-04-27T09:00:00'),
+    endTime: new Date('2023-04-27T10:00:00'),
     title: 'Opening Ceremony',
     description: 'Welcome to HackDavis 2023!',
     type: 'Activity',
     location: 'Main Stage',
   },
   {
-    dateTime: new Date('2023-04-27T09:00:00'),
+    startTime: new Date('2023-04-27T09:00:00'),
+    endTime: new Date('2023-04-27T11:00:00'),
     title: 'Opening Ceremony #2',
     description: 'Welcome to HackDavis 2023!',
     type: 'Activity',
     location: 'Main Stage',
   },
   {
-    dateTime: new Date('2023-04-27T10:00:00'),
+    startTime: new Date('2023-04-27T10:00:00'),
+    endTime: new Date('2023-04-27T11:00:00'),
     title: 'Check In',
     type: 'Activity',
     location: 'Lobby',
   },
   {
-    dateTime: new Date('2023-04-27T13:00:00'),
+    startTime: new Date('2023-04-27T13:00:00'),
+    endTime: new Date('2023-04-27T15:00:00'),
     title: 'Dance Class',
     type: 'Workshop',
     location: 'ARC Pavilion',
   },
   {
-    dateTime: new Date('2023-04-27T13:00:00'),
+    startTime: new Date('2023-04-27T13:00:00'),
+    endTime: new Date('2023-04-27T14:00:00'),
     title: 'Music Class',
     type: 'Workshop',
     location: 'ARC Pavilion',
   },
   {
-    dateTime: new Date('2023-04-27T13:00:00'),
+    startTime: new Date('2023-04-27T13:00:00'),
+    endTime: new Date('2023-04-27T14:00:00'),
     title: 'Lunch Time',
     type: 'Menu',
     location: 'Lobby',
   },
+  {
+    startTime: new Date('2023-04-27T15:00:00'),
+    endTime: new Date('2023-04-27T15:30:00'),
+    title: '30 mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Activity',
+    location: 'Off Stage',
+  },
 ];
-const mockTimeTable: TimeTableType = {
+
+const mockTimeTable: TimeTableProps = {
   maxTimeSlots: 24,
   scheduleBlocks: mockScheduleBlocks,
   colors: {
@@ -109,9 +113,10 @@ export default function Schedule() {
           </button>
         ))}
       </div>
-      <div className="">
-        <TimeTable {...mockTimeTable} />
-      </div>
+      <TimeTable
+        timeTable={mockTimeTable}
+        startDate={new Date('2023-04-27T09:00:00')}
+      />
     </main>
   );
 }
