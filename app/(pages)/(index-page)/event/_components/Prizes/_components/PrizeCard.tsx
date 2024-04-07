@@ -1,7 +1,9 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import Trophy from 'public/index/PrizeList/trophy.png';
 import Plus from 'public/index/PrizeList/plus.png';
 import styles from './PrizeCard.module.scss';
+import CarouselDots from './carouselDots/carouselDots';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import useEmblaCarousel from 'embla-carousel-react';
 
@@ -11,6 +13,8 @@ interface PrizeCardProps {
 }
 
 export default function PrizeCard({ name, prizeImages }: PrizeCardProps) {
+  const [moveDot, setMoveDot] = useState<boolean>(false);
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: false,
@@ -26,12 +30,14 @@ export default function PrizeCard({ name, prizeImages }: PrizeCardProps) {
     if (emblaApi) {
       emblaApi.scrollNext();
     }
+    setMoveDot(true);
   };
 
   const handleMouseLeave = () => {
     if (emblaApi) {
       emblaApi.scrollPrev();
     }
+    setMoveDot(false);
   };
 
   return (
@@ -54,26 +60,10 @@ export default function PrizeCard({ name, prizeImages }: PrizeCardProps) {
               ))}
             </div>
           </div>
-          <div className={styles.dotContainer}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="4"
-              height="4"
-              viewBox="0 0 4 4"
-              fill="none"
-            >
-              <circle cx="2" cy="2" r="2" fill="#123041" fillOpacity="1" />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="4"
-              height="4"
-              viewBox="0 0 4 4"
-              fill="none"
-            >
-              <circle cx="2" cy="2" r="2" fill="#123041" fillOpacity="0.5" />
-            </svg>
-          </div>
+
+          {prizeImages.length > 1 && ( // adds dots only for multiple prizes
+            <CarouselDots moveDot={moveDot} />
+          )}
         </div>
         <div className={styles.info}>
           <div>
