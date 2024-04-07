@@ -54,6 +54,26 @@ export default function PrizeCard({ name, prizeImages }: PrizeCardProps) {
               ))}
             </div>
           </div>
+          <div className={styles.dotContainer}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="4"
+              height="4"
+              viewBox="0 0 4 4"
+              fill="none"
+            >
+              <circle cx="2" cy="2" r="2" fill="#123041" fillOpacity="1" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="4"
+              height="4"
+              viewBox="0 0 4 4"
+              fill="none"
+            >
+              <circle cx="2" cy="2" r="2" fill="#123041" fillOpacity="0.5" />
+            </svg>
+          </div>
         </div>
         <div className={styles.info}>
           <div>

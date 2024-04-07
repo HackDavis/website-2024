@@ -25,6 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   @include mixins.tablet {
     min-height: 100px
@@ -38,12 +39,21 @@
 }
 
 .emblaWrapper {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   width: 50%;
 }
 
 .emblaContainer {
   display: flex;
+}
+
+.dotContainer{
+  display: flex;
+  justify-content: space-between;
+  width: 10px;
+  transform: translateY(1500%);
 }
 
 .info {
