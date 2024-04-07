@@ -22,10 +22,28 @@
   margin-right: 24px;
   border-radius: 10px;
   background: rgba(158, 231, 229, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include mixins.tablet {
     min-height: 100px
   }
+}
+
+// carousel classes
+.prizeImage {
+  width: 100px;
+  height: auto;
+}
+
+.emblaWrapper {
+  overflow: hidden;
+  width: 50%;
+}
+
+.emblaContainer {
+  display: flex;
 }
 
 .info {

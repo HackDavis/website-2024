@@ -2,16 +2,59 @@ import Image from 'next/image';
 import Trophy from 'public/index/PrizeList/trophy.png';
 import Plus from 'public/index/PrizeList/plus.png';
 import styles from './PrizeCard.module.scss';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import useEmblaCarousel from 'embla-carousel-react';
 
 interface PrizeCardProps {
   name: string;
+  prizeImages: StaticImport[];
 }
 
-export default function PrizeCard({ name }: PrizeCardProps) {
+export default function PrizeCard({ name, prizeImages }: PrizeCardProps) {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: false,
+      align: 'start',
+      dragFree: false,
+      skipSnaps: false,
+      watchDrag: false,
+    },
+    []
+  );
+
+  const handleMouseEnter = () => {
+    if (emblaApi) {
+      emblaApi.scrollNext();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (emblaApi) {
+      emblaApi.scrollPrev();
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={styles.imageBackground}>{/* <Image /> */}</div>
+        <div className={styles.imageBackground}>
+          <div className={styles.emblaWrapper} ref={emblaRef}>
+            <div
+              className={styles.emblaContainer}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              {prizeImages.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  alt="Trophy"
+                  className={styles.prizeImage}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
         <div className={styles.info}>
           <div>
             <h3 className={styles.header}>{name}</h3>
