@@ -10,9 +10,14 @@ import CarouselDots from './carouselDots/CarouselDots';
 interface PrizeCardProps {
   name: string;
   prizeImages: StaticImport[];
+  prizeNames: string[];
 }
 
-export default function PrizeCard({ name, prizeImages }: PrizeCardProps) {
+export default function PrizeCard({
+  name,
+  prizeImages,
+  prizeNames,
+}: PrizeCardProps) {
   const [moveDot, setMoveDot] = useState<boolean>(false);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -69,14 +74,20 @@ export default function PrizeCard({ name, prizeImages }: PrizeCardProps) {
           <div>
             <h3 className={styles.header}>{name}</h3>
             <div className={styles.prizes}>
-              <div className={styles.place}>
-                <Image src={Trophy} alt="Trophy" className={styles.trophy} />
-                <p className={styles.placeText}>1st Place</p>
-              </div>
-              <div className={styles.place}>
-                <Image src={Trophy} alt="Trophy" className={styles.trophy} />
-                <p className={styles.placeText}>2nd Place</p>
-              </div>
+              {prizeNames.map((name, index) => (
+                <div key={index} className={styles.place}>
+                  <Image src={Trophy} alt="Trophy" className={styles.trophy} />
+                  {prizeNames.length > 1 && index == 0 && (
+                    <p className={styles.placeText}>{`1st place: ${name}`}</p>
+                  )}
+                  {prizeNames.length > 1 && index == 1 && (
+                    <p className={styles.placeText}>{`2nd place: ${name}`}</p>
+                  )}
+                  {prizeNames.length == 1 && (
+                    <p className={styles.placeText}>{name}</p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
           <div className={styles.eligibility}>
