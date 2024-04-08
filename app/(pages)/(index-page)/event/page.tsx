@@ -7,6 +7,7 @@ import ScheduleBlock from './_components/Schedule/ScheduleBlock';
 import RiverCow from '../_components/RiverCow/RiverCow';
 import BottomSection from '../_components/BottomSection/BottomSection';
 import Sponsors from '../_components/Sponsors/Sponsors';
+import Resources from './_components/Resources/Resources';
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       <main style={{ backgroundColor: 'white', scrollBehavior: 'smooth' }}>
         <div id="landing">
           <Landing />
+        </div>
+        <div id="resources">
+          <Resources />
         </div>
         <div id="schedule">
           <ScheduleBlock />
