@@ -5,7 +5,7 @@
   background: #FFF;
   padding: 24px;
 
-  @include mixins.tablet {
+  @include mixins.phone {
     padding: 12px;
   }
 }
@@ -27,7 +27,7 @@
   align-items: center;
   flex-direction: column;
 
-  @include mixins.tablet {
+  @include mixins.phone {
     min-height: 100px
   }
 }
@@ -37,6 +37,10 @@
   width: 50%;
   flex: 0 0 100%;
   height: auto;
+
+  @include mixins.phone {
+    max-width: 50px;
+  }
 }
 
 .emblaWrapper {
@@ -44,6 +48,10 @@
   flex-direction: column;
   overflow: hidden;
   width: 70%;
+
+  @include mixins.phone {
+    width: 50%;
+  }
 }
 
 .emblaContainer {
@@ -65,7 +73,7 @@
   line-height: 125%; /* 27.296px */
   margin-bottom: 16px;
 
-  @include mixins.tablet {
+  @include mixins.phone {
     font-size: 12px;
     margin-bottom: 10px;
   }
@@ -83,7 +91,7 @@
   align-items: center;
   gap: 12px;
 
-  @include mixins.tablet {
+  @include mixins.phone {
     gap: 8px;
   }
 }
@@ -96,7 +104,7 @@
   font-weight: 400;
   line-height: 125%; /* 21.233px */
 
-  @include mixins.tablet {
+  @include mixins.phone {
     font-size: 10px;
   }
 }
@@ -105,7 +113,7 @@
   width: 24.266px;
   height: 24.266px;
 
-  @include mixins.tablet {
+  @include mixins.phone {
     width: 14.266px;
     height: 14.266px;
   }
@@ -127,7 +135,7 @@
   line-height: 125%; /* 16.683px */
   letter-spacing: 1.335px;
 
-  @include mixins.tablet {
+  @include mixins.phone {
     font-size: 9px;
     letter-spacing: 0.9px;
   }
@@ -137,7 +145,7 @@
   width: 14px;
   height: 14px;
 
-  @include mixins.tablet {
+  @include mixins.phone {
     width: 9px;
     height: 9px;
   }

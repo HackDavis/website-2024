@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import PrizeCard from './_components/PrizeCard';
 import styles from './PrizeList.module.scss';
-import Intel from 'public/index/Sponsors/intel.png';
-import ucDavis from 'public/index/Sponsors/ucDavis.png';
 import { StaticImageData } from 'next/image';
 
 // statically importing prize images
