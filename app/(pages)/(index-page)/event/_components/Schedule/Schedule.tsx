@@ -2,6 +2,7 @@ import TimeTable from './_components/TimeTable';
 import ScheduleBlock from './_components/_components/ScheduleBlock';
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import { useState } from 'react';
+
 import type {
   ScheduleBlockProp,
   TimeTableProps,
