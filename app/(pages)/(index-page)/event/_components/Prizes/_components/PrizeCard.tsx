@@ -3,9 +3,9 @@ import { useState } from 'react';
 import Trophy from 'public/index/PrizeList/trophy.png';
 import Plus from 'public/index/PrizeList/plus.png';
 import styles from './PrizeCard.module.scss';
-import CarouselDots from './carouselDots/carouselDots';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import useEmblaCarousel from 'embla-carousel-react';
+import CarouselDots from './carouselDots/CarouselDots';
 
 interface PrizeCardProps {
   name: string;
