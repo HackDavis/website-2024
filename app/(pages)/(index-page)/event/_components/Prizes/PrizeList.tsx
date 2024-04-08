@@ -19,6 +19,34 @@ import metaquest from 'public/index/PrizeList/General/metaquest3.png';
 import moneybag from 'public/index/PrizeList/General/noto_money-bag.png';
 import swagbag from 'public/index/PrizeList/General/swagbag.png';
 
+// technical prizes
+import beats from 'public/index/PrizeList/Technical/beatsstudiopro.png';
+import chatgpt from 'public/index/PrizeList/Technical/chatgptplus.png';
+import lenovolaptop from 'public/index/PrizeList/Technical/lenovolaptop.png';
+
+// design prizes
+import question from 'public/index/PrizeList/Design/_.png';
+import creativecloud from 'public/index/PrizeList/Design/creativecloud.png';
+import instax from 'public/index/PrizeList/Design/instax.png';
+
+// business prizes
+import akasocamera from 'public/index/PrizeList/Business/akasocamera.png';
+import beatspro from 'public/index/PrizeList/Business/beatspro.png';
+import embermug from 'public/index/PrizeList/Business/embermug.png';
+import waterbottle from 'public/index/PrizeList/Business/larqwaterbottle.png';
+
+// mlh prizes
+import pen from 'public/index/PrizeList/MLH/3dprintingpen.png';
+import microphone from 'public/index/PrizeList/MLH/bluesnowballmicrophone.png';
+import breadboard from 'public/index/PrizeList/MLH/breadboardkit.png';
+import saucelabs from 'public/index/PrizeList/MLH/saucelabs.png';
+import tablet from 'public/index/PrizeList/MLH/wacometablet.png';
+import wirelesscharger from 'public/index/PrizeList/MLH/wirelesscharger.png';
+
+// non-profit prizes
+import camping from 'public/index/PrizeList/NonProfit/owlcamping.png';
+import stuffle from 'public/index/PrizeList/NonProfit/smokoanimals4.png';
+
 const filters = [
   'General',
   'Technical',
@@ -88,77 +116,107 @@ const prizeCategories: PrizeCategories = {
   ],
   Technical: [
     {
-      name: 'Best Hack for Social Good',
-      prizeImages: [Intel, ucDavis],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best AI/ML Hack',
+      prizeImages: [chatgpt],
+      prizeNames: ['ChatGPT subscription'],
+    },
+    {
+      name: 'Most Technically Challenging Hack',
+      prizeImages: [beats],
+      prizeNames: ['Beats Studio Pro'],
+    },
+    {
+      name: 'Best use of Intel Developer Cloud',
+      prizeImages: [lenovolaptop],
+      prizeNames: ['Lenovo Laptops', 'IDC Credit'],
     },
   ],
   Design: [
     {
-      name: 'Best Hack for Social Good',
-      prizeImages: [Intel, ucDavis],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best UI/UX Prototyping',
+      prizeImages: [creativecloud],
+      prizeNames: ['Adobe Creative Cloud of 1 year'],
     },
     {
-      name: 'Best Beginner Hack',
-      prizeImages: [Intel, ucDavis],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best User Research',
+      prizeImages: [instax],
+      prizeNames: ['Instax mini'],
     },
     {
-      name: 'Most Creative Hack',
-      prizeImages: [Intel],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best Overall Design',
+      prizeImages: [question],
+      prizeNames: ['?'],
     },
   ],
   Business: [
     {
-      name: 'Best Hack for Social Good',
-      prizeImages: [Intel, ucDavis],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best Interactive Media Hack',
+      prizeImages: [beatspro],
+      prizeNames: ['Beats Studio Pro'],
     },
     {
-      name: 'Best Beginner Hack',
-      prizeImages: [Intel, ucDavis],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best Finance & Tech',
+      prizeImages: [embermug],
+      prizeNames: ['Ember Smart Mug'],
     },
     {
-      name: 'Most Creative Hack',
-      prizeImages: [Intel],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best Entrepreneurship Hack',
+      prizeImages: [waterbottle],
+      prizeNames: ['Larq self cleaning water bottle'],
+    },
+    {
+      name: 'Best Statistical Model',
+      prizeImages: [akasocamera],
+      prizeNames: ['AKASO brave'],
     },
   ],
   MLH: [
     {
-      name: 'Best Hack for Social Good',
-      prizeImages: [Intel, ucDavis],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best DEI Hack Sponsored by Fidelity',
+      prizeImages: [wirelesscharger],
+      prizeNames: ['Fidelity branded wireless charger'],
     },
     {
-      name: 'Best Beginner Hack',
-      prizeImages: [Intel, ucDavis],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best Use of .Tech Domain Name',
+      prizeImages: [microphone],
+      prizeNames: ['FREE domain name for life & blue snowball microphone '],
     },
     {
-      name: 'Most Creative Hack',
-      prizeImages: [Intel],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Best Use of Kintone',
+      prizeImages: [breadboard],
+      prizeNames: ['Breadboard IoT kit'],
+    },
+    {
+      name: 'Best Use of TinyMCE',
+      prizeImages: [pen],
+      prizeNames: ['3d Printing Pen'],
+    },
+    {
+      name: 'Best Use of Propel',
+      prizeImages: [tablet],
+      prizeNames: ['Wacom Tablets'],
+    },
+    {
+      name: 'AuthSauce Labs Raffle',
+      prizeImages: [saucelabs],
+      prizeNames: ['Swag Bag'],
     },
   ],
   'Non-Profit': [
     {
-      name: 'Best Hack for Social Good',
-      prizeImages: [Intel, ucDavis],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'Life of Kai',
+      prizeImages: [stuffle, camping],
+      prizeNames: ['1 Stuffle & 1 Camping Hammock'],
     },
     {
-      name: 'Best Beginner Hack',
-      prizeImages: [Intel, ucDavis],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'DCMH',
+      prizeImages: [stuffle, camping],
+      prizeNames: ['1 Stuffle & 1 Camping Hammock'],
     },
     {
-      name: 'Most Creative Hack',
-      prizeImages: [Intel],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      name: 'AggieHouse',
+      prizeImages: [stuffle, camping],
+      prizeNames: ['1 Stuffle & 1 Camping Hammock'],
     },
   ],
 };
