@@ -1,7 +1,9 @@
-import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
+import TimeTable from './_components/TimeTable';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import type { Event, TimeChunk } from './_components/Schedule.types';
 import { createTimeChunks } from './_components/TimeChunks';
+import Filters from './_components/Filters';
 
 type ScheduleDay = {
   dayString: string;
@@ -18,8 +20,6 @@ const eventDays: ScheduleDay[] = [
     day: new Date('2023-04-28'),
   },
 ];
-
-const Filters: string[] = ['Activity', 'Workshop', 'Menu'];
 
 const mockEvents: Event[] = [
   {
@@ -74,6 +74,14 @@ const mockEvents: Event[] = [
     type: 'Activity',
     location: 'Off Stage',
   },
+  {
+    startTime: new Date('2023-04-27T15:15:00'),
+    endTime: new Date('2023-04-27T16:00:00'),
+    title: '15 mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Activity',
+    location: 'Off Stage',
+  },
 ];
 
 const timeChunks: TimeChunk[] = createTimeChunks(mockEvents);
@@ -91,37 +99,8 @@ export default function Schedule() {
           <ChevronRight onClick={() => setCurrentDay(eventDays[1])} />
         </div>
       </div>
-      <div className="tw-flex tw-gap-3 tw-py-5">
-        {Filters.map((filter) => (
-          <button
-            key={filter}
-            className="tw-flex tw-gap-1 tw-rounded-3xl tw-bg-cyan-600 tw-p-3 tw-font-semibold tw-text-white"
-          >
-            <Check />
-            {filter}
-          </button>
-        ))}
-      </div>
-      <div className="">
-        {timeChunks.map((timeChunk) => (
-          <div key={timeChunk.startTime.getTime()} className="tw-p-3">
-            <h2>{timeChunk.startTime.toLocaleTimeString()}</h2>
-            <div className="tw-flex tw-gap-3">
-              {timeChunk.eventBlocks.map((event) => (
-                <div
-                  key={event.title}
-                  className="tw-rounded-lg tw-border tw-border-black tw-p-3"
-                >
-                  <h3>{event.title}</h3>
-                  <p>{event.location}</p>
-                  <p>{event.startTime.getHours()}</p>
-                  <p>{event.endTime.getHours()}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+      <Filters />
+      <TimeTable timeChunks={timeChunks} />
     </main>
   );
 }

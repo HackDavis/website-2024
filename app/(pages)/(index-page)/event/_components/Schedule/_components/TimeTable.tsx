@@ -1,77 +1,50 @@
-type ScheduleBlockProp = {
-  startTime: Date;
-  endTime: Date;
-  title: string;
-  description?: string;
-  type: string;
-  location: string;
-};
+import type { TimeChunk } from './Schedule.types';
 
-type TimeTableProps = {
-  maxTimeSlots: number;
-  scheduleBlocks: ScheduleBlockProp[];
-  colors: Record<string, string>;
-};
-
-type TimeTableComponentsProps = {
-  timeTable: TimeTableProps;
-  startDate: Date;
-};
-
-function calcDuration(scheduleBlock: ScheduleBlockProp): number {
-  const hoursDiff =
-    scheduleBlock.endTime.getHours() - scheduleBlock.startTime.getHours();
-  const minutesDiff =
-    scheduleBlock.endTime.getMinutes() - scheduleBlock.startTime.getMinutes();
-  return hoursDiff * 60 + minutesDiff;
+interface TimeTableProps {
+  timeChunks: TimeChunk[];
 }
 
-function TimeSlot(scheduleBlock: ScheduleBlockProp): JSX.Element {
-  const blockStartTimeHour = scheduleBlock.startTime.getHours();
-  const blockEndTimeHour = scheduleBlock.endTime.getHours();
-
-  const blockStartTimeMinute = scheduleBlock.startTime.getMinutes();
-  const blockEndTimeMinute = scheduleBlock.endTime.getMinutes();
-
-  const durationMinute = calcDuration(scheduleBlock);
-  const durationIn15MinIntervals = Math.ceil(durationMinute / 15);
-
+export default function TimeTable({ timeChunks }: TimeTableProps) {
   return (
-    <main className="tw-grid tw-w-full tw-auto-cols-auto tw-grid-rows-4">
-      <div
-        className={`tw-${blockStartTimeMinute} tw-row-span-${durationIn15MinIntervals} tw-bg-red-200`}
-      >
-        {scheduleBlock.title}
-        {scheduleBlock.description}
-      </div>
-    </main>
-  );
-}
-
-export default function TimeTable({
-  timeTable,
-  startDate,
-}: TimeTableComponentsProps) {
-  const startTime = startDate.getHours();
-  return (
-    <main className="tw-w-full tw-border tw-border-red-400">
-      {Array.from({ length: timeTable.maxTimeSlots }).map((_, time_slot) => {
-        const hourTime = (startTime + time_slot) % 24;
-        return (
-          <div key={time_slot} className="tw-flex tw-h-12">
-            <div className="tw-flex tw-min-w-12 tw-max-w-12 tw-items-center tw-justify-center tw-border tw-border-red-400">
-              <span className="">{hourTime}:00</span>
-            </div>
-            <div className="tw-grid tw-w-full">
-              {timeTable.scheduleBlocks[time_slot] ? (
-                <TimeSlot {...timeTable.scheduleBlocks[time_slot]} />
-              ) : (
-                <div className="tw-row-span-full tw-border tw-border-black tw-bg-gray-400"></div>
-              )}
+    <main className="">
+      <div className="">
+        {timeChunks.map((timeChunk, index) => (
+          <div key={timeChunk.startTime.getTime()} className="tw-p-3">
+            <h2>TimeChunk: {index}</h2>
+            <div className="tw-flex tw-gap-3">
+              {timeChunk.eventBlocks.map((event) => (
+                <div
+                  key={event.title}
+                  className="tw-rounded-lg tw-border tw-border-black tw-p-3"
+                >
+                  <h3>{event.title}</h3>
+                  <p>{event.location}</p>
+                  <p>
+                    {event.startTime.getHours()}:{event.startTime.getMinutes()}
+                  </p>
+                  <p>
+                    {event.endTime.getHours()}:{event.endTime.getMinutes()}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-        );
-      }, [])}
+        ))}
+        {timeChunks.map((timeChunk, index) => (
+          <div key={timeChunk.startTime.getTime()} className="tw-p-3">
+            <div className="tw-flex tw-flex-col">
+              {timeChunk.eventBlocks.map((event) => (
+                <div key={event.title} className="tw-flex">
+                  <span>{event.startTime.getHours()}</span>
+                  <div className="tw-flex tw-w-full tw-flex-grow tw-border-red-300">
+                    <div className=""></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
