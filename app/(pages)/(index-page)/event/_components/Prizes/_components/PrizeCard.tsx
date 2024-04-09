@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Trophy from 'public/index/PrizeList/trophy.png';
 import Plus from 'public/index/PrizeList/plus.png';
 import styles from './PrizeCard.module.scss';
@@ -20,29 +20,47 @@ export default function PrizeCard({
 }: PrizeCardProps) {
   const [moveDot, setMoveDot] = useState<boolean>(false);
 
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: false,
       align: 'start',
       dragFree: false,
       skipSnaps: false,
-      watchDrag: false,
+      watchDrag: width > 760 ? false : true,
     },
     []
   );
 
-  const handleMouseEnter = () => {
+  const changeDots = useCallback((emblaApi: any) => {
+    setMoveDot(!Math.round(emblaApi.scrollProgress()));
+  }, []);
+
+  useEffect(() => {
     if (emblaApi) {
+      emblaApi.on('select', changeDots);
+    }
+  }, [changeDots, emblaApi]);
+
+  const handleMouseEnter = () => {
+    if (emblaApi && width > 760) {
       emblaApi.scrollNext();
     }
-    setMoveDot(true);
   };
 
   const handleMouseLeave = () => {
-    if (emblaApi) {
+    if (emblaApi && width > 760) {
       emblaApi.scrollPrev();
     }
-    setMoveDot(false);
   };
 
   return (
