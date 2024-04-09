@@ -1,12 +1,7 @@
-import TimeTable from './_components/TimeTable';
-import ScheduleBlock from './_components/_components/ScheduleBlock';
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import { useState } from 'react';
-
-import type {
-  ScheduleBlockProp,
-  TimeTableProps,
-} from './_components/Schedule.types';
+import type { Event, TimeChunk } from './_components/Schedule.types';
+import { createTimeChunks } from './_components/TimeChunks';
 
 type ScheduleDay = {
   dayString: string;
@@ -26,7 +21,7 @@ const eventDays: ScheduleDay[] = [
 
 const Filters: string[] = ['Activity', 'Workshop', 'Menu'];
 
-const mockScheduleBlocks: ScheduleBlockProp[] = [
+const mockEvents: Event[] = [
   {
     startTime: new Date('2023-04-27T09:00:00'),
     endTime: new Date('2023-04-27T10:00:00'),
@@ -81,15 +76,7 @@ const mockScheduleBlocks: ScheduleBlockProp[] = [
   },
 ];
 
-const mockTimeTable: TimeTableProps = {
-  maxTimeSlots: 24,
-  scheduleBlocks: mockScheduleBlocks,
-  colors: {
-    Activity: 'tw-bg-cyan-600',
-    Workshop: 'tw-bg-yellow-400',
-    Menu: 'tw-bg-green-400',
-  },
-};
+const timeChunks: TimeChunk[] = createTimeChunks(mockEvents);
 
 export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
@@ -115,18 +102,25 @@ export default function Schedule() {
           </button>
         ))}
       </div>
-      <TimeTable
-        timeTable={mockTimeTable}
-        startDate={new Date('2023-04-27T09:00:00')}
-      />
-      <div className="tw-grid-cols-auto tw-relative tw-z-10 tw-grid">
-        <div
-          className="tw-col-span-full tw-flex tw-overflow-hidden tw-rounded-xl
-              tw-bg-gray-600 tw-pl-5 tw-text-white"
-        >
-          <ScheduleBlock block={mockScheduleBlocks[0]} />
-          <ScheduleBlock block={mockScheduleBlocks[0]} />
-        </div>
+      <div className="">
+        {timeChunks.map((timeChunk) => (
+          <div key={timeChunk.startTime.getTime()} className="tw-p-3">
+            <h2>{timeChunk.startTime.toLocaleTimeString()}</h2>
+            <div className="tw-flex tw-gap-3">
+              {timeChunk.eventBlocks.map((event) => (
+                <div
+                  key={event.title}
+                  className="tw-rounded-lg tw-border tw-border-black tw-p-3"
+                >
+                  <h3>{event.title}</h3>
+                  <p>{event.location}</p>
+                  <p>{event.startTime.getHours()}</p>
+                  <p>{event.endTime.getHours()}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );

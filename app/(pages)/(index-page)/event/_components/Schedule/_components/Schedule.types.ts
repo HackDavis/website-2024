@@ -1,14 +1,14 @@
-export type ScheduleBlockProp = {
+export type Event = {
   startTime: Date;
   endTime: Date;
   title: string;
+  location: string;
   description?: string;
   type: string;
-  location: string;
 };
 
-export type TimeTableProps = {
-  maxTimeSlots: number;
-  scheduleBlocks: ScheduleBlockProp[];
-  colors: Record<string, string>;
+export type TimeChunk = {
+  startTime: Date;
+  endTime: Date;
+  eventBlocks: Event[];
 };
