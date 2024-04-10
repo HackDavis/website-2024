@@ -19,7 +19,8 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
             <div
               className={`tw-grid tw-gap-3 tw-border tw-border-purple-300`}
               style={{
-                gridTemplateColumns: `repeat(${timeChunk.eventBlocks.length}, minmax(0, 1fr))`,
+                // gridTemplateColumns: `repeat(${timeChunk.eventBlocks.length}, minmax(0, 1fr))`,
+                gridTemplateColumns: 'auto',
               }}
             >
               {timeChunk.eventBlocks.map((event, event_index) => (

@@ -46,6 +46,13 @@ const mockEvents: Event[] = [
     location: 'Lobby',
   },
   {
+    startTime: new Date('2023-04-27T15:00:00'),
+    endTime: new Date('2023-04-27T16:00:00'),
+    title: 'Foood Food',
+    type: 'Menu',
+    location: 'Canteen',
+  },
+  {
     startTime: new Date('2023-04-27T13:00:00'),
     endTime: new Date('2023-04-27T15:00:00'),
     title: 'Dance Class',
