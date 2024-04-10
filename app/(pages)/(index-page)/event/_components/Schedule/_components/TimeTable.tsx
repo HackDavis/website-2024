@@ -1,4 +1,4 @@
-import { calcRow } from './Calculations';
+import { calcRow, generateStaticTime } from './Calculations';
 import type { TimeChunk } from './Schedule.types';
 
 interface TimeTableProps {
@@ -15,42 +15,61 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
   return (
     <main className="">
       <div className="">
-        {timeChunks.map((timeChunk, index) => (
-          <div
-            key={timeChunk.startTime.getTime()}
-            className={`tw-flex tw-w-full tw-flex-col tw-border tw-border-red-300 tw-p-3`}
-          >
-            <span>TimeChunk: {index}</span>
-            <span>Contains: {timeChunk.eventBlocks.length} Events</span>
+        {timeChunks.map((timeChunk, index) => {
+          const staticTimes = generateStaticTime(
+            timeChunk.startTime,
+            timeChunk.endTime
+          );
+          return (
             <div
-              className={`tw-grid tw-gap-3 tw-border tw-border-purple-300`}
-              style={{
-                gridTemplateColumns: 'auto',
-              }}
+              key={timeChunk.startTime.getTime()}
+              className={`tw-flex tw-w-full tw-flex-col tw-border tw-border-red-300 tw-p-3`}
             >
-              {timeChunk.eventBlocks.map((event, event_index) => (
+              <span>TimeChunk: {index}</span>
+              <span>Contains: {timeChunk.eventBlocks.length} Events</span>
+              <div className="tw-flex tw-border tw-border-black">
+                <div className="tw-flex tw-flex-col">
+                  {staticTimes.map((time, time_index) => (
+                    <div
+                      key={time_index}
+                      className="tw-col-start-1 tw-border tw-border-blue-300 tw-p-3"
+                    >
+                      {time}
+                    </div>
+                  ))}
+                </div>
                 <div
-                  key={event.title}
-                  className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3"
+                  className={`tw-grid tw-w-full tw-gap-3 tw-border tw-border-purple-300`}
                   style={{
-                    ...calcRow(event, timeChunk.startTime),
-                    backgroundColor: colorActivities[event.type],
+                    gridTemplateColumns: 'auto',
                   }}
                 >
-                  <span>Event #{event_index + 1}</span>
-                  <span>{event.title}</span>
-                  <p>{event.location}</p>
-                  <p>
-                    {event.startTime.getHours()}:{event.startTime.getMinutes()}
-                  </p>
-                  <p>
-                    {event.endTime.getHours()}:{event.endTime.getMinutes()}
-                  </p>
+                  {timeChunk.eventBlocks.map((event, event_index) => (
+                    <div
+                      key={event.title}
+                      className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3"
+                      style={{
+                        ...calcRow(event, timeChunk.startTime),
+                        backgroundColor: colorActivities[event.type],
+                      }}
+                    >
+                      <span>Event #{event_index + 1}</span>
+                      <span>{event.title}</span>
+                      <p>{event.location}</p>
+                      <p>
+                        {event.startTime.getHours()}:
+                        {event.startTime.getMinutes()}
+                      </p>
+                      <p>
+                        {event.endTime.getHours()}:{event.endTime.getMinutes()}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </main>
   );

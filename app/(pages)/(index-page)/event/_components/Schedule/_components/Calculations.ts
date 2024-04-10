@@ -15,3 +15,16 @@ export function calcRow(
   const gridRowEnd = getQuarterHourIntervals(startOfDay, event.endTime) + 1;
   return { gridRowStart, gridRowEnd };
 }
+
+export function generateStaticTime(startTime: Date, endTime: Date): string[] {
+  const hours: string[] = [];
+
+  for (let i = startTime.getHours(); i < endTime.getHours(); i++) {
+    hours.push(`${i}:00`);
+    hours.push(`${i}:15`);
+    hours.push(`${i}:30`);
+    hours.push(`${i}:45`);
+  }
+  hours.push(`${endTime.getHours()}:00`);
+  return hours;
+}
