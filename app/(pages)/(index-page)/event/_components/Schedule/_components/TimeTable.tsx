@@ -29,7 +29,10 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
             <span>TimeChunk: {index}</span>
             <span>Contains: {timeChunk.eventBlocks.length} Events</span>
             <div
-              className={`tw-grid tw-grid-cols-${timeChunk.eventBlocks.length} tw-gap-3 tw-border tw-border-purple-300`}
+              className={`tw-grid tw-gap-3 tw-border tw-border-purple-300`}
+              style={{
+                gridTemplateColumns: `repeat(${timeChunk.eventBlocks.length}, minmax(0, 1fr))`,
+              }}
             >
               {timeChunk.eventBlocks.map((event, event_index) => (
                 <div
@@ -52,14 +55,6 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
             </div>
           </div>
         ))}
-      </div>
-      <div className="tw-grid tw-grid-cols-3">
-        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
-        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
-        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
-        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
-        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
-        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
       </div>
     </main>
   );
