@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { calcRow } from './Calculations';
 import type { TimeChunk } from './Schedule.types';
 
 interface TimeTableProps {
@@ -6,18 +6,6 @@ interface TimeTableProps {
 }
 
 export default function TimeTable({ timeChunks }: TimeTableProps) {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (timeChunks.length > 0) {
-      setIsLoading(false);
-    }
-  }, [timeChunks]);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <main className="">
       <div className="">
@@ -37,9 +25,8 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
               {timeChunk.eventBlocks.map((event, event_index) => (
                 <div
                   key={event.title}
-                  className={`tw-col-start-${
-                    event_index + 1
-                  } tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3`}
+                  className="tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3"
+                  style={calcRow(event, timeChunk.startTime)}
                 >
                   <span>Event #{event_index + 1}</span>
                   <span>{event.title}</span>
