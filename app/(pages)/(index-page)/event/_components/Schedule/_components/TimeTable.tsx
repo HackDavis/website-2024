@@ -28,7 +28,7 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
               <span>TimeChunk: {index}</span>
               <span>Contains: {timeChunk.eventBlocks.length} Events</span>
               <div
-                className={`tw-grid tw-w-full tw-gap-3 tw-border tw-border-purple-300`}
+                className={`tw-grid tw-w-full tw-border tw-border-purple-300`}
                 style={{
                   gridTemplateColumns: 'auto',
                 }}
