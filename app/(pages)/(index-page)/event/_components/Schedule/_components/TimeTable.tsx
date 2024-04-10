@@ -25,7 +25,7 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
               {timeChunk.eventBlocks.map((event, event_index) => (
                 <div
                   key={event.title}
-                  className="tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3"
+                  className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3"
                   style={calcRow(event, timeChunk.startTime)}
                 >
                   <span>Event #{event_index + 1}</span>
