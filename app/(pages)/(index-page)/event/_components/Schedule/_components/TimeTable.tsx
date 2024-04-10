@@ -9,15 +9,24 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
     <main className="">
       <div className="">
         {timeChunks.map((timeChunk, index) => (
-          <div key={timeChunk.startTime.getTime()} className="tw-p-3">
-            <h2>TimeChunk: {index}</h2>
-            <div className="tw-flex tw-gap-3">
-              {timeChunk.eventBlocks.map((event) => (
+          <div
+            key={timeChunk.startTime.getTime()}
+            className={`tw-flex tw-w-full tw-flex-col tw-border tw-border-red-300 tw-p-3`}
+          >
+            <span>TimeChunk: {index}</span>
+            <span>Contains: {timeChunk.eventBlocks.length} Events</span>
+            <div
+              className={`tw-grid tw-grid-cols-${timeChunk.eventBlocks.length} tw-gap-3 tw-border tw-border-purple-300`}
+            >
+              {timeChunk.eventBlocks.map((event, event_index) => (
                 <div
                   key={event.title}
-                  className="tw-rounded-lg tw-border tw-border-black tw-p-3"
+                  className={`tw-col-start-${
+                    event_index + 1
+                  } tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3`}
                 >
-                  <h3>{event.title}</h3>
+                  <span>Event #{event_index + 1}</span>
+                  <span>{event.title}</span>
                   <p>{event.location}</p>
                   <p>
                     {event.startTime.getHours()}:{event.startTime.getMinutes()}
@@ -25,20 +34,6 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
                   <p>
                     {event.endTime.getHours()}:{event.endTime.getMinutes()}
                   </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-        {timeChunks.map((timeChunk, index) => (
-          <div key={timeChunk.startTime.getTime()} className="tw-p-3">
-            <div className="tw-flex tw-flex-col">
-              {timeChunk.eventBlocks.map((event) => (
-                <div key={event.title} className="tw-flex">
-                  <span>{event.startTime.getHours()}</span>
-                  <div className="tw-flex tw-w-full tw-flex-grow tw-border-red-300">
-                    <div className=""></div>
-                  </div>
                 </div>
               ))}
             </div>
