@@ -102,8 +102,14 @@ export default function Schedule() {
         <h1 className="tw-font-semibold">Schedule</h1>
         <div className="tw-flex">
           <span>{currentDay.dayString}</span>
-          <ChevronLeft onClick={() => setCurrentDay(eventDays[0])} />
-          <ChevronRight onClick={() => setCurrentDay(eventDays[1])} />
+          <ChevronLeft
+            className="hover:tw-cursor-pointer"
+            onClick={() => setCurrentDay(eventDays[0])}
+          />
+          <ChevronRight
+            className="hover:tw-cursor-pointer"
+            onClick={() => setCurrentDay(eventDays[1])}
+          />
         </div>
       </div>
       <Filters />

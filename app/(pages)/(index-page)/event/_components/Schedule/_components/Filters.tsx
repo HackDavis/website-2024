@@ -8,7 +8,7 @@ export default function Schedule() {
       {Filters.map((filter) => (
         <button
           key={filter}
-          className="tw-flex tw-gap-1 tw-rounded-3xl tw-bg-cyan-600 tw-p-3 tw-font-semibold tw-text-white"
+          className="tw-flex tw-gap-1 tw-rounded-3xl tw-bg-cyan-600 tw-p-3 tw-font-semibold tw-text-white hover:tw-cursor-pointer hover:tw-shadow-lg"
         >
           <Check />
           {filter}
