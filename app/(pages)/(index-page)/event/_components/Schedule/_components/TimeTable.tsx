@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import type { TimeChunk } from './Schedule.types';
 
 interface TimeTableProps {
@@ -5,6 +6,18 @@ interface TimeTableProps {
 }
 
 export default function TimeTable({ timeChunks }: TimeTableProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (timeChunks.length > 0) {
+      setIsLoading(false);
+    }
+  }, [timeChunks]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <main className="">
       <div className="">
@@ -39,6 +52,14 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
             </div>
           </div>
         ))}
+      </div>
+      <div className="tw-grid tw-grid-cols-3">
+        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
+        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
+        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
+        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
+        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
+        <div className="tw-h-12 tw-w-12 tw-border tw-border-red-300"></div>
       </div>
     </main>
   );
