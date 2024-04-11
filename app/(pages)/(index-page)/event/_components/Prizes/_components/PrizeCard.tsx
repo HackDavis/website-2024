@@ -66,28 +66,6 @@ export default function PrizeCard({
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={styles.imageBackground}>
-          <div className={styles.emblaWrapper} ref={emblaRef}>
-            <div
-              className={styles.emblaContainer}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              {prizeImages.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  alt="Trophy"
-                  className={styles.prizeImage}
-                />
-              ))}
-            </div>
-          </div>
-
-          {prizeImages.length > 1 && ( // adds dots only for multiple prizes
-            <CarouselDots moveDot={moveDot} />
-          )}
-        </div>
         <div className={styles.info}>
           <div>
             <h3 className={styles.header}>{name}</h3>
@@ -109,9 +87,39 @@ export default function PrizeCard({
             </div>
           </div>
           <div className={styles.eligibility}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="7"
+              height="11"
+              viewBox="0 0 7 11"
+              fill="none"
+            >
+              <path d="M1 1L5.5 5.5L1 10" stroke="#005271" />
+            </svg>
             <p className={styles.eligibilityText}>ELIGIBILITY CRITERIA</p>
-            <Image src={Plus} alt="Plus" className={styles.plus} />
           </div>
+        </div>
+        <div className={styles.imageBackground}>
+          <div className={styles.emblaWrapper} ref={emblaRef}>
+            <div
+              className={styles.emblaContainer}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              {prizeImages.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  alt="Trophy"
+                  className={styles.prizeImage}
+                />
+              ))}
+            </div>
+          </div>
+
+          {prizeImages.length > 1 && ( // adds dots only for multiple prizes
+            <CarouselDots moveDot={moveDot} />
+          )}
         </div>
       </div>
     </div>

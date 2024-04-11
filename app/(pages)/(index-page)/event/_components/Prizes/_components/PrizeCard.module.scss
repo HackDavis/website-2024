@@ -122,7 +122,8 @@
 .eligibility {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  gap: 10.5px;
   width: 100%;
   margin-top: clamp(8px, 16px, 16px);
 }
