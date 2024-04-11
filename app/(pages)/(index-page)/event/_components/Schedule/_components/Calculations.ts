@@ -1,30 +1,34 @@
 import type { Event } from './Schedule.types';
-const startOfDay = new Date();
-startOfDay.setHours(9, 0, 0, 0);
 
 function getQuarterHourIntervals(startTime: Date, endTime: Date): number {
   const diffInMinutes = (endTime.getTime() - startTime.getTime()) / (1000 * 60);
   return Math.ceil(diffInMinutes / 15);
 }
 
-export function calcRow(
+export function calcEventRows(
   event: Event,
-  startOfDay: Date
+  startOfTimeChunk: Date
 ): { gridRowStart: number; gridRowEnd: number } {
-  const gridRowStart = getQuarterHourIntervals(startOfDay, event.startTime) + 1;
-  const gridRowEnd = getQuarterHourIntervals(startOfDay, event.endTime) + 1;
+  const gridRowStart =
+    getQuarterHourIntervals(startOfTimeChunk, event.startTime) + 1;
+  const gridRowEnd =
+    getQuarterHourIntervals(startOfTimeChunk, event.endTime) + 1;
   return { gridRowStart, gridRowEnd };
 }
 
-export function generateStaticTime(startTime: Date, endTime: Date): string[] {
-  const hours: string[] = [];
+export function generateClock(startTime: Date, endTime: Date): string[] {
+  const clock: string[] = [];
+  const totalHours = Math.ceil(
+    (endTime.getTime() - startTime.getTime()) / (1000 * 60 * 60)
+  );
 
-  for (let i = startTime.getHours(); i < endTime.getHours(); i++) {
-    hours.push(`${i}:00`);
-    hours.push(`${i}:15`);
-    hours.push(`${i}:30`);
-    hours.push(`${i}:45`);
+  for (
+    let i = startTime.getHours();
+    i < startTime.getHours() + totalHours;
+    i++
+  ) {
+    clock.push(`${i % 24}:00`);
   }
-  hours.push(`${endTime.getHours()}:00`);
-  return hours;
+
+  return clock;
 }

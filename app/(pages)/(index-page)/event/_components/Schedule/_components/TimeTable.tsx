@@ -1,8 +1,9 @@
-import { calcRow, generateStaticTime } from './Calculations';
+import { calcEventRows, generateClock } from './Calculations';
 import type { TimeChunk } from './Schedule.types';
 
 interface TimeTableProps {
   timeChunks: TimeChunk[];
+  startTime: Date;
 }
 
 const colorActivities: Record<string, string> = {
@@ -11,45 +12,55 @@ const colorActivities: Record<string, string> = {
   Workshop: '#FBBF24', // Yellow
 };
 
-export default function TimeTable({ timeChunks }: TimeTableProps) {
+export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
+  const endTime = new Date(startTime);
+  endTime.setDate(startTime.getDate() + 1);
+
+  const clockTimes = generateClock(startTime, endTime);
+
   return (
     <main className="">
       <div className="">
-        {timeChunks.map((timeChunk, index) => {
-          const staticTimes = generateStaticTime(
-            timeChunk.startTime,
-            timeChunk.endTime
-          );
-          return (
+        <div
+          className="tw-grid tw-grid-cols-2 tw-border-4 tw-border-black"
+          style={{
+            gridTemplateRows: `repeat(${clockTimes.length}, 1fr)`,
+          }}
+        >
+          {clockTimes.map((time, index) => (
             <div
-              key={timeChunk.startTime.getTime()}
-              className={`tw-flex tw-w-full tw-flex-col tw-border tw-border-red-300 tw-p-3`}
+              key={index}
+              className="tw-col-start-1 tw-border tw-border-purple-500"
             >
-              <span>TimeChunk: {index}</span>
-              <span>Contains: {timeChunk.eventBlocks.length} Events</span>
-              <div className="tw-flex">
-                <div className="tw-grid tw-grid-cols-1">
-                  {staticTimes.map((time, time_index) => (
-                    <div
-                      key={time_index}
-                      className="tw-col-start-1 tw-border tw-border-blue-300 tw-p-3"
-                    >
-                      {time}
-                    </div>
-                  ))}
-                </div>
+              {time}
+            </div>
+          ))}
+          {timeChunks.map((timeChunk) => {
+            const timeChunkStartRow = clockTimes.indexOf(
+              `${timeChunk.startTime.getHours()}:00`
+            );
+            const timeChunkEndRow = clockTimes.indexOf(
+              `${timeChunk.endTime.getHours()}:00`
+            );
+            return (
+              <div
+                key={timeChunk.startTime.getTime()}
+                className={`tw-col-start-2 tw-w-full`}
+                style={{
+                  gridRowStart: timeChunkStartRow + 1,
+                  gridRowEnd: timeChunkEndRow + 2,
+                }}
+              >
                 <div
-                  className={`tw-grid tw-w-full tw-border tw-border-purple-300`}
-                  style={{
-                    gridTemplateColumns: 'auto',
-                  }}
+                  className={`tw-grid tw-w-full tw-border tw-border-blue-300`}
+                  style={{ gridTemplateRows: 'repeat(8, 1fr)' }}
                 >
                   {timeChunk.eventBlocks.map((event, event_index) => (
                     <div
                       key={event.title}
                       className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3"
                       style={{
-                        ...calcRow(event, timeChunk.startTime),
+                        ...calcEventRows(event, timeChunk.startTime),
                         backgroundColor: colorActivities[event.type],
                       }}
                     >
@@ -67,9 +78,9 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
                   ))}
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </main>
   );

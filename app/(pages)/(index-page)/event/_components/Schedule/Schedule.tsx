@@ -33,6 +33,14 @@ const mockEvents: Event[] = [
     location: 'Main Stage',
   },
   {
+    startTime: new Date('2023-04-27T15:45:00'),
+    endTime: new Date('2023-04-27T16:00:00'),
+    title: 'Opening Ceremony',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Activity',
+    location: 'Main Stage',
+  },
+  {
     startTime: new Date('2023-04-27T09:00:00'),
     endTime: new Date('2023-04-27T11:00:00'),
     title: 'Opening Ceremony #2',
@@ -95,6 +103,8 @@ const mockEvents: Event[] = [
 
 const mockTimeChunks: TimeChunk[] = createTimeChunks(mockEvents);
 
+const startTime = new Date('2023-04-27T09:00:00');
+
 export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
 
@@ -115,7 +125,7 @@ export default function Schedule() {
         </div>
       </div>
       <Filters />
-      <TimeTable timeChunks={mockTimeChunks} />
+      <TimeTable timeChunks={mockTimeChunks} startTime={startTime} />
     </main>
   );
 }
