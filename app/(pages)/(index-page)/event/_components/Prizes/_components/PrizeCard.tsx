@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { useEffect, useState, useCallback } from 'react';
 import Trophy from 'public/index/PrizeList/trophy.png';
-import Plus from 'public/index/PrizeList/plus.png';
 import styles from './PrizeCard.module.scss';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -87,15 +86,12 @@ export default function PrizeCard({
             </div>
           </div>
           <div className={styles.eligibility}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="7"
-              height="11"
-              viewBox="0 0 7 11"
-              fill="none"
-            >
-              <path d="M1 1L5.5 5.5L1 10" stroke="#005271" />
-            </svg>
+            <Image
+              src="/index/PrizeList/arrowRight.svg"
+              alt="arrow up"
+              width={4.5}
+              height={9}
+            />
             <p className={styles.eligibilityText}>ELIGIBILITY CRITERIA</p>
           </div>
         </div>
