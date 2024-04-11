@@ -1,4 +1,4 @@
-import { calcRow, generateStaticTime } from './Calculations';
+import { calcRow, calcCol, generateStaticTime } from './Calculations';
 import type { TimeChunk } from './Schedule.types';
 
 interface TimeTableProps {
@@ -48,8 +48,12 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
                     style={{
                       ...calcRow(event, timeChunk.startTime),
                       backgroundColor: colorActivities[event.type],
-                      gridColumnStart: event_index + 2,
-                      gridColumnEnd: event_index + 3,
+                      // ...calcCol(
+                      //   event_index,
+                      //   calcRow(event, timeChunk.startTime).gridRowStart
+                      // ),
+                      // ...calcCol2(event, timeChunk.eventBlocks),
+                      // gridColumnStart: event_index + 2,
                     }}
                   >
                     <span>Event #{event_index + 1}</span>

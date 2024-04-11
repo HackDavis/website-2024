@@ -1,4 +1,6 @@
+// import { useState, useEffect } from 'react';
 import TimeTable from './_components/TimeTable';
+// import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import type { Event, TimeChunk } from './_components/Schedule.types';
@@ -91,7 +93,7 @@ const mockEvents: Event[] = [
   },
 ];
 
-const timeChunks: TimeChunk[] = createTimeChunks(mockEvents);
+const mockTimeChunks: TimeChunk[] = createTimeChunks(mockEvents);
 
 export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
@@ -113,7 +115,7 @@ export default function Schedule() {
         </div>
       </div>
       <Filters />
-      <TimeTable timeChunks={timeChunks} />
+      <TimeTable timeChunks={mockTimeChunks} />
     </main>
   );
 }

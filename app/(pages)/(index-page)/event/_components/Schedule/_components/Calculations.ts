@@ -16,6 +16,23 @@ export function calcRow(
   return { gridRowStart, gridRowEnd };
 }
 
+export function calcCol(
+  cur_event: Event,
+  all_events: Event[]
+): {
+  gridColumnStart?: number;
+  gridColumnEnd?: number;
+} {
+  for (const other_event of all_events) {
+    if (other_event == cur_event) {
+      continue;
+    } else {
+      return {};
+    }
+  }
+  return {};
+}
+
 export function generateStaticTime(startTime: Date, endTime: Date): string[] {
   const hours: string[] = [];
 
