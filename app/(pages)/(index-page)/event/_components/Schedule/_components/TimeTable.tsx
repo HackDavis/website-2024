@@ -1,4 +1,4 @@
-import { calcRow, calcCol, generateStaticTime } from './Calculations';
+import { calcRow, generateStaticTime } from './Calculations';
 import type { TimeChunk } from './Schedule.types';
 
 interface TimeTableProps {
@@ -27,47 +27,45 @@ export default function TimeTable({ timeChunks }: TimeTableProps) {
             >
               <span>TimeChunk: {index}</span>
               <span>Contains: {timeChunk.eventBlocks.length} Events</span>
-              <div
-                className={`tw-grid tw-w-full tw-border tw-border-purple-300`}
-                style={{
-                  gridTemplateColumns: 'auto',
-                }}
-              >
-                {staticTimes.map((time, time_index) => (
-                  <div
-                    key={time_index}
-                    className="tw-col-start-1 tw-border tw-border-blue-300 tw-p-3"
-                  >
-                    {time}
-                  </div>
-                ))}
-                {timeChunk.eventBlocks.map((event, event_index) => (
-                  <div
-                    key={event.title}
-                    className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3"
-                    style={{
-                      ...calcRow(event, timeChunk.startTime),
-                      backgroundColor: colorActivities[event.type],
-                      // ...calcCol(
-                      //   event_index,
-                      //   calcRow(event, timeChunk.startTime).gridRowStart
-                      // ),
-                      // ...calcCol2(event, timeChunk.eventBlocks),
-                      // gridColumnStart: event_index + 2,
-                    }}
-                  >
-                    <span>Event #{event_index + 1}</span>
-                    <span>{event.title}</span>
-                    <p>{event.location}</p>
-                    <p>
-                      {event.startTime.getHours()}:
-                      {event.startTime.getMinutes()}
-                    </p>
-                    <p>
-                      {event.endTime.getHours()}:{event.endTime.getMinutes()}
-                    </p>
-                  </div>
-                ))}
+              <div className="tw-flex">
+                <div className="tw-grid tw-grid-cols-1">
+                  {staticTimes.map((time, time_index) => (
+                    <div
+                      key={time_index}
+                      className="tw-col-start-1 tw-border tw-border-blue-300 tw-p-3"
+                    >
+                      {time}
+                    </div>
+                  ))}
+                </div>
+                <div
+                  className={`tw-grid tw-w-full tw-border tw-border-purple-300`}
+                  style={{
+                    gridTemplateColumns: 'auto',
+                  }}
+                >
+                  {timeChunk.eventBlocks.map((event, event_index) => (
+                    <div
+                      key={event.title}
+                      className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-border-black tw-bg-gray-400 tw-p-3"
+                      style={{
+                        ...calcRow(event, timeChunk.startTime),
+                        backgroundColor: colorActivities[event.type],
+                      }}
+                    >
+                      <span>Event #{event_index + 1}</span>
+                      <span>{event.title}</span>
+                      <p>{event.location}</p>
+                      <p>
+                        {event.startTime.getHours()}:
+                        {event.startTime.getMinutes()}
+                      </p>
+                      <p>
+                        {event.endTime.getHours()}:{event.endTime.getMinutes()}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           );
