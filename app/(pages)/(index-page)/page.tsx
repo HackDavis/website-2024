@@ -8,6 +8,7 @@ import Sponsors from './_components/Sponsors/Sponsors';
 import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
 import RiverCow from './_components/RiverCow/RiverCow';
+import PrizeList from './event/_components/Prizes/PrizeList';
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
         </div>
         <div id="stats">
           <Stats />
+        </div>
+        <div id="prizes">
+          <PrizeList />
         </div>
         <div id="everyone">
           <RiverCow />
