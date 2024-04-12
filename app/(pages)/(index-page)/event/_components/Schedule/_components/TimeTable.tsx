@@ -40,37 +40,45 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           const timeChunkStartRow = clockTimes.indexOf(
             timeChunk.startTime.getHours()
           );
-          const timeChunkEndRow = clockTimes.indexOf(
-            timeChunk.endTime.getHours()
-          );
+          const timeChunkEndRow =
+            clockTimes.indexOf(timeChunk.endTime.getHours()) +
+            (timeChunk.endTime.getMinutes() > 0 ? 1 : 0);
+
+          const timeChunkStartHour = new Date(timeChunk.startTime);
+          timeChunkStartHour.setMinutes(0, 0, 0);
           return (
             <div
               key={timeChunk.startTime.getTime()}
-              className={`tw-col-start-2 tw-grid tw-border-4 tw-border-black`}
+              className={`tw-col-start-2 tw-grid tw-border tw-border-blue-600`}
               style={{
                 gridRowStart: timeChunkStartRow + 1,
                 gridRowEnd: timeChunkEndRow + 1,
-                gridAutoRows: '1fr',
+                gridAutoRows: '25px',
               }}
             >
               {timeChunk.eventBlocks.map((event, event_index) => (
                 <div
                   key={event.title}
-                  className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-p-3"
+                  className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-border-black tw-p-3"
                   style={{
-                    ...calcEventRows(event, timeChunk.startTime),
+                    ...calcEventRows(event, timeChunkStartHour),
                     backgroundColor: colorActivities[event.type],
                   }}
                 >
-                  <span>Event #{event_index + 1}</span>
-                  <span>{event.title}</span>
-                  <p>{event.location}</p>
-                  <p>
-                    {event.startTime.getHours()}:{event.startTime.getMinutes()}
-                  </p>
-                  <p>
-                    {event.endTime.getHours()}:{event.endTime.getMinutes()}
-                  </p>
+                  <div className="tw-flex">
+                    <span>{event.title}</span>
+                  </div>
+                  <div className="tw-flex tw-gap-4">
+                    <span>
+                      {event.startTime.getHours()}:
+                      {event.startTime.getMinutes()}
+                    </span>
+                    <span>
+                      {event.endTime.getHours()}:{event.endTime.getMinutes()}
+                    </span>
+                    <span>Event #{event_index + 1}</span>
+                    <p>{event.location}</p>
+                  </div>
                 </div>
               ))}
             </div>
