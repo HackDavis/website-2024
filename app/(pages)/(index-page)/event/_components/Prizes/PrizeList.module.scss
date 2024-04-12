@@ -94,6 +94,7 @@
   @include mixins.tablet {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 0 32px 0 32px;
     gap: 24px;
   }
