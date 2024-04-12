@@ -9,19 +9,19 @@ export function calcEventRows(
   event: Event,
   startOfTimeChunk: Date
 ): { gridRowStart: number; gridRowEnd: number } {
-  const gridRowStart = getQuarterHourIntervals(
-    startOfTimeChunk,
-    event.startTime
-  );
-  const gridRowEnd = getQuarterHourIntervals(startOfTimeChunk, event.endTime);
+  const gridRowStart =
+    getQuarterHourIntervals(startOfTimeChunk, event.startTime) + 1;
+  const gridRowEnd =
+    getQuarterHourIntervals(startOfTimeChunk, event.endTime) + 1;
+
+  // if (event.startTime.getMinutes() % 15 !== 0) {
+  //   gridRowStart -= 1;
+  // }
   return { gridRowStart, gridRowEnd };
 }
 
 export function generateClock(startTime: Date, endTime: Date): Date[] {
   const times: Date[] = [];
-  // const totalHours = Math.ceil(
-  //   (endTime.getTime() - startTime.getTime()) / (1000 * 60 * 60)
-  // );
 
   let current = new Date(startTime);
   while (current <= endTime) {

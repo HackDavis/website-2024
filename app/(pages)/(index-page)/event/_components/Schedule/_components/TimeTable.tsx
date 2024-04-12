@@ -24,7 +24,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
         className="tw-grid tw-grid-cols-2 tw-border-4 tw-border-black"
         style={{
           gridTemplateColumns: '1fr 5fr',
-          gridAutoRows: '1fr',
+          gridAutoRows: '50px',
         }}
       >
         {clockTimes.map((time, index) => (
@@ -44,15 +44,14 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
             (time) => time.getTime() === timeChunk.endTime.getTime()
           );
 
-          const timeChunkStartHour = new Date(timeChunk.startTime);
-          timeChunkStartHour.setMinutes(0, 0, 0);
           return (
             <div
               key={timeChunk.startTime.getTime()}
-              className={`tw-col-start-2 tw-grid tw-h-full tw-border-4 tw-border-blue-600`}
+              className={`tw-col-start-2 tw-grid tw-h-full`}
               style={{
                 gridRowStart: timeChunkStartRow + 1,
                 gridRowEnd: timeChunkEndRow + 1,
+                gridAutoRows: '50px',
               }}
             >
               {timeChunk.eventBlocks.map((event, event_index) => (
@@ -60,7 +59,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
                   key={event.title}
                   className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-border-black tw-p-3"
                   style={{
-                    ...calcEventRows(event, timeChunkStartHour),
+                    ...calcEventRows(event, timeChunk.startTime),
                     backgroundColor: colorActivities[event.type],
                   }}
                 >

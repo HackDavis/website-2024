@@ -102,6 +102,30 @@ const mockEvents: Event[] = [
     type: 'Menu',
     location: 'Main Stage',
   },
+  {
+    startTime: new Date('2023-04-27T12:15:00'),
+    endTime: new Date('2023-04-27T13:45:00'),
+    title: 'Weird 45 Mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Menu',
+    location: 'Main Stage',
+  },
+  {
+    startTime: new Date('2023-04-27T12:30:00'),
+    endTime: new Date('2023-04-27T13:00:00'),
+    title: 'Weird 45 Mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Menu',
+    location: 'Main Stage',
+  },
+  {
+    startTime: new Date('2023-04-27T11:30:00'),
+    endTime: new Date('2023-04-27T12:15:00'),
+    title: 'Weird 45 Mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Menu',
+    location: 'Main Stage',
+  },
 ];
 
 const mockTimeChunks: TimeChunk[] = createTimeChunks(mockEvents);
