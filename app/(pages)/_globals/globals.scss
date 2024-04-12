@@ -72,6 +72,13 @@
     background-color: var(--light-background);
 }
 
+.MuiAccordion-root:first-of-type {
+    border-radius: 10px !important;
+}
+.MuiAccordion-root:last-of-type {
+    border-radius: 10px !important;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

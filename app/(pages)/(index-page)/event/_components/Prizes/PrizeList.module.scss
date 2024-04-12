@@ -89,6 +89,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   align-items: baseline;
+  flex: 1;
 
   @include mixins.tablet {
     display: flex;

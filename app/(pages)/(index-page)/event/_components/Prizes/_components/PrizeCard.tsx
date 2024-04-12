@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { useEffect, useState, useCallback } from 'react';
 import Trophy from 'public/index/PrizeList/trophy.png';
@@ -70,7 +71,7 @@ export default function PrizeCard({
 
   return (
     <Accordion sx={{ padding: '0px', borderRadius: '10px' }}>
-      <AccordionSummary sx={{ padding: '0px' }}>
+      <AccordionSummary sx={{ padding: '0px', borderRadius: '100px' }}>
         <div className={styles.container}>
           <div className={styles.content}>
             <div className={styles.info}>
