@@ -16,8 +16,8 @@ export function calcEventRows(
   return { gridRowStart, gridRowEnd };
 }
 
-export function generateClock(startTime: Date, endTime: Date): string[] {
-  const clock: string[] = [];
+export function generateClock(startTime: Date, endTime: Date): number[] {
+  const clock: number[] = [];
   const totalHours = Math.ceil(
     (endTime.getTime() - startTime.getTime()) / (1000 * 60 * 60)
   );
@@ -27,7 +27,7 @@ export function generateClock(startTime: Date, endTime: Date): string[] {
     i < startTime.getHours() + totalHours;
     i++
   ) {
-    clock.push(`${i % 24}:00`);
+    clock.push(i % 24);
   }
 
   return clock;
