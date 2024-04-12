@@ -14,15 +14,13 @@ export function calcEventRows(
   const gridRowEnd =
     getQuarterHourIntervals(startOfTimeChunk, event.endTime) + 1;
 
-  // if (event.startTime.getMinutes() % 15 !== 0) {
-  //   gridRowStart -= 1;
-  // }
   return { gridRowStart, gridRowEnd };
 }
 
-export function generateClock(startTime: Date, endTime: Date): Date[] {
+export function generate24HRClock(startTime: Date): Date[] {
   const times: Date[] = [];
-
+  const endTime = new Date(startTime);
+  endTime.setDate(startTime.getDate() + 1);
   let current = new Date(startTime);
   while (current <= endTime) {
     times.push(current);

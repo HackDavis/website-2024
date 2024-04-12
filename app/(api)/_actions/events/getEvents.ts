@@ -17,8 +17,8 @@ export async function getAllEvents(): Promise<Event[]> {
   try {
     events = (await db.collection('DOE_Events').find({}).toArray()).map(
       (doc) => ({
-        startTime: doc.start_time,
-        endTime: doc.end_time,
+        startTime: doc.startTime,
+        endTime: doc.endTime,
         title: doc.title,
         location: doc.location,
         description: doc.description,

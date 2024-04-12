@@ -1,4 +1,5 @@
-import { calcEventRows, generateClock } from './Calculations';
+import { calcEventRows, generate24HRClock } from './Calculations';
+import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
 import type { TimeChunk } from './Schedule.types';
 
 interface TimeTableProps {
@@ -12,11 +13,9 @@ const colorActivities: Record<string, string> = {
   Workshop: '#FBBF24', // Yellow
 };
 
+const rowSize = '50px';
 export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
-  const endTime = new Date(startTime);
-  endTime.setDate(startTime.getDate() + 1);
-
-  const clockTimes = generateClock(startTime, endTime);
+  const clockTimes = generate24HRClock(startTime);
 
   return (
     <main className="">
@@ -24,7 +23,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
         className="tw-grid tw-grid-cols-2 tw-border-4 tw-border-black"
         style={{
           gridTemplateColumns: '1fr 5fr',
-          gridAutoRows: '50px',
+          gridAutoRows: rowSize,
         }}
       >
         {clockTimes.map((time, index) => (
@@ -47,11 +46,11 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           return (
             <div
               key={timeChunk.startTime.getTime()}
-              className={`tw-col-start-2 tw-grid tw-h-full`}
+              className={`tw-col-start-2 tw-grid tw-h-full tw-border-4 tw-border-blue-400`}
               style={{
                 gridRowStart: timeChunkStartRow + 1,
                 gridRowEnd: timeChunkEndRow + 1,
-                gridAutoRows: '50px',
+                gridAutoRows: rowSize,
               }}
             >
               {timeChunk.eventBlocks.map((event, event_index) => (
