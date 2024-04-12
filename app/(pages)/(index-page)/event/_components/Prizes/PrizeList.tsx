@@ -46,6 +46,7 @@ import camping from 'public/index/PrizeList/NonProfit/owlcamping.png';
 import stuffle from 'public/index/PrizeList/NonProfit/smokoanimals4.png';
 
 const filters = [
+  'All',
   'General',
   'Technical',
   'Design',
@@ -272,8 +273,18 @@ const prizeCategories: PrizeCategories = {
   ],
 };
 
+const allPrizes = Object.values(prizeCategories).reduce((acc, category) => {
+  return acc.concat(
+    Array.isArray(category)
+      ? category.map((prize) => ({ ...prize, category })) // Add category to each prize object
+      : category
+  );
+}, []);
+
+prizeCategories.All = allPrizes;
+
 export default function PrizeList() {
-  const [activeFilter, setActiveFilter] = useState<string>('General');
+  const [activeFilter, setActiveFilter] = useState<string>('All');
 
   return (
     <div className={styles.container}>
