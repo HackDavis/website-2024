@@ -32,28 +32,27 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
             key={index}
             className="tw-col-start-1 tw-border tw-border-purple-500"
           >
-            {time}:00
+            {time.getHours()}:{time.getMinutes()}
           </div>
         ))}
 
         {timeChunks.map((timeChunk) => {
-          const timeChunkStartRow = clockTimes.indexOf(
-            timeChunk.startTime.getHours()
+          const timeChunkStartRow = clockTimes.findIndex(
+            (time) => time.getTime() === timeChunk.startTime.getTime()
           );
-          const timeChunkEndRow =
-            clockTimes.indexOf(timeChunk.endTime.getHours()) +
-            (timeChunk.endTime.getMinutes() > 0 ? 1 : 0);
+          const timeChunkEndRow = clockTimes.findIndex(
+            (time) => time.getTime() === timeChunk.endTime.getTime()
+          );
 
           const timeChunkStartHour = new Date(timeChunk.startTime);
           timeChunkStartHour.setMinutes(0, 0, 0);
           return (
             <div
               key={timeChunk.startTime.getTime()}
-              className={`tw-col-start-2 tw-grid tw-border-4 tw-border-blue-600`}
+              className={`tw-col-start-2 tw-grid tw-h-full tw-border-4 tw-border-blue-600`}
               style={{
                 gridRowStart: timeChunkStartRow + 1,
                 gridRowEnd: timeChunkEndRow + 1,
-                gridAutoRows: '25px',
               }}
             >
               {timeChunk.eventBlocks.map((event, event_index) => (

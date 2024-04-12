@@ -9,28 +9,27 @@ export function calcEventRows(
   event: Event,
   startOfTimeChunk: Date
 ): { gridRowStart: number; gridRowEnd: number } {
-  const gridRowStart =
-    getQuarterHourIntervals(startOfTimeChunk, event.startTime) + 1;
-  const gridRowEnd =
-    getQuarterHourIntervals(startOfTimeChunk, event.endTime) + 1;
+  const gridRowStart = getQuarterHourIntervals(
+    startOfTimeChunk,
+    event.startTime
+  );
+  const gridRowEnd = getQuarterHourIntervals(startOfTimeChunk, event.endTime);
   return { gridRowStart, gridRowEnd };
 }
 
-export function generateClock(startTime: Date, endTime: Date): number[] {
-  const clock: number[] = [];
-  const totalHours = Math.ceil(
-    (endTime.getTime() - startTime.getTime()) / (1000 * 60 * 60)
-  );
+export function generateClock(startTime: Date, endTime: Date): Date[] {
+  const times: Date[] = [];
+  // const totalHours = Math.ceil(
+  //   (endTime.getTime() - startTime.getTime()) / (1000 * 60 * 60)
+  // );
 
-  for (
-    let i = startTime.getHours();
-    i < startTime.getHours() + totalHours;
-    i++
-  ) {
-    clock.push(i % 24);
+  let current = new Date(startTime);
+  while (current <= endTime) {
+    times.push(current);
+    current = new Date(current.getTime() + 15 * 60000);
   }
 
-  return clock;
+  return times;
 }
 
 export function createTimeChunks(events: Event[]): TimeChunk[] {
@@ -50,7 +49,7 @@ export function createTimeChunks(events: Event[]): TimeChunk[] {
     } else {
       const latestTimeChunk = timeChunks[timeChunks.length - 1];
 
-      if (cur_event.startTime.getTime() > latestTimeChunk.endTime.getTime()) {
+      if (cur_event.startTime.getTime() >= latestTimeChunk.endTime.getTime()) {
         timeChunks.push({
           startTime: cur_event.startTime,
           endTime: cur_event.endTime,
