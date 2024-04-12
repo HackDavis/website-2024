@@ -9,6 +9,7 @@
   flex-grow: 1;
   @include mixins.phone {
     padding: 12px;
+    width: 90vw;
   }
 }
 .content {
@@ -35,7 +36,6 @@
 
 .criteriaContainer {
   display: flex;
-  justify-content: center;
 }
 .criteriaContent {
   color: #333;
