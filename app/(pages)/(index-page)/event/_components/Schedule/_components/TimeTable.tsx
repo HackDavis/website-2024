@@ -49,7 +49,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           return (
             <div
               key={timeChunk.startTime.getTime()}
-              className={`tw-col-start-2 tw-grid tw-border tw-border-blue-600`}
+              className={`tw-col-start-2 tw-grid tw-border-4 tw-border-blue-600`}
               style={{
                 gridRowStart: timeChunkStartRow + 1,
                 gridRowEnd: timeChunkEndRow + 1,

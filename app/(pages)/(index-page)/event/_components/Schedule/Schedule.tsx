@@ -1,10 +1,8 @@
-// import { useState, useEffect } from 'react';
 import TimeTable from './_components/TimeTable';
-// import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import type { Event, TimeChunk } from './_components/Schedule.types';
-import { createTimeChunks } from './_components/TimeChunks';
+import { createTimeChunks } from './_components/Calculations';
 import Filters from './_components/Filters';
 
 type ScheduleDay = {
@@ -59,6 +57,46 @@ const mockEvents: Event[] = [
   {
     startTime: new Date('2023-04-27T17:15:00'),
     endTime: new Date('2023-04-27T18:00:00'),
+    title: 'Weird 45 Mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Menu',
+    location: 'Main Stage',
+  },
+  {
+    startTime: new Date('2023-04-27T17:00:00'),
+    endTime: new Date('2023-04-27T17:15:00'),
+    title: 'Weird 45 Mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Workshop',
+    location: 'Main Stage',
+  },
+  {
+    startTime: new Date('2023-04-27T17:15:00'),
+    endTime: new Date('2023-04-27T18:00:00'),
+    title: 'Weird 45 Mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Menu',
+    location: 'Main Stage',
+  },
+  {
+    startTime: new Date('2023-04-27T17:45:00'),
+    endTime: new Date('2023-04-27T18:00:00'),
+    title: 'Weird 45 Mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Menu',
+    location: 'Main Stage',
+  },
+  {
+    startTime: new Date('2023-04-27T17:30:00'),
+    endTime: new Date('2023-04-27T18:30:00'),
+    title: 'Weird 45 Mins Interval',
+    description: 'Welcome to HackDavis 2023!',
+    type: 'Menu',
+    location: 'Main Stage',
+  },
+  {
+    startTime: new Date('2023-04-27T18:00:00'),
+    endTime: new Date('2023-04-27T19:00:00'),
     title: 'Weird 45 Mins Interval',
     description: 'Welcome to HackDavis 2023!',
     type: 'Menu',
