@@ -50,7 +50,7 @@ export default function PrizeCard({
   );
 
   const changeDots = useCallback((emblaApi: any) => {
-    setMoveDot(!Math.round(emblaApi.scrollProgress()));
+    setMoveDot(emblaApi.selectedScrollSnap());
   }, []);
 
   useEffect(() => {
