@@ -128,7 +128,7 @@ const prizeCategories: PrizeCategories = {
       name: 'Best CyberSecurity Hack powered by Cloaked	',
       prizeImages: [moneybag],
       prizeNames: ['$100'],
-      criteria: 'N/A',
+      criteria: 'TBD',
     },
   ],
   Technical: [
@@ -150,7 +150,7 @@ const prizeCategories: PrizeCategories = {
       name: 'Best use of Intel Developer Cloud',
       prizeImages: [lenovolaptop],
       prizeNames: ['Lenovo Laptops', 'IDC Credit'],
-      criteria: 'N/A',
+      criteria: 'TBD',
     },
   ],
   Design: [
@@ -171,8 +171,8 @@ const prizeCategories: PrizeCategories = {
     {
       name: 'Best Overall Design',
       prizeImages: [question],
-      prizeNames: ['?'],
-      criteria: 'N/A',
+      prizeNames: ['TBD'],
+      criteria: 'TBD',
     },
   ],
   Business: [
