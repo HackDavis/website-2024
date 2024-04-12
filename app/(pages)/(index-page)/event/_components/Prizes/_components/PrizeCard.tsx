@@ -26,7 +26,9 @@ export default function PrizeCard({
 }: PrizeCardProps) {
   const [moveDot, setMoveDot] = useState<boolean>(false);
 
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : 0
+  );
 
   const updateDimensions = () => {
     setWidth(window.innerWidth);
