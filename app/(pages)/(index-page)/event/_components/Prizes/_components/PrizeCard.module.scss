@@ -1,0 +1,172 @@
+@use 'app/(pages)/_globals/mixins';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.container {
+  border-radius: 10px;
+  background: #FFF;
+  padding: 24px;
+  padding-bottom: 17px;
+  flex-grow: 1;
+  @include mixins.phone {
+    padding: 12px;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+}
+
+.imageBackground {
+  min-height: 200px;
+  aspect-ratio: 1;
+  margin-right: 24px;
+  border-radius: 10px;
+  background: rgba(158, 231, 229, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include mixins.phone {
+    min-height: 100px
+  }
+}
+
+.criteriaContainer {
+  display: flex;
+  justify-content: center;
+}
+.criteriaContent {
+  color: #333;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; 
+
+  @include mixins.phone {
+    font-size: 12px;
+  }
+}
+
+// carousel classes
+.prizeImage {
+  width: 50%;
+  flex: 0 0 100%;
+  height: auto;
+  max-width: 140px;
+
+  @include mixins.phone {
+    max-width: 50px;
+  }
+}
+
+.emblaWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 70%;
+
+  @include mixins.phone {
+    width: 50%;
+  }
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header {
+  color: #123041;
+  font-size: 21.837px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 27.296px */
+  margin-bottom: 16px;
+
+  @include mixins.phone {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+
+.prizes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.place {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  @include mixins.phone {
+    gap: 8px;
+  }
+}
+
+.placeText {
+  display: flex;
+  color: #015270;
+  font-size: 16.986px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 21.233px */
+
+  @include mixins.phone {
+    font-size: 10px;
+  }
+}
+
+.trophy {
+  width: 24.266px;
+  height: 24.266px;
+
+  @include mixins.phone {
+    width: 14.266px;
+    height: 14.266px;
+  }
+}
+
+.eligibility {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10.5px;
+  width: 100%;
+  margin-top: clamp(8px, 16px, 16px);
+}
+
+.eligibilityText {
+  color: var(--teal-3, #123041);
+  font-size: 13.346px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 16.683px */
+  letter-spacing: 1.335px;
+
+  @include mixins.phone {
+    font-size: 9px;
+    letter-spacing: 0.9px;
+  }
+}
+
+.plus {
+  width: 14px;
+  height: 14px;
+
+  @include mixins.phone {
+    width: 9px;
+    height: 9px;
+  }
+}

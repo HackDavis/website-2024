@@ -4,7 +4,7 @@ import metadata from '@globals/metadata.json';
 
 import { navLinks } from '@data/navLinks';
 import Navbar from '@components/Navbar/Navbar';
-import Footer from './_components/Footer/Footer';
+import Footer from '@components/Footer/Footer';
 
 export { metadata };
 
