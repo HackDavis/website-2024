@@ -17,11 +17,6 @@
   height: fit-content;
 }
 
-.MuiAccordion-root:first-of-type {
-  border-top-left-radius: 141px;
-  border-top-right-radius: 14px;
-}
-
 .imageBackground {
   min-height: 200px;
   aspect-ratio: 1;
@@ -60,6 +55,7 @@
   width: 50%;
   flex: 0 0 100%;
   height: auto;
+  max-width: 140px;
 
   @include mixins.phone {
     max-width: 50px;
