@@ -14,13 +14,14 @@ const colorActivities: Record<string, string> = {
 };
 
 const rowSize = '50px';
+
 export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
   const clockTimes = generate24HRClock(startTime);
 
   return (
     <main className="">
       <div
-        className="tw-grid tw-grid-cols-2 tw-border-4 tw-border-black"
+        className="tw-grid tw-grid-cols-2"
         style={{
           gridTemplateColumns: '1fr 9fr',
           gridAutoRows: rowSize,
@@ -31,7 +32,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           return (
             <div
               key={index}
-              className={`tw-col-start-1 tw-border tw-border-purple-500 ${
+              className={`tw-col-start-1 ${
                 !isHour ? 'tw-border-b-0 tw-border-t-0' : ''
               }`}
             >
@@ -61,7 +62,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
               {timeChunk.eventBlocks.map((event) => (
                 <div
                   key={event.title}
-                  className="tw-flex tw-flex-col tw-rounded-3xl tw-border tw-border-black tw-p-3"
+                  className="tw-flex tw-flex-col tw-rounded-xl tw-border tw-border-black tw-p-3"
                   style={{
                     ...calcEventRows(event, timeChunk.startTime),
                     backgroundColor: colorActivities[event.type],
