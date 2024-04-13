@@ -1,7 +1,7 @@
 import TimeTable from './_components/TimeTable';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import type { Event, TimeChunk } from './_components/Schedule.types';
+import type { TimeChunk } from './_components/Schedule.types';
 import { createTimeChunks } from './_components/Calculations';
 import Filters from './_components/Filters';
 import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
@@ -22,125 +22,15 @@ const eventDays: ScheduleDay[] = [
   },
 ];
 
-const mockEvents: Event[] = [
-  {
-    startTime: new Date('2023-04-27T09:00:00'),
-    endTime: new Date('2023-04-27T10:00:00'),
-    title: 'Opening Ceremony',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Activity',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T09:45:00'),
-    endTime: new Date('2023-04-27T10:00:00'),
-    title: 'Opening Ceremony',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Activity',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T10:00:00'),
-    endTime: new Date('2023-04-27T11:30:00'),
-    title: 'Opening Ceremony',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Activity',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T11:00:00'),
-    endTime: new Date('2023-04-27T12:45:00'),
-    title: 'Opening Ceremony',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Activity',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T17:15:00'),
-    endTime: new Date('2023-04-27T18:00:00'),
-    title: 'Weird 45 Mins Interval',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Menu',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T17:00:00'),
-    endTime: new Date('2023-04-27T17:15:00'),
-    title: 'Weird 45 Mins Interval',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Workshop',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T17:15:00'),
-    endTime: new Date('2023-04-27T18:00:00'),
-    title: 'Weird 45 Mins Interval',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Menu',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T17:45:00'),
-    endTime: new Date('2023-04-27T18:00:00'),
-    title: 'Weird 45 Mins Interval',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Menu',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T17:30:00'),
-    endTime: new Date('2023-04-27T18:30:00'),
-    title: 'Weird 45 Mins Interval',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Menu',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T18:00:00'),
-    endTime: new Date('2023-04-27T19:00:00'),
-    title: 'Weird 45 Mins Interval',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Menu',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T12:15:00'),
-    endTime: new Date('2023-04-27T13:45:00'),
-    title: 'Weird 45 Mins Interval',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Menu',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T12:30:00'),
-    endTime: new Date('2023-04-27T13:00:00'),
-    title: 'Weird 45 Mins Interval',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Menu',
-    location: 'Main Stage',
-  },
-  {
-    startTime: new Date('2023-04-27T11:30:00'),
-    endTime: new Date('2023-04-27T12:15:00'),
-    title: 'Weird 45 Mins Interval',
-    description: 'Welcome to HackDavis 2023!',
-    type: 'Menu',
-    location: 'Main Stage',
-  },
-];
-
-const mockTimeChunks: TimeChunk[] = createTimeChunks(mockEvents);
-
-const startTime = new Date('2023-04-27T09:00:00');
-
 export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
   const [timeChunks, setTimeChunks] = useState<TimeChunk[]>([]);
+  const startTime = new Date('2023-04-27T09:00:00');
 
+  //fetching events from DB and creating time chunks
   useEffect(() => {
     const fetchEvents = async () => {
       const events = await getAllEvents();
-      console.log(events);
       setTimeChunks(createTimeChunks(events));
     };
     fetchEvents();
