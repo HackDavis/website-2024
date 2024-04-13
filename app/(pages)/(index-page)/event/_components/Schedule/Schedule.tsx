@@ -1,7 +1,7 @@
 import TimeTable from './_components/TimeTable';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import type { TimeChunk } from './_components/Schedule.types';
+import type { TimeChunk, Event } from '@/public/types/Schedule.types';
 import { createTimeChunks } from './_components/Calculations';
 import Filters from './_components/Filters';
 import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
@@ -22,19 +22,34 @@ const eventDays: ScheduleDay[] = [
   },
 ];
 
+function filterEventByDay(events: Event[], day: Date): Event[] {
+  return events.filter((event) => {
+    const eventDate = event.startTime.toISOString().split('T')[0];
+    const targetDate = day.toISOString().split('T')[0];
+    return eventDate === targetDate;
+  });
+}
+
 export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
   const [timeChunks, setTimeChunks] = useState<TimeChunk[]>([]);
+  const [allEvents, setAllEvents] = useState<Event[]>([]);
   const startTime = new Date('2023-04-27T09:00:00');
 
   //fetching events from DB and creating time chunks
   useEffect(() => {
     const fetchEvents = async () => {
       const events = await getAllEvents();
-      setTimeChunks(createTimeChunks(events));
+      setAllEvents(events);
     };
     fetchEvents();
   }, []);
+
+  //creating time chunks when currentDay or allEvents changes
+  useEffect(() => {
+    const eventsDay = filterEventByDay(allEvents, currentDay.day);
+    setTimeChunks(createTimeChunks(eventsDay));
+  }, [currentDay, allEvents]);
 
   return (
     <main className="tw-flex tw-flex-col tw-border tw-border-black tw-px-32">

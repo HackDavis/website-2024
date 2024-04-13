@@ -1,15 +1,7 @@
 'use server';
 import { getDatabase } from '../../_utils/mongodb/mongoClient.mjs';
 import { Db } from 'mongodb';
-
-type Event = {
-  startTime: Date;
-  endTime: Date;
-  title: string;
-  location: string;
-  description?: string;
-  type: string;
-};
+import type { Event } from '@/public/types/Schedule.types';
 
 export async function getAllEvents(): Promise<Event[]> {
   const db: Db = await getDatabase();

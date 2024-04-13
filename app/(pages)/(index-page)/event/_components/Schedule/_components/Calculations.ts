@@ -1,4 +1,7 @@
-import type { Event, TimeChunk } from './Schedule.types';
+import type {
+  Event,
+  TimeChunk,
+} from '../../../../../../../public/types/Schedule.types';
 
 function getQuarterHourIntervals(startTime: Date, endTime: Date): number {
   const diffInMinutes = (endTime.getTime() - startTime.getTime()) / (1000 * 60);

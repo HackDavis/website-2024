@@ -1,6 +1,6 @@
 import { calcEventRows, generate24HRClock } from './Calculations';
 import EventContent from './_components/EventContent';
-import type { TimeChunk } from './Schedule.types';
+import type { TimeChunk } from '../../../../../../../public/types/Schedule.types';
 
 interface TimeTableProps {
   timeChunks: TimeChunk[];
@@ -59,9 +59,9 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
                 gridAutoRows: rowSize,
               }}
             >
-              {timeChunk.eventBlocks.map((event) => (
+              {timeChunk.eventBlocks.map((event, event_index) => (
                 <div
-                  key={event.title}
+                  key={event_index}
                   className="tw-flex tw-flex-col tw-rounded-xl tw-border tw-border-black tw-p-3"
                   style={{
                     ...calcEventRows(event, timeChunk.startTime),
