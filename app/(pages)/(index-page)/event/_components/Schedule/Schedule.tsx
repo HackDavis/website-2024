@@ -34,7 +34,7 @@ export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
   const [timeChunks, setTimeChunks] = useState<TimeChunk[]>([]);
   const [allEvents, setAllEvents] = useState<Event[]>([]);
-  const startTime = new Date('2023-04-27T09:00:00');
+  const [startTime, setStartTime] = useState(new Date('2023-04-27T09:00:00'));
 
   //fetching events from DB and creating time chunks
   useEffect(() => {
@@ -49,6 +49,9 @@ export default function Schedule() {
   useEffect(() => {
     const eventsDay = filterEventByDay(allEvents, currentDay.day);
     setTimeChunks(createTimeChunks(eventsDay));
+    setStartTime(
+      new Date(currentDay.day.toISOString().split('T')[0] + 'T09:00:00')
+    );
   }, [currentDay, allEvents]);
 
   return (
