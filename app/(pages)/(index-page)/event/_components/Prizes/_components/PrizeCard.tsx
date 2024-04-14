@@ -78,7 +78,12 @@ export default function PrizeCard({
   };
 
   return (
-    <Accordion sx={{ padding: '0px', borderRadius: '10px' }}>
+    <Accordion
+      sx={{
+        padding: '0px',
+        borderRadius: '10px',
+      }}
+    >
       <AccordionSummary sx={{ padding: '0px', borderRadius: '100px' }}>
         <div className={styles.container} onClick={handleCriteriaClick}>
           <div className={styles.content}>
