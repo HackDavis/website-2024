@@ -124,12 +124,12 @@ const prizeCategories: PrizeCategories = {
       criteria:
         'The Most Creative Hack should demonstrate originality, showcase out-of-the-box thinking, and captivate its audience.	',
     },
-    {
-      name: 'Best CyberSecurity Hack powered by Cloaked	',
-      prizeImages: [moneybag],
-      prizeNames: ['$100'],
-      criteria: 'TBD',
-    },
+    // {
+    //   name: 'Best CyberSecurity Hack powered by Cloaked	',
+    //   prizeImages: [moneybag],
+    //   prizeNames: ['$100'],
+    //   criteria: 'TBD',
+    // },
   ],
   Technical: [
     {
@@ -150,7 +150,7 @@ const prizeCategories: PrizeCategories = {
       name: 'Best use of Intel Developer Cloud',
       prizeImages: [lenovolaptop],
       prizeNames: ['Lenovo Laptops', 'IDC Credit'],
-      criteria: 'TBD',
+      criteria: 'Projects must use Intel® Developer Cloud.',
     },
   ],
   Design: [
