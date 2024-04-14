@@ -1,7 +1,7 @@
 'use client';
 import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
-import Landing from '../_components/Landing/Landing';
+import Timer from './_components/Timer/Timer';
 import WhatIsHackdavis from '../_components/WhatIsHackdavis/WhatIsHackdavis';
 import ScheduleBlock from './_components/Schedule/ScheduleBlock';
 import PrizeList from './_components/Prizes/PrizeList';
@@ -14,8 +14,8 @@ export default function Home() {
     <LoadingProvider>
       <Loader />
       <main style={{ backgroundColor: 'white', scrollBehavior: 'smooth' }}>
-        <div id="landing">
-          <Landing />
+        <div id="timer">
+          <Timer />
         </div>
         <div id="schedule">
           <ScheduleBlock />
