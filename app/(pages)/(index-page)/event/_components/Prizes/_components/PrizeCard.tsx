@@ -108,8 +108,9 @@ export default function PrizeCard({
                 <Image
                   src="/index/PrizeList/arrowRight.svg"
                   alt="arrow up"
-                  width={4.5}
-                  height={9}
+                  width={11.25}
+                  height={11.25}
+                  className={styles.arrow}
                 />
                 <p className={styles.eligibilityText}>ELIGIBILITY CRITERIA</p>
               </div>

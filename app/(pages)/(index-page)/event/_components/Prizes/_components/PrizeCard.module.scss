@@ -34,9 +34,16 @@
   }
 }
 
+.arrow {
+  height: 11.25px;
+  width: auto;
+}
+
 .criteriaContainer {
   display: flex;
+  align-items: center;
 }
+
 .criteriaContent {
   color: #333;
   font-family: 'DM Sans', sans-serif;
