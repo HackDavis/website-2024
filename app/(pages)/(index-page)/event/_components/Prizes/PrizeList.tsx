@@ -268,7 +268,8 @@ const prizeCategories: PrizeCategories = {
       name: 'Best Hack for AggieHouse',
       prizeImages: [stuffle, camping],
       prizeNames: ['1 Stuffle & 1 Camping Hammock'],
-      criteria: 'AggieHouse provides shelter, food, financial education, case management services, and community. Build a new website for their organization.	',
+      criteria:
+        'AggieHouse provides shelter, food, financial education, case management services, and community. Build a new website for their organization.	',
     },
   ],
 };
