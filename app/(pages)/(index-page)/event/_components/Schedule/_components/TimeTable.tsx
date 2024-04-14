@@ -14,7 +14,7 @@ const colorActivities: Record<string, string> = {
   Workshop: '#FFE29E', // Yellow
 };
 
-const rowSize = '50px';
+const rowSize = '100px';
 
 export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
   const clockTimes = generate24HRClock(startTime);
@@ -24,7 +24,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
       <div
         className="tw-grid tw-grid-cols-2"
         style={{
-          gridTemplateColumns: '1fr 9fr',
+          gridTemplateColumns: '1fr 15fr',
           gridAutoRows: rowSize,
         }}
       >
