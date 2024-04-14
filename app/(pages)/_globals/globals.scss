@@ -1,4 +1,11 @@
 @use "./mixins";
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
 @font-face {
     font-family: 'Metropolis';
     src: url('/fonts/Metropolis/TrueType/Metropolis-ExtraLight.ttf') format('truetype');
