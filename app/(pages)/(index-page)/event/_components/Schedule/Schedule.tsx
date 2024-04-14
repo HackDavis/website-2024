@@ -22,6 +22,8 @@ const eventDays: ScheduleDay[] = [
   },
 ];
 
+const FilterItems: string[] = ['Activity', 'Workshop', 'Menu'];
+
 function filterEventByDay(events: Event[], day: Date): Event[] {
   return events.filter((event) => {
     const eventDate = event.startTime.toISOString().split('T')[0];
@@ -30,11 +32,16 @@ function filterEventByDay(events: Event[], day: Date): Event[] {
   });
 }
 
+function filterEventByType(events: Event[], types: string[]): Event[] {
+  return events.filter((event) => types.includes(event.type));
+}
+
 export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
   const [timeChunks, setTimeChunks] = useState<TimeChunk[]>([]);
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [startTime, setStartTime] = useState(new Date('2023-04-27T09:00:00'));
+  const [selectedFilters, setSelectedFilters] = useState<string[]>(FilterItems);
 
   //fetching events from DB and creating time chunks
   useEffect(() => {
@@ -48,11 +55,12 @@ export default function Schedule() {
   //creating time chunks when currentDay or allEvents changes
   useEffect(() => {
     const eventsDay = filterEventByDay(allEvents, currentDay.day);
-    setTimeChunks(createTimeChunks(eventsDay));
+    const filteredEvents = filterEventByType(eventsDay, selectedFilters);
+    setTimeChunks(createTimeChunks(filteredEvents));
     setStartTime(
       new Date(currentDay.day.toISOString().split('T')[0] + 'T09:00:00')
     );
-  }, [currentDay, allEvents]);
+  }, [currentDay, allEvents, selectedFilters]);
 
   return (
     <main className="tw-flex tw-flex-col tw-border tw-border-black tw-px-32">
@@ -70,7 +78,7 @@ export default function Schedule() {
           />
         </div>
       </div>
-      <Filters />
+      <Filters onFilterChange={setSelectedFilters} FilterItems={FilterItems} />
       <TimeTable timeChunks={timeChunks} startTime={startTime} />
     </main>
   );
