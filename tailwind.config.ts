@@ -30,6 +30,11 @@ const config = {
         '1/10': '10%',
         '1/20': '5%',
       },
+      maxHeight: {
+        'third-screen': '33.333vh',
+        'half-screen': '50vh',
+        'screen-4/5': '80vh',
+      },
       height: {
         'third-screen': '33.333vh',
         'half-screen': '50vh',

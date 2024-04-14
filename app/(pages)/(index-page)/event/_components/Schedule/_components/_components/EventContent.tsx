@@ -3,7 +3,7 @@ import { MapPin } from 'lucide-react';
 
 export default function EventContent(event: Event) {
   return (
-    <main className="tw-flex tw-flex-col">
+    <main className="tw-flex tw-flex-col tw-justify-center">
       <div className="tw-font-semibold">
         <span>{event.title}</span>
       </div>
@@ -16,7 +16,7 @@ export default function EventContent(event: Event) {
           {event.endTime.getHours()}:{event.endTime.getMinutes()}
         </span>
         <div className="tw-flex">
-          <MapPin />
+          <MapPin size={15} />
           <span>{event.location}</span>
         </div>
       </div>
