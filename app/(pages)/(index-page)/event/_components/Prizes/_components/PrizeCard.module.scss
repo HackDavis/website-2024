@@ -36,7 +36,15 @@
 
 .arrow {
   height: 11.25px;
-  width: auto;
+  width: auto; 
+  transition: transform 0.3s ease;
+}
+
+.arrowRotated {
+  height: 11.25px;
+  width: auto; 
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
 }
 
 .criteriaContainer {

@@ -26,6 +26,12 @@ export default function PrizeCard({
 }: PrizeCardProps) {
   const [moveDot, setMoveDot] = useState<boolean>(false);
 
+  const [rotateArrow, setRotateArrow] = useState<boolean>(false);
+
+  const handleCriteriaClick = () => {
+    setRotateArrow((prevState: boolean) => !prevState);
+  };
+
   const [width, setWidth] = useState(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
@@ -74,7 +80,7 @@ export default function PrizeCard({
   return (
     <Accordion sx={{ padding: '0px', borderRadius: '10px' }}>
       <AccordionSummary sx={{ padding: '0px', borderRadius: '100px' }}>
-        <div className={styles.container}>
+        <div className={styles.container} onClick={handleCriteriaClick}>
           <div className={styles.content}>
             <div className={styles.info}>
               <div>
@@ -110,7 +116,7 @@ export default function PrizeCard({
                   alt="arrow up"
                   width={11.25}
                   height={11.25}
-                  className={styles.arrow}
+                  className={rotateArrow ? styles.arrowRotated : styles.arrow}
                 />
                 <p className={styles.eligibilityText}>ELIGIBILITY CRITERIA</p>
               </div>
