@@ -144,7 +144,7 @@ const prizeCategories: PrizeCategories = {
       prizeImages: [beats],
       prizeNames: ['Beats Studio Pro'],
       criteria:
-        'Projects must showcase breadth and application of technical knowledge. Focuses on use of advanced techical tools + algorithms/data structures, integration of multiple technologies, quality of implementation, displays technical depth, graded on performance/scalability	',
+        'Projects must showcase breadth and application of technical knowledge. Focuses on use of advanced techical tools + algorithms/data structures, integration of multiple technologies, quality of implementation, displays technical depth, graded on performance/scalability.',
     },
     {
       name: 'Best use of Intel Developer Cloud',
@@ -159,7 +159,7 @@ const prizeCategories: PrizeCategories = {
       prizeImages: [creativecloud],
       prizeNames: ['Adobe Creative Cloud of 1 year'],
       criteria:
-        'Project includes beautiful design and intuitive web experiences that bring joy to users. Shows that the project is not only functional but also delightful, demonstrates wireframing, responsive design and promots intuitive user experiences',
+        'Project includes beautiful design and intuitive web experiences that bring joy to users. Shows that the project is not only functional but also delightful, demonstrates wireframing, responsive design and promots intuitive user experiences.',
     },
     {
       name: 'Best User Research',
@@ -202,7 +202,7 @@ const prizeCategories: PrizeCategories = {
       prizeImages: [akasocamera],
       prizeNames: ['AKASO brave'],
       criteria:
-        'Projects must seamlessly incorporate significance tests that evaluate a hypothesis based on their primary question or project goal, with an emphasis on accuracy metrics such as MSE, R^2, adjusted R^2, precision and recall. Various statistical models such as	',
+        'Projects must seamlessly incorporate significance tests that evaluate a hypothesis based on their primary question or project goal, with an emphasis on accuracy metrics such as MSE, R^2, adjusted R^2, precision and recall.',
     },
   ],
   MLH: [
@@ -251,24 +251,24 @@ const prizeCategories: PrizeCategories = {
   ],
   'Non-Profit': [
     {
-      name: 'Life of Kai',
+      name: 'Best Hack for Life of Kai',
       prizeImages: [stuffle, camping],
       prizeNames: ['1 Stuffle & 1 Camping Hammock'],
       criteria:
         'The Life of Kai is a non-profit organization devoted to finding forever homes for homeless animals. This prize will be awarded to an application that innovates search methods for lost pets while promoting and encouraging community engagement.',
     },
     {
-      name: 'DCMH',
+      name: 'Best Hack for DCMH',
       prizeImages: [stuffle, camping],
       prizeNames: ['1 Stuffle & 1 Camping Hammock'],
       criteria:
-        'tech: application to track inventory for admins and has a public facing donation page design prompt: redesign brand identity and improve user experience	',
+        'DCMH provides low income/homeless individuals with housing/human services. \n Tech Prompt: Build an application to track inventory for admins that has a public facing donation page. Design prompt: redesign brand identity and improve user experience.	',
     },
     {
-      name: 'AggieHouse',
+      name: 'Best Hack for AggieHouse',
       prizeImages: [stuffle, camping],
       prizeNames: ['1 Stuffle & 1 Camping Hammock'],
-      criteria: 'Build a new website for their organization	',
+      criteria: 'AggieHouse provides shelter, food, financial education, case management services, and community. Build a new website for their organization.	',
     },
   ],
 };
