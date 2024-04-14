@@ -83,6 +83,7 @@ export default function PrizeCard({
         padding: '0px',
         borderRadius: '10px',
       }}
+      disableGutters={true}
     >
       <AccordionSummary sx={{ padding: '0px', borderRadius: '100px' }}>
         <div className={styles.container} onClick={handleCriteriaClick}>

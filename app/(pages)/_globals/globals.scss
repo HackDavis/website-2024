@@ -78,18 +78,6 @@
 .MuiAccordion-root:last-of-type {
     border-radius: 10px !important;
 }
-.MuiAccordion-root.Mui {
-    margin: 0 !important;
-}
-.MuiAccordion-root.Mui-expanded {
-    margin: 0 !important;
-
-    align-self: flex-start;
-
-    @include mixins.tablet {
-        align-self: center;
-    }
-}
 
 * {
   box-sizing: border-box;
