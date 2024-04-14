@@ -1,4 +1,4 @@
-import type { Event } from '../../../../../../../../public/types/Schedule.types';
+import type { Event } from '@/public/types/Schedule.types';
 import { MapPin } from 'lucide-react';
 
 export default function EventContent(event: Event) {

@@ -13,7 +13,6 @@ export async function getAllEvents(): Promise<Event[]> {
         endTime: doc.endTime,
         title: doc.title,
         location: doc.location,
-        description: doc.description,
         type: doc.type,
       })
     );

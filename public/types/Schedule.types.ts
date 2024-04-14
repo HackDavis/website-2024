@@ -3,7 +3,6 @@ export type Event = {
   endTime: Date;
   title: string;
   location: string;
-  description?: string;
   type: string;
 };
 

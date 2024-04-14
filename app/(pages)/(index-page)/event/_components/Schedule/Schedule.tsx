@@ -22,7 +22,7 @@ const eventDays: ScheduleDay[] = [
   },
 ];
 
-const FilterItems: string[] = ['Activity', 'Workshop', 'Menu'];
+const FilterItems: string[] = ['General', 'Activity', 'Workshop', 'Food'];
 
 function filterEventByDay(events: Event[], day: Date): Event[] {
   return events.filter((event) => {

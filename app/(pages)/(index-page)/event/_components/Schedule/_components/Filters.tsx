@@ -30,7 +30,12 @@ export default function Filters({ onFilterChange, FilterItems }: FiltersProps) {
           key={filter}
           onClick={() => handleFilterClick(filter)}
           className="tw-flex tw-gap-1 tw-rounded-3xl tw-bg-cyan-600 
-          tw-p-3 tw-font-semibold tw-text-white hover:tw-cursor-pointer hover:tw-shadow-lg"
+          tw-p-3 tw-font-semibold tw-text-white hover:tw-cursor-pointer hover:tw-shadow-lg "
+          style={{
+            backgroundColor: selectedFilters.includes(filter)
+              ? '#2b6cb0'
+              : 'gray',
+          }}
         >
           <Check />
           {filter}
