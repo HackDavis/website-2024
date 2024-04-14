@@ -9,16 +9,19 @@ import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
 type ScheduleDay = {
   dayString: string;
   day: Date;
+  startDay: Date;
 };
 
 const eventDays: ScheduleDay[] = [
   {
     dayString: 'Saturday, April 27',
     day: new Date('2023-04-27'),
+    startDay: new Date('2023-04-27T12:00:00'),
   },
   {
     dayString: 'Sunday, April 28',
     day: new Date('2023-04-28'),
+    startDay: new Date('2023-04-28T00:00:00'),
   },
 ];
 
@@ -40,7 +43,7 @@ export default function Schedule() {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
   const [timeChunks, setTimeChunks] = useState<TimeChunk[]>([]);
   const [allEvents, setAllEvents] = useState<Event[]>([]);
-  const [startTime, setStartTime] = useState(new Date('2023-04-27T09:00:00'));
+  const [startTime, setStartTime] = useState(eventDays[0].startDay);
   const [selectedFilters, setSelectedFilters] = useState<string[]>(FilterItems);
 
   //fetching events from DB and creating time chunks
@@ -57,9 +60,7 @@ export default function Schedule() {
     const eventsDay = filterEventByDay(allEvents, currentDay.day);
     const filteredEvents = filterEventByType(eventsDay, selectedFilters);
     setTimeChunks(createTimeChunks(filteredEvents));
-    setStartTime(
-      new Date(currentDay.day.toISOString().split('T')[0] + 'T09:00:00')
-    );
+    setStartTime(new Date(currentDay.startDay));
   }, [currentDay, allEvents, selectedFilters]);
 
   return (

@@ -1,7 +1,4 @@
-import type {
-  Event,
-  TimeChunk,
-} from '../../../../../../../public/types/Schedule.types';
+import type { Event, TimeChunk } from '@/public/types/Schedule.types';
 
 function getQuarterHourIntervals(startTime: Date, endTime: Date): number {
   const diffInMinutes = (endTime.getTime() - startTime.getTime()) / (1000 * 60);
@@ -23,7 +20,7 @@ export function calcEventRows(
 export function generate24HRClock(startTime: Date): Date[] {
   const times: Date[] = [];
   const endTime = new Date(startTime);
-  endTime.setDate(startTime.getDate() + 1);
+  endTime.setHours(23, 59, 59, 999);
   let current = new Date(startTime);
   while (current <= endTime) {
     times.push(current);
