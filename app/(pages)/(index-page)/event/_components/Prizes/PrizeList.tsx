@@ -14,7 +14,7 @@ import ipad from 'public/index/PrizeList/General/ipad.png';
 import keyboard from 'public/index/PrizeList/General/keyboard.png';
 import legocamera from 'public/index/PrizeList/General/legocamera.png';
 import metaquest from 'public/index/PrizeList/General/metaquest3.png';
-import moneybag from 'public/index/PrizeList/General/noto_money-bag.png';
+// import moneybag from 'public/index/PrizeList/General/noto_money-bag.png';
 import swagbag from 'public/index/PrizeList/General/swagbag.png';
 
 // technical prizes
