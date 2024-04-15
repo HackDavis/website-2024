@@ -1,6 +1,5 @@
-import Clouds from './_components/Clouds/Clouds';
-//import Form from './_components/Form/Form';
-import Grass from './_components/Grass/Grass';
+import Clouds from '../../../_components/Landing/_components/Clouds/Clouds';
+import Grass from '../../../_components/Landing/_components/Grass/Grass';
 import styles from './Timer.module.scss';
 
 export default function Timer() {

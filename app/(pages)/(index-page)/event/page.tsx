@@ -8,6 +8,7 @@ import PrizeList from './_components/Prizes/PrizeList';
 import RiverCow from '../_components/RiverCow/RiverCow';
 import BottomSection from '../_components/BottomSection/BottomSection';
 import Sponsors from '../_components/Sponsors/Sponsors';
+//import Landing from '../_components/Landing/Landing';
 
 export default function Home() {
   return (

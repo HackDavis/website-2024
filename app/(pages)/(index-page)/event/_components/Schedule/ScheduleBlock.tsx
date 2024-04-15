@@ -39,7 +39,7 @@ export default function ScheduleBlock() {
       <div className={styles.schedules}>
         {schedules.map((schedule, index) => (
           <div key={index} className={styles.schedule_container}>
-            <Schedule data={schedule} />
+            <Schedule />
           </div>
         ))}
       </div>

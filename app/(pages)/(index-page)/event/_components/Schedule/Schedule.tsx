@@ -1,3 +1,3 @@
-export default function Schedule({ data }) {
+export default function Schedule() {
   return 'SOME SCHEDULE';
 }
