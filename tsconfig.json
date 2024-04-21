@@ -30,6 +30,8 @@
       "@actions/*": ["app/(api)/_actions/*"],
       "@utils/*": ["app/(api)/_utils/*"],
       "@apidata/*": ["app/(api)/_data/*"],
+      "@types/*" : ["public/types/*"],
+      "@landingComponents/*" : ["app/(pages)/(index-page)/_components/Landing/_components/*"]
     }
   },
   "include": ["nextEnv.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
