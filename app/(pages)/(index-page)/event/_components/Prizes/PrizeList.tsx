@@ -250,21 +250,21 @@ const prizeCategories: PrizeCategories = {
     {
       name: 'Best Hack for Life of Kai',
       prizeImages: [stuffle, camping],
-      prizeNames: ['1 Stuffle & 1 Camping Hammock'],
+      prizeNames: ['1 Plushie & 1 Camping Hammock'],
       criteria:
         'The Life of Kai is a non-profit organization devoted to finding forever homes for homeless animals. This prize will be awarded to an application that innovates search methods for lost pets while promoting and encouraging community engagement.',
     },
     {
       name: 'Best Hack for DCMH',
       prizeImages: [stuffle, camping],
-      prizeNames: ['1 Stuffle & 1 Camping Hammock'],
+      prizeNames: ['1 Plushie & 1 Camping Hammock'],
       criteria:
         'DCMH provides low income/homeless individuals with housing/human services. \n Tech Prompt: Build an application to track inventory for admins that has a public facing donation page. Design prompt: redesign brand identity and improve user experience.	',
     },
     {
       name: 'Best Hack for AggieHouse',
       prizeImages: [stuffle, camping],
-      prizeNames: ['1 Stuffle & 1 Camping Hammock'],
+      prizeNames: ['1 Plushie & 1 Camping Hammock'],
       criteria:
         'AggieHouse provides shelter, food, financial education, case management services, and community. Build a new website for their organization.	',
     },
