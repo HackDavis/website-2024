@@ -1,7 +1,7 @@
 import styles from './Timer.module.scss';
-
 //import { CiCalendar } from 'react-icons/ci';
 import Link from 'next/link';
+import Countdown from '../Countdown/Countdown';
 
 type FormLink = {
   title: string;
@@ -28,6 +28,7 @@ export default function Form() {
           <img src="/navbar/logo.svg" alt="Logo" className={styles.logo} />{' '}
           <span className={styles.title_social}>HackDavis 2024</span>
         </div>
+        <Countdown />
         <div className={styles.buttons}>
           <Link
             href={FormLinks.Register.url}
