@@ -10,6 +10,17 @@ import Loader from '@components/Loader/Loader';
 import RiverCow from './_components/RiverCow/RiverCow';
 import PrizeList from './event/_components/Prizes/PrizeList';
 import Resources from './event/_components/Resources/Resources';
+import { SiNotion, SiProtoncalendar } from 'react-icons/si';
+
+type ResourceType = {
+  icon: JSX.Element;
+  title: string;
+};
+
+const resourcePack: ResourceType[] = [
+  { icon: <SiNotion />, title: 'STARTER PACK' },
+  { icon: <SiProtoncalendar />, title: 'HACKDAVIS 2024 CALENDAR' },
+];
 
 export default function Home() {
   return (
@@ -20,7 +31,7 @@ export default function Home() {
           <Landing />
         </div>
         <div className="">
-          <Resources />
+          <Resources resourcePack={resourcePack} />
         </div>
         <div id="whatishackdavis">
           <WhatIsHackdavis />

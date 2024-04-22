@@ -9,6 +9,29 @@ import BottomSection from '../_components/BottomSection/BottomSection';
 import Sponsors from '../_components/Sponsors/Sponsors';
 import Resources from './_components/Resources/Resources';
 
+import { SiNotion, SiSpotify } from 'react-icons/si';
+import safetyIcon from 'public/event/safetyIcon.svg';
+import mapIcon from 'public/event/mapIcon.svg';
+import Image from 'next/image';
+
+type ResourceType = {
+  icon: JSX.Element;
+  title: string;
+};
+
+const resourcePackDOE: ResourceType[] = [
+  { icon: <SiNotion />, title: 'STARTER PACK' },
+  { icon: <SiSpotify />, title: 'CREATOR JAMS' },
+  {
+    icon: <Image src={mapIcon} alt="event map logo." />,
+    title: 'EVENT MAP',
+  },
+  {
+    icon: <Image src={safetyIcon} alt="safety info logo." />,
+    title: 'SAFETY INFO',
+  },
+];
+
 export default function Home() {
   return (
     <LoadingProvider>
@@ -18,7 +41,7 @@ export default function Home() {
           <Landing />
         </div>
         <div id="resources">
-          <Resources />
+          <Resources resourcePack={resourcePackDOE} />
         </div>
         <div id="whatishackdavis">
           <WhatIsHackdavis />
