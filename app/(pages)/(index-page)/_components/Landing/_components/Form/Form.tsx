@@ -2,6 +2,8 @@ import styles from './Form.module.scss';
 import { CiCalendar } from 'react-icons/ci';
 import WordCycle from './_components/WordCycle';
 import Link from 'next/link';
+import Image from 'next/image';
+import intelLogoCoHost from 'public/index/Hero/intelCoHostImage.png';
 
 type FormLink = {
   title: string;
@@ -68,6 +70,13 @@ export default function Form() {
             </div>
           </div>
         </div>
+
+        <Image
+          src={intelLogoCoHost}
+          alt="Co Host by Intel"
+          className={styles.intelCoHost}
+        />
+
         <div className={styles.buttons}>
           <Link
             href={FormLinks.Register.url}
