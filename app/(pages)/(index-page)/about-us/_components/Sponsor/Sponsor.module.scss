@@ -1,0 +1,165 @@
+@use 'app/(pages)/_globals/mixins';
+
+.sponsor-container {
+  display: flex;
+  justify-content: center;
+  background: #123041;
+  font-family: "Metropolis";
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+  gap: 88px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 88px 176px 0 176px;
+  height: 100%;
+  width: fit-content;
+
+  @include mixins.sm-desktop {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 88px 88px 0 88px;
+  }
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  height: 100%;
+  gap: 50px;
+
+  @include mixins.sm-desktop {
+    align-items: center;
+    gap: 64px;
+    width: 75%;
+  }
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-height: fit-content;
+  width: 100%;
+
+  @include mixins.phone {
+    width: 100%;
+  }
+}
+
+.numbers-words-container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.number-word-pair {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.number {
+  color: #F4F4F4;
+  font-family: "Metropolis";
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 1.28px;
+  text-transform: lowercase;
+  margin-right: 24px;
+
+  @include mixins.phone {
+    font-size: 2.5rem;
+    letter-spacing: 0.8px;
+  }
+}
+
+.word {
+  display: flex;
+  align-items: center;
+  color: #F4F4F4;
+  font-family: "Metropolis";
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.56px;
+  text-transform: lowercase;
+  height: 5rem;
+
+  @include mixins.phone {
+    font-size: 1.5rem;
+    letter-spacing: 0.48px;
+  }
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  padding: 12px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  border-radius: 6.25rem;
+  background: #FFC53D;
+}
+
+.button-words{
+  color: #123041;
+  text-align: center;
+  font-family: "Metropolis";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.36px;
+}
+
+.cow_duck {
+  display: flex;
+  justify-self: flex-end;
+  width: 100%;
+  max-width: 592px;
+
+  @include mixins.phone {
+    width: 150%;
+
+  }
+}
+
+.stack {
+  display: grid; // stack the polaroids on top of each other
+  height: fit-content;
+  width: fit-content;
+}
+  
+.polaroid {
+  grid-row: 1;
+  grid-column: 1;
+  height: 592px;
+  width: auto;
+  transition: transform 1.9s cubic-bezier(0.79, 0.02, 0.21, 0.99) .1s;
+
+  @include mixins.phone {
+    justify-self: center;
+    width: 150%;
+    height: auto;
+  }
+}
+
+.swipe {
+  transform: translateX(75%) rotate(20deg);
+}

@@ -1,6 +1,6 @@
 import { calcEventRows, generate24HRClock } from './Calculations';
 import EventContent from './_components/EventContent';
-import type { TimeChunk } from '../../../../../../../public/types/Schedule.types';
+import type { TimeChunk } from '../../../../../../public/types/Schedule.types';
 
 interface TimeTableProps {
   timeChunks: TimeChunk[];
