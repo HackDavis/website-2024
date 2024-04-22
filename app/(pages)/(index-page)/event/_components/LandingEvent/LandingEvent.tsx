@@ -2,7 +2,7 @@ import Clouds from '@landingComponents/Clouds/Clouds';
 import Grass from '@landingComponents/Grass/Grass';
 import styles from './LandingEvent.module.scss';
 
-import Timer from './_components/Timer/Timer';
+import Timer from '../Timer/Timer';
 
 export default function LandingEvent() {
   return (
