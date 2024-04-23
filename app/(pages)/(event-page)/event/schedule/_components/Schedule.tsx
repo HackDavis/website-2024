@@ -40,17 +40,16 @@ const FilterItems: string[] = [
 ];
 
 function filterEventByDay(events: Event[], day: Date): Event[] {
-  return events.filter((event) => {
-    const eventDate = event.startTime.toISOString().split('T')[0];
-    const targetDate = day.toISOString().split('T')[0];
+  const startOfDay = new Date(day);
+  startOfDay.setUTCHours(7, 0, 0, 0); // Start of day in Pacific Time (00:00 PDT)
 
-    if (targetDate === '2023-04-28') {
-      const extraDay = new Date(targetDate);
-      extraDay.setDate(extraDay.getDate() + 1); // increment the date by one day
-      const extraDayDate = extraDay.toISOString().split('T')[0];
-      return eventDate === targetDate || eventDate === extraDayDate;
-    }
-    return eventDate === targetDate;
+  const endOfDay = new Date(day);
+  endOfDay.setUTCHours(31, 0, 0, 0); // End of day in Pacific Time (00:00 PDT of the next day)
+
+  return events.filter((event) => {
+    const eventStartTimeUTC = new Date(event.startTime);
+
+    return eventStartTimeUTC >= startOfDay && eventStartTimeUTC < endOfDay;
   });
 }
 
