@@ -116,6 +116,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
             width={100}
             height={100}
             className={styles.mlhBadge}
+            priority={true}
           />
         </Link>
       </nav>
