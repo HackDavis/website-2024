@@ -7,30 +7,8 @@ import PrizeList from './_components/Prizes/PrizeList';
 import RiverCow from '../_components/RiverCow/RiverCow';
 import BottomSection from '../_components/BottomSection/BottomSection';
 import Sponsors from '../_components/Sponsors/Sponsors';
-import Resources from './_components/Resources/Resources';
-
-import { SiNotion, SiSpotify } from 'react-icons/si';
-import safetyIcon from 'public/event/safetyIcon.svg';
-import mapIcon from 'public/event/mapIcon.svg';
-import Image from 'next/image';
-
-type ResourceType = {
-  icon: JSX.Element;
-  title: string;
-};
-
-const resourcePackDOE: ResourceType[] = [
-  { icon: <SiNotion />, title: 'STARTER PACK' },
-  { icon: <SiSpotify />, title: 'CREATOR JAMS' },
-  {
-    icon: <Image src={mapIcon} alt="event map logo." />,
-    title: 'EVENT MAP',
-  },
-  {
-    icon: <Image src={safetyIcon} alt="safety info logo." />,
-    title: 'SAFETY INFO',
-  },
-];
+import Resources from '../_components/Resources/Resources';
+import { resourcePackDOE } from '../../_data/resourceData';
 
 export default function Home() {
   return (

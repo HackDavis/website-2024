@@ -90,19 +90,6 @@ export default function Form() {
               <span>{FormLinks.Mentor.title}</span>
             </Link>
           </div>
-          <div className={styles.links_calendar}>
-            New to hackathons?
-            <Link href={FormLinks.StarterPack.url}>
-              <span>{FormLinks.StarterPack.title}</span>
-            </Link>
-          </div>
-          <div className={styles.links_calendar}>
-            Grab your
-            <Link href={FormLinks.Calendar.url}>
-              <span>{FormLinks.Calendar.title}</span>
-            </Link>
-            today!
-          </div>
         </div>
       </div>
     </div>
