@@ -9,9 +9,9 @@ interface TimeTableProps {
 
 const colorActivities: Record<string, string> = {
   Food: '#FFD6A5', // Orange
-  Activity: '#E2F8F7', // Blue
+  Workshop: '#E2F8F7', // Blue
   General: '#D6E8AA', // Green
-  Workshop: '#FFE29E', // Yellow
+  Activity: '#FFE29E', // Yellow
   Hacking: '#F7A2A2', // Red
 };
 
