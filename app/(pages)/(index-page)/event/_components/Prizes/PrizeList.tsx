@@ -87,7 +87,7 @@ const prizeCategories: PrizeCategories = {
       name: 'Best Interdisciplinary Hack',
       prizeImages: [fujifilm, nordVPN],
       prizeNames: [
-        'Fujifilm instax SQ40 camera & NordPass & Incongni & NordVPN',
+        'Fujifilm instax SQ40 camera & NordPass & Incogni & NordVPN',
       ],
       criteria:
         'Leverage multiple perspectives across different disciplines to create a more well-rounded project. At least one member of the team needs to be a non-CS/CSE/otherwise CS-related major in order to qualify.	',
