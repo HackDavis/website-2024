@@ -10,7 +10,7 @@ import camcorder from 'public/index/PrizeList/General/camcorder.png';
 import tv from 'public/index/PrizeList/General/vizioTV.jpg';
 import fitbit from 'public/index/PrizeList/General/fitbit.png';
 import fujifilm from 'public/index/PrizeList/General/fujifilm.png';
-import nordVPN from 'public/index/Sponsors/NordVPNLogo.png';
+import nordVPN from 'public/index/Sponsors/nordSecurity.png';
 import ipad from 'public/index/PrizeList/General/ipad.png';
 import keyboard from 'public/index/PrizeList/General/keyboard.png';
 import legocamera from 'public/index/PrizeList/General/legocamera.png';
@@ -45,7 +45,7 @@ import wirelesscharger from 'public/index/PrizeList/MLH/wirelesscharger.png';
 
 // non-profit prizes
 import camping from 'public/index/PrizeList/NonProfit/owlcamping.png';
-import stuffle from 'public/index/PrizeList/NonProfit/smokoanimals4.png';
+import stuffle from 'public/index/PrizeList/NonProfit/frogPlushie.png';
 
 const filters = [
   'All',
