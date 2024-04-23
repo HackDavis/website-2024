@@ -8,7 +8,7 @@ export default function Resources({
   resourcePack: ResourceType[];
 }) {
   return (
-    <main className={styles.main_container}>
+    <main className="tw-w-full tw-p-1/10">
       <h1 className="tw-font-semibold">Resources</h1>
       <div
         className="tw-grid tw-gap-6"

@@ -12,12 +12,14 @@ const colorActivities: Record<string, string> = {
   Activity: '#E2F8F7', // Blue
   General: '#D6E8AA', // Green
   Workshop: '#FFE29E', // Yellow
+  Hacking: '#F7A2A2', // Red
 };
 
-const rowSize = '100px';
+const rowSize = '50px';
 
 export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
   const clockTimes = generate24HRClock(startTime);
+  console.log('timechunks', timeChunks);
 
   return (
     <main className="">
