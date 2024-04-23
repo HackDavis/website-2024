@@ -93,6 +93,30 @@ $tablet-scale: 0.75;
     display: flex;
     flex-direction: column;
 
+    &_intel {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      gap: 10px;
+
+      .intelCoHostText {
+        color: rgba(23, 58, 82, 0.70);
+        font-family: "Metropolis", sans-serif;
+        font-size: $calendar-upper-font-size;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 0.64px;
+        line-height: 150%; /* 48px */
+      }
+
+      .intelCoHostImage {
+        width: auto;
+        height: $calendar-upper-font-size;
+        align-self: center;
+        margin-top: -1.2%;
+      }
+    }
+
     &_upper{
       font-family: "Metropolis", sans-serif;
       color: var(--teal-2, #173A52);
@@ -166,11 +190,6 @@ $tablet-scale: 0.75;
     }
   }
 
-}
-
-.intelCoHost {
-  width: 80%;
-  height: auto;
 }
 
 .buttons{
@@ -346,6 +365,22 @@ $tablet-scale: 0.75;
   }
   .calendar{
     &_inner{
+
+      &_intel {
+
+        .intelCoHostText {
+          font-size: calc($calendar-upper-font-size * 0.75);
+        }
+  
+        .intelCoHostImage {
+          width: auto;
+          height: calc($calendar-upper-font-size * 0.75);
+          align-self: center;
+          margin-left: -1%;
+          
+        }
+      }
+
       &_upper{
         font-size: calc($calendar-upper-font-size * 0.75);
         &_hackdavis{
@@ -440,6 +475,26 @@ $tablet-scale: 0.75;
   }
   .calendar{
     &_inner{
+
+      &_intel {
+        width: 90vw;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .intelCoHostText {
+          font-size: 24px;
+        }
+  
+        .intelCoHostImage {
+          width: auto;
+          height: 24px;
+          align-self: center;
+          margin-top: -2%;
+          margin-left: -1%;
+          
+        }
+      }
+
       &_upper{
         font-size: 24px;
         &_hackdavis{

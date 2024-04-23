@@ -3,7 +3,7 @@ import { CiCalendar } from 'react-icons/ci';
 import WordCycle from './_components/WordCycle';
 import Link from 'next/link';
 import Image from 'next/image';
-import intelLogoCoHost from 'public/index/Hero/intelCoHostImage.png';
+import intelLogoCoHost from 'public/index/Sponsors/intel.png';
 
 type FormLink = {
   title: string;
@@ -53,12 +53,24 @@ export default function Form() {
         </div>
         <div className={styles.calendar}>
           <div className={styles.calendar_inner}>
-            <span className={styles.calendar_inner_upper}>
-              Join us for{' '}
-              <span className={styles.calendar_inner_upper_hackdavis}>
-                HackDavis 2024
+            <div className={styles.calendar_inner_intel}>
+              <span className={styles.calendar_inner_upper}>
+                Join us for{' '}
+                <span className={styles.calendar_inner_upper_hackdavis}>
+                  HackDavis 2024
+                </span>
               </span>
-            </span>
+              <span className={styles.intelCoHostText}>
+                co-hosted by{' '}
+              </span>
+              <Image
+                src={intelLogoCoHost}
+                alt="Intel Logo"
+                className={styles.intelCoHostImage}
+              />
+            </div>
+
+
             <div className={styles.calendar_inner_lower}>
               <CiCalendar className={styles.calendar_inner_lower_icon} />
               <span className={styles.calendar_inner_lower_text}>
@@ -71,11 +83,6 @@ export default function Form() {
           </div>
         </div>
 
-        <Image
-          src={intelLogoCoHost}
-          alt="Co Host by Intel"
-          className={styles.intelCoHost}
-        />
 
         <div className={styles.buttons}>
           <Link
