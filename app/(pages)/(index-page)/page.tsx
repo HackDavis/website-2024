@@ -20,9 +20,9 @@ export default function Home() {
         <div id="landing">
           <Landing />
         </div>
-        <div className="">
+        {/* <div className="">
           <Resources resourcePack={resourcePack} />
-        </div>
+        </div> */}
         <div id="whatishackdavis">
           <WhatIsHackdavis />
         </div>
