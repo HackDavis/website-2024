@@ -7,18 +7,20 @@ import { StaticImageData } from 'next/image';
 
 // general prizes
 import camcorder from 'public/index/PrizeList/General/camcorder.png';
-import tv from 'public/index/PrizeList/General/tv.png';
+import tv from 'public/index/PrizeList/General/vizioTV.jpg';
 import fitbit from 'public/index/PrizeList/General/fitbit.png';
 import fujifilm from 'public/index/PrizeList/General/fujifilm.png';
+import nordpass from 'public/index/Sponsors/NordPass.png';
+import nordVPN from 'public/index/Sponsors/NordVPNLogo.png';
 import ipad from 'public/index/PrizeList/General/ipad.png';
 import keyboard from 'public/index/PrizeList/General/keyboard.png';
 import legocamera from 'public/index/PrizeList/General/legocamera.png';
-import metaquest from 'public/index/PrizeList/General/metaquest3.png';
+import ps5 from 'public/index/PrizeList/General/ps5.2.png';
 // import moneybag from 'public/index/PrizeList/General/noto_money-bag.png';
 import swagbag from 'public/index/PrizeList/General/swagbag.png';
 
 // technical prizes
-import beats from 'public/index/PrizeList/Technical/beatsstudiopro.png';
+import beats from 'public/index/PrizeList/Technical/beatsSolo3.webp';
 import chatgpt from 'public/index/PrizeList/Technical/chatgptplus.png';
 import lenovolaptop from 'public/index/PrizeList/Technical/lenovolaptop.png';
 
@@ -30,9 +32,9 @@ import instax from 'public/index/PrizeList/Design/instax.png';
 
 // business prizes
 import akasocamera from 'public/index/PrizeList/Business/akasocamera.png';
-import beatspro from 'public/index/PrizeList/Business/beatspro.png';
 import embermug from 'public/index/PrizeList/Business/embermug.png';
 import waterbottle from 'public/index/PrizeList/Business/larqwaterbottle.png';
+// also beats but just using the import from technical
 
 // mlh prizes which have been placed in the general and technical sections
 import pen from 'public/index/PrizeList/MLH/3dprintingpen.png';
@@ -70,22 +72,22 @@ const prizeCategories: PrizeCategories = {
   General: [
     {
       name: 'Best Hack for Social Good',
-      prizeImages: [metaquest, ipad],
-      prizeNames: ['Meta Quest 3', 'IPad (9th gen)'],
+      prizeImages: [ps5, ipad],
+      prizeNames: ['PS5', 'IPad (9th gen)'],
       criteria:
         'Encapsulate your authentic idea of "social good" can look like. All entries are automatically considered for this prize category.	',
     },
     {
       name: 'Best Beginner Hack',
       prizeImages: [tv],
-      prizeNames: ['Insignia 42” smart tv'],
+      prizeNames: ['VIZIO 40” smart tv'],
       criteria:
         'Every team member must be a beginner in order to qualify. Demonstrate a high level of growth through this project. Foster creativity and collaboration within the team and display a committment to building skills.	',
     },
     {
       name: 'Best Interdisciplinary Hack',
-      prizeImages: [fujifilm],
-      prizeNames: ['Fujifilm instax SQ40 camera'],
+      prizeImages: [fujifilm, nordVPN],
+      prizeNames: ['Fujifilm instax SQ40 camera & NordPass & Incongni & NordVPN'],
       criteria:
         'Leverage multiple perspectives across different disciplines to create a more well-rounded project. At least one member of the team needs to be a non-CS/CSE/otherwise CS-related major in order to qualify.	',
     },
@@ -149,7 +151,7 @@ const prizeCategories: PrizeCategories = {
     {
       name: 'Most Technically Challenging Hack',
       prizeImages: [beats],
-      prizeNames: ['Beats Studio Pro'],
+      prizeNames: ['Beats Solo3'],
       criteria:
         'Projects must showcase breadth and application of technical knowledge. Focuses on use of advanced techical tools + algorithms/data structures, integration of multiple technologies, quality of implementation, displays technical depth, graded on performance/scalability.',
     },
@@ -220,8 +222,8 @@ const prizeCategories: PrizeCategories = {
   Business: [
     {
       name: 'Best Interactive Media Hack',
-      prizeImages: [beatspro],
-      prizeNames: ['Beats Studio Pro'],
+      prizeImages: [beats],
+      prizeNames: ['Beats Solo3'],
       criteria:
         'No Code Required. Get creative with relevant media to push the boundaries of interactive technologies today. Project focus should be on the user experience being as interactive as possible, potentially a gamified platform, an AI education platform, or an interactive concert viewing. A perfect opportunity to tap into non-tech skills, perhaps by incorporating music, visuals, and any other creative methods that come to mind.	',
     },
