@@ -18,6 +18,8 @@ import guayaki from 'public/index/Sponsors/gym.png';
 import ucdLS from 'public/index/Sponsors/ls.png';
 import rhombus from 'public/index/Sponsors/rhombus.png';
 import codeCrafters from 'public/index/Sponsors/codecrafters.png';
+import nordpass from 'public/index/Sponsors/NordPass.png';
+import nordVPN from 'public/index/Sponsors/NordVPNLogo.png';
 
 // Row 3: IPO Sponsors
 import aggieHouse from 'public/index/Sponsors/IPOs/aggieHouseCow.png';
@@ -87,6 +89,12 @@ export default function Sponsors() {
           imgSrc={codeCrafters}
           url="https://codecrafters.io/"
           alt="CodeCrafters logo"
+        />
+        <Logo imgSrc={nordVPN} url="https://nordvpn.com/" alt="NordVPN logo" />
+        <Logo
+          imgSrc={nordpass}
+          url="https://nordpass.com/"
+          alt="NordPass logo"
         />
       </Marquee>
 
