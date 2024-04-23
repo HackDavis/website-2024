@@ -1,13 +1,13 @@
 'use client';
 import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
-import Landing from '../_components/Landing/Landing';
-import WhatIsHackdavis from '../_components/WhatIsHackdavis/WhatIsHackdavis';
+import Landing from '../../(index-page)/_components/Landing/Landing';
+import WhatIsHackdavis from '../../(index-page)/_components/WhatIsHackdavis/WhatIsHackdavis';
 import PrizeList from './_components/Prizes/PrizeList';
-import RiverCow from '../_components/RiverCow/RiverCow';
-import BottomSection from '../_components/BottomSection/BottomSection';
-import Sponsors from '../_components/Sponsors/Sponsors';
-import Resources from '../_components/Resources/Resources';
+import RiverCow from '../../(index-page)/_components/RiverCow/RiverCow';
+import BottomSection from '../../(index-page)/_components/BottomSection/BottomSection';
+import Sponsors from '../../(index-page)/_components/Sponsors/Sponsors';
+import Resources from '../../(index-page)/_components/Resources/Resources';
 import { resourcePackDOE } from '../../_data/resourceData';
 
 export default function Home() {
