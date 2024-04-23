@@ -129,6 +129,7 @@
   flex-direction: row;
   align-items: center;
   gap: 12px;
+  width: 95%;
 
   @include mixins.phone {
     gap: 8px;
