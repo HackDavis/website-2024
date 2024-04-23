@@ -9,8 +9,8 @@ import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
 import RiverCow from './_components/RiverCow/RiverCow';
 import PrizeList from './event/_components/Prizes/PrizeList';
-import Resources from './_components/Resources/Resources';
-import { resourcePack } from '../_data/resourceData';
+// import Resources from './_components/Resources/Resources';
+// import { resourcePack } from '../_data/resourceData';
 
 export default function Home() {
   return (
