@@ -11,7 +11,7 @@ const colorActivities: Record<string, string> = {
   Food: '#FFD6A5', // Orange
   Workshop: '#E2F8F7', // Blue
   General: '#D6E8AA', // Green
-  Activity: '#FFE29E', // Yellow
+  Activity: '#CF9FFF', // Purple
   Hacking: '#F7A2A2', // Red
 };
 
