@@ -23,7 +23,8 @@ import chatgpt from 'public/index/PrizeList/Technical/chatgptplus.png';
 import lenovolaptop from 'public/index/PrizeList/Technical/lenovolaptop.png';
 
 // design prizes
-import question from 'public/index/PrizeList/Design/_.png';
+import ticket from 'public/index/PrizeList/Design/ticket.webp';
+
 import creativecloud from 'public/index/PrizeList/Design/creativecloud.png';
 import instax from 'public/index/PrizeList/Design/instax.png';
 
@@ -211,9 +212,9 @@ const prizeCategories: PrizeCategories = {
     },
     {
       name: 'Best Overall Design',
-      prizeImages: [question],
-      prizeNames: ['TBD'],
-      criteria: 'TBD',
+      prizeImages: [ticket],
+      prizeNames: ['Config Tickets'],
+      criteria: 'Tickets to Figma’s conference happening June 26 - 27!',
     },
   ],
   Business: [
