@@ -3,12 +3,12 @@ import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
 import Landing from '../_components/Landing/Landing';
 import WhatIsHackdavis from '../_components/WhatIsHackdavis/WhatIsHackdavis';
-import Schedule from './_components/Schedule/Schedule';
 import PrizeList from './_components/Prizes/PrizeList';
 import RiverCow from '../_components/RiverCow/RiverCow';
 import BottomSection from '../_components/BottomSection/BottomSection';
 import Sponsors from '../_components/Sponsors/Sponsors';
-import Resources from './_components/Resources/Resources';
+import Resources from '../_components/Resources/Resources';
+import { resourcePackDOE } from '../../_data/resourceData';
 
 export default function Home() {
   return (
@@ -19,13 +19,7 @@ export default function Home() {
           <Landing />
         </div>
         <div id="resources">
-          <Resources />
-        </div>
-        <div
-          id="schedule"
-          className="tw-max-h-screen-4/5 tw-overflow-auto tw-border tw-border-purple-400"
-        >
-          <Schedule />
+          <Resources resourcePack={resourcePackDOE} />
         </div>
         <div id="whatishackdavis">
           <WhatIsHackdavis />

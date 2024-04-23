@@ -9,6 +9,8 @@ import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
 import RiverCow from './_components/RiverCow/RiverCow';
 import PrizeList from './event/_components/Prizes/PrizeList';
+import Resources from './_components/Resources/Resources';
+import { resourcePack } from '../_data/resourceData';
 
 export default function Home() {
   return (
@@ -17,6 +19,9 @@ export default function Home() {
       <main style={{ backgroundColor: 'white', scrollBehavior: 'smooth' }}>
         <div id="landing">
           <Landing />
+        </div>
+        <div className="">
+          <Resources resourcePack={resourcePack} />
         </div>
         <div id="whatishackdavis">
           <WhatIsHackdavis />

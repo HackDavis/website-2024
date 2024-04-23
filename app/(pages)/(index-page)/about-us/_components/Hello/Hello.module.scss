@@ -1,0 +1,107 @@
+@use 'app/(pages)/_globals/mixins';
+$mobile-breakpoint: 425px;
+$tablet-breakpoint: 768px;
+
+.hello_container{
+    background: var(--gradient, linear-gradient(-284deg, #FCFCD1 9.72%, #B2E7DD 44.61%, #76D6E6 79.5%));
+    width: 100%; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding-top: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0;
+}
+
+.title{
+    // border: 1px solid black; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 58vw;
+
+
+    @media (max-width: $tablet-breakpoint) {
+        margin-top: 10%;
+        width: 75vw;
+
+    }
+    
+    h1{
+        font-family: 'Metropolis', sans-serif;
+        color: var(--teal-1, #005271);
+        text-align: left;
+        font-size: 4rem;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: 1.44px;
+
+        @media (max-width: $tablet-breakpoint) {
+            font-size: 48px;
+        }
+    }
+    p{
+        margin-top: 48px;
+        color: var(--teal-1, #005271);
+        text-align: left;
+        font-family: "Metropolis", sans-serif;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%; /* 60px */
+        letter-spacing: 0.8px;
+        text-align: center;
+
+        @media (max-width: $tablet-breakpoint) {
+            font-size: 32px;
+        }
+    }
+}
+
+.banner{
+    &_image{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin-bottom: -1%;
+    }
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+    .hello_container{
+        padding-top: 30%;
+        padding-left: 32px;
+        padding-right: 32px; 
+        padding-bottom: 0;
+    }
+    .title{
+        width: 83vw;
+
+        h1{
+            font-size: 3rem;
+            line-height: 58px;
+            letter-spacing: 0.96px;
+            text-align: left;
+            color: var(--teal-1, #005271);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%; /* 57.6px */
+            letter-spacing: 0.96px;
+        }
+        p{
+            font-size: 1.25rem;
+            line-height: 36px;
+            letter-spacing: 0.48px;
+            text-align: left;
+            font-weight: 500;
+            margin-top: 24px;
+        }
+    }
+    
+}

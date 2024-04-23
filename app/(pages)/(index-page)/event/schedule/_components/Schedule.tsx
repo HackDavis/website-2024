@@ -1,9 +1,11 @@
-import TimeTable from './_components/TimeTable';
+'use client';
+
+import TimeTable from './TimeTable';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import type { TimeChunk, Event } from '@/public/types/Schedule.types';
-import { createTimeChunks } from './_components/Calculations';
-import Filters from './_components/Filters';
+import { createTimeChunks } from './Calculations';
+import Filters from './Filters';
 import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
 
 type ScheduleDay = {
@@ -64,7 +66,7 @@ export default function Schedule() {
   }, [currentDay, allEvents, selectedFilters]);
 
   return (
-    <main className="tw-flex tw-flex-col tw-border tw-border-black tw-px-32">
+    <main className="tw-flex tw-flex-col ">
       <div className="tw-flex tw-items-center tw-justify-between tw-py-10">
         <h1 className="tw-font-semibold">Schedule</h1>
         <div className="tw-flex">
