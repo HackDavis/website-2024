@@ -43,6 +43,13 @@ function filterEventByDay(events: Event[], day: Date): Event[] {
   return events.filter((event) => {
     const eventDate = event.startTime.toISOString().split('T')[0];
     const targetDate = day.toISOString().split('T')[0];
+
+    if (targetDate === '2023-04-28') {
+      const extraDay = new Date(targetDate);
+      extraDay.setDate(extraDay.getDate() + 1); // increment the date by one day
+      const extraDayDate = extraDay.toISOString().split('T')[0];
+      return eventDate === targetDate || eventDate === extraDayDate;
+    }
     return eventDate === targetDate;
   });
 }
