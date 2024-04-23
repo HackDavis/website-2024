@@ -8,9 +8,9 @@ import Sponsors from './_components/Sponsors/Sponsors';
 import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
 import RiverCow from './_components/RiverCow/RiverCow';
-import PrizeList from './event/_components/Prizes/PrizeList';
-// import Resources from './_components/Resources/Resources';
-// import { resourcePack } from '../_data/resourceData';
+import PrizeList from '../(event-page)/event/_components/Prizes/PrizeList';
+import Resources from './_components/Resources/Resources';
+import { resourcePack } from '../_data/resourceData';
 
 export default function Home() {
   return (
@@ -20,9 +20,9 @@ export default function Home() {
         <div id="landing">
           <Landing />
         </div>
-        {/* <div className="">
+        <div id="resources">
           <Resources resourcePack={resourcePack} />
-        </div> */}
+        </div>
         <div id="whatishackdavis">
           <WhatIsHackdavis />
         </div>

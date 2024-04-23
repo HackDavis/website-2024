@@ -19,21 +19,37 @@ const eventDays: ScheduleDay[] = [
     dayString: 'Saturday, April 27',
     day: new Date('2023-04-27'),
     startDay: new Date('2023-04-27T12:00:00'),
+    // day: new Date(Date.UTC(2023, 3, 27)), // Month is 0-indexed, 3 = April
+    // startDay: new Date(Date.UTC(2023, 3, 27, 12, 0, 0)),
   },
   {
     dayString: 'Sunday, April 28',
     day: new Date('2023-04-28'),
     startDay: new Date('2023-04-28T00:00:00'),
+    // day: new Date(Date.UTC(2023, 3, 28)),
+    // startDay: new Date(Date.UTC(2023, 3, 28)),
   },
 ];
 
-const FilterItems: string[] = ['General', 'Activity', 'Workshop', 'Food'];
+const FilterItems: string[] = [
+  'General',
+  'Activity',
+  'Workshop',
+  'Food',
+  'Hacking',
+];
 
 function filterEventByDay(events: Event[], day: Date): Event[] {
+  const startOfDay = new Date(day);
+  startOfDay.setUTCHours(7, 0, 0, 0); // Start of day in Pacific Time (00:00 PDT)
+
+  const endOfDay = new Date(day);
+  endOfDay.setUTCHours(31, 0, 0, 0); // End of day in Pacific Time (00:00 PDT of the next day)
+
   return events.filter((event) => {
-    const eventDate = event.startTime.toISOString().split('T')[0];
-    const targetDate = day.toISOString().split('T')[0];
-    return eventDate === targetDate;
+    const eventStartTimeUTC = new Date(event.startTime);
+
+    return eventStartTimeUTC >= startOfDay && eventStartTimeUTC < endOfDay;
   });
 }
 
@@ -52,6 +68,7 @@ export default function Schedule() {
   useEffect(() => {
     const fetchEvents = async () => {
       const events = await getAllEvents();
+      console.log(events);
       setAllEvents(events);
     };
     fetchEvents();

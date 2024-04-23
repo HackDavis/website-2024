@@ -8,16 +8,18 @@ interface TimeTableProps {
 }
 
 const colorActivities: Record<string, string> = {
-  General: '#FFD6A5', // Orange
-  Activity: '#E2F8F7', // Blue
-  Food: '#D6E8AA', // Green
-  Workshop: '#FFE29E', // Yellow
+  Food: '#FFD6A5', // Orange
+  Workshop: '#E2F8F7', // Blue
+  General: '#D6E8AA', // Green
+  Activity: '#FFE29E', // Yellow
+  Hacking: '#F7A2A2', // Red
 };
 
-const rowSize = '100px';
+const rowSize = '50px';
 
 export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
   const clockTimes = generate24HRClock(startTime);
+  console.log('timechunks', timeChunks);
 
   return (
     <main className="">
