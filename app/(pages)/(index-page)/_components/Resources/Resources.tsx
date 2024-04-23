@@ -22,7 +22,9 @@ export default function Resources({
             <Link key={index} href={resource.url}>
               <div className="sm:tw-aspect-content tw-flex tw-min-w-0 tw-cursor-pointer tw-flex-col tw-items-center tw-justify-center tw-gap-6 tw-rounded-3xl tw-border tw-p-9 tw-text-dark-blue md:tw-aspect-auto lg:tw-aspect-auto">
                 <div className={styles.card_icons}>{resource.icon}</div>
-                <h4 className={styles.card_titles}>{resource.title}</h4>
+                <h4 className="tw-text-base tw-font-semibold">
+                  {resource.title}
+                </h4>
               </div>
             </Link>
           );
