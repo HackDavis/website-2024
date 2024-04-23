@@ -60,16 +60,13 @@ export default function Form() {
                   HackDavis 2024
                 </span>
               </span>
-              <span className={styles.intelCoHostText}>
-                co-hosted by{' '}
-              </span>
+              <span className={styles.intelCoHostText}>co-hosted by </span>
               <Image
                 src={intelLogoCoHost}
                 alt="Intel Logo"
                 className={styles.intelCoHostImage}
               />
             </div>
-
 
             <div className={styles.calendar_inner_lower}>
               <CiCalendar className={styles.calendar_inner_lower_icon} />
@@ -82,7 +79,6 @@ export default function Form() {
             </div>
           </div>
         </div>
-
 
         <div className={styles.buttons}>
           <Link

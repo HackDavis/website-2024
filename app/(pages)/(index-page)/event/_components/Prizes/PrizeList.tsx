@@ -10,7 +10,6 @@ import camcorder from 'public/index/PrizeList/General/camcorder.png';
 import tv from 'public/index/PrizeList/General/vizioTV.jpg';
 import fitbit from 'public/index/PrizeList/General/fitbit.png';
 import fujifilm from 'public/index/PrizeList/General/fujifilm.png';
-import nordpass from 'public/index/Sponsors/NordPass.png';
 import nordVPN from 'public/index/Sponsors/NordVPNLogo.png';
 import ipad from 'public/index/PrizeList/General/ipad.png';
 import keyboard from 'public/index/PrizeList/General/keyboard.png';
@@ -87,7 +86,9 @@ const prizeCategories: PrizeCategories = {
     {
       name: 'Best Interdisciplinary Hack',
       prizeImages: [fujifilm, nordVPN],
-      prizeNames: ['Fujifilm instax SQ40 camera & NordPass & Incongni & NordVPN'],
+      prizeNames: [
+        'Fujifilm instax SQ40 camera & NordPass & Incongni & NordVPN',
+      ],
       criteria:
         'Leverage multiple perspectives across different disciplines to create a more well-rounded project. At least one member of the team needs to be a non-CS/CSE/otherwise CS-related major in order to qualify.	',
     },

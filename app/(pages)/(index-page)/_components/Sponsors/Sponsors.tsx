@@ -90,11 +90,7 @@ export default function Sponsors() {
           url="https://codecrafters.io/"
           alt="CodeCrafters logo"
         />
-        <Logo
-          imgSrc={nordVPN}
-          url="https://nordvpn.com/"
-          alt="NordVPN logo"
-        />
+        <Logo imgSrc={nordVPN} url="https://nordvpn.com/" alt="NordVPN logo" />
         <Logo
           imgSrc={nordpass}
           url="https://nordpass.com/"
