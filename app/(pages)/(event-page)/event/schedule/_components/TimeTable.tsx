@@ -15,11 +15,19 @@ const colorActivities: Record<string, string> = {
   Hacking: '#F7A2A2', // Red
 };
 
+const highlightColor: Record<string, string> = {
+  Food: '#E6BC8A', // Orange
+  Workshop: '#9EE7E5', // Blue
+  General: '#AFD157', // Green
+  Activity: '#A560FF', // Darkened Purple
+  Hacking: '#D17878', // Darkened Red
+};
+
 const rowSize = '50px';
 
 export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
   const clockTimes = generate24HRClock(startTime);
-  console.log('timechunks', timeChunks);
+  // console.log('timechunks', timeChunks);
 
   return (
     <main className="">
@@ -65,10 +73,11 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
               {timeChunk.eventBlocks.map((event, event_index) => (
                 <div
                   key={event_index}
-                  className="tw-flex tw-flex-col tw-rounded-xl tw-border tw-border-black tw-p-3"
+                  className="tw-flex tw-flex-col tw-rounded-xl tw-border-t-2 tw-p-3"
                   style={{
                     ...calcEventRows(event, timeChunk.startTime),
                     backgroundColor: colorActivities[event.type],
+                    borderLeft: `5px solid ${highlightColor[event.type]}`,
                   }}
                 >
                   <EventContent {...event} />

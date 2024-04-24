@@ -68,7 +68,7 @@ export default function Schedule() {
   useEffect(() => {
     const fetchEvents = async () => {
       const events = await getAllEvents();
-      console.log(events);
+      // console.log(events);
       setAllEvents(events);
     };
     fetchEvents();

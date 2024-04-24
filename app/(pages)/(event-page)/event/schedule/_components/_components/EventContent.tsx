@@ -1,5 +1,5 @@
 import type { Event } from '@/public/types/Schedule.types';
-import { MapPin } from 'lucide-react';
+import { TiLocation } from 'react-icons/ti';
 
 export default function EventContent(event: Event) {
   return (
@@ -7,19 +7,23 @@ export default function EventContent(event: Event) {
       <div className="tw-font-semibold">
         <span>{event.title}</span>
       </div>
-      <div className="tw-flex tw-gap-2">
-        <span>
-          {event.startTime.getHours()}:{event.startTime.getMinutes()}
-        </span>
-        -
-        <span>
-          {event.endTime.getHours()}:{event.endTime.getMinutes()}
-        </span>
-        <div className="tw-flex">
-          <MapPin size={15} />
-          <span>{event.location}</span>
+      {event.type !== 'Hacking' && (
+        <div className="tw-flex tw-flex-col tw-gap-2">
+          <div className="tw-flex tw-gap-2">
+            <span>
+              {event.startTime.getHours()}:{event.startTime.getMinutes()}
+            </span>
+            -
+            <span>
+              {event.endTime.getHours()}:{event.endTime.getMinutes()}
+            </span>
+          </div>
+          <div className="tw-flex tw-items-start">
+            <TiLocation size={20} />
+            <span>{event.location}</span>
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 }
