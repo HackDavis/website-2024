@@ -73,7 +73,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
               {timeChunk.eventBlocks.map((event, event_index) => (
                 <div
                   key={event_index}
-                  className="tw-flex tw-flex-col tw-rounded-xl tw-p-3"
+                  className="tw-flex tw-flex-col tw-rounded-xl tw-border-t-2 tw-p-3"
                   style={{
                     ...calcEventRows(event, timeChunk.startTime),
                     backgroundColor: colorActivities[event.type],
