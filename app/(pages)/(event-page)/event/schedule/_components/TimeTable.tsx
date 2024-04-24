@@ -46,7 +46,19 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
                 !isHour ? 'tw-border-b-0 tw-border-t-0' : ''
               }`}
             >
-              {isHour ? `${time.getHours()}:${time.getMinutes()}` : ''}
+              {isHour ? (
+                <div className="tw-pr-2">
+                  <div className="tw-absolute tw-inset-x-0 tw-z-0 tw-border-t tw-border-gray-200" />
+                  <div className="tw-flex tw-gap-2 tw-text-xs tw-font-semibold tw-text-gray-500 md:tw-text-base">
+                    <span>
+                      {time.getHours() % 12 === 0 ? 12 : time.getHours() % 12}
+                    </span>
+                    <span>{time.getHours() > 11 ? 'PM' : 'AM'}</span>
+                  </div>
+                </div>
+              ) : (
+                ''
+              )}
             </div>
           );
         })}
