@@ -24,6 +24,7 @@ $tablet-scale: 0.75;
   position: absolute;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   justify-content: center;
   gap: 30px;
@@ -38,11 +39,15 @@ $tablet-scale: 0.75;
   width: 500px;
   max-width: 500px;
   // border: 1px solid blue; 
+
+  //padding-bottom: 30px;
 }
 
 .title{
   display: flex;
   flex-direction: row;
+
+  padding-top: -30px;
 
   &_ready{
     text-align: left;
@@ -56,7 +61,6 @@ $tablet-scale: 0.75;
     line-height: 103%; /* 49.44px */
     letter-spacing: 0.96px;
     
-    // border: 1px solid red; 
 
     display: flex;
     align-items: baseline;
@@ -70,39 +74,34 @@ $tablet-scale: 0.75;
     font-weight: 800;
     line-height: 103%;
     letter-spacing: 1.4px;
+    padding-top: 7%;
   }
-
+  &_logo{
+    width: 92.028px;
+    height: 92.25px;
+    padding-right: 10px;
+  
+    &_white{
+        display:none;
+    }
+  
+    &_white{
+        display:none;
+    }
+  }
 
 }
 
 .calendar{
   display: flex;
   flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  
 
   &_inner{
     display: flex;
     flex-direction: column;
-
-    &_upper{
-      font-family: "Metropolis", sans-serif;
-      color: var(--teal-2, #173A52);
-      font-size: $calendar-upper-font-size;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 150%; /* 48px */
-      letter-spacing: 0.64px;
-
-      &_hackdavis{
-        font-family: "Metropolis", sans-serif;
-        color: var(--teal-2, #173A52);
-        font-size: $calendar-upper-font-size;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%; /* 48px */
-        letter-spacing: 0.64px;
-        font-weight: 600;
-      }
-    }
 
     &_lower{
       display: flex;
@@ -110,13 +109,14 @@ $tablet-scale: 0.75;
       gap: 0.5vw;
 
       &_text{
-        color: var(--teal-2, #173A52);
-        font-family: "Metropolis", sans-serif;
-        font-size: $button-font-size;
+        color: #123041;
+        font-family: "Proxima Nova";
+        font-size: 14px;
         font-style: normal;
-        font-weight: 500;
-        line-height: 150%; /* 36px */
-        letter-spacing: 0.48px;
+        font-weight: 600;
+        line-height: 150%; /* 21px */
+        letter-spacing: 0.28px;
+        padding-left: 7px;
 
         span {
           margin: 0 5px;
@@ -148,9 +148,10 @@ $tablet-scale: 0.75;
 
       }
       &_icon{
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 17px;
+        height: 20px;
         margin-top: -2px;
+        padding-top: 7px;
         color: var(--teal-2, #173A52);
       }
     }
@@ -161,10 +162,11 @@ $tablet-scale: 0.75;
 .buttons{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 30%;
   gap: 6px;
   gap: 36px;
-// border: 1px solid blue;
 
   &:hover{
     cursor: pointer;
@@ -254,9 +256,13 @@ $tablet-scale: 0.75;
       letter-spacing: 0.48px;
       text-decoration-line: underline;
     }
-
-
+    &_icon{
+      width: 48px;
+      height: 48px;
+      color: var(--teal-2, #173A52);
+    }
   }
+
 }
 
 .links{
@@ -552,16 +558,5 @@ $tablet-scale: 0.75;
   }
 
 }
-.logo{
-  width: 92.028px;
-  height: 92.25px;
 
-  &_white{
-      display:none;
-  }
-
-  &_white{
-      display:none;
-  }
-}
 

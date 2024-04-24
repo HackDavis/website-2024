@@ -48,46 +48,36 @@ export default function Countdown() {
         <div className={styles.container_timer_hrs}>
           <div className={styles.time}>
             <div className={styles.time_card}>
-              <h1>{time[0]}</h1>
-            </div>
-            <div className={styles.time_card}>
-              <h1>{time[1]}</h1>
+              <div className={styles.time_card_text}>
+                <h1>{time[0]}</h1>
+                <h1>{time[1]}</h1>
+                <div className={styles.container_timer_hrs_text}>
+                  <p>Hours</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className={styles.container_timer_hrs_text}>
-            <p>Hours</p>
-          </div>
-        </div>
-        <div className={styles.container_timer_colon}>
-          <h1>:</h1>
         </div>
         <div className={styles.container_timer_mins}>
           <div className={styles.time}>
             <div className={styles.time_card}>
               <h1>{time[2]}</h1>
-            </div>
-            <div className={styles.time_card}>
               <h1>{time[3]}</h1>
+              <div className={styles.container_timer_mins_text}>
+                <p>Minutes</p>
+              </div>
             </div>
           </div>
-          <div className={styles.container_timer_mins_text}>
-            <p>Minutes</p>
-          </div>
-        </div>
-        <div className={styles.container_timer_colon}>
-          <h1>:</h1>
         </div>
         <div className={styles.container_timer_secs}>
           <div className={styles.time}>
             <div className={styles.time_card}>
               <h1>{time[4]}</h1>
-            </div>
-            <div className={styles.time_card}>
               <h1>{time[5]}</h1>
+              <div className={styles.container_timer_secs_text}>
+                <p>Seconds</p>
+              </div>
             </div>
-          </div>
-          <div className={styles.container_timer_secs_text}>
-            <p>Seconds</p>
           </div>
         </div>
         {/*  */}
