@@ -3,7 +3,7 @@ import { TiLocation } from 'react-icons/ti';
 
 export default function EventContent(event: Event) {
   return (
-    <main className="tw-flex tw-flex-col tw-justify-center tw-text-xs tw-font-semibold tw-text-dark-blue">
+    <main className="tw-flex tw-flex-col tw-justify-center tw-text-xs tw-font-semibold tw-text-dark-blue md:tw-text-base">
       <div className="">
         <span>{event.title}</span>
       </div>
