@@ -29,11 +29,11 @@ export default function Filters({ onFilterChange, FilterItems }: FiltersProps) {
         <button
           key={filter}
           onClick={() => handleFilterClick(filter)}
-          className="tw-flex tw-gap-1 tw-rounded-3xl tw-bg-cyan-600 
-          tw-p-3 tw-font-semibold tw-text-white hover:tw-cursor-pointer hover:tw-shadow-lg "
+          className="tw-flex tw-gap-1 tw-rounded-3xl 
+          tw-p-3 tw-px-5 tw-font-semibold tw-text-white hover:tw-cursor-pointer hover:tw-shadow-lg "
           style={{
             backgroundColor: selectedFilters.includes(filter)
-              ? '#2b6cb0'
+              ? '#005271'
               : 'gray',
           }}
         >
