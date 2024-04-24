@@ -27,12 +27,11 @@ const rowSize = '50px';
 
 export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
   const clockTimes = generate24HRClock(startTime);
-  // console.log('timechunks', timeChunks);
 
   return (
-    <main className="">
+    <main className="tw-w-full">
       <div
-        className="tw-grid tw-grid-cols-2"
+        className="tw-grid tw-w-full tw-grid-cols-2 "
         style={{
           gridTemplateColumns: '1fr 15fr',
           gridAutoRows: rowSize,
@@ -63,7 +62,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           return (
             <div
               key={timeChunk.startTime.getTime()}
-              className={`tw-col-start-2 tw-grid tw-h-full`}
+              className={`tw-col-start-2 tw-grid tw-w-full tw-overflow-x-auto tw-overflow-y-hidden`}
               style={{
                 gridRowStart: timeChunkStartRow + 1,
                 gridRowEnd: timeChunkEndRow + 1,

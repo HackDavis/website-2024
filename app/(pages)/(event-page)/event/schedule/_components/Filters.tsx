@@ -24,7 +24,7 @@ export default function Filters({ onFilterChange, FilterItems }: FiltersProps) {
   }, [selectedFilters, onFilterChange]);
 
   return (
-    <main className="tw-flex tw-gap-3 tw-py-5">
+    <main className="tw-flex tw-w-full tw-flex-wrap tw-gap-3 tw-py-5">
       {FilterItems.map((filter) => (
         <button
           key={filter}
