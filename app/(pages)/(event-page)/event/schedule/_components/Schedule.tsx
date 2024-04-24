@@ -83,10 +83,12 @@ export default function Schedule() {
   }, [currentDay, allEvents, selectedFilters]);
 
   return (
-    <main className="tw-flex tw-flex-col ">
-      <div className="tw-flex tw-items-center tw-justify-between tw-py-10">
-        <h1 className="tw-font-semibold">Schedule</h1>
-        <div className="tw-flex">
+    <main className="tw-flex tw-flex-col">
+      <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between">
+        <h1 className="tw-pr-8 tw-text-4xl tw-font-semibold md:tw-text-6xl">
+          Schedule
+        </h1>
+        <div className="tw-flex ">
           <span>{currentDay.dayString}</span>
           <ChevronLeft
             className="hover:tw-cursor-pointer"
@@ -98,8 +100,15 @@ export default function Schedule() {
           />
         </div>
       </div>
-      <Filters onFilterChange={setSelectedFilters} FilterItems={FilterItems} />
-      <TimeTable timeChunks={timeChunks} startTime={startTime} />
+      <div className="tw-flex tw-flex-wrap">
+        <Filters
+          onFilterChange={setSelectedFilters}
+          FilterItems={FilterItems}
+        />
+      </div>
+      <div className="tw-py-8">
+        <TimeTable timeChunks={timeChunks} startTime={startTime} />
+      </div>
     </main>
   );
 }

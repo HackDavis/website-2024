@@ -3,8 +3,8 @@ import { TiLocation } from 'react-icons/ti';
 
 export default function EventContent(event: Event) {
   return (
-    <main className="tw-flex tw-flex-col tw-justify-center">
-      <div className="tw-font-semibold">
+    <main className="tw-flex tw-flex-col tw-justify-center tw-text-xs tw-font-semibold tw-text-dark-blue">
+      <div className="">
         <span>{event.title}</span>
       </div>
       {event.type !== 'Hacking' && (

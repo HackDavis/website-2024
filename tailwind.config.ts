@@ -41,7 +41,7 @@ const config = {
         'screen-4/5': '80vh',
       },
       colors: {
-        'dark-blue': '#173a52;',
+        'dark-blue': '#173a52',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
