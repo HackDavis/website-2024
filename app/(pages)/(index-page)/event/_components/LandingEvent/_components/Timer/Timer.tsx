@@ -3,6 +3,7 @@ import { IoLocationSharp } from 'react-icons/io5';
 import { FaDiscord } from 'react-icons/fa';
 import Link from 'next/link';
 import Countdown from '../Countdown/Countdown';
+import Image from 'next/image';
 
 type FormLink = {
   title: string;
@@ -26,7 +27,7 @@ export default function Form() {
     <div className={styles.background}>
       <div className={styles.container}>
         <div className={styles.title}>
-          <img
+          <Image
             src="/navbar/logo.svg"
             alt="Logo"
             className={styles.title_logo}
