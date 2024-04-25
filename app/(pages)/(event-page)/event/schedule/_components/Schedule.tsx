@@ -84,20 +84,28 @@ export default function Schedule() {
 
   return (
     <main className="tw-flex tw-flex-col">
-      <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between">
+      <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-py-4">
         <h1 className="tw-pr-8 tw-text-4xl tw-font-semibold md:tw-text-6xl">
           Schedule
         </h1>
-        <div className="tw-flex ">
+        <div className="tw-flex tw-gap-2">
           <span>{currentDay.dayString}</span>
-          <ChevronLeft
-            className="hover:tw-cursor-pointer"
-            onClick={() => setCurrentDay(eventDays[0])}
-          />
-          <ChevronRight
-            className="hover:tw-cursor-pointer"
-            onClick={() => setCurrentDay(eventDays[1])}
-          />
+          <div className="tw-flex">
+            <ChevronLeft
+              className="hover:tw-cursor-pointer"
+              onClick={() => setCurrentDay(eventDays[0])}
+              style={{
+                color: currentDay === eventDays[0] ? 'gray' : 'black',
+              }}
+            />
+            <ChevronRight
+              className="hover:tw-cursor-pointer"
+              onClick={() => setCurrentDay(eventDays[1])}
+              style={{
+                color: currentDay === eventDays[1] ? 'gray' : 'black',
+              }}
+            />
+          </div>
         </div>
       </div>
       <div className="tw-flex tw-flex-wrap">

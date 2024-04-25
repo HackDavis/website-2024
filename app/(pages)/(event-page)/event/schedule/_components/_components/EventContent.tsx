@@ -9,7 +9,7 @@ export default function EventContent(event: Event) {
       </div>
       {event.type !== 'Hacking' && (
         <div className="tw-flex tw-flex-col tw-gap-2">
-          <div className="tw-flex tw-gap-2">
+          <div className="tw-flex tw-gap-2 tw-font-normal">
             <span>
               {event.startTime.getHours()}:{event.startTime.getMinutes()}
             </span>
@@ -18,7 +18,7 @@ export default function EventContent(event: Event) {
               {event.endTime.getHours()}:{event.endTime.getMinutes()}
             </span>
           </div>
-          <div className="tw-flex tw-items-start">
+          <div className="tw-flex tw-items-start tw-gap-1">
             <TiLocation size={20} />
             <span>{event.location}</span>
           </div>
