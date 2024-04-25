@@ -48,7 +48,6 @@ import wirelesscharger from 'public/index/PrizeList/MLH/wirelesscharger.png';
 import camping from 'public/index/PrizeList/NonProfit/owlcamping.png';
 import stuffle from 'public/index/PrizeList/NonProfit/frogPlushie.png';
 
-
 const filters = [
   'All',
   'General',
