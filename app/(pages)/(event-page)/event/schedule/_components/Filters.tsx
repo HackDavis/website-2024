@@ -29,7 +29,7 @@ export default function Filters({ onFilterChange, FilterItems }: FiltersProps) {
         <button
           key={filter}
           onClick={() => handleFilterClick(filter)}
-          className="tw-bg-teal-hack tw-flex tw-gap-1 
+          className="tw-flex tw-gap-1 
           tw-rounded-3xl tw-p-3 tw-px-5 tw-pr-6 tw-font-semibold tw-text-white hover:tw-cursor-pointer hover:tw-shadow-lg"
           style={{
             backgroundColor: '#005271',
