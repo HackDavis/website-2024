@@ -30,6 +30,10 @@ const config = {
         '1/10': '10%',
         '1/20': '5%',
       },
+      left: {
+        '1/10': '10%',
+        '1/20': '5%',
+      },
       maxHeight: {
         'third-screen': '33.333vh',
         'half-screen': '50vh',
@@ -42,6 +46,7 @@ const config = {
       },
       colors: {
         'dark-blue': '#173a52',
+        'teal-hack': '005271',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
