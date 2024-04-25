@@ -20,6 +20,7 @@ import rhombus from 'public/index/Sponsors/rhombus.png';
 import codeCrafters from 'public/index/Sponsors/codecrafters.png';
 import nordpass from 'public/index/Sponsors/NordPass.png';
 import nordVPN from 'public/index/Sponsors/NordVPNLogo.png';
+import incogni from 'public/index/Sponsors/incogni.png';
 
 // Row 3: IPO Sponsors
 import aggieHouse from 'public/index/Sponsors/IPOs/aggieHouseCow.png';
@@ -96,6 +97,7 @@ export default function Sponsors() {
           url="https://nordpass.com/"
           alt="NordPass logo"
         />
+        <Logo imgSrc={incogni} url="https://nordpass.com/" alt="Incogni logo" />
       </Marquee>
 
       <Marquee iterations={2} duration={50}>
