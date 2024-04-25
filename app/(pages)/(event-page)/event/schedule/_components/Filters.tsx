@@ -29,12 +29,11 @@ export default function Filters({ onFilterChange, FilterItems }: FiltersProps) {
         <button
           key={filter}
           onClick={() => handleFilterClick(filter)}
-          className="tw-flex tw-gap-1 tw-rounded-3xl 
-          tw-p-3 tw-px-5 tw-font-semibold tw-text-white hover:tw-cursor-pointer hover:tw-shadow-lg "
+          className="tw-flex tw-gap-1 
+          tw-rounded-3xl tw-p-3 tw-px-5 tw-pr-6 tw-font-semibold tw-text-white hover:tw-cursor-pointer hover:tw-shadow-lg"
           style={{
-            backgroundColor: selectedFilters.includes(filter)
-              ? '#005271'
-              : 'gray',
+            backgroundColor: '#005271',
+            opacity: selectedFilters.includes(filter) ? 1 : 0.5,
           }}
         >
           <Check />

@@ -30,6 +30,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
 
   return (
     <main className="tw-w-full">
+      <div className="tw-absolute tw-inset-x-0 tw-z-0 tw-border-t tw-border-slate-300" />
       <div
         className="tw-grid tw-w-full tw-grid-cols-2 "
         style={{
@@ -42,18 +43,23 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           return (
             <div
               key={index}
-              className={`tw-col-start-1 ${
+              className={`tw-col-start-1 tw-border-r tw-border-r-slate-300 ${
                 !isHour ? 'tw-border-b-0 tw-border-t-0' : ''
               }`}
             >
-              {isHour ? (
-                <div className="tw-pr-2">
-                  <div className="tw-absolute tw-inset-x-0 tw-z-0 tw-border-t tw-border-gray-200" />
+              {isHour && index !== 0 ? (
+                <div className="tw-pr-4 ">
+                  <div
+                    className="tw-absolute tw-inset-x-0 tw-z-0 tw-border-t tw-border-slate-300"
+                    style={{ left: '15%' }}
+                  />
                   <div className="tw-flex tw-gap-2 tw-text-xs tw-font-semibold tw-text-gray-500 md:tw-text-base">
-                    <span>
+                    <span className="-tw-translate-y-2 tw-transform">
                       {time.getHours() % 12 === 0 ? 12 : time.getHours() % 12}
                     </span>
-                    <span>{time.getHours() > 11 ? 'PM' : 'AM'}</span>
+                    <span className="-tw-translate-y-2 tw-transform">
+                      {time.getHours() > 11 ? 'PM' : 'AM'}
+                    </span>
                   </div>
                 </div>
               ) : (
@@ -84,7 +90,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
               {timeChunk.eventBlocks.map((event, event_index) => (
                 <div
                   key={event_index}
-                  className="tw-flex tw-flex-col tw-rounded-xl tw-border-t-2 tw-p-3"
+                  className="tw-z-10 tw-flex tw-flex-col tw-rounded-xl tw-border-t-2 tw-p-3"
                   style={{
                     ...calcEventRows(event, timeChunk.startTime),
                     backgroundColor: colorActivities[event.type],
@@ -98,6 +104,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           );
         })}
       </div>
+      <div className="tw-absolute tw-inset-x-0 tw-z-0 tw-border-t tw-border-slate-300" />
     </main>
   );
 }
