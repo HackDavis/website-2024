@@ -59,7 +59,7 @@ export default function Archive() {
         src="/archive/2019.png"
         alt="thing"
         priority={true}
-        width={247}
+        width={245}
         height={206}
       />
     </Link>,
