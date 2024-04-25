@@ -48,12 +48,10 @@ export default function Countdown() {
         <div className={styles.container_timer_hrs}>
           <div className={styles.time}>
             <div className={styles.time_card}>
-              <div className={styles.time_card_text}>
-                <h1>{time[0]}</h1>
-                <h1>{time[1]}</h1>
-                <div className={styles.container_timer_hrs_text}>
-                  <p>Hours</p>
-                </div>
+              <h1>{time[0]}</h1>
+              <h1>{time[1]}</h1>
+              <div className={styles.container_timer_hrs_text}>
+                <p>Hours</p>
               </div>
             </div>
           </div>
