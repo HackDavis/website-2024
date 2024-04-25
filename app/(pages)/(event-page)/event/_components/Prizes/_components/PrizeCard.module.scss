@@ -26,7 +26,6 @@
 .imageBackground {
   min-height: 200px;
   aspect-ratio: 1;
-  margin-right: 24px;
   border-radius: 10px;
   background: rgba(158, 231, 229, 0.25);
   display: flex;
@@ -35,7 +34,8 @@
   flex-direction: column;
 
   @include mixins.phone {
-    min-height: 100px
+    min-height: 100px;
+    margin-right: 24px;
   }
 }
 
@@ -141,6 +141,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 125%; /* 21.233px */
+  width: 75%;
 
   @include mixins.phone {
     font-size: 10px;
