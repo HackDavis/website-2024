@@ -1,0 +1,46 @@
+@use 'app/(pages)/_globals/mixins';
+
+.card_icons{
+    font-size: 4.4rem;
+
+    > img {
+        width: 4.4rem;
+        height: 4.4rem;
+
+        @include mixins.sm-desktop{
+            width: 4rem;
+            height: 4rem;
+        }
+
+        @include mixins.tablet{
+            width: 3rem;
+            height: 3rem;
+        }
+
+        @include mixins.phone{
+            width: 4rem;
+            height: 4rem;
+        }
+
+        @include mixins.sm-phone{
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    @include mixins.sm-desktop{
+        font-size: 4rem;
+    }
+
+    @include mixins.tablet{
+        font-size: 3rem;
+    }
+
+    @include mixins.phone{
+        font-size: 4rem;
+    }
+
+    @include mixins.sm-phone{
+        font-size: 3rem;
+    }
+}

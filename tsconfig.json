@@ -34,6 +34,6 @@
       "@landingComponents/*" : ["app/(pages)/(index-page)/_components/Landing/_components/*"]
     }
   },
-  "include": ["nextEnv.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["nextEnv.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(pages)/_hooks/loadImages.js"],
   "exclude": ["node_modules"]
 }

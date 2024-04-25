@@ -81,7 +81,14 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
         </div>
         <ul className={`${styles.words} ${active ? styles.words_active : ''}`}>
           <li>
-            <Link href="/#landing" onClick={setInactive}>
+            <Link
+              href={
+                navLinks.some((link) => link.slug === '/event/#resources')
+                  ? '/event/#landing'
+                  : '/#landing'
+              } // check if the link contains /event/#resources since its currently on DOE
+              onClick={setInactive}
+            >
               <Image
                 src={active ? '/Footer/hdLogoWhite.svg' : '/navbar/logo.svg'}
                 alt="logo"
@@ -116,6 +123,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
             width={100}
             height={100}
             className={styles.mlhBadge}
+            priority={true}
           />
         </Link>
       </nav>
