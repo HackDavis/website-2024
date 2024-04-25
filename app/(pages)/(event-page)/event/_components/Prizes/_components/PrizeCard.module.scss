@@ -105,7 +105,7 @@
 
 .header {
   color: #123041;
-  font-size: 21.837px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 125%; /* 27.296px */
@@ -137,7 +137,7 @@
 .placeText {
   display: flex;
   color: #015270;
-  font-size: 16.986px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 125%; /* 21.233px */
@@ -151,6 +151,7 @@
 .trophy {
   width: 24.266px;
   height: 24.266px;
+  align-self: flex-start;
 
   @include mixins.phone {
     width: 14.266px;
