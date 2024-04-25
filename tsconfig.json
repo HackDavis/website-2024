@@ -33,6 +33,6 @@
       "@types/*" : ["public/types/*"],
     }
   },
-  "include": ["nextEnv.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["nextEnv.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(pages)/_hooks/loadImages.js"],
   "exclude": ["node_modules"]
 }
