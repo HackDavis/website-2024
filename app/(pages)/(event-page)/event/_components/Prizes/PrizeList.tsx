@@ -103,7 +103,9 @@ const prizeCategories: PrizeCategories = {
     {
       name: "Hacker's Choice Award",
       prizeImages: [swagbag],
-      prizeNames: ['HackDavis Swag Bag'],
+      prizeNames: [
+        'HackDavis Swag Bag & 4 Ticket Vouchers for Sacramento River Cats ',
+      ],
       criteria:
         'Awarded to the project with the most votes from our 2024 hackers. Vote for any project but your own!	',
     },
