@@ -1,0 +1,94 @@
+
+.container{
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  
+  padding: -20px 10px;
+
+  .timer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 10px;
+    &_card{
+      display: flex;
+      width: 62.565px;
+      height: 93px;
+      padding: 46.344px 12.358px;
+
+      justify-content: center;
+      align-items: center;
+      gap: 70px;
+      border-radius: 5.407px;
+      margin-left: 2px;
+      margin-right: 2px;
+
+    }
+
+    &_mins{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &_text{
+        p{
+          color: var(--teal-2, #173A52);
+          font-family: "Proxima Nova";
+          font-size: 96px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 1.92px;
+          margin-top: 8px;
+          opacity: 1;
+        }
+      }
+    }
+
+    &_secs{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &_text{
+        p{
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
+.time{
+  display: flex;
+  flex-direction: row;
+
+  &_card{
+    display: flex;
+    width: 157px;
+    height: 166px;
+    padding: 46.344px 12.358px;
+  
+    justify-content: center;
+    align-items: center;
+    gap: 7.724px;
+    border-radius: 5.407px;
+    border-radius: 10px;
+    opacity: 0.5;
+    background: var(--white, #FFF);
+    backdrop-filter: blur(2px);
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  &_text{
+    opacity: 1;
+  }
+  
+}
