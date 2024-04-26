@@ -1,0 +1,8 @@
+@use 'app/(pages)/_globals/mixins';
+
+.scheduleContainer {
+    padding-top: 95px;
+    @include mixins.phone {
+        padding-top: 140px;
+    }
+}
