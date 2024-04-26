@@ -10,7 +10,7 @@ import Loader from '@components/Loader/Loader';
 import RiverCow from './_components/RiverCow/RiverCow';
 import PrizeList from '../(event-page)/event/_components/Prizes/PrizeList';
 import Resources from './_components/Resources/Resources';
-import { resourcePack } from '../_data/resourceData';
+import { resourcePackDOE } from '../_data/resourceData';
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
           <Landing />
         </div>
         <div id="resources">
-          <Resources resourcePack={resourcePack} />
+          <Resources resourcePack={resourcePackDOE} />
         </div>
         <div id="whatishackdavis">
           <WhatIsHackdavis />
