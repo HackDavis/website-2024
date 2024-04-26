@@ -87,7 +87,7 @@ export default function Schedule() {
     setStartTime(new Date(currentDay.startDay));
   }, [currentDay, allEvents, selectedFilters]);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef, _] = useEmblaCarousel(
     {
       loop: false,
       align: 'start',
@@ -130,7 +130,6 @@ export default function Schedule() {
           <Filters
             onFilterChange={setSelectedFilters}
             FilterItems={FilterItems}
-            emblaApi={emblaApi}
           />
         </div>
       </div>
