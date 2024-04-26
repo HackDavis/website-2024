@@ -43,7 +43,7 @@ export default function Countdown() {
   }, [timerDuration, curTime]);
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <div className={styles.timer}>
         <div className={styles.container_timer_hrs}>
           <div className={styles.time}>
@@ -80,6 +80,6 @@ export default function Countdown() {
         </div>
         {/*  */}
       </div>
-    </div>
+    </main>
   );
 }

@@ -2,7 +2,7 @@ import '@globals/globals.scss';
 import fonts from '@globals/fonts';
 import metadata from '@globals/metadata.json';
 
-import { navLinks } from '@data/navLinks';
+import { navLinksDOE } from '@data/navLinks';
 import Navbar from '@components/Navbar/Navbar';
 import Footer from '@components/Footer/Footer';
 
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fonts}>
-        <Navbar navLinks={navLinks} />
+        <Navbar navLinks={navLinksDOE} />
         {children}
         <Footer />
       </body>

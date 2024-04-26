@@ -1,75 +1,69 @@
-import styles from './Timer.module.scss';
-import { FaDiscord } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
-import Countdown from '../Countdown/Countdown';
+import DOECountDown from './_components/DOECountDown';
 import Image from 'next/image';
 import HackDavisLogo from 'public/navbar/logo.svg';
 
-type FormLink = {
+type ButtonLink = {
   title: string;
   url: string;
+  icon?: JSX.Element;
+  bgColor: string;
+  textColor: string;
 };
 
-const FormLinks: { [key: string]: FormLink } = {
-  Register: {
+const buttonLinks: ButtonLink[] = [
+  {
     title: 'Submit Project',
-    url: 'https://form.typeform.com/to/RvoDiujh?utm_source=WEBSITE',
+    url: 'https://hackdavis-2024.devpost.com/',
+    bgColor: '#173A52',
+    textColor: '#FFFFFF',
   },
-  Sponsor: { title: 'Get Help', url: 'https://discord.gg/pjAKeaEh' },
-  Location: {
-    title: 'Location',
-    url: 'https://www.google.com/maps/dir//750+Orchard+Rd,+Davis,+CA+95616/@38.5417949,-121.8420395,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x808529d4ce160f1d:0x813925c4c65f6bb1!2m2!1d-121.7596385!2d38.5418238?entry=ttu',
+  {
+    title: 'Get Help',
+    url: 'https://discord.gg/pjAKeaEh',
+    // icon: <faDiscord />,
+    icon: <FontAwesomeIcon icon={faDiscord} className="tw-w-6 md:tw-w-8 " />,
+    bgColor: '#FFFFFF',
+    textColor: '#173A52',
   },
-};
+];
 
-const locationIcon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="14"
-    height="17"
-    viewBox="0 0 14 17"
-    fill="none"
-  >
-    <path
-      d="M13.5909 6.54545C13.5909 11.6364 7.04545 16 7.04545 16C7.04545 16 0.5 11.6364 0.5 6.54545C0.5 4.80949 1.18961 3.14463 2.41712 1.91712C3.64463 0.689608 5.30949 0 7.04545 0C8.78142 0 10.4463 0.689608 11.6738 1.91712C12.9013 3.14463 13.5909 4.80949 13.5909 6.54545Z"
-      fill="#123041"
-    />
-    <path
-      d="M7.04534 8.72692C8.25033 8.72692 9.22716 7.75008 9.22716 6.5451C9.22716 5.34011 8.25033 4.36328 7.04534 4.36328C5.84036 4.36328 4.86353 5.34011 4.86353 6.5451C4.86353 7.75008 5.84036 8.72692 7.04534 8.72692Z"
-      fill="#90D3DB"
-    />
-  </svg>
-);
-
-export default function Form() {
+export default function Timer() {
+  const endTime = new Date('2024-04-28T14:00:00-07:00');
   return (
-    <div className={styles.background}>
-      <div className={styles.container}>
-        <div className={styles.title}>
-          <Image src={HackDavisLogo} alt="Logo" className={styles.title_logo} />{' '}
-          <span className={styles.title_social}>HackDavis 2024</span>
-        </div>
-        <Countdown />
-        <div className={styles.buttons}>
-          <Link
-            href={FormLinks.Register.url}
-            className={styles.buttons_register}
-          >
-            <p>{FormLinks.Register.title}</p>
-          </Link>
-          <a href={FormLinks.Sponsor.url} className={styles.buttons_sponsor}>
-            <FaDiscord className={styles.buttons_sponsor_icon} />
-            <p>{FormLinks.Sponsor.title}</p>
-          </a>
-        </div>
-        <div className={styles.locationWithText}>
-          <Link href={''}></Link>
-          <div>{locationIcon}</div>
-          <span className={styles.calendar_inner_lower_text}>
-            University Credit Union Center @ UC Davis
+    <main className="">
+      <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-gap-6">
+        <div className="tw-flex tw-w-full tw-items-center tw-justify-center tw-gap-3 tw-text-center">
+          <Image
+            src={HackDavisLogo}
+            alt="Logo"
+            className="md:tw-w-18 tw-w-14 xl:tw-w-20"
+          />{' '}
+          <span className="tw-text-3xl tw-font-semibold tw-text-dark-blue md:tw-text-4xl xl:tw-text-5xl">
+            HackDavis 2024
           </span>
         </div>
+        <DOECountDown endTime={endTime} />
+
+        <div className="tw-flex tw-items-center tw-justify-center tw-gap-4">
+          {buttonLinks.map((button, index) => (
+            <Link key={index} href={button.url}>
+              <button
+                className="tw-flex tw-items-center tw-justify-center tw-gap-2 tw-rounded-3xl tw-p-2 tw-px-6 tw-text-sm tw-font-semibold md:tw-text-base"
+                style={{
+                  backgroundColor: button.bgColor,
+                  color: button.textColor,
+                }}
+              >
+                {button.icon ? <span>{button.icon}</span> : <></>}
+                <span className="tw-mt-1">{button.title}</span>
+              </button>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
