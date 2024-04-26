@@ -8,6 +8,8 @@ import { createTimeChunks } from './Calculations';
 import Filters from './Filters';
 import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
 import { useRef } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 
 type ScheduleDay = {
   dayString: string;
@@ -84,6 +86,20 @@ export default function Schedule() {
     setStartTime(new Date(currentDay.startDay));
   }, [currentDay, allEvents, selectedFilters]);
 
+  const handleFilterClick2 = (index: number) => {
+    if (emblaApi) emblaApi.scrollTo(index, false);
+  };
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: false,
+      align: 'start',
+      dragFree: true,
+      skipSnaps: true,
+      watchDrag: true,
+    },
+    [WheelGesturesPlugin()]
+  );
   return (
     <main className="tw-flex tw-flex-col">
       <div className="tw-sticky tw-top-0 tw-z-40 tw-bg-white tw-px-1/10 tw-pt-24">
@@ -111,7 +127,7 @@ export default function Schedule() {
             </div>
           </div>
         </div>
-        <div className="tw-flex tw-flex-wrap">
+        <div ref={emblaRef} className="tw-flex tw-flex-wrap">
           <Filters
             onFilterChange={setSelectedFilters}
             FilterItems={FilterItems}

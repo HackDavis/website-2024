@@ -24,11 +24,13 @@ export default function Filters({ onFilterChange, FilterItems }: FiltersProps) {
   }, [selectedFilters, onFilterChange]);
 
   return (
-    <main className="tw-flex tw-w-full tw-flex-wrap tw-gap-3 tw-py-5">
+    <main className="tw-flex tw-w-full tw-gap-3 tw-py-5">
       {FilterItems.map((filter) => (
         <button
           key={filter}
-          onClick={() => handleFilterClick(filter)}
+          onClick={() => {
+            handleFilterClick(filter);
+          }}
           className="tw-flex tw-gap-1 
           tw-rounded-3xl tw-p-3 tw-px-5 tw-pr-6 tw-font-semibold tw-text-white hover:tw-cursor-pointer hover:tw-shadow-lg"
           style={{
