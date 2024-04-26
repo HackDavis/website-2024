@@ -112,13 +112,12 @@ $tablet-scale: 0.75;
 
       &_text{
         color: #123041;
-        font-family: "Proxima Nova";
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%; /* 21px */
-        letter-spacing: 0.28px;
-        padding-left: 7px;
+          font-family: Metropolis;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%; /* 21px */
+          letter-spacing: 0.28px;
 
         span {
           margin: 0 5px;
@@ -450,7 +449,13 @@ $tablet-scale: 0.75;
         // gap: 0.5vw; 
 
         &_text{
-          font-size: 18px;
+          color: #123041;
+          font-family: Metropolis;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%; /* 21px */
+          letter-spacing: 0.28px;
         }
         &_icon{
           width: 1.5rem;
@@ -529,7 +534,13 @@ $tablet-scale: 0.75;
       }
       &_lower{
         &_text{
-          font-size: 20px;
+          color: #123041;
+          font-family: Metropolis;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%; /* 21px */
+          letter-spacing: 0.28px;
         }
         &_icon{
           width: 1.5rem;
