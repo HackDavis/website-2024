@@ -45,6 +45,7 @@ export default function DOECountDown({ endTime }: DOECountDownProps) {
   const hours = 24;
   const minutes = 0;
   const seconds = 0;
+  console.log(timeLeft);
 
   const timeUnits = [
     { type: 'Hours', time: hours.toString() },
