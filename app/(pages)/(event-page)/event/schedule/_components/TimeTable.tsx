@@ -79,7 +79,7 @@ export default function TimeTable({
                 <div className="tw-pr-4 ">
                   <div
                     className="tw-absolute tw-inset-x-0 tw-z-0 tw-border-t tw-border-slate-300"
-                    style={{ left: '15%' }}
+                    style={{ left: '15%', right: '10%' }}
                   />
                   <div className="tw-flex tw-gap-2 tw-text-xs tw-font-semibold tw-text-gray-500 md:tw-text-base">
                     <span className="-tw-translate-y-2 tw-transform">
