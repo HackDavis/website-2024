@@ -1,5 +1,4 @@
 import styles from './Timer.module.scss';
-import { IoLocationSharp } from 'react-icons/io5';
 import { FaDiscord } from 'react-icons/fa';
 import Link from 'next/link';
 import Countdown from '../Countdown/Countdown';
