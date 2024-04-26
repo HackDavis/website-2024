@@ -63,12 +63,13 @@ $tablet-breakpoint: 1007px;
         &_behind{
             display: flex;
             width: 50%;
-            margin-left: -25%;
+            margin-left: -140%;
 
             @media (max-width: $mobile-breakpoint) {
                 position: absolute;
                 top: -10%;
                 left: -50%;
+                margin-left: -25%;
             }
             &_duck{
                 // border: 1px solid red; 
