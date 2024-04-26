@@ -28,7 +28,11 @@ export const resourcePackDOE: ResourceType[] = [
     title: 'STARTER PACK',
     url: 'https://hackdavis.notion.site/HackDavis-2024-Starter-Pack-bea21741698046e99e46f13c9b311039?pvs=4',
   },
-  { icon: <SiSpotify />, title: 'CREATOR JAMS', url: 'temp' },
+  {
+    icon: <SiSpotify />,
+    title: 'CREATOR JAMS',
+    url: 'https://open.spotify.com/playlist/5Izx2G67iaShHyLeShoOaK?si=LonAnRy-TXySP51NDfbZvw&pi=u-hA1Wp2ebTNWb',
+  },
 
   {
     icon: <Image src={mapIcon} alt="event map logo." />,
