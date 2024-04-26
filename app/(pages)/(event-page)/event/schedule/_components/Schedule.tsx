@@ -83,7 +83,7 @@ export default function Schedule() {
   }, [currentDay, allEvents, selectedFilters]);
 
   return (
-    <main className="tw-flex tw-flex-col">
+    <main className="tw-flex tw-flex-col tw-px-1/10">
       <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-py-4">
         <h1 className="tw-pr-8 tw-text-4xl tw-font-semibold md:tw-text-6xl">
           Schedule

@@ -8,7 +8,9 @@ import RiverCow from '../../(index-page)/_components/RiverCow/RiverCow';
 import BottomSection from '../../(index-page)/_components/BottomSection/BottomSection';
 import Sponsors from '../../(index-page)/_components/Sponsors/Sponsors';
 import Resources from '../../(index-page)/_components/Resources/Resources';
+import Schedule from '../event/schedule/_components/Schedule';
 import { resourcePackDOE } from '../../_data/resourceData';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -20,6 +22,15 @@ export default function Home() {
         </div>
         <div id="resources">
           <Resources resourcePack={resourcePackDOE} />
+        </div>
+        <div
+          id="schedule"
+          className="tw-w-full tw-overflow-hidden tw-border tw-border-red-300"
+          style={{ height: '600px' }}
+        >
+          <Link target="_blank" href="/event/schedule">
+            <Schedule />
+          </Link>
         </div>
         <div id="whatishackdavis">
           <WhatIsHackdavis />
