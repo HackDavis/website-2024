@@ -1,11 +1,12 @@
 import { calcEventRows, generate24HRClock } from './Calculations';
 import EventContent from './_components/EventContent';
 import type { TimeChunk } from '../../../../../../public/types/Schedule.types';
-import { useRef, useEffect, forwardRef } from 'react';
+import { useEffect } from 'react';
 
 interface TimeTableProps {
   timeChunks: TimeChunk[];
   startTime: Date;
+  timetableRef: React.RefObject<HTMLDivElement>;
 }
 
 const colorActivities: Record<string, string> = {
@@ -26,23 +27,14 @@ const highlightColor: Record<string, string> = {
 
 const rowSize = '50px';
 
-export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
+export default function TimeTable({
+  timeChunks,
+  startTime,
+  timetableRef,
+}: TimeTableProps) {
   const clockTimes = generate24HRClock(startTime);
-  // Create a ref to store the timetable divs
-  const timeRefs = useRef<(HTMLDivElement | null)[]>([]);
-  timeRefs.current = [];
-
-  // Function to add a div to the refs array
-  const addToRefs = (el: HTMLDivElement) => {
-    if (el && !timeRefs.current.includes(el)) {
-      timeRefs.current.push(el);
-    }
-  };
-
   useEffect(() => {
-    // const now = new Date();
-    const offset = 1;
-    const now = new Date(2022, 3, 27, 20 + offset, 0); // April 27, 2022 21:00
+    const now = new Date();
 
     const currentTimeIndex = clockTimes.findIndex(
       (time) =>
@@ -50,16 +42,18 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
         time.getMinutes() === now.getMinutes()
     );
 
-    if (currentTimeIndex !== -1 && timeRefs.current[currentTimeIndex]) {
-      const currentElement = timeRefs.current[currentTimeIndex];
-      if (currentElement !== null) {
+    if (currentTimeIndex !== -1 && timetableRef.current) {
+      const currentElement = timetableRef.current.children[
+        currentTimeIndex
+      ] as HTMLDivElement;
+      if (currentElement) {
         currentElement.scrollIntoView({
           behavior: 'smooth',
           block: 'nearest',
         });
       }
     }
-  }, []);
+  }, [timetableRef, clockTimes]); // Include timetableRef in the dependency array
 
   return (
     <main className="tw-w-full">
@@ -70,13 +64,13 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           gridTemplateColumns: '1fr 15fr',
           gridAutoRows: rowSize,
         }}
+        ref={timetableRef}
       >
         {clockTimes.map((time, index) => {
           const isHour = time.getMinutes() === 0;
           return (
             <div
               key={index}
-              ref={addToRefs}
               className={`tw-col-start-1 tw-border-r tw-border-r-slate-300 ${
                 !isHour ? 'tw-border-b-0 tw-border-t-0' : ''
               }`}

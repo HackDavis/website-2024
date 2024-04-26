@@ -8,32 +8,35 @@ import RiverCow from '../../(index-page)/_components/RiverCow/RiverCow';
 import BottomSection from '../../(index-page)/_components/BottomSection/BottomSection';
 import Sponsors from '../../(index-page)/_components/Sponsors/Sponsors';
 import Resources from '../../(index-page)/_components/Resources/Resources';
-import Schedule from '../event/schedule/_components/Schedule';
+// import Schedule from '../event/schedule/_components/Schedule';
 import { resourcePackDOE } from '../../_data/resourceData';
-import Link from 'next/link';
-import { useRef } from 'react';
+// import Link from 'next/link';
 
 export default function Home() {
-  const scheduleRef = useRef<HTMLDivElement | null>(null);
   return (
     <LoadingProvider>
       <Loader />
-      <main style={{ backgroundColor: 'white', scrollBehavior: 'smooth' }}>
+      <main
+        style={{
+          backgroundColor: 'white',
+          scrollBehavior: 'smooth',
+        }}
+      >
         <div id="landing">
           <Landing />
         </div>
         <div id="resources">
           <Resources resourcePack={resourcePackDOE} />
         </div>
-        <div
+        {/* <div
           id="schedule"
-          className="tw-w-full tw-overflow-hidden tw-border tw-border-red-300"
+          className="tw-w-full tw-overflow-clip tw-border tw-border-red-300"
           style={{ height: '900px' }}
         >
           <Link target="_blank" href="/event/schedule">
-            <Schedule ref={scheduleRef} />
+            <Schedule />
           </Link>
-        </div>
+        </div> */}
         <div id="whatishackdavis">
           <WhatIsHackdavis />
         </div>

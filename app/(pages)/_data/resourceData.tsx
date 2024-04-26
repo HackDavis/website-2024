@@ -1,7 +1,10 @@
 import { SiNotion, SiProtoncalendar, SiSpotify } from 'react-icons/si';
+import { LuCalendarClock } from 'react-icons/lu';
+import { FaCalendarDay } from 'react-icons/fa6';
 import Image from 'next/image';
 import safetyIcon from 'public/event/safetyIcon.svg';
 import mapIcon from 'public/event/mapIcon.svg';
+// import { CalendarClock } from 'lucide-react';
 
 export type ResourceType = {
   icon: JSX.Element;
@@ -43,5 +46,10 @@ export const resourcePackDOE: ResourceType[] = [
     icon: <Image src={safetyIcon} alt="safety info logo." />,
     title: 'SAFETY INFO',
     url: 'https://www.notion.so/hackdavis/HackDavis-Safety-42561065cd254194bc26bcf48432f36a',
+  },
+  {
+    icon: <FaCalendarDay />,
+    title: 'SCHEDULE',
+    url: '/event/schedule',
   },
 ];
