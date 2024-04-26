@@ -22,6 +22,11 @@ export const resourcePack: ResourceType[] = [
     title: 'HACKDAVIS 2024 CALENDAR',
     url: 'https://drive.google.com/file/d/1AGBLnS55qNEuGNXh9VLSdx2PaHsGVgE7/view?usp=drive_link',
   },
+  {
+    icon: <FaCalendarDay />,
+    title: 'SCHEDULE',
+    url: '/event/schedule',
+  },
 ];
 
 export const resourcePackDOE: ResourceType[] = [

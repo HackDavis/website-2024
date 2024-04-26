@@ -4,6 +4,7 @@ export type Event = {
   title: string;
   location?: string;
   type: string;
+  url?: string;
 };
 
 export type TimeChunk = {
