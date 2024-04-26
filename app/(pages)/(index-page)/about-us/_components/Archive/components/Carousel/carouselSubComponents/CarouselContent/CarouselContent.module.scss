@@ -2,7 +2,7 @@
     padding-left: 12%;
     padding-top: 10%;
     padding-bottom: 60px;
-    width: 90%;
+    width: 100%;
 
     .carousel__container {
         backface-visibility: hidden;
@@ -11,7 +11,7 @@
 
         .carousel__slide {
             flex: 0 0 var(--slide-size);
-            min-width: 10;
+            min-width: 290px;
             padding-left: 0;
         }
     }
