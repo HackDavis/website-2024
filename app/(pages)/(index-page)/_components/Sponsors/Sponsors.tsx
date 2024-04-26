@@ -97,7 +97,7 @@ export default function Sponsors() {
           url="https://nordpass.com/"
           alt="NordPass logo"
         />
-        <Logo imgSrc={incogni} url="https://nordpass.com/" alt="Incogni logo" />
+        <Logo imgSrc={incogni} url="https://incogni.com/" alt="Incogni logo" />
       </Marquee>
 
       <Marquee iterations={2} duration={50}>
