@@ -1,6 +1,6 @@
-import { FaDiscord } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
-import Countdown from '../Countdown/Countdown';
 import DOECountDown from './_components/DOECountDown';
 import Image from 'next/image';
 import HackDavisLogo from 'public/navbar/logo.svg';
@@ -23,20 +23,25 @@ const buttonLinks: ButtonLink[] = [
   {
     title: 'Get Help',
     url: 'https://discord.gg/pjAKeaEh',
-    icon: <FaDiscord size={30} />,
+    // icon: <faDiscord />,
+    icon: <FontAwesomeIcon icon={faDiscord} className="tw-w-6 md:tw-w-8 " />,
     bgColor: '#FFFFFF',
     textColor: '#173A52',
   },
 ];
 
-export default function Form() {
+export default function Timer() {
   const endTime = new Date('2024-04-28T14:00:00-07:00');
   return (
-    <main className="tw-absolute tw-left-1/2 tw-top-1/4 tw-border tw-border-black">
+    <main className="">
       <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-gap-6">
         <div className="tw-flex tw-w-full tw-items-center tw-justify-center tw-gap-3 tw-text-center">
-          <Image src={HackDavisLogo} alt="Logo" className="tw-w-20" />{' '}
-          <span className="tw-text-4xl tw-font-semibold tw-text-dark-blue">
+          <Image
+            src={HackDavisLogo}
+            alt="Logo"
+            className="md:tw-w-18 tw-w-14 xl:tw-w-20"
+          />{' '}
+          <span className="tw-text-3xl tw-font-semibold tw-text-dark-blue md:tw-text-4xl xl:tw-text-5xl">
             HackDavis 2024
           </span>
         </div>
@@ -46,14 +51,14 @@ export default function Form() {
           {buttonLinks.map((button, index) => (
             <Link key={index} href={button.url}>
               <button
-                className="tw-flex tw-items-center tw-justify-center tw-gap-2 tw-rounded-3xl tw-p-2 tw-px-6 tw-font-semibold"
+                className="tw-flex tw-items-center tw-justify-center tw-gap-2 tw-rounded-3xl tw-p-2 tw-px-6 tw-text-sm tw-font-semibold md:tw-text-base"
                 style={{
                   backgroundColor: button.bgColor,
                   color: button.textColor,
                 }}
               >
-                {button.icon}
-                <span className="tw-mt-1 tw-flex ">{button.title}</span>
+                {button.icon ? <span>{button.icon}</span> : <></>}
+                <span className="tw-mt-1">{button.title}</span>
               </button>
             </Link>
           ))}

@@ -24,19 +24,10 @@ $tablet-breakpoint: 1007px;
 .form{
   position: absolute;
   z-index: 13;
-  // top: 105px;
-  top: 10%;
-  left: 30%;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  @media (max-width: $mobile-breakpoint) {
-    left: 50%;
-    top: 25%;
-
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .landing_container{
