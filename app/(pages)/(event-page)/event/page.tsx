@@ -1,7 +1,7 @@
 'use client';
 import { LoadingProvider } from '@contexts/LoadingContext';
 import Loader from '@components/Loader/Loader';
-import Landing from '../../(index-page)/_components/Landing/Landing';
+import LandingEvent from '../../(index-page)/event/_components/LandingEvent/LandingEvent';
 import WhatIsHackdavis from '../../(index-page)/_components/WhatIsHackdavis/WhatIsHackdavis';
 import PrizeList from './_components/Prizes/PrizeList';
 import RiverCow from '../../(index-page)/_components/RiverCow/RiverCow';
@@ -16,7 +16,7 @@ export default function Home() {
       <Loader />
       <main style={{ backgroundColor: 'white', scrollBehavior: 'smooth' }}>
         <div id="landing">
-          <Landing />
+          <LandingEvent />
         </div>
         <div id="resources">
           <Resources resourcePack={resourcePackDOE} />
