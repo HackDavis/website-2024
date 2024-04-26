@@ -4,7 +4,7 @@ import CountUp from '@components/CountUp/CountUp';
 const statsData = [
   { stat: 140, text: 'projects', duration: 2000 },
   { stat: 750, text: 'hackers', suffix: '+', duration: 2000 },
-  { stat: 10, text: 'prizes', prefix: '$', suffix: 'k+', duration: 2000 },
+  { stat: 20, text: 'prizes', prefix: '$', suffix: 'k+', duration: 2000 },
   { stat: 24, text: 'hours', duration: 2000 },
 ];
 
