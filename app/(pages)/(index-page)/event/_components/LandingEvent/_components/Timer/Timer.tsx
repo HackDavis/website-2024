@@ -28,11 +28,7 @@ export default function Form() {
     <div className={styles.background}>
       <div className={styles.container}>
         <div className={styles.title}>
-          <Image
-            src={HackDavisLogo}
-            alt="Logo"
-            className={styles.title_logo}
-          />{' '}
+          <Image src={HackDavisLogo} alt="Logo" className={styles.title_logo} />{' '}
           <span className={styles.title_social}>HackDavis 2024</span>
         </div>
         <Countdown />
