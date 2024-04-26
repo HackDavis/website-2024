@@ -7,6 +7,7 @@ import type { TimeChunk, Event } from '@/public/types/Schedule.types';
 import { createTimeChunks } from './Calculations';
 import Filters from './Filters';
 import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
+import { useRef } from 'react';
 
 type ScheduleDay = {
   dayString: string;
@@ -63,6 +64,7 @@ export default function Schedule() {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [startTime, setStartTime] = useState(eventDays[0].startDay);
   const [selectedFilters, setSelectedFilters] = useState<string[]>(FilterItems);
+  const timetableRef = useRef<HTMLDivElement>(null);
 
   //fetching events from DB and creating time chunks
   useEffect(() => {
@@ -84,38 +86,44 @@ export default function Schedule() {
 
   return (
     <main className="tw-flex tw-flex-col">
-      <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-py-4">
-        <h1 className="tw-pr-8 tw-text-4xl tw-font-semibold md:tw-text-6xl">
-          Schedule
-        </h1>
-        <div className="tw-flex tw-gap-2">
-          <span>{currentDay.dayString}</span>
-          <div className="tw-flex">
-            <ChevronLeft
-              className="hover:tw-cursor-pointer"
-              onClick={() => setCurrentDay(eventDays[0])}
-              style={{
-                color: currentDay === eventDays[0] ? 'gray' : 'black',
-              }}
-            />
-            <ChevronRight
-              className="hover:tw-cursor-pointer"
-              onClick={() => setCurrentDay(eventDays[1])}
-              style={{
-                color: currentDay === eventDays[1] ? 'gray' : 'black',
-              }}
-            />
+      <div className="tw-sticky tw-top-0 tw-z-40 tw-bg-white tw-px-1/10 tw-pt-24">
+        <div className=" tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-py-4">
+          <h1 className="tw-pr-8 tw-text-4xl tw-font-semibold md:tw-text-6xl">
+            Schedule
+          </h1>
+          <div className="tw-flex tw-gap-2">
+            <span>{currentDay.dayString}</span>
+            <div className="tw-flex">
+              <ChevronLeft
+                className="hover:tw-cursor-pointer"
+                onClick={() => setCurrentDay(eventDays[0])}
+                style={{
+                  color: currentDay === eventDays[0] ? 'gray' : 'black',
+                }}
+              />
+              <ChevronRight
+                className="hover:tw-cursor-pointer"
+                onClick={() => setCurrentDay(eventDays[1])}
+                style={{
+                  color: currentDay === eventDays[1] ? 'gray' : 'black',
+                }}
+              />
+            </div>
           </div>
         </div>
+        <div className="tw-flex tw-flex-wrap">
+          <Filters
+            onFilterChange={setSelectedFilters}
+            FilterItems={FilterItems}
+          />
+        </div>
       </div>
-      <div className="tw-flex tw-flex-wrap">
-        <Filters
-          onFilterChange={setSelectedFilters}
-          FilterItems={FilterItems}
+      <div className="tw-px-1/10 tw-py-8">
+        <TimeTable
+          timeChunks={timeChunks}
+          startTime={startTime}
+          timetableRef={timetableRef}
         />
-      </div>
-      <div className="tw-py-8">
-        <TimeTable timeChunks={timeChunks} startTime={startTime} />
       </div>
     </main>
   );

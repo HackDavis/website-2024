@@ -32,7 +32,7 @@ export function generate24HRClock(startTime: Date): Date[] {
 
 export function createTimeChunks(events: Event[]): TimeChunk[] {
   const timeChunks: TimeChunk[] = [];
-  console.log(events);
+  // console.log(events);
 
   const sortedEvents = events.sort(
     (a, b) => a.startTime.getTime() - b.startTime.getTime()

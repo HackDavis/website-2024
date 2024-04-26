@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import styles from './WhatIsHackdavis.module.scss';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation'; // Import useRouter
 
 // statically import images
 import logLeftRock from 'public/index/whatIsHackdavis/log_left-rock.png';
@@ -39,15 +40,20 @@ export default function WhatIsHackdavis() {
     };
   }, []);
 
+  const pathname = usePathname();
+  const isDOE = pathname.includes('event');
+
   return (
     <div ref={containerRef} className={styles.container}>
-      <div className={styles.text}>
-        <h1 className={styles.heading}>What is HackDavis?</h1>
-        <p className={styles.paragraph}>
-          HackDavis is one of the top 50 hackathons in the world, where over 750
-          creators, and leaders come together to create for social good.
-        </p>
-      </div>
+      {!isDOE && (
+        <div className={styles.text}>
+          <h1 className={styles.heading}>What is HackDavis?</h1>
+          <p className={styles.paragraph}>
+            HackDavis is one of the top 50 hackathons in the world, where over
+            750 creators, and leaders come together to create for social good.
+          </p>
+        </div>
+      )}
       <div className={styles.logStuff}>
         <div className={styles.logLeftSection}>
           <Image

@@ -1,10 +1,12 @@
 import { calcEventRows, generate24HRClock } from './Calculations';
 import EventContent from './_components/EventContent';
 import type { TimeChunk } from '../../../../../../public/types/Schedule.types';
+import { useEffect } from 'react';
 
 interface TimeTableProps {
   timeChunks: TimeChunk[];
   startTime: Date;
+  timetableRef: React.RefObject<HTMLDivElement>;
 }
 
 const colorActivities: Record<string, string> = {
@@ -25,8 +27,33 @@ const highlightColor: Record<string, string> = {
 
 const rowSize = '50px';
 
-export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
+export default function TimeTable({
+  timeChunks,
+  startTime,
+  timetableRef,
+}: TimeTableProps) {
   const clockTimes = generate24HRClock(startTime);
+  useEffect(() => {
+    const now = new Date();
+
+    const currentTimeIndex = clockTimes.findIndex(
+      (time) =>
+        time.getHours() === now.getHours() &&
+        time.getMinutes() === now.getMinutes()
+    );
+
+    if (currentTimeIndex !== -1 && timetableRef.current) {
+      const currentElement = timetableRef.current.children[
+        currentTimeIndex
+      ] as HTMLDivElement;
+      if (currentElement) {
+        currentElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+        });
+      }
+    }
+  }, [timetableRef, clockTimes]); // Include timetableRef in the dependency array
 
   return (
     <main className="tw-w-full">
@@ -37,6 +64,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           gridTemplateColumns: '1fr 15fr',
           gridAutoRows: rowSize,
         }}
+        ref={timetableRef}
       >
         {clockTimes.map((time, index) => {
           const isHour = time.getMinutes() === 0;
