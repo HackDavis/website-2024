@@ -1,6 +1,7 @@
 import { calcEventRows, generate24HRClock } from './Calculations';
 import EventContent from './_components/EventContent';
 import type { TimeChunk } from '../../../../../../public/types/Schedule.types';
+import { useRef, useEffect, forwardRef } from 'react';
 
 interface TimeTableProps {
   timeChunks: TimeChunk[];
@@ -27,6 +28,38 @@ const rowSize = '50px';
 
 export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
   const clockTimes = generate24HRClock(startTime);
+  // Create a ref to store the timetable divs
+  const timeRefs = useRef<(HTMLDivElement | null)[]>([]);
+  timeRefs.current = [];
+
+  // Function to add a div to the refs array
+  const addToRefs = (el: HTMLDivElement) => {
+    if (el && !timeRefs.current.includes(el)) {
+      timeRefs.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    // const now = new Date();
+    const offset = 1;
+    const now = new Date(2022, 3, 27, 20 + offset, 0); // April 27, 2022 21:00
+
+    const currentTimeIndex = clockTimes.findIndex(
+      (time) =>
+        time.getHours() === now.getHours() &&
+        time.getMinutes() === now.getMinutes()
+    );
+
+    if (currentTimeIndex !== -1 && timeRefs.current[currentTimeIndex]) {
+      const currentElement = timeRefs.current[currentTimeIndex];
+      if (currentElement !== null) {
+        currentElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+        });
+      }
+    }
+  }, []);
 
   return (
     <main className="tw-w-full">
@@ -43,6 +76,7 @@ export default function TimeTable({ timeChunks, startTime }: TimeTableProps) {
           return (
             <div
               key={index}
+              ref={addToRefs}
               className={`tw-col-start-1 tw-border-r tw-border-r-slate-300 ${
                 !isHour ? 'tw-border-b-0 tw-border-t-0' : ''
               }`}

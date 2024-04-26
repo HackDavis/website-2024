@@ -2,11 +2,15 @@
 
 import TimeTable from './TimeTable';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { MutableRefObject, useEffect, useState } from 'react';
 import type { TimeChunk, Event } from '@/public/types/Schedule.types';
 import { createTimeChunks } from './Calculations';
 import Filters from './Filters';
 import { getAllEvents } from '@/app/(api)/_actions/events/getEvents';
+
+interface ScheduleProps {
+  ref?: MutableRefObject<HTMLDivElement | null>;
+}
 
 type ScheduleDay = {
   dayString: string;
@@ -57,7 +61,7 @@ function filterEventByType(events: Event[], types: string[]): Event[] {
   return events.filter((event) => types.includes(event.type));
 }
 
-export default function Schedule() {
+export default function Schedule({ ref }: ScheduleProps) {
   const [currentDay, setCurrentDay] = useState(eventDays[0]);
   const [timeChunks, setTimeChunks] = useState<TimeChunk[]>([]);
   const [allEvents, setAllEvents] = useState<Event[]>([]);
@@ -116,7 +120,7 @@ export default function Schedule() {
           />
         </div>
       </div>
-      <div className="tw-px-1/10 tw-py-8">
+      <div ref={ref} className="tw-px-1/10 tw-py-8">
         <TimeTable timeChunks={timeChunks} startTime={startTime} />
       </div>
     </main>

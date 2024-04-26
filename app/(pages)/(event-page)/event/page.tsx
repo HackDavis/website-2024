@@ -11,8 +11,10 @@ import Resources from '../../(index-page)/_components/Resources/Resources';
 import Schedule from '../event/schedule/_components/Schedule';
 import { resourcePackDOE } from '../../_data/resourceData';
 import Link from 'next/link';
+import { useRef } from 'react';
 
 export default function Home() {
+  const scheduleRef = useRef<HTMLDivElement | null>(null);
   return (
     <LoadingProvider>
       <Loader />
@@ -26,10 +28,10 @@ export default function Home() {
         <div
           id="schedule"
           className="tw-w-full tw-overflow-hidden tw-border tw-border-red-300"
-          style={{ height: '600px' }}
+          style={{ height: '900px' }}
         >
           <Link target="_blank" href="/event/schedule">
-            <Schedule />
+            <Schedule ref={scheduleRef} />
           </Link>
         </div>
         <div id="whatishackdavis">
