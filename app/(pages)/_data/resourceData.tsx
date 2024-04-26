@@ -44,7 +44,7 @@ export const resourcePackDOE: ResourceType[] = [
   {
     icon: <Image src={mapIcon} alt="event map logo." />,
     title: 'EVENT MAP',
-    url: 'temp',
+    url: 'https://drive.google.com/file/d/1aH0RueNrjqHZ8ctuGwuKEb6ObxgU71Ps/view?usp=sharing',
   },
   {
     icon: <Image src={safetyIcon} alt="safety info logo." />,
