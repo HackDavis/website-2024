@@ -14,6 +14,7 @@ export async function getAllEvents(): Promise<Event[]> {
         title: doc.title,
         location: doc.location,
         type: doc.type,
+        url: doc.url,
       })
     );
   } catch (error) {

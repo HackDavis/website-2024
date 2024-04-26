@@ -1,4 +1,5 @@
 import type { Event } from '@/public/types/Schedule.types';
+import Link from 'next/link';
 import { TiLocation } from 'react-icons/ti';
 
 export default function EventContent(event: Event) {
@@ -20,7 +21,15 @@ export default function EventContent(event: Event) {
           </div>
           <div className="tw-flex tw-items-start tw-gap-1">
             <TiLocation size={20} />
-            <span>{event.location}</span>
+            {event.url ? (
+              <Link target="_blank" href={event.url}>
+                <span className="tw-underline tw-underline-offset-2">
+                  {event.location}
+                </span>
+              </Link>
+            ) : (
+              <span>{event.location}</span>
+            )}
           </div>
         </div>
       )}
