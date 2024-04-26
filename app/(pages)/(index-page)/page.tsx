@@ -11,8 +11,17 @@ import RiverCow from './_components/RiverCow/RiverCow';
 import PrizeList from '../(event-page)/event/_components/Prizes/PrizeList';
 import Resources from './_components/Resources/Resources';
 import { resourcePackDOE } from '../_data/resourceData';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to the new URL
+    router.push('/event');
+  }, [router]);
+
   return (
     <LoadingProvider>
       <Loader />
