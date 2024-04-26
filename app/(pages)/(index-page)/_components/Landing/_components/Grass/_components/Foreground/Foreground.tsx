@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-
 import styles from './Foreground.module.scss';
 import Image from 'next/image';
 import { useLoadCount } from '@hooks/useLoadCount';
@@ -10,6 +9,7 @@ import Hero_CowHead from '/public/index/Hero/hero_cow-head.png';
 import Hero_CowCam from '/public/index/Hero/hero_cow-cam.png';
 import Hero_CowTorso from '/public/index/Hero/hero_cow-torso.png';
 import Hero_FrontGrass from '/public/index/Hero/hero_front-grass.png';
+import { usePathname } from 'next/navigation';
 
 export default function Foreground() {
   const { incLoaded } = useLoadCount();
@@ -29,11 +29,20 @@ export default function Foreground() {
     };
   }, []);
 
+  const pathname = usePathname();
+  const isDOE = pathname.includes('event');
+
   return (
     <div className={styles.foreground}>
       <div className={styles.foreground_container}>
         <div className={styles.foreground_characters}>
-          <div className={styles.foreground_characters_behind}>
+          <div
+            className={
+              isDOE
+                ? styles.foreground_characters_behind
+                : styles.foreground_characters_behindIndex
+            }
+          >
             <div className={styles.foreground_characters_behind_duck}>
               <Image
                 src={Hero_Duck}

@@ -91,7 +91,7 @@ export default function Form() {
             <p>{FormLinks.Sponsor.title}</p>
           </a>
         </div>
-        <div className={styles.links}>
+        {/* <div className={styles.links}>
           <div className={styles.links_calendar}>
             Apply to be a
             <Link href={FormLinks.Volunteer.url}>
@@ -102,7 +102,7 @@ export default function Form() {
               <span>{FormLinks.Mentor.title}</span>
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
