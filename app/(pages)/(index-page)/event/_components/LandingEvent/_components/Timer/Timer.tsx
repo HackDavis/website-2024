@@ -79,7 +79,7 @@ export default function Timer() {
           <TiLocation size={20} />
           <span>University Credit Union Center @ UC Davis</span>
         </div>
-        <div className="tw-z-40 tw-flex tw-gap-8 tw-font-semibold">
+        <div className="tw-z-40 tw-flex tw-gap-8 tw-text-3xl tw-font-semibold tw-text-dark-blue">
           <span>WIFI: hackdavis2024</span>
           <span>Password: intel@HD2024</span>
         </div>
