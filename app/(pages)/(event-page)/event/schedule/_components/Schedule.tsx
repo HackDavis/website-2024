@@ -102,8 +102,8 @@ export default function Schedule() {
       <div
         className={`${styles.scheduleContainer} tw-sticky tw-top-0 tw-z-40 tw-bg-white tw-px-1/10 tw-pt-24`}
       >
-        <div className=" tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-py-4">
-          <h1 className="tw-pr-8 tw-text-4xl tw-font-semibold md:tw-text-5xl lg:tw-text-6xl">
+        <div className=" tw-flex tw-flex-wrap tw-items-center tw-justify-between ">
+          <h1 className="tw-pr-8 tw-text-4xl tw-font-semibold md:tw-text-5xl ">
             Schedule
           </h1>
           <div className="tw-flex tw-gap-4">

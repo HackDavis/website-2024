@@ -31,6 +31,11 @@ export const resourcePack: ResourceType[] = [
 
 export const resourcePackDOE: ResourceType[] = [
   {
+    icon: <FaCalendarDay />,
+    title: 'SCHEDULE',
+    url: '/event/schedule',
+  },
+  {
     icon: <SiNotion />,
     title: 'STARTER PACK',
     url: 'https://hackdavis.notion.site/HackDavis-2024-Starter-Pack-bea21741698046e99e46f13c9b311039?pvs=4',
@@ -50,10 +55,5 @@ export const resourcePackDOE: ResourceType[] = [
     icon: <Image src={safetyIcon} alt="safety info logo." />,
     title: 'SAFETY INFO',
     url: 'https://www.notion.so/hackdavis/HackDavis-Safety-42561065cd254194bc26bcf48432f36a',
-  },
-  {
-    icon: <FaCalendarDay />,
-    title: 'SCHEDULE',
-    url: '/event/schedule',
   },
 ];
