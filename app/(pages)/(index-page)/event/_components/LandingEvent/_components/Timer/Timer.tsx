@@ -5,6 +5,7 @@ import DOECountDown from './_components/DOECountDown';
 import Image from 'next/image';
 import HackDavisLogo from 'public/navbar/logo.svg';
 import { TiLocation } from 'react-icons/ti';
+import { usePathname } from 'next/navigation'; // Import useRouter
 
 type ButtonLink = {
   title: string;
@@ -34,6 +35,8 @@ const buttonLinks: ButtonLink[] = [
 export default function Timer() {
   const startTime = new Date('2024-04-27T14:00:00-07:00');
   const endTime = new Date('2024-04-28T14:00:00-07:00');
+  const pathname = usePathname();
+  const isDayTimer = pathname.includes('dayTimer');
   return (
     <main className="">
       <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-gap-6">
@@ -49,22 +52,24 @@ export default function Timer() {
         </div>
         <DOECountDown startTime={startTime} endTime={endTime} />
 
-        <div className="tw-flex tw-items-center tw-justify-center tw-gap-4">
-          {buttonLinks.map((button, index) => (
-            <Link key={index} href={button.url}>
-              <button
-                className="tw-flex tw-items-center tw-justify-center tw-gap-2 tw-rounded-3xl tw-p-2 tw-px-6 tw-text-sm tw-font-semibold md:tw-text-base"
-                style={{
-                  backgroundColor: button.bgColor,
-                  color: button.textColor,
-                }}
-              >
-                {button.icon ? <span>{button.icon}</span> : <></>}
-                <span className="tw-mt-1">{button.title}</span>
-              </button>
-            </Link>
-          ))}
-        </div>
+        {!isDayTimer && (
+          <div className="tw-flex tw-items-center tw-justify-center tw-gap-4">
+            {buttonLinks.map((button, index) => (
+              <Link key={index} href={button.url}>
+                <button
+                  className="tw-flex tw-items-center tw-justify-center tw-gap-2 tw-rounded-3xl tw-p-2 tw-px-6 tw-text-sm tw-font-semibold md:tw-text-base"
+                  style={{
+                    backgroundColor: button.bgColor,
+                    color: button.textColor,
+                  }}
+                >
+                  {button.icon ? <span>{button.icon}</span> : <></>}
+                  <span className="tw-mt-1">{button.title}</span>
+                </button>
+              </Link>
+            ))}
+          </div>
+        )}
         <div
           className="tw-flex tw-gap-1 tw-font-medium tw-text-dark-blue"
           style={{
