@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 interface DOECountDownProps {
+  startTime: Date;
   endTime: Date;
 }
 
@@ -22,28 +23,43 @@ function TimeContainer(time: TimeType) {
     </main>
   );
 }
-export default function DOECountDown({ endTime }: DOECountDownProps) {
-  const [_, setTimeLeft] = useState<number>(endTime.getTime() - Date.now());
+export default function DOECountDown({
+  startTime,
+  endTime,
+}: DOECountDownProps) {
+  const calculateTimeLeft = () => {
+    const now = new Date().getTime();
+    const start = new Date(startTime).getTime();
+    const end = new Date(endTime).getTime();
+
+    if (now < start) {
+      return null;
+    }
+
+    return Math.max(end - now, 0);
+  };
+
+  const [timeLeft, setTimeLeft] = useState<number | null>(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(endTime.getTime() - new Date().getTime());
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
   }, [endTime]);
 
-  // const hours = Math.floor(
-  //   (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  // );
-  // const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  // const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  let hours, minutes, seconds;
 
-  //TEMPORARY B4 DOE
-  const hours = 24;
-  const minutes = 0;
-  const seconds = 0;
-  // console.log(timeLeft);
+  if (timeLeft === null) {
+    hours = 24;
+    minutes = 0;
+    seconds = 0;
+  } else {
+    hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  }
 
   const timeUnits = [
     { type: 'Hours', time: hours.toString() },
@@ -52,12 +68,10 @@ export default function DOECountDown({ endTime }: DOECountDownProps) {
   ];
 
   return (
-    <main className="">
-      <div className="tw-flex tw-gap-4">
-        {timeUnits.map((timeUnit, index) => (
-          <TimeContainer key={index} {...timeUnit} />
-        ))}
-      </div>
+    <main className="tw-flex tw-gap-4">
+      {timeUnits.map((timeUnit, index) => (
+        <TimeContainer key={index} {...timeUnit} />
+      ))}
     </main>
   );
 }
