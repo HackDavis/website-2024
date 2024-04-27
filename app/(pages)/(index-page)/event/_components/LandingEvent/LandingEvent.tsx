@@ -27,11 +27,12 @@ export default function LandingEvent() {
         <div className={styles.clouds}>
           <Clouds />
         </div>
-        {!isDayTimer && (
-          <div className={styles.grass}>
-            <Grass />
-          </div>
-        )}
+        <div
+          className={styles.grass}
+          style={isDayTimer ? { marginTop: '-28vw' } : {}}
+        >
+          <Grass />
+        </div>
       </div>
     </main>
   );
