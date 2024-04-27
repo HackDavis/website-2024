@@ -47,6 +47,7 @@ import wirelesscharger from 'public/index/PrizeList/MLH/wirelesscharger.png';
 // non-profit prizes
 import camping from 'public/index/PrizeList/NonProfit/owlcamping.png';
 import stuffle from 'public/index/PrizeList/NonProfit/frogPlushie.png';
+import { usePathname } from 'next/navigation';
 
 const filters = [
   'All',
@@ -291,8 +292,18 @@ prizeCategories.All = allPrizes;
 export default function PrizeList() {
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
+  const pathname = usePathname();
+  const isDOE = pathname.includes('event');
+
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={
+        isDOE
+          ? { background: 'linear-gradient(180deg, #015270 0%, #123041 5%)' }
+          : {}
+      }
+    >
       <h3 className={styles.header}>Prizes</h3>
       <div className={styles.filters}>
         {filters.map((filter) => (
