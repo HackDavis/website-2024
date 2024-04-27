@@ -113,6 +113,7 @@ export default function TimeTable({
                 gridRowStart: timeChunkStartRow + 1,
                 gridRowEnd: timeChunkEndRow + 1,
                 gridAutoRows: rowSize,
+                gridTemplateColumns: `repeat(${timeChunk.eventBlocks.length}, 1fr)`,
               }}
             >
               {timeChunk.eventBlocks.map((event, event_index) => (

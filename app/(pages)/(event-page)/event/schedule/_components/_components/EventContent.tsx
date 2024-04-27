@@ -12,11 +12,13 @@ export default function EventContent(event: Event) {
         <div className="tw-flex tw-flex-col tw-gap-2">
           <div className="tw-flex tw-gap-2 tw-font-normal">
             <span>
-              {event.startTime.getHours()}:{event.startTime.getMinutes()}
+              {event.startTime.getHours()}:
+              {event.startTime.getMinutes().toString().padStart(2, '0')}
             </span>
             -
             <span>
-              {event.endTime.getHours()}:{event.endTime.getMinutes()}
+              {event.endTime.getHours()}:
+              {event.endTime.getMinutes().toString().padStart(2, '0')}
             </span>
           </div>
           <div className="tw-flex tw-items-start tw-gap-1">

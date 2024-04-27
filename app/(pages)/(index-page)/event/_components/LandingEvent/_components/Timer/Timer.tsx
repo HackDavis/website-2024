@@ -4,6 +4,7 @@ import Link from 'next/link';
 import DOECountDown from './_components/DOECountDown';
 import Image from 'next/image';
 import HackDavisLogo from 'public/navbar/logo.svg';
+import { TiLocation } from 'react-icons/ti';
 
 type ButtonLink = {
   title: string;
@@ -62,6 +63,10 @@ export default function Timer() {
               </button>
             </Link>
           ))}
+        </div>
+        <div className="tw-flex tw-gap-1 tw-font-medium tw-text-dark-blue">
+          <TiLocation size={20} />
+          <span>University Credit Union Center @ UC Davis</span>
         </div>
       </div>
     </main>
