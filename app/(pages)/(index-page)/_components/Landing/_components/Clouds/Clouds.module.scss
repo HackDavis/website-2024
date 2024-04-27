@@ -19,6 +19,7 @@ $tablet-breakpoint: 1007px;
     width: 100%;
     height: auto;
     overflow: hidden;
+    margin-top: 100px;
 
     &_left{
         object-fit: contain;
@@ -41,6 +42,8 @@ $tablet-breakpoint: 1007px;
     width: 110%;
     overflow: hidden;
     // border: 2px solid black; 
+    margin-top: 100px;
+
 
     &_left{
         object-fit: contain;

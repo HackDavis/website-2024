@@ -11,7 +11,7 @@ $tablet-breakpoint: 1007px;
 .grass{
   position: relative;
   z-index: 2;
-  margin-top: -13vw;
+  margin-top: -12vw;
   @media(max-width: $tablet-breakpoint){
     margin-top: -130px;
   }
