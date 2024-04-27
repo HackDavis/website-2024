@@ -33,8 +33,8 @@ const buttonLinks: ButtonLink[] = [
 ];
 
 export default function Timer() {
-  const startTime = new Date('2024-04-27T14:00:00-07:00');
-  const endTime = new Date('2024-04-28T14:00:00-07:00');
+  const startTime = new Date('2024-04-27T14:10:00-07:00');
+  const endTime = new Date('2024-04-28T14:10:00-07:00');
   const pathname = usePathname();
   const isDayTimer = pathname.includes('dayTimer');
   return (
