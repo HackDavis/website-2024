@@ -27,10 +27,24 @@ export default function LandingEvent() {
         <div className={styles.clouds}>
           <Clouds />
         </div>
-        <div className={styles.grass}>
-          <Grass />
-        </div>
+        {!isDayTimer && (
+          <div className={styles.grass}>
+            <Grass />
+          </div>
+        )}
       </div>
     </main>
   );
 }
+// .grass{
+//   position: relative;
+//   z-index: 2;
+//   margin-top: -12vw;
+//   @media(max-width: $tablet-breakpoint){
+//     margin-top: -130px;
+//   }
+
+//   @media(max-width: $mobile-breakpoint){
+//     margin-top: -250px;
+//   }
+// }
