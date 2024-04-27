@@ -9,10 +9,14 @@ import { useLoadCount } from '@hooks/useLoadCount';
 // import Far_Grass from '/public/index/Hero/hero_far-grass.png';
 import Edit_Far_Grass from '/public/index/Hero/hero_far-grass-edit.png';
 import Mid_Grass from '/public/index/Hero/hero_mid-grass.png';
+import { usePathname } from 'next/navigation';
 
 export default function Grass() {
   const { incLoaded } = useLoadCount();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const pathname = usePathname();
+  const isDayTimer = pathname.includes('dayTimer');
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -48,29 +52,40 @@ export default function Grass() {
             onLoad={incLoaded}
           />
         </div>
-        <div className={styles.grass_medium}>
-          <Image
-            src={Mid_Grass}
-            alt="mid_grass"
-            className={styles.grasses_image}
-            z-index={3}
-            priority={true}
-            placeholder="blur"
-            style={{
-              transform: `translateX(${mousePosition.x / 120}px) translateY(${
-                mousePosition.y / 120
-              }px)`,
-            }}
-            onLoad={incLoaded}
-          />
+        <div
+          className={styles.grass_medium}
+          style={isDayTimer ? { marginTop: '15%' } : {}}
+        >
+          {!isDayTimer && (
+            <Image
+              src={Mid_Grass}
+              alt="mid_grass"
+              className={styles.grasses_image}
+              z-index={3}
+              priority={true}
+              placeholder="blur"
+              style={{
+                transform: `translateX(${mousePosition.x / 120}px) translateY(${
+                  mousePosition.y / 120
+                }px)`,
+              }}
+              onLoad={incLoaded}
+            />
+          )}
         </div>
       </div>
-      <div className={styles.foreground}>
-        <Foreground />
-      </div>
-      <div className={styles.polaroids}>
-        <Polaroids />
-      </div>
+
+      {!isDayTimer && (
+        <div className={styles.foreground}>
+          <Foreground />
+        </div>
+      )}
+
+      {!isDayTimer && (
+        <div className={styles.polaroids}>
+          <Polaroids />
+        </div>
+      )}
     </div>
   );
 }

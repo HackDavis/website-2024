@@ -27,13 +27,9 @@ export default function LandingEvent() {
         <div className={styles.clouds}>
           <Clouds />
         </div>
-        {!isDayTimer ? (
-          <div className={styles.grass}>
-            <Grass />
-          </div>
-        ) : (
-          <></>
-        )}
+        <div className={styles.grass}>
+          <Grass />
+        </div>
       </div>
     </main>
   );

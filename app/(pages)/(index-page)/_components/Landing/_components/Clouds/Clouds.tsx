@@ -6,11 +6,19 @@ import Left_Back_Cloud from '/public/index/Hero/hero_left-backcloud.png';
 import Right_Back_Cloud from '/public/index/Hero/hero_right-backcloud.png';
 import Left_Cloud from '/public/index/Hero/hero_left-cloud.png';
 import Right_Cloud from '/public/index/Hero/hero_right-cloud.png';
+import { usePathname } from 'next/navigation';
 
 export default function Clouds() {
   const { incLoaded } = useLoadCount();
+
+  const pathname = usePathname();
+  const isDayTimer = pathname.includes('dayTimer');
+
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={isDayTimer ? { paddingTop: '150px' } : {}}
+    >
       <div className={styles.cloud_back}>
         <div className={styles.cloud_back_left}>
           <Image
