@@ -5,7 +5,7 @@ const nextConfig = {
       {
         source: '/',
         destination: '/event',
-        permanent: true,
+        permanent: false,
       },
     ];
   },
