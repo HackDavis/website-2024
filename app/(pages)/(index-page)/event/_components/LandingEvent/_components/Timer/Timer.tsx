@@ -32,6 +32,7 @@ const buttonLinks: ButtonLink[] = [
 ];
 
 export default function Timer() {
+  const startTime = new Date('2024-04-27T14:00:00-07:00');
   const endTime = new Date('2024-04-28T14:00:00-07:00');
   return (
     <main className="">
@@ -46,7 +47,7 @@ export default function Timer() {
             HackDavis 2024
           </span>
         </div>
-        <DOECountDown endTime={endTime} />
+        <DOECountDown startTime={startTime} endTime={endTime} />
 
         <div className="tw-flex tw-items-center tw-justify-center tw-gap-4">
           {buttonLinks.map((button, index) => (
