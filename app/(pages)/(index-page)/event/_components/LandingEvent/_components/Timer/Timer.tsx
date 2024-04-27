@@ -64,7 +64,12 @@ export default function Timer() {
             </Link>
           ))}
         </div>
-        <div className="tw-flex tw-gap-1 tw-font-medium tw-text-dark-blue">
+        <div
+          className="tw-flex tw-gap-1 tw-font-medium tw-text-dark-blue"
+          style={{
+            fontSize: '14px',
+          }}
+        >
           <TiLocation size={20} />
           <span>University Credit Union Center @ UC Davis</span>
         </div>
