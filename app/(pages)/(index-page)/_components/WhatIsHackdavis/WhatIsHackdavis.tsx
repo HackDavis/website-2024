@@ -45,15 +45,15 @@ export default function WhatIsHackdavis() {
 
   return (
     <div ref={containerRef} className={styles.container}>
-      {!isDOE && (
-        <div className={styles.text}>
+      {
+        <div className={styles.text} style={isDOE ? { opacity: 0 } : {}}>
           <h1 className={styles.heading}>What is HackDavis?</h1>
           <p className={styles.paragraph}>
             HackDavis is one of the top 50 hackathons in the world, where over
             750 creators, and leaders come together to create for social good.
           </p>
         </div>
-      )}
+      }
       <div className={styles.logStuff}>
         <div className={styles.logLeftSection}>
           <Image
