@@ -23,9 +23,7 @@ function TimeContainer(time: TimeType) {
   );
 }
 export default function DOECountDown({ endTime }: DOECountDownProps) {
-  const [timeLeft, setTimeLeft] = useState<number>(
-    endTime.getTime() - Date.now()
-  );
+  const [_, setTimeLeft] = useState<number>(endTime.getTime() - Date.now());
 
   useEffect(() => {
     const timer = setInterval(() => {
