@@ -100,7 +100,11 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
           </li>
           {navLinks.map((link) => (
             <li key={link.name} className={styles.wordsItem}>
-              <Link href={link.slug} onClick={setInactive}>
+              <Link
+                href={link.slug}
+                onClick={setInactive}
+                className="tw-flex tw-items-center tw-gap-1"
+              >
                 <span
                   className={`${styles.navLink} ${
                     active ? styles.navLink_active : ''

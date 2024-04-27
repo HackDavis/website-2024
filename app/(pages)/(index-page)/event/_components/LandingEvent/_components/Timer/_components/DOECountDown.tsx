@@ -23,26 +23,27 @@ function TimeContainer(time: TimeType) {
   );
 }
 export default function DOECountDown({ endTime }: DOECountDownProps) {
-  const [_, setTimeLeft] = useState<number>(endTime.getTime() - Date.now());
-
+  const [timeLeft, setTimeLeft] = useState<number>(
+    new Date(endTime).getTime() - new Date().getTime()
+  );
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(endTime.getTime() - new Date().getTime());
+      setTimeLeft(new Date(endTime).getTime() - new Date().getTime());
     }, 1000);
 
     return () => clearInterval(timer);
   }, [endTime]);
 
-  // const hours = Math.floor(
-  //   (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  // );
-  // const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  // const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  const hours = Math.floor(
+    (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   //TEMPORARY B4 DOE
-  const hours = 24;
-  const minutes = 0;
-  const seconds = 0;
+  // const hours = 24;
+  // const minutes = 0;
+  // const seconds = 0;
   // console.log(timeLeft);
 
   const timeUnits = [

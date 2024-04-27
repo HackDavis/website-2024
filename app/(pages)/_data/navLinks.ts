@@ -13,9 +13,9 @@ const navLinks: NavLink[] = [
 
 const navLinksDOE: NavLink[] = [
   { name: 'Resources', slug: '/event/#resources' },
-  { name: 'Schedule', slug: '/event/schedule' },
   { name: 'Prizes', slug: '/event/#prizes' },
   { name: 'Sponsors', slug: '/event/#sponsors' },
+  { name: 'Schedule', slug: '/event/schedule' },
 ];
 
 export { navLinks, navLinksDOE, type NavLink };
