@@ -35,13 +35,7 @@ const eventDays: ScheduleDay[] = [
   },
 ];
 
-const FilterItems: string[] = [
-  'General',
-  'Activity',
-  'Workshop',
-  'Food',
-  'Hacking',
-];
+const FilterItems: string[] = ['General', 'Activity', 'Workshop', 'Hacking'];
 
 function filterEventByDay(events: Event[], day: Date): Event[] {
   const startOfDay = new Date(day);
@@ -102,7 +96,7 @@ export default function Schedule() {
       <div
         className={`${styles.scheduleContainer} tw-sticky tw-top-0 tw-z-40 tw-bg-white tw-px-1/10 tw-pt-24`}
       >
-        <div className=" tw-flex tw-flex-wrap tw-items-center tw-justify-between ">
+        <div className="tw--mt-10 tw-flex tw-flex-wrap tw-items-center tw-justify-end md:tw-mt-0 md:tw-justify-between">
           <h1 className="tw-pr-8 tw-text-4xl tw-font-semibold md:tw-text-5xl ">
             Schedule
           </h1>
@@ -133,7 +127,7 @@ export default function Schedule() {
           />
         </div>
       </div>
-      <div className="tw-px-1/10 tw-py-8">
+      <div className="tw-px-1/10 tw-py-2">
         <TimeTable
           timeChunks={timeChunks}
           startTime={startTime}
