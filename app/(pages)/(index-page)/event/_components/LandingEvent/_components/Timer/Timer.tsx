@@ -17,14 +17,14 @@ type ButtonLink = {
 
 const buttonLinks: ButtonLink[] = [
   {
-    title: 'Submit Project',
+    title: 'Vote for a Project',
     url: 'https://hackdavis-2024.devpost.com/',
     bgColor: '#173A52',
     textColor: '#FFFFFF',
   },
   {
     title: 'Get Help',
-    url: 'https://discord.gg/pjAKeaEh',
+    url: 'https://docs.google.com/forms/d/e/1FAIpQLSdbhjt8wqYyv_8NHP8z3B8d9MF1n7QXemv9ILYlLlik7Kvx9Q/viewform',
     // icon: <faDiscord />,
     icon: <FontAwesomeIcon icon={faDiscord} className="tw-w-6 md:tw-w-8 " />,
     bgColor: '#FFFFFF',
