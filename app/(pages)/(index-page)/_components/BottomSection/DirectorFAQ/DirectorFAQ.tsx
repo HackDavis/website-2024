@@ -12,18 +12,18 @@ const technicalAnswer = (
     team of developers to create and maintain the website and web applications,
     participate in code review sessions, and offer creative solutions.
     <br /> <br />
-    Qualifications: Basic knowledge of HTML, CSS, and JavaScript. Familiarity
-    with React.js is a plus. Strong desire to learn and grow in the field of web
-    development. Excellent problem-solving skills and attention to detail.
-    Ability to work well in a team and take constructive feedback positively.
-    Passion for technology and a proactive approach to keeping up with industry
-    trends.
+    <b> Qualifications: </b> Basic knowledge of HTML, CSS, and JavaScript.
+    Familiarity with React.js is a plus. Strong desire to learn and grow in the
+    field of web development. Excellent problem-solving skills and attention to
+    detail. Ability to work well in a team and take constructive feedback
+    positively. Passion for technology and a proactive approach to keeping up
+    with industry trends.
     <br /> <br />
-    Why Join Us: Opportunity to work on diverse and exciting web development
-    projects. Gain hands-on experience and improve your technical skills.
-    Collaborate with a team of motivated developers. Add impressive projects to
-    your resume. Create valuable connections in the tech industry. Personal and
-    professional growth in a student-run organization.
+    <b> Why Join Us: </b> Opportunity to work on diverse and exciting web
+    development projects. Gain hands-on experience and improve your technical
+    skills. Collaborate with a team of motivated developers. Add impressive
+    projects to your resume. Create valuable connections in the tech industry.
+    Personal and professional growth in a student-run organization.
   </>
 );
 
@@ -36,13 +36,13 @@ const operationsAnswer = (
     team and being ready to learn and develop organizational skills as you
     contribute to the success of one of the biggest hackathons in California.
     <br /> <br />
-    Qualifications: Strong organizational skills with a passion for attention to
-    detail. Quick decision-making abilities, particularly in high-pressure
-    situations. A proactive and responsible approach to tackling challenges with
-    enthusiasm and a willingness to learn and grow. Thrive in a team setting,
-    fostering a spirit of collaboration and mutual support. Excellent
-    communication skills. A passion for learning and developing organizational
-    and leadership skills.
+    <b> Qualifications: </b> Strong organizational skills with a passion for
+    attention to detail. Quick decision-making abilities, particularly in
+    high-pressure situations. A proactive and responsible approach to tackling
+    challenges with enthusiasm and a willingness to learn and grow. Thrive in a
+    team setting, fostering a spirit of collaboration and mutual support.
+    Excellent communication skills. A passion for learning and developing
+    organizational and leadership skills.
   </>
 );
 
@@ -54,15 +54,15 @@ const marketingAnswer = (
     initiatives effectively. Collaboration with fellow team members and other
     departments is a key aspect of this role.
     <br /> <br />
-    Qualifications: Enthusiasm for marketing and a strong desire to learn and
-    grow in the field. Creative mindset with the ability to think strategically.
-    Strong organizational skills and a high level of responsibility. Effective
-    time management abilities. Basic understanding of social media platforms and
-    their dynamics.
+    <b> Qualifications: </b> Enthusiasm for marketing and a strong desire to
+    learn and grow in the field. Creative mindset with the ability to think
+    strategically. Strong organizational skills and a high level of
+    responsibility. Effective time management abilities. Basic understanding of
+    social media platforms and their dynamics.
     <br /> <br />
-    Bonus Skills: Prior experience in social media advertising is a plus.
-    Photography skills are a bonus, to generate better quality content for all
-    events including the Day of Event hackathon
+    <b> Bonus Skills: </b> Prior experience in social media advertising is a
+    plus. Photography skills are a bonus, to generate better quality content for
+    all events including the Day of Event hackathon
   </>
 );
 
@@ -74,7 +74,7 @@ const sponsorshipAnswer = (
     talent for relationship building will be instrumental in fueling our
     initiatives.
     <br /> <br />
-    Qualifications: Confidence and an ability to think on your feet in
+    <b> Qualifications: </b> Confidence and an ability to think on your feet in
     negotiations. A natural talent for building and maintaining relationships.
     Proactive mindset, always on the lookout for new sponsorship opportunities.
     Strong organizational skills and the ability to manage multiple sponsorship
@@ -92,12 +92,12 @@ const financeAnswer = (
     can-do attitude will be an invaluable asset as you contribute to HackDavis'
     growth.
     <br /> <br />
-    Qualifications: Strong financial acumen with an interest in budgeting and
-    financial planning. Good understanding of cash flow management and financial
-    forecasting. Fundraising experience or a willingness to learn and engage
-    with donors and sponsors effectively. Exceptional communication skills, both
-    written and verbal. A can-do attitude, with the ability to adapt and excel
-    in a fast-paced environment.
+    <b> Qualifications: </b> Strong financial acumen with an interest in
+    budgeting and financial planning. Good understanding of cash flow management
+    and financial forecasting. Fundraising experience or a willingness to learn
+    and engage with donors and sponsors effectively. Exceptional communication
+    skills, both written and verbal. A can-do attitude, with the ability to
+    adapt and excel in a fast-paced environment.
   </>
 );
 
@@ -109,8 +109,8 @@ const externalAnswer = (
     talent for relationship building will play a vital role in coordinating the
     workshops and events.
     <br /> <br />
-    Qualifications: Spearhead the planning and execution of external events,
-    demonstrating your organizational skills and attention to detail. A
+    <b> Qualifications: </b> Spearhead the planning and execution of external
+    events, demonstrating your organizational skills and attention to detail. A
     proactive and personable demeanor, radiating energy and enthusiasm. Strong
     communication skills, both written and verbal. Confidence in connecting with
     diverse groups and individuals. Initiative to learn and develop
@@ -131,22 +131,23 @@ const designAnswer = (
     shaping the future of HackDavis. We are looking for talented individuals to
     join our design team in various roles:
     <br /> <br />
-    Brand Designer: Craft the brand identity for the Hackathon season.
+    <b> Brand Designer: </b> Craft the brand identity for the Hackathon season.
     Storytelling and experimental design. Proficiency in illustration using
     Figma and Adobe Illustrator.
     <br /> <br />
-    Product Designer: Design products that aim to delight and leave an
+    <b> Product Designer: </b> Design products that aim to delight and leave an
     impression, including apparel, stickers, and branded items. Detail-oriented
     with a focus on product specs. Conduct market research to inform design
     decisions.
     <br /> <br />
-    Content Designer: Create eye-catching, compelling content for social media
-    and printed flyers. Deep understanding of the audience. Attention to detail
-    to ensure engaging visuals.
+    <b> Content Designer: </b> Create eye-catching, compelling content for
+    social media and printed flyers. Deep understanding of the audience.
+    Attention to detail to ensure engaging visuals.
     <br /> <br />
-    UI Designer: Design beautiful and intuitive web experiences that bring joy
-    to users. Focus on responsive design and intuitive user experiences.
-    Proficiency in wireframing and creating delightful web interfaces.
+    <b> UI Designer: </b>Design beautiful and intuitive web experiences that
+    bring joy to users. Focus on responsive design and intuitive user
+    experiences. Proficiency in wireframing and creating delightful web
+    interfaces.
   </>
 );
 
