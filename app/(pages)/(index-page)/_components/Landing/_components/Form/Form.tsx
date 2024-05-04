@@ -12,7 +12,7 @@ type FormLink = {
 
 const FormLinks: { [key: string]: FormLink } = {
   Register: {
-    title: 'Register Now',
+    title: 'Director Applications',
     url: 'https://form.typeform.com/to/RvoDiujh?utm_source=WEBSITE',
   },
   Volunteer: {
