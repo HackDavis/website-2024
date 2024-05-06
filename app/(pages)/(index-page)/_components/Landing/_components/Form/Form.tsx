@@ -55,20 +55,20 @@ export default function Form() {
           <div className={styles.calendar_inner}>
             <div className={styles.calendar_inner_intel}>
               <span className={styles.calendar_inner_upper}>
-                Join us for{' '}
+                Apply to direct{' '}
                 <span className={styles.calendar_inner_upper_hackdavis}>
-                  HackDavis 2024
+                  HackDavis 2025
                 </span>
               </span>
-              <span className={styles.intelCoHostText}>co-hosted by </span>
+              {/* <span className={styles.intelCoHostText}>co-hosted by </span>
               <Image
                 src={intelLogoCoHost}
                 alt="Intel Logo"
                 className={styles.intelCoHostImage}
-              />
+              /> */}
             </div>
 
-            <div className={styles.calendar_inner_lower}>
+            {/* <div className={styles.calendar_inner_lower}>
               <CiCalendar className={styles.calendar_inner_lower_icon} />
               <span className={styles.calendar_inner_lower_text}>
                 April 27 - 28 @
@@ -76,7 +76,7 @@ export default function Form() {
                   <span>{FormLinks.Location.title}</span>
                 </Link>
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
 
