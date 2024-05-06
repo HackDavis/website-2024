@@ -221,7 +221,7 @@ const DirectorFAQ = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div id="directors" className={styles.container}>
       <div>
         <h1 className={styles.FAQText}>Teams</h1>
       </div>

@@ -7,6 +7,7 @@ const navLinks: NavLink[] = [
   { name: 'Prizes', slug: '/#prizes' },
   { name: 'Inclusion', slug: '/#everyone' },
   { name: 'FAQ', slug: '/#faq' },
+  { name: 'Teams', slug: '/#directors' },
   { name: 'Sponsors', slug: '/#sponsors' },
   { name: 'About', slug: '/about-us' },
 ];
