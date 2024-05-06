@@ -6,12 +6,12 @@ import DirectorFAQ from './DirectorFAQ/DirectorFAQ';
 export default function BottomSection() {
   return (
     <div className={style.container}>
-      <FAQ />
+      <DirectorFAQ />
+
       <div className={style.polaroids}>
         <BottomPolaroids />
       </div>
-
-      <DirectorFAQ />
+      <FAQ />
     </div>
   );
 }
