@@ -1,9 +1,9 @@
 import styles from './Form.module.scss';
-import { CiCalendar } from 'react-icons/ci';
+// import { CiCalendar } from 'react-icons/ci';
 import WordCycle from './_components/WordCycle';
 import Link from 'next/link';
-import Image from 'next/image';
-import intelLogoCoHost from 'public/index/Sponsors/intel.png';
+// import Image from 'next/image';
+// import intelLogoCoHost from 'public/index/Sponsors/intel.png';
 
 type FormLink = {
   title: string;
