@@ -7,11 +7,10 @@ export default function BottomSection() {
   return (
     <div className={style.container}>
       <DirectorFAQ />
-
+      <FAQ />
       <div className={style.polaroids}>
         <BottomPolaroids />
       </div>
-      <FAQ />
     </div>
   );
 }

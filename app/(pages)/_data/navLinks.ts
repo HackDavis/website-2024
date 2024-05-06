@@ -4,9 +4,9 @@ interface NavLink {
 }
 const navLinks: NavLink[] = [
   { name: 'Impact', slug: '/#whatishackdavis' },
-  { name: 'Prizes', slug: '/#prizes' },
+  // { name: 'Prizes', slug: '/#prizes' },
   { name: 'Inclusion', slug: '/#everyone' },
-  { name: 'Teams', slug: '/#directors' },
+  { name: 'Teams', slug: '/#teams' },
   { name: 'FAQ', slug: '/#faq' },
   { name: 'Sponsors', slug: '/#sponsors' },
   { name: 'About', slug: '/about-us' },
