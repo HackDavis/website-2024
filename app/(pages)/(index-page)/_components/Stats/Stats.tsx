@@ -29,7 +29,7 @@ export default function Stats() {
       <div className={styles.button_container}>
         <a href="mailto:team@hackdavis.io">
           <div className={styles.button}>
-            <span>Sponsor 2024</span>
+            <span>Sponsor 2025</span>
           </div>
         </a>
       </div>
