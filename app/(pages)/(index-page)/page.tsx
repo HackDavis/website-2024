@@ -11,7 +11,6 @@ import RiverCow from './_components/RiverCow/RiverCow';
 import PrizeList from '../(event-page)/event/_components/Prizes/PrizeList';
 import Resources from './_components/Resources/Resources';
 import { resourcePackDOE } from '../_data/resourceData';
-import DirectorFAQ from './_components/BottomSection/DirectorFAQ/DirectorFAQ';
 
 export default function Home() {
   return (

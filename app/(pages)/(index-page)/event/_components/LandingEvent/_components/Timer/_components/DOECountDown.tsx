@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useCallback } from 'react';
 
 interface DOECountDownProps {
   startTime: Date;
@@ -27,7 +28,7 @@ export default function DOECountDown({
   startTime,
   endTime,
 }: DOECountDownProps) {
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     const now = new Date().getTime();
     const start = new Date(startTime).getTime();
     const end = new Date(endTime).getTime();
@@ -37,7 +38,7 @@ export default function DOECountDown({
     }
 
     return Math.max(end - now, 0);
-  };
+  }, [startTime, endTime]);
 
   const [timeLeft, setTimeLeft] = useState<number | null>(calculateTimeLeft());
 
@@ -47,7 +48,7 @@ export default function DOECountDown({
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [endTime]);
+  }, [calculateTimeLeft, endTime]);
 
   let hours, minutes, seconds;
 
