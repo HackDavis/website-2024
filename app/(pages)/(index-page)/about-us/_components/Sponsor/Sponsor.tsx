@@ -93,7 +93,7 @@ export default function Sponsor() {
               ))}
             </div>
             <a href="mailto:team@hackdavis.io" className={styles.button}>
-              <span className={styles['button-words']}>Sponsor 2024</span>
+              <span className={styles['button-words']}>Sponsor 2025</span>
             </a>
           </div>
           <div className={styles.cow_duck}>
