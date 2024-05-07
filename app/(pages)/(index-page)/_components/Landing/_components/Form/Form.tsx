@@ -2,6 +2,7 @@ import styles from './Form.module.scss';
 // import { CiCalendar } from 'react-icons/ci';
 import WordCycle from './_components/WordCycle';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'; // Import useRouter
 // import Image from 'next/image';
 // import intelLogoCoHost from 'public/index/Sponsors/intel.png';
 
@@ -20,7 +21,7 @@ const FormLinks: { [key: string]: FormLink } = {
     url: 'https://form.typeform.com/to/MY8EI47D',
   },
   Mentor: { title: 'Mentor', url: 'https://form.typeform.com/to/cvy9LlyR' },
-  Sponsor: { title: 'Sponsor', url: 'mailto:team@hackdavis.io' },
+  Teams: { title: 'Team Descriptions', url: 'https://hackdavis.io/#teams' },
   Calendar: {
     title: 'HackDavis 2024 Calendar',
     url: 'https://drive.google.com/file/d/1AGBLnS55qNEuGNXh9VLSdx2PaHsGVgE7/view?usp=drive_link',
@@ -36,6 +37,15 @@ const FormLinks: { [key: string]: FormLink } = {
 };
 
 export default function Form() {
+  /*
+   * takes the current url and assigns it to the teams section of the page
+   * enables the "Team Descriptions" button to scroll to teams on click, similar to navbar
+   */
+  const pathname = usePathname();
+  const teamsUrl =
+    pathname.substring(0, pathname.lastIndexOf('/') + 1) + '#teams';
+  FormLinks.Teams.url = teamsUrl;
+
   return (
     <div className={styles.background}>
       <div className={styles.container}>
@@ -87,8 +97,8 @@ export default function Form() {
           >
             <p>{FormLinks.Register.title}</p>
           </Link>
-          <a href={FormLinks.Sponsor.url} className={styles.buttons_sponsor}>
-            <p>{FormLinks.Sponsor.title}</p>
+          <a href={FormLinks.Teams.url} className={styles.buttons_sponsor}>
+            <p>{FormLinks.Teams.title}</p>
           </a>
         </div>
         {/* <div className={styles.links}>
