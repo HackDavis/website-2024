@@ -7,7 +7,7 @@ export default function Landing() {
   return (
     <main className="">
       <div className={styles.landing_container}>
-        <div className={styles.form}>
+        <div className="tw-absolute tw-left-20 tw-top-1/4 tw-z-10">
           <Form />
         </div>
         <div className={styles.clouds}>
