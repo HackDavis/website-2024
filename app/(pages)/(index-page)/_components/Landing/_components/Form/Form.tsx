@@ -47,73 +47,10 @@ export default function Form() {
   FormLinks.Teams.url = teamsUrl;
 
   return (
-    <div className={styles.background}>
-      <div className={styles.container}>
-        <div className={styles.title}>
-          <span className={styles.title_ready}>
-            <span style={{ opacity: 0.75, fontFamily: 'Metropolis' }}>
-              Ready to
-            </span>
-            <span className={styles.title_ready_wordCycle}>
-              <WordCycle />
-            </span>
-          </span>
-
-          <span className={styles.title_social}>social good?</span>
-        </div>
-        <div className={styles.calendar}>
-          <div className={styles.calendar_inner}>
-            <div className={styles.calendar_inner_intel}>
-              <span className={styles.calendar_inner_upper}>
-                Apply to direct{' '}
-                <span className={styles.calendar_inner_upper_hackdavis}>
-                  HackDavis 2025
-                </span>
-              </span>
-              {/* <span className={styles.intelCoHostText}>co-hosted by </span>
-              <Image
-                src={intelLogoCoHost}
-                alt="Intel Logo"
-                className={styles.intelCoHostImage}
-              /> */}
-            </div>
-
-            {/* <div className={styles.calendar_inner_lower}>
-              <CiCalendar className={styles.calendar_inner_lower_icon} />
-              <span className={styles.calendar_inner_lower_text}>
-                April 27 - 28 @
-                <Link href={FormLinks.Location.url}>
-                  <span>{FormLinks.Location.title}</span>
-                </Link>
-              </span>
-            </div> */}
-          </div>
-        </div>
-
-        <div className={styles.buttons}>
-          <Link
-            href={FormLinks.Register.url}
-            className={styles.buttons_register}
-          >
-            <p>{FormLinks.Register.title}</p>
-          </Link>
-          <a href={FormLinks.Teams.url} className={styles.buttons_sponsor}>
-            <p>{FormLinks.Teams.title}</p>
-          </a>
-        </div>
-        {/* <div className={styles.links}>
-          <div className={styles.links_calendar}>
-            Apply to be a
-            <Link href={FormLinks.Volunteer.url}>
-              <span className={styles.link}>{FormLinks.Volunteer.title}</span>
-            </Link>
-            or
-            <Link href={FormLinks.Mentor.url}>
-              <span>{FormLinks.Mentor.title}</span>
-            </Link>
-          </div>
-        </div> */}
+    <main className="tw-flex">
+      <div className="">
+        <h1>HackDavis 2025</h1>
       </div>
-    </div>
+    </main>
   );
 }

@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import styles from './Grass.module.scss';
-import Polaroids from './_components/Polaroids/Polaroids';
-import Foreground from './_components/Foreground/Foreground';
 import { useLoadCount } from '@hooks/useLoadCount';
 // import Far_Grass from '/public/index/Hero/hero_far-grass.png';
 import Edit_Far_Grass from '/public/index/Hero/hero_far-grass-edit.png';
@@ -74,18 +72,6 @@ export default function Grass() {
           )}
         </div>
       </div>
-
-      {!isDayTimer && (
-        <div className={styles.foreground}>
-          <Foreground />
-        </div>
-      )}
-
-      {!isDayTimer && (
-        <div className={styles.polaroids}>
-          <Polaroids />
-        </div>
-      )}
     </div>
   );
 }
