@@ -7,7 +7,7 @@ export default function Form() {
 
   return (
     <main className="tw-flex tw-text-blue-950">
-      <div className="tw-max-w-lg tw-border">
+      <div className="tw-w-60 sm:tw-w-1/2">
         <h1 className="tw-font-bold">HackDavis 2025!</h1>
         <div className="tw-flex tw-flex-col tw-gap-5">
           <p className="tw-text-xl">
