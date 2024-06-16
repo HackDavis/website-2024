@@ -6,27 +6,27 @@ export default function Form() {
    */
 
   return (
-    <main className="tw-flex tw-text-blue-950">
-      <div className="tw-w-60 sm:tw-w-1/2">
+    <main className="sm:tw-w-500px tw-w-330px tw-flex tw-text-blue-950">
+      <div className="">
         <h1 className="tw-font-bold">HackDavis 2025!</h1>
         <div className="tw-flex tw-flex-col tw-gap-5">
-          <p className="tw-text-xl">
+          <p className="sm:tw-text-xl">
             Welcome! with 900+ participants, HackDavis is the one of the largest
             collegiate hackathon in California.{' '}
           </p>
           <div className="tw-flex tw-items-center tw-gap-2">
-            <LucideCalendar />
-            <p className="tw-text-xl">
+            <LucideCalendar size={20} />
+            <p className="sm:tw-text-xl">
               Be the first to know about our next event!
             </p>
           </div>
-          <div className="tw-flex">
+          <div className="tw-flex tw-gap-2">
             <input
               type="email"
               placeholder="hackdavis@ucdavis.com"
-              className="tw-w-full tw-rounded tw-border tw-p-2"
+              className="tw-w-full tw-rounded-3xl tw-border tw-px-6 tw-py-2 tw-font-bold"
             />
-            <button className="tw-rounded tw-bg-blue-950 tw-p-2 tw-text-white">
+            <button className="tw-rounded-3xl tw-bg-blue-950 tw-p-2 tw-px-8 tw-text-white">
               Submit
             </button>
           </div>

@@ -44,6 +44,10 @@ const config = {
         'half-screen': '50vh',
         'screen-4/5': '80vh',
       },
+      width: {
+        '500px': '500px',
+        '330px': '360px',
+      },
       colors: {
         'dark-blue': '#173a52',
         'teal-hack': '005271',

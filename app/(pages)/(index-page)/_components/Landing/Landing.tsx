@@ -14,7 +14,7 @@ export default function Landing() {
           objectFit="cover"
         />
       </div>
-      <div className="tw-absolute tw-left-10 tw-top-1/4 tw-z-10 sm:tw-left-20">
+      <div className="tw-absolute tw-left-10 tw-top-1/4 tw-z-10 sm:tw-left-36">
         <Form />
       </div>
     </main>
