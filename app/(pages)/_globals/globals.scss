@@ -101,8 +101,13 @@ a {
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body{
-    overflow: hidden;
+    overflow-x: hidden;
+    scrollbar-width: none;
 }
 
 h1 {

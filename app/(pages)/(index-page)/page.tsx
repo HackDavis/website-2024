@@ -5,7 +5,7 @@ import Landing from './_components/Landing/Landing';
 export default function Home() {
   return (
     <main className="tw-overflow-hidden">
-      <div id="landing">
+      <div id="landing" className="tw-overflow-x-hidden">
         <Landing />
       </div>
     </main>
