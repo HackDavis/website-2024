@@ -1,0 +1,42 @@
+name: Staging Deployment
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  deploy_staging:
+    name: Deploy Staging
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: ${{ vars.ENV_URL }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: feature-branch # Specify the branch you want to deploy
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.1.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint and build code, then publish to Vercel
+        run: >
+          vercel
+          --token ${{ secrets.VERCEL_TOKEN }}
+          -n ${{ vars.VERCEL_PROJECT }}
+          --yes
+          --prod
+          --env MONGODB_URI=${{ secrets.MONGODB_URI }}
+          --build-env MONGODB_URI=${{ secrets.MONGODB_URI }}
+          -b feat/PostDOE  # Specify the branch you want to deploy
+
+      - name: Success
+        run: echo "🚀  Deploy successful - BLAST OFF WOO! (woot woot) !!! 🐕 🐕 🐕 🚀 "
