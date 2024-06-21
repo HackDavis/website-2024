@@ -3,7 +3,7 @@ name: Staging Deployment
 on:
   push:
     branches:
-      - 'main'
+      - 'feat/PostDOE'
 
 jobs:
   deploy_staging:
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: feature-branch # Specify the branch you want to deploy
+          ref: feat/PostDOE 
 
       - name: Install node
         uses: actions/setup-node@v4
@@ -36,7 +36,7 @@ jobs:
           --prod
           --env MONGODB_URI=${{ secrets.MONGODB_URI }}
           --build-env MONGODB_URI=${{ secrets.MONGODB_URI }}
-          -b feat/PostDOE  # Specify the branch you want to deploy
+          -b feat/PostDOE
 
       - name: Success
         run: echo "🚀  Deploy successful - BLAST OFF WOO! (woot woot) !!! 🐕 🐕 🐕 🚀 "
