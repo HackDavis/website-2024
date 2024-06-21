@@ -117,18 +117,13 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
           ))}
         </ul>
         <Link
-          href="https://mlh.io/"
+          href="mailto:team@hackdavis.io"
           target="_blank"
-          className={styles.mlhBadge}
+          className="tw-absolute tw-right-10 tw-top-4 tw-z-10"
         >
-          <Image
-            src="/navbar/MLH_Badge.svg"
-            alt="MLH badge"
-            width={100}
-            height={100}
-            className={styles.mlhBadge}
-            priority={true}
-          />
+          <div className="tw-w-fit tw-text-nowrap tw-rounded-3xl tw-bg-white tw-p-4 tw-font-bold tw-text-slate-900">
+            <p>Sponsor Us</p>
+          </div>
         </Link>
       </nav>
     </div>

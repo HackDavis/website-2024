@@ -23,3 +23,8 @@ export async function getDatabase() {
   const client = await getClient();
   return client.db('teamDB');
 }
+
+export async function getMailCollection() {
+  const db = await getDatabase();
+  return db.collection('mailing_list25');
+}

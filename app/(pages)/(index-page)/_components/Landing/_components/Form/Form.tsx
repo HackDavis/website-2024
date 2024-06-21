@@ -1,12 +1,23 @@
 import { LucideCalendar } from 'lucide-react';
+import { addEmail } from '@/app/(api)/_actions/mailingList/mailingList25';
+import { useState } from 'react';
+
 export default function Form() {
-  /*
-   * takes the current url and assigns it to the teams section of the page
-   * enables the "Team Descriptions" button to scroll to teams on click, similar to navbar
-   */
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent the default form submission
+    try {
+      await addEmail(email); // Call the addEmail function with the email state
+      setEmail(''); // Reset the email state
+    } catch (error) {
+      // Handle any errors that occur during the email addition
+      console.error('Error adding email:', error);
+    }
+  };
 
   return (
-    <main className="sm:tw-w-500px tw-w-330px tw-flex tw-text-blue-950">
+    <main className="tw-flex tw-w-330px tw-text-blue-950 sm:tw-w-500px">
       <div className="">
         <h1 className="tw-font-bold">HackDavis 2025!</h1>
         <div className="tw-flex tw-flex-col tw-gap-5">
@@ -20,16 +31,23 @@ export default function Form() {
               Be the first to know about our next event!
             </p>
           </div>
-          <div className="tw-flex tw-gap-2">
-            <input
-              type="email"
-              placeholder="hackdavis@ucdavis.com"
-              className="tw-w-full tw-rounded-3xl tw-border tw-px-6 tw-py-2 tw-font-bold"
-            />
-            <button className="tw-rounded-3xl tw-bg-blue-950 tw-p-2 tw-px-8 tw-text-white">
-              Submit
-            </button>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="tw-flex tw-gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="hackdavis@ucdavis.com"
+                className="tw-w-full tw-rounded-3xl tw-border tw-px-6 tw-py-2 tw-font-bold"
+              />
+              <button
+                type="submit"
+                className="tw-rounded-3xl tw-bg-blue-950 tw-p-2 tw-px-8 tw-text-white"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </main>
