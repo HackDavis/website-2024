@@ -25,29 +25,31 @@ export default function Form() {
             Welcome! with 900+ participants, HackDavis is the one of the largest
             collegiate hackathon in California.{' '}
           </p>
-          <div className="tw-flex tw-items-center tw-gap-2">
-            <LucideCalendar size={20} />
-            <p className="sm:tw-text-xl">
-              Be the first to know about our next event!
-            </p>
-          </div>
-          <form onSubmit={handleSubmit}>
-            <div className="tw-flex tw-gap-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="hackdavis@ucdavis.com"
-                className="tw-w-full tw-rounded-3xl tw-border tw-px-6 tw-py-2 tw-font-bold"
-              />
-              <button
-                type="submit"
-                className="tw-rounded-3xl tw-bg-blue-950 tw-p-2 tw-px-8 tw-text-white"
-              >
-                Submit
-              </button>
+          <div className="tw-flex tw-flex-col tw-gap-2">
+            <div className="tw-flex tw-items-center tw-gap-2">
+              <LucideCalendar size={20} />
+              <p className="sm:tw-text-xl">
+                Be the first to know about our next event!
+              </p>
             </div>
-          </form>
+            <form onSubmit={handleSubmit}>
+              <div className="tw-flex tw-gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="hackdavis@ucdavis.com"
+                  className="tw-w-full tw-rounded-2xl tw-border-2  tw-border-blue-950 tw-px-6 tw-py-2 tw-font-bold tw-text-slate-400"
+                />
+                <button
+                  type="submit"
+                  className="tw-rounded-3xl tw-bg-blue-950 tw-p-2 tw-px-8 tw-text-white"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </main>

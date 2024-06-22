@@ -121,7 +121,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
           target="_blank"
           className="tw-absolute tw-right-10 tw-top-4 tw-z-10"
         >
-          <div className="tw-w-fit tw-text-nowrap tw-rounded-3xl tw-bg-white tw-p-4 tw-font-bold tw-text-slate-900">
+          <div className="tw-w-fit tw-text-nowrap tw-rounded-3xl tw-bg-white tw-p-4 tw-font-bold tw-text-slate-900 tw-shadow-lg">
             <p>Sponsor Us</p>
           </div>
         </Link>
