@@ -1,4 +1,4 @@
-name: PostDOE Deployment
+name: PostDOE Staging Deployment
 
 on:
   push:
