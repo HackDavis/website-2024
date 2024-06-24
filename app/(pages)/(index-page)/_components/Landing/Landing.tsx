@@ -8,7 +8,7 @@ export default function Landing() {
       <div className="tw-relative tw-h-screen tw-w-full tw-min-w-full">
         <Image src={PostDoeIMG} alt="PostDoeIMG" fill objectFit="cover" />
       </div>
-      <div className="tw-absolute tw-left-8 tw-top-1/4 tw-z-10 md:tw-left-36">
+      <div className="tw-absolute tw-left-6 tw-top-1/4 tw-z-10 tw-max-w-[calc(100%-3rem)] md:tw-left-36">
         <Form />
       </div>
     </main>

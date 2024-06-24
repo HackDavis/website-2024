@@ -17,7 +17,7 @@ export default function Form() {
   };
 
   return (
-    <main className="tw-flex tw-w-330px tw-max-w-[calc(100%-1rem)] tw-text-blue-950 sm:tw-w-500px">
+    <main className="tw-flex tw-w-330px tw-max-w-full tw-text-blue-950 sm:tw-w-500px">
       <div className="tw-relative">
         <h1 className="tw-text-3xl tw-font-bold md:tw-text-5xl">
           HackDavis 2025!
@@ -31,7 +31,7 @@ export default function Form() {
             <div className="tw-flex tw-items-start tw-gap-2 md:tw-items-center">
               <LucideCalendar size={20} />
               <p className="sm:tw-text-xl">
-                Be the first to know about our next event!
+                Be the first to know about our event!
               </p>
             </div>
             <form onSubmit={handleSubmit}>
