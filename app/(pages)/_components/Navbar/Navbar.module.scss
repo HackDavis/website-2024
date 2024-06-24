@@ -297,10 +297,14 @@ $mobile-breakpoint: 425px;
         display: block; // Show the menu icon on smaller screens
         // position: fixed;
         position: absolute;
-        right: 2rem;
+        left: 1.5rem;
         top: 2rem;
         cursor: pointer;
         z-index: 9999;
+    }
+
+    .hamburger{
+        left: 0px;
     }
 
     .words {

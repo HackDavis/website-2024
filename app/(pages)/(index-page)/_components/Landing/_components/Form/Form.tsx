@@ -17,16 +17,18 @@ export default function Form() {
   };
 
   return (
-    <main className="tw-flex tw-w-330px tw-text-blue-950 sm:tw-w-500px">
-      <div className="">
-        <h1 className="tw-font-bold">HackDavis 2025!</h1>
-        <div className="tw-flex tw-flex-col tw-gap-5">
-          <p className="sm:tw-text-xl">
+    <main className="tw-flex tw-w-330px tw-max-w-[calc(100%-1rem)] tw-text-blue-950 sm:tw-w-500px">
+      <div className="tw-relative">
+        <h1 className="tw-text-3xl tw-font-bold md:tw-text-5xl">
+          HackDavis 2025!
+        </h1>
+        <div className="tw-right-6 tw-flex tw-flex-col tw-gap-5 tw-text-base md:tw-text-xl">
+          <p className="">
             Welcome! with 900+ participants, HackDavis is the one of the largest
             collegiate hackathon in California.{' '}
           </p>
           <div className="tw-flex tw-flex-col tw-gap-2">
-            <div className="tw-flex tw-items-center tw-gap-2">
+            <div className="tw-flex tw-items-start tw-gap-2 md:tw-items-center">
               <LucideCalendar size={20} />
               <p className="sm:tw-text-xl">
                 Be the first to know about our next event!
@@ -39,7 +41,7 @@ export default function Form() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="hackdavis@ucdavis.com"
-                  className="tw-w-full tw-rounded-2xl tw-border-2  tw-border-blue-950 tw-px-6 tw-py-2 tw-font-bold tw-text-slate-400"
+                  className="tw-w-full tw-rounded-2xl tw-border-2 tw-border-blue-950 tw-px-6 tw-py-2 tw-text-sm tw-font-bold tw-text-slate-400 md:tw-text-xl"
                 />
                 <button
                   type="submit"
