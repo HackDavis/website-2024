@@ -4,24 +4,13 @@ $mobile-breakpoint: 425px;
 
 .container{
     position: fixed;
-    position: fixed;
     width: 100%; 
     display: flex;
     z-index: 100;
-    transition: top 0.5s; // Smooth transition for moving up and down
     top: 0;
     backdrop-filter: blur(10px);
     background-color: rgba(255,255,255, 0.5);
-    transition: background-color 0.5s ease-in-out, top 0.5s;
-    // height: 10%;
-    
-    transition: top 0.5s; // Smooth transition for moving up and down
-    top: 0;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255,255,255, 0.5);
-    transition: background-color 0.5s ease-in-out, top 0.5s;
-    // height: 10%;
-    
+    transition: background-color 0.5s ease-in-out, top 0.5s; // Smooth transition for moving up and down
 
     &_sticky{
         position: fixed;
@@ -31,7 +20,6 @@ $mobile-breakpoint: 425px;
         z-index: 100;
         animation: dropDown 0.5s ease-in-out forwards;
     }
-
 
     &_return_up{
         animation: returnUp 0.5s ease-in-out forwards;
@@ -100,7 +88,6 @@ $mobile-breakpoint: 425px;
     }
 }
 
-
 .words {
     display: flex; // Default display on larger screens
     gap: 1.5rem;
@@ -156,8 +143,6 @@ $mobile-breakpoint: 425px;
 
 
 }
-
-
 
 .mlhBadge{
     width: 4.31613rem;
@@ -258,10 +243,8 @@ $mobile-breakpoint: 425px;
 
 @media (max-width: 610px) {
     .container{
-        // background-color: transparent;
-        // backdrop-filter: none;
-        height: 10%;
-        animation: retract 0.3s ease-in-out forwards;
+        // height: 10%;
+        // animation: retract 0.3s ease-in-out forwards;
 
         &_active{
             position: fixed;
