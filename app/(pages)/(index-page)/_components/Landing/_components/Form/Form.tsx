@@ -40,8 +40,9 @@ export default function Form() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="hackdavis@ucdavis.com"
+                  placeholder="Enter your email"
                   className="tw-w-full tw-rounded-2xl tw-border-2 tw-border-blue-950 tw-px-6 tw-py-2 tw-text-sm tw-font-bold tw-text-slate-400 md:tw-text-xl"
+                  // style={{ outline: 'none' }}
                 />
                 <button
                   type="submit"
