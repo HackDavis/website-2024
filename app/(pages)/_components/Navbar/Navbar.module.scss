@@ -67,7 +67,7 @@ $mobile-breakpoint: 425px;
     background-color: transparent;
     position: relative; // Added for positioning the menu icon
     width: 100%;
-
+    justify-content: space-between;
 }
 
 .nav ul {
@@ -82,6 +82,10 @@ $mobile-breakpoint: 425px;
     display: inline-block;
 }
 
+.sponsor_button{
+    width: fit-content;
+    z-index: 10;
+}
 
 .logo{
     width: 3.125rem;
@@ -292,7 +296,11 @@ $mobile-breakpoint: 425px;
             // height: 300px;
         }
     }
-
+    .sponsor_button{
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+    }
     .menuIcon {
         display: block; // Show the menu icon on smaller screens
         // position: fixed;

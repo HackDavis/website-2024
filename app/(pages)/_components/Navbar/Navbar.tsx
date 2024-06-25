@@ -119,7 +119,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
         <Link
           href="mailto:team@hackdavis.io"
           target="_blank"
-          className="tw-absolute tw-right-10 tw-top-4 tw-z-10"
+          className={styles.sponsor_button}
         >
           <div className="tw-text-nowrap tw-rounded-2xl tw-bg-white tw-px-6 tw-py-3 tw-font-bold tw-text-slate-900 tw-shadow-lg">
             <p>Sponsor Us</p>

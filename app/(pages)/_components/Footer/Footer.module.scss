@@ -73,7 +73,7 @@ $brand-icon-color: white;
         }
     }
     .arrowToTop {
-        display: flex;
+        display: none;
         flex-direction: row;
         color:white;
         gap: 8px;
@@ -178,7 +178,7 @@ $brand-icon-color: white;
         position: absolute;
         top: 18px;
         right: 31px;
-        display: flex;
+        display: none;
         flex-direction: row;
         color:white;
         gap: 8px;
