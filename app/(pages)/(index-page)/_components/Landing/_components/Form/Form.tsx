@@ -24,8 +24,8 @@ export default function Form() {
         </h1>
         <div className="tw-right-6 tw-flex tw-flex-col tw-gap-5 tw-text-base md:tw-text-xl">
           <p className="">
-            Welcome! with 900+ participants, HackDavis is the one of the largest
-            collegiate hackathon in California.{' '}
+            Welcome! With 900+ participants, HackDavis is one of the largest
+            collegiate hackathons in California.{' '}
           </p>
           <div className="tw-flex tw-flex-col tw-gap-2">
             <div className="tw-flex tw-items-start tw-gap-2 md:tw-items-center">
