@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Sponsor.module.scss';
 import Image, { StaticImageData } from 'next/image';
-import Cow_and_duck from '/public/about-us-icon/cow_and_duck.png';
 import CountUp from '@components/CountUp/CountUp';
 import Polaroid1 from '/public/about-us-icon/Polaroid1.png';
 import Polaroid2 from '/public/about-us-icon/Polaroid2.png';
@@ -95,9 +94,6 @@ export default function Sponsor() {
             <a href="mailto:team@hackdavis.io" className={styles.button}>
               <span className={styles['button-words']}>Sponsor 2025</span>
             </a>
-          </div>
-          <div className={styles.cow_duck}>
-            <Image src={Cow_and_duck} alt="Cow and duck" layout="responsive" />
           </div>
         </div>
         <PolaroidStack images={images} index={0} />
