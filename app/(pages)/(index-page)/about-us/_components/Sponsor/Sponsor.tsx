@@ -80,7 +80,7 @@ export default function Sponsor() {
               {hdStats.map((item) => (
                 <div key={item.text} className={styles['number-word-pair']}>
                   <span className={styles.number}>
-                  <CountUp
+                    <CountUp
                       end={item.stat}
                       duration={item.duration}
                       prefix={item.prefix}
