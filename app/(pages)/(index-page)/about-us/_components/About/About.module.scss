@@ -10,7 +10,8 @@ $mobile-breakpoint: 758px;
     background: #FFF;
     font-family: "Metropolis", sans-serif;
     padding: 5%;
-    padding-bottom: 10%;
+    padding-bottom: 0;
+    padding-top: 0;
 
     @media (max-width: $big-tablet-breakpoint) {
         padding: 10%;

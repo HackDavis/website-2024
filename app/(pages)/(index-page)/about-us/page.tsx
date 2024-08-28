@@ -7,13 +7,17 @@ import RegisterNow from './_components/RegisterNow/RegisterNow';
 import Sponsor from './_components/Sponsor/Sponsor';
 import Sponsors from '../_components/Sponsors/Sponsors';
 
+import LineBreak from './_components/LineBreak';
 export default function Home() {
   return (
-    <main style={{ overflow: 'hidden' }}>
+    <main style={{ overflow: 'hidden', backgroundColor: 'transparent' }}>
       <Hello />
       <Sponsor />
+      <LineBreak />
       <About />
+      <LineBreak />
       <OurTeam />
+      <LineBreak />
       <Archive />
       <RegisterNow />
       <div id="sponsors">
