@@ -3,7 +3,7 @@ $mobile-breakpoint: 425px;
 $tablet-breakpoint: 768px;
 
 .hello_container{
-    background: var(--gradient, linear-gradient(-284deg, #FCFCD1 9.72%, #B2E7DD 44.61%, #76D6E6 79.5%));
+    background: #60C0D9;
     width: 100%; 
     overflow: hidden;
     display: flex;
@@ -13,15 +13,16 @@ $tablet-breakpoint: 768px;
     padding-top: 15%;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 0;
+    padding-bottom: 40%;
+    height: 80vh;
 }
 
 .title{
     // border: 1px solid black; 
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 58vw;
+    z-index: 1;
 
 
     @media (max-width: $tablet-breakpoint) {
@@ -31,30 +32,26 @@ $tablet-breakpoint: 768px;
     }
     
     h1{
-        font-family: 'Metropolis', sans-serif;
-        color: var(--teal-1, #005271);
-        text-align: left;
-        font-size: 4rem;
+        color: #FFF;
+        font-family: Metropolis;
+        font-size: 110.095px;
         font-style: normal;
-        font-weight: 800;
-        line-height: normal;
-        letter-spacing: 1.44px;
+        font-weight: 700;
+        line-height: 111.5%; /* 122.755px */
+        letter-spacing: 2.202px;
 
         @media (max-width: $tablet-breakpoint) {
             font-size: 48px;
         }
     }
     p{
-        margin-top: 48px;
-        color: var(--teal-1, #005271);
-        text-align: left;
-        font-family: "Metropolis", sans-serif;
-        font-size: 2rem;
+        color: #FFF;
+        font-family: Metropolis;
+        font-size: 28px;
         font-style: normal;
         font-weight: 600;
-        line-height: 150%; /* 60px */
-        letter-spacing: 0.8px;
-        text-align: center;
+        line-height: 150%; /* 42px */
+        letter-spacing: 0.56px;
 
         @media (max-width: $tablet-breakpoint) {
             font-size: 32px;
@@ -72,6 +69,34 @@ $tablet-breakpoint: 768px;
     }
 }
 
+.cloudRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 57%;
+    z-index: 0;
+}
+.cloud2 {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    width: 57%;
+    z-index: 0;
+}
+
+.frontGrass {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 50%;
+}
+
+.midGrass {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 30%;
+}
 
 @media (max-width: $mobile-breakpoint) {
     .hello_container{
