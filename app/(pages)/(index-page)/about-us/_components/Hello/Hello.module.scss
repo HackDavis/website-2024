@@ -115,6 +115,7 @@ $tablet-breakpoint: 768px;
     right: 35%;
     width: 12%;
 }
+
 .charStack {
     position: absolute;
     z-index: 4;
@@ -124,34 +125,97 @@ $tablet-breakpoint: 768px;
 }
 
 @media (max-width: $mobile-breakpoint) {
-    .hello_container{
-        padding-top: 30%;
-        padding-left: 32px;
-        padding-right: 32px; 
-        padding-bottom: 0;
+    .hello_container {
+        position: relative;
+        width: 100vw;
+        height: 67vh;
     }
+
     .title{
-        width: 83vw;
+        width: 90vw;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0; 
+        margin-top: -65%;
 
         h1{
-            font-size: 3rem;
-            line-height: 58px;
-            letter-spacing: 0.96px;
-            text-align: left;
-            color: var(--teal-1, #005271);
+            color: #FFF;
+            font-family: Metropolis;
+            font-size: 60px;
             font-style: normal;
             font-weight: 700;
-            line-height: 120%; /* 57.6px */
-            letter-spacing: 0.96px;
+            line-height: 111.5%; /* 66.9px */
+            letter-spacing: 1.2px;
         }
         p{
-            font-size: 1.25rem;
-            line-height: 36px;
-            letter-spacing: 0.48px;
-            text-align: left;
+            color: #FFF;
+
+            text-align: center;
+            font-family: Metropolis;
+            font-size: 14px;
+            font-style: normal;
             font-weight: 500;
-            margin-top: 24px;
+            line-height: 150%; /* 21px */
+            letter-spacing: 0.28px;
         }
+    }
+
+    .cloudRight {
+        position: absolute;
+        top: 40%;
+        right: 0%;
+        width: 57%;
+        z-index: 0;
+    }
+
+    .cloudLeft {
+        position: absolute;
+        top: 35%;
+        left: 0%;
+        width: 57%;
+        z-index: 0;
+    }
+    
+    .frontGrass {
+        position: absolute;
+        z-index: 5;
+        top: 73%;
+        left: -50%;
+        width: 900px;
+        max-width: 1000px;
+    }
+    
+    .midGrass {
+        position: absolute;
+        z-index: 2;
+        left: -50%;
+        top: 50%;
+        width: 900px;
+        max-width: 1000px;
+    }
+    
+    .transLogo {
+        position: absolute;
+        z-index: 3;
+        right: 44%;
+        top: 45%;
+        width: 70%;
+    }
+    
+    .frog {
+        position: absolute;
+        z-index: 2;
+        top: 0%;
+        right: 15%;
+        width: 38%;
+    }
+    
+    .charStack {
+        position: absolute;
+        z-index: 4;
+        top: 33%;
+        right: 0%;
+        width: 78%;
     }
     
 }

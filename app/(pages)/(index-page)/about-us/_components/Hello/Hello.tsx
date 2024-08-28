@@ -26,7 +26,7 @@ const Hello = () => {
           alt="Banner"
           width={4000}
           height={100}
-          className={styles.cloud2}
+          className={styles.cloudLeft}
         />
 
         <Image
