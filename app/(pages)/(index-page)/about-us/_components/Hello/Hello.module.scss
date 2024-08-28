@@ -13,7 +13,7 @@ $tablet-breakpoint: 768px;
     padding-top: 15%;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 40%;
+    padding-bottom: 48%;
     height: 80vh;
 }
 
@@ -21,8 +21,10 @@ $tablet-breakpoint: 768px;
     // border: 1px solid black; 
     display: flex;
     flex-direction: column;
-    width: 58vw;
+    width: 90vw;
     z-index: 1;
+    padding-left: 12%;
+    padding-right: 48%;
 
 
     @media (max-width: $tablet-breakpoint) {
@@ -86,16 +88,39 @@ $tablet-breakpoint: 768px;
 
 .frontGrass {
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     left: 0;
-    top: 50%;
+    top: 60%;
 }
 
 .midGrass {
     position: absolute;
     z-index: 2;
     left: 0;
+    top: 40%;
+}
+
+.transLogo {
+    position: absolute;
+    z-index: 3;
+    right: 27%;
     top: 30%;
+    width: 24%;
+}
+
+.frog {
+    position: absolute;
+    z-index: 2;
+    top: 0%;
+    right: 35%;
+    width: 12%;
+}
+.charStack {
+    position: absolute;
+    z-index: 4;
+    top: 20%;
+    right: 8%;
+    width: 27%;
 }
 
 @media (max-width: $mobile-breakpoint) {

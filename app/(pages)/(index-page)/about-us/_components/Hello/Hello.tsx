@@ -43,6 +43,30 @@ const Hello = () => {
           height={100}
           className={styles.midGrass}
         />
+
+        <Image
+          src="/about-us-icon/transparentLogo.svg"
+          alt="Logo"
+          width={4000}
+          height={100}
+          className={styles.transLogo}
+        />
+
+        <Image
+          src="/about-us-icon/upsideDownFrog.png"
+          alt="Frog"
+          width={4000}
+          height={100}
+          className={styles.frog}
+        />
+
+        <Image
+          src="/about-us-icon/3charStack.png"
+          alt="Frog"
+          width={4000}
+          height={100}
+          className={styles.charStack}
+        />
       </div>
     </div>
   );
