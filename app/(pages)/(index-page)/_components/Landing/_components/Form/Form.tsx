@@ -4,12 +4,20 @@ import { useState } from 'react';
 
 export default function Form() {
   const [email, setEmail] = useState('');
+  const [submit, setSubmit] = useState('Submit');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent the default form submission
+
+    // prevent empty email
+    if (!email.trim()) {
+      return;
+    }
+
     try {
       await addEmail(email); // Call the addEmail function with the email state
       setEmail(''); // Reset the email state
+      setSubmit('Sent!');
     } catch (error) {
       // Handle any errors that occur during the email addition
       console.error('Error adding email:', error);
@@ -48,7 +56,7 @@ export default function Form() {
                   type="submit"
                   className="tw-rounded-3xl tw-bg-blue-950 tw-p-2 tw-px-8 tw-text-white"
                 >
-                  Submit
+                  {submit}
                 </button>
               </div>
             </form>
