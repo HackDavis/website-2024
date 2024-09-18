@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: staging
-      url: ${{ vars.ENV_URL }}
+      url: ${{ vars.ENV_URL_2024 }}
 
     steps:
       - name: Checkout code
