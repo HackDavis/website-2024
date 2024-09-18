@@ -3,13 +3,14 @@
 .sponsor-container {
   display: flex;
   justify-content: center;
-  background: #123041;
+  background: #FFFFFF;
   font-family: "Metropolis";
   width: 100%;
   height: fit-content;
   position: relative;
   overflow: hidden;
   gap: 88px;
+
 }
 
 .content {
@@ -25,13 +26,18 @@
     align-items: center;
     margin: 88px 88px 0 88px;
   }
+
+  @include mixins.phone {
+    margin: 58px 58px 0 58px;
+
+  }
 }
 
 .info-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  width: 60%;
   height: 100%;
   gap: 50px;
 
@@ -40,6 +46,7 @@
     gap: 64px;
     width: 75%;
   }
+
 }
 
 .text-container {
@@ -48,28 +55,41 @@
   gap: 32px;
   max-height: fit-content;
   width: 100%;
-
+  
   @include mixins.phone {
-    width: 100%;
+    width: 120%;
   }
 }
 
 .numbers-words-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: fit-content;
+  flex-wrap: wrap;
+  gap: 64px;
+  justify-content: center;
+
+  @include mixins.phone {
+    flex-direction: row;
+
+  }
 }
 
 .number-word-pair {
   display: flex;
-  flex-direction: row; 
+  flex-direction: column; 
   align-items: center;
   width: fit-content;
   height: fit-content;
+
+  @include mixins.phone {
+    width: 30%;
+
+  }
 }
 
 .number {
-  color: #F4F4F4;
+  color: #123041;
   font-family: "Metropolis";
   font-size: 4rem;
   font-style: normal;
@@ -80,15 +100,21 @@
   margin-right: 24px;
 
   @include mixins.phone {
-    font-size: 2.5rem;
-    letter-spacing: 0.8px;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 54px */
+    letter-spacing: 0.72px;
+    text-transform: lowercase;
+    margin-right: 0px;
+
   }
 }
 
 .word {
   display: flex;
   align-items: center;
-  color: #F4F4F4;
+  color: #123041;
   font-family: "Metropolis";
   font-size: 1.75rem;
   font-style: normal;
@@ -96,11 +122,15 @@
   line-height: 150%;
   letter-spacing: 0.56px;
   text-transform: lowercase;
-  height: 5rem;
+  // height: 5rem;
 
   @include mixins.phone {
-    font-size: 1.5rem;
-    letter-spacing: 0.48px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  letter-spacing: 0.32px;
+  text-transform: lowercase;
   }
 }
 
@@ -115,6 +145,11 @@
   flex-shrink: 0;
   border-radius: 6.25rem;
   background: #FFC53D;
+
+  @include mixins.phone {
+    width: 100%;
+
+  }
 }
 
 .button-words{

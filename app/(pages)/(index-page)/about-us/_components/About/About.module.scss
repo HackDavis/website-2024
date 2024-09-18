@@ -10,7 +10,8 @@ $mobile-breakpoint: 758px;
     background: #FFF;
     font-family: "Metropolis", sans-serif;
     padding: 5%;
-    padding-bottom: 10%;
+    padding-bottom: 0;
+    padding-top: 0;
 
     @media (max-width: $big-tablet-breakpoint) {
         padding: 10%;
@@ -43,6 +44,10 @@ $mobile-breakpoint: 758px;
 .header {
     grid-column: 1/-1; 
     font-family: "Metropolis", sans-serif;
+    font-weight: 700;
+    color: #123041;
+    line-height: normal;
+    letter-spacing: 0.8px;
 
     @media (max-width: $big-tablet-breakpoint) {
         grid-row: 1;
