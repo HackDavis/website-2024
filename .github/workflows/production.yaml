@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: ${{ vars.ENV_URL }}
+      url: ${{ vars.ENV_URL_2024 }}
 
     steps:
       - name: Checkout code
@@ -28,7 +28,7 @@ jobs:
         run: >
           vercel
           --token ${{ secrets.VERCEL_TOKEN }}
-          -n ${{ vars.VERCEL_PROJECT }}
+          -n ${{ vars.VERCEL_PROJECT_2024 }}
           --yes
           --prod
           --env MONGODB_URI=${{ secrets.MONGODB_URI }}
