@@ -36,7 +36,6 @@ jobs:
           --prod
           --env MONGODB_URI=${{ secrets.MONGODB_URI }}
           --build-env MONGODB_URI=${{ secrets.MONGODB_URI }}
-          --branch feat/PostDOE
 
       - name: Success
         run: echo "🚀  Deploy successful - BLAST OFF WOO! (woot woot) !!! 🐕 🐕 🐕 🚀 "
