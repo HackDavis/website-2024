@@ -35,7 +35,7 @@ export default function Form() {
             Welcome! With 900+ participants, HackDavis is one of the largest
             collegiate hackathons in California.{' '}
           </p>
-          <div className="tw-flex tw-flex-col tw-gap-2">
+          {/* <div className="tw-flex tw-flex-col tw-gap-2">
             <div className="tw-flex tw-items-start tw-gap-2 md:tw-items-center">
               <LucideCalendar size={20} />
               <p className="sm:tw-text-xl">
@@ -60,6 +60,22 @@ export default function Form() {
                 </button>
               </div>
             </form>
+          </div> */}
+          <div className="tw-flex tw-flex-col tw-items-start tw-justify-between tw-gap-2 md:tw-flex-row md:tw-items-center">
+            <p className="sm:tw-text-xl">
+              Interested in directing HackDavis2025?
+            </p>
+            <a 
+              href="https://form.typeform.com/to/WhphTCxw?utm_source=xxxxx"
+              target='_blank'
+            >
+              <button
+                type="button"
+                className="tw-rounded-3xl tw-bg-blue-950 tw-p-2 tw-px-4 tw-text-white"
+              >
+                Apply now
+              </button>
+            </a>
           </div>
         </div>
       </div>
