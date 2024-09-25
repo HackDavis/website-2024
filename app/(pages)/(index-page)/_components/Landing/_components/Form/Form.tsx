@@ -61,19 +61,16 @@ export default function Form() {
               </div>
             </form>
           </div> */}
-          <div className="tw-flex tw-flex-col tw-items-start tw-justify-between tw-gap-2 md:tw-flex-row md:tw-items-center">
-            <p className="sm:tw-text-xl">
-              Interested in directing HackDavis2025?
-            </p>
+          <div className="">
             <a 
               href="https://form.typeform.com/to/WhphTCxw?utm_source=xxxxx"
               target='_blank'
             >
               <button
                 type="button"
-                className="tw-rounded-3xl tw-bg-blue-950 tw-p-2 tw-px-4 tw-text-white"
+                className="tw-rounded-3xl tw-bg-blue-950 tw-p-2 tw-px-8 tw-text-white"
               >
-                Apply now
+                Apply to be a director!
               </button>
             </a>
           </div>
