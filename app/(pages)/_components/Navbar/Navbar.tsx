@@ -116,15 +116,26 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
             </li>
           ))}
         </ul>
-        <Link
-          href="mailto:team@hackdavis.io"
-          target="_blank"
-          className={styles.sponsor_button}
-        >
-          <div className="tw-text-nowrap tw-rounded-2xl tw-bg-white tw-px-6 tw-py-3 tw-font-bold tw-text-slate-900 tw-shadow-lg">
-            <p>Sponsor Us</p>
-          </div>
-        </Link>
+        <div className="tw-flex tw-gap-4">
+          <Link
+            href="mailto:team@hackdavis.io"
+            target="_blank"
+            className={styles.sponsor_button}
+          >
+            <div className="tw-text-nowrap tw-rounded-2xl tw-bg-blue-950 tw-px-4 tw-py-3 tw-font-bold tw-text-white tw-shadow-lg">
+              <p>Sponsor Us</p>
+            </div>
+          </Link>
+          <Link
+            href="https://forms.gle/XkUBBw8PmdyzYCPe9"
+            target="_blank"
+            className={styles.judge_button}
+          >
+            <div className="tw-text-nowrap tw-rounded-2xl tw-bg-white tw-px-4 tw-py-3 tw-font-bold tw-text-slate-900 tw-shadow-lg">
+              <p>Be a Judge</p>
+            </div>
+          </Link>
+        </div>
       </nav>
     </div>
   );

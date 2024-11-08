@@ -2,17 +2,17 @@
 $bg-color: var(--landing-bg);
 $mobile-breakpoint: 425px;
 
-.container{
+.container {
     position: fixed;
-    width: 100%; 
+    width: 100%;
     display: flex;
     z-index: 100;
     top: 0;
     backdrop-filter: blur(10px);
-    background-color: rgba(255,255,255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     transition: background-color 0.5s ease-in-out, top 0.5s; // Smooth transition for moving up and down
 
-    &_sticky{
+    &_sticky {
         position: fixed;
         top: 0;
         left: 0;
@@ -21,22 +21,22 @@ $mobile-breakpoint: 425px;
         animation: dropDown 0.5s ease-in-out forwards;
     }
 
-    &_return_up{
+    &_return_up {
         animation: returnUp 0.5s ease-in-out forwards;
     }
 
-    &_at_top{
+    &_at_top {
         top: 0;
         z-index: 100;
         animation: dropDown 0.5s ease-in-out forwards;
     }
 
 
-    &_return_up{
+    &_return_up {
         animation: returnUp 0.5s ease-in-out forwards;
     }
 
-    &_at_top{
+    &_at_top {
         top: 0;
         background-color: transparent;
         backdrop-filter: none;
@@ -44,8 +44,9 @@ $mobile-breakpoint: 425px;
         backdrop-filter: none;
         // border: 3px solid red;
     }
-    
+
 }
+
 .nav {
     display: flex;
     padding: 2rem;
@@ -70,21 +71,21 @@ $mobile-breakpoint: 425px;
     display: inline-block;
 }
 
-.sponsor_button{
+.sponsor_button {
     width: fit-content;
     z-index: 10;
 }
 
-.logo{
+.logo {
     width: 3.125rem;
     height: 3.13269rem;
 
-    &_white{
-        display:none;
+    &_white {
+        display: none;
     }
 
-    &_white{
-        display:none;
+    &_white {
+        display: none;
     }
 }
 
@@ -100,25 +101,26 @@ $mobile-breakpoint: 425px;
     display: inline-flex;
     align-items: center;
     gap: 1.5rem;
-    transition: text-decoration 0.2s; 
+    transition: text-decoration 0.2s;
     font-family: 'Metropolis', sans-serif;
     font-family: 'Metropolis', sans-serif;
 }
 
 .words:hover {
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
 }
 
 .menuIcon {
     display: none; // By default, the menu icon is not displayed
 }
 
-.navLink{
+.navLink {
     text-decoration: none;
     color: var(--teal-2, #173A52);
     font-family: 'Metropolis', sans-serif;
-    position: relative; 
-    display: inline-block; 
+    position: relative;
+    display: inline-block;
     font-weight: 700;
 
     padding-bottom: 5px; // Adjust as needed
@@ -137,32 +139,33 @@ $mobile-breakpoint: 425px;
     }
 
     // Hover and focus effects
-    &:hover::after, &:focus::after {
+    &:hover::after,
+    &:focus::after {
         width: 100%; // Extend the underline across the full width on hover/focus
     }
 
 
 }
 
-.mlhBadge{
+.mlhBadge {
     width: 4.31613rem;
     height: 8.12475rem;
     flex-shrink: 0;
-    top:0;
+    top: 0;
     right: 0;
     margin-right: 2rem;
     position: absolute;
     z-index: 10;
 }
 
-.hamburger{
+.hamburger {
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     position: absolute;
     left: -22rem;
 
-    &_line{
+    &_line {
         width: 30px;
         height: 3px;
         margin: 5px auto;
@@ -172,11 +175,12 @@ $mobile-breakpoint: 425px;
         -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     }
-    &:hover{
+
+    &:hover {
         cursor: pointer;
     }
 
-    &_active{
+    &_active {
         animation: smallbig 0.6s forwards;
         position: absolute;
         left: -22rem;
@@ -200,12 +204,12 @@ $mobile-breakpoint: 425px;
     }
 }
 
-.hamburger{
+.hamburger {
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 
-    &_line{
+    &_line {
         width: 30px;
         height: 3px;
         margin: 5px auto;
@@ -215,11 +219,12 @@ $mobile-breakpoint: 425px;
         -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     }
-    &:hover{
+
+    &:hover {
         cursor: pointer;
     }
 
-    &_active{
+    &_active {
         animation: smallbig 0.6s forwards;
 
         .hamburger_line {
@@ -242,11 +247,11 @@ $mobile-breakpoint: 425px;
 }
 
 @media (max-width: 610px) {
-    .container{
+    .container {
         // height: 10%;
         // animation: retract 0.3s ease-in-out forwards;
 
-        &_active{
+        &_active {
             position: fixed;
             left: 0;
             top: 0;
@@ -259,7 +264,8 @@ $mobile-breakpoint: 425px;
             animation: expand 0.3s ease-in-out forwards;
         }
     }
-    .nav{
+
+    .nav {
         flex-direction: column;
         // padding: 1rem;
         // padding: 1rem;
@@ -267,9 +273,11 @@ $mobile-breakpoint: 425px;
         // border: 1px solid red;
 
     }
-    .navLink{
+
+    .navLink {
         display: none; // Hide the links by default on mobile
-        &_active{
+
+        &_active {
             display: flex; // Show the links when active
             flex-direction: column;
             width: 100%;
@@ -279,11 +287,19 @@ $mobile-breakpoint: 425px;
             // height: 300px;
         }
     }
-    .sponsor_button{
+
+    .judge_button {
         position: absolute;
         right: 1.5rem;
         top: 1.5rem;
     }
+
+    .sponsor_button {
+        position: absolute;
+        right: 10rem;
+        top: 1.5rem;
+    }
+
     .menuIcon {
         display: block; // Show the menu icon on smaller screens
         // position: fixed;
@@ -294,7 +310,7 @@ $mobile-breakpoint: 425px;
         z-index: 9999;
     }
 
-    .hamburger{
+    .hamburger {
         left: 0px;
     }
 
@@ -303,45 +319,47 @@ $mobile-breakpoint: 425px;
         position: absolute;
         top: 100%; // Position the menu below the navbar
         right: 0;
+
         // width: 100%; // Full width to cover the screen
-        &_active{
-            flex-direction: column !important; 
-            align-items: center; 
-            width: 100%; 
-            position: fixed; 
-            top:25%; 
+        &_active {
+            flex-direction: column !important;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 25%;
             // top: 2.5%;
             left: 0;
-            z-index: 1000; 
+            z-index: 1000;
             animation: expand 0.3s ease-in-out forwards;
         }
     }
 
 
-    .wordsItem{
+    .wordsItem {
         height: 40px; //adjust gap between words
         height: 40px; //adjust gap between words
     }
 
-    .mlhBadge{
-        display: flex; 
+    .mlhBadge {
+        display: flex;
         position: relative;
         width: calc(70px * 0.8);
         height: calc(130px * 0.8);
     }
-    .logo{
-        display: none;   
+
+    .logo {
+        display: none;
 
 
-        &_active{
+        &_active {
             display: none;
         }
 
-        &_white{
+        &_white {
             display: none;
         }
 
-        &_white{
+        &_white {
             display: flex;
             width: 3.125rem;
             height: 3.13269rem;
@@ -351,12 +369,16 @@ $mobile-breakpoint: 425px;
 }
 
 @media (max-width: $mobile-breakpoint) {
-    .mlhBadge{
-        display: flex; 
+    .mlhBadge {
+        display: flex;
         position: relative;
         width: 4.31613rem;
         height: 8.12475rem;
-    }   
+    }
+
+    .sponsor_button {
+        right: 9.25rem;
+    }
 }
 
 @keyframes expand {
@@ -364,92 +386,102 @@ $mobile-breakpoint: 425px;
         // width: 0;
         height: 0;
     }
+
     to {
-    //   width: 100%;
-      height: 100%;
+        //   width: 100%;
+        height: 100%;
         // height: 45%;
     }
-  }
+}
 
-  @keyframes retract {
+@keyframes retract {
     from {
         // width: 0;
         height: 100%;
     }
+
     to {
-    //   width: 100%;
-      height: 0%;
+        //   width: 100%;
+        height: 0%;
         // height: 45%;
     }
-  }
+}
 
 
-@keyframes dropDown{
-    from{
+@keyframes dropDown {
+    from {
         top: -100%;
     }
-    to{
+
+    to {
         top: 0;
     }
 }
 
-@keyframes returnUp{
-    from{
+@keyframes returnUp {
+    from {
         top: 0;
     }
-    to{
+
+    to {
         top: -100%;
-    }
-}
-  
-  
-@keyframes smallbig{
-    0%, 100%{
-      -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1);
-    }
-  
-    50%{
-      -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-      -o-transform: scale(0);
-      transform: scale(0);
     }
 }
 
-@keyframes dropDown{
-    from{
+
+@keyframes smallbig {
+
+    0%,
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+@keyframes dropDown {
+    from {
         top: -100%;
     }
-    to{
+
+    to {
         top: 0;
     }
 }
 
-@keyframes returnUp{
-    from{
+@keyframes returnUp {
+    from {
         top: 0;
     }
-    to{
+
+    to {
         top: -100%;
     }
 }
-  
-  
-@keyframes smallbig{
-    0%, 100%{
-      -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1);
+
+
+@keyframes smallbig {
+
+    0%,
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
     }
-  
-    50%{
-      -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-      -o-transform: scale(0);
-      transform: scale(0);
+
+    50% {
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
     }
 }

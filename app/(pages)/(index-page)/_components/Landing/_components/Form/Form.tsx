@@ -28,14 +28,14 @@ export default function Form() {
     <main className="tw-flex tw-w-330px tw-max-w-full tw-text-blue-950 sm:tw-w-500px">
       <div className="tw-relative">
         <h1 className="tw-text-3xl tw-font-bold md:tw-text-5xl">
-          HackDavis 2025!
+          HackDavis 2025
         </h1>
         <div className="tw-right-6 tw-flex tw-flex-col tw-gap-5 tw-text-base md:tw-text-xl">
           <p className="">
             Welcome! With 900+ participants, HackDavis is one of the largest
             collegiate hackathons in California.{' '}
           </p>
-          <div className="tw-hidden tw-flex-col tw-gap-2">
+          <div className="tw-flex-col tw-gap-2">
             <div className="tw-flex tw-items-start tw-gap-2 md:tw-items-center">
               <LucideCalendar size={20} />
               <p className="sm:tw-text-xl">
@@ -61,7 +61,7 @@ export default function Form() {
               </div>
             </form>
           </div>
-          <div className="">
+          <div className="tw-hidden">
             <a
               href="https://form.typeform.com/to/WhphTCxw?utm_source=xxxxx"
               target="_blank"
