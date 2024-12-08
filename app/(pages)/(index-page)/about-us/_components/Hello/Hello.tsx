@@ -6,7 +6,7 @@ const Hello = () => {
   return (
     <div className={styles.hello_container}>
       <div className={styles.title}>
-        <h1>HackDavis</h1>
+        <h1>About HackDavis</h1>
         <p>
           Bringing together 750+ students, creators, and leaders to create for
           social good
