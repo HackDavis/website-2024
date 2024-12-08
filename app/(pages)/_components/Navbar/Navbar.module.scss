@@ -149,7 +149,10 @@ $mobile-breakpoint: 425px;
         width: 100%; // Extend the underline across the full width on hover/focus
     }
 
-
+    .linkArrow {
+        width: 14px;
+        height: 14px;
+    }
 }
 
 

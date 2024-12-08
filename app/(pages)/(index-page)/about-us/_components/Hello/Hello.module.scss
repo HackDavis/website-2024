@@ -34,24 +34,23 @@ $tablet-breakpoint: 768px;
     }
     
     h1{
-        color: #FFF;
+        color: #123041;
         font-family: Metropolis;
-        font-size: 110.095px;
+        font-size: 64px;
         font-style: normal;
         font-weight: 700;
         line-height: 111.5%; /* 122.755px */
         letter-spacing: 2.202px;
-
         @media (max-width: $tablet-breakpoint) {
             font-size: 48px;
         }
     }
     p{
-        color: #FFF;
+        color: #123041;
         font-family: Metropolis;
-        font-size: 28px;
+        font-size: 24px;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 150%; /* 42px */
         letter-spacing: 0.56px;
 
