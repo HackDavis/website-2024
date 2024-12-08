@@ -73,7 +73,21 @@ export default function NewForm() {
       </div>
       <div className="tw-flex tw-w-1/2 tw-items-center tw-justify-center tw-gap-4 ">
         <Link href={FormLinks.Volunteer.url}>
-          <p className="tw-font-bold">Volunteer</p>
+          <div className="tw-flex tw-items-center tw-justify-center">
+            <p className="tw-font-bold">Volunteer</p>
+            <svg
+              className="tw-inline-block tw-h-4 tw-w-4 tw-translate-x-[2px] tw-translate-y-[-2px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
         </Link>
         <p>or</p>
         <Link href={FormLinks.Mentor.url}>
