@@ -46,10 +46,14 @@ export default function NewForm() {
         </span>
       </div>
       <div className="tw-flex tw-gap-4 tw-font-semibold tw-tracking-[1px]">
-        <p>Join us for HackDavis 2024</p>
+        <p className="tw-text-2xl tw-font-semibold">
+          Join us for HackDavis 2024
+        </p>
         <div className="tw-flex tw-items-center tw-gap-2">
           <CiCalendar className="tw-text-2xl" />
-          <p>April 27 - 28, 2024 @ UCenter</p>
+          <p className="tw-text-2xl tw-font-semibold">
+            April 27 - 28, 2024 @ UCenter
+          </p>
         </div>
       </div>
       <div className="tw-mt-2 tw-flex tw-w-1/2 tw-cursor-pointer tw-items-center tw-justify-center tw-gap-4">
@@ -71,10 +75,10 @@ export default function NewForm() {
           </p>
         </Link>
       </div>
-      <div className="tw-flex tw-w-1/2 tw-items-center tw-justify-center tw-gap-4 ">
+      <div className="tw-flex tw-w-1/2 tw-items-center tw-justify-center tw-gap-2 tw-font-semibold">
         <Link href={FormLinks.Volunteer.url}>
           <div className="tw-flex tw-items-center tw-justify-center">
-            <p className="tw-font-bold">Volunteer</p>
+            <p className="tw-font-semibold">Volunteer</p>
             <svg
               className="tw-inline-block tw-h-4 tw-w-4 tw-translate-x-[2px] tw-translate-y-[-2px]"
               xmlns="http://www.w3.org/2000/svg"
@@ -89,10 +93,10 @@ export default function NewForm() {
             </svg>
           </div>
         </Link>
-        <p>or</p>
+        <p className="tw-font-semibold tw-opacity-60">or</p>
         <Link href={FormLinks.Mentor.url}>
           <div className="tw-flex tw-items-center tw-justify-center">
-            <p className="tw-font-bold">Mentor</p>
+            <p className="tw-font-semibold">Mentor</p>
             <svg
               className="tw-inline-block tw-h-4 tw-w-4 tw-translate-x-[2px] tw-translate-y-[-2px]"
               xmlns="http://www.w3.org/2000/svg"
