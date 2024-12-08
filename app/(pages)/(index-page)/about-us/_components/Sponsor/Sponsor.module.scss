@@ -184,14 +184,14 @@
 .polaroid {
   grid-row: 1;
   grid-column: 1;
-  height: 592px;
   width: auto;
   transition: transform 1.9s cubic-bezier(0.79, 0.02, 0.21, 0.99) .1s;
+  width: 40vw;
+  max-width: none;
 
   @include mixins.phone {
     justify-self: center;
-    width: 150%;
-    height: auto;
+    width: 100vw;
   }
 }
 
