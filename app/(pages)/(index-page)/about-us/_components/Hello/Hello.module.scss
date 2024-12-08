@@ -25,6 +25,7 @@ $tablet-breakpoint: 768px;
     z-index: 1;
     padding-left: 12%;
     padding-right: 48%;
+    margin-top: 10%;
 
 
     @media (max-width: $tablet-breakpoint) {
@@ -41,6 +42,7 @@ $tablet-breakpoint: 768px;
         font-weight: 700;
         line-height: 111.5%; /* 122.755px */
         letter-spacing: 2.202px;
+        width: 600px;
         @media (max-width: $tablet-breakpoint) {
             font-size: 48px;
         }

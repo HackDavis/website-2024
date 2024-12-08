@@ -113,13 +113,13 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
                   {index !== navLinks.length - 1 && link.name}
 
                   {index === navLinks.length - 1 && (
-                    <div className="tw-flex tw-gap-2">
+                    <div className="tw-flex tw-items-center tw-gap-2">
                       {link.name}
                       <Image
                         src="/navbar/upRightArrow.png"
                         alt="link arrow"
-                        width={14}
-                        height={14}
+                        width={100}
+                        height={100}
                         className={styles.linkArrow}
                       />
                     </div>

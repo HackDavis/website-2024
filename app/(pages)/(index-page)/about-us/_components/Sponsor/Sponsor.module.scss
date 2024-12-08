@@ -15,6 +15,7 @@
 .content {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
   margin: 88px 176px 0 176px;
   height: 100%;
@@ -37,6 +38,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 60%;
+  max-width: 450px;
   height: 100%;
   gap: 50px;
 
@@ -78,8 +80,7 @@
   display: flex;
   flex-direction: column; 
   align-items: center;
-  width: fit-content;
-  height: fit-content;
+  width: 40%;
 
   @include mixins.phone {
     width: 30%;
@@ -90,13 +91,12 @@
 .number {
   color: #123041;
   font-family: "Metropolis";
-  font-size: 4rem;
+  font-size: 48px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
   letter-spacing: 1.28px;
   text-transform: lowercase;
-  margin-right: 24px;
 
   @include mixins.phone {
     font-size: 36px;
@@ -115,7 +115,7 @@
   align-items: center;
   color: #123041;
   font-family: "Metropolis";
-  font-size: 1.75rem;
+  font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
