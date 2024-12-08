@@ -98,7 +98,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
               />
             </Link>
           </li>
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <li key={link.name} className={styles.wordsItem}>
               <Link
                 href={link.slug}
@@ -110,7 +110,20 @@ export default function Navbar({ navLinks }: { navLinks: NavLink[] }) {
                     active ? styles.navLink_active : ''
                   }`}
                 >
-                  {link.name}
+                  {index !== navLinks.length - 1 && link.name}
+
+                  {index === navLinks.length - 1 && (
+                    <div className="tw-flex tw-gap-2">
+                      {link.name}
+                      <Image
+                        src="/navbar/upRightArrow.png"
+                        alt="link arrow"
+                        width={14}
+                        height={14}
+                        className={styles.linkArrow}
+                      />
+                    </div>
+                  )}
                 </span>
               </Link>
             </li>
