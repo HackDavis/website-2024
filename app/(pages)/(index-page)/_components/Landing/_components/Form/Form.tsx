@@ -1,10 +1,6 @@
-import styles from './Form.module.scss';
-// import { CiCalendar } from 'react-icons/ci';
 import WordCycle from './_components/WordCycle';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Import useRouter
-// import Image from 'next/image';
-// import intelLogoCoHost from 'public/index/Sponsors/intel.png';
+import { usePathname } from 'next/navigation';
 
 type FormLink = {
   title: string;
@@ -32,87 +28,64 @@ const FormLinks: { [key: string]: FormLink } = {
   },
   Location: {
     title: 'UCenter',
-    url: 'https://www.google.com/maps/place/University+Credit+Union+Center/@38.5418238,-121.7596385,17z/data=!3m1!4b1!4m6!3m5!1s0x808529d4ce160f1d:0x813925c4c65f6bb1!8m2!3d38.5418238!4d-121.7596385!16zL20vMDluZmh0?hl=en-US&entry=ttu',
+    url: 'https://www.google.com/maps/place/University+Credit+Union+Center/@38.5418238,-121.7596385,17z',
   },
 };
 
 export default function Form() {
-  /*
-   * takes the current url and assigns it to the teams section of the page
-   * enables the "Team Descriptions" button to scroll to teams on click, similar to navbar
-   */
   const pathname = usePathname();
   const teamsUrl =
     pathname.substring(0, pathname.lastIndexOf('/') + 1) + '#teams';
   FormLinks.Teams.url = teamsUrl;
 
   return (
-    <div className={styles.background}>
-      <div className={styles.container}>
-        <div className={styles.title}>
-          <span className={styles.title_ready}>
-            <span style={{ opacity: 0.75, fontFamily: 'Metropolis' }}>
-              Ready to
-            </span>
-            <span className={styles.title_ready_wordCycle}>
+    <div className="tw-flex tw-bg-transparent">
+      <div className="tw-absolute tw-flex tw-w-[500px] tw-max-w-[500px] tw-flex-col tw-justify-center tw-gap-7 md:tw-relative md:tw-mt-[10%] md:tw-w-full md:tw-items-center md:tw-text-center lg:tw-w-[375px]">
+        <div className="tw-flex tw-flex-col">
+          <span className="tw-font-metropolis tw-flex tw-items-baseline tw-text-left tw-text-[42px] tw-font-extrabold tw-leading-[103%] tw-tracking-[0.96px] tw-text-[#173A52] sm:tw-text-[32px] md:tw-text-center md:tw-text-[36px] md:tw-leading-[115%] lg:tw-text-[31.5px]">
+            <span className="tw-font-metropolis tw-opacity-75">Ready to</span>
+            <span className="tw-flex tw-items-center tw-justify-center tw-pl-2.5">
               <WordCycle />
             </span>
           </span>
 
-          <span className={styles.title_social}>social good?</span>
+          <span className="tw-font-metropolis tw-text-[64px] tw-font-extrabold tw-leading-[103%] tw-tracking-[1.4px] tw-text-[#173A52] sm:tw-text-[48px] md:tw-text-[56px] md:tw-leading-[115%] lg:tw-text-[48px]">
+            social good?
+          </span>
         </div>
-        <div className={styles.calendar}>
-          <div className={styles.calendar_inner}>
-            <div className={styles.calendar_inner_intel}>
-              <span className={styles.calendar_inner_upper}>
+
+        <div className="tw-flex tw-flex-col">
+          <div className="tw-flex tw-flex-col">
+            <div className="tw-flex tw-w-max tw-items-center tw-gap-2.5 md:tw-w-[90vw] md:tw-flex-wrap md:tw-justify-center">
+              <span className="tw-font-metropolis tw-text-[24px] tw-font-semibold tw-leading-[150%] tw-tracking-[0.64px] tw-text-[#173A52]/70 md:tw-text-[24px] lg:tw-text-[18px]">
                 Apply to direct{' '}
-                <span className={styles.calendar_inner_upper_hackdavis}>
+                <span className="tw-font-metropolis tw-text-[24px] tw-font-semibold tw-leading-[150%] tw-tracking-[0.64px] tw-text-[#173A52] md:tw-text-[24px] lg:tw-text-[18px]">
                   HackDavis 2025
                 </span>
               </span>
-              {/* <span className={styles.intelCoHostText}>co-hosted by </span>
-              <Image
-                src={intelLogoCoHost}
-                alt="Intel Logo"
-                className={styles.intelCoHostImage}
-              /> */}
             </div>
-
-            {/* <div className={styles.calendar_inner_lower}>
-              <CiCalendar className={styles.calendar_inner_lower_icon} />
-              <span className={styles.calendar_inner_lower_text}>
-                April 27 - 28 @
-                <Link href={FormLinks.Location.url}>
-                  <span>{FormLinks.Location.title}</span>
-                </Link>
-              </span>
-            </div> */}
           </div>
         </div>
 
-        <div className={styles.buttons}>
+        <div className="tw-flex tw-w-[60%] tw-cursor-pointer tw-flex-col tw-gap-4 md:tw-w-full md:tw-items-center md:tw-justify-center">
           <Link
             href={FormLinks.Register.url}
-            className={styles.buttons_register}
+            className="tw-mb-2.5 tw-flex tw-h-12 tw-items-center tw-justify-center tw-gap-2.5 tw-rounded-full tw-bg-[#173A52] tw-px-[1.3vw] tw-py-[0.75vw] tw-transition-colors tw-duration-200 hover:tw-bg-[#005271] md:tw-w-[85%]"
           >
-            <p>{FormLinks.Register.title}</p>
+            <p className="tw-font-metropolis tw-text-center tw-text-base tw-font-bold tw-capitalize tw-tracking-[0.48px] tw-text-white md:tw-text-lg">
+              {FormLinks.Register.title}
+            </p>
           </Link>
-          <a href={FormLinks.Teams.url} className={styles.buttons_sponsor}>
-            <p>{FormLinks.Teams.title}</p>
+
+          <a
+            href={FormLinks.Teams.url}
+            className="tw-flex tw-h-12 tw-items-center tw-justify-center tw-gap-2.5 tw-rounded-full tw-bg-white/75 tw-px-[1.3vw] tw-py-[0.75vw] tw-opacity-85 tw-backdrop-blur-[2px] tw-transition-opacity tw-duration-200 hover:tw-opacity-100 md:tw-w-[85%]"
+          >
+            <p className="tw-font-metropolis tw-text-center tw-text-base tw-font-bold tw-tracking-[0.48px] tw-text-[#173A52] md:tw-text-lg">
+              {FormLinks.Teams.title}
+            </p>
           </a>
         </div>
-        {/* <div className={styles.links}>
-          <div className={styles.links_calendar}>
-            Apply to be a
-            <Link href={FormLinks.Volunteer.url}>
-              <span className={styles.link}>{FormLinks.Volunteer.title}</span>
-            </Link>
-            or
-            <Link href={FormLinks.Mentor.url}>
-              <span>{FormLinks.Mentor.title}</span>
-            </Link>
-          </div>
-        </div> */}
       </div>
     </div>
   );
